@@ -1,0 +1,73 @@
+[Project]
+Current Flow=Generic
+VCS=0
+version=4
+Current Config=compile
+[Configurations]
+compile=RISCVCORE
+[Library]
+RISCVCORE=.\RISCVCORE\RISCVCORE.lib
+[$LibMap$]
+RISCVCORE=.
+Active_lib=
+[Settings]
+FLOW_TYPE=HDL
+LANGUAGE=VHDL
+REFRESH_FLOW=1
+FLOWTOOLS=NONE
+FAMILY=
+[Files]
+/RISCVCORE.vhd=-1
+/IF_TESTBENCH.vhd=-1
+/pc4adder.vhd=-1
+/program_counter.vhd=-1
+/pc_mux.vhd=-1
+/instruction_memory.vhd=-1
+/ifid.vhd=-1
+/internalconnections.vhd=-1
+[Files.Data]
+.\src\RISCVCORE.vhd=VHDL Source Code
+.\src\IF_TESTBENCH.vhd=VHDL Source Code
+.\src\pc4adder.vhd=VHDL Source Code
+.\src\program_counter.vhd=VHDL Source Code
+.\src\pc_mux.vhd=VHDL Source Code
+.\src\instruction_memory.vhd=VHDL Source Code
+.\src\ifid.vhd=VHDL Source Code
+.\src\internalconnections.vhd=VHDL Source Code
+[folders]
+name0=ALINT-PRO Workspaces
+directory0=C:\Users\maxpro\Desktop\440Project RISCVCORE\RISCVCORE\RISCVCORE\
+extension0=alintws
+name1=Coverage Databases
+directory1=C:\Users\maxpro\Desktop\440Project RISCVCORE\RISCVCORE\RISCVCORE\
+extension1=acdb
+name2=Dll Libraries
+directory2=C:\Users\maxpro\Desktop\440Project RISCVCORE\RISCVCORE\RISCVCORE\
+extension2=dll
+name3=Event Lists
+directory3=C:\Users\maxpro\Desktop\440Project RISCVCORE\RISCVCORE\RISCVCORE\
+extension3=lst
+name4=HTML Files
+directory4=C:\Users\maxpro\Desktop\440Project RISCVCORE\RISCVCORE\RISCVCORE\
+extension4=htm;html
+name5=Log Files
+directory5=C:\Users\maxpro\Desktop\440Project RISCVCORE\RISCVCORE\RISCVCORE\
+extension5=log;htm;xml;txt
+name6=Matlab/Simulink Files
+directory6=C:\Users\maxpro\Desktop\440Project RISCVCORE\RISCVCORE\
+extension6=m;mdl;slx
+name7=Memory Files
+directory7=C:\Users\maxpro\Desktop\440Project RISCVCORE\RISCVCORE\RISCVCORE\
+extension7=mem;mif;hex
+name8=PDF Files
+directory8=C:\Users\maxpro\Desktop\440Project RISCVCORE\RISCVCORE\RISCVCORE\
+extension8=pdf
+name9=Profiler Databases
+directory9=C:\Users\maxpro\Desktop\440Project RISCVCORE\RISCVCORE\RISCVCORE\
+extension9=tbp
+name10=Script Files
+directory10=C:\Users\maxpro\Desktop\440Project RISCVCORE\RISCVCORE\RISCVCORE\
+extension10=do;tcl;pl
+name11=Waveform Files
+directory11=C:\Users\maxpro\Desktop\440Project RISCVCORE\RISCVCORE\RISCVCORE\
+extension11=asdb;awc;asdbc;asdbe

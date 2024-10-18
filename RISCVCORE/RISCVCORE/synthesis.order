@@ -1,0 +1,7 @@
+i<>.\src\pc_mux.vhd
+i<>.\src\program_count.vhd
+i<>.\src\RISCVCORE.vhd
+i<>.\src\pc4adder.vhd
+i<>.\src\instruction_memory.vhd
+i<>.\src\ifid.vhd
+i<>.\src\IF_TESTBENCH.vhd

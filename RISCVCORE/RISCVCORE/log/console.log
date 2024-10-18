@@ -1,0 +1,679 @@
+# Design: Design RISCVCORE already active.
+# DESIGN: Default Design Language: VHDL
+# DESIGN: Default BDE Language: VHDL
+# DESIGN: Flow Manager: Not Defined
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/pc_mux.vhd
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Top-level unit(s) detected:
+# Entity => pc_mux
+# Compile success 0 Errors 0 Warnings  Analysis time :  62.0 [ms]
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# Design: Design "RISCVCORE" has been set as active.
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd
+# Compile Entity "internal"
+# Error: COMP96_0019: RISCVCORE.vhd : (6, 17): Keyword 'is' expected.
+# Error: COMP96_0019: RISCVCORE.vhd : (6, 17): Keyword 'end' expected.
+# Error: COMP96_0111: RISCVCORE.vhd : (6, 17): Labels do not match.
+# Error: COMP96_0015: RISCVCORE.vhd : (6, 29): ';' expected.
+# Error: COMP96_0016: RISCVCORE.vhd : (7, 2): Design unit declaration expected.
+# Compile Entity "datapath"
+# Error: COMP96_0019: RISCVCORE.vhd : (21, 20): Keyword 'is' expected.
+# Error: COMP96_0019: RISCVCORE.vhd : (21, 20): Keyword 'end' expected.
+# Compile Architecture "structural" of Entity "datapath"
+# Error: COMP96_0015: RISCVCORE.vhd : (39, 16): ':' expected.
+# Error: COMP96_0018: RISCVCORE.vhd : (39, 35): Identifier expected.
+# Compile failure 9 Errors 0 Warnings  Analysis time :  0.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd
+# Compile Entity "internal_connections"
+# Error: COMP96_0018: RISCVCORE.vhd : (20, 2): Identifier expected.
+# Error: COMP96_0111: RISCVCORE.vhd : (21, 12): Labels do not match.
+# Compile Architecture "structural" of Entity "datapath"
+# Error: COMP96_0015: RISCVCORE.vhd : (39, 16): ':' expected.
+# Error: COMP96_0018: RISCVCORE.vhd : (39, 35): Identifier expected.
+# Compile failure 4 Errors 0 Warnings  Analysis time :  0.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd
+# Compile Entity "internal_connections"
+# Error: COMP96_0018: RISCVCORE.vhd : (20, 2): Identifier expected.
+# Compile Architecture "structural" of Entity "datapath"
+# Error: COMP96_0015: RISCVCORE.vhd : (39, 16): ':' expected.
+# Error: COMP96_0018: RISCVCORE.vhd : (39, 35): Identifier expected.
+# Compile failure 3 Errors 0 Warnings  Analysis time :  0.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "datapath"
+# Error: COMP96_0015: RISCVCORE.vhd : (39, 16): ':' expected.
+# Error: COMP96_0018: RISCVCORE.vhd : (39, 35): Identifier expected.
+# Compile failure 2 Errors 0 Warnings  Analysis time :  0.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "datapath"
+# Error: COMP96_0056: RISCVCORE.vhd : (23, 1): Cannot find referenced entity declaration "datapath".
+# Compile failure 1 Errors 0 Warnings  Analysis time :  15.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0122: RISCVCORE.vhd : (36, 2): Symbol "XXX_jumpbranch_select_to_pc_mux" has already been declared in this scope.
+# Error: COMP96_0122: RISCVCORE.vhd : (37, 2): Symbol "XXX_jumpbranchdestination_select_to_pc_mux" has already been declared in this scope.
+# Error: COMP96_0122: RISCVCORE.vhd : (38, 2): Symbol "pc_4_adder_pcplus4_to_pc_mux" has already been declared in this scope.
+# Compile failure 3 Errors 0 Warnings  Analysis time :  15.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0122: RISCVCORE.vhd : (36, 2): Symbol "pc_4_adder_pcplus4_to_pc_mux" has already been declared in this scope.
+# Compile failure 1 Errors 0 Warnings  Analysis time :  16.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile success 0 Errors 0 Warnings  Analysis time :  15.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/internalconnections.vhd
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile success 0 Errors 0 Warnings  Analysis time :  16.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/internalconnections.vhd
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0019: internalconnections.vhd : (60, 2): Keyword 'begin' expected.
+# Error: COMP96_0016: internalconnections.vhd : (60, 14): Design unit declaration expected.
+# Compile Entity "work"
+# Error: COMP96_0019: internalconnections.vhd : (60, 27): Keyword 'is' expected.
+# Error: COMP96_0019: internalconnections.vhd : (60, 27): Keyword 'end' expected.
+# Error: COMP96_0015: internalconnections.vhd : (60, 27): ';' expected.
+# Error: COMP96_0016: internalconnections.vhd : (60, 28): Design unit declaration expected.
+# Error: COMP96_0019: internalconnections.vhd : (121, 28): Keyword 'of' expected.
+# Error: COMP96_0018: internalconnections.vhd : (121, 28): Identifier expected.
+# Compile failure 8 Errors 0 Warnings  Analysis time :  15.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/internalconnections.vhd
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0367: internalconnections.vhd : (79, 20): Improper array length (16). Expected length is 32.
+# Error: COMP96_0367: internalconnections.vhd : (80, 22): Improper array length (16). Expected length is 32.
+# Error: COMP96_0367: internalconnections.vhd : (81, 21): Improper array length (16). Expected length is 32.
+# Error: COMP96_0100: internalconnections.vhd : (78, 9): The type of the actual in the port map does not match the "STD_ULOGIC" type of the "branch" port.
+# Error: COMP96_0207: internalconnections.vhd : (76, 2): No actual specified for local port "exception".
+# Compile failure 5 Errors 0 Warnings  Analysis time :  16.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/pc_mux.vhd
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile success 0 Errors 0 Warnings  Analysis time :  46.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/internalconnections.vhd
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0100: internalconnections.vhd : (78, 9): The type of the actual in the port map does not match the "STD_ULOGIC" type of the "branch" port.
+# Compile failure 1 Errors 0 Warnings  Analysis time :  16.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/internalconnections.vhd
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile success 0 Errors 0 Warnings  Analysis time :  16.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/internalconnections.vhd
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile success 0 Errors 0 Warnings  Analysis time :  16.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/internalconnections.vhd
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/program_count.vhd
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile success 0 Errors 0 Warnings  Analysis time :  46.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/internalconnections.vhd
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0122: internalconnections.vhd : (29, 2): Symbol "clock" has already been declared in this scope.
+# Error: COMP96_0122: internalconnections.vhd : (30, 2): Symbol "resetbar" has already been declared in this scope.
+# Compile failure 2 Errors 0 Warnings  Analysis time :  15.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/internalconnections.vhd
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile success 0 Errors 0 Warnings  Analysis time :  63.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/internalconnections.vhd
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile success 0 Errors 0 Warnings  Analysis time :  47.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/pc_mux.vhd $dsn/src/program_count.vhd $dsn/src/internalconnections.vhd $dsn/src/RISCVCORE.vhd
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile success 0 Errors 1 Warnings  Analysis time :  63.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/pc4adder.vhd
+# Compile Entity "program_counter"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile success 0 Errors 0 Warnings  Analysis time :  62.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/pc4adder.vhd
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile success 0 Errors 0 Warnings  Analysis time :  46.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/internalconnections.vhd
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0078: internalconnections.vhd : (106, 9): Unknown identifier "clk".
+# Error: COMP96_0078: internalconnections.vhd : (107, 9): Unknown identifier "reset".
+# Error: COMP96_0078: internalconnections.vhd : (108, 9): Unknown identifier "pcwrite".
+# Error: COMP96_0078: internalconnections.vhd : (109, 9): Unknown identifier "pcsource".
+# Error: COMP96_0133: internalconnections.vhd : (106, 9): Cannot find object declaration.
+# Error: COMP96_0112: internalconnections.vhd : (106, 9): "clk" does not match the formal name.
+# Error: COMP96_0207: internalconnections.vhd : (104, 2): No actual specified for local port "pcout".
+# Compile failure 7 Errors 0 Warnings  Analysis time :  15.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/program_counter.vhd
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile success 0 Errors 0 Warnings  Analysis time :  46.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/pc_mux.vhd $dsn/src/program_counter.vhd $dsn/src/internalconnections.vhd $dsn/src/RISCVCORE.vhd $dsn/src/pc4adder.vhd
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0078: internalconnections.vhd : (98, 9): Unknown identifier "pcplus4".
+# Error: COMP96_0133: internalconnections.vhd : (98, 9): Cannot find object declaration.
+# Error: COMP96_0112: internalconnections.vhd : (98, 9): "pcplus4" does not match the formal name.
+# Error: COMP96_0207: internalconnections.vhd : (95, 2): No actual specified for local port "clk".
+# Error: COMP96_0207: internalconnections.vhd : (95, 2): No actual specified for local port "reset".
+# Error: COMP96_0207: internalconnections.vhd : (95, 2): No actual specified for local port "pcwrite".
+# Error: COMP96_0207: internalconnections.vhd : (95, 2): No actual specified for local port "pcsource".
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "program_counter"
+# Warning: COMP96_0994: pc4adder.vhd : (6, 1): Multiple entity "program_counter" found in "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/pc4adder.vhd", "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/program_counter.vhd".
+# Error: COMP96_0078: pc4adder.vhd : (8, 23): Unknown identifier "std_logic_vector".
+# Error: COMP96_0064: pc4adder.vhd : (8, 23): Unknown type.
+# Error: COMP96_0078: pc4adder.vhd : (9, 23): Unknown identifier "std_logic_vector".
+# Error: COMP96_0064: pc4adder.vhd : (9, 23): Unknown type.
+# Compile Architecture "rtl" of Entity "program_counter"
+# Warning: COMP96_0994: pc4adder.vhd : (13, 1): Multiple architecture "rtl" of entity "program_counter" found in "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/pc4adder.vhd", "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/program_counter.vhd".
+# Error: COMP96_0078: program_counter.vhd : (8, 0): Unknown identifier "std_logic".
+# Error: COMP96_0064: program_counter.vhd : (8, 0): Unknown type.
+# Error: COMP96_0078: program_counter.vhd : (9, 0): Unknown identifier "std_logic".
+# Error: COMP96_0064: program_counter.vhd : (9, 0): Unknown type.
+# Error: COMP96_0078: program_counter.vhd : (10, 0): Unknown identifier "std_logic_vector".
+# Error: COMP96_0064: program_counter.vhd : (10, 0): Unknown type.
+# Error: COMP96_0078: program_counter.vhd : (11, 0): Unknown identifier "std_logic_vector".
+# Error: COMP96_0064: program_counter.vhd : (11, 0): Unknown type.
+# Error: COMP96_0078: program_counter.vhd : (12, 0): Unknown identifier "std_logic_vector".
+# Error: COMP96_0064: program_counter.vhd : (12, 0): Unknown type.
+# Error: COMP96_0056: pc4adder.vhd : (13, 1): Cannot find referenced entity declaration "program_counter".
+# Compile failure 22 Errors 3 Warnings  Analysis time :  32.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/internalconnections.vhd
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0078: internalconnections.vhd : (95, 35): Unknown identifier "pc4adder".
+# Error: COMP96_0055: internalconnections.vhd : (95, 30): Cannot find context item "work.pc4adder".
+# Compile failure 2 Errors 0 Warnings  Analysis time :  16.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/pc4adder.vhd
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile success 0 Errors 0 Warnings  Analysis time :  32.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/internalconnections.vhd
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0078: internalconnections.vhd : (95, 35): Unknown identifier "pc4adder".
+# Error: COMP96_0055: internalconnections.vhd : (95, 30): Cannot find context item "work.pc4adder".
+# Error: COMP96_0078: internalconnections.vhd : (106, 9): Unknown identifier "clk".
+# Error: COMP96_0078: internalconnections.vhd : (107, 9): Unknown identifier "reset".
+# Error: COMP96_0078: internalconnections.vhd : (108, 9): Unknown identifier "pcwrite".
+# Error: COMP96_0078: internalconnections.vhd : (109, 9): Unknown identifier "pcsource".
+# Error: COMP96_0133: internalconnections.vhd : (106, 9): Cannot find object declaration.
+# Error: COMP96_0112: internalconnections.vhd : (106, 9): "clk" does not match the formal name.
+# Error: COMP96_0207: internalconnections.vhd : (104, 2): No actual specified for local port "pcout".
+# Compile failure 9 Errors 0 Warnings  Analysis time :  16.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/pc4adder.vhd
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile success 0 Errors 0 Warnings  Analysis time :  16.0 [ms]
+# Library Manager: Library "RISCVCORE" contents cleared.
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/pc4adder.vhd
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Top-level unit(s) detected:
+# Entity => pc4adder
+# Compile success 0 Errors 0 Warnings  Analysis time :  32.0 [ms]
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/pc_mux.vhd $dsn/src/program_counter.vhd $dsn/src/internalconnections.vhd $dsn/src/RISCVCORE.vhd $dsn/src/pc4adder.vhd
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Error: COMP96_0078: pc4adder.vhd : (15, 33): Unknown identifier "unsigned".
+# Error: COMP96_0133: pc4adder.vhd : (15, 33): Cannot find object declaration.
+# Error: COMP96_0289: pc4adder.vhd : (15, 33): Prefix of index must be an array.
+# Error: COMP96_0149: pc4adder.vhd : (15, 33): Explicit type conversions are allowed between closely related types only.
+# Compile failure 4 Errors 1 Warnings  Analysis time :  63.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/pc4adder.vhd
+# Compile Entity "pc4adder"
+# Error: COMP96_0055: pc4adder.vhd : (4, 10): Cannot find context item "ieee.math".
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile failure 1 Errors 0 Warnings  Analysis time :  31.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/pc4adder.vhd
+# Compile Entity "pc4adder"
+# Error: COMP96_0078: pc4adder.vhd : (4, 5): Unknown identifier "math".
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile failure 1 Errors 0 Warnings  Analysis time :  31.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/pc4adder.vhd
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile success 0 Errors 0 Warnings  Analysis time :  47.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/pc_mux.vhd $dsn/src/program_counter.vhd $dsn/src/internalconnections.vhd $dsn/src/RISCVCORE.vhd $dsn/src/pc4adder.vhd
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "pc4adder"
+# Error: COMP96_0078: pc4adder.vhd : (9, 23): Unknown identifier "std_logic_vector".
+# Error: COMP96_0064: pc4adder.vhd : (9, 23): Unknown type.
+# Error: COMP96_0078: pc4adder.vhd : (10, 23): Unknown identifier "std_logic_vector".
+# Error: COMP96_0064: pc4adder.vhd : (10, 23): Unknown type.
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Error: COMP96_0078: pc4adder.vhd : (8, 0): Unknown identifier "std_logic_vector".
+# Error: COMP96_0064: pc4adder.vhd : (8, 0): Unknown type.
+# Error: COMP96_0078: pc4adder.vhd : (9, 0): Unknown identifier "std_logic_vector".
+# Error: COMP96_0064: pc4adder.vhd : (9, 0): Unknown type.
+# Error: COMP96_0056: pc4adder.vhd : (14, 1): Cannot find referenced entity declaration "pc4adder".
+# Compile failure 9 Errors 1 Warnings  Analysis time :  63.0 [ms]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/pc_mux.vhd $dsn/src/program_counter.vhd $dsn/src/internalconnections.vhd $dsn/src/RISCVCORE.vhd $dsn/src/pc4adder.vhd
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Compile success 0 Errors 1 Warnings  Analysis time :  78.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/pc_mux.vhd $dsn/src/program_counter.vhd $dsn/src/internalconnections.vhd $dsn/src/RISCVCORE.vhd $dsn/src/pc4adder.vhd
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "pc4adder"
+# Error: COMP96_0078: pc4adder.vhd : (9, 23): Unknown identifier "std_logic_vector".
+# Error: COMP96_0064: pc4adder.vhd : (9, 23): Unknown type.
+# Error: COMP96_0078: pc4adder.vhd : (10, 23): Unknown identifier "std_logic_vector".
+# Error: COMP96_0064: pc4adder.vhd : (10, 23): Unknown type.
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Error: COMP96_0078: pc4adder.vhd : (8, 0): Unknown identifier "std_logic_vector".
+# Error: COMP96_0064: pc4adder.vhd : (8, 0): Unknown type.
+# Error: COMP96_0078: pc4adder.vhd : (9, 0): Unknown identifier "std_logic_vector".
+# Error: COMP96_0064: pc4adder.vhd : (9, 0): Unknown type.
+# Error: COMP96_0056: pc4adder.vhd : (14, 1): Cannot find referenced entity declaration "pc4adder".
+# Compile failure 9 Errors 1 Warnings  Analysis time :  63.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/pc4adder.vhd
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile success 0 Errors 0 Warnings  Analysis time :  15.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/pc_mux.vhd $dsn/src/program_counter.vhd $dsn/src/internalconnections.vhd $dsn/src/RISCVCORE.vhd $dsn/src/pc4adder.vhd
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "pc4adder"
+# Error: COMP96_0078: pc4adder.vhd : (8, 23): Unknown identifier "std_logic_vector".
+# Error: COMP96_0064: pc4adder.vhd : (8, 23): Unknown type.
+# Error: COMP96_0078: pc4adder.vhd : (9, 23): Unknown identifier "std_logic_vector".
+# Error: COMP96_0064: pc4adder.vhd : (9, 23): Unknown type.
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Error: COMP96_0078: pc4adder.vhd : (8, 0): Unknown identifier "std_logic_vector".
+# Error: COMP96_0064: pc4adder.vhd : (8, 0): Unknown type.
+# Error: COMP96_0078: pc4adder.vhd : (9, 0): Unknown identifier "std_logic_vector".
+# Error: COMP96_0064: pc4adder.vhd : (9, 0): Unknown type.
+# Error: COMP96_0056: pc4adder.vhd : (13, 1): Cannot find referenced entity declaration "pc4adder".
+# Compile failure 9 Errors 1 Warnings  Analysis time :  63.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/pc_mux.vhd $dsn/src/program_counter.vhd $dsn/src/internalconnections.vhd $dsn/src/RISCVCORE.vhd $dsn/src/pc4adder.vhd
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "pc4adder"
+# Error: COMP96_0078: pc4adder.vhd : (8, 23): Unknown identifier "std_logic_vector".
+# Error: COMP96_0064: pc4adder.vhd : (8, 23): Unknown type.
+# Error: COMP96_0078: pc4adder.vhd : (9, 23): Unknown identifier "std_logic_vector".
+# Error: COMP96_0064: pc4adder.vhd : (9, 23): Unknown type.
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Error: COMP96_0078: pc4adder.vhd : (8, 0): Unknown identifier "std_logic_vector".
+# Error: COMP96_0064: pc4adder.vhd : (8, 0): Unknown type.
+# Error: COMP96_0078: pc4adder.vhd : (9, 0): Unknown identifier "std_logic_vector".
+# Error: COMP96_0064: pc4adder.vhd : (9, 0): Unknown type.
+# Error: COMP96_0056: pc4adder.vhd : (13, 1): Cannot find referenced entity declaration "pc4adder".
+# Compile failure 9 Errors 1 Warnings  Analysis time :  62.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/pc4adder.vhd
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile success 0 Errors 0 Warnings  Analysis time :  16.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/pc_mux.vhd $dsn/src/program_counter.vhd $dsn/src/internalconnections.vhd $dsn/src/RISCVCORE.vhd $dsn/src/pc4adder.vhd
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Error: COMP96_0078: pc4adder.vhd : (15, 33): Unknown identifier "unsigned".
+# Error: COMP96_0133: pc4adder.vhd : (15, 33): Cannot find object declaration.
+# Error: COMP96_0289: pc4adder.vhd : (15, 33): Prefix of index must be an array.
+# Error: COMP96_0149: pc4adder.vhd : (15, 33): Explicit type conversions are allowed between closely related types only.
+# Compile failure 4 Errors 1 Warnings  Analysis time :  62.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/pc4adder.vhd
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Error: COMP96_0093: pc4adder.vhd : (15, 45): The type of the actual in the subprogram call does not match the "INTEGER" type of the "ARG" parameter.
+# Compile failure 1 Errors 0 Warnings  Analysis time :  0.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/pc4adder.vhd
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Error: COMP96_0142: pc4adder.vhd : (15, 33): Improper use of qualified expression value.
+# Error: COMP96_0149: pc4adder.vhd : (15, 33): Explicit type conversions are allowed between closely related types only.
+# Compile failure 2 Errors 0 Warnings  Analysis time :  16.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/pc4adder.vhd
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile success 0 Errors 0 Warnings  Analysis time :  47.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/pc_mux.vhd $dsn/src/program_counter.vhd $dsn/src/internalconnections.vhd $dsn/src/RISCVCORE.vhd $dsn/src/pc4adder.vhd
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "pc4adder"
+# Error: COMP96_0078: pc4adder.vhd : (8, 23): Unknown identifier "std_logic_vector".
+# Error: COMP96_0064: pc4adder.vhd : (8, 23): Unknown type.
+# Error: COMP96_0078: pc4adder.vhd : (9, 23): Unknown identifier "std_logic_vector".
+# Error: COMP96_0064: pc4adder.vhd : (9, 23): Unknown type.
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Error: COMP96_0078: pc4adder.vhd : (8, 0): Unknown identifier "std_logic_vector".
+# Error: COMP96_0064: pc4adder.vhd : (8, 0): Unknown type.
+# Error: COMP96_0078: pc4adder.vhd : (9, 0): Unknown identifier "std_logic_vector".
+# Error: COMP96_0064: pc4adder.vhd : (9, 0): Unknown type.
+# Error: COMP96_0056: pc4adder.vhd : (13, 1): Cannot find referenced entity declaration "pc4adder".
+# Compile failure 9 Errors 1 Warnings  Analysis time :  63.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/pc4adder.vhd
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile success 0 Errors 0 Warnings  Analysis time :  31.0 [ms]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/pc_mux.vhd $dsn/src/program_counter.vhd $dsn/src/internalconnections.vhd $dsn/src/RISCVCORE.vhd $dsn/src/pc4adder.vhd
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Compile success 0 Errors 1 Warnings  Analysis time :  62.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/pc_mux.vhd $dsn/src/program_counter.vhd $dsn/src/pc4adder.vhd $dsn/src/internalconnections.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile success 0 Errors 1 Warnings  Analysis time :  62.0 [ms]
+# Library Manager: Library "RISCVCORE" contents cleared.
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/pc_mux.vhd $dsn/src/program_counter.vhd $dsn/src/pc4adder.vhd $dsn/src/internalconnections.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Compile success 0 Errors 1 Warnings  Analysis time :  78.0 [ms]
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/pc_mux.vhd $dsn/src/program_counter.vhd $dsn/src/pc4adder.vhd $dsn/src/internalconnections.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Compile success 0 Errors 1 Warnings  Analysis time :  93.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/instruction_memory.vhd
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile success 0 Errors 0 Warnings  Analysis time :  78.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/instruction_memory.vhd
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile success 0 Errors 0 Warnings  Analysis time :  31.0 [ms]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/pc_mux.vhd $dsn/src/program_counter.vhd $dsn/src/pc4adder.vhd $dsn/src/internalconnections.vhd $dsn/src/instruction_memory.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Entity => instruction_memory
+# Compile success 0 Errors 1 Warnings  Analysis time :  78.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/pc_mux.vhd $dsn/src/program_counter.vhd $dsn/src/pc4adder.vhd $dsn/src/internalconnections.vhd $dsn/src/instruction_memory.vhd $dsn/src/ifid.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/ifid.vhd" is empty.
+# Compile success 0 Errors 2 Warnings  Analysis time :  94.0 [ms]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/pc_mux.vhd $dsn/src/program_counter.vhd $dsn/src/pc4adder.vhd $dsn/src/internalconnections.vhd $dsn/src/instruction_memory.vhd $dsn/src/ifid.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/ifid.vhd" is empty.
+# Top-level unit(s) detected:
+# Entity => instruction_memory
+# Entity => internal_connections
+# Compile success 0 Errors 2 Warnings  Analysis time :  78.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/ifid.vhd
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile success 0 Errors 0 Warnings  Analysis time :  62.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/program_counter.vhd
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Error: COMP96_0617: program_counter.vhd : (25, 27): Assignment target incompatible with right side. Cannot convert 'STD_ULOGIC' to 'STD_LOGIC_VECTOR'.
+# Compile failure 1 Errors 0 Warnings  Analysis time :  16.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/program_counter.vhd
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile success 0 Errors 0 Warnings  Analysis time :  47.0 [ms]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/pc_mux.vhd $dsn/src/program_counter.vhd $dsn/src/pc4adder.vhd $dsn/src/internalconnections.vhd $dsn/src/instruction_memory.vhd $dsn/src/ifid.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Top-level unit(s) detected:
+# Entity => instruction_memory
+# Entity => internal_connections
+# Entity => ifid
+# Compile success 0 Errors 1 Warnings  Analysis time :  0.1 [s]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/instruction_memory.vhd
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile success 0 Errors 0 Warnings  Analysis time :  62.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/instruction_memory.vhd
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile success 0 Errors 0 Warnings  Analysis time :  47.0 [ms]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/pc_mux.vhd $dsn/src/program_counter.vhd $dsn/src/pc4adder.vhd $dsn/src/internalconnections.vhd $dsn/src/instruction_memory.vhd $dsn/src/ifid.vhd $dsn/src/IF_TESTBENCH.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/IF_TESTBENCH.vhd" is empty.
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Entity => ifid
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0134: internalconnections.vhd : (143, 28): Cannot find component declaration.
+# Compile failure 1 Errors 2 Warnings  Analysis time :  0.1 [s]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/internalconnections.vhd
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0134: internalconnections.vhd : (143, 28): Cannot find component declaration.
+# Compile failure 1 Errors 0 Warnings  Analysis time :  0.0 [ms]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/pc_mux.vhd $dsn/src/program_counter.vhd $dsn/src/pc4adder.vhd $dsn/src/internalconnections.vhd $dsn/src/instruction_memory.vhd $dsn/src/ifid.vhd $dsn/src/IF_TESTBENCH.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/IF_TESTBENCH.vhd" is empty.
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Entity => ifid
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0134: internalconnections.vhd : (143, 28): Cannot find component declaration.
+# Compile failure 1 Errors 2 Warnings  Analysis time :  94.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/pc_mux.vhd $dsn/src/program_counter.vhd $dsn/src/pc4adder.vhd $dsn/src/internalconnections.vhd $dsn/src/instruction_memory.vhd $dsn/src/ifid.vhd $dsn/src/IF_TESTBENCH.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/IF_TESTBENCH.vhd" is empty.
+# Compile success 0 Errors 2 Warnings  Analysis time :  0.1 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/pc_mux.vhd $dsn/src/program_counter.vhd $dsn/src/pc4adder.vhd $dsn/src/internalconnections.vhd $dsn/src/instruction_memory.vhd $dsn/src/ifid.vhd $dsn/src/IF_TESTBENCH.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/IF_TESTBENCH.vhd" is empty.
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile success 0 Errors 2 Warnings  Analysis time :  0.1 [s]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/IF_TESTBENCH.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/pc_mux.vhd $dsn/src/instruction_memory.vhd $dsn/src/ifid.vhd $dsn/src/internalconnections.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/IF_TESTBENCH.vhd" is empty.
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "pc_mux"
+# Compil
