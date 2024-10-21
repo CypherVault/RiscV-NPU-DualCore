@@ -1,0 +1,60 @@
+timestamp=1729550952960
+
+[~A]
+ModifyID=4
+Version=74
+
+[~MFT]
+0=13|0SingleStageRISCV.mgf|10579|1261
+1=7|1SingleStageRISCV.mgf|10271|6719
+3=7|3SingleStageRISCV.mgf|3079|1835
+
+[alu]
+A/behavioral=A/Behavioral 21|../src/ALU.vhd|16|1*10271
+BinW64/behavioral=3*3079
+I=0*7067
+I/behavioral=I/Behavioral 0*10579
+M=11|2|vf5|1729550952850|../src/ALU.vhd|0*6574*0xa54490d581ad95f6c51f790ac3e6ef971df812c3|0*6996*0x23b75c12e3e89f2ef000564498faa8c2
+M/behavioral=M/Behavioral 21|2|vf5|1729550952855|../src/ALU.vhd|0*7302*0xb361660074f374b750f6f577a420ea00906f1734|0*10494*0x20116f55b147878295aeff36dce7fc50
+R=../src/ALU.vhd|5
+Version=15.0.261.9132 (Windows64)|00000003789cd3f5370600015b00b0|fdc9c85601beb4171a6a25c637e2168ecf692b18dd2fd3632e6cfed6342305d5
+Version/behavioral=15.0.261.9132 (Windows64)|00000003789cd3f5370600015b00b0|35f8e56ee514308d50318f7abb190927faf8176ad6902a7357df79bb1a85bff41f6c67c35da7c96432d120f02b65e837
+
+[instruction_memory]
+A/behavioral=A/Behavioral 21|../src/instruction_memory.vhd|13|1*7543
+BinW64/behavioral=3*2094
+I=0*1965
+I/behavioral=I/Behavioral 0*5815
+M=11|2|vf5|1729550672932|../src/instruction_memory.vhd|0*1541*0xbb595a5c844fac7e0c33e2be9cba8e4cfab62bc6|0*1864*0x23b75c12e3e89f2ef000564498faa8c2
+M/behavioral=M/Behavioral 21|2|vf5|1729550952820|../src/instruction_memory.vhd|0*2215*0xbfb55e8638143b1847d22af9e4829c94f2c27e32|0*3042*0x20116f55b147878295aeff36dce7fc50
+R=../src/instruction_memory.vhd|5
+Version=15.0.261.9132 (Windows64)|00000003789cd3f5370600015b00b0|aa5cdeefbdd8ec0382d54b92f1958785a79624349d5b8f82688a21519974b3e62179ca881c6f1694f8d2f327d303a6bb
+Version/behavioral=15.0.261.9132 (Windows64)|00000003789cd3f5370600015b00b0|35f8e56ee514308d50318f7abb190927faf8176ad6902a7357df79bb1a85bff46199518e42b25bc757f494059414cda3
+
+[pc4adder]
+A/rtl=21|../src/pc4adder.vhd|13|1*6719
+BinW64/rtl=3*1835
+I=0*552
+I/rtl=0*5571
+M=11|2|vf5|1729550647676|../src/pc4adder.vhd|0*196*0xb93afb3400c7427eb3df9f364766c0b8393f4e4e|0*471*0x23b75c12e3e89f2ef000564498faa8c2
+M/rtl=21|2|vf5|1729550952776|../src/pc4adder.vhd|0*792*0x2ff0187ee5733659f8cf04b7a15dcda654d7b6ca|0*985*0x20116f55b147878295aeff36dce7fc50
+R=../src/pc4adder.vhd|6
+Version=15.0.261.9132 (Windows64)|00000003789cd3f5370600015b00b0|ee323dfc90fea115313056ec4bfb8e52c6bbd1a65b0a1afe728fa8b90cb39ee1ecd64781e0e5fd5ed50ae4e93e5a725f
+Version/rtl=15.0.261.9132 (Windows64)|00000003789cd3f5370600015b00b0|9dbb47eebe7da777b751efca131652c51c2794e7dd7628d154ceaefd424a7dda
+
+[program_counter]
+A/rtl=21|../src/program_counter.vhd|16|1*9062
+BinW64/rtl=3*2426
+I=0*4622
+I/rtl=0*6076
+M=11|2|vf5|1729550706245|../src/program_counter.vhd|0*4154*0xc81f69521eea4bccd69e837bdf80fa9bfae858a6|0*4527*0x23b75c12e3e89f2ef000564498faa8c2
+M/rtl=21|2|vf5|1729550952834|../src/program_counter.vhd|0*4869*0x48e7c64a0467130e041580c7d65b9255e5603d5e|0*5218*0x20116f55b147878295aeff36dce7fc50
+R=../src/program_counter.vhd|6
+Version=15.0.261.9132 (Windows64)|00000003789cd3f5370600015b00b0|8f4c9b71392661bb64aaf1fd1ecdee3884ee5168192b3e6ad34e2bbdf84bdd45cfddbbe6d7561d522b701ff29ef98edb
+Version/rtl=15.0.261.9132 (Windows64)|00000003789cd3f5370600015b00b0|9dbb47eebe7da777b751efca131652c5f9dd9f2e70904c3ffbf1fd81902507b2
+
+[~U]
+alu=ALU 11|0*6327|
+instruction_memory=11|0*1317|
+pc4adder=11|0*0|
+program_counter=11|0*3923|

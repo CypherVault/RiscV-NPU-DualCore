@@ -1,0 +1,44 @@
+# Design: Design SingleStageRISCV already active.
+# DESIGN: Default Design Language: VHDL
+# DESIGN: Default BDE Language: VHDL
+# DESIGN: Flow Manager: Not Defined
+# Warning: Could not write to "C:/Users/chrisnielsen/Desktop/Senior Design Project/Single Stage Implementation/SingleStageRiscV/SingleStageRISCV/bde.set" file.
+# Warning: Could not write to "C:/Users/chrisnielsen/Desktop/Senior Design Project/Single Stage Implementation/SingleStageRiscV/SingleStageRISCV/bde.set" file.
+# Warning: Could not write to "C:/Users/chrisnielsen/Desktop/Senior Design Project/Single Stage Implementation/SingleStageRiscV/SingleStageRISCV/bde.set" file.
+# Warning: Could not write to "C:/Users/chrisnielsen/Desktop/Senior Design Project/Single Stage Implementation/SingleStageRiscV/SingleStageRISCV/bde.set" file.
+# Warning: You do not have valid license to open Block Diagram files. Contact Aldec for ordering information - sales@aldec.com.
+# Warning: Could not write to "C:/Users/chrisnielsen/Desktop/Senior Design Project/Single Stage Implementation/SingleStageRiscV/SingleStageRISCV/bde.set" file.
+# Warning: Could not write to "C:/Users/chrisnielsen/Desktop/Senior Design Project/Single Stage Implementation/SingleStageRiscV/SingleStageRISCV/bde.set" file.
+# Warning: Could not write to "C:/Users/chrisnielsen/Desktop/Senior Design Project/Single Stage Implementation/SingleStageRiscV/SingleStageRISCV/bde.set" file.
+acom -reorder -O3 -e 100 -work SingleStageRISCV -2002  $dsn/src/pc4adder.vhd
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Top-level unit(s) detected:
+# Entity => pc4adder
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+acom -O3 -e 100 -work SingleStageRISCV -2002  $dsn/src/pc4adder.vhd $dsn/src/instruction_memory.vhd
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+acom -O3 -e 100 -work SingleStageRISCV -2002  $dsn/src/pc4adder.vhd $dsn/src/instruction_memory.vhd $dsn/src/program_counter.vhd
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile success 0 Errors 0 Warnings  Analysis time :  94.0 [ms]
+acom -O3 -e 100 -work SingleStageRISCV -2002  $dsn/src/pc4adder.vhd $dsn/src/instruction_memory.vhd $dsn/src/program_counter.vhd $dsn/src/ALU.vhd
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.2 [s]

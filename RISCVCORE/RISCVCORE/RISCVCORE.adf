@@ -71,3 +71,7 @@ extension10=do;tcl;pl
 name11=Waveform Files
 directory11=C:\Users\maxpro\Desktop\440Project RISCVCORE\RISCVCORE\RISCVCORE\
 extension11=asdb;awc;asdbc;asdbe
+[HierarchyViewer]
+HierarchyInformation=
+ShowHide=ShowTopLevel
+Selected=

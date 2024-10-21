@@ -1,0 +1,4 @@
+.\src\pc4adder.vhd
+.\src\instruction_memory.vhd
+.\src\program_counter.vhd
+.\src\ALU.vhd

@@ -1,0 +1,34 @@
+[Project]
+Current Flow=Generic
+VCS=0
+version=4
+Current Config=compile
+[Configurations]
+compile=SingleStageRISCV
+[Library]
+SingleStageRISCV=.\SingleStageRISCV\SingleStageRISCV.lib
+[$LibMap$]
+SingleStageRISCV=.
+Active_lib=
+[Settings]
+FLOW_TYPE=HDL
+LANGUAGE=VHDL
+REFRESH_FLOW=1
+FLOWTOOLS=NONE
+FAMILY=
+[Files.Data]
+.\src\pc4adder.vhd=VHDL Source Code
+.\src\instruction_memory.vhd=VHDL Source Code
+.\src\program_counter.vhd=VHDL Source Code
+.\src\ALU.vhd=VHDL Source Code
+.\src\reference.txt=Text File
+[Files]
+/pc4adder.vhd=-1
+/instruction_memory.vhd=-1
+/program_counter.vhd=-1
+/ALU.vhd=-1
+/reference.txt=-1
+[HierarchyViewer]
+HierarchyInformation=pc4adder|rtl|0
+ShowHide=ShowTopLevel
+Selected=
