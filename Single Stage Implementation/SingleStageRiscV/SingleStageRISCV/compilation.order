@@ -2,3 +2,5 @@
 .\src\instruction_memory.vhd
 .\src\program_counter.vhd
 .\src\ALU.vhd
+.\src\registers.vhd
+.\src\immediategen.vhd

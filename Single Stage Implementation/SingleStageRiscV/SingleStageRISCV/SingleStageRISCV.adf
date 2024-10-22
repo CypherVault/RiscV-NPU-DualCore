@@ -22,12 +22,15 @@ FAMILY=
 .\src\program_counter.vhd=VHDL Source Code
 .\src\ALU.vhd=VHDL Source Code
 .\src\reference.txt=Text File
+.\src\registers.vhd=VHDL Source Code
+.\src\immediategen.vhd=VHDL Source Code
 [Files]
 /pc4adder.vhd=-1
 /instruction_memory.vhd=-1
 /program_counter.vhd=-1
 /ALU.vhd=-1
-/reference.txt=-1
+/registers.vhd=-1
+/immediategen.vhd=-1
 [HierarchyViewer]
 HierarchyInformation=pc4adder|rtl|0
 ShowHide=ShowTopLevel
