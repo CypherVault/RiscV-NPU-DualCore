@@ -4,3 +4,11 @@ i<>.\src\program_counter.vhd
 i<>.\src\ALU.vhd
 i<>.\src\registers.vhd
 i<>.\src\immediategen.vhd
+i<>.\src\control_unit.vhd
+i<>.\src\branch_and.vhd
+i<>.\src\pc_mux.vhd
+i<>.\src\alusrcmuxb.vhd
+i<>.\src\alucontrol.vhd
+i<>.\src\Data_Memory.vhd
+i<>.\src\writebackmux.vhd
+i<>.\src\datapath.vhd
