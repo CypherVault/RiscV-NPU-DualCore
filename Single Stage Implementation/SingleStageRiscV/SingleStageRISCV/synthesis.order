@@ -16,3 +16,5 @@ i<>.\src\ifid.vhd
 i<>.\src\idex.vhd
 i<>.\src\exmem.vhd
 i<>.\src\memwb.vhd
+i<>.\src\forwarding_unit.vhd
+i<>.\src\hazardunit.vhd
