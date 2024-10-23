@@ -37,6 +37,7 @@ FAMILY=
 .\src\memwb.vhd=VHDL Source Code
 .\src\forwarding_unit.vhd=VHDL Source Code
 .\src\hazardunit.vhd=VHDL Source Code
+.\src\pcimmadder.vhd=VHDL Source Code
 [Files]
 /datapath.vhd=-1
 /pc4adder.vhd=-1
@@ -58,7 +59,8 @@ FAMILY=
 /memwb.vhd=-1
 /forwarding_unit.vhd=-1
 /hazardunit.vhd=-1
+/pcimmadder.vhd=-1
 [HierarchyViewer]
-HierarchyInformation=pc4adder|rtl|0
+HierarchyInformation=
 ShowHide=ShowTopLevel
 Selected=

@@ -4,7 +4,7 @@ Version=15.0
 singlestageriscv=.\SingleStageRISCV\SingleStageRISCV.adf
 [Browser]
 sort=order
-mode=none
+mode=asc
 [Order]
 order=1
 [Expand]

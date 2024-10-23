@@ -1,0 +1,106 @@
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/ifid.vhd
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile success 0 Errors 0 Warnings  Analysis time :  94.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/IF_TESTBENCH.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/pc_mux.vhd $dsn/src/instruction_memory.vhd $dsn/src/ifid.vhd $dsn/src/internalconnections.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/IF_TESTBENCH.vhd" is empty.
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0078: internalconnections.vhd : (156, 9): Unknown identifier "rst".
+# Error: COMP96_0133: internalconnections.vhd : (156, 9): Cannot find object declaration.
+# Error: COMP96_0112: internalconnections.vhd : (156, 9): "rst" does not match the formal name.
+# Error: COMP96_0207: internalconnections.vhd : (153, 3): No actual specified for local port "rstbar".
+# Error: COMP96_0207: internalconnections.vhd : (153, 3): No actual specified for local port "ifidwrite".
+# Error: COMP96_0207: internalconnections.vhd : (153, 3): No actual specified for local port "ifidflush".
+# Error: COMP96_0207: internalconnections.vhd : (153, 3): No actual specified for local port "pcout".
+# Error: COMP96_0207: internalconnections.vhd : (153, 3): No actual specified for local port "instruction".
+# Compile failure 8 Errors 2 Warnings  Analysis time :  0.1 [s]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/IF_TESTBENCH.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/pc_mux.vhd $dsn/src/instruction_memory.vhd $dsn/src/ifid.vhd $dsn/src/internalconnections.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/IF_TESTBENCH.vhd" is empty.
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Error: COMP96_0078: ifid.vhd : (31, 19): Unknown identifier "rstbar".
+# Error: COMP96_0348: ifid.vhd : (31, 19): Name on sensitivity list must denote a signal.
+# Error: COMP96_0078: ifid.vhd : (33, 12): Unknown identifier "rstbar".
+# Error: COMP96_0133: ifid.vhd : (33, 12): Cannot find object declaration.
+# Error: COMP96_0077: ifid.vhd : (33, 12): Undefined type of expression. Expected type 'BOOLEAN'.
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0078: internalconnections.vhd : (156, 9): Unknown identifier "rst".
+# Error: COMP96_0133: internalconnections.vhd : (156, 9): Cannot find object declaration.
+# Error: COMP96_0112: internalconnections.vhd : (156, 9): "rst" does not match the formal name.
+# Error: COMP96_0207: internalconnections.vhd : (153, 3): No actual specified for local port "resetbar".
+# Error: COMP96_0207: internalconnections.vhd : (153, 3): No actual specified for local port "ifidwrite".
+# Error: COMP96_0207: internalconnections.vhd : (153, 3): No actual specified for local port "ifidflush".
+# Error: COMP96_0207: internalconnections.vhd : (153, 3): No actual specified for local port "pcout".
+# Error: COMP96_0207: internalconnections.vhd : (153, 3): No actual specified for local port "instruction".
+# Compile failure 13 Errors 2 Warnings  Analysis time :  63.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/internalconnections.vhd
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0078: internalconnections.vhd : (156, 32): Unknown identifier "rstbar".
+# Compile failure 1 Errors 0 Warnings  Analysis time :  16.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/ifid.vhd
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile success 0 Errors 0 Warnings  Analysis time :  32.0 [ms]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/IF_TESTBENCH.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/pc_mux.vhd $dsn/src/instruction_memory.vhd $dsn/src/ifid.vhd $dsn/src/internalconnections.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/IF_TESTBENCH.vhd" is empty.
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0078: internalconnections.vhd : (156, 32): Unknown identifier "rstbar".
+# Compile failure 1 Errors 2 Warnings  Analysis time :  93.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/internalconnections.vhd
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0078: internalconnections.vhd : (156, 32): Unknown identifier "rstbar".
+# Compile failure 1 Errors 0 Warnings  Analysis time :  16.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/internalconnections.vhd
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile success 0 Errors 0 Warnings  Analysis time :  47.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/internalconnections.vhd
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0207: internalconnections.vhd : (153, 3): No actual specified for local port "ifidflush".
+# Compile failure 1 Errors 0 Warnings  Analysis time :  0.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/internalconnections.vhd
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile success 0 Errors 0 Warnings  Analysis time :  16.0 [ms]

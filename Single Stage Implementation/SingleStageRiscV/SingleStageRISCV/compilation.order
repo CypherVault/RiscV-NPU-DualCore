@@ -18,3 +18,4 @@
 .\src\memwb.vhd
 .\src\forwarding_unit.vhd
 .\src\hazardunit.vhd
+.\src\pcimmadder.vhd

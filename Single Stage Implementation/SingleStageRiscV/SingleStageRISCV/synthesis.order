@@ -18,3 +18,4 @@ i<>.\src\exmem.vhd
 i<>.\src\memwb.vhd
 i<>.\src\forwarding_unit.vhd
 i<>.\src\hazardunit.vhd
+i<>.\src\pcimmadder.vhd

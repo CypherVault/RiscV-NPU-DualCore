@@ -37,8 +37,8 @@ architecture structural of internal_connections is
 		
 		
 	--TO PC MUX
-	signal XXX_jumpbranchselect_to_pc_mux : std_logic;					--XXX & PC MUX
-	signal XXX_jumpbranchdestinationselect_to_pc_mux : std_logic_vector(15 downto 0);	    --XXX & PC MUX
+	signal branchand_jumpbranchselect_to_pc_mux : std_logic;					--XXX & PC MUX
+	-- signal XXX_jumpbranchdestinationselect_to_pc_mux : std_logic_vector(15 downto 0);	    --XXX & PC MUX		   --deprecated
 	signal pc_4_adder_pcplus4_to_pc_mux : std_logic_vector(15 downto 0);					--PC4ADDER & PC MUX
 		
 	--TO PC 4 ADDER
@@ -58,7 +58,7 @@ architecture structural of internal_connections is
 	
 	signal instruction_memory_instruction_to_ifid : std_logic_vector(31 downto 0);						    --instruction memory & ifid
 	signal pc_pcout_to_ifid : std_logic_vector(15 downto 0);						    --PC & ifid		  
-	signal XXX_ifidwrite_to_ifid : std_logic;						    				--XXX & ifid
+	signal hazardunit_ifidwrite_to_ifid : std_logic;						    				--XXX & ifid
 	signal XXX_ifidflush_to_ifid : std_logic;						    				--XXX & ifid
 
 --------------------------------------------------------------------------END		
@@ -110,7 +110,7 @@ begin
     port map (
         branch => XXX_jumpbranchselect_to_pc_mux,  
         pcplus4 => pc_4_adder_pcplus4_to_pc_mux,
-        pcplusimm => XXX_jumpbranchdestinationselect_to_pc_mux,
+        pcplusimm => _jumpbranchdestinationselect_to_pc_mux,
         pcsource => pc_mux_pcsource_to_pc
     );
 
@@ -153,9 +153,9 @@ pc_pcout_to_pc4adder <= pc_pcout_to_instruction_memory;
 	 ifid_instance: entity work.ifid
     port map (
         clk                 => clock,
-        rst                 => resetbar,
-        ifidwrite           => XXX_ifidwrite_to_ifid,  
-        ifidflush           => XXX_ifidflush_to_ifid,
+        rstbar              => resetbar,
+        ifidwrite           => hazardunit_ifidwrite_to_ifid,  
+        ifidflush           => XXX_ifidflush_to_ifid,		 --UNUSED- DO NOT IMPLEMENT
         pcout               => pc_pcout_to_ifid,
         instruction         => instruction_memory_instruction_to_ifid,
         ifidinstructionout  => open,  -- Connect to appropriate signal if needed
