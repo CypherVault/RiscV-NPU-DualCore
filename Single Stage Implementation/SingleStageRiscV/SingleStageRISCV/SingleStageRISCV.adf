@@ -31,6 +31,10 @@ FAMILY=
 .\src\alucontrol.vhd=VHDL Source Code
 .\src\Data_Memory.vhd=VHDL Source Code
 .\src\writebackmux.vhd=VHDL Source Code
+.\src\ifid.vhd=VHDL Source Code
+.\src\idex.vhd=VHDL Source Code
+.\src\exmem.vhd=VHDL Source Code
+.\src\memwb.vhd=VHDL Source Code
 [Files]
 /datapath.vhd=-1
 /pc4adder.vhd=-1
@@ -46,6 +50,10 @@ FAMILY=
 /alucontrol.vhd=-1
 /Data_Memory.vhd=-1
 /writebackmux.vhd=-1
+/ifid.vhd=-1
+/idex.vhd=-1
+/exmem.vhd=-1
+/memwb.vhd=-1
 [HierarchyViewer]
 HierarchyInformation=pc4adder|rtl|0
 ShowHide=ShowTopLevel

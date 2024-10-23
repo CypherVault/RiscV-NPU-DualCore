@@ -6,14 +6,23 @@ entity ControlUnit is
     -- Input
     opcode : in std_logic_vector(6 downto 0);
     
-    -- Outputs
-    ALUSrc : out std_logic;
+    -- Outputs		
+	
+   	--WB
     MemtoReg : out std_logic;
     RegWrite : out std_logic;
+	
+	--M
     MemRead : out std_logic;
     MemWrite : out std_logic;
-    Branch : out std_logic;
+    Branch : out std_logic;	   
+	
+	--EX
+	ALUSrc : out std_logic;
     ALUOp : out std_logic_vector(1 downto 0)
+	
+	
+	
   );
 end entity ControlUnit;
 

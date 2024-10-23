@@ -12,3 +12,7 @@
 .\src\alucontrol.vhd
 .\src\Data_Memory.vhd
 .\src\writebackmux.vhd
+.\src\ifid.vhd
+.\src\idex.vhd
+.\src\exmem.vhd
+.\src\memwb.vhd
