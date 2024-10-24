@@ -1,13 +1,13 @@
-timestamp=1729649169213
+timestamp=1729736290058
 
 [~A]
-ModifyID=62
+ModifyID=69
 Version=74
 
 [~MFT]
-0=7|0SingleStageRISCV.mgf|132531|94660
-1=1|1SingleStageRISCV.mgf|430325|393056
-3=1|3SingleStageRISCV.mgf|178652|166457
+0=11|0SingleStageRISCV.mgf|139944|100306
+1=1|1SingleStageRISCV.mgf|435104|396154
+3=1|3SingleStageRISCV.mgf|179995|167103
 
 [alu]
 A/behavioral=A/Behavioral 21|../src/ALU.vhd|15|1*401980
@@ -54,15 +54,15 @@ Version=15.0.261.9132 (Windows64)|00000003789cd3f5370600015b00b0|c3b945057753773
 Version/behavioral=15.0.261.9132 (Windows64)|00000003789cd3f5370600015b00b0|35f8e56ee514308d50318f7abb190927faf8176ad6902a7357df79bb1a85bff459e04a8c79b5ea230c040a04ae6cb248
 
 [controlunit]
-A/behavioral=A/Behavioral 21|../src/control_unit.vhd|29|1*408661
-BinW64/behavioral=3*170632
-I=0*108109
-I/behavioral=I/Behavioral 0*128437
-M=11|2|vf5|1729642278840|../src/control_unit.vhd|0*107609*0xedda1d0d56b96ea435c72b0456530efacc93d97d|0*108021*0x23b75c12e3e89f2ef000564498faa8c2
-M/behavioral=M/Behavioral 21|2|vf5|1729647696539|../src/control_unit.vhd|0*108312*0xfb6c6faabcb054ade6d024547f19e3045d6161e6|0*109124*0x20116f55b147878295aeff36dce7fc50
-R=../src/control_unit.vhd|4
-Version=15.0.261.9132 (Windows64)|00000003789cd3f5370600015b00b0|49bc9eef0cc431a4d98f9f55b61f1581a1b72c74b362bfaf9c7235d71f436ac2d0e7aced7d6825f6d2856499679acde5
-Version/behavioral=15.0.261.9132 (Windows64)|00000003789cd3f5370600015b00b0|35f8e56ee514308d50318f7abb190927faf8176ad6902a7357df79bb1a85bff4579b76f2e939fae2cbbee8a9a9962030
+A/behavioral=A/Behavioral 21|../src/control_unit.vhd|29|1*433181
+BinW64/behavioral=3*179031
+I=0*133572
+I/behavioral=I/Behavioral 0*136351
+M=11|2|vf5|1729733807382|../src/ifid.vhd|0*133019*0xcc35bb1319955eaac24baf3497793511fb00176f|0*133492*0x23b75c12e3e89f2ef000564498faa8c2
+M/behavioral=M/Behavioral 21|2|vf5|1729735448879|../src/control_unit.vhd|0*135266*0xdceae2371969498ef0bb9803ae30db7bb1c773e1|0*136249*0x20116f55b147878295aeff36dce7fc50
+R=../src/ifid.vhd|4
+Version=15.0.261.9132 (Windows64)|00000003789cd3f5370600015b00b0|49bc9eef0cc431a4d98f9f55b61f1581a1b72c74b362bfaf9c7235d71f436ac28e7a20f68c7ff4e90267877cb5bd92f6
+Version/behavioral=15.0.261.9132 (Windows64)|00000003789cd3f5370600015b00b0|35f8e56ee514308d50318f7abb190927faf8176ad6902a7357df79bb1a85bff4ab0b00a7d4acc8903c07842cd3f76009
 
 [data_memory]
 A/behavioral=A/Behavioral 21|../src/Data_Memory.vhd|16|1*413285
@@ -191,6 +191,17 @@ R=../src/pc_mux.vhd|4
 Version=15.0.261.9132 (Windows64)|00000003789cd3f5370600015b00b0|5f9eecf67d342ff1ac665bd4b3227152be13ed5561d2592677ec3bd174744612
 Version/behavioral=15.0.261.9132 (Windows64)|00000003789cd3f5370600015b00b0|35f8e56ee514308d50318f7abb190927faf8176ad6902a7357df79bb1a85bff4bdb77375d9441d37d59eafc614a8124a
 
+[pcimmadder]
+A/behavior=21|../src/pcimmadder.vhd|13|1*435104
+BinW64/behavior=3*179995
+I=0*139259
+I/behavior=0*139944
+M=11|2|vf5|1729736290001|../src/pcimmadder.vhd|0*138851*0x75160251ec30e6b433b7b905021f2a8645caf235|0*139174*0x23b75c12e3e89f2ef000564498faa8c2
+M/behavior=21|2|vf5|1729736290003|../src/pcimmadder.vhd|0*139501*0x86724a9e395923471c39cf6bf4b76f6cb29bfb86|0*139847*0x20116f55b147878295aeff36dce7fc50
+R=../src/pcimmadder.vhd|5
+Version=15.0.261.9132 (Windows64)|00000003789cd3f5370600015b00b0|a19b80d2685a03172b5e76ed0337aa3dedcb71ea900e6ccddd32e4a4904d09fe25015c5c21e2a1f943e6fa700a8e3be5
+Version/behavior=15.0.261.9132 (Windows64)|00000003789cd3f5370600015b00b0|f9bccf16e2dce5a640f0ad5e8eaa0283e08d679eaf1bc9de9439630905b37e5f29fbdedc5a8c31d5d46dddd7a4856190
+
 [program_counter]
 A/rtl=21|../src/program_counter.vhd|16|1*400771
 BinW64/rtl=3*167046
@@ -229,7 +240,7 @@ alu=ALU 11|0*42966|
 alucontrol=11|0*40898|
 alusrcmuxb=ALUSrcMuxB 11|0*38746|
 branchand=BranchAND 11|0*36187|
-controlunit=ControlUnit 11|0*107356|
+controlunit=ControlUnit 11|0*132745|
 data_memory=11|0*56238|
 exmem=11|0*119121|
 forwardingunit=ForwardingUnit 11|0*124692|
@@ -242,6 +253,7 @@ internal_connections=11|0*62275|
 memwb=11|0*122487|
 pc4adder=11|0*0|
 pc_mux=11|0*37460|
+pcimmadder=11|0*138636|
 program_counter=11|0*3923|
 regfile=11|0*15974|
 writebackmux=11|0*60846|

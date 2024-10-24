@@ -46,7 +46,7 @@ architecture structural of internal_connections is
 		
 	--TO PC	
 	signal pc_mux_pcsource_to_pc : std_logic_vector(15 downto 0);						    --PC MUX & PC
-	signal XXX_pcwrite_to_pc :  std_logic;					    							--XXX and PC
+	signal hazardunit_pcwrite_to_pc :  std_logic;					    							--XXX and PC
 	
 	
 	--TO INSTRUCTION MEMORY
@@ -128,7 +128,7 @@ begin
     port map (
         clk      => clock,
         reset    => resetbar,
-        pcwrite  => XXX_pcwrite_to_pc,
+        pcwrite  => hazardunit_pcwrite_to_pc,
         pcsource => pc_mux_pcsource_to_pc,
         pcout    => pc_pcout_to_instruction_memory
     );
