@@ -14,10 +14,11 @@ entity ifid is
         instruction         : in  STD_LOGIC_VECTOR(31 downto 0);
         ifidinstructionout  : out STD_LOGIC_VECTOR(31 downto 0);
         ifidpcout           : out STD_LOGIC_VECTOR(15 downto 0);
-		rs1_out				 : out STD_LOGIC_VECTOR(4 downto 0);
-		rs2_out				  : out STD_LOGIC_VECTOR(4 downto 0);
 		rd_out              : out STD_LOGIC_VECTOR(4 downto 0)
-		  
+		
+		
+		
+		
 		
     );
 end ifid;
@@ -26,11 +27,6 @@ architecture Behavioral of ifid is
     signal instruction_reg : STD_LOGIC_VECTOR(31 downto 0);
     signal pcout_reg       : STD_LOGIC_VECTOR(15 downto 0);
 	signal rdout_reg       : STD_LOGIC_VECTOR(4 downto 0);
-	signal rs1_reg : std_logic_vector(4 downto 0);
-    signal rs2_reg : std_logic_vector(4 downto 0);
-	
-	
-	
 begin
     process (clk, rstbar)
     begin
@@ -38,8 +34,8 @@ begin
             instruction_reg <= (others => '0');
             pcout_reg       <= (others => '0');
 			rdout_reg   <= (others => '0');	 
-			rs1_reg	    <= (others => '0');	
-			rs2_reg	    <= (others => '0');	
+			
+			
 			
 			
 			
@@ -48,25 +44,18 @@ begin
                 instruction_reg <= (others => '0');
                 pcout_reg       <= (others => '0');
 				rdout_reg   <= (others => '0');	
-				rs1_reg	    <= (others => '0');	
-				rs2_reg	    <= (others => '0');
+				
 				
 				
             elsif ifidwrite = '1' then
                 instruction_reg <= instruction;
                 pcout_reg       <= pcout;
-				rdout_reg   <= instruction(11 downto 7); --rd bitfield	
-				rs1_reg <= instruction(19 downto 15);
-    			rs2_reg <= instruction(24 downto 20);
-				
-				
+				rdout_reg   <= instruction(11 downto 7); --rd bitfield
             end if;
         end if;
     end process;
 
     ifidinstructionout <= instruction_reg;
     ifidpcout          <= pcout_reg;  
-	rd_out          <= rdout_reg; 
-	rs1_out			<=   rs1_reg;
-	rs2_out			<=  rs2_reg;
+	rd_out          <= rdout_reg;
 end Behavioral;

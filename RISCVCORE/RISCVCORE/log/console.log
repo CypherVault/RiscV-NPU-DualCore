@@ -1,0 +1,107 @@
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/ifid.vhd
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile success 0 Errors 0 Warnings  Analysis time :  94.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/ifid.vhd
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Error: COMP96_0078: ifid.vhd : (59, 5): Unknown identifier "rs1".
+# Error: COMP96_0133: ifid.vhd : (59, 5): Cannot find object declaration.
+# Error: COMP96_0078: ifid.vhd : (60, 8): Unknown identifier "rs2".
+# Error: COMP96_0133: ifid.vhd : (60, 8): Cannot find object declaration.
+# Compile failure 4 Errors 0 Warnings  Analysis time :  16.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/ifid.vhd
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile success 0 Errors 0 Warnings  Analysis time :  31.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/ifid.vhd
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile success 0 Errors 0 Warnings  Analysis time :  47.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/IF_TESTBENCH.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/pc_mux.vhd $dsn/src/instruction_memory.vhd $dsn/src/ifid.vhd $dsn/src/internalconnections.vhd $dsn/src/control_unit.vhd $dsn/src/hazardunit.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/IF_TESTBENCH.vhd" is empty.
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Error: COMP96_0010: internalconnections.vhd : (114, 22): Invalid literal.
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0033: internalconnections.vhd : (114, 22): Missing actual.
+# Error: COMP96_0724: internalconnections.vhd : (114, 22): ',' or ')' expected.
+# Error: COMP96_0015: internalconnections.vhd : (114, 60): ';' expected.
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile failure 4 Errors 2 Warnings  Analysis time :  0.2 [s]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/control_unit.vhd
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile success 0 Errors 0 Warnings  Analysis time :  31.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/immediategen.vhd
+# Compile Entity "ImmGen"
+# Error: COMP96_0018: immediategen.vhd : (11, 3): Identifier expected.
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Error: COMP96_0056: immediategen.vhd : (14, 1): Cannot find referenced entity declaration "ImmGen".
+# Compile failure 2 Errors 0 Warnings  Analysis time :  0.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/immediategen.vhd
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile success 0 Errors 0 Warnings  Analysis time :  62.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/pcimmadder.vhd
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile success 0 Errors 0 Warnings  Analysis time :  15.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/registers.vhd
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile success 0 Errors 0 Warnings  Analysis time :  31.0 [ms]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/IF_TESTBENCH.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/pc_mux.vhd $dsn/src/instruction_memory.vhd $dsn/src/ifid.vhd $dsn/src/internalconnections.vhd $dsn/src/control_unit.vhd $dsn/src/hazardunit.vhd $dsn/src/immediategen.vhd $dsn/src/pcimmadder.vhd $dsn/src/registers.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/IF_TESTBENCH.vhd" is empty.
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Top-level unit(s) detected:
+# Entity => pc4adder
+# Entity => program_counter
+# Entity => regfile
+# Entity => pc_mux
+# Entity => pcimmadder
+# Entity => ifid
+# Entity => instruction_memory
+# Entity => ImmGen
+# Entity => hazard_unit
+# Entity => ControlUnit
+# Error: COMP96_0010: internalconnections.vhd : (114, 22): Invalid literal.
+# Error: COMP96_0033: internalconnections.vhd : (114, 22): Missing actual.
+# Error: COMP96_0724: internalconnections.vhd : (114, 22): ',' or ')' expected.
+# Error: COMP96_0015: internalconnections.vhd : (114, 60): ';' expected.
+# Compile failure 4 Errors 2 Warnings  Analysis time :  0.2 [s]

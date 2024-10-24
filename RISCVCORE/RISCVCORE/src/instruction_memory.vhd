@@ -3,8 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
 entity instruction_memory is
-    Port ( 
-        
+    Port ( 	
         pc_address : in STD_LOGIC_VECTOR(15 downto 0);
         instruction : out STD_LOGIC_VECTOR(31 downto 0)
     );

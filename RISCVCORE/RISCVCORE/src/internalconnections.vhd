@@ -38,8 +38,9 @@ architecture structural of internal_connections is
 		
 	--TO PC MUX
 	signal branchand_jumpbranchselect_to_pc_mux : std_logic;					--XXX & PC MUX
-	-- signal XXX_jumpbranchdestinationselect_to_pc_mux : std_logic_vector(15 downto 0);	    --XXX & PC MUX		   --deprecated
-	signal pc_4_adder_pcplus4_to_pc_mux : std_logic_vector(15 downto 0);					--PC4ADDER & PC MUX
+	signal controlunit_earlybranchcontrol_to_pc_mux : std_logic;	    --XXX & PC MUX		   
+	signal pc4adder_pcplus4_to_pc_mux : std_logic_vector(15 downto 0);					--PC4ADDER & PC MUX
+	signal pcplusimmadder_pcplusimm_to_pc_mux : std_logic_vector(15 downto 0);					--PC4ADDER & PC MUX
 		
 	--TO PC 4 ADDER
 	signal pc_pcout_to_pc4adder : std_logic_vector(15 downto 0);				    --PC & PC PC4ADDER
@@ -59,7 +60,7 @@ architecture structural of internal_connections is
 	signal instruction_memory_instruction_to_ifid : std_logic_vector(31 downto 0);						    --instruction memory & ifid
 	signal pc_pcout_to_ifid : std_logic_vector(15 downto 0);						    --PC & ifid		  
 	signal hazardunit_ifidwrite_to_ifid : std_logic;						    				--XXX & ifid
-	signal XXX_ifidflush_to_ifid : std_logic;						    				--XXX & ifid
+	signal controlunit_ifidflush_to_ifid : std_logic;						    				--XXX & ifid
 
 --------------------------------------------------------------------------END		
 	
@@ -109,7 +110,7 @@ begin
 	pc_mux_inst : entity work.pc_mux
     port map (
         branch => XXX_jumpbranchselect_to_pc_mux,  
-        pcplus4 => pc_4_adder_pcplus4_to_pc_mux,
+        pcplus4 => pc4adder_pcplus4_to_pc_mux,
         pcplusimm => _jumpbranchdestinationselect_to_pc_mux,
         pcsource => pc_mux_pcsource_to_pc
     );
@@ -118,7 +119,7 @@ begin
 	pc_4_adder_instance: entity work.pc4adder
     port map (
         pcout   => pc_pcout_to_pc4adder,
-        pcplus4 => pc_4_adder_pcplus4_to_pc_mux
+        pcplus4 => pc4adder_pcplus4_to_pc_mux
     );
 
 

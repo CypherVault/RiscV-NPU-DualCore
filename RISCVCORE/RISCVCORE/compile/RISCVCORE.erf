@@ -1,0 +1,4 @@
+ERROR COMP96_0010: "Invalid literal." "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/internalconnections.vhd" 114 22
+ERROR COMP96_0033: "Missing actual." "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/internalconnections.vhd" 114 22
+ERROR COMP96_0724: "',' or ')' expected." "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/internalconnections.vhd" 114 22
+ERROR COMP96_0015: "';' expected." "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/internalconnections.vhd" 114 60

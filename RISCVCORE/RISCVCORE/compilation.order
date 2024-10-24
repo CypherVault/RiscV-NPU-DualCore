@@ -6,3 +6,8 @@
 .\src\instruction_memory.vhd
 .\src\ifid.vhd
 .\src\internalconnections.vhd
+.\src\control_unit.vhd
+.\src\hazardunit.vhd
+.\src\immediategen.vhd
+.\src\pcimmadder.vhd
+.\src\registers.vhd
