@@ -1,7 +1,5 @@
 .\src\datapath.vhd
 .\src\ALU.vhd
-.\src\registers.vhd
-.\src\immediategen.vhd
 .\src\branch_and.vhd
 .\src\alusrcmuxb.vhd
 .\src\alucontrol.vhd
@@ -11,4 +9,3 @@
 .\src\exmem.vhd
 .\src\memwb.vhd
 .\src\forwarding_unit.vhd
-.\src\pcimmadder.vhd

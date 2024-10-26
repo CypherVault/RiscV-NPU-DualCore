@@ -6,11 +6,13 @@ entity ControlUnit is
     -- Inputs
     instruction : in std_logic_vector(31 downto 0);
     cntrlsigmux : in std_logic;  -- New input signal
+    rs1         : in std_logic_vector(31 downto 0);  -- New input port
+    rs2         : in std_logic_vector(31 downto 0);  -- New input port
     
     -- Outputs		
     --WB
     MemtoReg : out std_logic;
-    RegWrite : out std_logic;
+    RegWrite : out std_logic;			  
 	
     --M
     MemRead : out std_logic;
@@ -27,17 +29,13 @@ entity ControlUnit is
 end entity ControlUnit;
 
 architecture Behavioral of ControlUnit is
-  signal rs1, rs2 : std_logic_vector(4 downto 0);
-  signal equal_bits : std_logic_vector(4 downto 0);
+  signal equal_bits : std_logic_vector(31 downto 0);
   signal branch_taken : std_logic;
   
   -- Internal signals for control outputs
   signal int_MemtoReg, int_RegWrite, int_MemRead, int_MemWrite, int_Branch, int_ALUSrc : std_logic;
   signal int_ALUOp : std_logic_vector(1 downto 0);
 begin
-  rs1 <= instruction(19 downto 15);
-  rs2 <= instruction(24 downto 20);
-
   process(instruction, rs1, rs2)
   begin
     -- Default values
@@ -79,8 +77,8 @@ begin
         int_ALUOp <= "01";
         
         -- Early branch resolution
-        equal_bits <= rs1 xor rs2;
-        if equal_bits = "00000" then
+        equal_bits <= rs1(31 downto 0) xor rs2(31 downto 0);
+        if equal_bits = "00000000000000000000000000000000" then
           branch_taken <= '1';
         else
           branch_taken <= '0';

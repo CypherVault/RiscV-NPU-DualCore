@@ -41,7 +41,9 @@ architecture structural of internal_connections is
 	signal controlunit_earlybranchcontrol_to_pc_mux : std_logic;	    --XXX & PC MUX		   
 	signal pc4adder_pcplus4_to_pc_mux : std_logic_vector(15 downto 0);					--PC4ADDER & PC MUX
 	signal pcplusimmadder_pcplusimm_to_pc_mux : std_logic_vector(15 downto 0);					--PC4ADDER & PC MUX
-		
+	signal controlunit_earlybranch_to_pcmux : std_logic;
+	
+	
 	--TO PC 4 ADDER
 	signal pc_pcout_to_pc4adder : std_logic_vector(15 downto 0);				    --PC & PC PC4ADDER
 		
@@ -60,17 +62,57 @@ architecture structural of internal_connections is
 	signal instruction_memory_instruction_to_ifid : std_logic_vector(31 downto 0);						    --instruction memory & ifid
 	signal pc_pcout_to_ifid : std_logic_vector(15 downto 0);						    --PC & ifid		  
 	signal hazardunit_ifidwrite_to_ifid : std_logic;						    				--XXX & ifid
-	signal controlunit_ifidflush_to_ifid : std_logic;						    				--XXX & ifid
+	signal controlunit_ifidflush_to_ifid : std_logic;	
+	signal ifid_rs1_to_register :  std_logic_vector(4 downto 0);
+	signal ifid_rs2_to_register :  std_logic_vector(4 downto 0);
+	signal ifid_rd_to_register :  std_logic_vector(4 downto 0);	
+	signal ifid_instruction_to_OUT : std_logic_vector(31 downto 0);						    --instruction memory & ifid
+	signal ifid_pcout_to_OUT : std_logic_vector(15 downto 0);
+				   
 
 --------------------------------------------------------------------------END		
 	
 
 ------ID------------------------------------------------------------------BEGIN	
 	
+	--TO IMMEDIATEGEN
+	 signal ifid_instruction_to_immediategen : std_logic_vector(31 downto 0);
+  	 
+	 
+	 --TO PCIMMADDER
+	 signal immediategen_immediate_to_pcimmadder : std_logic_vector(31 downto 0);
+	 signal ifid_pcout_to_pcimmadder : std_logic_vector(15 downto 0);
+	 
+	 
+	 
+	 --TO IDEX
+  	 signal immediategen_immediate_to_idex : std_logic_vector(31 downto 0);
 
+	 --TO REGISTER FILE
+  signal memwb_regwrite_to_registers : std_logic;
+  signal ifid_rs1_to_registers : std_logic_vector(4 downto 0);
+  signal ifid_rs2_to_registers : std_logic_vector(4 downto 0);
+  signal memwb_regselect_to_registers : std_logic_vector(4 downto 0);
+  signal writebackmux_writedata_to_registers : std_logic_vector(31 downto 0);
+  signal registers_reg1out_to_idex : std_logic_vector(31 downto 0);
+  signal registers_reg2out_to_idex : std_logic_vector(31 downto 0);
+  
+  --TO CONTROL UNIT
+ 
+  signal ifid_instruction_to_controlunit : std_logic_vector(31 downto 0);
+  signal hazardunit_cntrlsigmux_to_controlunit : std_logic;
+  signal registers_reg1out_to_controlunit : std_logic_vector(31 downto 0);
+  signal registers_reg2out_to_controlunit : std_logic_vector(31 downto 0);
+  signal controlunit_memtoreg_to_idex : std_logic;
+  signal controlunit_regwrite_to_idex : std_logic;
+  signal controlunit_memread_to_idex : std_logic;
+  signal controlunit_memwrite_to_idex : std_logic;
+  signal controlunit_earlybranchSOURCE_to_pcmux : std_logic;
+  signal controlunit_alusource_to_idex : std_logic;
+  signal contolunit_aluop_to_idex : std_logic_vector(1 downto 0);
+  signal controlunit_ifflush_to_ifid : std_logic;
 
-
-
+  
 --------------------------------------------------------------------------END
 	
 
@@ -109,10 +151,12 @@ begin
 	--PC MUX
 	pc_mux_inst : entity work.pc_mux
     port map (
-        branch => XXX_jumpbranchselect_to_pc_mux,  
+        branch => branchand_jumpbranchselect_to_pc_mux,  
         pcplus4 => pc4adder_pcplus4_to_pc_mux,
-        pcplusimm => _jumpbranchdestinationselect_to_pc_mux,
-        pcsource => pc_mux_pcsource_to_pc
+        pcplusimm => pcplusimmadder_pcplusimm_to_pc_mux,
+        pcsource => pc_mux_pcsource_to_pc,
+		earlybranchcontrolunit => controlunit_earlybranch_to_pcmux
+		
     );
 
     --TO PC 4 ADDER
@@ -156,23 +200,91 @@ pc_pcout_to_pc4adder <= pc_pcout_to_instruction_memory;
         clk                 => clock,
         rstbar              => resetbar,
         ifidwrite           => hazardunit_ifidwrite_to_ifid,  
-        ifidflush           => XXX_ifidflush_to_ifid,		 --UNUSED- DO NOT IMPLEMENT
+        ifidflush           => controlunit_ifidflush_to_ifid,		 --UNUSED- DO NOT IMPLEMENT
         pcout               => pc_pcout_to_ifid,
         instruction         => instruction_memory_instruction_to_ifid,
-        ifidinstructionout  => open,  -- Connect to appropriate signal if needed
-        ifidpcout           => open   -- Connect to appropriate signal if needed
-    );
+        ifidinstructionout  => ifid_instruction_to_OUT   ,-- Connect to appropriate signal if needed
+        ifidpcout           => ifid_pcout_to_OUT   ,-- Connect to appropriate signal if needed
+    	rs1_out				=> ifid_rs1_to_register	  ,
+		rs2_out				=> ifid_rs2_to_register  ,
+		rd_out			    => ifid_rd_to_register
+			
+			
+			
+			);
 	--plus two signals carrying pcout and ifid instrcution to ID stage
 	
-	
+ifid_pcout_to_pcimmadder <= ifid_pcout_to_OUT;
 --------------------------------------------------------------------------END		
 
 
  ------ID------------------------------------------------------------------BEGIN	
 	
+	 --TO IMMGEN
+ifid_instruction_to_immediategen <=	ifid_instruction_to_OUT;
+
+	 imm_gen_inst : entity work.ImmGen
+    port map (
+      instruction => ifid_instruction_to_immediategen,
+      pcadderimm  => immediategen_immediate_to_pcimmadder,
+      immediate   => immediategen_immediate_to_idex
+    );
+ 
+
+	
+	--TO PCIMMADDER
+	
+ifid_pcout_to_pcimmadder <= ifid_pcout_to_OUT;
+ 
+	 pcimmadder_inst : entity work.pcimmadder
+    port map (
+      pc        => ifid_pcout_to_pcimmadder,
+      immediate => immediategen_immediate_to_pcimmadder,
+      pcplusimm => pcplusimmadder_pcplusimm_to_pc_mux
+    );		
+	
+	--TO REGISTER FILE
+	
+	
+	
+	 REGFILE_INST : entity work.regfile
+    port map (
+      clk                    => clock,
+      resetbar               => resetbar,
+      regwrite               => memwb_regwrite_to_registers,
+      readregister1          => ifid_rs1_to_registers,
+      readregister2          => ifid_rs2_to_registers,
+      writeregisteraddress   => memwb_regselect_to_registers,
+      writedata              => writebackmux_writedata_to_registers,
+      readdata1              => registers_reg1out_to_idex,			
+      readdata2              => registers_reg2out_to_idex
+    );													  
+	
+	
+-- Additional signal assignments for multiple reg out connections	
+registers_reg1out_to_controlunit  <= registers_reg1out_to_idex;
+registers_reg2out_to_controlunit  <= registers_reg2out_to_idex;
 
 
+	  --TO CONTROL UNIT
+		 CONTROLUNIT_INST : entity work.ControlUnit
+    port map (
+      instruction => ifid_instruction_to_controlunit,
+      cntrlsigmux => hazardunit_cntrlsigmux_to_controlunit,
+      rs1         => registers_reg1out_to_controlunit,
+      rs2         => registers_reg2out_to_controlunit, 
+      MemtoReg    => controlunit_memtoreg_to_idex,
+      RegWrite    => controlunit_regwrite_to_idex,
+      MemRead     => controlunit_memread_to_idex,
+      MemWrite    => controlunit_memwrite_to_idex,
+      Branch      => controlunit_earlybranch_to_pcmux,
+      ALUSrc      => controlunit_alusource_to_idex,
+      ALUOp       => contolunit_aluop_to_idex,
+      if_flush    => controlunit_ifflush_to_ifid
+    );
 
+
+--controlunit_earlybranch_to_pcmux <= controlunit_earlybranchSOURCE_to_pcmux;
 
 --------------------------------------------------------------------------END
 	
