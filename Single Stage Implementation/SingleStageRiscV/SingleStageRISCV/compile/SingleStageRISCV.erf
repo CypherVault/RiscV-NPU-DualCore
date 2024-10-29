@@ -1,8 +1,0 @@
-ERROR COMP96_0078: "Unknown identifier "rst"." "C:/Users/maxpro/Desktop/440Project RISCVCORE/Single Stage Implementation/SingleStageRiscV/SingleStageRISCV/src/datapath.vhd" 156 9
-ERROR COMP96_0133: "Cannot find object declaration." "C:/Users/maxpro/Desktop/440Project RISCVCORE/Single Stage Implementation/SingleStageRiscV/SingleStageRISCV/src/datapath.vhd" 156 9
-ERROR COMP96_0112: ""rst" does not match the formal name." "C:/Users/maxpro/Desktop/440Project RISCVCORE/Single Stage Implementation/SingleStageRiscV/SingleStageRISCV/src/datapath.vhd" 156 9
-ERROR COMP96_0207: "No actual specified for local port "rstbar"." "C:/Users/maxpro/Desktop/440Project RISCVCORE/Single Stage Implementation/SingleStageRiscV/SingleStageRISCV/src/datapath.vhd" 153 3
-ERROR COMP96_0207: "No actual specified for local port "ifidwrite"." "C:/Users/maxpro/Desktop/440Project RISCVCORE/Single Stage Implementation/SingleStageRiscV/SingleStageRISCV/src/datapath.vhd" 153 3
-ERROR COMP96_0207: "No actual specified for local port "ifidflush"." "C:/Users/maxpro/Desktop/440Project RISCVCORE/Single Stage Implementation/SingleStageRiscV/SingleStageRISCV/src/datapath.vhd" 153 3
-ERROR COMP96_0207: "No actual specified for local port "pcout"." "C:/Users/maxpro/Desktop/440Project RISCVCORE/Single Stage Implementation/SingleStageRiscV/SingleStageRISCV/src/datapath.vhd" 153 3
-ERROR COMP96_0207: "No actual specified for local port "instruction"." "C:/Users/maxpro/Desktop/440Project RISCVCORE/Single Stage Implementation/SingleStageRiscV/SingleStageRISCV/src/datapath.vhd" 153 3

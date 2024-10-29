@@ -282,7 +282,10 @@ registers_reg2out_to_controlunit  <= registers_reg2out_to_idex;
       ALUOp       => contolunit_aluop_to_idex,
       if_flush    => controlunit_ifflush_to_ifid
     );
-
+	
+	  -- NEED TO ADD THE EXMEM AND MEMWB forwarding signals !!! logic is implenented 
+	
+	
 
 --controlunit_earlybranch_to_pcmux <= controlunit_earlybranchSOURCE_to_pcmux;
 

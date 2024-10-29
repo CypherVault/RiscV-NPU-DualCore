@@ -1,4 +1,4 @@
-Active-HDL 15.0.261.9132 2024-10-25 19:41:13
+Active-HDL 15.0.261.9132 2024-10-29 18:20:03
 
 Elaboration top modules:
 Architecture                  structural(internal_connections)
@@ -13,6 +13,10 @@ pc4adder             | rtl          | riscvcore |      | 15.0.261.9132 (Windows6
 program_counter      | rtl          | riscvcore |      | 15.0.261.9132 (Windows64) | -O3
 instruction_memory   | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -O3
 ifid                 | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -O3
+ImmGen               | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -O3
+pcimmadder           | behavior     | riscvcore |      | 15.0.261.9132 (Windows64) | -O3
+regfile              | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -O3
+ControlUnit          | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -O3
 ---------------------------------------------------------------------------------------------------------
 
 ---------------------------------------------------------------------------------------------------------

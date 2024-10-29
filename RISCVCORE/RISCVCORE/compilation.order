@@ -10,3 +10,5 @@
 .\src\registers.vhd
 .\src\control_unit.vhd
 .\src\internalconnections.vhd
+.\src\forwardingmuxA.vhd
+.\src\forwardingmuxB.vhd

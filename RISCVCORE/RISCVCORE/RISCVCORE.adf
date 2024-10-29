@@ -31,6 +31,8 @@ fileopenfolder=C:\Users\maxpro\Desktop\440Project RISCVCORE\Single Stage Impleme
 /control_unit.vhd=-1
 /internalconnections.vhd=-1
 /IF_TESTBENCH.vhd=-1
+/forwardingmuxA.vhd=-1
+/forwardingmuxB.vhd=-1
 [Files.Data]
 .\src\RISCVCORE.vhd=VHDL Source Code
 .\src\hazardunit.vhd=VHDL Source Code
@@ -45,6 +47,8 @@ fileopenfolder=C:\Users\maxpro\Desktop\440Project RISCVCORE\Single Stage Impleme
 .\src\control_unit.vhd=VHDL Source Code
 .\src\internalconnections.vhd=VHDL Source Code
 .\src\IF_TESTBENCH.vhd=VHDL Source Code
+.\src\forwardingmuxA.vhd=VHDL Source Code
+.\src\forwardingmuxB.vhd=VHDL Source Code
 [folders]
 name0=ALINT-PRO Workspaces
 directory0=C:\Users\maxpro\Desktop\440Project RISCVCORE\RISCVCORE\RISCVCORE\
@@ -83,6 +87,6 @@ name11=Waveform Files
 directory11=C:\Users\maxpro\Desktop\440Project RISCVCORE\RISCVCORE\RISCVCORE\
 extension11=asdb;awc;asdbc;asdbe
 [HierarchyViewer]
-HierarchyInformation=
+HierarchyInformation=internal_connections|structural|0
 ShowHide=ShowTopLevel
 Selected=

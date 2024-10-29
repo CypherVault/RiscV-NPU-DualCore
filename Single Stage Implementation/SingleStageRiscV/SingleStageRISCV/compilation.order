@@ -1,5 +1,6 @@
 .\src\datapath.vhd
 .\src\ALU.vhd
+.\src\proposed changes control unit.vhd
 .\src\branch_and.vhd
 .\src\alusrcmuxb.vhd
 .\src\alucontrol.vhd

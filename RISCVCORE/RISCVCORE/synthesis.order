@@ -9,3 +9,5 @@ i<>.\src\hazardunit.vhd
 i<>.\src\immediategen.vhd
 i<>.\src\pcimmadder.vhd
 i<>.\src\registers.vhd
+i<>.\src\forwardingmuxA.vhd
+i<>.\src\forwardingmuxB.vhd

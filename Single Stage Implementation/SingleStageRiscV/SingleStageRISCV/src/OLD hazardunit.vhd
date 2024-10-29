@@ -1,4 +1,4 @@
-library IEEE;
+called ememlibrary IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity hazard_unit is
