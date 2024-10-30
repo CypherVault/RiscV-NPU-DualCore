@@ -8,12 +8,12 @@ entity idex is
     Port (
 			clk                 : in  STD_LOGIC;
 			rstbar                 : in  STD_LOGIC;
-			pcin               : in  STD_LOGIC_VECTOR(15 downto 0);
+		--	pcin               : in  STD_LOGIC_VECTOR(15 downto 0);
 			readdata1in         : in  STD_LOGIC_VECTOR(31 downto 0); 
 			readdata2in         : in  STD_LOGIC_VECTOR(31 downto 0);
 			immediatein         : in STD_LOGIC_VECTOR(31 downto 0);
 			immediateout        : out STD_LOGIC_VECTOR(31 downto 0);		  
-			PCOUTREAL               : out  STD_LOGIC_VECTOR(15 downto 0);
+		--	PCOUTREAL               : out  STD_LOGIC_VECTOR(15 downto 0);
 			readdata1out         : out  STD_LOGIC_VECTOR(31 downto 0); 
 			readdata2out         : out  STD_LOGIC_VECTOR(31 downto 0); 
 			
@@ -105,7 +105,7 @@ begin
 			
         elsif rising_edge(clk) then
             -- On rising edge of clock, update internal registers
-            pcin_reg     <= pcin;
+         --   pcin_reg     <= pcin;
             readdata1_reg <= readdata1in;
             readdata2_reg <= readdata2in;
             immediate_reg <= immediatein; 
@@ -127,7 +127,7 @@ begin
     end process;
 
     -- Continuous assignments for outputs
-    PCOUTREAL     <= pcin_reg;
+ --   PCOUTREAL     <= pcin_reg;
     readdata1out <= readdata1_reg;
     readdata2out <= readdata2_reg;
     immediateout <= immediate_reg; 

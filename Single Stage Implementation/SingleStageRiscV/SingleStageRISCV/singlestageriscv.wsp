@@ -9,8 +9,8 @@ Status=Modified
 SymbolsToolbox=0
 ZOOMOFSETS_PAGES=1,1,1,2,50,50,
 [COMPILESTATUS|.\src\OLD pc4adder.vhd]
-FileTimeLow=2443699649
-FileTimeHigh=31140444
+FileTimeLow=2914174325
+FileTimeHigh=31140453
 Status=Modified
 [CACHEDOC|Aldec.Hde.HdePlugIn.7|.\..\..\RISCVCORE\RISCVCORE\src\pc4adder.vhd|]
 CurrentLine=0
@@ -21,8 +21,8 @@ ZoomFactor=0
 Frame=0
 WindowWorkspaceInfo="LAAAAAAAAAABAAAA/////////////////////80AAACZAAAA5wUAANMCAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIAAAAyAAAAAAAAAAAAAAAyAAAAMgAAAAAAAAAAAAAAAAAAAAAAAAACQAAAAEAAAAAAAAAAAAAAA=="
 [COMPILESTATUS|.\src\OLD instruction_memory.vhd]
-FileTimeLow=2444278990
-FileTimeHigh=31140444
+FileTimeLow=2915005675
+FileTimeHigh=31140453
 Status=Modified
 [CACHEDOC|Aldec.Hde.HdePlugIn.7|.\..\..\RISCVCORE\RISCVCORE\src\instruction_memory.vhd|]
 CurrentLine=0
@@ -45,8 +45,8 @@ ZoomFactor=0
 Frame=0
 WindowWorkspaceInfo="LAAAAAAAAAABAAAA/////////////////////84AAAChAAAA8gIAANICAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIAAAAyAAAAAAAAAAAAAAAyAAAAMgAAAAAAAAAAAAAAAAAAAAAAAAACQAAAAEAAAAAAAAAAAAAAA=="
 [COMPILESTATUS|.\src\ALU.vhd]
-FileTimeLow=2445298019
-FileTimeHigh=31140444
+FileTimeLow=2916515730
+FileTimeHigh=31140453
 Status=Modified
 [CACHEDOC|Aldec.Hde.HdePlugIn.7|.\..\..\..\..\Documents\maestrogithub\maestro-master\Project\Components\ALU.vhd|]
 CurrentLine=9
@@ -81,56 +81,56 @@ FileTimeLow=2394672007
 FileTimeHigh=31139643
 Status=Modified
 [COMPILESTATUS|.\src\proposed changes control unit.vhd]
-FileTimeLow=2453099516
-FileTimeHigh=31140444
+FileTimeLow=2925878238
+FileTimeHigh=31140453
 Status=Modified
 [COMPILESTATUS|.\src\branch_and.vhd]
-FileTimeLow=2446159531
-FileTimeHigh=31140444
+FileTimeLow=2917606692
+FileTimeHigh=31140453
 Status=Modified
 [COMPILESTATUS|.\src\OLD pc_mux.vhd]
-FileTimeLow=2446638486
-FileTimeHigh=31140444
+FileTimeLow=2918275374
+FileTimeHigh=31140453
 Status=Modified
 [COMPILESTATUS|.\src\alusrcmuxb.vhd]
-FileTimeLow=2447148144
-FileTimeHigh=31140444
+FileTimeLow=2918955378
+FileTimeHigh=31140453
 Status=Modified
 [COMPILESTATUS|.\src\alucontrol.vhd]
-FileTimeLow=2447857805
-FileTimeHigh=31140444
+FileTimeLow=2919667625
+FileTimeHigh=31140453
 Status=Modified
 [COMPILESTATUS|.\src\Data_Memory.vhd]
-FileTimeLow=2448557922
-FileTimeHigh=31140444
+FileTimeLow=2920375380
+FileTimeHigh=31140453
 Status=Modified
 [COMPILESTATUS|.\src\writebackmux.vhd]
-FileTimeLow=2449027752
-FileTimeHigh=31140444
+FileTimeLow=2921056821
+FileTimeHigh=31140453
 Status=Modified
 [COMPILESTATUS|.\src\datapath.vhd]
-FileTimeLow=2449549971
-FileTimeHigh=31140444
+FileTimeLow=2921747296
+FileTimeHigh=31140453
 Status=Modified
 [COMPILESTATUS|.\src\ifid.vhd]
 FileTimeLow=3598943505
 FileTimeHigh=31139277
 Status=Compiled
 [COMPILESTATUS|.\src\idex.vhd]
-FileTimeLow=2450759083
-FileTimeHigh=31140444
+FileTimeLow=2923106440
+FileTimeHigh=31140453
 Status=Modified
 [COMPILESTATUS|.\src\exmem.vhd]
-FileTimeLow=2451447664
-FileTimeHigh=31140444
+FileTimeLow=2923797120
+FileTimeHigh=31140453
 Status=Modified
 [COMPILESTATUS|.\src\memwb.vhd]
-FileTimeLow=2452139015
-FileTimeHigh=31140444
+FileTimeLow=2924477340
+FileTimeHigh=31140453
 Status=Modified
 [COMPILESTATUS|.\src\forwarding_unit.vhd]
-FileTimeLow=2452609385
-FileTimeHigh=31140444
+FileTimeLow=2925166796
+FileTimeHigh=31140453
 Status=Modified
 [COMPILESTATUS|.\src\hazardunit.vhd]
 FileTimeLow=146219080
@@ -141,16 +141,16 @@ FileTimeLow=2623235297
 FileTimeHigh=31139643
 Status=Modified
 [COMPILESTATUS|.\src\OLD ifid.vhd]
-FileTimeLow=2449999333
-FileTimeHigh=31140444
+FileTimeLow=2922416361
+FileTimeHigh=31140453
 Status=Modified
 [COMPILESTATUS|.\src\OLD program_counter.vhd]
-FileTimeLow=2444797218
-FileTimeHigh=31140444
+FileTimeLow=2915825521
+FileTimeHigh=31140453
 Status=Modified
 [COMPILESTATUS|.\src\OLD hazardunit.vhd]
-FileTimeLow=2453798701
-FileTimeHigh=31140444
+FileTimeLow=2926638460
+FileTimeHigh=31140453
 Status=Modified
 [OPENDOC|Aldec.Hde.HdePlugIn.7|.\SingleStageRISCV\src/OLD pc4adder.vhd|]
 CurrentLine=0

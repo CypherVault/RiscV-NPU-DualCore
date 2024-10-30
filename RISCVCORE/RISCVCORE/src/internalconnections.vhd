@@ -65,7 +65,7 @@ architecture structural of internal_connections is
 	signal controlunit_ifidflush_to_ifid : std_logic;	
 	signal ifid_rs1_to_register :  std_logic_vector(4 downto 0);
 	signal ifid_rs2_to_register :  std_logic_vector(4 downto 0);
-	signal ifid_rd_to_register :  std_logic_vector(4 downto 0);	
+	signal ifid_rd_to_idex :  std_logic_vector(4 downto 0);	
 	signal ifid_instruction_to_OUT : std_logic_vector(31 downto 0);						    --instruction memory & ifid
 	signal ifid_pcout_to_OUT : std_logic_vector(15 downto 0);
 				   
@@ -111,6 +111,58 @@ architecture structural of internal_connections is
   signal controlunit_alusource_to_idex : std_logic;
   signal contolunit_aluop_to_idex : std_logic_vector(1 downto 0);
   signal controlunit_ifflush_to_ifid : std_logic;
+
+  -- need to make the rest of the signals for the forwarding reading and accurate early branch 
+  
+  -- TO HAZARD UNIT 
+ 
+  signal idex_memread_to_hazardunit : std_logic;
+  signal idex_rd_to_hazardunit : std_logic_vector(4 downto 0);
+  signal idex_instruction_to_hazardunit : std_logic_vector(31 downto 0);
+  signal hazardunit_controlsigmux_to_controlunit : std_logic;
+  -- signal hazardunit_pcwrite_to_pc : std_logic;	 also declared above 
+  signal hazardunit_write_to_ifid : std_logic;
+  
+  
+  
+  -- TO IDEX
+  
+  -- signal PC_TO_IDEX : std_logic_vector(15 downto 0); -- UNEEDED
+  signal READDATA1_TO_IDEX : std_logic_vector(31 downto 0);	
+  signal READDATA2_TO_IDEX : std_logic_vector(31 downto 0);
+  signal IMMEDIATE_TO_IDEX : std_logic_vector(31 downto 0);
+  signal MAKETHISSIGNALIMMEDIATE_FROM_IDEX : std_logic_vector(31 downto 0);
+  -- signal PC_FROM_IDEX : std_logic_vector(15 downto 0); -- UNEEDED
+  signal READDATA1_FROM_IDEX : std_logic_vector(31 downto 0);
+  signal READDATA2_FROM_IDEX : std_logic_vector(31 downto 0);
+  
+  -- WB control signals
+  signal MEMTOREG_TO_IDEX : std_logic;
+  signal REGWRITE_TO_IDEX : std_logic;
+  signal MEMTOREG_FROM_IDEX : std_logic;
+  signal REGWRITE_FROM_IDEX : std_logic;
+  
+  -- M control signals
+  signal MEMREAD_TO_IDEX : std_logic;
+  signal MEMWRITE_TO_IDEX : std_logic;
+  signal BRANCH_TO_IDEX : std_logic;
+  signal MEMREAD_FROM_IDEX : std_logic;
+  signal MEMWRITE_FROM_IDEX : std_logic;
+  signal BRANCH_FROM_IDEX : std_logic;
+  
+  -- EX control signals
+  signal ALUSRC_TO_IDEX : std_logic;
+  signal ALUOP_TO_IDEX : std_logic_vector(1 downto 0);
+  signal ALUSRC_FROM_IDEX : std_logic;
+  signal ALUOP_FROM_IDEX : std_logic_vector(1 downto 0);
+  
+  -- Register addresses
+  signal RS1_TO_IDEX : std_logic_vector(4 downto 0);
+  signal RS2_TO_IDEX : std_logic_vector(4 downto 0);
+  signal RD_TO_IDEX : std_logic_vector(4 downto 0);
+  signal RS1_FROM_IDEX : std_logic_vector(4 downto 0);
+  signal RS2_FROM_IDEX : std_logic_vector(4 downto 0);
+  signal RD_FROM_IDEX : std_logic_vector(4 downto 0);
 
   
 --------------------------------------------------------------------------END
@@ -207,7 +259,7 @@ pc_pcout_to_pc4adder <= pc_pcout_to_instruction_memory;
         ifidpcout           => ifid_pcout_to_OUT   ,-- Connect to appropriate signal if needed
     	rs1_out				=> ifid_rs1_to_register	  ,
 		rs2_out				=> ifid_rs2_to_register  ,
-		rd_out			    => ifid_rd_to_register
+		rd_out			    => ifid_rd_to_idex
 			
 			
 			
@@ -284,11 +336,74 @@ registers_reg2out_to_controlunit  <= registers_reg2out_to_idex;
     );
 	
 	  -- NEED TO ADD THE EXMEM AND MEMWB forwarding signals !!! logic is implenented 
-	
-	
 
 --controlunit_earlybranch_to_pcmux <= controlunit_earlybranchSOURCE_to_pcmux;
 
+
+	--TO HAZARD UNIT 
+
+HAZARD_UNIT_INST : entity work.hazard_unit
+    port map (
+      idexmemread => idex_memread_to_hazardunit,
+      idexrd => idex_rd_to_hazardunit,
+      instruction => idex_instruction_to_hazardunit,
+      cntrlsigmux => hazardunit_controlsigmux_to_controlunit,
+      pcwriteenable => hazardunit_pcwrite_to_pc,
+      ifidwriteenable => hazardunit_write_to_ifid
+    );
+
+   -- TO IDEX																  
+   																			  
+    IDEX_INST : entity work.idex
+    port map (
+      clk => clock,
+      rstbar => resetbar,
+      --pcin => PC_TO_IDEX,
+      readdata1in => registers_reg1out_to_idex,
+      readdata2in => registers_reg2out_to_idex,
+      immediatein => immediategen_immediate_to_idex,
+      immediateout => MAKETHISSIGNALIMMEDIATE_FROM_IDEX,
+      --PCOUTREAL => PC_FROM_IDEX,
+      readdata1out => READDATA1_FROM_IDEX,
+      readdata2out => READDATA2_FROM_IDEX,
+      
+      -- WB control signals
+      MemtoRegin => controlunit_memtoreg_to_idex,
+      RegWritein => controlunit_regwrite_to_idex,
+      MemtoRegout => MEMTOREG_FROM_IDEX,
+      RegWriteout => REGWRITE_FROM_IDEX,
+      
+      -- M control signals
+      MemReadin => controlunit_memread_to_idex,
+      MemWritein => controlunit_memwrite_to_idex,
+      Branchin => controlunit_earlybranch_to_pcmux,
+      MemReadout => MEMREAD_FROM_IDEX,
+      MemWriteout => MEMWRITE_FROM_IDEX,
+      Branchout => BRANCH_FROM_IDEX,
+      
+      -- EX control signals
+      ALUSrcin => controlunit_alusource_to_idex,
+      ALUOpin => contolunit_aluop_to_idex,
+      ALUSrc => ALUSRC_FROM_IDEX,
+      ALUOp => ALUOP_FROM_IDEX,
+      
+      -- Register addresses
+      rs1in => ifid_rs1_to_register,
+      rs2in => ifid_rs2_to_register,
+      rdin => ifid_rd_to_idex,
+      rs1out => RS1_FROM_IDEX,
+      rs2out => RS2_FROM_IDEX,
+      rdout => RD_FROM_IDEX
+    );
+   
+   
+   
+   
+   
+   
+   
+   
+   
 --------------------------------------------------------------------------END
 	
 
