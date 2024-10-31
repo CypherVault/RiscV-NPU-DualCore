@@ -12,3 +12,8 @@ i<>.\src\registers.vhd
 i<>.\src\forwardingmuxA.vhd
 i<>.\src\forwardingmuxB.vhd
 i<>.\src\idex.vhd
+i<>.\src\forwarding_unit.vhd
+i<>.\src\alusrcmuxb.vhd
+i<>.\src\ALU.vhd
+i<>.\src\exmem.vhd
+i<>.\src\alucontrol.vhd

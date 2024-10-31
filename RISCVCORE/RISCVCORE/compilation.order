@@ -12,4 +12,9 @@
 .\src\hazardunit.vhd
 .\src\idex.vhd
 .\src\control_unit.vhd
+.\src\forwarding_unit.vhd
 .\src\internalconnections.vhd
+.\src\alusrcmuxb.vhd
+.\src\ALU.vhd
+.\src\exmem.vhd
+.\src\alucontrol.vhd

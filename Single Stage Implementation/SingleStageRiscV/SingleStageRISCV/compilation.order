@@ -1,12 +1,6 @@
 .\src\datapath.vhd
 .\src\ALU.vhd
-.\src\proposed changes control unit.vhd
 .\src\branch_and.vhd
-.\src\alusrcmuxb.vhd
-.\src\alucontrol.vhd
 .\src\Data_Memory.vhd
 .\src\writebackmux.vhd
-.\src\idex.vhd
-.\src\exmem.vhd
 .\src\memwb.vhd
-.\src\forwarding_unit.vhd

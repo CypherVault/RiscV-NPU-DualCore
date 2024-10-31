@@ -39,6 +39,7 @@ TemplateId=0
 tab=lu
 [OPENDOC|Aldec.Hde.HdePlugIn.7|.\SingleStageRISCV\src/idex.vhd|]
 TemplateId=0
+ActiveDocument=1
 tab=lu
 [OPENDOC|Aldec.Hde.HdePlugIn.7|.\SingleStageRISCV\src/exmem.vhd|]
 TemplateId=0
@@ -49,10 +50,9 @@ tab=lu
 [OPENDOC|Aldec.Hde.HdePlugIn.7|.\SingleStageRISCV\src/forwarding_unit.vhd|]
 TemplateId=0
 tab=lu
-[OPENDOC|Aldec.Hde.HdePlugIn.7|.\SingleStageRISCV\src/OLD control_unit.vhd|]
+[OPENDOC|Aldec.Hde.HdePlugIn.7|.\SingleStageRISCV\src/proposed changes control unit.vhd|]
 TemplateId=0
 tab=lu
 [OPENDOC|Aldec.Hde.HdePlugIn.7|.\SingleStageRISCV\src/OLD hazardunit.vhd|]
 TemplateId=0
-ActiveDocument=1
 tab=lu

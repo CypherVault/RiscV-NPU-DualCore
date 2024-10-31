@@ -170,7 +170,61 @@ architecture structural of internal_connections is
 
 ------EX------------------------------------------------------------------BEGIN	
 	
+   --TO ALUCONTROL
+	
+	signal idex_instruction_to_alucontrol : std_logic_vector(31 downto 0);
+    signal idex_aluop_to_alucontrol : std_logic_vector(1 downto 0);
+    signal alucontrol_aluop_to_alu : std_logic_vector(3 downto 0);
 
+	
+	
+	 	 
+	--TO ALU
+	
+	signal forwardingmuxa_rs1_to_alu : std_logic_vector(31 downto 0);
+	signal alusrcmuxb_rs2_imm_to_alu : std_logic_vector(31 downto 0);
+	signal alucontrol_aluop_to_alu : std_logic_vector(3 downto 0);
+	signal alu_result_to_exmem : std_logic_vector(31 downto 0);
+	signal alu_zeroresult_to_exmem : std_logic;
+	
+
+
+	
+	--TO FORWARDINGMUXA
+	
+	signal idex_rs1_to_forwardingmuxa : std_logic_vector(31 downto 0);
+  	signal exmem_rs_to_forwardingmuxa : std_logic_vector(31 downto 0);
+  	signal memwb_rs_to_forwardingmuxa : std_logic_vector(31 downto 0);
+  	signal forwardingunit_Amuxcntrl_to_forrwardingmuxA : std_logic_vector(1 downto 0);
+  	signal forwardingmuxA_rs1_to_ALU : std_logic_vector(31 downto 0);
+	
+	
+	--TO FORWARDINGMUXB
+	
+	signal idex_rs2_to_forwardingmuxb : std_logic_vector(31 downto 0);
+  	signal exmem_rs_to_forwardingmuxb : std_logic_vector(31 downto 0);
+  	signal memwb_rs_to_forwardingmuxb : std_logic_vector(31 downto 0);
+  	signal forwardingunit_Bmuxcntrl_to_forrwardingmuxB : std_logic_vector(1 downto 0);
+  	signal forwardingmuxB_rs2_to_alusrcmuxB : std_logic_vector(31 downto 0);
+
+	
+	
+	--TO ALUSRCMUXB
+	
+	signal forwardingmuxb_rs2_to_alusrcmuxb : std_logic_vector(31 downto 0);
+  	signal idex_immediate_to_alusrcmuxb : std_logic_vector(31 downto 0);
+  	signal ALU_SRC_B_CONTROL : std_logic;
+  	signal alusrcmuxB_rs2_to_alu : std_logic_vector(31 downto 0);
+
+	
+	
+	--TO EXMEM
+	
+	
+	
+	--TO FORWARDING UNIT
+	
+	
 
 
 
@@ -396,20 +450,92 @@ HAZARD_UNIT_INST : entity work.hazard_unit
       rdout => RD_FROM_IDEX
     );
    
-   
-   
-   
-   
-   
-   
-   
+   	  
    
 --------------------------------------------------------------------------END
 	
 
 ------EX------------------------------------------------------------------BEGIN	
 	
+	
+	
+	--TO ALUCONTROL
+	
+	ALU_CONTROL_INST : entity work.alucontrol
+    port map (
+      instructionfucntfeilds => idex_instruction_to_alucontrol,
+      aluop => idex_aluop_to_alucontrol,
+      aluoperation => alucontrol_aluop_to_alu
+    );
+	
+	
+		 	 
+	--TO ALU
+	
+	 ALU_INST : entity work.ALU
+    port map (
+      input_0 => forwardingmuxa_rs1_to_alu,
+      input_1 => alusrcmuxb_rs2_imm_to_alu,
+      operation => alucontrol_aluop_to_alu,
+      ALU_output => alu_result_to_exmem,
+      zero_flag => alu_zeroresult_to_exmem
+    );
+		
+	
+	
+	--TO FORWARDINGMUXA
+	
+	FORWARDING_MUX_A_INST : entity work.forwardingMuxA
+    port map (
+      rs1 => idex_rs1_to_forwardingmuxa,
+      forwardedrs1exmem => exmem_rs_to_forwardingmuxa,
+      forwardedrs1memwb => memwb_rs_to_forwardingmuxa,
+      forwardAmuxcntrl => forwardingunit_Amuxcntrl_to_forrwardingmuxA,
+      MuxOutput => forwardingmuxA_rs1_to_ALU
+    );
+	
+	
+	--TO FORWARDINGMUXB
+	
+	FORWARDING_MUX_B_INST : entity work.forwardingMuxB
+    port map (
+      rs2 => idex_rs2_to_forwardingmuxb,
+      forwardedrs2exmem => exmem_rs_to_forwardingmuxb,
+      forwardedrs2memwb => memwb_rs_to_forwardingmuxb,
+      forwardBmuxcntrl => forwardingunit_Bmuxcntrl_to_forrwardingmuxB,
+      MuxOutput => forwardingmuxB_rs2_to_alusrcmuxB
+    );
 
+	
+	
+	--TO ALUSRCMUXB
+	
+	ALU_SRC_MUX_B_INST : entity work.ALUSrcMuxB
+    port map (
+      ReadRegister2 => forwardingmuxb_rs2_to_alusrcmuxb,
+      ReadImmediate => idex_immediate_to_alusrcmuxb,
+      ALUSrcBControl => ALU_SRC_B_CONTROL,
+      MuxOutput => alusrcmuxB_rs2_to_alu
+    );
+	
+	
+	--TO EXMEM
+	
+	
+	
+	--TO FORWARDING UNIT
+	
+	
+	
+	 --next... lol
+	
+	
+	
+	
+	
+	
+	
+	
 
 
 

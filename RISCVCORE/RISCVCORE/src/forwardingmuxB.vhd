@@ -11,6 +11,7 @@ entity forwardingMuxB is
     );
 end forwardingMuxB;
 
+
 architecture Behavioral of forwardingMuxB is
 begin
     process(rs2, forwardedrs2exmem, forwardedrs2memwb, forwardBmuxcntrl)
