@@ -162,7 +162,7 @@ architecture structural of internal_connections is
   signal RD_TO_IDEX : std_logic_vector(4 downto 0);
   signal idex_rs1_to_forwardingunit : std_logic_vector(4 downto 0);
   signal idex_rs2_to_forwardingunit : std_logic_vector(4 downto 0);
-  signal idex_rd_to_frowardingunit : std_logic_vector(4 downto 0);
+  signal idex_rd_to_exmem : std_logic_vector(4 downto 0);
 
   
 --------------------------------------------------------------------------END
@@ -227,28 +227,28 @@ architecture structural of internal_connections is
   signal alu_result_to_exmem : std_logic_vector(31 downto 0);
   signal alusrcmuxb_source2_to_exmem : std_logic_vector(31 downto 0);
   signal BRANCH_JUMP_ADDR_FROM_EXMEM : std_logic_vector(15 downto 0);
-  signal ALU_ZERO_FROM_EXMEM : std_logic;
-  signal ALU_RESULT_FROM_EXMEM : std_logic_vector(31 downto 0);
-  signal READ_DATA_2_FROM_EXMEM : std_logic_vector(31 downto 0);	 
+  signal exmem_zero_to_branchand : std_logic;
+  signal exmem_result_to_datamem : std_logic_vector(31 downto 0);
+  signal exmem_src2_to_datamem : std_logic_vector(31 downto 0);	 
   
   --
 --  -- WB control signals
 --  signal MEMTOREG_TO_EXMEM : std_logic;
 --  signal REGWRITE_TO_EXMEM : std_logic;
---  signal MEMTOREG_FROM_EXMEM : std_logic;
---  signal REGWRITE_FROM_EXMEM : std_logic;
+  signal exmem_memtoreg_to_memwb : std_logic;
+  signal exmem_regwrite_to_memwb : std_logic;
 --  
 --  -- M control signals
 --  signal MEMREAD_TO_EXMEM : std_logic;
 --  signal MEMWRITE_TO_EXMEM : std_logic;
 --  signal BRANCH_TO_EXMEM : std_logic;
---  signal MEMREAD_FROM_EXMEM : std_logic;
---  signal MEMWRITE_FROM_EXMEM : std_logic;
---  signal BRANCH_FROM_EXMEM : std_logic;
+  signal exmem_memread_to_datamem : std_logic;
+  signal exmem_memwrite_to_datamem : std_logic;
+  signal exmem_branch_to_branchand : std_logic;
 --  
 --  -- Register address
 --  signal RD_TO_EXMEM : std_logic_vector(4 downto 0);
---  signal RD_FROM_EXMEM : std_logic_vector(4 downto 0);
+  signal exmem_rd_to_memwb : std_logic_vector(4 downto 0);
 	
 	--TO FORWARDING UNIT
 	
@@ -261,18 +261,57 @@ architecture structural of internal_connections is
 
 ------MEM------------------------------------------------------------------BEGIN	
 	
-
-
-
+	-- TO DATA MEMORY
+	
+	
+	--signal CLK_TO_DATA_MEMORY : std_logic;
+  signal MEMWRITE_TO_DATA_MEMORY : std_logic;
+  signal MEMREAD_TO_DATA_MEMORY : std_logic;
+  signal ADDRESS_TO_DATA_MEMORY : std_logic_vector(31 downto 0);
+  signal WRITEDATA_TO_DATA_MEMORY : std_logic_vector(31 downto 0);
+  signal datamem_readdata_to_memwb : std_logic_vector(31 downto 0);
+  
+  -- TO BRANCH AND 
+  --signal ALU_ZERO_TO_BRANCH_AND : std_logic;
+ -- signal CONTROL_BRANCH_TO_BRANCH_AND : std_logic;
+  --signal BRANCH_RESPONSE_FROM_BRANCH_AND : std_logic;
 
 --------------------------------------------------------------------------END	   
 
 ------WB------------------------------------------------------------------BEGIN	
 	
+   --TO MEMWB
+   
+   	
+--	signal CLK_TO_MEMWB : std_logic;
+-- signal RESETBAR_TO_MEMWB : std_logic;
+  signal READDATA2_TO_MEMWB : std_logic_vector(31 downto 0);
+  signal ALURESULT_TO_MEMWB : std_logic_vector(31 downto 0);
+  signal memwb_readdata_to_writebackmux : std_logic_vector(31 downto 0);
+  signal memwb_aluresult_to_writebackmux : std_logic_vector(31 downto 0);
+  
+  -- WB control signals
+  signal MEMTOREG_TO_MEMWB : std_logic;
+  signal REGWRITE_TO_MEMWB : std_logic;
+  signal memwb_memtoreg_to_wbmux : std_logic;
+  signal REGWRITE_FROM_MEMWB : std_logic;
+  
+  -- Register address
+  signal RD_TO_MEMWB : std_logic_vector(4 downto 0);
+  signal RD_FROM_MEMWB : std_logic_vector(4 downto 0);
 
 
+  --TO WRITEBACK MUX
+  
+	
+--	signal MEMTOREG_CONTROL_TO_WRITEBACK_MUX : std_logic;
+--  signal READ_DATA_TO_WRITEBACK_MUX : std_logic_vector(31 downto 0);
+--  signal ALURESULT_TO_WRITEBACK_MUX : std_logic_vector(31 downto 0);
 
+--signal WRITEBACKDATA_FROM_WRITEBACK_MUX : std_logic_vector(31 downto 0);
 
+  
+  
 --------------------------------------------------------------------------END
 	
 
@@ -399,23 +438,23 @@ ifid_pcout_to_pcimmadder <= ifid_pcout_to_OUT;
 registers_reg1out_to_controlunit  <= registers_reg1out_to_idex;
 registers_reg2out_to_controlunit  <= registers_reg2out_to_idex;
      
-     
-	  --TO CONTROL UNIT
-		 CONTROLUNIT_INST : entity work.ControlUnit
-    port map (
-      instruction => ifid_instruction_to_controlunit,
-      cntrlsigmux => hazardunit_cntrlsigmux_to_controlunit,
-      rs1         => registers_reg1out_to_controlunit,
-      rs2         => registers_reg2out_to_controlunit, 
-      MemtoReg    => controlunit_memtoreg_to_idex,
-      RegWrite    => controlunit_regwrite_to_idex,
-      MemRead     => controlunit_memread_to_idex,
-      MemWrite    => controlunit_memwrite_to_idex,
-      Branch      => controlunit_earlybranch_to_pcmux,
-      ALUSrc      => controlunit_alusource_to_idex,
-      ALUOp       => contolunit_aluop_to_idex,
-      if_flush    => controlunit_ifflush_to_ifid
-    );
+         --
+--	  --TO CONTROL UNIT
+--		 CONTROLUNIT_INST : entity work.ControlUnit
+--    port map (
+--      instruction => ifid_instruction_to_controlunit,
+--      cntrlsigmux => hazardunit_cntrlsigmux_to_controlunit,
+--      rs1         => registers_reg1out_to_controlunit,
+--      rs2         => registers_reg2out_to_controlunit, 
+--      MemtoReg    => controlunit_memtoreg_to_idex,
+--      RegWrite    => controlunit_regwrite_to_idex,
+--      MemRead     => controlunit_memread_to_idex,
+--      MemWrite    => controlunit_memwrite_to_idex,
+--      Branch      => controlunit_earlybranch_to_pcmux,
+--      ALUSrc      => controlunit_alusource_to_idex,
+--      ALUOp       => contolunit_aluop_to_idex,
+--      if_flush    => controlunit_ifflush_to_ifid
+--    );
 	
 	  -- NEED TO ADD THE EXMEM AND MEMWB forwarding signals !!! logic is implenented 
 
@@ -480,7 +519,7 @@ HAZARD_UNIT_INST : entity work.hazard_unit
       rdin => ifid_rd_to_idex,
       rs1out => idex_rs1_to_forwardingunit,
       rs2out => idex_rs2_to_forwardingunit,
-      rdout => idex_rd_to_frowardingunit
+      rdout => idex_rd_to_exmem
     );
    
    	  
@@ -559,32 +598,32 @@ alusrcmuxb_source2_to_exmem <= alusrcmuxB_rs2_to_alu;
     port map (
       clk => clock,
       resetbar => resetbar,
-    --  pcplusimmin => PC_PLUS_IMM_TO_EXMEM,
+    
       aluzeroin => alu_zeroresult_to_exmem,
       aluresultin => alu_result_to_exmem,
       readdata2in => alusrcmuxb_source2_to_exmem,
-      --branchjumpaddrout => BRANCH_JUMP_ADDR_FROM_EXMEM,
-      aluzeroout => ALU_ZERO_FROM_EXMEM,
-      aluresultout => ALU_RESULT_FROM_EXMEM,
-      readdata2out => READ_DATA_2_FROM_EXMEM,
+  
+      aluzeroout => exmem_zero_to_branchand,
+      aluresultout => exmem_result_to_datamem,
+      readdata2out => exmem_src2_to_datamem,
       
       -- WB control signals
       MemtoRegin => idex_memtoreg_to_exmem,
       RegWritein => idex_regwrite_to_exmem,
-      MemtoRegout => MEMTOREG_FROM_EXMEM,
-      RegWriteout => REGWRITE_FROM_EXMEM,
+      MemtoRegout => exmem_memtoreg_to_memwb,
+      RegWriteout => exmem_regwrite_to_memwb,
       
       -- M control signals
       MemReadin => idex_memread_to_exmem,
       MemWritein => idex_memwrite_to_exmem,
       Branchin => idex_branch_to_exmem,
-      MemRead => MEMREAD_FROM_EXMEM,
-      MemWrite => MEMWRITE_FROM_EXMEM,
-      Branch => BRANCH_FROM_EXMEM,
+      MemRead => exmem_memread_to_datamem,
+      MemWrite => exmem_memwrite_to_datamem,
+      Branch => exmem_branch_to_branchand,
       
       -- Register address
       rdin => idex_rd_to_exmem,
-      rdout => RD_FROM_EXMEM
+      rdout => exmem_rd_to_memwb
     );
 
 	
@@ -593,16 +632,18 @@ alusrcmuxb_source2_to_exmem <= alusrcmuxB_rs2_to_alu;
 	--TO FORWARDING UNIT
 	
 	
+	--exmem rd: exmem_rd_to_memwb	  
+	
+	
+	
+	
+	
+	
 	
 	 --next... lol
 	
 	
-	
-	
-	
-	
-	
-	
+			
 
 
 
@@ -612,17 +653,77 @@ alusrcmuxb_source2_to_exmem <= alusrcmuxB_rs2_to_alu;
 ------MEM------------------------------------------------------------------BEGIN	
 	
 
-
+	--TO DATA MEMORY
+	
+	  DATA_MEMORY_INST : entity work.data_memory
+    port map (
+      clk => clock,
+      reset => resetbar,
+      memwrite => exmem_memwrite_to_datamem,
+      memread => exmem_memread_to_datamem,
+      address => exmem_src2_to_datamem,
+      writedata => exmem_result_to_datamem,
+      readdata => datamem_readdata_to_memwb
+    );
+	
+	
+	-- TO BRANCH AND
+	
+	 BRANCH_AND_INST : entity work.BranchAND
+    port map (
+      ALUZero => exmem_zero_to_branchand,
+      ControlBranch => exmem_branch_to_branchand,
+      BranchResponse => branchand_jumpbranchselect_to_pc_mux
+    );
+	
+	
+	
 
 
 --------------------------------------------------------------------------END	   
 
 ------WB------------------------------------------------------------------BEGIN	
 	
+	
+	--TO MEMWB
+
+	
+	 MEMWB_INST : entity work.memwb
+    port map (
+      clk => clock,
+      resetbar => resetbar,
+      readdata2in => datamem_readdata_to_memwb,
+      aluresultin => exmem_result_to_datamem,
+      readdata2out => memwb_readdata_to_writebackmux,
+      aluresultout => memwb_aluresult_to_writebackmux,
+      
+      -- WB control signals
+      MemtoRegin => exmem_memtoreg_to_memwb,
+      RegWritein => exmem_regwrite_to_memwb,
+      MemtoReg => memwb_memtoreg_to_wbmux,
+      RegWrite => memwb_regwrite_to_registers,
+      
+      -- Register address
+      rdin => exmem_rd_to_memwb,
+      rdout => RD_FROM_MEMWB
+    );
 
 
 
-
+	
+	--TO WRITE BACK MUX
+	 
+	
+	WRITEBACK_MUX_INST : entity work.writebackmux
+    port map (
+      memtoregcontrol => memwb_memtoreg_to_wbmux,
+      read_data => memwb_readdata_to_writebackmux,
+      aluresult => memwb_aluresult_to_writebackmux,
+      writebackdata => writebackmux_writedata_to_registers
+    );
+	
+	
+	
 --------------------------------------------------------------------------END
 
 

@@ -17,3 +17,7 @@ i<>.\src\alusrcmuxb.vhd
 i<>.\src\ALU.vhd
 i<>.\src\exmem.vhd
 i<>.\src\alucontrol.vhd
+i<>.\src\branch_and.vhd
+i<>.\src\Data_Memory.vhd
+i<>.\src\writebackmux.vhd
+i<>.\src\memwb.vhd

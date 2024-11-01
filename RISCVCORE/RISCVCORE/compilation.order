@@ -1,12 +1,15 @@
 .\src\RISCVCORE.vhd
+.\src\writebackmux.vhd
+.\src\memwb.vhd
 .\src\control_unit.vhd
 .\src\forwarding_unit.vhd
+.\src\branch_and.vhd
+.\src\forwardingmuxB.vhd
 .\src\pc4adder.vhd
 .\src\program_counter.vhd
 .\src\registers.vhd
 .\src\pc_mux.vhd
 .\src\pcimmadder.vhd
-.\src\forwardingmuxB.vhd
 .\src\ifid.vhd
 .\src\instruction_memory.vhd
 .\src\immediategen.vhd
@@ -14,6 +17,7 @@
 .\src\idex.vhd
 .\src\forwardingmuxA.vhd
 .\src\exmem.vhd
+.\src\Data_Memory.vhd
 .\src\alucontrol.vhd
 .\src\alusrcmuxb.vhd
 .\src\ALU.vhd

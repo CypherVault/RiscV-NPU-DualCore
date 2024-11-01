@@ -1,6 +1,3 @@
 .\src\datapath.vhd
-.\src\ALU.vhd
-.\src\branch_and.vhd
-.\src\Data_Memory.vhd
 .\src\writebackmux.vhd
 .\src\memwb.vhd
