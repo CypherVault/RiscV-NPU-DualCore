@@ -5,11 +5,11 @@ entity exmem is
     Port (
         clk                : in  STD_LOGIC;
         resetbar           : in  STD_LOGIC;
-        pcplusimmin        : in  STD_LOGIC_VECTOR(15 downto 0);
+       -- pcplusimmin        : in  STD_LOGIC_VECTOR(15 downto 0);
         aluzeroin          : in  STD_LOGIC;
         aluresultin        : in  STD_LOGIC_VECTOR(31 downto 0);
         readdata2in        : in  STD_LOGIC_VECTOR(31 downto 0);
-        branchjumpaddrout  : out STD_LOGIC_VECTOR(15 downto 0);
+       -- branchjumpaddrout  : out STD_LOGIC_VECTOR(15 downto 0);
         aluzeroout         : out STD_LOGIC;
         aluresultout       : out STD_LOGIC_VECTOR(31 downto 0);
         readdata2out       : out STD_LOGIC_VECTOR(31 downto 0);	   
@@ -81,7 +81,7 @@ begin
 			
         elsif rising_edge(clk) then
             -- On rising edge of clock, update internal registers
-            branchjumpaddr_reg <= pcplusimmin;
+           -- branchjumpaddr_reg <= pcplusimmin;
             aluzero_reg        <= aluzeroin;
             aluresult_reg      <= aluresultin;
             readdata2_reg      <= readdata2in;	   
@@ -99,7 +99,7 @@ begin
     end process;
 
     -- Continuous assignments for outputs
-    branchjumpaddrout <= branchjumpaddr_reg;
+   -- branchjumpaddrout <= branchjumpaddr_reg;
     aluzeroout        <= aluzero_reg;
     aluresultout      <= aluresult_reg;
     readdata2out      <= readdata2_reg;	   

@@ -1,0 +1,66 @@
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/control_unit.vhd $dsn/src/internalconnections.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Entity => forwardingMuxB
+# Entity => forwardingMuxA
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0078: internalconnections.vhd : (326, 7): Unknown identifier "rs1".
+# Error: COMP96_0078: internalconnections.vhd : (327, 7): Unknown identifier "rs2".
+# Error: COMP96_0133: internalconnections.vhd : (326, 7): Cannot find object declaration.
+# Error: COMP96_0112: internalconnections.vhd : (326, 7): "rs1" does not match the formal name.
+# Error: COMP96_0207: internalconnections.vhd : (322, 4): No actual specified for local port "rs1_data".
+# Error: COMP96_0207: internalconnections.vhd : (322, 4): No actual specified for local port "rs2_data".
+# Error: COMP96_0207: internalconnections.vhd : (322, 4): No actual specified for local port "exmem_rd".
+# Error: COMP96_0207: internalconnections.vhd : (322, 4): No actual specified for local port "exmem_regdata".
+# Error: COMP96_0207: internalconnections.vhd : (322, 4): No actual specified for local port "memwb_rd".
+# Error: COMP96_0207: internalconnections.vhd : (322, 4): No actual specified for local port "memwb_regdata".
+# Compile failure 10 Errors 1 Warnings  Analysis time :  0.5 [s]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/forwarding_unit.vhd
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile success 0 Errors 0 Warnings  Analysis time :  47.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/alusrcmuxb.vhd
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile success 0 Errors 0 Warnings  Analysis time :  62.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/ALU.vhd
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile success 0 Errors 0 Warnings  Analysis time :  62.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/internalconnections.vhd
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0078: internalconnecti

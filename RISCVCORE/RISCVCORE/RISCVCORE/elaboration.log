@@ -1,4 +1,4 @@
-Active-HDL 15.0.261.9132 2024-10-30 20:18:07
+Active-HDL 15.0.261.9132 2024-10-31 21:32:59
 
 Elaboration top modules:
 Architecture                  structural(internal_connections)
@@ -16,9 +16,14 @@ ifid                 | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows6
 ImmGen               | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -O3
 pcimmadder           | behavior     | riscvcore |      | 15.0.261.9132 (Windows64) | -O3
 regfile              | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -O3
-ControlUnit          | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -O3
 hazard_unit          | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -O3
 idex                 | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -O3
+alucontrol           | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -O3
+ALU                  | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -O3
+forwardingMuxA       | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -O3
+forwardingMuxB       | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -O3
+ALUSrcMuxB           | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -O3
+exmem                | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -O3
 ---------------------------------------------------------------------------------------------------------
 
 ---------------------------------------------------------------------------------------------------------

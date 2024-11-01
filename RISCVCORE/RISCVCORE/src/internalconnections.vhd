@@ -139,30 +139,30 @@ architecture structural of internal_connections is
   -- WB control signals
   signal MEMTOREG_TO_IDEX : std_logic;
   signal REGWRITE_TO_IDEX : std_logic;
-  signal MEMTOREG_FROM_IDEX : std_logic;
-  signal REGWRITE_FROM_IDEX : std_logic;
+  signal idex_memtoreg_to_exmem : std_logic;
+  signal idex_regwrite_to_exmem : std_logic;
   
   -- M control signals
   signal MEMREAD_TO_IDEX : std_logic;
   signal MEMWRITE_TO_IDEX : std_logic;
   signal BRANCH_TO_IDEX : std_logic;
-  signal MEMREAD_FROM_IDEX : std_logic;
-  signal MEMWRITE_FROM_IDEX : std_logic;
-  signal BRANCH_FROM_IDEX : std_logic;
+  signal idex_memread_to_exmem : std_logic;
+  signal idex_memwrite_to_exmem : std_logic;
+  signal idex_branch_to_exmem : std_logic;
   
   -- EX control signals
   signal ALUSRC_TO_IDEX : std_logic;
   signal ALUOP_TO_IDEX : std_logic_vector(1 downto 0);
-  signal ALUSRC_FROM_IDEX : std_logic;
+  signal idex_alusrcb_to_alusrcmuxb : std_logic;
   signal ALUOP_FROM_IDEX : std_logic_vector(1 downto 0);
   
   -- Register addresses
   signal RS1_TO_IDEX : std_logic_vector(4 downto 0);
   signal RS2_TO_IDEX : std_logic_vector(4 downto 0);
   signal RD_TO_IDEX : std_logic_vector(4 downto 0);
-  signal RS1_FROM_IDEX : std_logic_vector(4 downto 0);
-  signal RS2_FROM_IDEX : std_logic_vector(4 downto 0);
-  signal RD_FROM_IDEX : std_logic_vector(4 downto 0);
+  signal idex_rs1_to_forwardingunit : std_logic_vector(4 downto 0);
+  signal idex_rs2_to_forwardingunit : std_logic_vector(4 downto 0);
+  signal idex_rd_to_frowardingunit : std_logic_vector(4 downto 0);
 
   
 --------------------------------------------------------------------------END
@@ -181,11 +181,11 @@ architecture structural of internal_connections is
 	 	 
 	--TO ALU
 	
-	signal forwardingmuxa_rs1_to_alu : std_logic_vector(31 downto 0);
-	signal alusrcmuxb_rs2_imm_to_alu : std_logic_vector(31 downto 0);
-	signal alucontrol_aluop_to_alu : std_logic_vector(3 downto 0);
-	signal alu_result_to_exmem : std_logic_vector(31 downto 0);
-	signal alu_zeroresult_to_exmem : std_logic;
+--	signal forwardingmuxa_rs1_to_alu : std_logic_vector(31 downto 0);
+--	signal alusrcmuxb_rs2_imm_to_alu : std_logic_vector(31 downto 0);
+--	signal alucontrol_aluop_to_alu : std_logic_vector(3 downto 0);
+--	signal alu_result_to_exmem : std_logic_vector(31 downto 0);
+--	signal alu_zeroresult_to_exmem : std_logic;
 	
 
 
@@ -205,7 +205,7 @@ architecture structural of internal_connections is
   	signal exmem_rs_to_forwardingmuxb : std_logic_vector(31 downto 0);
   	signal memwb_rs_to_forwardingmuxb : std_logic_vector(31 downto 0);
   	signal forwardingunit_Bmuxcntrl_to_forrwardingmuxB : std_logic_vector(1 downto 0);
-  	signal forwardingmuxB_rs2_to_alusrcmuxB : std_logic_vector(31 downto 0);
+--  	signal forwardingmuxB_rs2_to_alusrcmuxB : std_logic_vector(31 downto 0);
 
 	
 	
@@ -220,7 +220,35 @@ architecture structural of internal_connections is
 	
 	--TO EXMEM
 	
-	
+--	signal clock : std_logic;
+--  signal resetbar : std_logic;
+  signal PC_PLUS_IMM_TO_EXMEM : std_logic_vector(15 downto 0);
+  signal alu_zeroresult_to_exmem : std_logic;
+  signal alu_result_to_exmem : std_logic_vector(31 downto 0);
+  signal alusrcmuxb_source2_to_exmem : std_logic_vector(31 downto 0);
+  signal BRANCH_JUMP_ADDR_FROM_EXMEM : std_logic_vector(15 downto 0);
+  signal ALU_ZERO_FROM_EXMEM : std_logic;
+  signal ALU_RESULT_FROM_EXMEM : std_logic_vector(31 downto 0);
+  signal READ_DATA_2_FROM_EXMEM : std_logic_vector(31 downto 0);	 
+  
+  --
+--  -- WB control signals
+--  signal MEMTOREG_TO_EXMEM : std_logic;
+--  signal REGWRITE_TO_EXMEM : std_logic;
+--  signal MEMTOREG_FROM_EXMEM : std_logic;
+--  signal REGWRITE_FROM_EXMEM : std_logic;
+--  
+--  -- M control signals
+--  signal MEMREAD_TO_EXMEM : std_logic;
+--  signal MEMWRITE_TO_EXMEM : std_logic;
+--  signal BRANCH_TO_EXMEM : std_logic;
+--  signal MEMREAD_FROM_EXMEM : std_logic;
+--  signal MEMWRITE_FROM_EXMEM : std_logic;
+--  signal BRANCH_FROM_EXMEM : std_logic;
+--  
+--  -- Register address
+--  signal RD_TO_EXMEM : std_logic_vector(4 downto 0);
+--  signal RD_FROM_EXMEM : std_logic_vector(4 downto 0);
 	
 	--TO FORWARDING UNIT
 	
@@ -309,8 +337,8 @@ pc_pcout_to_pc4adder <= pc_pcout_to_instruction_memory;
         ifidflush           => controlunit_ifidflush_to_ifid,		 --UNUSED- DO NOT IMPLEMENT
         pcout               => pc_pcout_to_ifid,
         instruction         => instruction_memory_instruction_to_ifid,
-        ifidinstructionout  => ifid_instruction_to_OUT   ,-- Connect to appropriate signal if needed
-        ifidpcout           => ifid_pcout_to_OUT   ,-- Connect to appropriate signal if needed
+        ifidinstructionout  => ifid_instruction_to_OUT   ,
+        ifidpcout           => ifid_pcout_to_OUT   ,
     	rs1_out				=> ifid_rs1_to_register	  ,
 		rs2_out				=> ifid_rs2_to_register  ,
 		rd_out			    => ifid_rd_to_idex
@@ -370,8 +398,8 @@ ifid_pcout_to_pcimmadder <= ifid_pcout_to_OUT;
 -- Additional signal assignments for multiple reg out connections	
 registers_reg1out_to_controlunit  <= registers_reg1out_to_idex;
 registers_reg2out_to_controlunit  <= registers_reg2out_to_idex;
-
-
+     
+     
 	  --TO CONTROL UNIT
 		 CONTROLUNIT_INST : entity work.ControlUnit
     port map (
@@ -416,38 +444,43 @@ HAZARD_UNIT_INST : entity work.hazard_unit
       readdata1in => registers_reg1out_to_idex,
       readdata2in => registers_reg2out_to_idex,
       immediatein => immediategen_immediate_to_idex,
-      immediateout => MAKETHISSIGNALIMMEDIATE_FROM_IDEX,
+      immediateout => idex_immediate_to_alusrcmuxb,
       --PCOUTREAL => PC_FROM_IDEX,
-      readdata1out => READDATA1_FROM_IDEX,
-      readdata2out => READDATA2_FROM_IDEX,
+      readdata1out => idex_rs1_to_forwardingmuxa,
+      readdata2out => idex_rs2_to_forwardingmuxb,
       
       -- WB control signals
       MemtoRegin => controlunit_memtoreg_to_idex,
       RegWritein => controlunit_regwrite_to_idex,
-      MemtoRegout => MEMTOREG_FROM_IDEX,
-      RegWriteout => REGWRITE_FROM_IDEX,
+      MemtoRegout => idex_memtoreg_to_exmem,
+      RegWriteout => idex_regwrite_to_exmem,
       
       -- M control signals
       MemReadin => controlunit_memread_to_idex,
       MemWritein => controlunit_memwrite_to_idex,
       Branchin => controlunit_earlybranch_to_pcmux,
-      MemReadout => MEMREAD_FROM_IDEX,
-      MemWriteout => MEMWRITE_FROM_IDEX,
-      Branchout => BRANCH_FROM_IDEX,
+      MemReadout => idex_memread_to_exmem,
+      MemWriteout => idex_memwrite_to_exmem,
+      Branchout => idex_branch_to_exmem,
       
       -- EX control signals
       ALUSrcin => controlunit_alusource_to_idex,
       ALUOpin => contolunit_aluop_to_idex,
-      ALUSrc => ALUSRC_FROM_IDEX,
-      ALUOp => ALUOP_FROM_IDEX,
+      ALUSrc => idex_alusrcb_to_alusrcmuxb,
+      ALUOp => idex_aluop_to_alucontrol,   
+	  
+	  
+	  -- operation
+	  instructionin => ifid_instruction_to_OUT,
+	  instructionout => idex_instruction_to_alucontrol,
       
       -- Register addresses
       rs1in => ifid_rs1_to_register,
       rs2in => ifid_rs2_to_register,
       rdin => ifid_rd_to_idex,
-      rs1out => RS1_FROM_IDEX,
-      rs2out => RS2_FROM_IDEX,
-      rdout => RD_FROM_IDEX
+      rs1out => idex_rs1_to_forwardingunit,
+      rs2out => idex_rs2_to_forwardingunit,
+      rdout => idex_rd_to_frowardingunit
     );
    
    	  
@@ -475,7 +508,7 @@ HAZARD_UNIT_INST : entity work.hazard_unit
 	 ALU_INST : entity work.ALU
     port map (
       input_0 => forwardingmuxa_rs1_to_alu,
-      input_1 => alusrcmuxb_rs2_imm_to_alu,
+      input_1 => alusrcmuxB_rs2_to_alu,
       operation => alucontrol_aluop_to_alu,
       ALU_output => alu_result_to_exmem,
       zero_flag => alu_zeroresult_to_exmem
@@ -486,7 +519,7 @@ HAZARD_UNIT_INST : entity work.hazard_unit
 	--TO FORWARDINGMUXA
 	
 	FORWARDING_MUX_A_INST : entity work.forwardingMuxA
-    port map (
+    port map (															 
       rs1 => idex_rs1_to_forwardingmuxa,
       forwardedrs1exmem => exmem_rs_to_forwardingmuxa,
       forwardedrs1memwb => memwb_rs_to_forwardingmuxa,
@@ -514,12 +547,46 @@ HAZARD_UNIT_INST : entity work.hazard_unit
     port map (
       ReadRegister2 => forwardingmuxb_rs2_to_alusrcmuxb,
       ReadImmediate => idex_immediate_to_alusrcmuxb,
-      ALUSrcBControl => ALU_SRC_B_CONTROL,
+      ALUSrcBControl => idex_alusrcb_to_alusrcmuxb,
       MuxOutput => alusrcmuxB_rs2_to_alu
     );
 	
+alusrcmuxb_source2_to_exmem <= alusrcmuxB_rs2_to_alu;
 	
 	--TO EXMEM
+	
+	EXMEM_INST : entity work.exmem
+    port map (
+      clk => clock,
+      resetbar => resetbar,
+    --  pcplusimmin => PC_PLUS_IMM_TO_EXMEM,
+      aluzeroin => alu_zeroresult_to_exmem,
+      aluresultin => alu_result_to_exmem,
+      readdata2in => alusrcmuxb_source2_to_exmem,
+      --branchjumpaddrout => BRANCH_JUMP_ADDR_FROM_EXMEM,
+      aluzeroout => ALU_ZERO_FROM_EXMEM,
+      aluresultout => ALU_RESULT_FROM_EXMEM,
+      readdata2out => READ_DATA_2_FROM_EXMEM,
+      
+      -- WB control signals
+      MemtoRegin => idex_memtoreg_to_exmem,
+      RegWritein => idex_regwrite_to_exmem,
+      MemtoRegout => MEMTOREG_FROM_EXMEM,
+      RegWriteout => REGWRITE_FROM_EXMEM,
+      
+      -- M control signals
+      MemReadin => idex_memread_to_exmem,
+      MemWritein => idex_memwrite_to_exmem,
+      Branchin => idex_branch_to_exmem,
+      MemRead => MEMREAD_FROM_EXMEM,
+      MemWrite => MEMWRITE_FROM_EXMEM,
+      Branch => BRANCH_FROM_EXMEM,
+      
+      -- Register address
+      rdin => idex_rd_to_exmem,
+      rdout => RD_FROM_EXMEM
+    );
+
 	
 	
 	

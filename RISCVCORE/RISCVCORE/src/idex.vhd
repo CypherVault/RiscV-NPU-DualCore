@@ -9,6 +9,8 @@ entity idex is
 			clk                 : in  STD_LOGIC;
 			rstbar                 : in  STD_LOGIC;
 		--	pcin               : in  STD_LOGIC_VECTOR(15 downto 0);
+		instructionin: in  STD_LOGIC_VECTOR(31 downto 0);   
+		instructionout: out  STD_LOGIC_VECTOR(31 downto 0); 
 			readdata1in         : in  STD_LOGIC_VECTOR(31 downto 0); 
 			readdata2in         : in  STD_LOGIC_VECTOR(31 downto 0);
 			immediatein         : in STD_LOGIC_VECTOR(31 downto 0);
@@ -59,6 +61,7 @@ architecture Behavioral of idex is
     signal readdata1_reg   : STD_LOGIC_VECTOR(31 downto 0);
     signal readdata2_reg   : STD_LOGIC_VECTOR(31 downto 0);
     signal immediate_reg   : STD_LOGIC_VECTOR(31 downto 0);	   
+	signal instruction_reg   : STD_LOGIC_VECTOR(31 downto 0);
 	
 	 		--WB
 	signal	    MemtoReg_reg : std_logic;
@@ -87,6 +90,7 @@ begin
             readdata1_reg <= (others => '0');
             readdata2_reg <= (others => '0');
             immediate_reg <= (others => '0');	 
+			instruction_reg <= (others => '0');	
 			
 			MemtoReg_reg <= ( '0');
 			RegWrite_reg <= ( '0');
@@ -108,7 +112,8 @@ begin
          --   pcin_reg     <= pcin;
             readdata1_reg <= readdata1in;
             readdata2_reg <= readdata2in;
-            immediate_reg <= immediatein; 
+            immediate_reg <= immediatein;
+			instruction_reg <= instructionin;
 			
 			MemtoReg_reg <= MemtoRegin;
 			RegWrite_reg <= RegWritein;
@@ -131,7 +136,8 @@ begin
     readdata1out <= readdata1_reg;
     readdata2out <= readdata2_reg;
     immediateout <= immediate_reg; 
-		 
+instructionout <= instruction_reg; 
+	
 
 MemtoRegout	<= MemtoReg_reg;
 RegWriteout	<= RegWrite_reg;
