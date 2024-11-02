@@ -1,29 +1,37 @@
-Active-HDL 15.0.261.9132 2024-10-31 21:32:59
+Active-HDL 15.0.261.9132 2024-11-02 17:36:19
 
 Elaboration top modules:
-Architecture                  structural(internal_connections)
+Architecture                  behavior(RICSVCORE_tb)
 
 
 ---------------------------------------------------------------------------------------------------------
 Entity               | Architecture | Library   | Info | Compiler Version          | Compilation Options
 ---------------------------------------------------------------------------------------------------------
-internal_connections | structural   | riscvcore |      | 15.0.261.9132 (Windows64) | -O3
-pc_mux               | behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -O3
-pc4adder             | rtl          | riscvcore |      | 15.0.261.9132 (Windows64) | -O3
-program_counter      | rtl          | riscvcore |      | 15.0.261.9132 (Windows64) | -O3
-instruction_memory   | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -O3
-ifid                 | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -O3
-ImmGen               | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -O3
-pcimmadder           | behavior     | riscvcore |      | 15.0.261.9132 (Windows64) | -O3
-regfile              | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -O3
-hazard_unit          | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -O3
-idex                 | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -O3
-alucontrol           | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -O3
-ALU                  | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -O3
-forwardingMuxA       | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -O3
-forwardingMuxB       | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -O3
-ALUSrcMuxB           | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -O3
-exmem                | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -O3
+RICSVCORE_tb         | behavior     | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+RICSVCORE            | behavior     | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+internal_connections | structural   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+pc_mux               | behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+pc4adder             | rtl          | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+program_counter      | rtl          | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+instruction_memory   | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+ifid                 | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+ImmGen               | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+pcimmadder           | behavior     | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+regfile              | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+ControlUnit          | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+hazard_unit          | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+idex                 | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+alucontrol           | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+ALU                  | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+forwardingMuxA       | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+forwardingMuxB       | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+ALUSrcMuxB           | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+exmem                | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+ForwardingUnit       | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+data_memory          | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+BranchAND            | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+memwb                | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+writebackmux         | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
 ---------------------------------------------------------------------------------------------------------
 
 ---------------------------------------------------------------------------------------------------------
@@ -32,6 +40,7 @@ VHDL Package                        | Library   | Info | Compiler Version       
 standard                            | std       |      |                           | <unavailable>
 TEXTIO                              | std       |      | 15.0.261.9132 (Windows64) |  -2019
 std_logic_1164                      | ieee      |      | 15.0.261.9132 (Windows64) |  -2008
+types_pkg                           | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
 NUMERIC_STD                         | ieee      |      | 15.0.261.9132 (Windows64) |  -2008
 ---------------------------------------------------------------------------------------------------------
 

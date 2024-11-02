@@ -3,35 +3,38 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use work.all;
 
+--types package
+library work;
+use work.types_pkg.all;
+
 entity internal_connections is
-	port (	   
-	
-	--what needs to be exposed to RISCVCORE.VHD for debug and reading purposes--
-		clock : in std_logic;
-		resetbar : in std_logic
-		
-		
-		
-		
-		
-		
-		
-		
-	);
+    port (       
+        -- Original ports
+        clock : in std_logic;
+        resetbar : in std_logic;
+        
+        -- Debug ports for memory and register file
+        debug_mem_out : out mem_array;
+        debug_reg_out : out reg_array;
+        debug_pc_out : out std_logic_vector(15 downto 0)
+        -- You can add more ports here as needed for your design
+        
+    );
 end entity internal_connections;
 
 architecture structural of internal_connections is					
 
 --middle man signals to port map signals between internal components-- 	  
 
-------generic multi use / misc------------------------------------------------------------------BEGIN
+------generic and debug------------------------------------------------------------------BEGIN
 
 --	signal clock_int : std_logic;
 --	signal resetbar_int : std_logic;
 
 
-
-
+signal debug_mem : mem_array;
+  signal debug_reg : reg_array;
+signal pcout_debug : std_logic_vector(15 downto 0);
 	
 ------IF------------------------------------------------------------------BEGIN						 --XXX means undefined as of NOW
 		
@@ -349,7 +352,10 @@ begin
         pcwrite  => hazardunit_pcwrite_to_pc,
         pcsource => pc_mux_pcsource_to_pc,
         pcout    => pc_pcout_to_instruction_memory
+        
     );
+
+pcout_debug <= pc_pcout_to_instruction_memory;
 
 -- Additional signal assignments for multiple pcout connections
 pc_pcout_to_ifid <= pc_pcout_to_instruction_memory;
@@ -373,7 +379,7 @@ pc_pcout_to_pc4adder <= pc_pcout_to_instruction_memory;
         clk                 => clock,
         rstbar              => resetbar,
         ifidwrite           => hazardunit_ifidwrite_to_ifid,  
-        ifidflush           => controlunit_ifidflush_to_ifid,		 --UNUSED- DO NOT IMPLEMENT
+        ifidflush           => controlunit_ifflush_to_ifid,		 --UNUSED- DO NOT IMPLEMENT
         pcout               => pc_pcout_to_ifid,
         instruction         => instruction_memory_instruction_to_ifid,
         ifidinstructionout  => ifid_instruction_to_OUT   ,
@@ -424,6 +430,7 @@ ifid_pcout_to_pcimmadder <= ifid_pcout_to_OUT;
     port map (
       clk                    => clock,
       resetbar               => resetbar,
+      debug_reg => debug_reg,
       regwrite               => memwb_regwrite_to_registers,
       readregister1          => ifid_rs1_to_registers,
       readregister2          => ifid_rs2_to_registers,
@@ -476,7 +483,7 @@ HAZARD_UNIT_INST : entity work.hazard_unit
       instruction => idex_instruction_to_hazardunit,
       cntrlsigmux => hazardunit_controlsigmux_to_controlunit,
       pcwriteenable => hazardunit_pcwrite_to_pc,
-      ifidwriteenable => hazardunit_write_to_ifid
+      ifidwriteenable => hazardunit_ifidwrite_to_ifid
     );
 
    -- TO IDEX																  
@@ -671,6 +678,7 @@ alusrcmuxb_source2_to_exmem <= alusrcmuxB_rs2_to_alu;
       memread => exmem_memread_to_datamem,
       address => exmem_src2_to_datamem,
       writedata => exmem_result_to_datamem,
+      debug_mem => debug_mem,
       readdata => datamem_readdata_to_memwb
     );
 	
@@ -738,15 +746,20 @@ alusrcmuxb_source2_to_exmem <= alusrcmuxB_rs2_to_alu;
 
 
 
+debug_output : process(clock, resetbar)
+begin
+  if resetbar = '0' then
+    -- Reset condition
+    debug_mem_out <= (others => (others => '0'));
+    debug_reg_out <= (others => (others => '0'));
+    debug_pc_out <= (others => '0');
+  elsif rising_edge(clock) then
+    -- Normal operation
+    debug_mem_out <= debug_mem;
+    debug_reg_out <= debug_reg;
+    debug_pc_out <= pcout_debug;
+  end if;
+end process debug_output;
 
 
-
-
-
-
-
-
-
-
-	
 end architecture structural;

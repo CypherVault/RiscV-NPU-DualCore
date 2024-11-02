@@ -16,7 +16,7 @@ architecture Behavioral of instruction_memory is
         1 => x"00100013",
         2 => x"00203E33",
         3 => x"00208033",
-        4 => x"00103E33",							--fibbonacci test program
+        4 => x"00103E33",                            --fibbonacci test program
         5 => x"00204233",
         6 => x"00203E33",
         7 => x"00400067",
@@ -25,7 +25,12 @@ architecture Behavioral of instruction_memory is
 
 begin
  		 
-            instruction <= mem(to_integer(unsigned(pc_address)));
+    process(pc_address)
+        variable address_offset : integer;
+    begin
+        address_offset := to_integer(unsigned(pc_address)) / 4;
+        instruction <= mem(address_offset);
+    end process;
      
 		   
 end Behavioral;
