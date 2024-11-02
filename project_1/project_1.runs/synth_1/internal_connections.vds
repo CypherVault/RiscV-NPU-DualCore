@@ -3,8 +3,8 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Thu Oct 17 21:29:36 2024
-# Process ID: 5092
+# Start of session at: Sat Nov  2 01:32:36 2024
+# Process ID: 1816
 # Current directory: C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.runs/synth_1
 # Command line: vivado.exe -log internal_connections.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source internal_connections.tcl
 # Log file: C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.runs/synth_1/internal_connections.vds
@@ -12,69 +12,210 @@
 # Running On        :CHRIS7DE2
 # Platform          :Windows Server 2016 or Windows 10
 # Operating System  :19044
-# Processor Detail  :Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
-# CPU Frequency     :3192 MHz
-# CPU Physical cores:6
-# CPU Logical cores :6
-# Host memory       :34335 MB
-# Swap memory       :5100 MB
-# Total Virtual     :39436 MB
-# Available Virtual :30385 MB
+# Processor Detail  :Intel(R) Core(TM) i7-4980HQ CPU @ 2.80GHz
+# CPU Frequency     :2794 MHz
+# CPU Physical cores:4
+# CPU Logical cores :4
+# Host memory       :8566 MB
+# Swap memory       :1342 MB
+# Total Virtual     :9908 MB
+# Available Virtual :5516 MB
 #-----------------------------------------------------------
 source internal_connections.tcl -notrace
-create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 534.211 ; gain = 197.051
+create_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 534.441 ; gain = 197.617
+Command: read_checkpoint -auto_incremental -incremental {C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/utils_1/imports/synth_1/internal_connections.dcp}
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/utils_1/imports/synth_1/internal_connections.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top internal_connections -part xc7z007sclg225-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z007s'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z007s'
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 4468
+INFO: [Synth 8-7075] Helper process launched with PID 3248
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 993.777 ; gain = 455.613
+Starting Synthesize : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 998.973 ; gain = 450.957
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'internal_connections' [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/internalconnections.vhd:23]
-INFO: [Synth 8-638] synthesizing module 'pc_mux' [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/pc_mux.vhd:12]
-INFO: [Synth 8-226] default block is never used [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/pc_mux.vhd:14]
-INFO: [Synth 8-256] done synthesizing module 'pc_mux' (0#1) [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/pc_mux.vhd:12]
+INFO: [Synth 8-638] synthesizing module 'internal_connections' [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/internalconnections.vhd:25]
+INFO: [Synth 8-638] synthesizing module 'pc_mux' [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/pc_mux.vhd:13]
+INFO: [Synth 8-226] default block is never used [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/pc_mux.vhd:19]
+INFO: [Synth 8-256] done synthesizing module 'pc_mux' (0#1) [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/pc_mux.vhd:13]
 INFO: [Synth 8-638] synthesizing module 'pc4adder' [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/pc4adder.vhd:13]
 INFO: [Synth 8-256] done synthesizing module 'pc4adder' (0#1) [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/pc4adder.vhd:13]
 INFO: [Synth 8-638] synthesizing module 'program_counter' [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/program_counter.vhd:16]
 INFO: [Synth 8-256] done synthesizing module 'program_counter' (0#1) [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/program_counter.vhd:16]
-INFO: [Synth 8-638] synthesizing module 'instruction_memory' [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/instruction_memory.vhd:13]
-INFO: [Synth 8-256] done synthesizing module 'instruction_memory' (0#1) [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/instruction_memory.vhd:13]
-INFO: [Synth 8-638] synthesizing module 'ifid' [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/ifid.vhd:20]
-INFO: [Synth 8-256] done synthesizing module 'ifid' (0#1) [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/ifid.vhd:20]
-INFO: [Synth 8-256] done synthesizing module 'internal_connections' (0#1) [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/internalconnections.vhd:23]
-WARNING: [Synth 8-3848] Net XXX_jumpbranchselect_to_pc_mux in module/entity internal_connections does not have driver. [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/internalconnections.vhd:40]
-WARNING: [Synth 8-3848] Net XXX_jumpbranchdestinationselect_to_pc_mux in module/entity internal_connections does not have driver. [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/internalconnections.vhd:41]
-WARNING: [Synth 8-3848] Net XXX_pcwrite_to_pc in module/entity internal_connections does not have driver. [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/internalconnections.vhd:49]
-WARNING: [Synth 8-3848] Net XXX_ifidwrite_to_ifid in module/entity internal_connections does not have driver. [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/internalconnections.vhd:61]
-WARNING: [Synth 8-3848] Net XXX_ifidflush_to_ifid in module/entity internal_connections does not have driver. [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/internalconnections.vhd:62]
-WARNING: [Synth 8-7129] Port pc_address[15] in module instruction_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc_address[14] in module instruction_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc_address[13] in module instruction_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc_address[12] in module instruction_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc_address[11] in module instruction_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc_address[10] in module instruction_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc_address[9] in module instruction_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc_address[8] in module instruction_memory is either unconnected or has no load
+INFO: [Synth 8-638] synthesizing module 'instruction_memory' [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/instruction_memory.vhd:12]
+INFO: [Synth 8-256] done synthesizing module 'instruction_memory' (0#1) [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/instruction_memory.vhd:12]
+INFO: [Synth 8-638] synthesizing module 'ifid' [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/ifid.vhd:25]
+INFO: [Synth 8-256] done synthesizing module 'ifid' (0#1) [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/ifid.vhd:25]
+INFO: [Synth 8-638] synthesizing module 'ImmGen' [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/immediategen.vhd:14]
+INFO: [Synth 8-256] done synthesizing module 'ImmGen' (0#1) [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/immediategen.vhd:14]
+INFO: [Synth 8-638] synthesizing module 'pcimmadder' [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/pcimmadder.vhd:13]
+INFO: [Synth 8-256] done synthesizing module 'pcimmadder' (0#1) [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/pcimmadder.vhd:13]
+INFO: [Synth 8-638] synthesizing module 'regfile' [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/registers.vhd:25]
+INFO: [Synth 8-256] done synthesizing module 'regfile' (0#1) [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/registers.vhd:25]
+INFO: [Synth 8-638] synthesizing module 'ControlUnit' [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/control_unit.vhd:35]
+WARNING: [Synth 8-614] signal 'branch_taken' is read in the process but is not in the sensitivity list [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/control_unit.vhd:60]
+INFO: [Synth 8-256] done synthesizing module 'ControlUnit' (0#1) [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/control_unit.vhd:35]
+INFO: [Synth 8-638] synthesizing module 'hazard_unit' [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/hazardunit.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'hazard_unit' (0#1) [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/hazardunit.vhd:15]
+INFO: [Synth 8-638] synthesizing module 'idex' [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/idex.vhd:59]
+INFO: [Synth 8-256] done synthesizing module 'idex' (0#1) [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/idex.vhd:59]
+INFO: [Synth 8-638] synthesizing module 'alucontrol' [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/alucontrol.vhd:12]
+INFO: [Synth 8-226] default block is never used [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/alucontrol.vhd:16]
+INFO: [Synth 8-226] default block is never used [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/alucontrol.vhd:25]
+INFO: [Synth 8-256] done synthesizing module 'alucontrol' (0#1) [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/alucontrol.vhd:12]
+INFO: [Synth 8-638] synthesizing module 'ALU' [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/ALU.vhd:14]
+INFO: [Synth 8-226] default block is never used [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/ALU.vhd:19]
+WARNING: [Synth 8-614] signal 'result_temp' is read in the process but is not in the sensitivity list [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/ALU.vhd:17]
+INFO: [Synth 8-256] done synthesizing module 'ALU' (0#1) [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/ALU.vhd:14]
+INFO: [Synth 8-638] synthesizing module 'forwardingMuxA' [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/forwardingmuxA.vhd:14]
+INFO: [Synth 8-256] done synthesizing module 'forwardingMuxA' (0#1) [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/forwardingmuxA.vhd:14]
+INFO: [Synth 8-638] synthesizing module 'forwardingMuxB' [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/forwardingmuxB.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'forwardingMuxB' (0#1) [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/forwardingmuxB.vhd:15]
+INFO: [Synth 8-638] synthesizing module 'ALUSrcMuxB' [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/alusrcmuxb.vhd:13]
+INFO: [Synth 8-256] done synthesizing module 'ALUSrcMuxB' (0#1) [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/alusrcmuxb.vhd:13]
+INFO: [Synth 8-638] synthesizing module 'exmem' [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/exmem.vhd:45]
+INFO: [Synth 8-256] done synthesizing module 'exmem' (0#1) [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/exmem.vhd:45]
+INFO: [Synth 8-638] synthesizing module 'ForwardingUnit' [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/forwarding_unit.vhd:23]
+INFO: [Synth 8-256] done synthesizing module 'ForwardingUnit' (0#1) [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/forwarding_unit.vhd:23]
+INFO: [Synth 8-638] synthesizing module 'data_memory' [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/Data_Memory.vhd:24]
+INFO: [Synth 8-256] done synthesizing module 'data_memory' (0#1) [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/Data_Memory.vhd:24]
+INFO: [Synth 8-638] synthesizing module 'BranchAND' [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/branch_and.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'BranchAND' (0#1) [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/branch_and.vhd:16]
+INFO: [Synth 8-638] synthesizing module 'memwb' [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/memwb.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'memwb' (0#1) [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/memwb.vhd:27]
+INFO: [Synth 8-638] synthesizing module 'writebackmux' [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/writebackmux.vhd:13]
+INFO: [Synth 8-256] done synthesizing module 'writebackmux' (0#1) [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/writebackmux.vhd:13]
+INFO: [Synth 8-256] done synthesizing module 'internal_connections' (0#1) [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/internalconnections.vhd:25]
+WARNING: [Synth 8-3848] Net ifid_rs1_to_registers in module/entity internal_connections does not have driver. [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/internalconnections.vhd:96]
+WARNING: [Synth 8-3848] Net ifid_rs2_to_registers in module/entity internal_connections does not have driver. [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/internalconnections.vhd:97]
+WARNING: [Synth 8-3848] Net idex_memread_to_hazardunit in module/entity internal_connections does not have driver. [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/internalconnections.vhd:122]
+WARNING: [Synth 8-3848] Net idex_instruction_to_hazardunit in module/entity internal_connections does not have driver. [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/internalconnections.vhd:124]
+WARNING: [Synth 8-3848] Net ifid_instruction_to_controlunit in module/entity internal_connections does not have driver. [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/internalconnections.vhd:105]
+WARNING: [Synth 8-3848] Net hazardunit_cntrlsigmux_to_controlunit in module/entity internal_connections does not have driver. [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/internalconnections.vhd:106]
+WARNING: [Synth 8-3848] Net hazardunit_ifidwrite_to_ifid in module/entity internal_connections does not have driver. [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/internalconnections.vhd:67]
+WARNING: [Synth 8-3848] Net controlunit_ifidflush_to_ifid in module/entity internal_connections does not have driver. [C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/internalconnections.vhd:68]
+WARNING: [Synth 8-7129] Port address[31] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[30] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[29] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[28] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[27] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[26] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[25] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[24] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[23] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[22] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[21] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[20] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[19] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[18] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[17] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[16] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[15] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[14] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[13] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[12] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[1] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[0] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instructionfucntfeilds[31] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instructionfucntfeilds[29] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instructionfucntfeilds[28] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instructionfucntfeilds[27] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instructionfucntfeilds[26] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instructionfucntfeilds[25] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instructionfucntfeilds[24] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instructionfucntfeilds[23] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instructionfucntfeilds[22] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instructionfucntfeilds[21] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instructionfucntfeilds[20] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instructionfucntfeilds[19] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instructionfucntfeilds[18] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instructionfucntfeilds[17] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instructionfucntfeilds[16] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instructionfucntfeilds[15] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instructionfucntfeilds[11] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instructionfucntfeilds[10] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instructionfucntfeilds[9] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instructionfucntfeilds[8] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instructionfucntfeilds[7] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instructionfucntfeilds[6] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instructionfucntfeilds[5] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instructionfucntfeilds[4] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instructionfucntfeilds[3] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instructionfucntfeilds[2] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instructionfucntfeilds[1] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instructionfucntfeilds[0] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[31] in module hazard_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[30] in module hazard_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[29] in module hazard_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[28] in module hazard_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[27] in module hazard_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[26] in module hazard_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[25] in module hazard_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[14] in module hazard_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[13] in module hazard_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[12] in module hazard_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[11] in module hazard_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[10] in module hazard_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[9] in module hazard_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[8] in module hazard_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[7] in module hazard_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[6] in module hazard_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[5] in module hazard_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[4] in module hazard_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[3] in module hazard_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[2] in module hazard_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[1] in module hazard_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[0] in module hazard_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[31] in module ControlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[30] in module ControlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[29] in module ControlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[28] in module ControlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[27] in module ControlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[26] in module ControlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[25] in module ControlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[14] in module ControlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[13] in module ControlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[12] in module ControlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[11] in module ControlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[10] in module ControlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[9] in module ControlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[8] in module ControlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[7] in module ControlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port immediate[31] in module pcimmadder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port immediate[30] in module pcimmadder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port immediate[29] in module pcimmadder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port immediate[28] in module pcimmadder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port immediate[27] in module pcimmadder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port immediate[26] in module pcimmadder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port immediate[25] in module pcimmadder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port immediate[24] in module pcimmadder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port immediate[23] in module pcimmadder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port immediate[22] in module pcimmadder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port immediate[21] in module pcimmadder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port immediate[20] in module pcimmadder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port immediate[19] in module pcimmadder is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1102.457 ; gain = 564.293
+Finished Synthesize : Time (s): cpu = 00:00:23 ; elapsed = 00:00:29 . Memory (MB): peak = 1235.789 ; gain = 687.773
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1102.457 ; gain = 564.293
+Finished Constraint Validation : Time (s): cpu = 00:00:26 ; elapsed = 00:00:40 . Memory (MB): peak = 1235.789 ; gain = 687.773
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z007sclg225-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1102.457 ; gain = 564.293
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:26 ; elapsed = 00:00:40 . Memory (MB): peak = 1235.789 ; gain = 687.773
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z007sclg225-1
+INFO: [Device 21-9227] Part: xc7z007sclg225-1 does not have CEAM library.
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1102.457 ; gain = 564.293
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:58 ; elapsed = 00:01:07 . Memory (MB): peak = 1426.629 ; gain = 878.613
 ---------------------------------------------------------------------------------
 No constraint files found.
 ---------------------------------------------------------------------------------
@@ -82,21 +223,31 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input   16 Bit       Adders := 1     
+	   2 Input   32 Bit       Adders := 1     
+	   3 Input   32 Bit       Adders := 1     
+	   2 Input   16 Bit       Adders := 2     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
 +---Registers : 
-	               32 Bit    Registers := 1     
-	               16 Bit    Registers := 2     
+	               32 Bit    Registers := 2121  
+	               16 Bit    Registers := 3     
+	                5 Bit    Registers := 8     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 14    
 +---Muxes : 
-	   2 Input   32 Bit        Muxes := 1     
+	   2 Input   32 Bit        Muxes := 7     
+	   4 Input   32 Bit        Muxes := 2     
 	   2 Input   16 Bit        Muxes := 2     
-	   2 Input    1 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 3     
+	   9 Input    4 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 33    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Part Resource Summary
 ---------------------------------------------------------------------------------
-INFO: [Device 21-9227] Part: xc7z007sclg225-1 does not have CEAM library.
 Part Resources:
 DSPs: 66 (col length:40)
 BRAMs: 100 (col length: RAMB18 40 RAMB36 20)
@@ -107,24 +258,227 @@ No constraint files found.
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-WARNING: [Synth 8-7129] Port clock in module internal_connections is either unconnected or has no load
-WARNING: [Synth 8-7129] Port resetbar in module internal_connections is either unconnected or has no load
+INFO: [Synth 8-5546] ROM "mem[0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/Branch_reg_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/MemtoReg_reg_reg )
+INFO: [Synth 8-3886] merging instance 'ifid_instance/rdout_reg_reg[3]' (FDCE) to 'ifid_instance/rdout_reg_reg[4]'
+INFO: [Synth 8-3886] merging instance 'ifid_instance/rdout_reg_reg[4]' (FDCE) to 'ifid_instance/instruction_reg_reg[10]'
+INFO: [Synth 8-3886] merging instance 'ifid_instance/rdout_reg_reg[0]' (FDCE) to 'ifid_instance/rs2_reg_reg[4]'
+INFO: [Synth 8-3886] merging instance 'ifid_instance/rdout_reg_reg[1]' (FDCE) to 'ifid_instance/rs2_reg_reg[4]'
+INFO: [Synth 8-3886] merging instance 'ifid_instance/rdout_reg_reg[2]' (FDCE) to 'ifid_instance/instruction_reg_reg[9]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ifid_instance/\pcout_reg_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ifid_instance/\pcout_reg_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ifid_instance/\pcout_reg_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ifid_instance/\pcout_reg_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ifid_instance/\pcout_reg_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ifid_instance/\pcout_reg_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ifid_instance/\pcout_reg_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ifid_instance/\pcout_reg_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ifid_instance/\pcout_reg_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ifid_instance/\pcout_reg_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ifid_instance/\pcout_reg_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ifid_instance/\pcout_reg_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ifid_instance/\pcout_reg_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ifid_instance/\pcout_reg_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ifid_instance/\pcout_reg_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ifid_instance/\pcout_reg_reg[1] )
+INFO: [Synth 8-3886] merging instance 'ifid_instance/instruction_reg_reg[8]' (FDCE) to 'ifid_instance/rs2_reg_reg[4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ifid_instance/\instruction_reg_reg[9] )
+INFO: [Synth 8-3886] merging instance 'ifid_instance/instruction_reg_reg[10]' (FDCE) to 'ifid_instance/instruction_reg_reg[11]'
+INFO: [Synth 8-3886] merging instance 'ifid_instance/instruction_reg_reg[11]' (FDCE) to 'ifid_instance/instruction_reg_reg[13]'
+INFO: [Synth 8-3886] merging instance 'ifid_instance/instruction_reg_reg[7]' (FDCE) to 'ifid_instance/rs2_reg_reg[4]'
+INFO: [Synth 8-3886] merging instance 'ifid_instance/instruction_reg_reg[15]' (FDCE) to 'ifid_instance/rs1_reg_reg[0]'
+INFO: [Synth 8-3886] merging instance 'ifid_instance/instruction_reg_reg[16]' (FDCE) to 'ifid_instance/rs2_reg_reg[4]'
+INFO: [Synth 8-3886] merging instance 'ifid_instance/instruction_reg_reg[17]' (FDCE) to 'ifid_instance/rs2_reg_reg[4]'
+INFO: [Synth 8-3886] merging instance 'ifid_instance/instruction_reg_reg[18]' (FDCE) to 'ifid_instance/rs2_reg_reg[4]'
+INFO: [Synth 8-3886] merging instance 'ifid_instance/instruction_reg_reg[19]' (FDCE) to 'ifid_instance/rs2_reg_reg[4]'
+INFO: [Synth 8-3886] merging instance 'ifid_instance/instruction_reg_reg[20]' (FDCE) to 'ifid_instance/rs2_reg_reg[0]'
+INFO: [Synth 8-3886] merging instance 'ifid_instance/instruction_reg_reg[21]' (FDCE) to 'ifid_instance/rs2_reg_reg[1]'
+INFO: [Synth 8-3886] merging instance 'ifid_instance/instruction_reg_reg[22]' (FDCE) to 'ifid_instance/instruction_reg_reg[6]'
+INFO: [Synth 8-3886] merging instance 'ifid_instance/instruction_reg_reg[23]' (FDCE) to 'ifid_instance/rs2_reg_reg[4]'
+INFO: [Synth 8-3886] merging instance 'ifid_instance/instruction_reg_reg[24]' (FDCE) to 'ifid_instance/rs2_reg_reg[4]'
+INFO: [Synth 8-3886] merging instance 'ifid_instance/instruction_reg_reg[25]' (FDCE) to 'ifid_instance/rs2_reg_reg[4]'
+INFO: [Synth 8-3886] merging instance 'ifid_instance/instruction_reg_reg[26]' (FDCE) to 'ifid_instance/rs2_reg_reg[4]'
+INFO: [Synth 8-3886] merging instance 'ifid_instance/instruction_reg_reg[27]' (FDCE) to 'ifid_instance/rs2_reg_reg[4]'
+INFO: [Synth 8-3886] merging instance 'ifid_instance/instruction_reg_reg[28]' (FDCE) to 'ifid_instance/rs2_reg_reg[4]'
+INFO: [Synth 8-3886] merging instance 'ifid_instance/instruction_reg_reg[29]' (FDCE) to 'ifid_instance/rs2_reg_reg[4]'
+INFO: [Synth 8-3886] merging instance 'ifid_instance/rs1_reg_reg[3]' (FDCE) to 'ifid_instance/rs2_reg_reg[4]'
+INFO: [Synth 8-3886] merging instance 'ifid_instance/rs1_reg_reg[4]' (FDCE) to 'ifid_instance/rs2_reg_reg[4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ifid_instance/\rs1_reg_reg[0] )
+INFO: [Synth 8-3886] merging instance 'ifid_instance/rs1_reg_reg[1]' (FDCE) to 'ifid_instance/rs2_reg_reg[4]'
+INFO: [Synth 8-3886] merging instance 'ifid_instance/rs1_reg_reg[2]' (FDCE) to 'ifid_instance/rs2_reg_reg[4]'
+INFO: [Synth 8-3886] merging instance 'ifid_instance/instruction_reg_reg[31]' (FDCE) to 'ifid_instance/rs2_reg_reg[4]'
+INFO: [Synth 8-3886] merging instance 'ifid_instance/instruction_reg_reg[1]' (FDCE) to 'ifid_instance/instruction_reg_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ifid_instance/\instruction_reg_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ifid_instance/\instruction_reg_reg[4] )
+INFO: [Synth 8-3886] merging instance 'ifid_instance/instruction_reg_reg[3]' (FDCE) to 'ifid_instance/rs2_reg_reg[4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ifid_instance/\instruction_reg_reg[5] )
+INFO: [Synth 8-3886] merging instance 'ifid_instance/instruction_reg_reg[6]' (FDCE) to 'ifid_instance/instruction_reg_reg[2]'
+INFO: [Synth 8-3886] merging instance 'ifid_instance/instruction_reg_reg[2]' (FDCE) to 'ifid_instance/rs2_reg_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/RegWrite_reg_reg )
+INFO: [Synth 8-3886] merging instance 'ifid_instance/rs2_reg_reg[3]' (FDCE) to 'ifid_instance/rs2_reg_reg[4]'
+INFO: [Synth 8-3886] merging instance 'ifid_instance/rs2_reg_reg[4]' (FDCE) to 'ifid_instance/instruction_reg_reg[30]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ifid_instance/\rs2_reg_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ifid_instance/\rs2_reg_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ifid_instance/\rs2_reg_reg[2] )
+INFO: [Synth 8-3886] merging instance 'ifid_instance/instruction_reg_reg[13]' (FDCE) to 'ifid_instance/instruction_reg_reg[12]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ifid_instance/\instruction_reg_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ifid_instance/\instruction_reg_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ifid_instance/\instruction_reg_reg[30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/MemWrite_reg_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/MemRead_reg_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata1_reg_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata2_reg_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata1_reg_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata2_reg_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata1_reg_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata2_reg_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata1_reg_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata2_reg_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata1_reg_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata2_reg_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata1_reg_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata2_reg_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata1_reg_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata2_reg_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata1_reg_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata2_reg_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata1_reg_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata2_reg_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata1_reg_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata2_reg_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata1_reg_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata2_reg_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata1_reg_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata2_reg_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata1_reg_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata2_reg_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata1_reg_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata2_reg_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata1_reg_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata2_reg_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata1_reg_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata2_reg_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata1_reg_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata2_reg_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata1_reg_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata2_reg_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata1_reg_reg[18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata2_reg_reg[18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata1_reg_reg[19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata2_reg_reg[19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata1_reg_reg[20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata2_reg_reg[20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata1_reg_reg[21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata2_reg_reg[21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata1_reg_reg[22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata2_reg_reg[22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata1_reg_reg[23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata2_reg_reg[23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata1_reg_reg[24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata2_reg_reg[24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata1_reg_reg[25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata2_reg_reg[25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata1_reg_reg[26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata2_reg_reg[26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata1_reg_reg[27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata2_reg_reg[27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata1_reg_reg[28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata2_reg_reg[28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata1_reg_reg[29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata2_reg_reg[29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata1_reg_reg[30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata2_reg_reg[30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata1_reg_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/ALUSrc_reg_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/readdata2_reg_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/ALUOp_reg_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDEX_INST/ALUOp_reg_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\EXMEM_INST/Branch_reg_reg )
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[31][0]' (FDCE) to 'REGFILE_INST/registers_reg[30][0]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[31][1]' (FDCE) to 'REGFILE_INST/registers_reg[30][1]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[31][2]' (FDCE) to 'REGFILE_INST/registers_reg[30][2]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[31][3]' (FDCE) to 'REGFILE_INST/registers_reg[30][3]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[31][4]' (FDCE) to 'REGFILE_INST/registers_reg[30][4]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[31][5]' (FDCE) to 'REGFILE_INST/registers_reg[30][5]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[31][6]' (FDCE) to 'REGFILE_INST/registers_reg[30][6]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[31][7]' (FDCE) to 'REGFILE_INST/registers_reg[30][7]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[31][8]' (FDCE) to 'REGFILE_INST/registers_reg[30][8]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[31][9]' (FDCE) to 'REGFILE_INST/registers_reg[30][9]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[31][10]' (FDCE) to 'REGFILE_INST/registers_reg[30][10]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[31][11]' (FDCE) to 'REGFILE_INST/registers_reg[30][11]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[31][12]' (FDCE) to 'REGFILE_INST/registers_reg[30][12]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[31][13]' (FDCE) to 'REGFILE_INST/registers_reg[30][13]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[31][14]' (FDCE) to 'REGFILE_INST/registers_reg[30][14]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[31][15]' (FDCE) to 'REGFILE_INST/registers_reg[30][15]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[31][16]' (FDCE) to 'REGFILE_INST/registers_reg[30][16]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[31][17]' (FDCE) to 'REGFILE_INST/registers_reg[30][17]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[31][18]' (FDCE) to 'REGFILE_INST/registers_reg[30][18]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[31][19]' (FDCE) to 'REGFILE_INST/registers_reg[30][19]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[31][20]' (FDCE) to 'REGFILE_INST/registers_reg[30][20]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[31][21]' (FDCE) to 'REGFILE_INST/registers_reg[30][21]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[31][22]' (FDCE) to 'REGFILE_INST/registers_reg[30][22]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[31][23]' (FDCE) to 'REGFILE_INST/registers_reg[30][23]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[31][24]' (FDCE) to 'REGFILE_INST/registers_reg[30][24]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[31][25]' (FDCE) to 'REGFILE_INST/registers_reg[30][25]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[31][26]' (FDCE) to 'REGFILE_INST/registers_reg[30][26]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[31][27]' (FDCE) to 'REGFILE_INST/registers_reg[30][27]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[31][28]' (FDCE) to 'REGFILE_INST/registers_reg[30][28]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[31][29]' (FDCE) to 'REGFILE_INST/registers_reg[30][29]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[31][30]' (FDCE) to 'REGFILE_INST/registers_reg[30][30]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[31][31]' (FDCE) to 'REGFILE_INST/registers_reg[30][31]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[30][0]' (FDCE) to 'REGFILE_INST/registers_reg[28][0]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[30][1]' (FDCE) to 'REGFILE_INST/registers_reg[28][1]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[30][2]' (FDCE) to 'REGFILE_INST/registers_reg[28][2]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[30][3]' (FDCE) to 'REGFILE_INST/registers_reg[28][3]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[30][4]' (FDCE) to 'REGFILE_INST/registers_reg[28][4]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[30][5]' (FDCE) to 'REGFILE_INST/registers_reg[28][5]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[30][6]' (FDCE) to 'REGFILE_INST/registers_reg[28][6]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[30][7]' (FDCE) to 'REGFILE_INST/registers_reg[28][7]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[30][8]' (FDCE) to 'REGFILE_INST/registers_reg[28][8]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[30][9]' (FDCE) to 'REGFILE_INST/registers_reg[28][9]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[30][10]' (FDCE) to 'REGFILE_INST/registers_reg[28][10]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[30][11]' (FDCE) to 'REGFILE_INST/registers_reg[28][11]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[30][12]' (FDCE) to 'REGFILE_INST/registers_reg[28][12]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[30][13]' (FDCE) to 'REGFILE_INST/registers_reg[28][13]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[30][14]' (FDCE) to 'REGFILE_INST/registers_reg[28][14]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[30][15]' (FDCE) to 'REGFILE_INST/registers_reg[28][15]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[30][16]' (FDCE) to 'REGFILE_INST/registers_reg[28][16]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[30][17]' (FDCE) to 'REGFILE_INST/registers_reg[28][17]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[30][18]' (FDCE) to 'REGFILE_INST/registers_reg[28][18]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[30][19]' (FDCE) to 'REGFILE_INST/registers_reg[28][19]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[30][20]' (FDCE) to 'REGFILE_INST/registers_reg[28][20]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[30][21]' (FDCE) to 'REGFILE_INST/registers_reg[28][21]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[30][22]' (FDCE) to 'REGFILE_INST/registers_reg[28][22]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[30][23]' (FDCE) to 'REGFILE_INST/registers_reg[28][23]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[30][24]' (FDCE) to 'REGFILE_INST/registers_reg[28][24]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[30][25]' (FDCE) to 'REGFILE_INST/registers_reg[28][25]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[30][26]' (FDCE) to 'REGFILE_INST/registers_reg[28][26]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[30][27]' (FDCE) to 'REGFILE_INST/registers_reg[28][27]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[30][28]' (FDCE) to 'REGFILE_INST/registers_reg[28][28]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[30][29]' (FDCE) to 'REGFILE_INST/registers_reg[28][29]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[30][30]' (FDCE) to 'REGFILE_INST/registers_reg[28][30]'
+INFO: [Synth 8-3886] merging instance 'REGFILE_INST/registers_reg[30][31]' (FDCE) to 'REGFILE_INST/registers_reg[28][31]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:24 . Memory (MB): peak = 1293.469 ; gain = 755.305
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:11 ; elapsed = 00:03:58 . Memory (MB): peak = 1499.320 ; gain = 951.305
 ---------------------------------------------------------------------------------
 No constraint files found.
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:24 . Memory (MB): peak = 1293.469 ; gain = 755.305
+Finished Timing Optimization : Time (s): cpu = 00:02:21 ; elapsed = 00:04:27 . Memory (MB): peak = 1514.332 ; gain = 966.316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:24 . Memory (MB): peak = 1293.469 ; gain = 755.305
+Finished Technology Mapping : Time (s): cpu = 00:02:21 ; elapsed = 00:04:28 . Memory (MB): peak = 1514.332 ; gain = 966.316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -142,37 +496,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:30 . Memory (MB): peak = 1293.469 ; gain = 755.305
+Finished IO Insertion : Time (s): cpu = 00:02:31 ; elapsed = 00:04:39 . Memory (MB): peak = 1514.332 ; gain = 966.316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:30 . Memory (MB): peak = 1293.469 ; gain = 755.305
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:32 ; elapsed = 00:04:39 . Memory (MB): peak = 1514.332 ; gain = 966.316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:30 . Memory (MB): peak = 1293.469 ; gain = 755.305
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:32 ; elapsed = 00:04:39 . Memory (MB): peak = 1514.332 ; gain = 966.316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:30 . Memory (MB): peak = 1293.469 ; gain = 755.305
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:32 ; elapsed = 00:04:39 . Memory (MB): peak = 1514.332 ; gain = 966.316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:30 . Memory (MB): peak = 1293.469 ; gain = 755.305
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:32 ; elapsed = 00:04:40 . Memory (MB): peak = 1514.332 ; gain = 966.316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:30 . Memory (MB): peak = 1293.469 ; gain = 755.305
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:33 ; elapsed = 00:04:40 . Memory (MB): peak = 1514.332 ; gain = 966.316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -185,36 +539,50 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+-+-----+------+
-| |Cell |Count |
-+-+-----+------+
-+-+-----+------+
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |     4|
+|3     |LUT1   |     2|
+|4     |FDCE   |    28|
+|5     |IBUF   |     2|
+|6     |OBUF   | 33808|
++------+-------+------+
 
 Report Instance Areas: 
-+------+---------+-------+------+
-|      |Instance |Module |Cells |
-+------+---------+-------+------+
-|1     |top      |       |     0|
-+------+---------+-------+------+
++------+--------------+----------------+------+
+|      |Instance      |Module          |Cells |
++------+--------------+----------------+------+
+|1     |top           |                | 33845|
+|2     |  pc_instance |program_counter |    20|
++------+--------------+----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:30 . Memory (MB): peak = 1293.469 ; gain = 755.305
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:33 ; elapsed = 00:04:40 . Memory (MB): peak = 1514.332 ; gain = 966.316
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 16 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:30 . Memory (MB): peak = 1293.469 ; gain = 755.305
-Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:30 . Memory (MB): peak = 1293.469 ; gain = 755.305
+Synthesis finished with 0 errors, 0 critical warnings and 173 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:33 ; elapsed = 00:04:43 . Memory (MB): peak = 1514.332 ; gain = 966.316
+Synthesis Optimization Complete : Time (s): cpu = 00:02:33 ; elapsed = 00:04:43 . Memory (MB): peak = 1514.332 ; gain = 966.316
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1293.469 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.609 . Memory (MB): peak = 1514.793 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'internal_connections' is not ideal for floorplanning, since the cellview 'internal_connections' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1397.098 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1627.957 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 64fbfc36
+Synth Design complete | Checksum: 9faf47cd
 INFO: [Common 17-83] Releasing license: Synthesis
-24 Infos, 16 Warnings, 0 Critical Warnings and 0 Errors encountered.
+273 Infos, 112 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:32 . Memory (MB): peak = 1397.098 ; gain = 862.887
+synth_design: Time (s): cpu = 00:02:44 ; elapsed = 00:05:09 . Memory (MB): peak = 1627.957 ; gain = 1087.227
+Write ShapeDB Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.679 . Memory (MB): peak = 1627.957 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.runs/synth_1/internal_connections.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:05:56 ; elapsed = 00:06:05 . Memory (MB): peak = 1627.957 ; gain = 0.000
 INFO: [Vivado 12-24828] Executing command : report_utilization -file internal_connections_utilization_synth.rpt -pb internal_connections_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Oct 17 21:30:28 2024...
+report_utilization: Time (s): cpu = 00:04:57 ; elapsed = 00:04:59 . Memory (MB): peak = 1627.957 ; gain = 0.000
+generate_parallel_reports: Time (s): cpu = 00:04:57 ; elapsed = 00:04:59 . Memory (MB): peak = 1627.957 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sat Nov  2 01:49:17 2024...

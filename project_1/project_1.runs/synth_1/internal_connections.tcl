@@ -56,6 +56,7 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z007sclg225-1
 
@@ -65,7 +66,7 @@ set_param synth.vivado.isSynthRun true
 set_property webtalk.parent_dir {C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.cache/wt} [current_project]
 set_property parent.project_path {C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.xpr} [current_project]
 set_property default_lib xil_defaultlib [current_project]
-set_property target_language Verilog [current_project]
+set_property target_language VHDL [current_project]
 set_property board_part_repo_paths {C:/Users/maxpro/AppData/Roaming/Xilinx/Vivado/2024.1/xhub/board_store/xilinx_board_store} [current_project]
 set_property board_part avnet.com:minized:part0:1.3 [current_project]
 set_property ip_output_repo {c:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.cache/ip} [current_project]
@@ -73,11 +74,29 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
+  {C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/ALU.vhd}
+  {C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/new/debug_pkg.vhd}
+  {C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/Data_Memory.vhd}
+  {C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/alucontrol.vhd}
+  {C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/alusrcmuxb.vhd}
+  {C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/branch_and.vhd}
+  {C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/control_unit.vhd}
+  {C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/exmem.vhd}
+  {C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/forwarding_unit.vhd}
+  {C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/forwardingmuxA.vhd}
+  {C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/forwardingmuxB.vhd}
+  {C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/hazardunit.vhd}
+  {C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/idex.vhd}
   {C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/ifid.vhd}
+  {C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/immediategen.vhd}
   {C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/instruction_memory.vhd}
   {C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/pc_mux.vhd}
   {C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/pc4adder.vhd}
   {C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/program_counter.vhd}
+  {C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/pcimmadder.vhd}
+  {C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/registers.vhd}
+  {C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/memwb.vhd}
+  {C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/writebackmux.vhd}
   {C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/sources_1/imports/src/internalconnections.vhd}
 }
 OPTRACE "Adding files" END { }
@@ -90,6 +109,8 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
 set_param ips.enableIPCacheLiteLoad 1
+
+read_checkpoint -auto_incremental -incremental {C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.srcs/utils_1/imports/synth_1/internal_connections.dcp}
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z007sclg225-1" LaunchTime="1729214971">
+<GenRun Id="synth_1" LaunchPart="xc7z007sclg225-1" LaunchTime="1730525534" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/internal_connections.dcp">
   <File Type="PA-TCL" Name="internal_connections.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="internal_connections_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="internal_connections_reports.tcl"/>
@@ -11,10 +11,120 @@
   <File Type="VDS-TIMING-PB" Name="internal_connections_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/src/ALU.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RISCVCORE/src/ALU.vhd"/>
+        <Attr Name="ImportTime" Val="1730518198"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/debug_pkg.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/Data_Memory.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RISCVCORE/src/Data_Memory.vhd"/>
+        <Attr Name="ImportTime" Val="1730518198"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/alucontrol.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RISCVCORE/src/alucontrol.vhd"/>
+        <Attr Name="ImportTime" Val="1730518198"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/alusrcmuxb.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RISCVCORE/src/alusrcmuxb.vhd"/>
+        <Attr Name="ImportTime" Val="1730518198"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/branch_and.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RISCVCORE/src/branch_and.vhd"/>
+        <Attr Name="ImportTime" Val="1730518198"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/control_unit.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RISCVCORE/src/control_unit.vhd"/>
+        <Attr Name="ImportTime" Val="1730518197"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/exmem.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RISCVCORE/src/exmem.vhd"/>
+        <Attr Name="ImportTime" Val="1730518198"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/forwarding_unit.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RISCVCORE/src/forwarding_unit.vhd"/>
+        <Attr Name="ImportTime" Val="1730518198"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/forwardingmuxA.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RISCVCORE/src/forwardingmuxA.vhd"/>
+        <Attr Name="ImportTime" Val="1730518197"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/forwardingmuxB.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RISCVCORE/src/forwardingmuxB.vhd"/>
+        <Attr Name="ImportTime" Val="1730518198"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/hazardunit.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RISCVCORE/src/hazardunit.vhd"/>
+        <Attr Name="ImportTime" Val="1730518197"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/idex.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RISCVCORE/src/idex.vhd"/>
+        <Attr Name="ImportTime" Val="1730518198"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/imports/src/ifid.vhd">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RISCVCORE/src/ifid.vhd"/>
-        <Attr Name="ImportTime" Val="1729214405"/>
+        <Attr Name="ImportTime" Val="1730518197"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/immediategen.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RISCVCORE/src/immediategen.vhd"/>
+        <Attr Name="ImportTime" Val="1730518197"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -22,7 +132,7 @@
     <File Path="$PSRCDIR/sources_1/imports/src/instruction_memory.vhd">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RISCVCORE/src/instruction_memory.vhd"/>
-        <Attr Name="ImportTime" Val="1729214405"/>
+        <Attr Name="ImportTime" Val="1730518197"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -30,7 +140,7 @@
     <File Path="$PSRCDIR/sources_1/imports/src/pc_mux.vhd">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RISCVCORE/src/pc_mux.vhd"/>
-        <Attr Name="ImportTime" Val="1729214405"/>
+        <Attr Name="ImportTime" Val="1730518196"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -38,7 +148,7 @@
     <File Path="$PSRCDIR/sources_1/imports/src/pc4adder.vhd">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RISCVCORE/src/pc4adder.vhd"/>
-        <Attr Name="ImportTime" Val="1729214405"/>
+        <Attr Name="ImportTime" Val="1730518196"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -46,7 +156,39 @@
     <File Path="$PSRCDIR/sources_1/imports/src/program_counter.vhd">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RISCVCORE/src/program_counter.vhd"/>
-        <Attr Name="ImportTime" Val="1729214405"/>
+        <Attr Name="ImportTime" Val="1730518196"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/pcimmadder.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RISCVCORE/src/pcimmadder.vhd"/>
+        <Attr Name="ImportTime" Val="1730518197"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/registers.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RISCVCORE/src/registers.vhd"/>
+        <Attr Name="ImportTime" Val="1730518197"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/memwb.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RISCVCORE/src/memwb.vhd"/>
+        <Attr Name="ImportTime" Val="1730518199"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/writebackmux.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RISCVCORE/src/writebackmux.vhd"/>
+        <Attr Name="ImportTime" Val="1730518199"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -54,7 +196,16 @@
     <File Path="$PSRCDIR/sources_1/imports/src/internalconnections.vhd">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RISCVCORE/src/internalconnections.vhd"/>
-        <Attr Name="ImportTime" Val="1729214405"/>
+        <Attr Name="ImportTime" Val="1730518197"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/RISCVCORE.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RISCVCORE/src/RISCVCORE.vhd"/>
+        <Attr Name="ImportTime" Val="1730518196"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -73,6 +224,15 @@
   </FileSet>
   <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
     <Filter Type="Utils"/>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/internal_connections.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="UsedInSteps" Val="synth_1_copy_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>

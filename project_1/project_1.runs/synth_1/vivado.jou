@@ -3,8 +3,8 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Thu Oct 17 21:29:36 2024
-# Process ID: 5092
+# Start of session at: Sat Nov  2 01:32:36 2024
+# Process ID: 1816
 # Current directory: C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.runs/synth_1
 # Command line: vivado.exe -log internal_connections.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source internal_connections.tcl
 # Log file: C:/Users/maxpro/Desktop/440Project RISCVCORE/project_1/project_1.runs/synth_1/internal_connections.vds
@@ -12,13 +12,13 @@
 # Running On        :CHRIS7DE2
 # Platform          :Windows Server 2016 or Windows 10
 # Operating System  :19044
-# Processor Detail  :Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
-# CPU Frequency     :3192 MHz
-# CPU Physical cores:6
-# CPU Logical cores :6
-# Host memory       :34335 MB
-# Swap memory       :5100 MB
-# Total Virtual     :39436 MB
-# Available Virtual :30385 MB
+# Processor Detail  :Intel(R) Core(TM) i7-4980HQ CPU @ 2.80GHz
+# CPU Frequency     :2794 MHz
+# CPU Physical cores:4
+# CPU Logical cores :4
+# Host memory       :8566 MB
+# Swap memory       :1342 MB
+# Total Virtual     :9908 MB
+# Available Virtual :5516 MB
 #-----------------------------------------------------------
 source internal_connections.tcl -notrace
