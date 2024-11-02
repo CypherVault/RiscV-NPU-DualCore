@@ -63,4 +63,2838 @@ acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/ALU.vhd
 acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/internalconnections.vhd
 # Compile Entity "internal_connections"
 # Compile Architecture "structural" of Entity "internal_connections"
-# Error: COMP96_0078: internalconnecti
+# Error: COMP96_0078: internalconnections.vhd : (326, 7): Unknown identifier "rs1".
+# Error: COMP96_0078: internalconnections.vhd : (327, 7): Unknown identifier "rs2".
+# Error: COMP96_0133: internalconnections.vhd : (326, 7): Cannot find object declaration.
+# Error: COMP96_0112: internalconnections.vhd : (326, 7): "rs1" does not match the formal name.
+# Error: COMP96_0207: internalconnections.vhd : (322, 4): No actual specified for local port "rs1_data".
+# Error: COMP96_0207: internalconnections.vhd : (322, 4): No actual specified for local port "rs2_data".
+# Error: COMP96_0207: internalconnections.vhd : (322, 4): No actual specified for local port "exmem_rd".
+# Error: COMP96_0207: internalconnections.vhd : (322, 4): No actual specified for local port "exmem_regdata".
+# Error: COMP96_0207: internalconnections.vhd : (322, 4): No actual specified for local port "memwb_rd".
+# Error: COMP96_0207: internalconnections.vhd : (322, 4): No actual specified for local port "memwb_regdata".
+# Compile failure 10 Errors 0 Warnings  Analysis time :  16.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/exmem.vhd
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile success 0 Errors 0 Warnings  Analysis time :  47.0 [ms]
+acom -O3 -e 100 -work RISCVCORE -2002  $dsn/src/alucontrol.vhd
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Compile success 0 Errors 0 Warnings  Analysis time :  31.0 [ms]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/internalconnections.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/exmem.vhd $dsn/src/alucontrol.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Entity => ForwardingUnit
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Error: COMP96_0078: exmem.vhd : (84, 35): Unknown identifier "pcplusimmin".
+# Error: COMP96_0133: exmem.vhd : (84, 35): Cannot find object declaration.
+# Error: COMP96_0077: exmem.vhd : (84, 35): Undefined type of expression. Expected type 'STD_LOGIC_VECTOR'.
+# Error: COMP96_0078: exmem.vhd : (102, 5): Unknown identifier "branchjumpaddrout".
+# Error: COMP96_0133: exmem.vhd : (102, 5): Cannot find object declaration.
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0122: internalconnections.vhd : (186, 2): Symbol "alucontrol_aluop_to_alu" has already been declared in this scope.
+# Error: COMP96_0122: internalconnections.vhd : (199, 4): Symbol "forwardingmuxA_rs1_to_ALU" has already been declared in this scope.
+# Error: COMP96_0122: internalconnections.vhd : (214, 2): Symbol "forwardingmuxb_rs2_to_alusrcmuxb" has already been declared in this scope.
+# Error: COMP96_0122: internalconnections.vhd : (223, 2): Symbol "clock" has already been declared in this scope.
+# Error: COMP96_0122: internalconnections.vhd : (224, 3): Symbol "resetbar" has already been declared in this scope.
+# Error: COMP96_0122: internalconnections.vhd : (226, 3): Symbol "alu_result_to_exmem" has already been declared in this scope.
+# Error: COMP96_0122: internalconnections.vhd : (227, 3): Symbol "alu_result_to_exmem" has already been declared in this scope.
+# Error: COMP96_0078: internalconnections.vhd : (407, 7): Unknown identifier "rs1".
+# Error: COMP96_0078: internalconnections.vhd : (408, 7): Unknown identifier "rs2".
+# Error: COMP96_0133: internalconnections.vhd : (407, 7): Cannot find object declaration.
+# Error: COMP96_0112: internalconnections.vhd : (407, 7): "rs1" does not match the formal name.
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "rs1_data".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "rs2_data".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "exmem_rd".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "exmem_regdata".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "memwb_rd".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "memwb_regdata".
+# Error: COMP96_0100: internalconnections.vhd : (557, 7): The type of the actual in the port map does not match the "STD_ULOGIC" type of the "aluzeroin" port.
+# Compile failure 23 Errors 1 Warnings  Analysis time :  0.5 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/internalconnections.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/exmem.vhd $dsn/src/alucontrol.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Entity => ForwardingUnit
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0122: internalconnections.vhd : (186, 2): Symbol "alucontrol_aluop_to_alu" has already been declared in this scope.
+# Error: COMP96_0122: internalconnections.vhd : (199, 4): Symbol "forwardingmuxA_rs1_to_ALU" has already been declared in this scope.
+# Error: COMP96_0122: internalconnections.vhd : (214, 2): Symbol "forwardingmuxb_rs2_to_alusrcmuxb" has already been declared in this scope.
+# Error: COMP96_0122: internalconnections.vhd : (223, 2): Symbol "clock" has already been declared in this scope.
+# Error: COMP96_0122: internalconnections.vhd : (224, 3): Symbol "resetbar" has already been declared in this scope.
+# Error: COMP96_0122: internalconnections.vhd : (226, 3): Symbol "alu_result_to_exmem" has already been declared in this scope.
+# Error: COMP96_0122: internalconnections.vhd : (227, 3): Symbol "alu_result_to_exmem" has already been declared in this scope.
+# Error: COMP96_0078: internalconnections.vhd : (407, 7): Unknown identifier "rs1".
+# Error: COMP96_0078: internalconnections.vhd : (408, 7): Unknown identifier "rs2".
+# Error: COMP96_0133: internalconnections.vhd : (407, 7): Cannot find object declaration.
+# Error: COMP96_0112: internalconnections.vhd : (407, 7): "rs1" does not match the formal name.
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "rs1_data".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "rs2_data".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "exmem_rd".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "exmem_regdata".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "memwb_rd".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "memwb_regdata".
+# Error: COMP96_0100: internalconnections.vhd : (557, 7): The type of the actual in the port map does not match the "STD_ULOGIC" type of the "aluzeroin" port.
+# Compile failure 18 Errors 1 Warnings  Analysis time :  0.3 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/internalconnections.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/exmem.vhd $dsn/src/alucontrol.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Entity => ForwardingUnit
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0122: internalconnections.vhd : (199, 4): Symbol "forwardingmuxA_rs1_to_ALU" has already been declared in this scope.
+# Error: COMP96_0122: internalconnections.vhd : (214, 2): Symbol "forwardingmuxb_rs2_to_alusrcmuxb" has already been declared in this scope.
+# Error: COMP96_0122: internalconnections.vhd : (223, 2): Symbol "clock" has already been declared in this scope.
+# Error: COMP96_0122: internalconnections.vhd : (224, 3): Symbol "resetbar" has already been declared in this scope.
+# Error: COMP96_0122: internalconnections.vhd : (226, 3): Symbol "alu_result_to_exmem" has already been declared in this scope.
+# Error: COMP96_0122: internalconnections.vhd : (227, 3): Symbol "alu_result_to_exmem" has already been declared in this scope.
+# Error: COMP96_0078: internalconnections.vhd : (407, 7): Unknown identifier "rs1".
+# Error: COMP96_0078: internalconnections.vhd : (408, 7): Unknown identifier "rs2".
+# Error: COMP96_0133: internalconnections.vhd : (407, 7): Cannot find object declaration.
+# Error: COMP96_0112: internalconnections.vhd : (407, 7): "rs1" does not match the formal name.
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "rs1_data".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "rs2_data".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "exmem_rd".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "exmem_regdata".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "memwb_rd".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "memwb_regdata".
+# Error: COMP96_0100: internalconnections.vhd : (557, 7): The type of the actual in the port map does not match the "STD_ULOGIC" type of the "aluzeroin" port.
+# Compile failure 17 Errors 1 Warnings  Analysis time :  0.4 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/internalconnections.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/exmem.vhd $dsn/src/alucontrol.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Entity => ForwardingUnit
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0122: internalconnections.vhd : (199, 4): Symbol "forwardingmuxA_rs1_to_ALU" has already been declared in this scope.
+# Error: COMP96_0122: internalconnections.vhd : (214, 2): Symbol "forwardingmuxb_rs2_to_alusrcmuxb" has already been declared in this scope.
+# Error: COMP96_0122: internalconnections.vhd : (223, 2): Symbol "clock" has already been declared in this scope.
+# Error: COMP96_0122: internalconnections.vhd : (224, 3): Symbol "resetbar" has already been declared in this scope.
+# Error: COMP96_0122: internalconnections.vhd : (226, 3): Symbol "alu_result_to_exmem" has already been declared in this scope.
+# Error: COMP96_0122: internalconnections.vhd : (227, 3): Symbol "alu_result_to_exmem" has already been declared in this scope.
+# Error: COMP96_0078: internalconnections.vhd : (407, 7): Unknown identifier "rs1".
+# Error: COMP96_0078: internalconnections.vhd : (408, 7): Unknown identifier "rs2".
+# Error: COMP96_0133: internalconnections.vhd : (407, 7): Cannot find object declaration.
+# Error: COMP96_0112: internalconnections.vhd : (407, 7): "rs1" does not match the formal name.
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "rs1_data".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "rs2_data".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "exmem_rd".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "exmem_regdata".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "memwb_rd".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "memwb_regdata".
+# Error: COMP96_0100: internalconnections.vhd : (557, 7): The type of the actual in the port map does not match the "STD_ULOGIC" type of the "aluzeroin" port.
+# Compile failure 17 Errors 1 Warnings  Analysis time :  0.3 [s]
+# Library Manager: Library "riscvcore" contents cleared.
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/internalconnections.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/exmem.vhd $dsn/src/alucontrol.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Entity => ForwardingUnit
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0122: internalconnections.vhd : (199, 4): Symbol "forwardingmuxA_rs1_to_ALU" has already been declared in this scope.
+# Error: COMP96_0122: internalconnections.vhd : (214, 2): Symbol "forwardingmuxb_rs2_to_alusrcmuxb" has already been declared in this scope.
+# Error: COMP96_0122: internalconnections.vhd : (223, 2): Symbol "clock" has already been declared in this scope.
+# Error: COMP96_0122: internalconnections.vhd : (224, 3): Symbol "resetbar" has already been declared in this scope.
+# Error: COMP96_0122: internalconnections.vhd : (226, 3): Symbol "alu_result_to_exmem" has already been declared in this scope.
+# Error: COMP96_0122: internalconnections.vhd : (227, 3): Symbol "alu_result_to_exmem" has already been declared in this scope.
+# Error: COMP96_0078: internalconnections.vhd : (407, 7): Unknown identifier "rs1".
+# Error: COMP96_0078: internalconnections.vhd : (408, 7): Unknown identifier "rs2".
+# Error: COMP96_0133: internalconnections.vhd : (407, 7): Cannot find object declaration.
+# Error: COMP96_0112: internalconnections.vhd : (407, 7): "rs1" does not match the formal name.
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "rs1_data".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "rs2_data".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "exmem_rd".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "exmem_regdata".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "memwb_rd".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "memwb_regdata".
+# Error: COMP96_0100: internalconnections.vhd : (557, 7): The type of the actual in the port map does not match the "STD_ULOGIC" type of the "aluzeroin" port.
+# Compile failure 17 Errors 1 Warnings  Analysis time :  0.3 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/internalconnections.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/exmem.vhd $dsn/src/alucontrol.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Entity => ForwardingUnit
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0122: internalconnections.vhd : (214, 2): Symbol "forwardingmuxb_rs2_to_alusrcmuxb" has already been declared in this scope.
+# Error: COMP96_0122: internalconnections.vhd : (223, 2): Symbol "clock" has already been declared in this scope.
+# Error: COMP96_0122: internalconnections.vhd : (224, 3): Symbol "resetbar" has already been declared in this scope.
+# Error: COMP96_0122: internalconnections.vhd : (226, 3): Symbol "alu_result_to_exmem" has already been declared in this scope.
+# Error: COMP96_0122: internalconnections.vhd : (227, 3): Symbol "alu_result_to_exmem" has already been declared in this scope.
+# Error: COMP96_0078: internalconnections.vhd : (407, 7): Unknown identifier "rs1".
+# Error: COMP96_0078: internalconnections.vhd : (408, 7): Unknown identifier "rs2".
+# Error: COMP96_0133: internalconnections.vhd : (407, 7): Cannot find object declaration.
+# Error: COMP96_0112: internalconnections.vhd : (407, 7): "rs1" does not match the formal name.
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "rs1_data".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "rs2_data".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "exmem_rd".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "exmem_regdata".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "memwb_rd".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "memwb_regdata".
+# Error: COMP96_0078: internalconnections.vhd : (505, 18): Unknown identifier "alusrcmuxb_rs2_imm_to_alu".
+# Error: COMP96_0100: internalconnections.vhd : (557, 7): The type of the actual in the port map does not match the "STD_ULOGIC" type of the "aluzeroin" port.
+# Compile failure 17 Errors 1 Warnings  Analysis time :  0.3 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/internalconnections.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/exmem.vhd $dsn/src/alucontrol.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Entity => ForwardingUnit
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0122: internalconnections.vhd : (223, 2): Symbol "clock" has already been declared in this scope.
+# Error: COMP96_0122: internalconnections.vhd : (224, 3): Symbol "resetbar" has already been declared in this scope.
+# Error: COMP96_0122: internalconnections.vhd : (226, 3): Symbol "alu_result_to_exmem" has already been declared in this scope.
+# Error: COMP96_0122: internalconnections.vhd : (227, 3): Symbol "alu_result_to_exmem" has already been declared in this scope.
+# Error: COMP96_0078: internalconnections.vhd : (407, 7): Unknown identifier "rs1".
+# Error: COMP96_0078: internalconnections.vhd : (408, 7): Unknown identifier "rs2".
+# Error: COMP96_0133: internalconnections.vhd : (407, 7): Cannot find object declaration.
+# Error: COMP96_0112: internalconnections.vhd : (407, 7): "rs1" does not match the formal name.
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "rs1_data".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "rs2_data".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "exmem_rd".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "exmem_regdata".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "memwb_rd".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "memwb_regdata".
+# Error: COMP96_0078: internalconnections.vhd : (505, 18): Unknown identifier "alusrcmuxb_rs2_imm_to_alu".
+# Error: COMP96_0100: internalconnections.vhd : (557, 7): The type of the actual in the port map does not match the "STD_ULOGIC" type of the "aluzeroin" port.
+# Compile failure 16 Errors 1 Warnings  Analysis time :  0.3 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/internalconnections.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/exmem.vhd $dsn/src/alucontrol.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Entity => ForwardingUnit
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0122: internalconnections.vhd : (227, 3): Symbol "alu_result_to_exmem" has already been declared in this scope.
+# Error: COMP96_0078: internalconnections.vhd : (407, 7): Unknown identifier "rs1".
+# Error: COMP96_0078: internalconnections.vhd : (408, 7): Unknown identifier "rs2".
+# Error: COMP96_0133: internalconnections.vhd : (407, 7): Cannot find object declaration.
+# Error: COMP96_0112: internalconnections.vhd : (407, 7): "rs1" does not match the formal name.
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "rs1_data".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "rs2_data".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "exmem_rd".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "exmem_regdata".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "memwb_rd".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "memwb_regdata".
+# Error: COMP96_0078: internalconnections.vhd : (505, 18): Unknown identifier "alusrcmuxb_rs2_imm_to_alu".
+# Error: COMP96_0100: internalconnections.vhd : (557, 7): The type of the actual in the port map does not match the "STD_ULOGIC" type of the "aluzeroin" port.
+# Compile failure 13 Errors 1 Warnings  Analysis time :  0.3 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/internalconnections.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/exmem.vhd $dsn/src/alucontrol.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Entity => ForwardingUnit
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0078: internalconnections.vhd : (407, 7): Unknown identifier "rs1".
+# Error: COMP96_0078: internalconnections.vhd : (408, 7): Unknown identifier "rs2".
+# Error: COMP96_0133: internalconnections.vhd : (407, 7): Cannot find object declaration.
+# Error: COMP96_0112: internalconnections.vhd : (407, 7): "rs1" does not match the formal name.
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "rs1_data".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "rs2_data".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "exmem_rd".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "exmem_regdata".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "memwb_rd".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "memwb_regdata".
+# Error: COMP96_0078: internalconnections.vhd : (505, 18): Unknown identifier "alusrcmuxb_rs2_imm_to_alu".
+# Error: COMP96_0078: internalconnections.vhd : (508, 20): Unknown identifier "alu_zeroresult_to_exmem".
+# Error: COMP96_0100: internalconnections.vhd : (557, 7): The type of the actual in the port map does not match the "STD_ULOGIC" type of the "aluzeroin" port.
+# Compile failure 13 Errors 1 Warnings  Analysis time :  0.5 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/internalconnections.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/exmem.vhd $dsn/src/alucontrol.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Entity => ForwardingUnit
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0078: internalconnections.vhd : (407, 7): Unknown identifier "rs1".
+# Error: COMP96_0078: internalconnections.vhd : (408, 7): Unknown identifier "rs2".
+# Error: COMP96_0133: internalconnections.vhd : (407, 7): Cannot find object declaration.
+# Error: COMP96_0112: internalconnections.vhd : (407, 7): "rs1" does not match the formal name.
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "rs1_data".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "rs2_data".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "exmem_rd".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "exmem_regdata".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "memwb_rd".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "memwb_regdata".
+# Error: COMP96_0078: internalconnections.vhd : (508, 20): Unknown identifier "alu_zeroresult_to_exmem".
+# Error: COMP96_0100: internalconnections.vhd : (557, 7): The type of the actual in the port map does not match the "STD_ULOGIC" type of the "aluzeroin" port.
+# Compile failure 12 Errors 1 Warnings  Analysis time :  0.4 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/internalconnections.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/exmem.vhd $dsn/src/alucontrol.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Entity => ControlUnit
+# Entity => ForwardingUnit
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0078: internalconnections.vhd : (508, 20): Unknown identifier "alu_zeroresult_to_exmem".
+# Error: COMP96_0100: internalconnections.vhd : (557, 7): The type of the actual in the port map does not match the "STD_ULOGIC" type of the "aluzeroin" port.
+# Compile failure 2 Errors 1 Warnings  Analysis time :  0.4 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/internalconnections.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/exmem.vhd $dsn/src/alucontrol.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Entity => ControlUnit
+# Entity => ForwardingUnit
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0078: internalconnections.vhd : (508, 20): Unknown identifier "alu_zeroresult_to_exmem".
+# Error: COMP96_0100: internalconnections.vhd : (557, 7): The type of the actual in the port map does not match the "STD_ULOGIC" type of the "aluzeroin" port.
+# Compile failure 2 Errors 1 Warnings  Analysis time :  0.3 [s]
+# Library Manager: Library "riscvcore" contents cleared.
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/internalconnections.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/exmem.vhd $dsn/src/alucontrol.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Entity => ControlUnit
+# Entity => ForwardingUnit
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile success 0 Errors 1 Warnings  Analysis time :  0.4 [s]
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/exmem.vhd $dsn/src/alucontrol.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/internalconnections.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Entity => ForwardingUnit
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0078: internalconnections.vhd : (407, 7): Unknown identifier "rs1".
+# Error: COMP96_0078: internalconnections.vhd : (408, 7): Unknown identifier "rs2".
+# Error: COMP96_0133: internalconnections.vhd : (407, 7): Cannot find object declaration.
+# Error: COMP96_0112: internalconnections.vhd : (407, 7): "rs1" does not match the formal name.
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "rs1_data".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "rs2_data".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "exmem_rd".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "exmem_regdata".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "memwb_rd".
+# Error: COMP96_0207: internalconnections.vhd : (403, 4): No actual specified for local port "memwb_regdata".
+# Compile failure 10 Errors 1 Warnings  Analysis time :  0.4 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/exmem.vhd $dsn/src/alucontrol.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/internalconnections.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Entity => ForwardingUnit
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0078: internalconnections.vhd : (408, 7): Unknown identifier "rs1".
+# Error: COMP96_0078: internalconnections.vhd : (409, 7): Unknown identifier "rs2".
+# Error: COMP96_0133: internalconnections.vhd : (408, 7): Cannot find object declaration.
+# Error: COMP96_0112: internalconnections.vhd : (408, 7): "rs1" does not match the formal name.
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "rs1_data".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "rs2_data".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "exmem_rd".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "exmem_regdata".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "memwb_rd".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "memwb_regdata".
+# Error: COMP96_0078: internalconnections.vhd : (567, 21): Unknown identifier "MEMTOREG_TO_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (568, 21): Unknown identifier "REGWRITE_TO_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (569, 22): Unknown identifier "MEMTOREG_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (570, 22): Unknown identifier "REGWRITE_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (573, 20): Unknown identifier "MEMREAD_TO_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (574, 21): Unknown identifier "MEMWRITE_TO_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (575, 19): Unknown identifier "BRANCH_TO_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (576, 18): Unknown identifier "MEMREAD_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (577, 19): Unknown identifier "MEMWRITE_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (578, 17): Unknown identifier "BRANCH_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (581, 15): Unknown identifier "RD_TO_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (582, 16): Unknown identifier "RD_FROM_EXMEM".
+# Compile failure 22 Errors 1 Warnings  Analysis time :  0.4 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/exmem.vhd $dsn/src/alucontrol.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/internalconnections.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Entity => ForwardingUnit
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0078: internalconnections.vhd : (408, 7): Unknown identifier "rs1".
+# Error: COMP96_0078: internalconnections.vhd : (409, 7): Unknown identifier "rs2".
+# Error: COMP96_0133: internalconnections.vhd : (408, 7): Cannot find object declaration.
+# Error: COMP96_0112: internalconnections.vhd : (408, 7): "rs1" does not match the formal name.
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "rs1_data".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "rs2_data".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "exmem_rd".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "exmem_regdata".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "memwb_rd".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "memwb_regdata".
+# Error: COMP96_0078: internalconnections.vhd : (569, 22): Unknown identifier "MEMTOREG_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (570, 22): Unknown identifier "REGWRITE_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (576, 18): Unknown identifier "MEMREAD_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (577, 19): Unknown identifier "MEMWRITE_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (578, 17): Unknown identifier "BRANCH_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (581, 15): Unknown identifier "idex_rd_to_exmem".
+# Error: COMP96_0078: internalconnections.vhd : (582, 16): Unknown identifier "RD_FROM_EXMEM".
+# Compile failure 17 Errors 1 Warnings  Analysis time :  0.4 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/exmem.vhd $dsn/src/alucontrol.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/internalconnections.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile Entity "work"
+# Compile Entity "work"
+# Compile Entity "work"
+# Compile Entity "work"
+# Compile Entity "work"
+# Compile Entity "work"
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => pc4adder
+# Entity => program_counter
+# Entity => regfile
+# Entity => pc_mux
+# Entity => pcimmadder
+# Entity => forwardingMuxB
+# Entity => ifid
+# Entity => instruction_memory
+# Entity => ImmGen
+# Entity => hazard_unit
+# Entity => idex
+# Entity => ControlUnit
+# Entity => ForwardingUnit
+# Entity => forwardingMuxA
+# Entity => exmem
+# Entity => alucontrol
+# Entity => ALUSrcMuxB
+# Entity => ALU
+# Error: COMP96_0015: internalconnections.vhd : (474, 42): ')' expected.
+# Error: COMP96_0015: internalconnections.vhd : (478, 13): ';' expected.
+# Error: COMP96_0019: internalconnections.vhd : (478, 13): Keyword 'end' expected.
+# Error: COMP96_0016: internalconnections.vhd : (478, 16): Design unit declaration expected.
+# Compile Entity "work"
+# Error: COMP96_0019: internalconnections.vhd : (497, 32): Keyword 'is' expected.
+# Error: COMP96_0019: internalconnections.vhd : (497, 32): Keyword 'end' expected.
+# Error: COMP96_0015: internalconnections.vhd : (497, 32): ';' expected.
+# Error: COMP96_0016: internalconnections.vhd : (497, 33): Design unit declaration expected.
+# Compile Entity "work"
+# Error: COMP96_0019: internalconnections.vhd : (508, 25): Keyword 'is' expected.
+# Error: COMP96_0019: internalconnections.vhd : (508, 25): Keyword 'end' expected.
+# Error: COMP96_0015: internalconnections.vhd : (508, 25): ';' expected.
+# Error: COMP96_0016: internalconnections.vhd : (508, 26): Design unit declaration expected.
+# Compile Entity "work"
+# Error: COMP96_0019: internalconnections.vhd : (521, 37): Keyword 'is' expected.
+# Error: COMP96_0019: internalconnections.vhd : (521, 37): Keyword 'end' expected.
+# Error: COMP96_0015: internalconnections.vhd : (521, 37): ';' expected.
+# Error: COMP96_0016: internalconnections.vhd : (521, 38): Design unit declaration expected.
+# Compile Entity "work"
+# Error: COMP96_0019: internalconnections.vhd : (533, 37): Keyword 'is' expected.
+# Error: COMP96_0019: internalconnections.vhd : (533, 37): Keyword 'end' expected.
+# Error: COMP96_0015: internalconnections.vhd : (533, 37): ';' expected.
+# Error: COMP96_0016: internalconnections.vhd : (533, 38): Design unit declaration expected.
+# Compile Entity "work"
+# Error: COMP96_0019: internalconnections.vhd : (546, 34): Keyword 'is' expected.
+# Error: COMP96_0019: internalconnections.vhd : (546, 34): Keyword 'end' expected.
+# Error: COMP96_0015: internalconnections.vhd : (546, 34): ';' expected.
+# Error: COMP96_0016: internalconnections.vhd : (546, 35): Design unit declaration expected.
+# Compile Entity "work"
+# Error: COMP96_0019: internalconnections.vhd : (558, 26): Keyword 'is' expected.
+# Error: COMP96_0019: internalconnections.vhd : (558, 26): Keyword 'end' expected.
+# Error: COMP96_0015: internalconnections.vhd : (558, 26): ';' expected.
+# Error: COMP96_0016: internalconnections.vhd : (558, 27): Design unit declaration expected.
+# Error: COMP96_0019: internalconnections.vhd : (643, 28): Keyword 'of' expected.
+# Error: COMP96_0018: internalconnections.vhd : (643, 28): Identifier expected.
+# Compile Architecture "Behavioral" of Entity "idex"
+# Error: COMP96_0078: idex.vhd : (116, 23): Unknown identifier "instruction".
+# Error: COMP96_0133: idex.vhd : (116, 23): Cannot find object declaration.
+# Error: COMP96_0077: idex.vhd : (116, 23): Undefined type of expression. Expected type 'STD_LOGIC_VECTOR'.
+# Error: COMP96_0078: idex.vhd : (139, 1): Unknown identifier "instruction_out".
+# Error: COMP96_0133: idex.vhd : (139, 1): Cannot find object declaration.
+# Compile failure 35 Errors 1 Warnings  Analysis time :  0.2 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/exmem.vhd $dsn/src/alucontrol.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/internalconnections.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile Entity "work"
+# Compile Entity "work"
+# Compile Entity "work"
+# Compile Entity "work"
+# Compile Entity "work"
+# Compile Entity "work"
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => pc4adder
+# Entity => program_counter
+# Entity => regfile
+# Entity => pc_mux
+# Entity => pcimmadder
+# Entity => forwardingMuxB
+# Entity => ifid
+# Entity => instruction_memory
+# Entity => ImmGen
+# Entity => hazard_unit
+# Entity => idex
+# Entity => ControlUnit
+# Entity => ForwardingUnit
+# Entity => forwardingMuxA
+# Entity => exmem
+# Entity => alucontrol
+# Entity => ALUSrcMuxB
+# Entity => ALU
+# Error: COMP96_0015: internalconnections.vhd : (474, 42): ')' expected.
+# Error: COMP96_0015: internalconnections.vhd : (478, 13): ';' expected.
+# Error: COMP96_0019: internalconnections.vhd : (478, 13): Keyword 'end' expected.
+# Error: COMP96_0016: internalconnections.vhd : (478, 16): Design unit declaration expected.
+# Compile Entity "work"
+# Error: COMP96_0019: internalconnections.vhd : (497, 32): Keyword 'is' expected.
+# Error: COMP96_0019: internalconnections.vhd : (497, 32): Keyword 'end' expected.
+# Error: COMP96_0015: internalconnections.vhd : (497, 32): ';' expected.
+# Error: COMP96_0016: internalconnections.vhd : (497, 33): Design unit declaration expected.
+# Compile Entity "work"
+# Error: COMP96_0019: internalconnections.vhd : (508, 25): Keyword 'is' expected.
+# Error: COMP96_0019: internalconnections.vhd : (508, 25): Keyword 'end' expected.
+# Error: COMP96_0015: internalconnections.vhd : (508, 25): ';' expected.
+# Error: COMP96_0016: internalconnections.vhd : (508, 26): Design unit declaration expected.
+# Compile Entity "work"
+# Error: COMP96_0019: internalconnections.vhd : (521, 37): Keyword 'is' expected.
+# Error: COMP96_0019: internalconnections.vhd : (521, 37): Keyword 'end' expected.
+# Error: COMP96_0015: internalconnections.vhd : (521, 37): ';' expected.
+# Error: COMP96_0016: internalconnections.vhd : (521, 38): Design unit declaration expected.
+# Compile Entity "work"
+# Error: COMP96_0019: internalconnections.vhd : (533, 37): Keyword 'is' expected.
+# Error: COMP96_0019: internalconnections.vhd : (533, 37): Keyword 'end' expected.
+# Error: COMP96_0015: internalconnections.vhd : (533, 37): ';' expected.
+# Error: COMP96_0016: internalconnections.vhd : (533, 38): Design unit declaration expected.
+# Compile Entity "work"
+# Error: COMP96_0019: internalconnections.vhd : (546, 34): Keyword 'is' expected.
+# Error: COMP96_0019: internalconnections.vhd : (546, 34): Keyword 'end' expected.
+# Error: COMP96_0015: internalconnections.vhd : (546, 34): ';' expected.
+# Error: COMP96_0016: internalconnections.vhd : (546, 35): Design unit declaration expected.
+# Compile Entity "work"
+# Error: COMP96_0019: internalconnections.vhd : (558, 26): Keyword 'is' expected.
+# Error: COMP96_0019: internalconnections.vhd : (558, 26): Keyword 'end' expected.
+# Error: COMP96_0015: internalconnections.vhd : (558, 26): ';' expected.
+# Error: COMP96_0016: internalconnections.vhd : (558, 27): Design unit declaration expected.
+# Error: COMP96_0019: internalconnections.vhd : (643, 28): Keyword 'of' expected.
+# Error: COMP96_0018: internalconnections.vhd : (643, 28): Identifier expected.
+# Compile Architecture "Behavioral" of Entity "idex"
+# Error: COMP96_0078: idex.vhd : (139, 1): Unknown identifier "instruction_out".
+# Error: COMP96_0133: idex.vhd : (139, 1): Cannot find object declaration.
+# Compile failure 32 Errors 1 Warnings  Analysis time :  0.3 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/exmem.vhd $dsn/src/alucontrol.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/internalconnections.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile Entity "work"
+# Compile Entity "work"
+# Compile Entity "work"
+# Compile Entity "work"
+# Compile Entity "work"
+# Compile Entity "work"
+# Top-level unit(s) detected:
+# Entity => pc4adder
+# Entity => program_counter
+# Entity => regfile
+# Entity => pc_mux
+# Entity => pcimmadder
+# Entity => forwardingMuxB
+# Entity => ifid
+# Entity => instruction_memory
+# Entity => ImmGen
+# Entity => hazard_unit
+# Entity => idex
+# Entity => ControlUnit
+# Entity => ForwardingUnit
+# Entity => forwardingMuxA
+# Entity => exmem
+# Entity => alucontrol
+# Entity => ALUSrcMuxB
+# Entity => ALU
+# Error: COMP96_0015: internalconnections.vhd : (474, 42): ')' expected.
+# Error: COMP96_0015: internalconnections.vhd : (478, 13): ';' expected.
+# Error: COMP96_0019: internalconnections.vhd : (478, 13): Keyword 'end' expected.
+# Error: COMP96_0016: internalconnections.vhd : (478, 16): Design unit declaration expected.
+# Error: COMP96_0019: internalconnections.vhd : (497, 32): Keyword 'is' expected.
+# Error: COMP96_0019: internalconnections.vhd : (497, 32): Keyword 'end' expected.
+# Error: COMP96_0015: internalconnections.vhd : (497, 32): ';' expected.
+# Error: COMP96_0016: internalconnections.vhd : (497, 33): Design unit declaration expected.
+# Error: COMP96_0019: internalconnections.vhd : (508, 25): Keyword 'is' expected.
+# Error: COMP96_0019: internalconnections.vhd : (508, 25): Keyword 'end' expected.
+# Error: COMP96_0015: internalconnections.vhd : (508, 25): ';' expected.
+# Error: COMP96_0016: internalconnections.vhd : (508, 26): Design unit declaration expected.
+# Error: COMP96_0019: internalconnections.vhd : (521, 37): Keyword 'is' expected.
+# Error: COMP96_0019: internalconnections.vhd : (521, 37): Keyword 'end' expected.
+# Error: COMP96_0015: internalconnections.vhd : (521, 37): ';' expected.
+# Error: COMP96_0016: internalconnections.vhd : (521, 38): Design unit declaration expected.
+# Error: COMP96_0019: internalconnections.vhd : (533, 37): Keyword 'is' expected.
+# Error: COMP96_0019: internalconnections.vhd : (533, 37): Keyword 'end' expected.
+# Error: COMP96_0015: internalconnections.vhd : (533, 37): ';' expected.
+# Error: COMP96_0016: internalconnections.vhd : (533, 38): Design unit declaration expected.
+# Error: COMP96_0019: internalconnections.vhd : (546, 34): Keyword 'is' expected.
+# Error: COMP96_0019: internalconnections.vhd : (546, 34): Keyword 'end' expected.
+# Error: COMP96_0015: internalconnections.vhd : (546, 34): ';' expected.
+# Error: COMP96_0016: internalconnections.vhd : (546, 35): Design unit declaration expected.
+# Error: COMP96_0019: internalconnections.vhd : (558, 26): Keyword 'is' expected.
+# Error: COMP96_0019: internalconnections.vhd : (558, 26): Keyword 'end' expected.
+# Error: COMP96_0015: internalconnections.vhd : (558, 26): ';' expected.
+# Error: COMP96_0016: internalconnections.vhd : (558, 27): Design unit declaration expected.
+# Error: COMP96_0019: internalconnections.vhd : (643, 28): Keyword 'of' expected.
+# Error: COMP96_0018: internalconnections.vhd : (643, 28): Identifier expected.
+# Compile failure 30 Errors 1 Warnings  Analysis time :  0.3 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/exmem.vhd $dsn/src/alucontrol.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/internalconnections.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile Entity "work"
+# Compile Entity "work"
+# Compile Entity "work"
+# Compile Entity "work"
+# Compile Entity "work"
+# Compile Entity "work"
+# Top-level unit(s) detected:
+# Entity => pc4adder
+# Entity => program_counter
+# Entity => regfile
+# Entity => pc_mux
+# Entity => pcimmadder
+# Entity => forwardingMuxB
+# Entity => ifid
+# Entity => instruction_memory
+# Entity => ImmGen
+# Entity => hazard_unit
+# Entity => idex
+# Entity => ControlUnit
+# Entity => ForwardingUnit
+# Entity => forwardingMuxA
+# Entity => exmem
+# Entity => alucontrol
+# Entity => ALUSrcMuxB
+# Entity => ALU
+# Error: COMP96_0015: internalconnections.vhd : (474, 44): ')' expected.
+# Error: COMP96_0015: internalconnections.vhd : (478, 13): ';' expected.
+# Error: COMP96_0019: internalconnections.vhd : (478, 13): Keyword 'end' expected.
+# Error: COMP96_0016: internalconnections.vhd : (478, 16): Design unit declaration expected.
+# Error: COMP96_0019: internalconnections.vhd : (497, 32): Keyword 'is' expected.
+# Error: COMP96_0019: internalconnections.vhd : (497, 32): Keyword 'end' expected.
+# Error: COMP96_0015: internalconnections.vhd : (497, 32): ';' expected.
+# Error: COMP96_0016: internalconnections.vhd : (497, 33): Design unit declaration expected.
+# Error: COMP96_0019: internalconnections.vhd : (508, 25): Keyword 'is' expected.
+# Error: COMP96_0019: internalconnections.vhd : (508, 25): Keyword 'end' expected.
+# Error: COMP96_0015: internalconnections.vhd : (508, 25): ';' expected.
+# Error: COMP96_0016: internalconnections.vhd : (508, 26): Design unit declaration expected.
+# Error: COMP96_0019: internalconnections.vhd : (521, 37): Keyword 'is' expected.
+# Error: COMP96_0019: internalconnections.vhd : (521, 37): Keyword 'end' expected.
+# Error: COMP96_0015: internalconnections.vhd : (521, 37): ';' expected.
+# Error: COMP96_0016: internalconnections.vhd : (521, 38): Design unit declaration expected.
+# Error: COMP96_0019: internalconnections.vhd : (533, 37): Keyword 'is' expected.
+# Error: COMP96_0019: internalconnections.vhd : (533, 37): Keyword 'end' expected.
+# Error: COMP96_0015: internalconnections.vhd : (533, 37): ';' expected.
+# Error: COMP96_0016: internalconnections.vhd : (533, 38): Design unit declaration expected.
+# Error: COMP96_0019: internalconnections.vhd : (546, 34): Keyword 'is' expected.
+# Error: COMP96_0019: internalconnections.vhd : (546, 34): Keyword 'end' expected.
+# Error: COMP96_0015: internalconnections.vhd : (546, 34): ';' expected.
+# Error: COMP96_0016: internalconnections.vhd : (546, 35): Design unit declaration expected.
+# Error: COMP96_0019: internalconnections.vhd : (558, 26): Keyword 'is' expected.
+# Error: COMP96_0019: internalconnections.vhd : (558, 26): Keyword 'end' expected.
+# Error: COMP96_0015: internalconnections.vhd : (558, 26): ';' expected.
+# Error: COMP96_0016: internalconnections.vhd : (558, 27): Design unit declaration expected.
+# Error: COMP96_0019: internalconnections.vhd : (643, 28): Keyword 'of' expected.
+# Error: COMP96_0018: internalconnections.vhd : (643, 28): Identifier expected.
+# Compile failure 30 Errors 1 Warnings  Analysis time :  0.3 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/exmem.vhd $dsn/src/alucontrol.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/internalconnections.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Entity => ForwardingUnit
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0078: internalconnections.vhd : (408, 7): Unknown identifier "rs1".
+# Error: COMP96_0078: internalconnections.vhd : (409, 7): Unknown identifier "rs2".
+# Error: COMP96_0133: internalconnections.vhd : (408, 7): Cannot find object declaration.
+# Error: COMP96_0112: internalconnections.vhd : (408, 7): "rs1" does not match the formal name.
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "rs1_data".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "rs2_data".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "exmem_rd".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "exmem_regdata".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "memwb_rd".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "memwb_regdata".
+# Error: COMP96_0078: internalconnections.vhd : (574, 22): Unknown identifier "MEMTOREG_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (575, 22): Unknown identifier "REGWRITE_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (581, 18): Unknown identifier "MEMREAD_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (582, 19): Unknown identifier "MEMWRITE_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (583, 17): Unknown identifier "BRANCH_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (586, 15): Unknown identifier "idex_rd_to_exmem".
+# Error: COMP96_0078: internalconnections.vhd : (587, 16): Unknown identifier "RD_FROM_EXMEM".
+# Compile failure 17 Errors 1 Warnings  Analysis time :  0.3 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/exmem.vhd $dsn/src/alucontrol.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/internalconnections.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Entity => ForwardingUnit
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0078: internalconnections.vhd : (408, 7): Unknown identifier "rs1".
+# Error: COMP96_0078: internalconnections.vhd : (409, 7): Unknown identifier "rs2".
+# Error: COMP96_0133: internalconnections.vhd : (408, 7): Cannot find object declaration.
+# Error: COMP96_0112: internalconnections.vhd : (408, 7): "rs1" does not match the formal name.
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "rs1_data".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "rs2_data".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "exmem_rd".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "exmem_regdata".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "memwb_rd".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "memwb_regdata".
+# Error: COMP96_0078: internalconnections.vhd : (574, 22): Unknown identifier "MEMTOREG_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (575, 22): Unknown identifier "REGWRITE_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (581, 18): Unknown identifier "MEMREAD_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (582, 19): Unknown identifier "MEMWRITE_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (583, 17): Unknown identifier "BRANCH_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (586, 15): Unknown identifier "idex_rd_to_exmem".
+# Error: COMP96_0078: internalconnections.vhd : (587, 16): Unknown identifier "RD_FROM_EXMEM".
+# Compile failure 17 Errors 1 Warnings  Analysis time :  0.3 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/exmem.vhd $dsn/src/alucontrol.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/internalconnections.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Entity => ForwardingUnit
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0078: internalconnections.vhd : (408, 7): Unknown identifier "rs1".
+# Error: COMP96_0078: internalconnections.vhd : (409, 7): Unknown identifier "rs2".
+# Error: COMP96_0133: internalconnections.vhd : (408, 7): Cannot find object declaration.
+# Error: COMP96_0112: internalconnections.vhd : (408, 7): "rs1" does not match the formal name.
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "rs1_data".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "rs2_data".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "exmem_rd".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "exmem_regdata".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "memwb_rd".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "memwb_regdata".
+# Error: COMP96_0078: internalconnections.vhd : (574, 22): Unknown identifier "MEMTOREG_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (575, 22): Unknown identifier "REGWRITE_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (581, 18): Unknown identifier "MEMREAD_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (582, 19): Unknown identifier "MEMWRITE_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (583, 17): Unknown identifier "BRANCH_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (586, 15): Unknown identifier "idex_rd_to_exmem".
+# Error: COMP96_0078: internalconnections.vhd : (587, 16): Unknown identifier "RD_FROM_EXMEM".
+# Compile failure 17 Errors 1 Warnings  Analysis time :  0.6 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/exmem.vhd $dsn/src/alucontrol.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/internalconnections.vhd $dsn/src/branch_and.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile Entity "BranchAND"
+# Compile Architecture "Behavioral" of Entity "BranchAND"
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Entity => ForwardingUnit
+# Entity => BranchAND
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0078: internalconnections.vhd : (408, 7): Unknown identifier "rs1".
+# Error: COMP96_0078: internalconnections.vhd : (409, 7): Unknown identifier "rs2".
+# Error: COMP96_0133: internalconnections.vhd : (408, 7): Cannot find object declaration.
+# Error: COMP96_0112: internalconnections.vhd : (408, 7): "rs1" does not match the formal name.
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "rs1_data".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "rs2_data".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "exmem_rd".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "exmem_regdata".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "memwb_rd".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "memwb_regdata".
+# Error: COMP96_0078: internalconnections.vhd : (574, 22): Unknown identifier "MEMTOREG_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (575, 22): Unknown identifier "REGWRITE_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (581, 18): Unknown identifier "MEMREAD_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (582, 19): Unknown identifier "MEMWRITE_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (583, 17): Unknown identifier "BRANCH_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (586, 15): Unknown identifier "idex_rd_to_exmem".
+# Error: COMP96_0078: internalconnections.vhd : (587, 16): Unknown identifier "RD_FROM_EXMEM".
+# Compile failure 17 Errors 1 Warnings  Analysis time :  0.3 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/exmem.vhd $dsn/src/alucontrol.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/internalconnections.vhd $dsn/src/branch_and.vhd $dsn/src/Data_Memory.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile Entity "BranchAND"
+# Compile Architecture "Behavioral" of Entity "BranchAND"
+# Compile Entity "data_memory"
+# Compile Architecture "Behavioral" of Entity "data_memory"
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Entity => ForwardingUnit
+# Entity => data_memory
+# Entity => BranchAND
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0078: internalconnections.vhd : (408, 7): Unknown identifier "rs1".
+# Error: COMP96_0078: internalconnections.vhd : (409, 7): Unknown identifier "rs2".
+# Error: COMP96_0133: internalconnections.vhd : (408, 7): Cannot find object declaration.
+# Error: COMP96_0112: internalconnections.vhd : (408, 7): "rs1" does not match the formal name.
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "rs1_data".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "rs2_data".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "exmem_rd".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "exmem_regdata".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "memwb_rd".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "memwb_regdata".
+# Error: COMP96_0078: internalconnections.vhd : (574, 22): Unknown identifier "MEMTOREG_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (575, 22): Unknown identifier "REGWRITE_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (581, 18): Unknown identifier "MEMREAD_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (582, 19): Unknown identifier "MEMWRITE_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (583, 17): Unknown identifier "BRANCH_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (586, 15): Unknown identifier "idex_rd_to_exmem".
+# Error: COMP96_0078: internalconnections.vhd : (587, 16): Unknown identifier "RD_FROM_EXMEM".
+# Compile failure 17 Errors 1 Warnings  Analysis time :  0.4 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/exmem.vhd $dsn/src/alucontrol.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/internalconnections.vhd $dsn/src/branch_and.vhd $dsn/src/Data_Memory.vhd $dsn/src/writebackmux.vhd $dsn/src/memwb.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile Entity "BranchAND"
+# Compile Architecture "Behavioral" of Entity "BranchAND"
+# Compile Entity "data_memory"
+# Compile Architecture "Behavioral" of Entity "data_memory"
+# Compile Entity "writebackmux"
+# Compile Architecture "Behavioral" of Entity "writebackmux"
+# Compile Entity "memwb"
+# Compile Architecture "Behavioral" of Entity "memwb"
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => writebackmux
+# Entity => internal_connections
+# Entity => memwb
+# Entity => ForwardingUnit
+# Entity => data_memory
+# Entity => BranchAND
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0078: internalconnections.vhd : (408, 7): Unknown identifier "rs1".
+# Error: COMP96_0078: internalconnections.vhd : (409, 7): Unknown identifier "rs2".
+# Error: COMP96_0133: internalconnections.vhd : (408, 7): Cannot find object declaration.
+# Error: COMP96_0112: internalconnections.vhd : (408, 7): "rs1" does not match the formal name.
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "rs1_data".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "rs2_data".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "exmem_rd".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "exmem_regdata".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "memwb_rd".
+# Error: COMP96_0207: internalconnections.vhd : (404, 4): No actual specified for local port "memwb_regdata".
+# Error: COMP96_0078: internalconnections.vhd : (574, 22): Unknown identifier "MEMTOREG_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (575, 22): Unknown identifier "REGWRITE_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (581, 18): Unknown identifier "MEMREAD_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (582, 19): Unknown identifier "MEMWRITE_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (583, 17): Unknown identifier "BRANCH_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (586, 15): Unknown identifier "idex_rd_to_exmem".
+# Error: COMP96_0078: internalconnections.vhd : (587, 16): Unknown identifier "RD_FROM_EXMEM".
+# Compile failure 17 Errors 1 Warnings  Analysis time :  0.3 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/exmem.vhd $dsn/src/alucontrol.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/internalconnections.vhd $dsn/src/branch_and.vhd $dsn/src/Data_Memory.vhd $dsn/src/writebackmux.vhd $dsn/src/memwb.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile Entity "BranchAND"
+# Compile Architecture "Behavioral" of Entity "BranchAND"
+# Compile Entity "data_memory"
+# Compile Architecture "Behavioral" of Entity "data_memory"
+# Compile Entity "writebackmux"
+# Compile Architecture "Behavioral" of Entity "writebackmux"
+# Compile Entity "memwb"
+# Compile Architecture "Behavioral" of Entity "memwb"
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => writebackmux
+# Entity => internal_connections
+# Entity => memwb
+# Entity => ForwardingUnit
+# Entity => BranchAND
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0078: internalconnections.vhd : (416, 7): Unknown identifier "rs1".
+# Error: COMP96_0078: internalconnections.vhd : (417, 7): Unknown identifier "rs2".
+# Error: COMP96_0133: internalconnections.vhd : (416, 7): Cannot find object declaration.
+# Error: COMP96_0112: internalconnections.vhd : (416, 7): "rs1" does not match the formal name.
+# Error: COMP96_0207: internalconnections.vhd : (412, 4): No actual specified for local port "rs1_data".
+# Error: COMP96_0207: internalconnections.vhd : (412, 4): No actual specified for local port "rs2_data".
+# Error: COMP96_0207: internalconnections.vhd : (412, 4): No actual specified for local port "exmem_rd".
+# Error: COMP96_0207: internalconnections.vhd : (412, 4): No actual specified for local port "exmem_regdata".
+# Error: COMP96_0207: internalconnections.vhd : (412, 4): No actual specified for local port "memwb_rd".
+# Error: COMP96_0207: internalconnections.vhd : (412, 4): No actual specified for local port "memwb_regdata".
+# Error: COMP96_0078: internalconnections.vhd : (582, 22): Unknown identifier "MEMTOREG_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (583, 22): Unknown identifier "REGWRITE_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (589, 18): Unknown identifier "MEMREAD_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (590, 19): Unknown identifier "MEMWRITE_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (591, 17): Unknown identifier "BRANCH_FROM_EXMEM".
+# Error: COMP96_0078: internalconnections.vhd : (594, 15): Unknown identifier "idex_rd_to_exmem".
+# Error: COMP96_0078: internalconnections.vhd : (595, 16): Unknown identifier "RD_FROM_EXMEM".
+# Compile failure 17 Errors 1 Warnings  Analysis time :  0.4 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/exmem.vhd $dsn/src/alucontrol.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/internalconnections.vhd $dsn/src/branch_and.vhd $dsn/src/Data_Memory.vhd $dsn/src/writebackmux.vhd $dsn/src/memwb.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile Entity "BranchAND"
+# Compile Architecture "Behavioral" of Entity "BranchAND"
+# Compile Entity "data_memory"
+# Compile Architecture "Behavioral" of Entity "data_memory"
+# Compile Entity "writebackmux"
+# Compile Architecture "Behavioral" of Entity "writebackmux"
+# Compile Entity "memwb"
+# Compile Architecture "Behavioral" of Entity "memwb"
+# Top-level unit(s) detected:
+# Entity => forwardingMuxB
+# Entity => pc4adder
+# Entity => program_counter
+# Entity => writebackmux
+# Entity => regfile
+# Entity => pc_mux
+# Entity => pcimmadder
+# Entity => ifid
+# Entity => instruction_memory
+# Entity => memwb
+# Entity => ImmGen
+# Entity => hazard_unit
+# Entity => idex
+# Entity => ControlUnit
+# Entity => ForwardingUnit
+# Entity => forwardingMuxA
+# Entity => exmem
+# Entity => data_memory
+# Entity => alucontrol
+# Entity => ALUSrcMuxB
+# Entity => BranchAND
+# Entity => ALU
+# Error: COMP96_0033: internalconnections.vhd : (591, 17): Missing actual.
+# Compile failure 1 Errors 1 Warnings  Analysis time :  0.6 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/exmem.vhd $dsn/src/alucontrol.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/internalconnections.vhd $dsn/src/branch_and.vhd $dsn/src/Data_Memory.vhd $dsn/src/writebackmux.vhd $dsn/src/memwb.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile Entity "BranchAND"
+# Compile Architecture "Behavioral" of Entity "BranchAND"
+# Compile Entity "data_memory"
+# Compile Architecture "Behavioral" of Entity "data_memory"
+# Compile Entity "writebackmux"
+# Compile Architecture "Behavioral" of Entity "writebackmux"
+# Compile Entity "memwb"
+# Compile Architecture "Behavioral" of Entity "memwb"
+# Top-level unit(s) detected:
+# Entity => forwardingMuxB
+# Entity => pc4adder
+# Entity => program_counter
+# Entity => writebackmux
+# Entity => regfile
+# Entity => pc_mux
+# Entity => pcimmadder
+# Entity => ifid
+# Entity => instruction_memory
+# Entity => memwb
+# Entity => ImmGen
+# Entity => hazard_unit
+# Entity => idex
+# Entity => ControlUnit
+# Entity => ForwardingUnit
+# Entity => forwardingMuxA
+# Entity => exmem
+# Entity => data_memory
+# Entity => alucontrol
+# Entity => ALUSrcMuxB
+# Entity => BranchAND
+# Entity => ALU
+# Error: COMP96_0033: internalconnections.vhd : (591, 17): Missing actual.
+# Compile failure 1 Errors 1 Warnings  Analysis time :  0.3 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/exmem.vhd $dsn/src/alucontrol.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/internalconnections.vhd $dsn/src/branch_and.vhd $dsn/src/Data_Memory.vhd $dsn/src/writebackmux.vhd $dsn/src/memwb.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile Entity "BranchAND"
+# Compile Architecture "Behavioral" of Entity "BranchAND"
+# Compile Entity "data_memory"
+# Compile Architecture "Behavioral" of Entity "data_memory"
+# Compile Entity "writebackmux"
+# Compile Architecture "Behavioral" of Entity "writebackmux"
+# Compile Entity "memwb"
+# Compile Architecture "Behavioral" of Entity "memwb"
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => writebackmux
+# Entity => internal_connections
+# Entity => memwb
+# Entity => ControlUnit
+# Entity => ForwardingUnit
+# Entity => BranchAND
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0078: internalconnections.vhd : (594, 15): Unknown identifier "idex_rd_to_exmem".
+# Compile failure 1 Errors 1 Warnings  Analysis time :  0.4 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/exmem.vhd $dsn/src/alucontrol.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/internalconnections.vhd $dsn/src/branch_and.vhd $dsn/src/Data_Memory.vhd $dsn/src/writebackmux.vhd $dsn/src/memwb.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile Entity "BranchAND"
+# Compile Architecture "Behavioral" of Entity "BranchAND"
+# Compile Entity "data_memory"
+# Compile Architecture "Behavioral" of Entity "data_memory"
+# Compile Entity "writebackmux"
+# Compile Architecture "Behavioral" of Entity "writebackmux"
+# Compile Entity "memwb"
+# Compile Architecture "Behavioral" of Entity "memwb"
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => writebackmux
+# Entity => internal_connections
+# Entity => memwb
+# Entity => ControlUnit
+# Entity => ForwardingUnit
+# Entity => BranchAND
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0078: internalconnections.vhd : (595, 16): Unknown identifier "RD_FROM_EXMEM".
+# Compile failure 1 Errors 1 Warnings  Analysis time :  0.3 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/exmem.vhd $dsn/src/alucontrol.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/internalconnections.vhd $dsn/src/branch_and.vhd $dsn/src/Data_Memory.vhd $dsn/src/writebackmux.vhd $dsn/src/memwb.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile Entity "BranchAND"
+# Compile Architecture "Behavioral" of Entity "BranchAND"
+# Compile Entity "data_memory"
+# Compile Architecture "Behavioral" of Entity "data_memory"
+# Compile Entity "writebackmux"
+# Compile Architecture "Behavioral" of Entity "writebackmux"
+# Compile Entity "memwb"
+# Compile Architecture "Behavioral" of Entity "memwb"
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => writebackmux
+# Entity => internal_connections
+# Entity => memwb
+# Entity => ControlUnit
+# Entity => ForwardingUnit
+# Entity => BranchAND
+# Compile Architecture "structural" of Entity "internal_connections"
+# Compile success 0 Errors 1 Warnings  Analysis time :  0.6 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/writebackmux.vhd $dsn/src/memwb.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/branch_and.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/exmem.vhd $dsn/src/Data_Memory.vhd $dsn/src/alucontrol.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/internalconnections.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "writebackmux"
+# Compile Architecture "Behavioral" of Entity "writebackmux"
+# Compile Entity "memwb"
+# Compile Architecture "Behavioral" of Entity "memwb"
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "BranchAND"
+# Compile Architecture "Behavioral" of Entity "BranchAND"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "data_memory"
+# Compile Architecture "Behavioral" of Entity "data_memory"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Top-level unit(s) detected:
+# Entity => writebackmux
+# Entity => memwb
+# Entity => internal_connections
+# Entity => ControlUnit
+# Entity => ForwardingUnit
+# Entity => BranchAND
+# Compile success 0 Errors 1 Warnings  Analysis time :  0.5 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/writebackmux.vhd $dsn/src/memwb.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/branch_and.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/exmem.vhd $dsn/src/Data_Memory.vhd $dsn/src/alucontrol.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/internalconnections.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "writebackmux"
+# Compile Architecture "Behavioral" of Entity "writebackmux"
+# Compile Entity "memwb"
+# Compile Architecture "Behavioral" of Entity "memwb"
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "BranchAND"
+# Compile Architecture "Behavioral" of Entity "BranchAND"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "data_memory"
+# Compile Architecture "Behavioral" of Entity "data_memory"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Top-level unit(s) detected:
+# Entity => writebackmux
+# Entity => memwb
+# Entity => internal_connections
+# Entity => ControlUnit
+# Entity => ForwardingUnit
+# Entity => BranchAND
+# Compile success 0 Errors 1 Warnings  Analysis time :  0.4 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/writebackmux.vhd $dsn/src/memwb.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/branch_and.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/exmem.vhd $dsn/src/Data_Memory.vhd $dsn/src/alucontrol.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/internalconnections.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "writebackmux"
+# Compile Architecture "Behavioral" of Entity "writebackmux"
+# Compile Entity "memwb"
+# Compile Architecture "Behavioral" of Entity "memwb"
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "BranchAND"
+# Compile Architecture "Behavioral" of Entity "BranchAND"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "data_memory"
+# Compile Architecture "Behavioral" of Entity "data_memory"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Top-level unit(s) detected:
+# Entity => writebackmux
+# Entity => memwb
+# Entity => internal_connections
+# Entity => ControlUnit
+# Entity => ForwardingUnit
+# Compile success 0 Errors 1 Warnings  Analysis time :  0.4 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/writebackmux.vhd $dsn/src/memwb.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/branch_and.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/exmem.vhd $dsn/src/Data_Memory.vhd $dsn/src/alucontrol.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/internalconnections.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "writebackmux"
+# Compile Architecture "Behavioral" of Entity "writebackmux"
+# Compile Entity "memwb"
+# Compile Architecture "Behavioral" of Entity "memwb"
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "BranchAND"
+# Compile Architecture "Behavioral" of Entity "BranchAND"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "data_memory"
+# Compile Architecture "Behavioral" of Entity "data_memory"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Top-level unit(s) detected:
+# Entity => writebackmux
+# Entity => internal_connections
+# Entity => ControlUnit
+# Entity => ForwardingUnit
+# Compile success 0 Errors 1 Warnings  Analysis time :  0.4 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/writebackmux.vhd $dsn/src/memwb.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/branch_and.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/exmem.vhd $dsn/src/Data_Memory.vhd $dsn/src/alucontrol.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/internalconnections.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "writebackmux"
+# Compile Architecture "Behavioral" of Entity "writebackmux"
+# Compile Entity "memwb"
+# Compile Architecture "Behavioral" of Entity "memwb"
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "BranchAND"
+# Compile Architecture "Behavioral" of Entity "BranchAND"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "data_memory"
+# Compile Architecture "Behavioral" of Entity "data_memory"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Entity => ControlUnit
+# Entity => ForwardingUnit
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0078: internalconnections.vhd : (697, 23): Unknown identifier "memwb_readdata_to_writebackmux".
+# Error: COMP96_0078: internalconnections.vhd : (698, 23): Unknown identifier "memwb_aluresult_to_writebackmux".
+# Error: COMP96_0078: internalconnections.vhd : (720, 20): Unknown identifier "memwb_readdata_to_writebackmux".
+# Error: COMP96_0078: internalconnections.vhd : (721, 20): Unknown identifier "memwb_aluresult_to_writebackmux".
+# Compile failure 4 Errors 1 Warnings  Analysis time :  0.4 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/writebackmux.vhd $dsn/src/memwb.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/branch_and.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/exmem.vhd $dsn/src/Data_Memory.vhd $dsn/src/alucontrol.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/internalconnections.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "writebackmux"
+# Compile Architecture "Behavioral" of Entity "writebackmux"
+# Compile Entity "memwb"
+# Compile Architecture "Behavioral" of Entity "memwb"
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "BranchAND"
+# Compile Architecture "Behavioral" of Entity "BranchAND"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "data_memory"
+# Compile Architecture "Behavioral" of Entity "data_memory"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Entity => ControlUnit
+# Entity => ForwardingUnit
+# Compile success 0 Errors 1 Warnings  Analysis time :  0.3 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/writebackmux.vhd $dsn/src/memwb.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/branch_and.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/exmem.vhd $dsn/src/Data_Memory.vhd $dsn/src/alucontrol.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/internalconnections.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "writebackmux"
+# Compile Architecture "Behavioral" of Entity "writebackmux"
+# Compile Entity "memwb"
+# Compile Architecture "Behavioral" of Entity "memwb"
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "BranchAND"
+# Compile Architecture "Behavioral" of Entity "BranchAND"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "data_memory"
+# Compile Architecture "Behavioral" of Entity "data_memory"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Entity => ControlUnit
+# Entity => ForwardingUnit
+# Compile success 0 Errors 1 Warnings  Analysis time :  0.4 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/writebackmux.vhd $dsn/src/memwb.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/branch_and.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/exmem.vhd $dsn/src/Data_Memory.vhd $dsn/src/alucontrol.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/internalconnections.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "writebackmux"
+# Compile Architecture "Behavioral" of Entity "writebackmux"
+# Compile Entity "memwb"
+# Compile Architecture "Behavioral" of Entity "memwb"
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "BranchAND"
+# Compile Architecture "Behavioral" of Entity "BranchAND"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "data_memory"
+# Compile Architecture "Behavioral" of Entity "data_memory"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0078: internalconnections.vhd : (447, 7): Unknown identifier "rs1".
+# Error: COMP96_0078: internalconnections.vhd : (448, 7): Unknown identifier "rs2".
+# Error: COMP96_0133: internalconnections.vhd : (447, 7): Cannot find object declaration.
+# Error: COMP96_0112: internalconnections.vhd : (447, 7): "rs1" does not match the formal name.
+# Error: COMP96_0207: internalconnections.vhd : (443, 4): No actual specified for local port "rs1_data".
+# Error: COMP96_0207: internalconnections.vhd : (443, 4): No actual specified for local port "rs2_data".
+# Error: COMP96_0207: internalconnections.vhd : (443, 4): No actual specified for local port "exmem_rd".
+# Error: COMP96_0207: internalconnections.vhd : (443, 4): No actual specified for local port "exmem_regdata".
+# Error: COMP96_0207: internalconnections.vhd : (443, 4): No actual specified for local port "memwb_rd".
+# Error: COMP96_0207: internalconnections.vhd : (443, 4): No actual specified for local port "memwb_regdata".
+# Compile failure 10 Errors 1 Warnings  Analysis time :  0.5 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/writebackmux.vhd $dsn/src/memwb.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/branch_and.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/exmem.vhd $dsn/src/Data_Memory.vhd $dsn/src/alucontrol.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/internalconnections.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "writebackmux"
+# Compile Architecture "Behavioral" of Entity "writebackmux"
+# Compile Entity "memwb"
+# Compile Architecture "Behavioral" of Entity "memwb"
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "BranchAND"
+# Compile Architecture "Behavioral" of Entity "BranchAND"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "data_memory"
+# Compile Architecture "Behavioral" of Entity "data_memory"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Incorrect order of units detected.
+# Automatic reorder and incremental recompilation of required units in progress.
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Compile Architecture "structural" of Entity "internal_connections"
+# Error: COMP96_0207: internalconnections.vhd : (443, 4): No actual specified for local port "exmem_rd".
+# Error: COMP96_0207: internalconnections.vhd : (443, 4): No actual specified for local port "exmem_regdata".
+# Error: COMP96_0207: internalconnections.vhd : (443, 4): No actual specified for local port "memwb_rd".
+# Error: COMP96_0207: internalconnections.vhd : (443, 4): No actual specified for local port "memwb_regdata".
+# Compile failure 4 Errors 1 Warnings  Analysis time :  0.4 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/writebackmux.vhd $dsn/src/memwb.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/branch_and.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/exmem.vhd $dsn/src/Data_Memory.vhd $dsn/src/alucontrol.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/internalconnections.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "writebackmux"
+# Compile Architecture "Behavioral" of Entity "writebackmux"
+# Compile Entity "memwb"
+# Compile Architecture "Behavioral" of Entity "memwb"
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "BranchAND"
+# Compile Architecture "Behavioral" of Entity "BranchAND"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "data_memory"
+# Compile Architecture "Behavioral" of Entity "data_memory"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Compile success 0 Errors 1 Warnings  Analysis time :  0.3 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/writebackmux.vhd $dsn/src/memwb.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/branch_and.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/exmem.vhd $dsn/src/Data_Memory.vhd $dsn/src/alucontrol.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/internalconnections.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "writebackmux"
+# Compile Architecture "Behavioral" of Entity "writebackmux"
+# Compile Entity "memwb"
+# Compile Architecture "Behavioral" of Entity "memwb"
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "BranchAND"
+# Compile Architecture "Behavioral" of Entity "BranchAND"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "data_memory"
+# Compile Architecture "Behavioral" of Entity "data_memory"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "internal_connections"
+# Compile Architecture "structural" of Entity "internal_connections"
+# Top-level unit(s) detected:
+# Entity => internal_connections
+# Compile success 0 Errors 1 Warnings  Analysis time :  0.3 [s]
+acom -reorder -O3 -e 100 -work RISCVCORE -2002  $dsn/src/RISCVCORE.vhd $dsn/src/writebackmux.vhd $dsn/src/memwb.vhd $dsn/src/control_unit.vhd $dsn/src/forwarding_unit.vhd $dsn/src/branch_and.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/pc4adder.vhd $dsn/src/program_counter.vhd $dsn/src/registers.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/exmem.vhd $dsn/src/Data_Memory.vhd $dsn/src/alucontrol.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/internalconnections.vhd
+# Warning: COMP96_0003: Source file "C:/Users/maxpro/Desktop/440Project RISCVCORE/RISCVCORE/RISCVCORE/src/RISCVCORE.vhd" is empty.
+# Compile Entity "writebackmux"
+# Compile Architecture "Behavioral" of Entity "writebackmux"
+# Compile Entity "memwb"
+# Compile Architecture "Behavioral" of Entity "memwb"
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "BranchAND"
+# Compile Architecture "Behavioral" of Entity "BranchAND"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "pc4adde

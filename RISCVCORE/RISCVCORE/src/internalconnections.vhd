@@ -298,7 +298,7 @@ architecture structural of internal_connections is
   
   -- Register address
   signal RD_TO_MEMWB : std_logic_vector(4 downto 0);
-  signal RD_FROM_MEMWB : std_logic_vector(4 downto 0);
+  signal memwb_rd_to_out : std_logic_vector(4 downto 0);
 
 
   --TO WRITEBACK MUX
@@ -427,7 +427,7 @@ ifid_pcout_to_pcimmadder <= ifid_pcout_to_OUT;
       regwrite               => memwb_regwrite_to_registers,
       readregister1          => ifid_rs1_to_registers,
       readregister2          => ifid_rs2_to_registers,
-      writeregisteraddress   => memwb_regselect_to_registers,
+      writeregisteraddress   => memwb_rd_to_out,
       writedata              => writebackmux_writedata_to_registers,
       readdata1              => registers_reg1out_to_idex,			
       readdata2              => registers_reg2out_to_idex
@@ -438,23 +438,29 @@ ifid_pcout_to_pcimmadder <= ifid_pcout_to_OUT;
 registers_reg1out_to_controlunit  <= registers_reg1out_to_idex;
 registers_reg2out_to_controlunit  <= registers_reg2out_to_idex;
      
-         --
---	  --TO CONTROL UNIT
---		 CONTROLUNIT_INST : entity work.ControlUnit
---    port map (
---      instruction => ifid_instruction_to_controlunit,
---      cntrlsigmux => hazardunit_cntrlsigmux_to_controlunit,
---      rs1         => registers_reg1out_to_controlunit,
---      rs2         => registers_reg2out_to_controlunit, 
---      MemtoReg    => controlunit_memtoreg_to_idex,
---      RegWrite    => controlunit_regwrite_to_idex,
---      MemRead     => controlunit_memread_to_idex,
---      MemWrite    => controlunit_memwrite_to_idex,
---      Branch      => controlunit_earlybranch_to_pcmux,
---      ALUSrc      => controlunit_alusource_to_idex,
---      ALUOp       => contolunit_aluop_to_idex,
---      if_flush    => controlunit_ifflush_to_ifid
---    );
+         
+	  --TO CONTROL UNIT
+		 CONTROLUNIT_INST : entity work.ControlUnit
+    port map (
+      instruction => ifid_instruction_to_controlunit,
+      cntrlsigmux => hazardunit_cntrlsigmux_to_controlunit,
+      rs1_data         => registers_reg1out_to_controlunit,
+      rs2_data         => registers_reg2out_to_controlunit,
+	  
+	  exmem_rd		   =>	exmem_rd_to_memwb,
+	  exmem_regdata	   =>  exmem_result_to_datamem,
+	  memwb_rd		   =>	memwb_rd_to_out,
+	  memwb_regdata	   =>	writebackmux_writedata_to_registers,
+	  
+      MemtoReg    => controlunit_memtoreg_to_idex,
+      RegWrite    => controlunit_regwrite_to_idex,
+      MemRead     => controlunit_memread_to_idex,
+      MemWrite    => controlunit_memwrite_to_idex,
+      Branch      => controlunit_earlybranch_to_pcmux,
+      ALUSrc      => controlunit_alusource_to_idex,
+      ALUOp       => contolunit_aluop_to_idex,
+      if_flush    => controlunit_ifflush_to_ifid
+    );
 	
 	  -- NEED TO ADD THE EXMEM AND MEMWB forwarding signals !!! logic is implenented 
 
@@ -466,7 +472,7 @@ registers_reg2out_to_controlunit  <= registers_reg2out_to_idex;
 HAZARD_UNIT_INST : entity work.hazard_unit
     port map (
       idexmemread => idex_memread_to_hazardunit,
-      idexrd => idex_rd_to_hazardunit,
+      idexrd => idex_rd_to_exmem,
       instruction => idex_instruction_to_hazardunit,
       cntrlsigmux => hazardunit_controlsigmux_to_controlunit,
       pcwriteenable => hazardunit_pcwrite_to_pc,
@@ -560,8 +566,8 @@ HAZARD_UNIT_INST : entity work.hazard_unit
 	FORWARDING_MUX_A_INST : entity work.forwardingMuxA
     port map (															 
       rs1 => idex_rs1_to_forwardingmuxa,
-      forwardedrs1exmem => exmem_rs_to_forwardingmuxa,
-      forwardedrs1memwb => memwb_rs_to_forwardingmuxa,
+      forwardedrs1exmem => exmem_result_to_datamem,
+      forwardedrs1memwb => writebackmux_writedata_to_registers,
       forwardAmuxcntrl => forwardingunit_Amuxcntrl_to_forrwardingmuxA,
       MuxOutput => forwardingmuxA_rs1_to_ALU
     );
@@ -572,8 +578,8 @@ HAZARD_UNIT_INST : entity work.hazard_unit
 	FORWARDING_MUX_B_INST : entity work.forwardingMuxB
     port map (
       rs2 => idex_rs2_to_forwardingmuxb,
-      forwardedrs2exmem => exmem_rs_to_forwardingmuxb,
-      forwardedrs2memwb => memwb_rs_to_forwardingmuxb,
+      forwardedrs2exmem => exmem_result_to_datamem,
+      forwardedrs2memwb => writebackmux_writedata_to_registers,
       forwardBmuxcntrl => forwardingunit_Bmuxcntrl_to_forrwardingmuxB,
       MuxOutput => forwardingmuxB_rs2_to_alusrcmuxB
     );
@@ -632,19 +638,21 @@ alusrcmuxb_source2_to_exmem <= alusrcmuxB_rs2_to_alu;
 	--TO FORWARDING UNIT
 	
 	
-	--exmem rd: exmem_rd_to_memwb	  
-	
-	
-	
-	
-	
-	
-	
-	 --next... lol
-	
-	
-			
-
+  
+  FORWARDING_UNIT_INST : entity work.ForwardingUnit
+    port map (
+      exmemregwritecntrl => exmem_regwrite_to_memwb,
+      memwbregwritecntrl => memwb_regwrite_to_registers,
+      
+      exmemrd => exmem_rd_to_memwb,
+      memwbrd => memwb_rd_to_out,
+      idexrs1 => idex_rs1_to_forwardingunit,
+      idexrs2 => idex_rs2_to_forwardingunit,
+      
+      forwardAmuxcntrl => forwardingunit_Amuxcntrl_to_forrwardingmuxA,
+      forwardBmuxcntrl => forwardingunit_Bmuxcntrl_to_forrwardingmuxB
+    );
+						  
 
 
 --------------------------------------------------------------------------END	
@@ -705,7 +713,7 @@ alusrcmuxb_source2_to_exmem <= alusrcmuxB_rs2_to_alu;
       
       -- Register address
       rdin => exmem_rd_to_memwb,
-      rdout => RD_FROM_MEMWB
+      rdout => memwb_rd_to_out
     );
 
 
