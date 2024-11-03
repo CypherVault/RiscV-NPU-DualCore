@@ -2,12 +2,10 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-
 use work.types_pkg.ALL;
 
 entity regfile is
   port (
-    clk : in std_logic;
     resetbar : in std_logic;
     regwrite : in std_logic;
     readregister1 : in std_logic_vector(4 downto 0);
@@ -26,22 +24,20 @@ architecture Behavioral of regfile is
   signal registers : reg_array := (others => (others => '0'));
 begin
 
-  process(clk, resetbar)
+  -- Combinational process for write operation
+  process(resetbar, regwrite, writeregisteraddress, writedata)
   begin
     if resetbar = '0' then
-      -- Synchronous reset
+      -- Asynchronous reset
       registers <= (others => (others => '0'));
-    elsif rising_edge(clk) then
-      -- Write port
-      if regwrite = '1' then
-        if unsigned(writeregisteraddress) /= 0 then
-          registers(to_integer(unsigned(writeregisteraddress))) <= writedata;
-        end if;
+    elsif regwrite = '1' then
+      if unsigned(writeregisteraddress) /= 0 then
+        registers(to_integer(unsigned(writeregisteraddress))) <= writedata;
       end if;
     end if;
   end process;
 
-  -- Read ports (moved outside the process for better synthesis)
+  -- Read ports (combinational)
   readdata1 <= (others => '0') when unsigned(readregister1) = 0 else
                registers(to_integer(unsigned(readregister1)));
 

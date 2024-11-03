@@ -428,7 +428,7 @@ ifid_pcout_to_pcimmadder <= ifid_pcout_to_OUT;
 	
 	 REGFILE_INST : entity work.regfile
     port map (
-      clk                    => clock,
+      --clk                    => clock,
       resetbar               => resetbar,
       debug_reg => debug_reg,
       regwrite               => memwb_regwrite_to_registers,
@@ -449,7 +449,7 @@ registers_reg2out_to_controlunit  <= registers_reg2out_to_idex;
 	  --TO CONTROL UNIT
 		 CONTROLUNIT_INST : entity work.ControlUnit
     port map (
-      instruction => ifid_instruction_to_controlunit,
+      instruction => ifid_instruction_to_OUT,
       cntrlsigmux => hazardunit_cntrlsigmux_to_controlunit,
       rs1_data         => registers_reg1out_to_controlunit,
       rs2_data         => registers_reg2out_to_controlunit,
@@ -672,7 +672,6 @@ alusrcmuxb_source2_to_exmem <= alusrcmuxB_rs2_to_alu;
 	
 	  DATA_MEMORY_INST : entity work.data_memory
     port map (
-      clk => clock,
       reset => resetbar,
       memwrite => exmem_memwrite_to_datamem,
       memread => exmem_memread_to_datamem,

@@ -2,13 +2,11 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-
 use work.types_pkg.ALL;
 
 entity data_memory is
     port (
-        -- Original ports
-        clk : in std_logic;
+        -- Modified ports (removed clk)
         reset : in std_logic;
         memwrite : in std_logic;
         memread : in std_logic;
@@ -24,17 +22,17 @@ end entity data_memory;
 architecture Behavioral of data_memory is
     signal mem : mem_array := (others => (others => '0'));
 begin
-    process(clk, reset)
+    -- Combinational process for write operation
+    process(reset, memwrite, address, writedata)
     begin
         if reset = '1' then
             mem <= (others => (others => '0'));
-        elsif rising_edge(clk) then
-            if memwrite = '1' then
-                mem(to_integer(unsigned(address(11 downto 2)))) <= writedata;
-            end if;
+        elsif memwrite = '1' then
+            mem(to_integer(unsigned(address(11 downto 2)))) <= writedata;
         end if;
     end process;
 
+    -- Combinational read operation
     readdata <= mem(to_integer(unsigned(address(11 downto 2)))) when memread = '1' else (others => 'Z');
 
     -- Connect internal memory to debug port

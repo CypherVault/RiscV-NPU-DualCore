@@ -2,8 +2,6 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-
-
 --types package
 library work;
 use work.types_pkg.all;
@@ -52,18 +50,22 @@ begin
         wait for 50 ns;
         rst <= '1';
 
-        -- Run the clock indefinitely
-        while true loop
+        -- Run the clock for 255 cycles
+        for i in 0 to 254 loop
             clk <= '0';
             wait for CLK_PERIOD / 2;
             clk <= '1';
             wait for CLK_PERIOD / 2;
 
-            -- Print the current PC value every 100 clock cycles
-            if (now / CLK_PERIOD) mod 100 = 0 then
+            -- Print the current PC value every 10 clock cycles
+            if i mod 10 = 0 then
                 report "Current PC value: " & integer'image(to_integer(unsigned(pc_out)));
             end if;
         end loop;
+
+        -- End simulation
+        report "Simulation finished after 255 clock cycles";
+        wait;
     end process;
 
 end architecture behavior;

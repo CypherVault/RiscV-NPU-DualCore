@@ -57,7 +57,7 @@ begin
                 end case;
 
             when others =>
-                aluoperation <= "1111"; -- Default case (undefined)
+                aluoperation <= "XXXX"; -- Default case (undefined)
 
         end case;
     end process;

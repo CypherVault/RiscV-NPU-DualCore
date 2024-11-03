@@ -71,45 +71,53 @@ begin
     branch_taken <= '0';
 
     case instruction(6 downto 0) is
-      -- R-format
-      when "0110011" =>
-        int_ALUSrc <= '0';
-        int_MemtoReg <= '0';
-        int_RegWrite <= '1';
-        int_ALUOp <= "10";
+  -- R-format
+  when "0110011" =>
+    int_ALUSrc <= '0';
+    int_MemtoReg <= '0';
+    int_RegWrite <= '1';
+    int_ALUOp <= "10";
 
-      -- lw (load word)
-      when "0000011" =>
-        int_ALUSrc <= '1';
-        int_MemtoReg <= '1';
-        int_RegWrite <= '1';
-        int_MemRead <= '1';
-        int_ALUOp <= "00";
+  -- I-format arithmetic (including ADDI)
+  when "0010011" =>
+    int_ALUSrc <= '1';  -- Use immediate
+    int_MemtoReg <= '0';  -- ALU result to register
+    int_RegWrite <= '1';  -- Write to register
+    int_ALUOp <= "10";  -- ALU operation determined by funct3
 
-      -- sw (store word)
-      when "0100011" =>
-        int_ALUSrc <= '1';
-        int_MemWrite <= '1';
-        int_ALUOp <= "00";
+  -- lw (load word)
+  when "0000011" =>
+    int_ALUSrc <= '1';
+    int_MemtoReg <= '1';
+    int_RegWrite <= '1';
+    int_MemRead <= '1';
+    int_ALUOp <= "00";
 
-      -- beq (branch if equal)
-      when "1100011" =>
-        int_Branch <= '1';
-        int_ALUOp <= "01";
-        
-        -- Early branch resolution using the most recent register values
-        if rs1_final = rs2_final then
-          branch_taken <= '1';
-        else
-          branch_taken <= '0';
-        end if;
-        
-        if_flush <= branch_taken;
+  -- sw (store word)
+  when "0100011" =>
+    int_ALUSrc <= '1';
+    int_MemWrite <= '1';
+    int_ALUOp <= "00";
 
-      -- Default case
-      when others =>
-        null;
-    end case;
+  -- beq (branch if equal)
+  when "1100011" =>
+    int_Branch <= '1';
+    int_ALUOp <= "01";
+    
+    -- Early branch resolution using the most recent register values
+    if rs1_final = rs2_final then
+      branch_taken <= '1';
+    else
+      branch_taken <= '0';
+    end if;
+    
+    if_flush <= branch_taken;
+
+  -- Default case
+  when others =>
+    null;
+end case;
+
   end process;
 
   -- Output multiplexing based on cntrlsigmux
