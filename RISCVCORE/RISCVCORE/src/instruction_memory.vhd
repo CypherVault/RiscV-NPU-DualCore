@@ -14,9 +14,9 @@ architecture Behavioral of instruction_memory is
     constant mem : memory_array := (
         0 => x"00000000",
         1 => x"02A00093",
-        --2 => x"00102623",
-        --3 => x"00C02103",
-       -- 4 => x"00A10193",                            --load and add test program
+        2 => x"00102623",
+        3 => x"00C02103",
+        4 => x"00A10193",                            --load and add test program
         others => x"00000000"
     );
 

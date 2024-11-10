@@ -671,7 +671,8 @@ alusrcmuxb_source2_to_exmem <= alusrcmuxB_rs2_to_alu;
 	--TO DATA MEMORY
 	
 	  DATA_MEMORY_INST : entity work.data_memory
-    port map (
+    port map (		 
+	  clk => clock,
       reset => resetbar,
       memwrite => exmem_memwrite_to_datamem,
       memread => exmem_memread_to_datamem,

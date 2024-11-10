@@ -21,5 +21,4 @@ i<>.\src\branch_and.vhd
 i<>.\src\Data_Memory.vhd
 i<>.\src\writebackmux.vhd
 i<>.\src\memwb.vhd
-i<>.\src\debug_pkg.vhd
 i<>.\src\RISCV_TB.vhd

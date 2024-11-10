@@ -7,7 +7,8 @@ use work.types_pkg.ALL;
 entity data_memory is
     port (
         -- Modified ports (removed clk)
-        reset : in std_logic;
+        clk : in std_logic; --UNUSED
+		reset : in std_logic;
         memwrite : in std_logic;
         memread : in std_logic;
         address : in std_logic_vector(31 downto 0);
@@ -25,7 +26,7 @@ begin
     -- Combinational process for write operation
     process(reset, memwrite, address, writedata)
     begin
-        if reset = '1' then
+        if reset = '0' then
             mem <= (others => (others => '0'));
         elsif memwrite = '1' then
             mem(to_integer(unsigned(address(11 downto 2)))) <= writedata;
