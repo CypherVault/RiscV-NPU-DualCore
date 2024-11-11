@@ -42,13 +42,13 @@ begin
 --            ifidwriteenable <= '0';
 --        end if;
 --
-        -- Previous check for store instructions and R-type instructions
-        if (idexrd = rs2 and 
-            (opcode = "0100011" or   -- Store instructions (sw, sh, sb)
-             opcode = "0110011")) then  -- R-type instructions that use rs2
-            cntrlsigmux <= '0';
-            pcwriteenable <= '0';
-            ifidwriteenable <= '0';
-        end if;
+       -- -- Previous check for store instructions and R-type instructions
+--        if (idexrd = rs2 and 
+--            (opcode = "0100011" or   -- Store instructions (sw, sh, sb)
+--             opcode = "0110011")) then  -- R-type instructions that use rs2
+--            cntrlsigmux <= '0';
+--            pcwriteenable <= '0';
+--            ifidwriteenable <= '0';
+--        end if;
     end process;
 end architecture Behavioral;
