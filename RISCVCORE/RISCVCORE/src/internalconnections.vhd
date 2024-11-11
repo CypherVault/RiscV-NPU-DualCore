@@ -432,8 +432,8 @@ ifid_pcout_to_pcimmadder <= ifid_pcout_to_OUT;
       resetbar               => resetbar,
       debug_reg => debug_reg,
       regwrite               => memwb_regwrite_to_registers,
-      readregister1          => ifid_rs1_to_registers,
-      readregister2          => ifid_rs2_to_registers,
+      readregister1          => ifid_rs1_to_register,
+      readregister2          => ifid_rs2_to_register,
       writeregisteraddress   => memwb_rd_to_out,
       writedata              => writebackmux_writedata_to_registers,
       readdata1              => registers_reg1out_to_idex,			
@@ -478,9 +478,9 @@ registers_reg2out_to_controlunit  <= registers_reg2out_to_idex;
 
 HAZARD_UNIT_INST : entity work.hazard_unit
     port map (
-      idexmemread => idex_memread_to_hazardunit,
+      idexmemread => idex_memread_to_exmem,
       idexrd => idex_rd_to_exmem,
-      instruction => idex_instruction_to_hazardunit,
+      instruction => ifid_instruction_to_OUT,
       cntrlsigmux => hazardunit_controlsigmux_to_controlunit,
       pcwriteenable => hazardunit_pcwrite_to_pc,
       ifidwriteenable => hazardunit_ifidwrite_to_ifid
@@ -614,7 +614,7 @@ alusrcmuxb_source2_to_exmem <= alusrcmuxB_rs2_to_alu;
     
       aluzeroin => alu_zeroresult_to_exmem,
       aluresultin => alu_result_to_exmem,
-      readdata2in => alusrcmuxb_source2_to_exmem,
+      readdata2in => forwardingmuxB_rs2_to_alusrcmuxB,
   
       aluzeroout => exmem_zero_to_branchand,
       aluresultout => exmem_result_to_datamem,
@@ -676,8 +676,8 @@ alusrcmuxb_source2_to_exmem <= alusrcmuxB_rs2_to_alu;
       reset => resetbar,
       memwrite => exmem_memwrite_to_datamem,
       memread => exmem_memread_to_datamem,
-      address => exmem_src2_to_datamem,
-      writedata => exmem_result_to_datamem,
+      address => exmem_result_to_datamem,
+      writedata => exmem_src2_to_datamem,
       debug_mem => debug_mem,
       readdata => datamem_readdata_to_memwb
     );

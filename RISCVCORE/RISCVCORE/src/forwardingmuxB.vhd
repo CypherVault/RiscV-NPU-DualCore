@@ -19,9 +19,9 @@ begin
         case forwardBmuxcntrl is
             when "00" =>
                 MuxOutput <= rs2;
-            when "01" =>
-                MuxOutput <= forwardedrs2exmem;
             when "10" =>
+                MuxOutput <= forwardedrs2exmem;
+            when "01" =>
                 MuxOutput <= forwardedrs2memwb;
             when others =>
                 MuxOutput <= rs2;
