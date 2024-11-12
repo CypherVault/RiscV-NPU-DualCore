@@ -13,20 +13,25 @@ end entity ALU;
 
 architecture Behavioral of ALU is
     signal result_temp : std_logic_vector(31 downto 0);
+    signal mul_result : std_logic_vector(63 downto 0);
 begin
+    -- Multiplication calculation
+    mul_result <= std_logic_vector(signed(input_0) * signed(input_1));
+
     result_temp <= 
         (input_0 and input_1) when operation = "0000" else
         (input_0 or input_1) when operation = "0001" else
         std_logic_vector(signed(input_0) + signed(input_1)) when operation = "0010" else
-        std_logic_vector(signed(input_0) - signed(input_1)) when operation = "0110" or operation = "1000" else
+        std_logic_vector(signed(input_0) - signed(input_1)) when operation = "0110" else
         std_logic_vector(shift_left(unsigned(input_0), to_integer(unsigned(input_1(4 downto 0))))) when operation = "0011" else
+        mul_result(31 downto 0) when operation = "1000" else  -- New MUL operation
         X"00000001" when (operation = "0100" and signed(input_0) < signed(input_1)) or
                          (operation = "0101" and unsigned(input_0) < unsigned(input_1)) or
                          (operation = "1010" and input_0 = input_1) or
                          (operation = "1011" and input_0 /= input_1) or
-                         (operation = "1100" and signed(input_0) < signed(input_1)) or
-                         (operation = "1110" and signed(input_0) >= signed(input_1)) or
-                         (operation = "1111" and unsigned(input_0) < unsigned(input_1)) else
+                         (operation = "1100" and signed(input_0) >= signed(input_1)) or
+                         (operation = "1110" and signed(input_0) < signed(input_1)) or
+                         (operation = "1111" and unsigned(input_0) >= unsigned(input_1)) else
         X"00000000" when (operation = "0100" or operation = "0101" or
                           operation = "1010" or operation = "1011" or
                           operation = "1100" or operation = "1110" or

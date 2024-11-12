@@ -18,7 +18,6 @@ TemplateId=0
 tab=lu
 [OPENDOC|Aldec.Hde.HdePlugIn.7|.\RISCVCORE\src/Data_Memory.vhd|]
 TemplateId=0
-ActiveDocument=1
 tab=lu
 [OPENDOC|Aldec.Hde.HdePlugIn.7|.\RISCVCORE\src/ifid.vhd|]
 TemplateId=0
@@ -64,6 +63,7 @@ TemplateId=0
 tab=lu
 [OPENDOC|Aldec.Hde.HdePlugIn.7|.\RISCVCORE\src/hazardunit.vhd|]
 TemplateId=0
+ActiveDocument=1
 tab=lu
 [OPENDOC|Aldec.Hde.HdePlugIn.7|.\RISCVCORE\src/forwardingmuxA.vhd|]
 TemplateId=0

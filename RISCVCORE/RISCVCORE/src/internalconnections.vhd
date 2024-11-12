@@ -548,7 +548,7 @@ HAZARD_UNIT_INST : entity work.hazard_unit
 	
 	ALU_CONTROL_INST : entity work.alucontrol
     port map (
-      instructionfucntfeilds => idex_instruction_to_alucontrol,
+      instruction => idex_instruction_to_alucontrol,
       aluop => idex_aluop_to_alucontrol,
       aluoperation => alucontrol_aluop_to_alu
     );

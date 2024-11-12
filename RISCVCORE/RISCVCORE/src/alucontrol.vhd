@@ -3,7 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity alucontrol is
     Port ( 
-        instructionfucntfeilds : in STD_LOGIC_VECTOR(31 downto 0);
+        instruction : in STD_LOGIC_VECTOR(31 downto 0);
         aluop : in STD_LOGIC_VECTOR(1 downto 0);
         aluoperation : out STD_LOGIC_VECTOR(3 downto 0)
     );
@@ -11,54 +11,116 @@ end alucontrol;
 
 architecture Behavioral of alucontrol is
 begin
-    process(instructionfucntfeilds, aluop)
+    process(instruction, aluop)
     begin
+        -- Default to undefined operation
+        aluoperation <= "1111";
+
         case aluop is
             when "00" =>
-                aluoperation <= "0010"; -- Load/Store operations
+                -- Load/Store operations (I-type)
+                aluoperation <= "0010"; -- ADD for address calculation
 
             when "01" =>
-                aluoperation <= "0110"; -- Branch operations
+                -- Branch operations (B-type)
+                case instruction(14 downto 12) is
+                    when "000" => aluoperation <= "0110"; -- BEQ (subtract to compare)
+                    when "001" => aluoperation <= "0110"; -- BNE (subtract to compare)
+                    when "100" => aluoperation <= "0101"; -- BLT (set less than)
+                    when "101" => aluoperation <= "0101"; -- BGE (set less than)
+                    when "110" => aluoperation <= "0111"; -- BLTU (unsigned set less than)
+                    when "111" => aluoperation <= "0111"; -- BGEU (unsigned set less than)
+                    when others => aluoperation <= "1111";
+                end case;
 
             when "10" =>
-                -- R-type and I-type instructions
-                case instructionfucntfeilds(14 downto 12) is
+                -- R-type and I-type arithmetic/logical instructions
+                case instruction(14 downto 12) is
                     when "000" =>
-                        if instructionfucntfeilds(30) = '0' then
+                        -- Distinguishing ADD, ADDI, SUB
+                        if instruction(6 downto 0) = "0110011" then  -- R-type
+                            if instruction(31 downto 25) = "0000000" then
+                                aluoperation <= "0010"; -- ADD
+                            elsif instruction(31 downto 25) = "0100000" then
+                                aluoperation <= "0110"; -- SUB
+                            elsif instruction(31 downto 25) = "0000001" then
+                                aluoperation <= "1000"; -- MUL
+                            end if;
+                        else  -- I-type (ADDI)
                             aluoperation <= "0010"; -- ADD
-                        else
-                            aluoperation <= "0110"; -- SUB
                         end if;
-                    when "001" => aluoperation <= "0001"; -- SLL
-                    when "010" => aluoperation <= "0101"; -- SLT
-                    when "011" => aluoperation <= "0111"; -- SLTU
-                    when "100" => aluoperation <= "0100"; -- XOR
+
+                    when "001" => 
+                        if instruction(6 downto 0) = "0110011" then
+                            aluoperation <= "0001"; -- SLL (R-type)
+                        end if;
+
+                    when "010" => 
+                        if instruction(6 downto 0) = "0010011" then
+                            aluoperation <= "0101"; -- SLTI (I-type)
+                        elsif instruction(6 downto 0) = "0110011" then
+                            aluoperation <= "0101"; -- SLT (R-type)
+                        end if;
+
+                    when "011" => 
+                        if instruction(6 downto 0) = "0010011" then
+                            aluoperation <= "0111"; -- SLTIU (I-type)
+                        elsif instruction(6 downto 0) = "0110011" then
+                            aluoperation <= "0111"; -- SLTU (R-type)
+                        end if;
+
+                    when "100" => 
+                        if instruction(6 downto 0) = "0010011" then
+                            aluoperation <= "0100"; -- XORI (I-type)
+                        elsif instruction(6 downto 0) = "0110011" then
+                            aluoperation <= "0100"; -- XOR (R-type)
+                        end if;
+
                     when "101" =>
-                        if instructionfucntfeilds(30) = '0' then
-                            aluoperation <= "0101"; -- SRL
-                        else
-                            aluoperation <= "1101"; -- SRA
+                        if instruction(6 downto 0) = "0010011" then
+                            if instruction(31 downto 25) = "0000000" then
+                                aluoperation <= "0101"; -- SRLI (logical right shift)
+                            elsif instruction(31 downto 25) = "0100000" then
+                                aluoperation <= "1101"; -- SRAI (arithmetic right shift)
+                            end if;
+                        elsif instruction(6 downto 0) = "0110011" then
+                            if instruction(31 downto 25) = "0000000" then
+                                aluoperation <= "0101"; -- SRL (logical right shift)
+                            elsif instruction(31 downto 25) = "0100000" then
+                                aluoperation <= "1101"; -- SRA (arithmetic right shift)
+                            end if;
                         end if;
-                    when "110" => aluoperation <= "0001"; -- OR
-                    when "111" => aluoperation <= "0000"; -- AND
-                    when others => aluoperation <= "1111"; -- Default case (undefined)
+
+                    when "110" => 
+                        if instruction(6 downto 0) = "0010011" then
+                            aluoperation <= "0001"; -- ORI (I-type)
+                        elsif instruction(6 downto 0) = "0110011" then
+                            aluoperation <= "0001"; -- OR (R-type)
+                        end if;
+
+                    when "111" => 
+                        if instruction(6 downto 0) = "0010011" then
+                            aluoperation <= "0000"; -- ANDI (I-type)
+                        elsif instruction(6 downto 0) = "0110011" then
+                            aluoperation <= "0000"; -- AND (R-type)
+                        end if;
+
+                    when others => 
+                        aluoperation <= "1111";
                 end case;
 
             when "11" =>
-                -- Branch instructions
-                case instructionfucntfeilds(14 downto 12) is
-                    when "000" => aluoperation <= "1001"; -- BEQ
-                    when "001" => aluoperation <= "1010"; -- BNE
-                    when "100" => aluoperation <= "1011"; -- BLT
-                    when "101" => aluoperation <= "1100"; -- BGE
-                    when "110" => aluoperation <= "1110"; -- BLTU
-                    when "111" => aluoperation <= "1111"; -- BGEU
-                    when others => aluoperation <= "1111"; -- Default case (undefined)
+                -- U-type and J-type instructions
+                case instruction(6 downto 0) is
+                    when "0110111" => aluoperation <= "0010"; -- LUI (load upper immediate)
+                    when "0010111" => aluoperation <= "0010"; -- AUIPC (add upper immediate to PC)
+                    when "1101111" => aluoperation <= "0010"; -- JAL (jump and link)
+                    when "1100111" => aluoperation <= "0010"; -- JALR (jump and link register)
+                    when others => aluoperation <= "1111";
                 end case;
 
-            when others =>
-                aluoperation <= "XXXX"; -- Default case (undefined)
-
+            when others => 
+                aluoperation <= "1111";
         end case;
     end process;
 end Behavioral;
