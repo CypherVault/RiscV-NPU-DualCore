@@ -1,5 +1,5 @@
  	
-------------------------------------------------------------------------------
+------------------------------------------------------------------------------confirmed and works
 
 	1 => x"02A00093",
         2 => x"00102623",
@@ -12,7 +12,7 @@
 	- Register x2 contains 42
 	- Register x3 contains 52
 
-------------------------------------------------------------------------------
+------------------------------------------------------------------------------confirmed and works
 
 	1 => x"00A00093",
         2 => x"01400113",
@@ -30,7 +30,7 @@ Final Register States:
 
 Memory State: Unchanged
 
-------------------------------------------------------------------------------
+------------------------------------------------------------------------------confirmed and works
 
  1 => x"00f00093",
         2 => x"00209113",
@@ -49,3 +49,90 @@ Final Register States:
 	•	x6: 31 (result of ori)
 	•	x7: 0 (result of xori)
 Memory State: Unchanged
+
+------------------------------------------------------------------------------confirmed and works
+
+ 0 => x"00000000",
+        1 => x"02a00093",
+        2 => x"00102823",
+        3 => x"01002103",
+        4 => x"01000183",                            --## Memory and Control Flow Test Suite - Load/Store Instructions
+	5 => x"01001203",
+
+	Final Register States:
+	x1: 42
+	x2: 42 (loaded from memory)
+	x3: 42 (byte load)
+	x4: 42 (halfword load)
+	Memory State:
+	Address 16: Contains 42
+
+------------------------------------------------------------------------------confirmed and works
+
+ 	1 => x"00a00093",
+        2 => x"00108133",		   -- ## Data Hazards
+        3 => x"021101b3", 
+
+	Final Register States:
+	x1: 10
+	x2: 20
+	x3: 200
+
+
+------------------------------------------------------------------------------
+
+experimental :
+
+
+------------------------------------------------------------------------------
+Branch and Jump Instructions
+
+     0 => x"00000000",
+        1 => x"00A00093",  -- addi x1, x0, 10
+	    2 => x"01400113",  -- addi x2, x0, 20
+	    3 => x"00208463",  -- beq x1, x2, label (won't branch)
+	    4 => x"00209263",  -- bne x1, x2, skip
+	    5 => x"01E00193",  -- addi x3, x0, 30
+	    6 => x"00000EF7",  -- jal x4, target
+	    7 => x"02800293",  -- addi x5, x0, 40
+	    8 => x"03200313",  -- addi x6, x0, 50
+
+Final Register States:
+x1 = 10
+x2 = 20
+x3 = 30 (not modified due to branch)
+x4 = target instruction address
+x5 = 40 (not executed)
+x6 = 50
+
+First Test
+Cycle 1: Load x1 with 10
+Cycle 2: Load x2 with 20
+Cycle 3: Attempt beq (not taken), proceed to next instruction
+Cycle 4: bne instruction taken, skip to jal
+Cycle 5: Jump to target, load x6 with 50
+
+---------------------------------------- this actually works!
+
+Control Hazards
+
+ 0 => x"00000000",
+        1 => x"00A00093",  -- addi x1, x0, 10
+    2 => x"01400113",  -- addi x2, x0, 20
+    3 => x"00206463",  -- blt x1, x2, label
+    4 => x"01E00193",  -- addi x3, x0, 30
+    5 => x"02800213",  -- addi x4, x0, 40
+
+
+Final Register States:
+x1 = 10
+x2 = 20
+x3 = 30 (not modified due to branch)
+x4 = 40
+
+Second Test
+Cycle 1: Load x1 with 10
+Cycle 2: Load x2 with 20
+Cycle 3: blt taken (x1 < x2), skip addi x3
+Cycle 4: Load x4 with 40
+
