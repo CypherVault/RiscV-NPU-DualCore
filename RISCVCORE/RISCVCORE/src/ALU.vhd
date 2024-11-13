@@ -39,7 +39,7 @@ begin
         (input_0 xor input_1) when operation = "0111" else
         std_logic_vector(shift_right(unsigned(input_0), to_integer(unsigned(input_1(4 downto 0))))) when operation = "1001" else
         std_logic_vector(shift_right(signed(input_0), to_integer(unsigned(input_1(4 downto 0))))) when operation = "1101" else
-        (others => '0');
+			(others => '0');
 
     -- Set output
     ALU_output <= result_temp;

@@ -13,12 +13,11 @@ architecture Behavioral of instruction_memory is
     type memory_array is array (0 to 255) of STD_LOGIC_VECTOR(31 downto 0);
     constant mem : memory_array := (
         0 => x"00000000",
-        1 => x"00A00093",
-        2 => x"01400113",
-        3 => x"002081B3",
-        4 => x"40110233",
-		5 => x"022082B3",  -- R-Type Arithmetic Operations
-        others => x"00000000"
+       1 => x"02A00093",
+        2 => x"00102623",
+        3 => x"00C02103",
+        4 => x"00A10193",                            --load and add test program
+		others => x"00000000"
     );
 
 begin

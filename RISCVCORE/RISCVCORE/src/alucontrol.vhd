@@ -50,10 +50,13 @@ begin
                             aluoperation <= "0010"; -- ADD
                         end if;
 
-                    when "001" => 
-                        if instruction(6 downto 0) = "0110011" then
-                            aluoperation <= "0001"; -- SLL (R-type)
-                        end if;
+					when "001" => 
+					    if instruction(6 downto 0) = "0010011" then  -- I-type (SLLI)
+					        aluoperation <= "0011";  -- Changed from "0001" to "0011" to match ALU shift left operation
+					    elsif instruction(6 downto 0) = "0110011" then
+					        aluoperation <= "0011";  -- SLL (R-type)
+					    end if;
+										
 
                     when "010" => 
                         if instruction(6 downto 0) = "0010011" then
@@ -76,20 +79,20 @@ begin
                             aluoperation <= "0100"; -- XOR (R-type)
                         end if;
 
-                    when "101" =>
-                        if instruction(6 downto 0) = "0010011" then
-                            if instruction(31 downto 25) = "0000000" then
-                                aluoperation <= "0101"; -- SRLI (logical right shift)
-                            elsif instruction(31 downto 25) = "0100000" then
-                                aluoperation <= "1101"; -- SRAI (arithmetic right shift)
-                            end if;
-                        elsif instruction(6 downto 0) = "0110011" then
-                            if instruction(31 downto 25) = "0000000" then
-                                aluoperation <= "0101"; -- SRL (logical right shift)
-                            elsif instruction(31 downto 25) = "0100000" then
-                                aluoperation <= "1101"; -- SRA (arithmetic right shift)
-                            end if;
-                        end if;
+					 when "101" =>
+					    if instruction(6 downto 0) = "0010011" then  -- I-type shifts
+					        if instruction(31 downto 25) = "0000000" then
+					            aluoperation <= "1001";  -- SRLI (logical right shift)
+					        elsif instruction(31 downto 25) = "0100000" then
+					            aluoperation <= "1101";  -- SRAI (arithmetic right shift)
+					        end if;
+					    elsif instruction(6 downto 0) = "0110011" then  -- R-type shifts
+					        if instruction(31 downto 25) = "0000000" then
+					            aluoperation <= "1001";  -- SRL (logical right shift)
+					        elsif instruction(31 downto 25) = "0100000" then
+					            aluoperation <= "1101";  -- SRA (arithmetic right shift)
+					        end if;
+					    end if;
 
                     when "110" => 
                         if instruction(6 downto 0) = "0010011" then
