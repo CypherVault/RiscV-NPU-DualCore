@@ -14,6 +14,7 @@ end entity ALU;
 architecture Behavioral of ALU is
     signal result_temp : std_logic_vector(31 downto 0);
     signal mul_result : std_logic_vector(63 downto 0);
+    signal branch_condition : std_logic;
 begin
     -- Multiplication calculation
     mul_result <= std_logic_vector(signed(input_0) * signed(input_1));
@@ -39,12 +40,24 @@ begin
         (input_0 xor input_1) when operation = "0111" else
         std_logic_vector(shift_right(unsigned(input_0), to_integer(unsigned(input_1(4 downto 0))))) when operation = "1001" else
         std_logic_vector(shift_right(signed(input_0), to_integer(unsigned(input_1(4 downto 0))))) when operation = "1101" else
-			(others => '0');
+        (others => '0');
 
+    -- Branch Condition Logic
+       -- Branch Condition Logic
+    branch_condition <= 
+        '1' when (operation = "1010" and input_0 = input_1) else     -- BEQ
+        '1' when (operation = "1011" and input_0 /= input_1) else    -- BNE
+        '1' when (operation = "1110" and signed(input_0) < signed(input_1)) else   -- BLT
+        '1' when (operation = "1100" and signed(input_0) >= signed(input_1)) else  -- BGE
+        '1' when (operation = "0101" and unsigned(input_0) < unsigned(input_1)) else  -- BLTU
+        '1' when (operation = "1111" and unsigned(input_0) >= unsigned(input_1)) else -- BGEU
+        '1' when (operation = "1101") else  -- Unconditional Jump (JAL/JALR)
+        '0';
+								  
     -- Set output
     ALU_output <= result_temp;
 
-    -- Set zero flag
-    zero_flag <= '1' when result_temp = X"00000000" else '0';
+    -- Zero flag is now directly driven by branch condition
+    zero_flag <= branch_condition;
 
 end architecture Behavioral;

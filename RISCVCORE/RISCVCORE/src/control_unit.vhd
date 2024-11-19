@@ -103,7 +103,29 @@ begin
   when "1100011" =>
     int_Branch <= '1';
     int_ALUOp <= "01";
-    
+	
+	
+	 -- JAL (Jump and Link)
+    when "1101111" =>
+      int_ALUSrc <= '1';  -- Use immediate for address calculation
+      int_MemtoReg <= '0';
+      int_RegWrite <= '1';  -- Write return address
+      int_Branch <= '1';    -- Use branch mechanism for jumping
+      int_ALUOp <= "01";   -- Treat like an unconditional branch
+      branch_taken <= '1';  
+      if_flush <= '1';
+
+    -- JALR (Jump and Link Register)
+    when "1100111" =>
+      int_ALUSrc <= '1';  -- Use immediate + register for address
+      int_MemtoReg <= '0';
+      int_RegWrite <= '1';  -- Write return address
+      int_Branch <= '1';    -- Use branch mechanism for jumping
+      int_ALUOp <= "01";   -- Treat like an unconditional branch
+      branch_taken <= '1';
+      if_flush <= '1';
+	  
+	  
     -- Early branch resolution using the most recent register values
     if rs1_final = rs2_final then
       branch_taken <= '1';

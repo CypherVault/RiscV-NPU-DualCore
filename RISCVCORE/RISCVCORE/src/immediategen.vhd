@@ -39,7 +39,11 @@ begin
       when "1101111" =>
         immediate <= std_logic_vector(resize(signed(instruction(31) & instruction(19 downto 12) & instruction(20) & instruction(30 downto 21) & '0'), 32));
       	pcadderimm <= std_logic_vector(resize(signed(instruction(31) & instruction(19 downto 12) & instruction(20) & instruction(30 downto 21) & '0'), 32));
-      -- Default case
+     
+		 immediate <= std_logic_vector(resize(signed(instruction(31) & instruction(19 downto 12) & instruction(20) & instruction(30 downto 21) & '0'), 32)); 
+		  
+		  
+		  -- Default case
       when others =>
 	  immediate <= (others => '0'); 
 	   pcadderimm <= (others => '0');

@@ -21,17 +21,17 @@ begin
                 -- Load/Store operations (I-type)
                 aluoperation <= "0010"; -- ADD for address calculation
 
-            when "01" =>
-                -- Branch operations (B-type)
-                case instruction(14 downto 12) is
-                    when "000" => aluoperation <= "0110"; -- BEQ (subtract to compare)
-                    when "001" => aluoperation <= "0110"; -- BNE (subtract to compare)
-                    when "100" => aluoperation <= "0101"; -- BLT (set less than)
-                    when "101" => aluoperation <= "0101"; -- BGE (set less than)
-                    when "110" => aluoperation <= "0111"; -- BLTU (unsigned set less than)
-                    when "111" => aluoperation <= "0111"; -- BGEU (unsigned set less than)
-                    when others => aluoperation <= "1111";
-                end case;
+          when "01" =>
+    -- Branch operations (B-type)
+    case instruction(14 downto 12) is
+        when "000" => aluoperation <= "1010"; -- BEQ (equal comparison)
+        when "001" => aluoperation <= "1011"; -- BNE (not equal comparison)
+        when "100" => aluoperation <= "1110"; -- BLT (signed less than)
+        when "101" => aluoperation <= "1100"; -- BGE (signed greater or equal)
+        when "110" => aluoperation <= "1111"; -- BLTU (unsigned greater or equal)
+        when "111" => aluoperation <= "0101"; -- BGEU (unsigned less than)
+        when others => aluoperation <= "1111";
+    end case;
 
             when "10" =>
                 -- R-type and I-type arithmetic/logical instructions
