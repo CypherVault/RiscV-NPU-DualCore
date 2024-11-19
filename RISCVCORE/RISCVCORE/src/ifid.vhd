@@ -10,7 +10,8 @@ entity ifid is
         rstbar                 : in  STD_LOGIC;
         ifidwrite           : in  STD_LOGIC;
         ifidflush           : in  STD_LOGIC;
-        pcout               : in  STD_LOGIC_VECTOR(15 downto 0);
+        branch_taken		 : in  STD_LOGIC;
+		pcout               : in  STD_LOGIC_VECTOR(15 downto 0);
         instruction         : in  STD_LOGIC_VECTOR(31 downto 0);
         ifidinstructionout  : out STD_LOGIC_VECTOR(31 downto 0);
         ifidpcout           : out STD_LOGIC_VECTOR(15 downto 0);
@@ -44,7 +45,7 @@ begin
 			
 			
         elsif rising_edge(clk) then
-            if ifidflush = '1' then
+            if ( ifidflush = '1' )then
                 instruction_reg <= (others => '0');
                 pcout_reg       <= (others => '0');
 				rdout_reg   <= (others => '0');	

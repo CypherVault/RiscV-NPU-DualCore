@@ -8,14 +8,15 @@ entity idex is
     Port (
 			clk                 : in  STD_LOGIC;
 			rstbar                 : in  STD_LOGIC;
-		--	pcin               : in  STD_LOGIC_VECTOR(15 downto 0);
+			branch_taken : in STD_LOGIC;
+			pcin               : in  STD_LOGIC_VECTOR(15 downto 0);
 		instructionin: in  STD_LOGIC_VECTOR(31 downto 0);   
 		instructionout: out  STD_LOGIC_VECTOR(31 downto 0); 
 			readdata1in         : in  STD_LOGIC_VECTOR(31 downto 0); 
 			readdata2in         : in  STD_LOGIC_VECTOR(31 downto 0);
 			immediatein         : in STD_LOGIC_VECTOR(31 downto 0);
 			immediateout        : out STD_LOGIC_VECTOR(31 downto 0);		  
-		--	PCOUTREAL               : out  STD_LOGIC_VECTOR(15 downto 0);
+			pcout              : out  STD_LOGIC_VECTOR(15 downto 0);
 			readdata1out         : out  STD_LOGIC_VECTOR(31 downto 0); 
 			readdata2out         : out  STD_LOGIC_VECTOR(31 downto 0); 
 			
@@ -56,7 +57,8 @@ entity idex is
 end idex;	
 
 
-architecture Behavioral of idex is
+architecture Behavioral of idex is	 
+   constant NOP_INSTRUCTION : std_logic_vector(31 downto 0) := X"00000013";
     signal pcin_reg       : STD_LOGIC_VECTOR(15 downto 0);
     signal readdata1_reg   : STD_LOGIC_VECTOR(31 downto 0);
     signal readdata2_reg   : STD_LOGIC_VECTOR(31 downto 0);
@@ -106,33 +108,55 @@ begin
 			
 			
 			
-			
-        elsif rising_edge(clk) then
-            -- On rising edge of clock, update internal registers
-         --   pcin_reg     <= pcin;
-            readdata1_reg <= readdata1in;
-            readdata2_reg <= readdata2in;
-            immediate_reg <= immediatein;
-			instruction_reg <= instructionin;
-			
-			MemtoReg_reg <= MemtoRegin;
-			RegWrite_reg <= RegWritein;
-			MemRead_reg <=  MemReadin;
-			MemWrite_reg <= MemWritein;
-			Branch_reg <= 	Branchin;
-			ALUSrc_reg <= 	ALUSrcin;
-			ALUOp_reg <=    ALUOpin;
-			
-			rs1_reg <= rs1in;
-			rs2_reg <= rs2in;
-			rd_reg <= rdin;	
-			
-			
-        end if;
+		  elsif rising_edge(clk) then	
+         if branch_taken = '1' then
+                -- Flush the pipeline register
+                pcin_reg <= (others => '0');
+                readdata1_reg <= (others => '0');
+                readdata2_reg <= (others => '0');
+                immediate_reg <= (others => '0');
+                instruction_reg <= NOP_INSTRUCTION;
+                
+                -- Clear all control signals
+                MemtoReg_reg <= '0';
+                RegWrite_reg <= '0';
+                MemRead_reg <= '0';
+                MemWrite_reg <= '0';
+                Branch_reg <= '0';
+                ALUSrc_reg <= '0';
+                ALUOp_reg <= "00";
+                
+                -- Clear register addresses
+                rs1_reg <= (others => '0');
+                rs2_reg <= (others => '0');
+                rd_reg <= (others => '0');
+            else
+                -- Normal operation
+                pcin_reg <= pcin;
+                readdata1_reg <= readdata1in;
+                readdata2_reg <= readdata2in;
+                immediate_reg <= immediatein;
+                instruction_reg <= instructionin;
+                
+                -- Normal control signal passing
+                MemtoReg_reg <= MemtoRegin;
+                RegWrite_reg <= RegWritein;
+                MemRead_reg <= MemReadin;
+                MemWrite_reg <= MemWritein;
+                Branch_reg <= Branchin;
+                ALUSrc_reg <= ALUSrcin;
+                ALUOp_reg <= ALUOpin;
+                
+                -- Normal register address passing
+                rs1_reg <= rs1in;
+                rs2_reg <= rs2in;
+                rd_reg <= rdin;
+        end if;		 
+		 end if;
     end process;
 
     -- Continuous assignments for outputs
- --   PCOUTREAL     <= pcin_reg;
+    pcout     <= pcin_reg;
     readdata1out <= readdata1_reg;
     readdata2out <= readdata2_reg;
     immediateout <= immediate_reg; 

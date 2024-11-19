@@ -17,6 +17,12 @@ REFRESH_FLOW=1
 FLOWTOOLS=NONE
 FAMILY=
 fileopenfolder=C:\Users\maxpro\Desktop\440Project RISCVCORE\RISCVCORE\RISCVCORE\src
+FUNC_LIB=riscvcore
+POST_LIB=riscvcore_post_synthesis
+TIM_LIB=riscvcore_timing
+SYNTH_STATUS=none
+IMPL_STATUS=none
+PHYSSYNTH_STATUS=none
 [Files]
 /instruction_memory.vhd=-1
 /writebackmux.vhd=-1

@@ -63,7 +63,7 @@ signal pcout_debug : std_logic_vector(15 downto 0);
 	--TO IFID
 	
 	signal instruction_memory_instruction_to_ifid : std_logic_vector(31 downto 0);						    --instruction memory & ifid
-	signal pc_pcout_to_ifid : std_logic_vector(15 downto 0);						    --PC & ifid		  
+	signal pc_pcout_to_ifid : std_logic_vector(15 downto 0);						    --PC & ifid		 
 	signal hazardunit_ifidwrite_to_ifid : std_logic;						    				--XXX & ifid
 	signal controlunit_ifidflush_to_ifid : std_logic;	
 	signal ifid_rs1_to_register :  std_logic_vector(4 downto 0);
@@ -177,7 +177,7 @@ signal pcout_debug : std_logic_vector(15 downto 0);
 	
 	signal idex_instruction_to_alucontrol : std_logic_vector(31 downto 0);
     signal idex_aluop_to_alucontrol : std_logic_vector(1 downto 0);
-    signal alucontrol_aluop_to_alu : std_logic_vector(3 downto 0);
+    signal alucontrol_aluop_to_alu : std_logic_vector(4 downto 0);
 
 	
 	
@@ -190,7 +190,7 @@ signal pcout_debug : std_logic_vector(15 downto 0);
 --	signal alu_result_to_exmem : std_logic_vector(31 downto 0);
 --	signal alu_zeroresult_to_exmem : std_logic;
 	
-
+	signal idex_pcout_to_alu : std_logic_vector(15 downto 0);
 
 	
 	--TO FORWARDINGMUXA
@@ -378,7 +378,8 @@ pc_pcout_to_pc4adder <= pc_pcout_to_instruction_memory;
     port map (
         clk                 => clock,
         rstbar              => resetbar,
-        ifidwrite           => hazardunit_ifidwrite_to_ifid,  
+        branch_taken		=> branchand_jumpbranchselect_to_pc_mux,
+		ifidwrite           => hazardunit_ifidwrite_to_ifid,  
         ifidflush           => controlunit_ifflush_to_ifid,		 --UNUSED- DO NOT IMPLEMENT
         pcout               => pc_pcout_to_ifid,
         instruction         => instruction_memory_instruction_to_ifid,
@@ -492,12 +493,13 @@ HAZARD_UNIT_INST : entity work.hazard_unit
     port map (
       clk => clock,
       rstbar => resetbar,
-      --pcin => PC_TO_IDEX,
+      branch_taken		=> branchand_jumpbranchselect_to_pc_mux,
+	  pcin => ifid_pcout_to_pcimmadder,
       readdata1in => registers_reg1out_to_idex,
       readdata2in => registers_reg2out_to_idex,
       immediatein => immediategen_immediate_to_idex,
       immediateout => idex_immediate_to_alusrcmuxb,
-      --PCOUTREAL => PC_FROM_IDEX,
+      pcout => idex_pcout_to_alu,
       readdata1out => idex_rs1_to_forwardingmuxa,
       readdata2out => idex_rs2_to_forwardingmuxb,
       
@@ -560,7 +562,8 @@ HAZARD_UNIT_INST : entity work.hazard_unit
 	 ALU_INST : entity work.ALU
     port map (
       input_0 => forwardingmuxa_rs1_to_alu,
-      input_1 => alusrcmuxB_rs2_to_alu,
+      input_1 => alusrcmuxB_rs2_to_alu,	
+	  pc => idex_pcout_to_alu,
       operation => alucontrol_aluop_to_alu,
       ALU_output => alu_result_to_exmem,
       zero_flag => alu_zeroresult_to_exmem
