@@ -34,19 +34,14 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">RiscV-NPU-DualCore</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    A VHDL implemenation of the RISCV32I ISA in a 5 stage pipeline.
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <a href="[https://riscv.org/]"><strong>Explore the ISA »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
 
