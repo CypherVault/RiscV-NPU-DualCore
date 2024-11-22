@@ -56,8 +56,8 @@ signal DM_debug_read_enable : std_logic;  -- Data memory read enable
 
 
   -- Internal signals for data routing
-    signal rf_data_out : std_logic_vector(31 downto 0);
-    signal dm_data_out : std_logic_vector(31 downto 0);
+   signal rf_data_out : std_logic_vector(31 downto 0);
+   signal dm_data_out : std_logic_vector(31 downto 0);
 
 
 
@@ -472,7 +472,7 @@ port map (
     debug_clk => debug_clk,
     debug_address => debug_addr(4 downto 0),  -- Uses lower 5 bits
     debug_read_enable => rf_enable,															 
-    debug_data_out => debug_data,  -- Connects to shared data bus
+    debug_data => rf_data_out,  -- Connects to shared data bus
     regwrite => memwb_regwrite_to_registers,
     readregister1 => ifid_rs1_to_register,
     readregister2 => ifid_rs2_to_register,
@@ -723,7 +723,7 @@ port map (
     debug_clk => debug_clk,
     debug_address => debug_addr,  -- Uses 7 bits for 128 addresses
     debug_read_enable => dm_enable,
-    debug_data_out => debug_data,  -- Connects to shared data bus
+    debug_data => dm_data_out,  -- Connects to shared data bus
     memwrite => exmem_memwrite_to_datamem,
     memread => exmem_memread_to_datamem,
     address => exmem_result_to_datamem,
@@ -791,23 +791,23 @@ port map (
 	
 --------------------------------------------------------------------------END		
 
-
--- In the internal_connections entity:
-process(debug_clk, resetbar)
+  -- Memory selection and data routing process
+process(debug_clk, resetbar, rf_enable, dm_enable)
 begin
-    if resetbar = '0' then
-         debug_data <= (others => 'Z');
-    elsif rising_edge(debug_clk) then
-        -- Default state
-        debug_data <= (others => 'Z');
-        
-        -- Only one component should drive the bus at a time
-        if rf_enable = '1' then
-            debug_data <= rf_data_out;
-        elsif dm_enable = '1' then
+    if rf_enable = '1' then
+        if resetbar = '0' then
+            debug_data <= (others => 'Z');
+        elsif (debug_clk='1') then
+           debug_data <= rf_data_out;
+        end if;
+    elsif dm_enable = '1' then
+        if resetbar = '0' then
+            debug_data <= (others => 'Z');
+        elsif (debug_clk = '1') then
             debug_data <= dm_data_out;
         end if;
-        -- IM never drives the bus for reads
+    else
+        debug_data <= (others => 'Z');
     end if;
 end process;
 

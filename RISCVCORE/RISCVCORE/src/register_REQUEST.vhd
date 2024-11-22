@@ -1,7 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
-
 use work.types_pkg.ALL;
 
 entity regfile is
@@ -20,19 +19,17 @@ entity regfile is
     debug_clk : in std_logic;
     debug_address : in std_logic_vector(4 downto 0);
     debug_read_enable : in std_logic;
-    debug_data_out : out std_logic_vector(31 downto 0)
+    debug_data : inout std_logic_vector(31 downto 0)  -- Changed to inout
   );
 end entity regfile;
 
 architecture Behavioral of regfile is
   signal registers : reg_array := (others => (others => '0'));
 begin
-
   -- Combinational process for write operation
   process(resetbar, regwrite, writeregisteraddress, writedata)
   begin
     if resetbar = '0' then
-      -- Asynchronous reset
       registers <= (others => (others => '0'));
     elsif regwrite = '1' then
       if unsigned(writeregisteraddress) /= 0 then
@@ -48,20 +45,18 @@ begin
   readdata2 <= (others => '0') when unsigned(readregister2) = 0 else
                registers(to_integer(unsigned(readregister2)));
 
-  -- Register File
-process(debug_clk, resetbar, debug_read_enable)
-begin
-    if debug_read_enable = '1' then  -- Check enable first
-        if resetbar = '0' then
-            debug_data_out <= (others => 'Z');
-        elsif (debug_clk='1') then
-            debug_data_out <= registers(to_integer(unsigned(debug_address)));
-        end if;
-    else
-        debug_data_out <= (others => 'Z');
+  -- Debug interface with proper bidirectional control
+  process(debug_clk, resetbar)
+  begin
+    if resetbar = '0' then
+      debug_data <= (others => 'Z');
+    elsif rising_edge(debug_clk) then
+      if debug_read_enable = '1' then
+        debug_data <= registers(to_integer(unsigned(debug_address)));
+      else
+        debug_data <= (others => 'Z');
+      end if;
     end if;
-end process;
-
-
+  end process;
 
 end architecture Behavioral;

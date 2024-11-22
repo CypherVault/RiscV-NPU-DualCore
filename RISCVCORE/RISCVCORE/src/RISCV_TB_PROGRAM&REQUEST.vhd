@@ -103,7 +103,7 @@ begin
         wait for 10 ns;
 
         im_enable <= '0';  -- Disable instruction memory write
-
+		dm_enable <= '0';
         -- Run the processor
         for i in 0 to 10 loop
             clk <= '0';
@@ -127,8 +127,14 @@ for i in 0 to 31 loop
     wait for 5 ns;  -- Setup time
     debug_clk <= '1';
     wait for 5 ns;  -- Hold time
-    reg_file_contents(i) <= debug_data;  -- Sample data after clock edge
-    wait for 5 ns;  -- Additional hold time
+    if (i=0)  then
+		   --nop
+	elsif (i>0) then
+	reg_file_contents(i-1) <= debug_data;  -- Sample data after clock edge
+    end if;
+	
+	
+	wait for 5 ns;  -- Additional hold time
 end loop;
 
 rf_enable <= '0';
@@ -138,17 +144,59 @@ wait for 10 ns;  -- Allow bus to settle
 
 
 
-        -- Read Data Memory contents
-        dm_enable <= '1';  -- Enable data memory read
-        for i in 0 to 127 loop
-            debug_clk <= '1';
-            debug_addr <= std_logic_vector(to_unsigned(i, 7));
-            wait for 10 ns;
-            data_mem_contents(i) <= debug_data;
-            debug_clk <= '0';
-            wait for 10 ns;
-        end loop;
-        dm_enable <= '0';
+   -- Read Data Memory contents
+dm_enable <= '1';  -- Enable data memory read
+debug_data <= (others => 'Z');  -- Initialize bus state
+wait for 10 ns;  -- Allow bus to stabilize
+
+-- Read Data Memory contents
+dm_enable <= '1';  -- Enable data memory read
+debug_data <= (others => 'Z');  -- Initialize bus state
+wait for 10 ns;
+
+data_mem_contents(0) <= (others => '0');
+
+for i in 0 to 127 loop
+    debug_clk <= '1';
+    debug_addr <= std_logic_vector(to_unsigned(i, 7));
+    wait for 10 ns;
+   	
+	if (i=0)  then
+		   --nop									 --data mem 0 hardcoded to 0
+		
+		
+	end if;
+	
+	if (i>0)  then
+    -- Store data at current index, not offset
+    if debug_data = "UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU" then
+        data_mem_contents(i-1) <= (others => '0');
+    else
+        data_mem_contents(i-1) <= debug_data;
+    end if;
+    end if;
+    debug_clk <= '0';
+    wait for 10 ns;
+end loop;
+
+dm_enable <= '0';
+debug_data <= (others => 'Z');
+wait for 10 ns;
+dm_enable <= '0';
+debug_data <= (others => 'Z');  -- Release bus
+wait for 10 ns;
+
+
+
+
+-- Handle last index separately to prevent out-of-bounds
+if debug_data = "UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU" then
+    data_mem_contents(127) <= (others => '0');
+else
+    data_mem_contents(127) <= debug_data;
+end if;
+
+dm_enable <= '0';
 
         -- End simulation
         report "Simulation finished";

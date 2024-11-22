@@ -11,7 +11,7 @@ entity instruction_memory is
         -- Debug interface with reduced ports
         debug_clk : in STD_LOGIC;	 
         debug_addr : in STD_LOGIC_VECTOR(6 downto 0);  -- Reduced to 7 bits for 128 entries
-        debug_data : in STD_LOGIC_VECTOR(31 downto 0);  -- Bidirectional data bus
+        debug_data : inout STD_LOGIC_VECTOR(31 downto 0);  -- Bidirectional data bus
         debug_we : in STD_LOGIC
     );
 end instruction_memory;
@@ -39,20 +39,21 @@ begin
             instruction <= x"00000000";  -- Return NOP if address out of bounds
         end if;
     end process;
-    
-   -- Instruction Memory
+     -- Debug Memory Access Process
 process(debug_clk, reset, debug_we)
 begin
-    if debug_we = '1' then  -- Check enable first
-        if reset = '0' then
-            mem <= (others => x"00000000");
-            --debug_data <= (others => 'Z');
-        elsif rising_edge(debug_clk) then
+    if reset = '0' then
+        mem <= (others => x"00000000");
+        debug_data <= (others => 'Z');
+    elsif debug_we = '1' then
+        if rising_edge(debug_clk) then
             mem(to_integer(unsigned(debug_addr))) <= debug_data;
-            --debug_data <= (others => 'Z');
         end if;
+        debug_data <= (others => 'Z');  -- Always Z during write
+    elsif rising_edge(debug_clk) then
+        --debug_data <= mem(to_integer(unsigned(debug_addr)));  -- Read operation
     else
-		--debug_data <= (others => 'Z');
+        debug_data <= (others => 'Z');  -- Default state
     end if;
 end process;
 
