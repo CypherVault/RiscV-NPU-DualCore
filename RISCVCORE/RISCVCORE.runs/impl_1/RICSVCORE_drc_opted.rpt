@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date         : Thu Nov 21 13:29:38 2024
+| Date         : Thu Nov 21 18:40:20 2024
 | Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
 | Command      : report_drc -file RICSVCORE_drc_opted.rpt -pb RICSVCORE_drc_opted.pb -rpx RICSVCORE_drc_opted.rpx
 | Design       : RICSVCORE
@@ -24,39 +24,30 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 16
-+---------+------------------+----------------------------+------------+
-| Rule    | Severity         | Description                | Violations |
-+---------+------------------+----------------------------+------------+
-| NSTD-1  | Critical Warning | Unspecified I/O Standard   | 1          |
-| UCIO-1  | Critical Warning | Unconstrained Logical Port | 1          |
-| DPIP-1  | Warning          | Input pipelining           | 6          |
-| DPOP-1  | Warning          | PREG Output pipelining     | 3          |
-| DPOP-2  | Warning          | MREG Output pipelining     | 3          |
-| IOCNT-1 | Warning          | Number of IOs              | 1          |
-| ZPS7-1  | Warning          | PS7 block required         | 1          |
-+---------+------------------+----------------------------+------------+
+             Violations found: 15
++--------+------------------+----------------------------+------------+
+| Rule   | Severity         | Description                | Violations |
++--------+------------------+----------------------------+------------+
+| NSTD-1 | Critical Warning | Unspecified I/O Standard   | 1          |
+| UCIO-1 | Critical Warning | Unconstrained Logical Port | 1          |
+| DPIP-1 | Warning          | Input pipelining           | 6          |
+| DPOP-1 | Warning          | PREG Output pipelining     | 3          |
+| DPOP-2 | Warning          | MREG Output pipelining     | 3          |
+| ZPS7-1 | Warning          | PS7 block required         | 1          |
++--------+------------------+----------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
 NSTD-1#1 Critical Warning
 Unspecified I/O Standard  
-123 out of 123 logical ports use I/O standard (IOSTANDARD) value 'DEFAULT', instead of a user assigned specific value. This may cause I/O contention or incompatibility with the board power or connectivity affecting performance, signal integrity or in extreme cases cause damage to the device or the components to which it is connected. To correct this violation, specify all I/O standards. This design will fail to generate a bitstream unless all logical ports have a user specified I/O standard value defined. To allow bitstream creation with unspecified I/O standard values (not recommended), use this command: set_property SEVERITY {Warning} [get_drc_checks NSTD-1].  NOTE: When using the Vivado Runs infrastructure (e.g. launch_runs Tcl command), add this command to a .tcl file and add that file as a pre-hook for write_bitstream step for the implementation run. Problem ports: DM_debug_address[2], DM_debug_address[3], DM_debug_address[4],
-DM_debug_address[5], DM_debug_address[6], DM_debug_address[7],
-DM_debug_clk, DM_debug_data_out[31:0], DM_debug_read_enable,
-IM_debug_addr[7:0], IM_debug_clk, IM_debug_instruction[31:0], IM_debug_we,
-RF_debug_address[4:0], RF_debug_data_out[31:0]
- (the first 15 of 19 listed).
+45 out of 45 logical ports use I/O standard (IOSTANDARD) value 'DEFAULT', instead of a user assigned specific value. This may cause I/O contention or incompatibility with the board power or connectivity affecting performance, signal integrity or in extreme cases cause damage to the device or the components to which it is connected. To correct this violation, specify all I/O standards. This design will fail to generate a bitstream unless all logical ports have a user specified I/O standard value defined. To allow bitstream creation with unspecified I/O standard values (not recommended), use this command: set_property SEVERITY {Warning} [get_drc_checks NSTD-1].  NOTE: When using the Vivado Runs infrastructure (e.g. launch_runs Tcl command), add this command to a .tcl file and add that file as a pre-hook for write_bitstream step for the implementation run. Problem ports: clock, debug_addr[6:0], debug_clk, debug_data[31:0], dm_enable, im_enable,
+resetbar, rf_enable.
 Related violations: <none>
 
 UCIO-1#1 Critical Warning
 Unconstrained Logical Port  
-123 out of 123 logical ports have no user assigned specific location constraint (LOC). This may cause I/O contention or incompatibility with the board power or connectivity affecting performance, signal integrity or in extreme cases cause damage to the device or the components to which it is connected. To correct this violation, specify all pin locations. This design will fail to generate a bitstream unless all logical ports have a user specified site LOC constraint defined.  To allow bitstream creation with unspecified pin locations (not recommended), use this command: set_property SEVERITY {Warning} [get_drc_checks UCIO-1].  NOTE: When using the Vivado Runs infrastructure (e.g. launch_runs Tcl command), add this command to a .tcl file and add that file as a pre-hook for write_bitstream step for the implementation run.  Problem ports: DM_debug_address[2], DM_debug_address[3], DM_debug_address[4],
-DM_debug_address[5], DM_debug_address[6], DM_debug_address[7],
-DM_debug_clk, DM_debug_data_out[31:0], DM_debug_read_enable,
-IM_debug_addr[7:0], IM_debug_clk, IM_debug_instruction[31:0], IM_debug_we,
-RF_debug_address[4:0], RF_debug_data_out[31:0]
- (the first 15 of 19 listed).
+45 out of 45 logical ports have no user assigned specific location constraint (LOC). This may cause I/O contention or incompatibility with the board power or connectivity affecting performance, signal integrity or in extreme cases cause damage to the device or the components to which it is connected. To correct this violation, specify all pin locations. This design will fail to generate a bitstream unless all logical ports have a user specified site LOC constraint defined.  To allow bitstream creation with unspecified pin locations (not recommended), use this command: set_property SEVERITY {Warning} [get_drc_checks UCIO-1].  NOTE: When using the Vivado Runs infrastructure (e.g. launch_runs Tcl command), add this command to a .tcl file and add that file as a pre-hook for write_bitstream step for the implementation run.  Problem ports: clock, debug_addr[6:0], debug_clk, debug_data[31:0], dm_enable, im_enable,
+resetbar, rf_enable.
 Related violations: <none>
 
 DPIP-1#1 Warning
@@ -117,15 +108,6 @@ Related violations: <none>
 DPOP-2#3 Warning
 MREG Output pipelining  
 DSP internal_connections_inst/ALU_INST/mul_result__1 multiplier stage internal_connections_inst/ALU_INST/mul_result__1/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
-Related violations: <none>
-
-IOCNT-1#1 Warning
-Number of IOs  
-The design contains 123 unplaced I/O ports while the target device, xc7z007sclg225-1, has 54 remaining available user I/O pins. This DRC assumes that all ports which do not drive MGT pins should be placed on user I/O pins. To correct this issue:
-1. Ensure you are targeting the correct device and package. Select a larger device or different package if necessary.
-2. Check the top-level ports of the design to ensure the correct number of ports are specified.
-3. Consider design changes to reduce the number of user I/O pins needed.
-
 Related violations: <none>
 
 ZPS7-1#1 Warning
