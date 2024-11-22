@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7z007sclg225-1" LaunchTime="1732224389" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/RICSVCORE.dcp">
+  <File Type="PA-TCL" Name="RICSVCORE.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="RICSVCORE_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="RICSVCORE_reports.tcl"/>
+  <File Type="RDS-RDS" Name="RICSVCORE.vds"/>
+  <File Type="RDS-UTIL" Name="RICSVCORE_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="RICSVCORE_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="RICSVCORE.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="RICSVCORE_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="RICSVCORE_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/src/ALU.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/RISCVCORE/src/ALU.vhd"/>
+        <Attr Name="ImportTime" Val="1732222961"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/debug_pkg.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/RISCVCORE/src/debug_pkg.vhd"/>
+        <Attr Name="ImportTime" Val="1732222961"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/types_pk.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/RISCVCORE/src/types_pk.vhd"/>
+        <Attr Name="ImportTime" Val="1732222961"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/Data_Memory_REQUEST.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/RISCVCORE/src/Data_Memory_REQUEST.vhd"/>
+        <Attr Name="ImportTime" Val="1732222963"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/alucontrol.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/RISCVCORE/src/alucontrol.vhd"/>
+        <Attr Name="ImportTime" Val="1732222962"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/alusrcmuxb.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/RISCVCORE/src/alusrcmuxb.vhd"/>
+        <Attr Name="ImportTime" Val="1732222962"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/branch_and.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/RISCVCORE/src/branch_and.vhd"/>
+        <Attr Name="ImportTime" Val="1732222962"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/control_unit.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/RISCVCORE/src/control_unit.vhd"/>
+        <Attr Name="ImportTime" Val="1732222962"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/exmem.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/RISCVCORE/src/exmem.vhd"/>
+        <Attr Name="ImportTime" Val="1732222961"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/forwarding_unit.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/RISCVCORE/src/forwarding_unit.vhd"/>
+        <Attr Name="ImportTime" Val="1732222962"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/forwardingmuxA.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/RISCVCORE/src/forwardingmuxA.vhd"/>
+        <Attr Name="ImportTime" Val="1732222962"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/forwardingmuxB.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/RISCVCORE/src/forwardingmuxB.vhd"/>
+        <Attr Name="ImportTime" Val="1732222962"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/hazardunit.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/RISCVCORE/src/hazardunit.vhd"/>
+        <Attr Name="ImportTime" Val="1732222962"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/idex.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/RISCVCORE/src/idex.vhd"/>
+        <Attr Name="ImportTime" Val="1732222961"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/ifid.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/RISCVCORE/src/ifid.vhd"/>
+        <Attr Name="ImportTime" Val="1732222961"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/immediategen.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/RISCVCORE/src/immediategen.vhd"/>
+        <Attr Name="ImportTime" Val="1732222961"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/instruction_memory_PROGRAM.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/RISCVCORE/src/instruction_memory_PROGRAM.vhd"/>
+        <Attr Name="ImportTime" Val="1732222963"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/pc_mux.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/RISCVCORE/src/pc_mux.vhd"/>
+        <Attr Name="ImportTime" Val="1732222962"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/pc4adder.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/RISCVCORE/src/pc4adder.vhd"/>
+        <Attr Name="ImportTime" Val="1732222962"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/program_counter.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/RISCVCORE/src/program_counter.vhd"/>
+        <Attr Name="ImportTime" Val="1732222961"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/pcimmadder.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/RISCVCORE/src/pcimmadder.vhd"/>
+        <Attr Name="ImportTime" Val="1732222962"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/register_REQUEST.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/RISCVCORE/src/register_REQUEST.vhd"/>
+        <Attr Name="ImportTime" Val="1732222963"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/memwb.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/RISCVCORE/src/memwb.vhd"/>
+        <Attr Name="ImportTime" Val="1732222961"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/writebackmux.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/RISCVCORE/src/writebackmux.vhd"/>
+        <Attr Name="ImportTime" Val="1732222960"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/internalconnections.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/RISCVCORE/src/internalconnections.vhd"/>
+        <Attr Name="ImportTime" Val="1732222961"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/src/RISCVCORE.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/RISCVCORE/src/RISCVCORE.vhd"/>
+        <Attr Name="ImportTime" Val="1732222961"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="RICSVCORE"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
+    <Filter Type="Utils"/>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/RICSVCORE.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

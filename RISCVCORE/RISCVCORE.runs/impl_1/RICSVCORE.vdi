@@ -1,0 +1,410 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Thu Nov 21 13:29:02 2024
+# Process ID: 11644
+# Current directory: C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.runs/impl_1
+# Command line: vivado.exe -log RICSVCORE.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source RICSVCORE.tcl -notrace
+# Log file: C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.runs/impl_1/RICSVCORE.vdi
+# Journal file: C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.runs/impl_1\vivado.jou
+# Running On        :DESKTOP-J1G93P6
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :19044
+# Processor Detail  :Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+# CPU Frequency     :3192 MHz
+# CPU Physical cores:6
+# CPU Logical cores :12
+# Host memory       :68558 MB
+# Swap memory       :10200 MB
+# Total Virtual     :78758 MB
+# Available Virtual :68729 MB
+#-----------------------------------------------------------
+source RICSVCORE.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 543.758 ; gain = 200.602
+Command: link_design -top RICSVCORE -part xc7z007sclg225-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7z007sclg225-1
+INFO: [Device 21-9227] Part: xc7z007sclg225-1 does not have CEAM library.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.119 . Memory (MB): peak = 957.516 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 2520 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2024.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.037 . Memory (MB): peak = 1067.691 ; gain = 2.184
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1068.371 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+7 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1068.371 ; gain = 524.613
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z007s'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z007s'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1123.375 ; gain = 55.004
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: 25d3a2d94
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1632.402 ; gain = 509.027
+
+Starting Logic Optimization Task
+
+Phase 1 Initialization
+
+Phase 1.1 Core Generation And Design Setup
+Phase 1.1 Core Generation And Design Setup | Checksum: 25d3a2d94
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 2008.172 ; gain = 0.000
+
+Phase 1.2 Setup Constraints And Sort Netlist
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 25d3a2d94
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 2008.172 ; gain = 0.000
+Phase 1 Initialization | Checksum: 25d3a2d94
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 2008.172 ; gain = 0.000
+
+Phase 2 Timer Update And Timing Data Collection
+
+Phase 2.1 Timer Update
+Phase 2.1 Timer Update | Checksum: 25d3a2d94
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.275 . Memory (MB): peak = 2008.172 ; gain = 0.000
+
+Phase 2.2 Timing Data Collection
+Phase 2.2 Timing Data Collection | Checksum: 25d3a2d94
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.296 . Memory (MB): peak = 2008.172 ; gain = 0.000
+Phase 2 Timer Update And Timing Data Collection | Checksum: 25d3a2d94
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.298 . Memory (MB): peak = 2008.172 ; gain = 0.000
+
+Phase 3 Retarget
+INFO: [Opt 31-1834] Total Chains To Be Transformed Were: 0 AND Number of Transformed insts Created are: 0
+INFO: [Opt 31-1566] Pulled 4 inverters resulting in an inversion of 28 pins
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 3 Retarget | Checksum: 1c49d97a2
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.572 . Memory (MB): peak = 2008.172 ; gain = 0.000
+Retarget | Checksum: 1c49d97a2
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 4 cells
+
+Phase 4 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 4 Constant propagation | Checksum: 1b41082ea
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.670 . Memory (MB): peak = 2008.172 ; gain = 0.000
+Constant propagation | Checksum: 1b41082ea
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+
+Phase 5 Sweep
+Phase 5 Sweep | Checksum: 284dc01cc
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.773 . Memory (MB): peak = 2008.172 ; gain = 0.000
+Sweep | Checksum: 284dc01cc
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
+
+Phase 6 BUFG optimization
+INFO: [Opt 31-194] Inserted BUFG internal_connections_inst/EXMEM_INST/E[0]_BUFG_inst to drive 32 load(s) on clock net internal_connections_inst/EXMEM_INST/E_BUFG[0]
+INFO: [Opt 31-194] Inserted BUFG internal_connections_inst/EXMEM_INST/MemWrite_reg_reg_0[0]_BUFG_inst to drive 32 load(s) on clock net internal_connections_inst/EXMEM_INST/MemWrite_reg_reg_0_BUFG[0]
+INFO: [Opt 31-194] Inserted BUFG internal_connections_inst/EXMEM_INST/MemWrite_reg_reg_10[0]_BUFG_inst to drive 32 load(s) on clock net internal_connections_inst/EXMEM_INST/MemWrite_reg_reg_10_BUFG[0]
+INFO: [Opt 31-194] Inserted BUFG internal_connections_inst/EXMEM_INST/MemWrite_reg_reg_11[0]_BUFG_inst to drive 32 load(s) on clock net internal_connections_inst/EXMEM_INST/MemWrite_reg_reg_11_BUFG[0]
+INFO: [Opt 31-194] Inserted BUFG internal_connections_inst/EXMEM_INST/MemWrite_reg_reg_12[0]_BUFG_inst to drive 32 load(s) on clock net internal_connections_inst/EXMEM_INST/MemWrite_reg_reg_12_BUFG[0]
+INFO: [Opt 31-194] Inserted BUFG internal_connections_inst/EXMEM_INST/MemWrite_reg_reg_13[0]_BUFG_inst to drive 32 load(s) on clock net internal_connections_inst/EXMEM_INST/MemWrite_reg_reg_13_BUFG[0]
+INFO: [Opt 31-194] Inserted BUFG internal_connections_inst/EXMEM_INST/MemWrite_reg_reg_14[0]_BUFG_inst to drive 32 load(s) on clock net internal_connections_inst/EXMEM_INST/MemWrite_reg_reg_14_BUFG[0]
+INFO: [Opt 31-194] Inserted BUFG internal_connections_inst/EXMEM_INST/MemWrite_reg_reg_15[0]_BUFG_inst to drive 32 load(s) on clock net internal_connections_inst/EXMEM_INST/MemWrite_reg_reg_15_BUFG[0]
+INFO: [Opt 31-194] Inserted BUFG internal_connections_inst/EXMEM_INST/MemWrite_reg_reg_16[0]_BUFG_inst to drive 32 load(s) on clock net internal_connections_inst/EXMEM_INST/MemWrite_reg_reg_16_BUFG[0]
+INFO: [Opt 31-193] Inserted 9 BUFG(s) on clock nets
+Phase 6 BUFG optimization | Checksum: 2496bae5d
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.934 . Memory (MB): peak = 2008.172 ; gain = 0.000
+BUFG optimization | Checksum: 2496bae5d
+INFO: [Opt 31-662] Phase BUFG optimization created 9 cells of which 9 are BUFGs and removed 0 cells.
+
+Phase 7 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 7 Shift Register Optimization | Checksum: 2496bae5d
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.957 . Memory (MB): peak = 2008.172 ; gain = 0.000
+Shift Register Optimization | Checksum: 2496bae5d
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 8 Post Processing Netlist
+Phase 8 Post Processing Netlist | Checksum: 2496bae5d
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.999 . Memory (MB): peak = 2008.172 ; gain = 0.000
+Post Processing Netlist | Checksum: 2496bae5d
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+
+Phase 9 Finalization
+
+Phase 9.1 Finalizing Design Cores and Updating Shapes
+Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: 170940deb
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2008.172 ; gain = 0.000
+
+Phase 9.2 Verifying Netlist Connectivity
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 2008.172 ; gain = 0.000
+Phase 9.2 Verifying Netlist Connectivity | Checksum: 170940deb
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2008.172 ; gain = 0.000
+Phase 9 Finalization | Checksum: 170940deb
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2008.172 ; gain = 0.000
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               0  |               4  |                                              0  |
+|  Constant propagation         |               0  |               0  |                                              0  |
+|  Sweep                        |               0  |               0  |                                              0  |
+|  BUFG optimization            |               9  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+Ending Logic Optimization Task | Checksum: 170940deb
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2008.172 ; gain = 0.000
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+Ending Power Optimization Task | Checksum: 170940deb
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 2008.172 ; gain = 0.000
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 170940deb
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2008.172 ; gain = 0.000
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2008.172 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: 170940deb
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 2008.172 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+36 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:13 . Memory (MB): peak = 2008.172 ; gain = 939.801
+INFO: [Vivado 12-24828] Executing command : report_drc -file RICSVCORE_drc_opted.rpt -pb RICSVCORE_drc_opted.pb -rpx RICSVCORE_drc_opted.rpx
+Command: report_drc -file RICSVCORE_drc_opted.rpt -pb RICSVCORE_drc_opted.pb -rpx RICSVCORE_drc_opted.rpx
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/Vivado/2024.1/data/ip'.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.runs/impl_1/RICSVCORE_drc_opted.rpt.
+report_drc completed successfully
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 2008.172 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.runs/impl_1/RICSVCORE_opt.dcp' has been generated.
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z007s'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z007s'
+INFO: [Common 17-83] Releasing license: Implementation
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Starting Placer Task
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2008.172 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: f352cca9
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 2008.172 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 2008.172 ; gain = 0.000
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+ERROR: [Place 30-58] IO placement is infeasible. Number of unplaced IO Ports (121) is greater than number of available pins (54).
+The following are banks with available pins: 
+ IO Group: 0 with : SioStd: LVCMOS18   VCCO = 1.8 Termination: 0  TermDir:  In   RangeId: 1  has only 54 sites available on device, but needs 57 sites.
+	Term: DM_debug_address[2]
+	Term: DM_debug_address[3]
+	Term: DM_debug_address[4]
+	Term: DM_debug_address[5]
+	Term: DM_debug_address[6]
+	Term: DM_debug_address[7]
+	Term: IM_debug_instruction[0]
+	Term: IM_debug_instruction[1]
+	Term: IM_debug_instruction[2]
+	Term: IM_debug_instruction[3]
+	Term: IM_debug_instruction[4]
+	Term: IM_debug_instruction[5]
+	Term: IM_debug_instruction[6]
+	Term: IM_debug_instruction[7]
+	Term: IM_debug_instruction[8]
+	Term: IM_debug_instruction[9]
+	Term: IM_debug_instruction[10]
+	Term: IM_debug_instruction[11]
+	Term: IM_debug_instruction[12]
+	Term: IM_debug_instruction[13]
+	Term: IM_debug_instruction[14]
+	Term: IM_debug_instruction[15]
+	Term: IM_debug_instruction[16]
+	Term: IM_debug_instruction[17]
+	Term: IM_debug_instruction[18]
+	Term: IM_debug_instruction[19]
+	Term: IM_debug_instruction[20]
+	Term: IM_debug_instruction[21]
+	Term: IM_debug_instruction[22]
+	Term: IM_debug_instruction[23]
+	Term: IM_debug_instruction[24]
+	Term: IM_debug_instruction[25]
+	Term: IM_debug_instruction[26]
+	Term: IM_debug_instruction[27]
+	Term: IM_debug_instruction[28]
+	Term: IM_debug_instruction[29]
+	Term: IM_debug_instruction[30]
+	Term: IM_debug_instruction[31]
+	Term: IM_debug_addr[0]
+	Term: IM_debug_addr[1]
+	Term: IM_debug_addr[2]
+	Term: IM_debug_addr[3]
+	Term: IM_debug_addr[4]
+	Term: IM_debug_addr[5]
+	Term: IM_debug_addr[6]
+	Term: IM_debug_addr[7]
+	Term: RF_debug_address[0]
+	Term: RF_debug_address[1]
+	Term: RF_debug_address[2]
+	Term: RF_debug_address[3]
+	Term: RF_debug_address[4]
+	Term: DM_debug_clk
+	Term: DM_debug_read_enable
+	Term: IM_debug_we
+	Term: RF_debug_clk
+	Term: RF_debug_read_enable
+	Term: resetbar
+
+
+ IO Group: 1 with : SioStd: LVCMOS18   VCCO = 1.8 Termination: 0  TermDir:  Out  RangeId: 1 Drv: 12  has only 54 sites available on device, but needs 64 sites.
+	Term: DM_debug_data_out[0]
+	Term: DM_debug_data_out[1]
+	Term: DM_debug_data_out[2]
+	Term: DM_debug_data_out[3]
+	Term: DM_debug_data_out[4]
+	Term: DM_debug_data_out[5]
+	Term: DM_debug_data_out[6]
+	Term: DM_debug_data_out[7]
+	Term: DM_debug_data_out[8]
+	Term: DM_debug_data_out[9]
+	Term: DM_debug_data_out[10]
+	Term: DM_debug_data_out[11]
+	Term: DM_debug_data_out[12]
+	Term: DM_debug_data_out[13]
+	Term: DM_debug_data_out[14]
+	Term: DM_debug_data_out[15]
+	Term: DM_debug_data_out[16]
+	Term: DM_debug_data_out[17]
+	Term: DM_debug_data_out[18]
+	Term: DM_debug_data_out[19]
+	Term: DM_debug_data_out[20]
+	Term: DM_debug_data_out[21]
+	Term: DM_debug_data_out[22]
+	Term: DM_debug_data_out[23]
+	Term: DM_debug_data_out[24]
+	Term: DM_debug_data_out[25]
+	Term: DM_debug_data_out[26]
+	Term: DM_debug_data_out[27]
+	Term: DM_debug_data_out[28]
+	Term: DM_debug_data_out[29]
+	Term: DM_debug_data_out[30]
+	Term: DM_debug_data_out[31]
+	Term: RF_debug_data_out[0]
+	Term: RF_debug_data_out[1]
+	Term: RF_debug_data_out[2]
+	Term: RF_debug_data_out[3]
+	Term: RF_debug_data_out[4]
+	Term: RF_debug_data_out[5]
+	Term: RF_debug_data_out[6]
+	Term: RF_debug_data_out[7]
+	Term: RF_debug_data_out[8]
+	Term: RF_debug_data_out[9]
+	Term: RF_debug_data_out[10]
+	Term: RF_debug_data_out[11]
+	Term: RF_debug_data_out[12]
+	Term: RF_debug_data_out[13]
+	Term: RF_debug_data_out[14]
+	Term: RF_debug_data_out[15]
+	Term: RF_debug_data_out[16]
+	Term: RF_debug_data_out[17]
+	Term: RF_debug_data_out[18]
+	Term: RF_debug_data_out[19]
+	Term: RF_debug_data_out[20]
+	Term: RF_debug_data_out[21]
+	Term: RF_debug_data_out[22]
+	Term: RF_debug_data_out[23]
+	Term: RF_debug_data_out[24]
+	Term: RF_debug_data_out[25]
+	Term: RF_debug_data_out[26]
+	Term: RF_debug_data_out[27]
+	Term: RF_debug_data_out[28]
+	Term: RF_debug_data_out[29]
+	Term: RF_debug_data_out[30]
+	Term: RF_debug_data_out[31]
+
+
+Resolution: Consider using Xilinx part with greater number of IO pins
+ERROR: [Place 30-374] IO placer failed to find a solution
+Below is the partial placement that can be analyzed to see if any constraint modifications will make the IO placement problem easier to solve.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                     IO Placement : Bank Stats                                                                           |
++----+-------+-------+------------------------------------------------------------------------+------------------------------------------+--------+--------+--------+-----+
+| Id | Pins  | Terms |                               Standards                                |                IDelayCtrls               |  VREF  |  VCCO  |   VR   | DCI |
++----+-------+-------+------------------------------------------------------------------------+------------------------------------------+--------+--------+--------+-----+
+|  0 |     0 |     0 |                                                                        |                                          |        |        |        |     |
+| 34 |    46 |     0 |                                                                        |                                          |        |        |        |     |
+| 35 |     8 |     0 |                                                                        |                                          |        |        |        |     |
++----+-------+-------+------------------------------------------------------------------------+------------------------------------------+--------+--------+--------+-----+
+|    |    54 |     0 |                                                                        |                                          |        |        |        |     |
++----+-------+-------+------------------------------------------------------------------------+------------------------------------------+--------+--------+--------+-----+
+
+IO Placement:
++--------+----------------------+-----------------+----------------------+----------------------+----------------------+
+| BankId |             Terminal | Standard        | Site                 | Pin                  | Attributes           |
++--------+----------------------+-----------------+----------------------+----------------------+----------------------+
+
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 122a2e32d
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2008.172 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 122a2e32d
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2008.172 ; gain = 0.000
+ERROR: [Place 30-99] Placer failed with error: 'IO Clock Placer failed'
+Please review all ERROR, CRITICAL WARNING, and WARNING messages during placement to understand the cause for failure.
+Ending Placer Task | Checksum: 122a2e32d
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2008.172 ; gain = 0.000
+53 Infos, 0 Warnings, 0 Critical Warnings and 4 Errors encountered.
+place_design failed
+ERROR: [Common 17-69] Command failed: Placer could not place all instances
+INFO: [Common 17-206] Exiting Vivado at Thu Nov 21 13:29:43 2024...
