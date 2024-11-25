@@ -1,0 +1,835 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
+| Date         : Thu Nov 21 18:41:42 2024
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : report_timing_summary -max_paths 10 -report_unconstrained -file RICSVCORE_timing_summary_routed.rpt -pb RICSVCORE_timing_summary_routed.pb -rpx RICSVCORE_timing_summary_routed.rpx -warn_on_violation
+| Design       : RICSVCORE
+| Device       : 7z007s-clg225
+| Speed File   : -1  PRODUCTION 1.12 2019-11-22
+| Design State : Routed
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+  Inter-SLR Compensation                     :  Conservative
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+------------------------------------------------------------------------------------------------
+| Report Methodology
+| ------------------
+------------------------------------------------------------------------------------------------
+
+Rule       Severity          Description                     Violations  
+---------  ----------------  ------------------------------  ----------  
+TIMING-17  Critical Warning  Non-clocked sequential cell     1000        
+SYNTH-10   Warning           Wide multiplier                 3           
+TIMING-20  Warning           Non-clocked latch               1000        
+LATCH-1    Advisory          Existing latches in the design  1           
+
+Note: This report is based on the most recent report_methodology run and may not be up-to-date. Run report_methodology on the current design for the latest report.
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock (14723)
+2. checking constant_clock (0)
+3. checking pulse_width_clock (0)
+4. checking unconstrained_internal_endpoints (27506)
+5. checking no_input_delay (44)
+6. checking no_output_delay (32)
+7. checking multiple_clock (0)
+8. checking generated_clocks (0)
+9. checking loops (0)
+10. checking partial_input_delay (0)
+11. checking partial_output_delay (0)
+12. checking latch_loops (0)
+
+1. checking no_clock (14723)
+----------------------------
+ There are 4478 register/latch pins with no clock driven by root clock pin: clock (HIGH)
+
+ There are 4194 register/latch pins with no clock driven by root clock pin: debug_clk (HIGH)
+
+ There are 33 register/latch pins with no clock driven by root clock pin: dm_enable (HIGH)
+
+ There are 33 register/latch pins with no clock driven by root clock pin: resetbar (HIGH)
+
+ There are 33 register/latch pins with no clock driven by root clock pin: rf_enable (HIGH)
+
+ There are 992 register/latch pins with no clock driven by root clock pin: internal_connections_inst/MEMWB_INST/RegWrite_reg_reg/Q (HIGH)
+
+ There are 992 register/latch pins with no clock driven by root clock pin: internal_connections_inst/MEMWB_INST/rd_reg_reg[0]/Q (HIGH)
+
+ There are 992 register/latch pins with no clock driven by root clock pin: internal_connections_inst/MEMWB_INST/rd_reg_reg[1]/Q (HIGH)
+
+ There are 992 register/latch pins with no clock driven by root clock pin: internal_connections_inst/MEMWB_INST/rd_reg_reg[2]/Q (HIGH)
+
+ There are 992 register/latch pins with no clock driven by root clock pin: internal_connections_inst/MEMWB_INST/rd_reg_reg[3]/Q (HIGH)
+
+ There are 992 register/latch pins with no clock driven by root clock pin: internal_connections_inst/MEMWB_INST/rd_reg_reg[4]/Q (HIGH)
+
+
+2. checking constant_clock (0)
+------------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock (0)
+---------------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints (27506)
+----------------------------------------------------
+ There are 27506 pins that are not constrained for maximum delay. (HIGH)
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay (44)
+-------------------------------
+ There are 44 input ports with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay (32)
+--------------------------------
+ There are 32 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock (0)
+------------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks (0)
+--------------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops (0)
+---------------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay (0)
+------------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay (0)
+-------------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops (0)
+----------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+        inf        0.000                      0                27538          inf        0.000                      0                27538           NA           NA                      NA                    NA  
+
+
+There are no user specified timing constraints.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| User Ignored Path Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+
+
+------------------------------------------------------------------------------------------------
+| Unconstrained Path Table
+| ------------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+(none)                                    
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  
+  To Clock:  
+
+Max Delay         27538 Endpoints
+Min Delay         27538 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 resetbar
+                            (input port)
+  Destination:            internal_connections_inst/ifid_instance/instruction_reg_reg[2]/CE
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        61.919ns  (logic 4.013ns (6.480%)  route 57.907ns (93.520%))
+  Logic Levels:           12  (CARRY4=1 IBUF=1 LDCE=1 LUT1=1 LUT5=1 LUT6=6 MUXF7=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    R7                                                0.000     0.000 f  resetbar (IN)
+                         net (fo=0)                   0.000     0.000    resetbar
+    R7                   IBUF (Prop_ibuf_I_O)         1.024     1.024 f  resetbar_IBUF_inst/O
+                         net (fo=3, routed)           0.909     1.933    internal_connections_inst/DATA_MEMORY_INST/resetbar_IBUF
+    SLICE_X43Y13         LUT1 (Prop_lut1_I0_O)        0.124     2.057 r  internal_connections_inst/DATA_MEMORY_INST/mem[0][31]_i_2/O
+                         net (fo=9567, routed)       46.051    48.107    internal_connections_inst/REGFILE_INST/readdata1_reg[0]_i_11_0
+    SLICE_X27Y47         LDCE (SetClr_ldce_CLR_Q)     0.885    48.992 f  internal_connections_inst/REGFILE_INST/registers_reg[11][26]/Q
+                         net (fo=3, routed)           1.595    50.587    internal_connections_inst/REGFILE_INST/registers_reg_n_1_[11][26]
+    SLICE_X23Y51         LUT6 (Prop_lut6_I1_O)        0.124    50.711 f  internal_connections_inst/REGFILE_INST/readdata1_reg[26]_i_6/O
+                         net (fo=1, routed)           0.000    50.711    internal_connections_inst/REGFILE_INST/readdata1_reg[26]_i_6_n_1
+    SLICE_X23Y51         MUXF7 (Prop_muxf7_I0_O)      0.212    50.923 f  internal_connections_inst/REGFILE_INST/readdata1_reg_reg[26]_i_2/O
+                         net (fo=1, routed)           0.305    51.228    internal_connections_inst/REGFILE_INST/readdata1_reg_reg[26]_i_2_n_1
+    SLICE_X22Y53         LUT6 (Prop_lut6_I0_O)        0.299    51.527 f  internal_connections_inst/REGFILE_INST/readdata1_reg[26]_i_1/O
+                         net (fo=2, routed)           1.018    52.545    internal_connections_inst/ifid_instance/instruction_reg[31]_i_83_1[26]
+    SLICE_X21Y47         LUT5 (Prop_lut5_I4_O)        0.124    52.669 f  internal_connections_inst/ifid_instance/instruction_reg[31]_i_93/O
+                         net (fo=1, routed)           1.682    54.351    internal_connections_inst/ifid_instance/CONTROLUNIT_INST/rs1_final[26]
+    SLICE_X18Y46         LUT6 (Prop_lut6_I3_O)        0.124    54.475 r  internal_connections_inst/ifid_instance/instruction_reg[31]_i_41/O
+                         net (fo=1, routed)           0.000    54.475    internal_connections_inst/ifid_instance/instruction_reg[31]_i_41_n_1
+    SLICE_X18Y46         CARRY4 (Prop_carry4_S[0]_CO[2])
+                                                      0.536    55.011 r  internal_connections_inst/ifid_instance/instruction_reg_reg[31]_i_21/CO[2]
+                         net (fo=1, routed)           1.278    56.289    internal_connections_inst/ifid_instance/CONTROLUNIT_INST/branch_taken0
+    SLICE_X20Y29         LUT6 (Prop_lut6_I5_O)        0.313    56.602 r  internal_connections_inst/ifid_instance/instruction_reg[31]_i_11/O
+                         net (fo=1, routed)           0.371    56.973    internal_connections_inst/ifid_instance/instruction_reg[31]_i_11_n_1
+    SLICE_X20Y29         LUT6 (Prop_lut6_I3_O)        0.124    57.097 r  internal_connections_inst/ifid_instance/instruction_reg[31]_i_7/O
+                         net (fo=70, routed)          2.114    59.211    internal_connections_inst/IDEX_INST/controlunit_ifflush_to_ifid
+    SLICE_X18Y27         LUT6 (Prop_lut6_I5_O)        0.124    59.335 r  internal_connections_inst/IDEX_INST/instruction_reg[31]_i_1/O
+                         net (fo=52, routed)          2.585    61.919    internal_connections_inst/ifid_instance/rs2_reg
+    SLICE_X21Y7          FDCE                                         r  internal_connections_inst/ifid_instance/instruction_reg_reg[2]/CE
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 resetbar
+                            (input port)
+  Destination:            internal_connections_inst/ifid_instance/instruction_reg_reg[5]/CE
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        61.919ns  (logic 4.013ns (6.480%)  route 57.907ns (93.520%))
+  Logic Levels:           12  (CARRY4=1 IBUF=1 LDCE=1 LUT1=1 LUT5=1 LUT6=6 MUXF7=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    R7                                                0.000     0.000 f  resetbar (IN)
+                         net (fo=0)                   0.000     0.000    resetbar
+    R7                   IBUF (Prop_ibuf_I_O)         1.024     1.024 f  resetbar_IBUF_inst/O
+                         net (fo=3, routed)           0.909     1.933    internal_connections_inst/DATA_MEMORY_INST/resetbar_IBUF
+    SLICE_X43Y13         LUT1 (Prop_lut1_I0_O)        0.124     2.057 r  internal_connections_inst/DATA_MEMORY_INST/mem[0][31]_i_2/O
+                         net (fo=9567, routed)       46.051    48.107    internal_connections_inst/REGFILE_INST/readdata1_reg[0]_i_11_0
+    SLICE_X27Y47         LDCE (SetClr_ldce_CLR_Q)     0.885    48.992 f  internal_connections_inst/REGFILE_INST/registers_reg[11][26]/Q
+                         net (fo=3, routed)           1.595    50.587    internal_connections_inst/REGFILE_INST/registers_reg_n_1_[11][26]
+    SLICE_X23Y51         LUT6 (Prop_lut6_I1_O)        0.124    50.711 f  internal_connections_inst/REGFILE_INST/readdata1_reg[26]_i_6/O
+                         net (fo=1, routed)           0.000    50.711    internal_connections_inst/REGFILE_INST/readdata1_reg[26]_i_6_n_1
+    SLICE_X23Y51         MUXF7 (Prop_muxf7_I0_O)      0.212    50.923 f  internal_connections_inst/REGFILE_INST/readdata1_reg_reg[26]_i_2/O
+                         net (fo=1, routed)           0.305    51.228    internal_connections_inst/REGFILE_INST/readdata1_reg_reg[26]_i_2_n_1
+    SLICE_X22Y53         LUT6 (Prop_lut6_I0_O)        0.299    51.527 f  internal_connections_inst/REGFILE_INST/readdata1_reg[26]_i_1/O
+                         net (fo=2, routed)           1.018    52.545    internal_connections_inst/ifid_instance/instruction_reg[31]_i_83_1[26]
+    SLICE_X21Y47         LUT5 (Prop_lut5_I4_O)        0.124    52.669 f  internal_connections_inst/ifid_instance/instruction_reg[31]_i_93/O
+                         net (fo=1, routed)           1.682    54.351    internal_connections_inst/ifid_instance/CONTROLUNIT_INST/rs1_final[26]
+    SLICE_X18Y46         LUT6 (Prop_lut6_I3_O)        0.124    54.475 r  internal_connections_inst/ifid_instance/instruction_reg[31]_i_41/O
+                         net (fo=1, routed)           0.000    54.475    internal_connections_inst/ifid_instance/instruction_reg[31]_i_41_n_1
+    SLICE_X18Y46         CARRY4 (Prop_carry4_S[0]_CO[2])
+                                                      0.536    55.011 r  internal_connections_inst/ifid_instance/instruction_reg_reg[31]_i_21/CO[2]
+                         net (fo=1, routed)           1.278    56.289    internal_connections_inst/ifid_instance/CONTROLUNIT_INST/branch_taken0
+    SLICE_X20Y29         LUT6 (Prop_lut6_I5_O)        0.313    56.602 r  internal_connections_inst/ifid_instance/instruction_reg[31]_i_11/O
+                         net (fo=1, routed)           0.371    56.973    internal_connections_inst/ifid_instance/instruction_reg[31]_i_11_n_1
+    SLICE_X20Y29         LUT6 (Prop_lut6_I3_O)        0.124    57.097 r  internal_connections_inst/ifid_instance/instruction_reg[31]_i_7/O
+                         net (fo=70, routed)          2.114    59.211    internal_connections_inst/IDEX_INST/controlunit_ifflush_to_ifid
+    SLICE_X18Y27         LUT6 (Prop_lut6_I5_O)        0.124    59.335 r  internal_connections_inst/IDEX_INST/instruction_reg[31]_i_1/O
+                         net (fo=52, routed)          2.585    61.919    internal_connections_inst/ifid_instance/rs2_reg
+    SLICE_X21Y7          FDCE                                         r  internal_connections_inst/ifid_instance/instruction_reg_reg[5]/CE
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 resetbar
+                            (input port)
+  Destination:            internal_connections_inst/ifid_instance/instruction_reg_reg[6]/CE
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        61.919ns  (logic 4.013ns (6.480%)  route 57.907ns (93.520%))
+  Logic Levels:           12  (CARRY4=1 IBUF=1 LDCE=1 LUT1=1 LUT5=1 LUT6=6 MUXF7=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    R7                                                0.000     0.000 f  resetbar (IN)
+                         net (fo=0)                   0.000     0.000    resetbar
+    R7                   IBUF (Prop_ibuf_I_O)         1.024     1.024 f  resetbar_IBUF_inst/O
+                         net (fo=3, routed)           0.909     1.933    internal_connections_inst/DATA_MEMORY_INST/resetbar_IBUF
+    SLICE_X43Y13         LUT1 (Prop_lut1_I0_O)        0.124     2.057 r  internal_connections_inst/DATA_MEMORY_INST/mem[0][31]_i_2/O
+                         net (fo=9567, routed)       46.051    48.107    internal_connections_inst/REGFILE_INST/readdata1_reg[0]_i_11_0
+    SLICE_X27Y47         LDCE (SetClr_ldce_CLR_Q)     0.885    48.992 f  internal_connections_inst/REGFILE_INST/registers_reg[11][26]/Q
+                         net (fo=3, routed)           1.595    50.587    internal_connections_inst/REGFILE_INST/registers_reg_n_1_[11][26]
+    SLICE_X23Y51         LUT6 (Prop_lut6_I1_O)        0.124    50.711 f  internal_connections_inst/REGFILE_INST/readdata1_reg[26]_i_6/O
+                         net (fo=1, routed)           0.000    50.711    internal_connections_inst/REGFILE_INST/readdata1_reg[26]_i_6_n_1
+    SLICE_X23Y51         MUXF7 (Prop_muxf7_I0_O)      0.212    50.923 f  internal_connections_inst/REGFILE_INST/readdata1_reg_reg[26]_i_2/O
+                         net (fo=1, routed)           0.305    51.228    internal_connections_inst/REGFILE_INST/readdata1_reg_reg[26]_i_2_n_1
+    SLICE_X22Y53         LUT6 (Prop_lut6_I0_O)        0.299    51.527 f  internal_connections_inst/REGFILE_INST/readdata1_reg[26]_i_1/O
+                         net (fo=2, routed)           1.018    52.545    internal_connections_inst/ifid_instance/instruction_reg[31]_i_83_1[26]
+    SLICE_X21Y47         LUT5 (Prop_lut5_I4_O)        0.124    52.669 f  internal_connections_inst/ifid_instance/instruction_reg[31]_i_93/O
+                         net (fo=1, routed)           1.682    54.351    internal_connections_inst/ifid_instance/CONTROLUNIT_INST/rs1_final[26]
+    SLICE_X18Y46         LUT6 (Prop_lut6_I3_O)        0.124    54.475 r  internal_connections_inst/ifid_instance/instruction_reg[31]_i_41/O
+                         net (fo=1, routed)           0.000    54.475    internal_connections_inst/ifid_instance/instruction_reg[31]_i_41_n_1
+    SLICE_X18Y46         CARRY4 (Prop_carry4_S[0]_CO[2])
+                                                      0.536    55.011 r  internal_connections_inst/ifid_instance/instruction_reg_reg[31]_i_21/CO[2]
+                         net (fo=1, routed)           1.278    56.289    internal_connections_inst/ifid_instance/CONTROLUNIT_INST/branch_taken0
+    SLICE_X20Y29         LUT6 (Prop_lut6_I5_O)        0.313    56.602 r  internal_connections_inst/ifid_instance/instruction_reg[31]_i_11/O
+                         net (fo=1, routed)           0.371    56.973    internal_connections_inst/ifid_instance/instruction_reg[31]_i_11_n_1
+    SLICE_X20Y29         LUT6 (Prop_lut6_I3_O)        0.124    57.097 r  internal_connections_inst/ifid_instance/instruction_reg[31]_i_7/O
+                         net (fo=70, routed)          2.114    59.211    internal_connections_inst/IDEX_INST/controlunit_ifflush_to_ifid
+    SLICE_X18Y27         LUT6 (Prop_lut6_I5_O)        0.124    59.335 r  internal_connections_inst/IDEX_INST/instruction_reg[31]_i_1/O
+                         net (fo=52, routed)          2.585    61.919    internal_connections_inst/ifid_instance/rs2_reg
+    SLICE_X21Y7          FDCE                                         r  internal_connections_inst/ifid_instance/instruction_reg_reg[6]/CE
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 resetbar
+                            (input port)
+  Destination:            internal_connections_inst/ifid_instance/instruction_reg_reg[7]/CE
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        61.919ns  (logic 4.013ns (6.480%)  route 57.907ns (93.520%))
+  Logic Levels:           12  (CARRY4=1 IBUF=1 LDCE=1 LUT1=1 LUT5=1 LUT6=6 MUXF7=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    R7                                                0.000     0.000 f  resetbar (IN)
+                         net (fo=0)                   0.000     0.000    resetbar
+    R7                   IBUF (Prop_ibuf_I_O)         1.024     1.024 f  resetbar_IBUF_inst/O
+                         net (fo=3, routed)           0.909     1.933    internal_connections_inst/DATA_MEMORY_INST/resetbar_IBUF
+    SLICE_X43Y13         LUT1 (Prop_lut1_I0_O)        0.124     2.057 r  internal_connections_inst/DATA_MEMORY_INST/mem[0][31]_i_2/O
+                         net (fo=9567, routed)       46.051    48.107    internal_connections_inst/REGFILE_INST/readdata1_reg[0]_i_11_0
+    SLICE_X27Y47         LDCE (SetClr_ldce_CLR_Q)     0.885    48.992 f  internal_connections_inst/REGFILE_INST/registers_reg[11][26]/Q
+                         net (fo=3, routed)           1.595    50.587    internal_connections_inst/REGFILE_INST/registers_reg_n_1_[11][26]
+    SLICE_X23Y51         LUT6 (Prop_lut6_I1_O)        0.124    50.711 f  internal_connections_inst/REGFILE_INST/readdata1_reg[26]_i_6/O
+                         net (fo=1, routed)           0.000    50.711    internal_connections_inst/REGFILE_INST/readdata1_reg[26]_i_6_n_1
+    SLICE_X23Y51         MUXF7 (Prop_muxf7_I0_O)      0.212    50.923 f  internal_connections_inst/REGFILE_INST/readdata1_reg_reg[26]_i_2/O
+                         net (fo=1, routed)           0.305    51.228    internal_connections_inst/REGFILE_INST/readdata1_reg_reg[26]_i_2_n_1
+    SLICE_X22Y53         LUT6 (Prop_lut6_I0_O)        0.299    51.527 f  internal_connections_inst/REGFILE_INST/readdata1_reg[26]_i_1/O
+                         net (fo=2, routed)           1.018    52.545    internal_connections_inst/ifid_instance/instruction_reg[31]_i_83_1[26]
+    SLICE_X21Y47         LUT5 (Prop_lut5_I4_O)        0.124    52.669 f  internal_connections_inst/ifid_instance/instruction_reg[31]_i_93/O
+                         net (fo=1, routed)           1.682    54.351    internal_connections_inst/ifid_instance/CONTROLUNIT_INST/rs1_final[26]
+    SLICE_X18Y46         LUT6 (Prop_lut6_I3_O)        0.124    54.475 r  internal_connections_inst/ifid_instance/instruction_reg[31]_i_41/O
+                         net (fo=1, routed)           0.000    54.475    internal_connections_inst/ifid_instance/instruction_reg[31]_i_41_n_1
+    SLICE_X18Y46         CARRY4 (Prop_carry4_S[0]_CO[2])
+                                                      0.536    55.011 r  internal_connections_inst/ifid_instance/instruction_reg_reg[31]_i_21/CO[2]
+                         net (fo=1, routed)           1.278    56.289    internal_connections_inst/ifid_instance/CONTROLUNIT_INST/branch_taken0
+    SLICE_X20Y29         LUT6 (Prop_lut6_I5_O)        0.313    56.602 r  internal_connections_inst/ifid_instance/instruction_reg[31]_i_11/O
+                         net (fo=1, routed)           0.371    56.973    internal_connections_inst/ifid_instance/instruction_reg[31]_i_11_n_1
+    SLICE_X20Y29         LUT6 (Prop_lut6_I3_O)        0.124    57.097 r  internal_connections_inst/ifid_instance/instruction_reg[31]_i_7/O
+                         net (fo=70, routed)          2.114    59.211    internal_connections_inst/IDEX_INST/controlunit_ifflush_to_ifid
+    SLICE_X18Y27         LUT6 (Prop_lut6_I5_O)        0.124    59.335 r  internal_connections_inst/IDEX_INST/instruction_reg[31]_i_1/O
+                         net (fo=52, routed)          2.585    61.919    internal_connections_inst/ifid_instance/rs2_reg
+    SLICE_X21Y7          FDCE                                         r  internal_connections_inst/ifid_instance/instruction_reg_reg[7]/CE
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 resetbar
+                            (input port)
+  Destination:            internal_connections_inst/ifid_instance/instruction_reg_reg[9]/CE
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        61.919ns  (logic 4.013ns (6.480%)  route 57.907ns (93.520%))
+  Logic Levels:           12  (CARRY4=1 IBUF=1 LDCE=1 LUT1=1 LUT5=1 LUT6=6 MUXF7=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    R7                                                0.000     0.000 f  resetbar (IN)
+                         net (fo=0)                   0.000     0.000    resetbar
+    R7                   IBUF (Prop_ibuf_I_O)         1.024     1.024 f  resetbar_IBUF_inst/O
+                         net (fo=3, routed)           0.909     1.933    internal_connections_inst/DATA_MEMORY_INST/resetbar_IBUF
+    SLICE_X43Y13         LUT1 (Prop_lut1_I0_O)        0.124     2.057 r  internal_connections_inst/DATA_MEMORY_INST/mem[0][31]_i_2/O
+                         net (fo=9567, routed)       46.051    48.107    internal_connections_inst/REGFILE_INST/readdata1_reg[0]_i_11_0
+    SLICE_X27Y47         LDCE (SetClr_ldce_CLR_Q)     0.885    48.992 f  internal_connections_inst/REGFILE_INST/registers_reg[11][26]/Q
+                         net (fo=3, routed)           1.595    50.587    internal_connections_inst/REGFILE_INST/registers_reg_n_1_[11][26]
+    SLICE_X23Y51         LUT6 (Prop_lut6_I1_O)        0.124    50.711 f  internal_connections_inst/REGFILE_INST/readdata1_reg[26]_i_6/O
+                         net (fo=1, routed)           0.000    50.711    internal_connections_inst/REGFILE_INST/readdata1_reg[26]_i_6_n_1
+    SLICE_X23Y51         MUXF7 (Prop_muxf7_I0_O)      0.212    50.923 f  internal_connections_inst/REGFILE_INST/readdata1_reg_reg[26]_i_2/O
+                         net (fo=1, routed)           0.305    51.228    internal_connections_inst/REGFILE_INST/readdata1_reg_reg[26]_i_2_n_1
+    SLICE_X22Y53         LUT6 (Prop_lut6_I0_O)        0.299    51.527 f  internal_connections_inst/REGFILE_INST/readdata1_reg[26]_i_1/O
+                         net (fo=2, routed)           1.018    52.545    internal_connections_inst/ifid_instance/instruction_reg[31]_i_83_1[26]
+    SLICE_X21Y47         LUT5 (Prop_lut5_I4_O)        0.124    52.669 f  internal_connections_inst/ifid_instance/instruction_reg[31]_i_93/O
+                         net (fo=1, routed)           1.682    54.351    internal_connections_inst/ifid_instance/CONTROLUNIT_INST/rs1_final[26]
+    SLICE_X18Y46         LUT6 (Prop_lut6_I3_O)        0.124    54.475 r  internal_connections_inst/ifid_instance/instruction_reg[31]_i_41/O
+                         net (fo=1, routed)           0.000    54.475    internal_connections_inst/ifid_instance/instruction_reg[31]_i_41_n_1
+    SLICE_X18Y46         CARRY4 (Prop_carry4_S[0]_CO[2])
+                                                      0.536    55.011 r  internal_connections_inst/ifid_instance/instruction_reg_reg[31]_i_21/CO[2]
+                         net (fo=1, routed)           1.278    56.289    internal_connections_inst/ifid_instance/CONTROLUNIT_INST/branch_taken0
+    SLICE_X20Y29         LUT6 (Prop_lut6_I5_O)        0.313    56.602 r  internal_connections_inst/ifid_instance/instruction_reg[31]_i_11/O
+                         net (fo=1, routed)           0.371    56.973    internal_connections_inst/ifid_instance/instruction_reg[31]_i_11_n_1
+    SLICE_X20Y29         LUT6 (Prop_lut6_I3_O)        0.124    57.097 r  internal_connections_inst/ifid_instance/instruction_reg[31]_i_7/O
+                         net (fo=70, routed)          2.114    59.211    internal_connections_inst/IDEX_INST/controlunit_ifflush_to_ifid
+    SLICE_X18Y27         LUT6 (Prop_lut6_I5_O)        0.124    59.335 r  internal_connections_inst/IDEX_INST/instruction_reg[31]_i_1/O
+                         net (fo=52, routed)          2.585    61.919    internal_connections_inst/ifid_instance/rs2_reg
+    SLICE_X20Y7          FDCE                                         r  internal_connections_inst/ifid_instance/instruction_reg_reg[9]/CE
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 resetbar
+                            (input port)
+  Destination:            internal_connections_inst/ifid_instance/rs1_reg_reg[0]/CE
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        61.919ns  (logic 4.013ns (6.480%)  route 57.907ns (93.520%))
+  Logic Levels:           12  (CARRY4=1 IBUF=1 LDCE=1 LUT1=1 LUT5=1 LUT6=6 MUXF7=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    R7                                                0.000     0.000 f  resetbar (IN)
+                         net (fo=0)                   0.000     0.000    resetbar
+    R7                   IBUF (Prop_ibuf_I_O)         1.024     1.024 f  resetbar_IBUF_inst/O
+                         net (fo=3, routed)           0.909     1.933    internal_connections_inst/DATA_MEMORY_INST/resetbar_IBUF
+    SLICE_X43Y13         LUT1 (Prop_lut1_I0_O)        0.124     2.057 r  internal_connections_inst/DATA_MEMORY_INST/mem[0][31]_i_2/O
+                         net (fo=9567, routed)       46.051    48.107    internal_connections_inst/REGFILE_INST/readdata1_reg[0]_i_11_0
+    SLICE_X27Y47         LDCE (SetClr_ldce_CLR_Q)     0.885    48.992 f  internal_connections_inst/REGFILE_INST/registers_reg[11][26]/Q
+                         net (fo=3, routed)           1.595    50.587    internal_connections_inst/REGFILE_INST/registers_reg_n_1_[11][26]
+    SLICE_X23Y51         LUT6 (Prop_lut6_I1_O)        0.124    50.711 f  internal_connections_inst/REGFILE_INST/readdata1_reg[26]_i_6/O
+                         net (fo=1, routed)           0.000    50.711    internal_connections_inst/REGFILE_INST/readdata1_reg[26]_i_6_n_1
+    SLICE_X23Y51         MUXF7 (Prop_muxf7_I0_O)      0.212    50.923 f  internal_connections_inst/REGFILE_INST/readdata1_reg_reg[26]_i_2/O
+                         net (fo=1, routed)           0.305    51.228    internal_connections_inst/REGFILE_INST/readdata1_reg_reg[26]_i_2_n_1
+    SLICE_X22Y53         LUT6 (Prop_lut6_I0_O)        0.299    51.527 f  internal_connections_inst/REGFILE_INST/readdata1_reg[26]_i_1/O
+                         net (fo=2, routed)           1.018    52.545    internal_connections_inst/ifid_instance/instruction_reg[31]_i_83_1[26]
+    SLICE_X21Y47         LUT5 (Prop_lut5_I4_O)        0.124    52.669 f  internal_connections_inst/ifid_instance/instruction_reg[31]_i_93/O
+                         net (fo=1, routed)           1.682    54.351    internal_connections_inst/ifid_instance/CONTROLUNIT_INST/rs1_final[26]
+    SLICE_X18Y46         LUT6 (Prop_lut6_I3_O)        0.124    54.475 r  internal_connections_inst/ifid_instance/instruction_reg[31]_i_41/O
+                         net (fo=1, routed)           0.000    54.475    internal_connections_inst/ifid_instance/instruction_reg[31]_i_41_n_1
+    SLICE_X18Y46         CARRY4 (Prop_carry4_S[0]_CO[2])
+                                                      0.536    55.011 r  internal_connections_inst/ifid_instance/instruction_reg_reg[31]_i_21/CO[2]
+                         net (fo=1, routed)           1.278    56.289    internal_connections_inst/ifid_instance/CONTROLUNIT_INST/branch_taken0
+    SLICE_X20Y29         LUT6 (Prop_lut6_I5_O)        0.313    56.602 r  internal_connections_inst/ifid_instance/instruction_reg[31]_i_11/O
+                         net (fo=1, routed)           0.371    56.973    internal_connections_inst/ifid_instance/instruction_reg[31]_i_11_n_1
+    SLICE_X20Y29         LUT6 (Prop_lut6_I3_O)        0.124    57.097 r  internal_connections_inst/ifid_instance/instruction_reg[31]_i_7/O
+                         net (fo=70, routed)          2.114    59.211    internal_connections_inst/IDEX_INST/controlunit_ifflush_to_ifid
+    SLICE_X18Y27         LUT6 (Prop_lut6_I5_O)        0.124    59.335 r  internal_connections_inst/IDEX_INST/instruction_reg[31]_i_1/O
+                         net (fo=52, routed)          2.585    61.919    internal_connections_inst/ifid_instance/rs2_reg
+    SLICE_X20Y7          FDCE                                         r  internal_connections_inst/ifid_instance/rs1_reg_reg[0]/CE
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 resetbar
+                            (input port)
+  Destination:            internal_connections_inst/ifid_instance/instruction_reg_reg[0]/CE
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        61.626ns  (logic 4.013ns (6.511%)  route 57.614ns (93.489%))
+  Logic Levels:           12  (CARRY4=1 IBUF=1 LDCE=1 LUT1=1 LUT5=1 LUT6=6 MUXF7=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    R7                                                0.000     0.000 f  resetbar (IN)
+                         net (fo=0)                   0.000     0.000    resetbar
+    R7                   IBUF (Prop_ibuf_I_O)         1.024     1.024 f  resetbar_IBUF_inst/O
+                         net (fo=3, routed)           0.909     1.933    internal_connections_inst/DATA_MEMORY_INST/resetbar_IBUF
+    SLICE_X43Y13         LUT1 (Prop_lut1_I0_O)        0.124     2.057 r  internal_connections_inst/DATA_MEMORY_INST/mem[0][31]_i_2/O
+                         net (fo=9567, routed)       46.051    48.107    internal_connections_inst/REGFILE_INST/readdata1_reg[0]_i_11_0
+    SLICE_X27Y47         LDCE (SetClr_ldce_CLR_Q)     0.885    48.992 f  internal_connections_inst/REGFILE_INST/registers_reg[11][26]/Q
+                         net (fo=3, routed)           1.595    50.587    internal_connections_inst/REGFILE_INST/registers_reg_n_1_[11][26]
+    SLICE_X23Y51         LUT6 (Prop_lut6_I1_O)        0.124    50.711 f  internal_connections_inst/REGFILE_INST/readdata1_reg[26]_i_6/O
+                         net (fo=1, routed)           0.000    50.711    internal_connections_inst/REGFILE_INST/readdata1_reg[26]_i_6_n_1
+    SLICE_X23Y51         MUXF7 (Prop_muxf7_I0_O)      0.212    50.923 f  internal_connections_inst/REGFILE_INST/readdata1_reg_reg[26]_i_2/O
+                         net (fo=1, routed)           0.305    51.228    internal_connections_inst/REGFILE_INST/readdata1_reg_reg[26]_i_2_n_1
+    SLICE_X22Y53         LUT6 (Prop_lut6_I0_O)        0.299    51.527 f  internal_connections_inst/REGFILE_INST/readdata1_reg[26]_i_1/O
+                         net (fo=2, routed)           1.018    52.545    internal_connections_inst/ifid_instance/instruction_reg[31]_i_83_1[26]
+    SLICE_X21Y47         LUT5 (Prop_lut5_I4_O)        0.124    52.669 f  internal_connections_inst/ifid_instance/instruction_reg[31]_i_93/O
+                         net (fo=1, routed)           1.682    54.351    internal_connections_inst/ifid_instance/CONTROLUNIT_INST/rs1_final[26]
+    SLICE_X18Y46         LUT6 (Prop_lut6_I3_O)        0.124    54.475 r  internal_connections_inst/ifid_instance/instruction_reg[31]_i_41/O
+                         net (fo=1, routed)           0.000    54.475    internal_connections_inst/ifid_instance/instruction_reg[31]_i_41_n_1
+    SLICE_X18Y46         CARRY4 (Prop_carry4_S[0]_CO[2])
+                                                      0.536    55.011 r  internal_connections_inst/ifid_instance/instruction_reg_reg[31]_i_21/CO[2]
+                         net (fo=1, routed)           1.278    56.289    internal_connections_inst/ifid_instance/CONTROLUNIT_INST/branch_taken0
+    SLICE_X20Y29         LUT6 (Prop_lut6_I5_O)        0.313    56.602 r  internal_connections_inst/ifid_instance/instruction_reg[31]_i_11/O
+                         net (fo=1, routed)           0.371    56.973    internal_connections_inst/ifid_instance/instruction_reg[31]_i_11_n_1
+    SLICE_X20Y29         LUT6 (Prop_lut6_I3_O)        0.124    57.097 r  internal_connections_inst/ifid_instance/instruction_reg[31]_i_7/O
+                         net (fo=70, routed)          2.114    59.211    internal_connections_inst/IDEX_INST/controlunit_ifflush_to_ifid
+    SLICE_X18Y27         LUT6 (Prop_lut6_I5_O)        0.124    59.335 r  internal_connections_inst/IDEX_INST/instruction_reg[31]_i_1/O
+                         net (fo=52, routed)          2.292    61.626    internal_connections_inst/ifid_instance/rs2_reg
+    SLICE_X20Y10         FDCE                                         r  internal_connections_inst/ifid_instance/instruction_reg_reg[0]/CE
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 resetbar
+                            (input port)
+  Destination:            internal_connections_inst/ifid_instance/instruction_reg_reg[11]/CE
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        61.626ns  (logic 4.013ns (6.511%)  route 57.614ns (93.489%))
+  Logic Levels:           12  (CARRY4=1 IBUF=1 LDCE=1 LUT1=1 LUT5=1 LUT6=6 MUXF7=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    R7                                                0.000     0.000 f  resetbar (IN)
+                         net (fo=0)                   0.000     0.000    resetbar
+    R7                   IBUF (Prop_ibuf_I_O)         1.024     1.024 f  resetbar_IBUF_inst/O
+                         net (fo=3, routed)           0.909     1.933    internal_connections_inst/DATA_MEMORY_INST/resetbar_IBUF
+    SLICE_X43Y13         LUT1 (Prop_lut1_I0_O)        0.124     2.057 r  internal_connections_inst/DATA_MEMORY_INST/mem[0][31]_i_2/O
+                         net (fo=9567, routed)       46.051    48.107    internal_connections_inst/REGFILE_INST/readdata1_reg[0]_i_11_0
+    SLICE_X27Y47         LDCE (SetClr_ldce_CLR_Q)     0.885    48.992 f  internal_connections_inst/REGFILE_INST/registers_reg[11][26]/Q
+                         net (fo=3, routed)           1.595    50.587    internal_connections_inst/REGFILE_INST/registers_reg_n_1_[11][26]
+    SLICE_X23Y51         LUT6 (Prop_lut6_I1_O)        0.124    50.711 f  internal_connections_inst/REGFILE_INST/readdata1_reg[26]_i_6/O
+                         net (fo=1, routed)           0.000    50.711    internal_connections_inst/REGFILE_INST/readdata1_reg[26]_i_6_n_1
+    SLICE_X23Y51         MUXF7 (Prop_muxf7_I0_O)      0.212    50.923 f  internal_connections_inst/REGFILE_INST/readdata1_reg_reg[26]_i_2/O
+                         net (fo=1, routed)           0.305    51.228    internal_connections_inst/REGFILE_INST/readdata1_reg_reg[26]_i_2_n_1
+    SLICE_X22Y53         LUT6 (Prop_lut6_I0_O)        0.299    51.527 f  internal_connections_inst/REGFILE_INST/readdata1_reg[26]_i_1/O
+                         net (fo=2, routed)           1.018    52.545    internal_connections_inst/ifid_instance/instruction_reg[31]_i_83_1[26]
+    SLICE_X21Y47         LUT5 (Prop_lut5_I4_O)        0.124    52.669 f  internal_connections_inst/ifid_instance/instruction_reg[31]_i_93/O
+                         net (fo=1, routed)           1.682    54.351    internal_connections_inst/ifid_instance/CONTROLUNIT_INST/rs1_final[26]
+    SLICE_X18Y46         LUT6 (Prop_lut6_I3_O)        0.124    54.475 r  internal_connections_inst/ifid_instance/instruction_reg[31]_i_41/O
+                         net (fo=1, routed)           0.000    54.475    internal_connections_inst/ifid_instance/instruction_reg[31]_i_41_n_1
+    SLICE_X18Y46         CARRY4 (Prop_carry4_S[0]_CO[2])
+                                                      0.536    55.011 r  internal_connections_inst/ifid_instance/instruction_reg_reg[31]_i_21/CO[2]
+                         net (fo=1, routed)           1.278    56.289    internal_connections_inst/ifid_instance/CONTROLUNIT_INST/branch_taken0
+    SLICE_X20Y29         LUT6 (Prop_lut6_I5_O)        0.313    56.602 r  internal_connections_inst/ifid_instance/instruction_reg[31]_i_11/O
+                         net (fo=1, routed)           0.371    56.973    internal_connections_inst/ifid_instance/instruction_reg[31]_i_11_n_1
+    SLICE_X20Y29         LUT6 (Prop_lut6_I3_O)        0.124    57.097 r  internal_connections_inst/ifid_instance/instruction_reg[31]_i_7/O
+                         net (fo=70, routed)          2.114    59.211    internal_connections_inst/IDEX_INST/controlunit_ifflush_to_ifid
+    SLICE_X18Y27         LUT6 (Prop_lut6_I5_O)        0.124    59.335 r  internal_connections_inst/IDEX_INST/instruction_reg[31]_i_1/O
+                         net (fo=52, routed)          2.292    61.626    internal_connections_inst/ifid_instance/rs2_reg
+    SLICE_X20Y10         FDCE                                         r  internal_connections_inst/ifid_instance/instruction_reg_reg[11]/CE
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 resetbar
+                            (input port)
+  Destination:            internal_connections_inst/ifid_instance/instruction_reg_reg[12]/CE
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        61.626ns  (logic 4.013ns (6.511%)  route 57.614ns (93.489%))
+  Logic Levels:           12  (CARRY4=1 IBUF=1 LDCE=1 LUT1=1 LUT5=1 LUT6=6 MUXF7=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    R7                                                0.000     0.000 f  resetbar (IN)
+                         net (fo=0)                   0.000     0.000    resetbar
+    R7                   IBUF (Prop_ibuf_I_O)         1.024     1.024 f  resetbar_IBUF_inst/O
+                         net (fo=3, routed)           0.909     1.933    internal_connections_inst/DATA_MEMORY_INST/resetbar_IBUF
+    SLICE_X43Y13         LUT1 (Prop_lut1_I0_O)        0.124     2.057 r  internal_connections_inst/DATA_MEMORY_INST/mem[0][31]_i_2/O
+                         net (fo=9567, routed)       46.051    48.107    internal_connections_inst/REGFILE_INST/readdata1_reg[0]_i_11_0
+    SLICE_X27Y47         LDCE (SetClr_ldce_CLR_Q)     0.885    48.992 f  internal_connections_inst/REGFILE_INST/registers_reg[11][26]/Q
+                         net (fo=3, routed)           1.595    50.587    internal_connections_inst/REGFILE_INST/registers_reg_n_1_[11][26]
+    SLICE_X23Y51         LUT6 (Prop_lut6_I1_O)        0.124    50.711 f  internal_connections_inst/REGFILE_INST/readdata1_reg[26]_i_6/O
+                         net (fo=1, routed)           0.000    50.711    internal_connections_inst/REGFILE_INST/readdata1_reg[26]_i_6_n_1
+    SLICE_X23Y51         MUXF7 (Prop_muxf7_I0_O)      0.212    50.923 f  internal_connections_inst/REGFILE_INST/readdata1_reg_reg[26]_i_2/O
+                         net (fo=1, routed)           0.305    51.228    internal_connections_inst/REGFILE_INST/readdata1_reg_reg[26]_i_2_n_1
+    SLICE_X22Y53         LUT6 (Prop_lut6_I0_O)        0.299    51.527 f  internal_connections_inst/REGFILE_INST/readdata1_reg[26]_i_1/O
+                         net (fo=2, routed)           1.018    52.545    internal_connections_inst/ifid_instance/instruction_reg[31]_i_83_1[26]
+    SLICE_X21Y47         LUT5 (Prop_lut5_I4_O)        0.124    52.669 f  internal_connections_inst/ifid_instance/instruction_reg[31]_i_93/O
+                         net (fo=1, routed)           1.682    54.351    internal_connections_inst/ifid_instance/CONTROLUNIT_INST/rs1_final[26]
+    SLICE_X18Y46         LUT6 (Prop_lut6_I3_O)        0.124    54.475 r  internal_connections_inst/ifid_instance/instruction_reg[31]_i_41/O
+                         net (fo=1, routed)           0.000    54.475    internal_connections_inst/ifid_instance/instruction_reg[31]_i_41_n_1
+    SLICE_X18Y46         CARRY4 (Prop_carry4_S[0]_CO[2])
+                                                      0.536    55.011 r  internal_connections_inst/ifid_instance/instruction_reg_reg[31]_i_21/CO[2]
+                         net (fo=1, routed)           1.278    56.289    internal_connections_inst/ifid_instance/CONTROLUNIT_INST/branch_taken0
+    SLICE_X20Y29         LUT6 (Prop_lut6_I5_O)        0.313    56.602 r  internal_connections_inst/ifid_instance/instruction_reg[31]_i_11/O
+                         net (fo=1, routed)           0.371    56.973    internal_connections_inst/ifid_instance/instruction_reg[31]_i_11_n_1
+    SLICE_X20Y29         LUT6 (Prop_lut6_I3_O)        0.124    57.097 r  internal_connections_inst/ifid_instance/instruction_reg[31]_i_7/O
+                         net (fo=70, routed)          2.114    59.211    internal_connections_inst/IDEX_INST/controlunit_ifflush_to_ifid
+    SLICE_X18Y27         LUT6 (Prop_lut6_I5_O)        0.124    59.335 r  internal_connections_inst/IDEX_INST/instruction_reg[31]_i_1/O
+                         net (fo=52, routed)          2.292    61.626    internal_connections_inst/ifid_instance/rs2_reg
+    SLICE_X20Y10         FDCE                                         r  internal_connections_inst/ifid_instance/instruction_reg_reg[12]/CE
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 resetbar
+                            (input port)
+  Destination:            internal_connections_inst/ifid_instance/instruction_reg_reg[8]/CE
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        61.626ns  (logic 4.013ns (6.511%)  route 57.614ns (93.489%))
+  Logic Levels:           12  (CARRY4=1 IBUF=1 LDCE=1 LUT1=1 LUT5=1 LUT6=6 MUXF7=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    R7                                                0.000     0.000 f  resetbar (IN)
+                         net (fo=0)                   0.000     0.000    resetbar
+    R7                   IBUF (Prop_ibuf_I_O)         1.024     1.024 f  resetbar_IBUF_inst/O
+                         net (fo=3, routed)           0.909     1.933    internal_connections_inst/DATA_MEMORY_INST/resetbar_IBUF
+    SLICE_X43Y13         LUT1 (Prop_lut1_I0_O)        0.124     2.057 r  internal_connections_inst/DATA_MEMORY_INST/mem[0][31]_i_2/O
+                         net (fo=9567, routed)       46.051    48.107    internal_connections_inst/REGFILE_INST/readdata1_reg[0]_i_11_0
+    SLICE_X27Y47         LDCE (SetClr_ldce_CLR_Q)     0.885    48.992 f  internal_connections_inst/REGFILE_INST/registers_reg[11][26]/Q
+                         net (fo=3, routed)           1.595    50.587    internal_connections_inst/REGFILE_INST/registers_reg_n_1_[11][26]
+    SLICE_X23Y51         LUT6 (Prop_lut6_I1_O)        0.124    50.711 f  internal_connections_inst/REGFILE_INST/readdata1_reg[26]_i_6/O
+                         net (fo=1, routed)           0.000    50.711    internal_connections_inst/REGFILE_INST/readdata1_reg[26]_i_6_n_1
+    SLICE_X23Y51         MUXF7 (Prop_muxf7_I0_O)      0.212    50.923 f  internal_connections_inst/REGFILE_INST/readdata1_reg_reg[26]_i_2/O
+                         net (fo=1, routed)           0.305    51.228    internal_connections_inst/REGFILE_INST/readdata1_reg_reg[26]_i_2_n_1
+    SLICE_X22Y53         LUT6 (Prop_lut6_I0_O)        0.299    51.527 f  internal_connections_inst/REGFILE_INST/readdata1_reg[26]_i_1/O
+                         net (fo=2, routed)           1.018    52.545    internal_connections_inst/ifid_instance/instruction_reg[31]_i_83_1[26]
+    SLICE_X21Y47         LUT5 (Prop_lut5_I4_O)        0.124    52.669 f  internal_connections_inst/ifid_instance/instruction_reg[31]_i_93/O
+                         net (fo=1, routed)           1.682    54.351    internal_connections_inst/ifid_instance/CONTROLUNIT_INST/rs1_final[26]
+    SLICE_X18Y46         LUT6 (Prop_lut6_I3_O)        0.124    54.475 r  internal_connections_inst/ifid_instance/instruction_reg[31]_i_41/O
+                         net (fo=1, routed)           0.000    54.475    internal_connections_inst/ifid_instance/instruction_reg[31]_i_41_n_1
+    SLICE_X18Y46         CARRY4 (Prop_carry4_S[0]_CO[2])
+                                                      0.536    55.011 r  internal_connections_inst/ifid_instance/instruction_reg_reg[31]_i_21/CO[2]
+                         net (fo=1, routed)           1.278    56.289    internal_connections_inst/ifid_instance/CONTROLUNIT_INST/branch_taken0
+    SLICE_X20Y29         LUT6 (Prop_lut6_I5_O)        0.313    56.602 r  internal_connections_inst/ifid_instance/instruction_reg[31]_i_11/O
+                         net (fo=1, routed)           0.371    56.973    internal_connections_inst/ifid_instance/instruction_reg[31]_i_11_n_1
+    SLICE_X20Y29         LUT6 (Prop_lut6_I3_O)        0.124    57.097 r  internal_connections_inst/ifid_instance/instruction_reg[31]_i_7/O
+                         net (fo=70, routed)          2.114    59.211    internal_connections_inst/IDEX_INST/controlunit_ifflush_to_ifid
+    SLICE_X18Y27         LUT6 (Prop_lut6_I5_O)        0.124    59.335 r  internal_connections_inst/IDEX_INST/instruction_reg[31]_i_1/O
+                         net (fo=52, routed)          2.292    61.626    internal_connections_inst/ifid_instance/rs2_reg
+    SLICE_X20Y10         FDCE                                         r  internal_connections_inst/ifid_instance/instruction_reg_reg[8]/CE
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 internal_connections_inst/EXMEM_INST/readdata2_reg_reg[13]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            internal_connections_inst/DATA_MEMORY_INST/mem_reg[59][13]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.291ns  (logic 0.141ns (48.498%)  route 0.150ns (51.502%))
+  Logic Levels:           1  (FDCE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X18Y51         FDCE                         0.000     0.000 r  internal_connections_inst/EXMEM_INST/readdata2_reg_reg[13]/C
+    SLICE_X18Y51         FDCE (Prop_fdce_C_Q)         0.141     0.141 r  internal_connections_inst/EXMEM_INST/readdata2_reg_reg[13]/Q
+                         net (fo=128, routed)         0.150     0.291    internal_connections_inst/DATA_MEMORY_INST/readdata2out[13]
+    SLICE_X16Y50         FDCE                                         r  internal_connections_inst/DATA_MEMORY_INST/mem_reg[59][13]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 internal_connections_inst/EXMEM_INST/readdata2_reg_reg[13]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            internal_connections_inst/DATA_MEMORY_INST/mem_reg[63][13]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.300ns  (logic 0.141ns (47.035%)  route 0.159ns (52.965%))
+  Logic Levels:           1  (FDCE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X18Y51         FDCE                         0.000     0.000 r  internal_connections_inst/EXMEM_INST/readdata2_reg_reg[13]/C
+    SLICE_X18Y51         FDCE (Prop_fdce_C_Q)         0.141     0.141 r  internal_connections_inst/EXMEM_INST/readdata2_reg_reg[13]/Q
+                         net (fo=128, routed)         0.159     0.300    internal_connections_inst/DATA_MEMORY_INST/readdata2out[13]
+    SLICE_X16Y52         FDCE                                         r  internal_connections_inst/DATA_MEMORY_INST/mem_reg[63][13]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 internal_connections_inst/ifid_instance/instruction_reg_reg[29]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            internal_connections_inst/IDEX_INST/instruction_reg_reg[29]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.312ns  (logic 0.141ns (45.164%)  route 0.171ns (54.836%))
+  Logic Levels:           1  (FDCE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X17Y30         FDCE                         0.000     0.000 r  internal_connections_inst/ifid_instance/instruction_reg_reg[29]/C
+    SLICE_X17Y30         FDCE (Prop_fdce_C_Q)         0.141     0.141 r  internal_connections_inst/ifid_instance/instruction_reg_reg[29]/Q
+                         net (fo=4, routed)           0.171     0.312    internal_connections_inst/IDEX_INST/ifid_instruction_to_OUT[19]
+    SLICE_X18Y28         FDCE                                         r  internal_connections_inst/IDEX_INST/instruction_reg_reg[29]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 internal_connections_inst/EXMEM_INST/rd_reg_reg[1]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            internal_connections_inst/MEMWB_INST/rd_reg_reg[1]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.323ns  (logic 0.128ns (39.628%)  route 0.195ns (60.372%))
+  Logic Levels:           1  (FDCE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X21Y31         FDCE                         0.000     0.000 r  internal_connections_inst/EXMEM_INST/rd_reg_reg[1]/C
+    SLICE_X21Y31         FDCE (Prop_fdce_C_Q)         0.128     0.128 r  internal_connections_inst/EXMEM_INST/rd_reg_reg[1]/Q
+                         net (fo=8, routed)           0.195     0.323    internal_connections_inst/MEMWB_INST/rd_reg_reg[4]_0[1]
+    SLICE_X20Y34         FDCE                                         r  internal_connections_inst/MEMWB_INST/rd_reg_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 internal_connections_inst/EXMEM_INST/rd_reg_reg[0]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            internal_connections_inst/MEMWB_INST/rd_reg_reg[0]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.325ns  (logic 0.128ns (39.338%)  route 0.197ns (60.662%))
+  Logic Levels:           1  (FDCE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X18Y29         FDCE                         0.000     0.000 r  internal_connections_inst/EXMEM_INST/rd_reg_reg[0]/C
+    SLICE_X18Y29         FDCE (Prop_fdce_C_Q)         0.128     0.128 r  internal_connections_inst/EXMEM_INST/rd_reg_reg[0]/Q
+                         net (fo=8, routed)           0.197     0.325    internal_connections_inst/MEMWB_INST/rd_reg_reg[4]_0[0]
+    SLICE_X19Y28         FDCE                                         r  internal_connections_inst/MEMWB_INST/rd_reg_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 internal_connections_inst/EXMEM_INST/readdata2_reg_reg[27]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            internal_connections_inst/DATA_MEMORY_INST/mem_reg[100][27]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.327ns  (logic 0.141ns (43.138%)  route 0.186ns (56.862%))
+  Logic Levels:           1  (FDCE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X22Y50         FDCE                         0.000     0.000 r  internal_connections_inst/EXMEM_INST/readdata2_reg_reg[27]/C
+    SLICE_X22Y50         FDCE (Prop_fdce_C_Q)         0.141     0.141 r  internal_connections_inst/EXMEM_INST/readdata2_reg_reg[27]/Q
+                         net (fo=128, routed)         0.186     0.327    internal_connections_inst/DATA_MEMORY_INST/readdata2out[27]
+    SLICE_X22Y53         FDCE                                         r  internal_connections_inst/DATA_MEMORY_INST/mem_reg[100][27]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 internal_connections_inst/EXMEM_INST/readdata2_reg_reg[13]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            internal_connections_inst/DATA_MEMORY_INST/mem_reg[98][13]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.328ns  (logic 0.141ns (43.039%)  route 0.187ns (56.961%))
+  Logic Levels:           1  (FDCE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X18Y51         FDCE                         0.000     0.000 r  internal_connections_inst/EXMEM_INST/readdata2_reg_reg[13]/C
+    SLICE_X18Y51         FDCE (Prop_fdce_C_Q)         0.141     0.141 r  internal_connections_inst/EXMEM_INST/readdata2_reg_reg[13]/Q
+                         net (fo=128, routed)         0.187     0.328    internal_connections_inst/DATA_MEMORY_INST/readdata2out[13]
+    SLICE_X21Y51         FDCE                                         r  internal_connections_inst/DATA_MEMORY_INST/mem_reg[98][13]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 internal_connections_inst/EXMEM_INST/RegWrite_reg_reg/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            internal_connections_inst/MEMWB_INST/RegWrite_reg_reg/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.329ns  (logic 0.128ns (38.876%)  route 0.201ns (61.124%))
+  Logic Levels:           1  (FDCE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X19Y28         FDCE                         0.000     0.000 r  internal_connections_inst/EXMEM_INST/RegWrite_reg_reg/C
+    SLICE_X19Y28         FDCE (Prop_fdce_C_Q)         0.128     0.128 r  internal_connections_inst/EXMEM_INST/RegWrite_reg_reg/Q
+                         net (fo=2, routed)           0.201     0.329    internal_connections_inst/MEMWB_INST/exmem_regwrite_to_memwb
+    SLICE_X20Y32         FDCE                                         r  internal_connections_inst/MEMWB_INST/RegWrite_reg_reg/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 internal_connections_inst/pc_instance/pc_reg_reg[1]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            internal_connections_inst/ifid_instance/pcout_reg_reg[1]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.331ns  (logic 0.190ns (57.386%)  route 0.141ns (42.614%))
+  Logic Levels:           2  (FDCE=1 LUT2=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X18Y31         FDCE                         0.000     0.000 r  internal_connections_inst/pc_instance/pc_reg_reg[1]/C
+    SLICE_X18Y31         FDCE (Prop_fdce_C_Q)         0.141     0.141 r  internal_connections_inst/pc_instance/pc_reg_reg[1]/Q
+                         net (fo=2, routed)           0.141     0.282    internal_connections_inst/pc_instance/pc_pcout_to_pc4adder[1]
+    SLICE_X17Y30         LUT2 (Prop_lut2_I0_O)        0.049     0.331 r  internal_connections_inst/pc_instance/pcout_reg[1]_i_1/O
+                         net (fo=1, routed)           0.000     0.331    internal_connections_inst/ifid_instance/pcout_reg_reg[15]_0[1]
+    SLICE_X17Y30         FDCE                                         r  internal_connections_inst/ifid_instance/pcout_reg_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 internal_connections_inst/EXMEM_INST/readdata2_reg_reg[31]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            internal_connections_inst/DATA_MEMORY_INST/mem_reg[3][31]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.345ns  (logic 0.141ns (40.853%)  route 0.204ns (59.147%))
+  Logic Levels:           1  (FDCE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X27Y44         FDCE                         0.000     0.000 r  internal_connections_inst/EXMEM_INST/readdata2_reg_reg[31]/C
+    SLICE_X27Y44         FDCE (Prop_fdce_C_Q)         0.141     0.141 r  internal_connections_inst/EXMEM_INST/readdata2_reg_reg[31]/Q
+                         net (fo=128, routed)         0.204     0.345    internal_connections_inst/DATA_MEMORY_INST/readdata2out[31]
+    SLICE_X30Y45         FDCE                                         r  internal_connections_inst/DATA_MEMORY_INST/mem_reg[3][31]/D
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+
