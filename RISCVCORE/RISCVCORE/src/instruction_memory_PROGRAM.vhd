@@ -53,7 +53,7 @@ begin
     elsif rising_edge(debug_clk) then
         --debug_data <= mem(to_integer(unsigned(debug_addr)));  -- Read operation
     else
-        debug_data <= (others => 'Z');  -- Default state
+        --debug_data <= (others => 'Z');  -- Default state
     end if;
 end process;
 

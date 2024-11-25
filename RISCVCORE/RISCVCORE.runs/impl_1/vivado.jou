@@ -3,8 +3,8 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Thu Nov 21 13:29:02 2024
-# Process ID: 11644
+# Start of session at: Thu Nov 21 18:39:45 2024
+# Process ID: 9380
 # Current directory: C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.runs/impl_1
 # Command line: vivado.exe -log RICSVCORE.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source RICSVCORE.tcl -notrace
 # Log file: C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.runs/impl_1/RICSVCORE.vdi
@@ -19,6 +19,6 @@
 # Host memory       :68558 MB
 # Swap memory       :10200 MB
 # Total Virtual     :78758 MB
-# Available Virtual :68729 MB
+# Available Virtual :64118 MB
 #-----------------------------------------------------------
 source RICSVCORE.tcl -notrace

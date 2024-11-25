@@ -6,30 +6,22 @@ use work.all;
 --types package
 library work;
 use work.types_pkg.all;
-			
+            
 entity RICSVCORE is
     port (
         -- System control ports
         clock : in std_logic;
         resetbar : in std_logic;
         
-        -- Instruction Memory debug ports
-        IM_debug_clk : in STD_LOGIC;	 
-        IM_debug_addr : in STD_LOGIC_VECTOR(7 downto 0);
-        IM_debug_instruction : in STD_LOGIC_VECTOR(31 downto 0);
-        IM_debug_we : in STD_LOGIC;
+        -- Unified debug interface
+        debug_clk : in std_logic;
+        debug_addr : in std_logic_vector(6 downto 0);  -- 7 bits for 128 addresses
+        debug_data : inout std_logic_vector(31 downto 0);
         
-        -- Data Memory debug ports
-        DM_debug_clk : in std_logic;
-        DM_debug_address : in std_logic_vector(31 downto 0);
-        DM_debug_read_enable : in std_logic;
-        DM_debug_data_out : out std_logic_vector(31 downto 0);
-			
-        -- Register File debug ports
-        RF_debug_clk : in std_logic;
-        RF_debug_address : in std_logic_vector(4 downto 0);
-        RF_debug_read_enable : in std_logic;
-        RF_debug_data_out : out std_logic_vector(31 downto 0)
+        -- Separate enable signals
+        rf_enable : in std_logic;    -- Register File read enable
+        im_enable : in std_logic;    -- Instruction Memory write enable
+        dm_enable : in std_logic     -- Data Memory read enable
     );
 end entity RICSVCORE;
 
@@ -37,27 +29,14 @@ architecture behavior of RICSVCORE is
     -- Component declaration for internal_connections
     component internal_connections is
         port (
-            -- System control ports
             clock : in std_logic;
             resetbar : in std_logic;
-            
-            -- Instruction Memory debug ports
-            IM_debug_clk : in STD_LOGIC;	 
-            IM_debug_addr : in STD_LOGIC_VECTOR(7 downto 0);
-            IM_debug_instruction : in STD_LOGIC_VECTOR(31 downto 0);
-            IM_debug_we : in STD_LOGIC;
-            
-            -- Data Memory debug ports
-            DM_debug_clk : in std_logic;
-            DM_debug_address : in std_logic_vector(31 downto 0);
-            DM_debug_read_enable : in std_logic;
-            DM_debug_data_out : out std_logic_vector(31 downto 0);
-                
-            -- Register File debug ports
-            RF_debug_clk : in std_logic;
-            RF_debug_address : in std_logic_vector(4 downto 0);
-            RF_debug_read_enable : in std_logic;
-            RF_debug_data_out : out std_logic_vector(31 downto 0)
+            debug_clk : in std_logic;
+            debug_addr : in std_logic_vector(6 downto 0);
+            debug_data : inout std_logic_vector(31 downto 0);
+            rf_enable : in std_logic;
+            im_enable : in std_logic;
+            dm_enable : in std_logic
         );
     end component;
 
@@ -74,24 +53,15 @@ begin
             clock => clock,
             resetbar => resetbar,
             
-            -- Instruction Memory debug ports
-            IM_debug_clk => IM_debug_clk,
-            IM_debug_addr => IM_debug_addr,
-            IM_debug_instruction => IM_debug_instruction,
-            IM_debug_we => IM_debug_we,
+            -- Debug interface
+            debug_clk => debug_clk,
+            debug_addr => debug_addr,
+            debug_data => debug_data,
             
-            -- Data Memory debug ports
-            DM_debug_clk => DM_debug_clk,
-            DM_debug_address => DM_debug_address,
-            DM_debug_read_enable => DM_debug_read_enable,
-            DM_debug_data_out => DM_debug_data_out,
-            
-            -- Register File debug ports
-            RF_debug_clk => RF_debug_clk,
-            RF_debug_address => RF_debug_address,
-            RF_debug_read_enable => RF_debug_read_enable,
-            RF_debug_data_out => RF_debug_data_out
+            -- Memory enables
+            rf_enable => rf_enable,
+            im_enable => im_enable,
+            dm_enable => dm_enable
         );
 
-    -- Additional logic or signal assignments can be added here
 end architecture behavior;

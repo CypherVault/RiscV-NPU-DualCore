@@ -8,12 +8,12 @@
   **** SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
   **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
   **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-  **** Start of session at: Thu Nov 21 13:26:32 2024
+  **** Start of session at: Thu Nov 21 18:38:03 2024
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source RICSVCORE.tcl -notrace
-create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 541.410 ; gain = 198.816
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 543.738 ; gain = 201.707
 Command: read_checkpoint -auto_incremental -incremental {C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/utils_1/imports/synth_1/RICSVCORE.dcp}
 INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/utils_1/imports/synth_1/RICSVCORE.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -21,16 +21,19 @@ Command: synth_design -top RICSVCORE -part xc7z007sclg225-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z007s'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z007s'
+INFO: [Device 21-403] Loading part xc7z007sclg225-1
+INFO: [Device 21-9227] Part: xc7z007sclg225-1 does not have CEAM library.
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 10968
+INFO: [Synth 8-7075] Helper process launched with PID 10028
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1003.910 ; gain = 450.078
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1402.047 ; gain = 449.418
 ---------------------------------------------------------------------------------
-CRITICAL WARNING: [Synth 8-9871] overwriting existing primary unit 'types_pkg' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/types_pk.vhd:4]
-INFO: [Synth 8-638] synthesizing module 'RICSVCORE' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/RISCVCORE.vhd:36]
-INFO: [Synth 8-3491] module 'internal_connections' declared at 'C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/internalconnections.vhd:10' bound to instance 'internal_connections_inst' of component 'internal_connections' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/RISCVCORE.vhd:71]
-INFO: [Synth 8-638] synthesizing module 'internal_connections' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/internalconnections.vhd:50]
+INFO: [Synth 8-638] synthesizing module 'RICSVCORE' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/RISCVCORE.vhd:28]
+INFO: [Synth 8-3491] module 'internal_connections' declared at 'C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/internalconnections.vhd:10' bound to instance 'internal_connections_inst' of component 'internal_connections' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/RISCVCORE.vhd:50]
+INFO: [Synth 8-638] synthesizing module 'internal_connections' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/internalconnections.vhd:32]
 INFO: [Synth 8-638] synthesizing module 'pc_mux' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/pc_mux.vhd:13]
 INFO: [Synth 8-226] default block is never used [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/pc_mux.vhd:19]
 INFO: [Synth 8-256] done synthesizing module 'pc_mux' (0#1) [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/pc_mux.vhd:13]
@@ -38,18 +41,17 @@ INFO: [Synth 8-638] synthesizing module 'pc4adder' [C:/Users/Chris/Desktop/Senio
 INFO: [Synth 8-256] done synthesizing module 'pc4adder' (0#1) [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/pc4adder.vhd:13]
 INFO: [Synth 8-638] synthesizing module 'program_counter' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/program_counter.vhd:16]
 INFO: [Synth 8-256] done synthesizing module 'program_counter' (0#1) [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/program_counter.vhd:16]
-INFO: [Synth 8-638] synthesizing module 'instruction_memory' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/instruction_memory_PROGRAM.vhd:21]
-WARNING: [Synth 8-614] signal 'mem' is read in the process but is not in the sensitivity list [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/instruction_memory_PROGRAM.vhd:30]
-INFO: [Synth 8-256] done synthesizing module 'instruction_memory' (0#1) [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/instruction_memory_PROGRAM.vhd:21]
+INFO: [Synth 8-638] synthesizing module 'instruction_memory' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/instruction_memory_PROGRAM.vhd:19]
+WARNING: [Synth 8-614] signal 'mem' is read in the process but is not in the sensitivity list [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/instruction_memory_PROGRAM.vhd:32]
+INFO: [Synth 8-256] done synthesizing module 'instruction_memory' (0#1) [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/instruction_memory_PROGRAM.vhd:19]
 INFO: [Synth 8-638] synthesizing module 'ifid' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/ifid.vhd:26]
 INFO: [Synth 8-256] done synthesizing module 'ifid' (0#1) [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/ifid.vhd:26]
 INFO: [Synth 8-638] synthesizing module 'ImmGen' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/immediategen.vhd:14]
 INFO: [Synth 8-256] done synthesizing module 'ImmGen' (0#1) [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/immediategen.vhd:14]
 INFO: [Synth 8-638] synthesizing module 'pcimmadder' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/pcimmadder.vhd:13]
 INFO: [Synth 8-256] done synthesizing module 'pcimmadder' (0#1) [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/pcimmadder.vhd:13]
-INFO: [Synth 8-638] synthesizing module 'regfile' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/register_REQUEST.vhd:27]
-WARNING: [Synth 8-614] signal 'registers' is read in the process but is not in the sensitivity list [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/register_REQUEST.vhd:52]
-INFO: [Synth 8-256] done synthesizing module 'regfile' (0#1) [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/register_REQUEST.vhd:27]
+INFO: [Synth 8-638] synthesizing module 'regfile' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/register_REQUEST.vhd:26]
+INFO: [Synth 8-256] done synthesizing module 'regfile' (0#1) [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/register_REQUEST.vhd:26]
 INFO: [Synth 8-638] synthesizing module 'ControlUnit' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/control_unit.vhd:36]
 WARNING: [Synth 8-614] signal 'is_branch_instruction' is read in the process but is not in the sensitivity list [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/control_unit.vhd:62]
 WARNING: [Synth 8-614] signal 'branch_taken' is read in the process but is not in the sensitivity list [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/control_unit.vhd:62]
@@ -74,68 +76,20 @@ INFO: [Synth 8-638] synthesizing module 'exmem' [C:/Users/Chris/Desktop/Senior D
 INFO: [Synth 8-256] done synthesizing module 'exmem' (0#1) [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/exmem.vhd:39]
 INFO: [Synth 8-638] synthesizing module 'ForwardingUnit' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/forwarding_unit.vhd:23]
 INFO: [Synth 8-256] done synthesizing module 'ForwardingUnit' (0#1) [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/forwarding_unit.vhd:23]
-INFO: [Synth 8-638] synthesizing module 'data_memory' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/Data_Memory_REQUEST.vhd:26]
-WARNING: [Synth 8-614] signal 'mem' is read in the process but is not in the sensitivity list [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/Data_Memory_REQUEST.vhd:43]
-INFO: [Synth 8-256] done synthesizing module 'data_memory' (0#1) [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/Data_Memory_REQUEST.vhd:26]
+INFO: [Synth 8-638] synthesizing module 'data_memory' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/Data_Memory_REQUEST.vhd:25]
+INFO: [Synth 8-256] done synthesizing module 'data_memory' (0#1) [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/Data_Memory_REQUEST.vhd:25]
 INFO: [Synth 8-638] synthesizing module 'BranchAND' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/branch_and.vhd:16]
 INFO: [Synth 8-256] done synthesizing module 'BranchAND' (0#1) [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/branch_and.vhd:16]
 INFO: [Synth 8-638] synthesizing module 'memwb' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/memwb.vhd:27]
 INFO: [Synth 8-256] done synthesizing module 'memwb' (0#1) [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/memwb.vhd:27]
 INFO: [Synth 8-638] synthesizing module 'writebackmux' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/writebackmux.vhd:13]
 INFO: [Synth 8-256] done synthesizing module 'writebackmux' (0#1) [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/writebackmux.vhd:13]
-INFO: [Synth 8-256] done synthesizing module 'internal_connections' (0#1) [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/internalconnections.vhd:50]
-INFO: [Synth 8-256] done synthesizing module 'RICSVCORE' (0#1) [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/RISCVCORE.vhd:36]
+WARNING: [Synth 8-614] signal 'rf_data_out' is read in the process but is not in the sensitivity list [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/internalconnections.vhd:795]
+WARNING: [Synth 8-614] signal 'dm_data_out' is read in the process but is not in the sensitivity list [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/internalconnections.vhd:795]
+INFO: [Synth 8-256] done synthesizing module 'internal_connections' (0#1) [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/internalconnections.vhd:32]
+INFO: [Synth 8-256] done synthesizing module 'RICSVCORE' (0#1) [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/RISCVCORE.vhd:28]
 WARNING: [Synth 8-6014] Unused sequential element JALorBRANCH_reg_reg was removed.  [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/exmem.vhd:72]
-WARNING: [Synth 8-3848] Net hazardunit_cntrlsigmux_to_controlunit in module/entity internal_connections does not have driver. [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/internalconnections.vhd:135]
-WARNING: [Synth 8-7129] Port clk in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port address[31] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port address[30] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port address[29] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port address[28] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port address[27] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port address[26] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port address[25] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port address[24] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port address[23] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port address[22] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port address[21] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port address[20] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port address[19] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port address[18] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port address[17] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port address[16] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port address[15] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port address[14] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port address[13] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port address[12] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port address[1] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port address[0] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port debug_address[31] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port debug_address[30] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port debug_address[29] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port debug_address[28] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port debug_address[27] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port debug_address[26] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port debug_address[25] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port debug_address[24] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port debug_address[23] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port debug_address[22] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port debug_address[21] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port debug_address[20] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port debug_address[19] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port debug_address[18] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port debug_address[17] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port debug_address[16] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port debug_address[15] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port debug_address[14] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port debug_address[13] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port debug_address[12] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port debug_address[11] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port debug_address[10] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port debug_address[9] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port debug_address[8] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port debug_address[1] in module data_memory is either unconnected or has no load
-WARNING: [Synth 8-7129] Port debug_address[0] in module data_memory is either unconnected or has no load
+WARNING: [Synth 8-3848] Net hazardunit_cntrlsigmux_to_controlunit in module/entity internal_connections does not have driver. [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/internalconnections.vhd:139]
 WARNING: [Synth 8-7129] Port instruction[24] in module alucontrol is either unconnected or has no load
 WARNING: [Synth 8-7129] Port instruction[23] in module alucontrol is either unconnected or has no load
 WARNING: [Synth 8-7129] Port instruction[22] in module alucontrol is either unconnected or has no load
@@ -187,130 +141,171 @@ WARNING: [Synth 8-7129] Port instruction[11] in module ControlUnit is either unc
 WARNING: [Synth 8-7129] Port instruction[10] in module ControlUnit is either unconnected or has no load
 WARNING: [Synth 8-7129] Port instruction[9] in module ControlUnit is either unconnected or has no load
 WARNING: [Synth 8-7129] Port instruction[8] in module ControlUnit is either unconnected or has no load
-INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-7129] Port instruction[7] in module ControlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port immediate[31] in module pcimmadder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port immediate[30] in module pcimmadder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port immediate[29] in module pcimmadder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port immediate[28] in module pcimmadder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port immediate[27] in module pcimmadder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port immediate[26] in module pcimmadder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port immediate[25] in module pcimmadder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port immediate[24] in module pcimmadder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port immediate[23] in module pcimmadder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port immediate[22] in module pcimmadder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port immediate[21] in module pcimmadder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port immediate[20] in module pcimmadder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port immediate[19] in module pcimmadder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port immediate[18] in module pcimmadder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port immediate[17] in module pcimmadder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port immediate[16] in module pcimmadder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port branch_taken in module ifid is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_address[1] in module instruction_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_address[0] in module instruction_memory is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1149.000 ; gain = 595.168
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1546.090 ; gain = 593.461
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1149.000 ; gain = 595.168
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1546.090 ; gain = 593.461
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1546.090 ; gain = 593.461
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.140 . Memory (MB): peak = 1546.090 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/constrs_1/new/constraints.xdc]
+Finished Parsing XDC File [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/constrs_1/new/constraints.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1582.211 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.063 . Memory (MB): peak = 1582.211 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1582.211 ; gain = 629.582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z007sclg225-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1149.000 ; gain = 595.168
----------------------------------------------------------------------------------
-INFO: [Device 21-403] Loading part xc7z007sclg225-1
----------------------------------------------------------------------------------
-Start Preparing Guide Design
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1582.211 ; gain = 629.582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Doing Graph Differ : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1149.000 ; gain = 595.168
+Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-INFO: [Device 21-9227] Part: xc7z007sclg225-1 does not have CEAM library.
-WARNING: [Synth 8-6702] IncrSynth : Over 50% of partitions are impacted by design changes. Reverting to default synthesis
-WARNING: [Synth 8-6702] IncrSynth : Reverting to default synthesis
 ---------------------------------------------------------------------------------
-Finished Preparing Guide Design : Time (s): cpu = 00:00:14 ; elapsed = 00:00:13 . Memory (MB): peak = 1173.645 ; gain = 619.812
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1582.211 ; gain = 629.582
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[0]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/memwb.vhd:36]
-WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[1]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/memwb.vhd:36]
-WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[2]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/memwb.vhd:36]
-WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[3]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/memwb.vhd:36]
-WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[4]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/memwb.vhd:36]
-WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[5]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/memwb.vhd:36]
-WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[6]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/memwb.vhd:36]
-WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[7]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/memwb.vhd:36]
-WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[8]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/memwb.vhd:36]
-WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[9]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/memwb.vhd:36]
-WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[10]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/memwb.vhd:36]
-WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[11]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/memwb.vhd:36]
-WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[12]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/memwb.vhd:36]
-WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[13]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/memwb.vhd:36]
-WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[14]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/memwb.vhd:36]
-WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[15]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/memwb.vhd:36]
-WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[16]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/memwb.vhd:36]
-WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[17]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/memwb.vhd:36]
-WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[18]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/memwb.vhd:36]
-WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[19]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/memwb.vhd:36]
-WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[20]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/memwb.vhd:36]
-WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[21]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/memwb.vhd:36]
-WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[22]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/memwb.vhd:36]
-WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[23]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/memwb.vhd:36]
-WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[24]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/memwb.vhd:36]
-WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[25]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/memwb.vhd:36]
-WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[26]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/memwb.vhd:36]
-WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[27]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/memwb.vhd:36]
-WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[28]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/memwb.vhd:36]
-WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[29]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/memwb.vhd:36]
-WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[30]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/memwb.vhd:36]
-WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[31]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/memwb.vhd:36]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[0]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[1]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[2]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[3]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[4]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[5]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[6]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[7]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[8]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[9]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[10]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[11]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[12]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[13]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[14]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[15]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[16]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[17]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[18]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[19]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[20]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[21]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[22]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[23]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[24]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[25]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[26]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[27]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[28]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[29]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[30]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[31]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[32]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[33]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[34]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[35]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[36]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[37]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[38]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[39]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[40]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[41]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[42]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[43]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[44]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[45]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[46]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[47]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[48]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[49]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[50]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd:33]
+WARNING: [Synth 8-327] inferring latch for variable 'debug_data_reg' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/instruction_memory_PROGRAM.vhd:47]
+WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[0]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/register_REQUEST.vhd:33]
+WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[1]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/register_REQUEST.vhd:33]
+WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[2]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/register_REQUEST.vhd:33]
+WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[3]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/register_REQUEST.vhd:33]
+WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[4]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/register_REQUEST.vhd:33]
+WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[5]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/register_REQUEST.vhd:33]
+WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[6]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/register_REQUEST.vhd:33]
+WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[7]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/register_REQUEST.vhd:33]
+WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[8]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/register_REQUEST.vhd:33]
+WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[9]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/register_REQUEST.vhd:33]
+WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[10]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/register_REQUEST.vhd:33]
+WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[11]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/register_REQUEST.vhd:33]
+WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[12]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/register_REQUEST.vhd:33]
+WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[13]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/register_REQUEST.vhd:33]
+WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[14]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/register_REQUEST.vhd:33]
+WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[15]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/register_REQUEST.vhd:33]
+WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[16]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/register_REQUEST.vhd:33]
+WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[17]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/register_REQUEST.vhd:33]
+WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[18]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/register_REQUEST.vhd:33]
+WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[19]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/register_REQUEST.vhd:33]
+WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[20]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/register_REQUEST.vhd:33]
+WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[21]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/register_REQUEST.vhd:33]
+WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[22]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/register_REQUEST.vhd:33]
+WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[23]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/register_REQUEST.vhd:33]
+WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[24]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/register_REQUEST.vhd:33]
+WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[25]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/register_REQUEST.vhd:33]
+WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[26]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/register_REQUEST.vhd:33]
+WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[27]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/register_REQUEST.vhd:33]
+WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[28]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/register_REQUEST.vhd:33]
+WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[29]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/register_REQUEST.vhd:33]
+WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[30]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/register_REQUEST.vhd:33]
+WARNING: [Synth 8-327] inferring latch for variable 'registers_reg[31]' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/register_REQUEST.vhd:33]
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-7134] Asynchronous Set/Reset value of 'Z' to reg 'debug_data_reg' will be ignored
+WARNING: [Synth 8-327] inferring latch for variable 'debug_data_reg' [C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/internalconnections.vhd:410]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:16 . Memory (MB): peak = 1366.902 ; gain = 813.070
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1582.211 ; gain = 629.582
 ---------------------------------------------------------------------------------
-
-
-Incremental Synthesis Report Summary:
-
-1. Incremental synthesis run: no
-
-   Reason for not running incremental synthesis : Change is too high
-
-
-INFO: [Synth 8-7130] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
-No constraint files found.
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -331,7 +326,7 @@ Detailed RTL Component Info :
 +---Multipliers : 
 	              32x32  Multipliers := 1     
 +---Muxes : 
-	   2 Input   32 Bit        Muxes := 10    
+	   2 Input   32 Bit        Muxes := 14    
 	   4 Input   32 Bit        Muxes := 2     
 	   2 Input   16 Bit        Muxes := 2     
 	   2 Input    5 Bit        Muxes := 14    
@@ -340,7 +335,7 @@ Detailed RTL Component Info :
 	   4 Input    5 Bit        Muxes := 1     
 	   8 Input    5 Bit        Muxes := 1     
 	   2 Input    2 Bit        Muxes := 2     
-	   2 Input    1 Bit        Muxes := 33    
+	   2 Input    1 Bit        Muxes := 38    
 	   6 Input    1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -354,7 +349,6 @@ BRAMs: 100 (col length: RAMB18 40 RAMB36 20)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-No constraint files found.
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
@@ -371,40 +365,37 @@ DSP Report: operator mul_result is absorbed into DSP mul_result.
 DSP Report: Generating DSP mul_result, operation Mode is: (PCIN>>17)+A*B.
 DSP Report: operator mul_result is absorbed into DSP mul_result.
 DSP Report: operator mul_result is absorbed into DSP mul_result.
-WARNING: [Synth 8-3332] Sequential element (registers_reg[0][31]) is unused and will be removed from module regfile.
-WARNING: [Synth 8-3332] Sequential element (registers_reg[0][30]) is unused and will be removed from module regfile.
-WARNING: [Synth 8-3332] Sequential element (registers_reg[0][29]) is unused and will be removed from module regfile.
-WARNING: [Synth 8-3332] Sequential element (registers_reg[0][28]) is unused and will be removed from module regfile.
-WARNING: [Synth 8-3332] Sequential element (registers_reg[0][27]) is unused and will be removed from module regfile.
-WARNING: [Synth 8-3332] Sequential element (registers_reg[0][26]) is unused and will be removed from module regfile.
-WARNING: [Synth 8-3332] Sequential element (registers_reg[0][25]) is unused and will be removed from module regfile.
-WARNING: [Synth 8-3332] Sequential element (registers_reg[0][24]) is unused and will be removed from module regfile.
-WARNING: [Synth 8-3332] Sequential element (registers_reg[0][23]) is unused and will be removed from module regfile.
-WARNING: [Synth 8-3332] Sequential element (registers_reg[0][22]) is unused and will be removed from module regfile.
-WARNING: [Synth 8-3332] Sequential element (registers_reg[0][21]) is unused and will be removed from module regfile.
-WARNING: [Synth 8-3332] Sequential element (registers_reg[0][20]) is unused and will be removed from module regfile.
-WARNING: [Synth 8-3332] Sequential element (registers_reg[0][19]) is unused and will be removed from module regfile.
-WARNING: [Synth 8-3332] Sequential element (registers_reg[0][18]) is unused and will be removed from module regfile.
-WARNING: [Synth 8-3332] Sequential element (registers_reg[0][17]) is unused and will be removed from module regfile.
-WARNING: [Synth 8-3332] Sequential element (registers_reg[0][16]) is unused and will be removed from module regfile.
-WARNING: [Synth 8-3332] Sequential element (registers_reg[0][15]) is unused and will be removed from module regfile.
-WARNING: [Synth 8-3332] Sequential element (registers_reg[0][14]) is unused and will be removed from module regfile.
-WARNING: [Synth 8-3332] Sequential element (registers_reg[0][13]) is unused and will be removed from module regfile.
-WARNING: [Synth 8-3332] Sequential element (registers_reg[0][12]) is unused and will be removed from module regfile.
-WARNING: [Synth 8-3332] Sequential element (registers_reg[0][11]) is unused and will be removed from module regfile.
-WARNING: [Synth 8-3332] Sequential element (registers_reg[0][10]) is unused and will be removed from module regfile.
-WARNING: [Synth 8-3332] Sequential element (registers_reg[0][9]) is unused and will be removed from module regfile.
-WARNING: [Synth 8-3332] Sequential element (registers_reg[0][8]) is unused and will be removed from module regfile.
-WARNING: [Synth 8-3332] Sequential element (registers_reg[0][7]) is unused and will be removed from module regfile.
-WARNING: [Synth 8-3332] Sequential element (registers_reg[0][6]) is unused and will be removed from module regfile.
-WARNING: [Synth 8-3332] Sequential element (registers_reg[0][5]) is unused and will be removed from module regfile.
-WARNING: [Synth 8-3332] Sequential element (registers_reg[0][4]) is unused and will be removed from module regfile.
-WARNING: [Synth 8-3332] Sequential element (registers_reg[0][3]) is unused and will be removed from module regfile.
-WARNING: [Synth 8-3332] Sequential element (registers_reg[0][2]) is unused and will be removed from module regfile.
-WARNING: [Synth 8-3332] Sequential element (registers_reg[0][1]) is unused and will be removed from module regfile.
-WARNING: [Synth 8-3332] Sequential element (registers_reg[0][0]) is unused and will be removed from module regfile.
+WARNING: [Synth 8-7129] Port instruction[24] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[23] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[22] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[21] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[20] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[19] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[18] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[17] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[16] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[15] in module alucontrol is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[31] in module ControlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[30] in module ControlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[29] in module ControlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[28] in module ControlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[27] in module ControlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[26] in module ControlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[25] in module ControlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[14] in module ControlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[13] in module ControlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[12] in module ControlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[11] in module ControlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[10] in module ControlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[9] in module ControlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[8] in module ControlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[7] in module ControlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port branch_taken in module ifid is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_address[1] in module instruction_memory is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_address[0] in module instruction_memory is either unconnected or has no load
+WARNING: [Synth 8-3332] Sequential element (debug_data_reg[31]) is unused and will be removed from module instruction_memory.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:44 ; elapsed = 00:00:42 . Memory (MB): peak = 1490.988 ; gain = 937.156
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:47 ; elapsed = 00:00:48 . Memory (MB): peak = 1582.211 ; gain = 629.582
 ---------------------------------------------------------------------------------
  Sort Area is  mul_result_0 : 0 0 : 3101 5754 : Used 1 time 0
  Sort Area is  mul_result_0 : 0 1 : 2653 5754 : Used 1 time 0
@@ -428,18 +419,87 @@ Note: The table above is a preliminary report that shows the DSPs inferred at th
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
-No constraint files found.
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:57 ; elapsed = 00:00:59 . Memory (MB): peak = 1582.211 ; gain = 629.582
+---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:46 ; elapsed = 00:00:44 . Memory (MB): peak = 1490.988 ; gain = 937.156
+Finished Timing Optimization : Time (s): cpu = 00:01:00 ; elapsed = 00:01:01 . Memory (MB): peak = 1582.211 ; gain = 629.582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][0]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][0]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][3]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][3]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][4]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][4]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][5]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][5]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][6]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][6]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][7]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][7]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][8]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][8]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][9]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][9]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][10]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][10]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][11]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][11]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][12]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][12]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][13]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][13]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][14]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][14]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][15]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][15]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][16]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][16]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][17]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][17]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][18]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][18]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][19]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][19]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][20]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][20]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][21]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][21]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][22]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][22]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][23]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][23]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][24]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][24]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][25]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][25]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][26]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][26]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][27]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][27]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][28]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][28]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][29]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][29]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][30]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][30]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][31]  is always disabled
+WARNING: [Synth 8-264] enable of latch \internal_connections_inst/REGFILE_INST/registers_reg[0][31]  is always disabled
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:50 ; elapsed = 00:00:48 . Memory (MB): peak = 1490.988 ; gain = 937.156
+Finished Technology Mapping : Time (s): cpu = 00:01:04 ; elapsed = 00:01:05 . Memory (MB): peak = 1716.801 ; gain = 764.172
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -457,37 +517,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:56 ; elapsed = 00:00:54 . Memory (MB): peak = 1500.500 ; gain = 946.668
+Finished IO Insertion : Time (s): cpu = 00:01:10 ; elapsed = 00:01:12 . Memory (MB): peak = 1724.305 ; gain = 771.676
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:56 ; elapsed = 00:00:54 . Memory (MB): peak = 1500.500 ; gain = 946.668
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:10 ; elapsed = 00:01:12 . Memory (MB): peak = 1724.305 ; gain = 771.676
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:57 ; elapsed = 00:00:55 . Memory (MB): peak = 1500.500 ; gain = 946.668
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:11 ; elapsed = 00:01:12 . Memory (MB): peak = 1724.305 ; gain = 771.676
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:57 ; elapsed = 00:00:55 . Memory (MB): peak = 1500.500 ; gain = 946.668
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:11 ; elapsed = 00:01:12 . Memory (MB): peak = 1724.305 ; gain = 771.676
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:57 ; elapsed = 00:00:55 . Memory (MB): peak = 1500.500 ; gain = 946.668
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:11 ; elapsed = 00:01:12 . Memory (MB): peak = 1724.305 ; gain = 771.676
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:57 ; elapsed = 00:00:55 . Memory (MB): peak = 1500.500 ; gain = 946.668
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:11 ; elapsed = 00:01:12 . Memory (MB): peak = 1724.305 ; gain = 771.676
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -516,66 +576,46 @@ Report Cell Usage:
 |1     |BUFG    |     3|
 |2     |CARRY4  |    53|
 |3     |DSP48E1 |     3|
-|4     |LUT1    |     6|
-|5     |LUT2    |   202|
-|6     |LUT3    |   117|
-|7     |LUT4    |   161|
-|8     |LUT5    |   651|
-|9     |LUT6    |  4411|
-|10    |MUXF7   |  1888|
-|11    |MUXF8   |   576|
-|12    |FDCE    |  8616|
-|13    |LDC     |  2624|
-|14    |IBUF    |    59|
-|15    |OBUFT   |    64|
+|4     |LUT1    |    10|
+|5     |LUT2    |   223|
+|6     |LUT3    |   130|
+|7     |LUT4    |   202|
+|8     |LUT5    |   524|
+|9     |LUT6    |  4624|
+|10    |MUXF7   |  1984|
+|11    |MUXF8   |   768|
+|12    |FDCE    |  8575|
+|13    |FDRE    |    64|
+|14    |LD      |    33|
+|15    |LDC     |  1024|
+|16    |IBUF    |    13|
+|17    |IOBUF   |    32|
 +------+--------+------+
-
-Report Instance Areas: 
-+------+----------------------------+---------------------+------+
-|      |Instance                    |Module               |Cells |
-+------+----------------------------+---------------------+------+
-|1     |top                         |                     | 19434|
-|2     |  internal_connections_inst |internal_connections | 19306|
-|3     |    ALU_INST                |ALU                  |    22|
-|4     |    ALU_SRC_MUX_B_INST      |ALUSrcMuxB           |    36|
-|5     |    DATA_MEMORY_INST        |data_memory          |  3074|
-|6     |    EXMEM_INST              |exmem                |   490|
-|7     |    FORWARDING_MUX_A_INST   |forwardingMuxA       |    32|
-|8     |    FORWARDING_MUX_B_INST   |forwardingMuxB       |    61|
-|9     |    IDEX_INST               |idex                 |   673|
-|10    |    MEMWB_INST              |memwb                |   105|
-|11    |    REGFILE_INST            |regfile              |  2240|
-|12    |    WRITEBACK_MUX_INST      |writebackmux         |    32|
-|13    |    ifid_instance           |ifid                 |   173|
-|14    |    imm_gen_inst            |ImmGen               |    36|
-|15    |    instruction_memory_inst |instruction_memory   | 12245|
-|16    |    pc_instance             |program_counter      |    83|
-|17    |    pcimmadder_inst         |pcimmadder           |     4|
-+------+----------------------------+---------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:57 ; elapsed = 00:00:55 . Memory (MB): peak = 1500.500 ; gain = 946.668
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:11 ; elapsed = 00:01:12 . Memory (MB): peak = 1724.305 ; gain = 771.676
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 1 critical warnings and 326 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:57 ; elapsed = 00:00:55 . Memory (MB): peak = 1500.500 ; gain = 946.668
-Synthesis Optimization Complete : Time (s): cpu = 00:00:57 ; elapsed = 00:00:55 . Memory (MB): peak = 1500.500 ; gain = 946.668
+Synthesis finished with 0 errors, 0 critical warnings and 192 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:59 ; elapsed = 00:01:09 . Memory (MB): peak = 1724.305 ; gain = 735.555
+Synthesis Optimization Complete : Time (s): cpu = 00:01:11 ; elapsed = 00:01:13 . Memory (MB): peak = 1724.305 ; gain = 771.676
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.223 . Memory (MB): peak = 1512.551 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 5144 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.202 . Memory (MB): peak = 1724.305 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 3897 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1537.520 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1724.305 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 2624 instances were transformed.
-  LDC => LDCE: 2624 instances
+  A total of 1089 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 32 instances
+  LD => LDCE: 33 instances
+  LDC => LDCE: 1024 instances
 
-Synth Design complete | Checksum: d6202ca7
+Synth Design complete | Checksum: db9d31a6
 INFO: [Common 17-83] Releasing license: Synthesis
-69 Infos, 225 Warnings, 1 Critical Warnings and 0 Errors encountered.
+73 Infos, 270 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:06 ; elapsed = 00:01:04 . Memory (MB): peak = 1537.520 ; gain = 989.965
-INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 1537.520 ; gain = 0.000
+synth_design: Time (s): cpu = 00:01:20 ; elapsed = 00:01:22 . Memory (MB): peak = 1724.305 ; gain = 1175.977
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 1724.305 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.runs/synth_1/RICSVCORE.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file RICSVCORE_utilization_synth.rpt -pb RICSVCORE_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Nov 21 13:27:49 2024...
+INFO: [Common 17-206] Exiting Vivado at Thu Nov 21 18:39:37 2024...

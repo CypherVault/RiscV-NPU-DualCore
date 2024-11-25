@@ -5,64 +5,68 @@ use work.all;
 
 --types package
 library work;
-use work.types_pkg.all;
+use work.types_pkg.all;	
 
-entity internal_connections is
-    port (       
-        -- Original ports
+			entity internal_connections is
+    port (
+        -- Core signals (2 bits)
         clock : in std_logic;
         resetbar : in std_logic;
-		
-		--programming ports for Instruction memory
-			
-		IM_debug_clk : in STD_LOGIC;	 
-        IM_debug_addr : in STD_LOGIC_VECTOR(7 downto 0);
-        IM_debug_instruction : in STD_LOGIC_VECTOR(31 downto 0);
-        IM_debug_we : in STD_LOGIC;  -- Write enable for debug programming
         
-		
-		--data request ports for data memory file	
-		
-		DM_debug_clk : in std_logic;
-        DM_debug_address : in std_logic_vector(31 downto 0);
-        DM_debug_read_enable : in std_logic;
-        DM_debug_data_out : out std_logic_vector(31 downto 0);
-			
-		--data request ports for register file
-			
-		RF_debug_clk : in std_logic;
-	    RF_debug_address : in std_logic_vector(4 downto 0);
-	    RF_debug_read_enable : in std_logic;
-	    RF_debug_data_out : out std_logic_vector(31 downto 0)	
-				
-			
-			
-			
-        -- Debug ports for memory and register file
-       -- debug_mem_out : out mem_array;
-       -- debug_reg_out : out reg_array;
-       -- debug_pc_out : out std_logic_vector(15 downto 0)
-        -- You can add more ports here as needed for your design
+        -- Unified debug interface (48 bits total)
+        debug_clk : in std_logic;
+        debug_addr : in std_logic_vector(6 downto 0);  -- 7 bits (128 addresses)
+        debug_data : inout std_logic_vector(31 downto 0);
         
+        -- Separate control signals for each memory
+        rf_enable : in std_logic;    -- Register File read enable
+        im_enable : in std_logic;   -- Instruction Memory write enable
+        dm_enable : in std_logic     -- Data Memory read enable		 
+		
+		-- debug_en : in std_logic                        -- Enable bit
+		
     );
 end entity internal_connections;
 
-architecture structural of internal_connections is					
 
---middle man signals to port map signals between internal components-- 	  
-
-------generic and debug------------------------------------------------------------------BEGIN
-
---	signal clock_int : std_logic;
---	signal resetbar_int : std_logic;
+architecture behavioral of internal_connections is					
 
 
---signal debug_mem : mem_array;
- --signal debug_reg : reg_array;
---signal pcout_debug : std_logic_vector(15 downto 0);	 
+-- Internal signals for memory selection
+    signal mem_select : std_logic_vector(1 downto 0);
+    signal rw_enable : std_logic;
+   				
 
 
-							
+-- Internal control signals
+--signal mem_select : std_logic_vector(1 downto 0);  -- Memory selection bits
+--signal rw_enable : std_logic;  -- Read/Write enable bit
+
+-- Debug interface signals
+--signal debug_data : std_logic_vector(31 downto 0);  -- Bidirectional data bus
+signal IM_debug_instruction : std_logic_vector(31 downto 0);  -- Instruction memory data
+signal RF_debug_data_out : std_logic_vector(31 downto 0);  -- Register file data out
+signal DM_debug_data_out : std_logic_vector(31 downto 0);  -- Data memory data out
+
+-- Memory enable signals
+signal IM_debug_we : std_logic;  -- Instruction memory write enable
+signal RF_debug_read_enable : std_logic;  -- Register file read enable
+signal DM_debug_read_enable : std_logic;  -- Data memory read enable	
+
+
+
+  -- Internal signals for data routing
+   signal rf_data_out : std_logic_vector(31 downto 0);
+   signal dm_data_out : std_logic_vector(31 downto 0);
+
+
+
+		  
+
+
+
+
+
 	
 ------IF------------------------------------------------------------------BEGIN						 --XXX means undefined as of NOW
 		
@@ -350,6 +354,9 @@ architecture structural of internal_connections is
 
 begin			  
 	
+	
+
+    -- Memory selection and data routing process
 
 ------IF------------------------------------------------------------------BEGIN		
 	
@@ -392,19 +399,17 @@ pc_pcout_to_ifid <= pc_pcout_to_instruction_memory;
 pc_pcout_to_pc4adder <= pc_pcout_to_instruction_memory;	
 
 
-
-	--TO INSTRUCTION MEMORY
-	instruction_memory_inst : entity work.instruction_memory
-	port map (
-		pc_address => pc_pcout_to_instruction_memory,
-		instruction => instruction_memory_instruction_to_ifid,	
-		reset =>  resetbar,
-		debug_clk  => IM_debug_clk,
-		debug_addr =>	IM_debug_addr ,
-		debug_instruction => IM_debug_instruction ,
-		debug_we   =>	 IM_debug_we
-	);
-	
+		--TO INSTRUCTION MEMORY
+instruction_memory_inst : entity work.instruction_memory
+port map (
+    pc_address => pc_pcout_to_instruction_memory,
+    instruction => instruction_memory_instruction_to_ifid,    
+    reset => resetbar,
+    debug_clk => debug_clk,
+    debug_addr => debug_addr,  -- Using 7 bits
+    debug_data => debug_data,
+    debug_we =>  im_enable  -- Using enable bit
+);
 	
 	
 	--TO IFID
@@ -456,35 +461,29 @@ ifid_pcout_to_pcimmadder <= ifid_pcout_to_OUT;
       pc        => ifid_pcout_to_pcimmadder,
       immediate => immediategen_immediate_to_pcimmadder,
       pcplusimm => pcplusimmadder_pcplusimm_to_pc_mux
-    );		
-	
-	--TO REGISTER FILE
+    );			 
 	
 	
 	
-	 REGFILE_INST : entity work.regfile
-    port map (
-      --clk                    => clock,
-      resetbar               => resetbar,  
-	  
-	  
-	debug_clk 	      =>  RF_debug_clk ,
-    debug_address 	  => RF_debug_address ,
-    debug_read_enable => RF_debug_read_enable ,
-    debug_data_out    => RF_debug_data_out ,
-	  
-	  
-	  
-    
-      regwrite               => memwb_regwrite_to_registers,
-      readregister1          => ifid_rs1_to_register,
-      readregister2          => ifid_rs2_to_register,
-      writeregisteraddress   => memwb_rd_to_out,
-      writedata              => writebackmux_writedata_to_registers,
-      readdata1              => registers_reg1out_to_idex,			
-      readdata2              => registers_reg2out_to_idex
-    );													  
-	
+	  -- REGISTER FILE
+REGFILE_INST : entity work.regfile
+port map (
+    resetbar => resetbar,
+    debug_clk => debug_clk,
+    debug_address => debug_addr(4 downto 0),  -- Uses lower 5 bits
+    debug_read_enable => rf_enable,															 
+    debug_data => rf_data_out,  -- Connects to shared data bus
+    regwrite => memwb_regwrite_to_registers,
+    readregister1 => ifid_rs1_to_register,
+    readregister2 => ifid_rs2_to_register,
+    writeregisteraddress => memwb_rd_to_out,
+    writedata => writebackmux_writedata_to_registers,
+    readdata1 => registers_reg1out_to_idex,            
+    readdata2 => registers_reg2out_to_idex
+);
+
+
+
 	
 -- Additional signal assignments for multiple reg out connections	
 registers_reg1out_to_controlunit  <= registers_reg1out_to_idex;
@@ -716,33 +715,23 @@ alusrcmuxb_source2_to_exmem <= alusrcmuxB_rs2_to_alu;
 
 ------MEM------------------------------------------------------------------BEGIN	
 	
+   -- DATA MEMORY
+DATA_MEMORY_INST : entity work.data_memory
+port map (        
+    clk => clock,
+    reset => resetbar,
+    debug_clk => debug_clk,
+    debug_address => debug_addr,  -- Uses 7 bits for 128 addresses
+    debug_read_enable => dm_enable,
+    debug_data => dm_data_out,  -- Connects to shared data bus
+    memwrite => exmem_memwrite_to_datamem,
+    memread => exmem_memread_to_datamem,
+    address => exmem_result_to_datamem,
+    writedata => exmem_src2_to_datamem,
+    readdata => datamem_readdata_to_memwb
+);
 
-	--TO DATA MEMORY
-	
-	  DATA_MEMORY_INST : entity work.data_memory
-    port map (		 
-	  clk => clock,
-      reset => resetbar, 
-	  
-	  
-	    debug_clk 		  =>   DM_debug_clk,
-        debug_address 	  =>   DM_debug_address, 
-        debug_read_enable =>   DM_debug_read_enable,
-        debug_data_out 	  =>   DM_debug_data_out,
-	  
-	  
-	  
-	  
-	  
-      memwrite => exmem_memwrite_to_datamem,
-      memread => exmem_memread_to_datamem,
-      address => exmem_result_to_datamem,
-      writedata => exmem_src2_to_datamem,
-    --  debug_mem => debug_mem,
-      readdata => datamem_readdata_to_memwb
-    );
-	
-	
+
 	-- TO BRANCH AND
 	
 	 BRANCH_AND_INST : entity work.BranchAND
@@ -800,38 +789,28 @@ alusrcmuxb_source2_to_exmem <= alusrcmuxB_rs2_to_alu;
 	
 	
 	
---------------------------------------------------------------------------END
+--------------------------------------------------------------------------END		
 
-
-
-
-
-debug_output : process(clock, resetbar)
+  -- Memory selection and data routing process
+process(debug_clk, resetbar, rf_enable, dm_enable)
 begin
-  if resetbar = '0' then
-    -- Reset condition
-   -- debug_mem_out <= (others => (others => '0'));
-  --  debug_reg_out <= (others => (others => '0'));
-  -- debug_pc_out <= (others => '0');			 
-  
-  
-  
-  
-  elsif rising_edge(clock) then
-    -- Normal operation
-   -- debug_mem_out <= debug_mem;
---    debug_reg_out <= debug_reg;
---    debug_pc_out <= pcout_debug;  
+    if rf_enable = '1' then
+        if resetbar = '0' then
+            debug_data <= (others => 'Z');
+        elsif (debug_clk='1') then
+           debug_data <= rf_data_out;
+        end if;
+    elsif dm_enable = '1' then
+        if resetbar = '0' then
+            debug_data <= (others => 'Z');
+        elsif (debug_clk = '1') then
+            debug_data <= dm_data_out;
+        end if;
+    else
+        debug_data <= (others => 'Z');
+    end if;
+end process;
 
 
 
-	
-	
-  end if;			
-  
-  
-  
-end process debug_output;
-
-
-end architecture structural;
+end architecture behavioral;
