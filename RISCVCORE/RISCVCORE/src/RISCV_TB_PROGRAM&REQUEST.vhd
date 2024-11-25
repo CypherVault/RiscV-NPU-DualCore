@@ -24,7 +24,47 @@ architecture behavior of RICSVCORE_tb is
 
     -- Clock period definition
     constant CLK_PERIOD : time := 10 ns;
+	
+	
+	 -- Define the instruction buffer as a constant array
+    type instruction_array is array (0 to 22) of std_logic_vector(31 downto 0);
+	
+	 constant INSTRUCTION_BUFFER : instruction_array := (
+	 
+	 	0 => x"00000000",  -- Unused position 0
+1 => x"00A00093",  -- addi x1, x0, 10    (load first temp 0°C)
+2 => x"01400113",  -- addi x2, x0, 20    (load second temp 20°C)
+3 => x"02500193",  -- addi x3, x0, 37    (load third temp 37°C)
+4 => x"06400213",  -- addi x4, x0, 100   (load fourth temp 100°C)
+5 => x"02000393",  -- addi x7, x0, 32    (base address for storage)
 
+-- First temperature (x1)
+6 => x"00309293",  -- slli x5, x1, 3     (multiply by 8)
+7 => x"0012d313",  -- srli x6, x5, 1     (divide by 2)
+8 => x"02030313",  -- addi x6, x6, 32    (add 32)
+9 => x"0063a023",  -- sw x6, 0(x7)       (store at base)
+
+-- Second temperature (x2)
+10 => x"00311293", -- slli x5, x2, 3     (multiply by 8)
+11 => x"0012d313", -- srli x6, x5, 1     (divide by 2)
+12 => x"02030313", -- addi x6, x6, 32    (add 32)
+13 => x"0063a223", -- sw x6, 4(x7)       (store at base + 4)
+
+-- Third temperature (x3)
+14 => x"00319293", -- slli x5, x3, 3     (multiply by 8)
+15 => x"0012d313", -- srli x6, x5, 1     (divide by 2)
+16 => x"02030313", -- addi x6, x6, 32    (add 32)
+17 => x"0063a423", -- sw x6, 8(x7)       (store at base + 8)
+
+-- Fourth temperature (x4)
+18 => x"00321293", -- slli x5, x4, 3     (multiply by 8)
+19 => x"0012d313", -- srli x6, x5, 1     (divide by 2)
+20 => x"02030313", -- addi x6, x6, 32    (add 32)
+21 => x"0063a623", -- sw x6, 12(x7)      (store at base + 12)
+
+22 => x"00000067"  -- ret                (return)
+    );
+	
     -- Internal signals
     signal clk : std_logic := '0';
     signal rst : std_logic := '0';
@@ -66,46 +106,26 @@ begin
         dm_enable <= '0';
         wait for 50 ns;
         rst <= '1';
-
+		
+		
         -- Program Instruction Memory with 4 hardcoded instructions
         im_enable <= '1';  -- Enable instruction memory write
-        
-        -- Instruction 1: addi x1, x0, 1
-        debug_clk <= '1';
-        debug_addr <= "0000001";
-        debug_data <= x"00100093";
-        wait for 10 ns;
-        debug_clk <= '0';
-        wait for 10 ns;
-
-        -- Instruction 2: addi x2, x0, 2
-        debug_clk <= '1';
-        debug_addr <= "0000010";
-        debug_data <= x"00200113";
-        wait for 10 ns;
-        debug_clk <= '0';
-        wait for 10 ns;
-
-        -- Instruction 3: add x3, x1, x2
-        debug_clk <= '1';
-        debug_addr <= "0000011";
-        debug_data <= x"002081B3";
-        wait for 10 ns;
-        debug_clk <= '0';
-        wait for 10 ns;
-
-        -- Instruction 4: sw x3, 0(x1)
-        debug_clk <= '1';
-        debug_addr <= "0000100";
-        debug_data <= x"0030A023";
-        wait for 10 ns;
-        debug_clk <= '0';
-        wait for 10 ns;
-
-        im_enable <= '0';  -- Disable instruction memory write
+     -- Loop through all instructions
+        for i in 0 to 22 loop
+            debug_clk <= '1';
+            -- Convert integer to 7-bit std_logic_vector for address
+            debug_addr <= std_logic_vector(to_unsigned(i, 7));
+            debug_data <= INSTRUCTION_BUFFER(i);
+            wait for 10 ns;
+            debug_clk <= '0';
+            wait for 10 ns;
+        end loop;
+      
+	
+		im_enable <= '0';  -- Disable instruction memory write
 		dm_enable <= '0';
         -- Run the processor
-        for i in 0 to 10 loop
+        for i in 0 to 35 loop
             clk <= '0';
             wait for CLK_PERIOD / 2;
             clk <= '1';
