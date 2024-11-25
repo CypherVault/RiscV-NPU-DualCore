@@ -76,7 +76,6 @@ OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
   {C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/ALU.vhd}
   {C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/debug_pkg.vhd}
-  {C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/types_pk.vhd}
   {C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/Data_Memory_REQUEST.vhd}
   {C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alucontrol.vhd}
   {C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/sources_1/imports/src/alusrcmuxb.vhd}
@@ -110,6 +109,9 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
+read_xdc {{C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/constrs_1/new/constraints.xdc}}
+set_property used_in_implementation false [get_files {{C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/constrs_1/new/constraints.xdc}}]
+
 set_param ips.enableIPCacheLiteLoad 1
 
 read_checkpoint -auto_incremental -incremental {C:/Users/Chris/Desktop/Senior Design/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE.srcs/utils_1/imports/synth_1/RICSVCORE.dcp}

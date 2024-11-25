@@ -1,13 +1,12 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
-
 use work.types_pkg.ALL;
 
 entity data_memory is
     port (
         -- Original ports
-        clk : in std_logic; --UNUSED
+        clk : in std_logic;
         reset : in std_logic;
         memwrite : in std_logic;
         memread : in std_logic;
@@ -17,40 +16,52 @@ entity data_memory is
         
         -- Debug ports
         debug_clk : in std_logic;
-        debug_address : in std_logic_vector(31 downto 0);
+        debug_address : in std_logic_vector(6 downto 0);
         debug_read_enable : in std_logic;
-        debug_data_out : out std_logic_vector(31 downto 0)
+        debug_data : inout std_logic_vector(31 downto 0)  -- Changed to inout
     );
 end entity data_memory;
 
 architecture Behavioral of data_memory is
-    signal mem : mem_array := (others => (others => '0'));
+    type mem_array_128 is array(0 to 127) of std_logic_vector(31 downto 0);
+    signal mem : mem_array_128 := (others => (others => '0'));
+    
+    function is_valid_address(addr: std_logic_vector) return boolean is
+    begin
+        return unsigned(addr(31 downto 7)) = 0;
+    end function;
+    
 begin
-    -- Combinational process for write operation
-    process(reset, memwrite, address, writedata)
+    -- Main memory write operation
+    process(clk, reset)
     begin
         if reset = '0' then
             mem <= (others => (others => '0'));
-        elsif memwrite = '1' then
-            mem(to_integer(unsigned(address(11 downto 2)))) <= writedata;
+        elsif rising_edge(clk) then
+            if memwrite = '1' and is_valid_address(address) then
+                mem(to_integer(unsigned(address(6 downto 0)))) <= writedata;
+            end if;
         end if;
     end process;
 
-    -- Combinational read operation for main memory
-    readdata <= mem(to_integer(unsigned(address(11 downto 2)))) when memread = '1' else (others => 'Z');
+    -- Main memory read operation
+    readdata <= mem(to_integer(unsigned(address(6 downto 0)))) when 
+                (memread = '1' and is_valid_address(address)) else 
+                (others => 'Z');
 
-    -- Debug read process
-    debug_read_process: process(debug_clk, debug_read_enable, debug_address)
-    begin
-        -- When debug clock is asserted and read enable is high
-        if (debug_clk='1' and debug_read_enable = '1') then
-            -- Use the same addressing formula as the main memory
-            -- Address is converted to integer using bits 11 downto 2 (10-bit address)
-            debug_data_out <= mem(to_integer(unsigned(debug_address(11 downto 2))));
-        else
-            -- Set to high impedance when not reading
-            debug_data_out <= (others => 'Z');
+ -- Debug interface with proper bidirectional control
+process(debug_clk, reset, debug_read_enable)
+begin
+    if debug_read_enable = '1' then  -- Check enable first
+        if reset = '0' then
+            debug_data <= (others => 'Z');
+        elsif rising_edge(debug_clk) then
+            debug_data <= mem(to_integer(unsigned(debug_address)));
         end if;
-    end process;
+    else
+        debug_data <= (others => 'Z');  -- Release bus when not reading
+    end if;
+end process;
+
 
 end architecture Behavioral;
