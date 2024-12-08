@@ -1,0 +1,11 @@
+[Version]
+Version=15.0
+[Designs]
+singlestageriscv=.\SingleStageRISCV\SingleStageRISCV.adf
+[Browser]
+sort=order
+mode=asc
+[Order]
+order=1
+[Expand]
+singlestageriscv=1
