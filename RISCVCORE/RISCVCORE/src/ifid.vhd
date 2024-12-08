@@ -60,9 +60,7 @@ begin
 				rs1_reg <= instruction(19 downto 15);
     			rs2_reg <= instruction(24 downto 20);
 
-
-
- 			
+			
 				
             end if;
         end if;

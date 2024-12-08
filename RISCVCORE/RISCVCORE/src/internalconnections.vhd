@@ -134,7 +134,7 @@ signal DM_debug_read_enable : std_logic;  -- Data memory read enable
   signal registers_reg2out_to_idex : std_logic_vector(31 downto 0);
   
   --TO CONTROL UNIT
- 
+  signal hazardunit_controldisable_to_controlunit : std_logic;
   signal ifid_instruction_to_controlunit : std_logic_vector(31 downto 0);
   signal hazardunit_cntrlsigmux_to_controlunit : std_logic;
   signal registers_reg1out_to_controlunit : std_logic_vector(31 downto 0);
@@ -152,7 +152,8 @@ signal DM_debug_read_enable : std_logic;  -- Data memory read enable
   
   -- TO HAZARD UNIT 
  
-  signal idex_memread_to_hazardunit : std_logic;
+  signal idex_memread_to_hazardunit : std_logic;   
+  
   signal idex_rd_to_hazardunit : std_logic_vector(4 downto 0);
   signal idex_instruction_to_hazardunit : std_logic_vector(31 downto 0);
   signal hazardunit_controlsigmux_to_controlunit : std_logic;
@@ -497,7 +498,7 @@ registers_reg2out_to_controlunit  <= registers_reg2out_to_idex;
       cntrlsigmux => hazardunit_cntrlsigmux_to_controlunit,
       rs1_data         => registers_reg1out_to_controlunit,
       rs2_data         => registers_reg2out_to_controlunit,
-	  
+	  ctrl_disable	   =>	  hazardunit_controldisable_to_controlunit,
 	  exmem_rd		   =>	exmem_rd_to_memwb,
 	  exmem_regdata	   =>  exmem_result_to_datamem,
 	  memwb_rd		   =>	memwb_rd_to_out,
@@ -523,7 +524,8 @@ registers_reg2out_to_controlunit  <= registers_reg2out_to_idex;
 
 HAZARD_UNIT_INST : entity work.hazard_unit
     port map (
-      idexmemread => idex_memread_to_exmem,
+	idexmemread => idex_memread_to_exmem,
+	 ctrl_disable  => hazardunit_controldisable_to_controlunit,
       idexrd => idex_rd_to_exmem,
       instruction => ifid_instruction_to_OUT,
       cntrlsigmux => hazardunit_controlsigmux_to_controlunit,

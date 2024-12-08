@@ -1,5 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 entity hazard_unit is
     port (
@@ -8,11 +9,12 @@ entity hazard_unit is
         instruction : in std_logic_vector(31 downto 0);
         cntrlsigmux : out std_logic;
         pcwriteenable : out std_logic;
-        ifidwriteenable : out std_logic
+        ifidwriteenable : out std_logic;
+        ctrl_disable : out std_logic    -- Added missing port
     );
-end entity hazard_unit;
+end entity hazard_unit;  -- Added missing semicolon
 
-architecture Behavioral of hazard_unit is
+architecture Behavioral of hazard_unit is  -- Removed period
     signal rs1 : std_logic_vector(4 downto 0);
     signal rs2 : std_logic_vector(4 downto 0);
     signal opcode : std_logic_vector(6 downto 0);
@@ -27,28 +29,21 @@ begin
         cntrlsigmux <= '1';
         pcwriteenable <= '1';
         ifidwriteenable <= '1';
+        ctrl_disable <= '0';  -- Default: control unit enabled
         
-        -- Check for load-use data hazard (original logic)
+        -- Check for load-use data hazard
         if (idexmemread = '1' and (idexrd = rs1 or idexrd = rs2)) then
             cntrlsigmux <= '0';
             pcwriteenable <= '0';
             ifidwriteenable <= '0';
+            ctrl_disable <= '1';  -- Disable control unit during stall
+        -- Check for JAL (1101111) or JALR (1100111)
+        elsif (opcode = "1101111" or opcode = "1100111") then
+            cntrlsigmux <= '0';
+            pcwriteenable <= '1';
+            ifidwriteenable <= '0';
+            ctrl_disable <= '1';  -- Disable control unit during jump
         end if;
 
---        -- Additional check for immediate instructions (new logic)
---        if (opcode = "0010011" and idexrd = rs1) then
---            cntrlsigmux <= '0';
---            pcwriteenable <= '0';
---            ifidwriteenable <= '0';
---        end if;
---
-       -- -- Previous check for store instructions and R-type instructions
---        if (idexrd = rs2 and 
---            (opcode = "0100011" or   -- Store instructions (sw, sh, sb)
---             opcode = "0110011")) then  -- R-type instructions that use rs2
---            cntrlsigmux <= '0';
---            pcwriteenable <= '0';
---            ifidwriteenable <= '0';
---        end if;
     end process;
 end architecture Behavioral;

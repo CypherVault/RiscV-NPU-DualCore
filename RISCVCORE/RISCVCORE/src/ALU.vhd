@@ -58,7 +58,11 @@ begin
         '1' when (operation = "01110" and signed(input_0) < signed(input_1)) else   -- BLT
         '1' when (operation = "01100" and signed(input_0) >= signed(input_1)) else  -- BGE
         '1' when (operation = "00101" and unsigned(input_0) < unsigned(input_1)) else  -- BLTU
-        '1' when (operation = "01111" and unsigned(input_0) >= unsigned(input_1)) else -- BGEU
+        '1' when (operation = "01111" and unsigned(input_0) >= unsigned(input_1)) else -- BGEU	  
+		'1' when (operation = "10000" ) else -- JAL OR JALR	  		 
+			
+			
+			
         '0';
 
   -- Branch Detection Logic (only when branch condition is true)
