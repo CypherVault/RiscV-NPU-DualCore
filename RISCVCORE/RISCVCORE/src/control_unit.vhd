@@ -29,7 +29,12 @@ entity ControlUnit is
     
     -- New output for early branch resolution
     if_flush : out std_logic;	  
-    early_branch : out std_logic	  
+    early_branch : out std_logic;	 
+	
+	-- input to deal with rare lockup condition
+	ctrl_disable : in std_logic
+	
+	
   );
 end entity ControlUnit;
 
@@ -42,7 +47,7 @@ architecture Behavioral of ControlUnit is
   signal is_branch_instruction : std_logic;
   
   -- Internal signals for control outputs
-  signal int_MemtoReg, int_RegWrite, int_MemRead, int_MemWrite, int_Branch, int_ALUSrc : std_logic;
+  signal int_MemtoReg, int_RegWrite, int_MemRead, int_MemWrite, int_Branch, int_ALUSrc, int_early_branch : std_logic;
   signal int_ALUOp : std_logic_vector(1 downto 0);
 begin
   -- Extract rs1 and rs2 addresses from instruction
@@ -72,7 +77,7 @@ begin
     if_flush <= '0';
     branch_taken <= '0';
     is_branch_instruction <= '0';
-    early_branch <= '0';
+    int_early_branch <= '0';
 
     case instruction(6 downto 0) is
       -- R-format
@@ -102,23 +107,28 @@ begin
         int_ALUSrc <= '1';
         int_MemWrite <= '1';
         int_ALUOp <= "00";
+		
+		
+		
+     -- beq (branch if equal)
+    when "1100011" =>
+      int_Branch <= '1';
+      int_ALUOp <= "01";
+      is_branch_instruction <= '1';
 
-      -- beq (branch if equal)
-      when "1100011" =>
-        int_Branch <= '1';
-        int_ALUOp <= "01";
-        is_branch_instruction <= '1';
-
-        -- Early branch resolution for conditional branches
-        if is_branch_instruction = '1' then
-          if rs1_final = rs2_final then
-            branch_taken <= '1';
-            early_branch <= '1';
-          else
-            branch_taken <= '0';
-            early_branch <= '0';
-          end if;
+      -- Check if it's specifically a BEQ instruction
+      if instruction(14 downto 12) = "000" then
+        -- Early branch resolution for BEQ
+        if rs1_final = rs2_final then
+          branch_taken <= '1';
+          int_early_branch <= '1';
+        else
+          branch_taken <= '0';
+          int_early_branch <= '0';
         end if;
+      end if;
+	  
+	  
 
       -- JAL (Jump and Link)
       when "1101111" =>
@@ -127,8 +137,7 @@ begin
         int_RegWrite <= '1';
         int_Branch <= '1';
         int_ALUOp <= "01";
-        branch_taken <= '1';
-        early_branch <= '1';
+        branch_taken <= '1';	 
         if_flush <= '1';
 
       -- JALR (Jump and Link Register)
@@ -139,7 +148,7 @@ begin
         int_Branch <= '1';
         int_ALUOp <= "01";
         branch_taken <= '1';
-        early_branch <= '1';
+        
 
       -- Default case
       when others =>
@@ -150,13 +159,14 @@ begin
     if_flush <= branch_taken;
   end process;
 
-  -- Output multiplexing based on cntrlsigmux
-  MemtoReg <= '0' when cntrlsigmux = '1' else int_MemtoReg;
-  RegWrite <= '0' when cntrlsigmux = '1' else int_RegWrite;
-  MemRead <= '0' when cntrlsigmux = '1' else int_MemRead;
-  MemWrite <= '0' when cntrlsigmux = '1' else int_MemWrite;
-  Branch <= '0' when cntrlsigmux = '1' else int_Branch;
-  ALUSrc <= '0' when cntrlsigmux = '1' else int_ALUSrc;
-  ALUOp <= "00" when cntrlsigmux = '1' else int_ALUOp;
+ -- Output multiplexing based on cntrlsigmux OR ctrl_disable
+MemtoReg <= '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_MemtoReg;
+RegWrite <= '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_RegWrite;
+MemRead <= '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_MemRead;
+MemWrite <= '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_MemWrite;
+Branch <= '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_Branch;
+ALUSrc <= '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_ALUSrc;
+ALUOp <= "00" when (cntrlsigmux = '1' or ctrl_disable = '1') else int_ALUOp;
+early_branch <= '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_early_branch;
   
 end architecture Behavioral;

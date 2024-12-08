@@ -142,67 +142,44 @@ Cycle 4: Load x4 with 40
 CELCIUS FARHENHEIT Conversion
 
 
--- Initialization and temperature array setup
-0 => x"00A00093",  -- addi x1, x0, 10    (load first temp 0°C)
-1 => x"01400113",  -- addi x2, x0, 20    (load second temp 20°C)
-2 => x"02500193",  -- addi x3, x0, 37    (load third temp 37°C)
-3 => x"06400213",  -- addi x4, x0, 100   (load fourth temp 100°C)
+0 => x"00000000",  -- Unused position 0
+1 => x"00A00093",  -- addi x1, x0, 10    (load first temp 0°C)
+2 => x"01400113",  -- addi x2, x0, 20    (load second temp 20°C)
+3 => x"02500193",  -- addi x3, x0, 37    (load third temp 37°C)
+4 => x"06400213",  -- addi x4, x0, 100   (load fourth temp 100°C)
+5 => x"02000393",  -- addi x7, x0, 32    (base address for storage)
 
--- Conversion function (celsius_to_fahrenheit)
-4 => x"00309293",  -- slli x5, x1, 3     (multiply by 9)
-5 => x"40528533",  -- sub x10, x5, x5    (subtract to divide by 2)
-6 => x"0012D313",  -- srli x6, x5, 1     (divide by 5)
-7 => x"00020463",  -- beq x4, x0, 8      (add 32 if not zero)
-8 => x"02000313",  -- addi x6, x0, 32    (add 32 to result)
+-- First temperature (x1)
+6 => x"00309293",  -- slli x5, x1, 3     (multiply by 8)
+7 => x"0012d313",  -- srli x6, x5, 1     (divide by 2)
+8 => x"02030313",  -- addi x6, x6, 32    (add 32)
+9 => x"0063a023",  -- sw x6, 0(x7)       (store at base)
 
--- Store converted temperatures
-9 => x"00C00393",  -- addi x7, x0, 12    (base address for storage)
-10 => x"00732023", -- sw x7, 0(x6)       (store first converted temp)
-11 => x"00732223", -- sw x7, 4(x6)       (store second converted temp)
-12 => x"00732423", -- sw x7, 8(x6)       (store third converted temp)
-13 => x"00732623", -- sw x7, 12(x6)      (store fourth converted temp)
+-- Second temperature (x2)
+10 => x"00311293", -- slli x5, x2, 3     (multiply by 8)
+11 => x"0012d313", -- srli x6, x5, 1     (divide by 2)
+12 => x"02030313", -- addi x6, x6, 32    (add 32)
+13 => x"0063a223", -- sw x6, 4(x7)       (store at base + 4)
 
--- Program termination
-14 => x"00000013", -- addi x0, x0, 0     (no-op)
-15 => x"00000067"  -- ret                (return)
+-- Third temperature (x3)
+14 => x"00319293", -- slli x5, x3, 3     (multiply by 8)
+15 => x"0012d313", -- srli x6, x5, 1     (divide by 2)
+16 => x"02030313", -- addi x6, x6, 32    (add 32)
+17 => x"0063a423", -- sw x6, 8(x7)       (store at base + 8)
 
+-- Fourth temperature (x4)
+18 => x"00321293", -- slli x5, x4, 3     (multiply by 8)
+19 => x"0012d313", -- srli x6, x5, 1     (divide by 2)
+20 => x"02030313", -- addi x6, x6, 32    (add 32)
+21 => x"0063a623", -- sw x6, 12(x7)      (store at base + 12)
 
+22 => x"00000067"  -- ret                (return)
 
-
-
-
-Memory Addresses
-
-
-Address	   Hex Address	Content	Description
-0x00000000	0x00	0	First Celsius temperature (0°C)
-0x00000004	0x04	20	Second Celsius temperature (20°C)
-0x00000008	0x08	37	Third Celsius temperature (37°C)
-0x0000000C	0x0C	100	Fourth Celsius temperature (100°C)
-0x00000010	0x10	32	First Fahrenheit conversion (32°F)
-0x00000014	0x14	68	Second Fahrenheit conversion (68°F)
-0x00000018	0x18	98	Third Fahrenheit conversion (98.6°F)
-0x0000001C	0x1C	212	Fourth Fahrenheit conversion (212°F)
-
-
-Final Register States
-
-
-Register Value	Description
-x0	0	Always zero
-x1	10	Temporary value
-x2	20	Temporary value
-x3	0	Empty (branch condition)
-x4	28	Return instruction target address
-x5	0	Empty (jump and link)
-x6	50	Temporary value
-
-
-
-
-
-
-
+The final memory should contain:
+Memory = 72°F
+Memory = 112°F
+Memory = 180°F
+Memory = 432°F
 
 
 
