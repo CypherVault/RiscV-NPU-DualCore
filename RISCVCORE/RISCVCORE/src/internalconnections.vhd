@@ -529,8 +529,8 @@ HAZARD_UNIT_INST : entity work.hazard_unit
       idexrd => idex_rd_to_exmem,
       instruction => ifid_instruction_to_OUT,
       cntrlsigmux => hazardunit_controlsigmux_to_controlunit,
-      pcwriteenable => hazardunit_pcwrite_to_pc,
-      ifidwriteenable => hazardunit_ifidwrite_to_ifid
+      pcwriteenable => hazardunit_pcwrite_to_pc
+      --ifidwriteenable => hazardunit_ifidwrite_to_ifid
     );
 
    -- TO IDEX																  

@@ -1,5 +1,6 @@
 library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_1164.ALL;	  
+use IEEE.NUMERIC_STD.ALL;  -- For signed/unsigned comparisons
 
 entity ControlUnit is
   port (
@@ -55,14 +56,14 @@ begin
   rs2_addr <= instruction(24 downto 20);
 
   -- Select the most recent version of rs1 data
-  rs1_final <= memwb_regdata when rs1_addr = memwb_rd else
-               exmem_regdata when rs1_addr = exmem_rd else
-               rs1_data;
+rs1_final <= exmem_regdata when rs1_addr = exmem_rd else
+             memwb_regdata when rs1_addr = memwb_rd else
+             rs1_data;
 
-  -- Select the most recent version of rs2 data
-  rs2_final <= memwb_regdata when rs2_addr = memwb_rd else
-               exmem_regdata when rs2_addr = exmem_rd else
-               rs2_data;
+-- Select the most recent version of rs2 data
+rs2_final <= exmem_regdata when rs2_addr = exmem_rd else
+             memwb_regdata when rs2_addr = memwb_rd else
+             rs2_data;
 
   process(instruction, rs1_final, rs2_final)
   begin
@@ -110,45 +111,90 @@ begin
 		
 		
 		
-     -- beq (branch if equal)
-    when "1100011" =>
-      int_Branch <= '1';
-      int_ALUOp <= "01";
-      is_branch_instruction <= '1';
+   -- In the branch case (1100011), add handling for all branch types:
+when "1100011" =>
+                int_Branch <= '1';
+                int_ALUOp <= "01";
+                is_branch_instruction <= '1';
 
-      -- Check if it's specifically a BEQ instruction
-      if instruction(14 downto 12) = "000" then
-        -- Early branch resolution for BEQ
-        if rs1_final = rs2_final then
-          branch_taken <= '1';
-          int_early_branch <= '1';
-        else
-          branch_taken <= '0';
-          int_early_branch <= '0';
-        end if;
-      end if;
-	  
-	  
+    case instruction(14 downto 12) is
+        -- BEQ (000)
+        when "000" =>
+            if rs1_final = rs2_final then
+                branch_taken <= '1';
+                int_early_branch <= '1'; 
+				int_RegWrite <= '0';  -- Prevent write-back when branching
+            end if;
+
+        -- BNE (001)
+        when "001" =>
+            if rs1_final /= rs2_final then
+                branch_taken <= '1';
+                int_early_branch <= '1'; 
+				int_RegWrite <= '0';  -- Prevent write-back when branching
+            end if;
+
+        -- BLT (100)
+                    when "100" =>
+                        if signed(rs1_final) < signed(rs2_final) then
+                            branch_taken <= '1';
+                            int_early_branch <= '1';
+                            if_flush <= '1'; 
+							int_RegWrite <= '0';  -- Prevent write-back when branching
+                        end if;
+
+        -- BGE (101)
+        when "101" =>
+            if signed(rs1_final) >= signed(rs2_final) then
+                branch_taken <= '1';
+                int_early_branch <= '1';   
+				int_RegWrite <= '0';  -- Prevent write-back when branching
+            end if;
+
+        -- BLTU (110)
+        when "110" =>
+            if unsigned(rs1_final) < unsigned(rs2_final) then
+                branch_taken <= '1';
+                int_early_branch <= '1';  
+				int_RegWrite <= '0';  -- Prevent write-back when branching
+            end if;
+
+        -- BGEU (111)
+        when "111" =>
+            if unsigned(rs1_final) >= unsigned(rs2_final) then
+                branch_taken <= '1';
+                int_early_branch <= '1';   
+				int_RegWrite <= '0';  -- Prevent write-back when branching
+            end if;
+
+        when others =>
+            null;
+    end case;
+	
+	
 
       -- JAL (Jump and Link)
-      when "1101111" =>
-        int_ALUSrc <= '1';
-        int_MemtoReg <= '0';
-        int_RegWrite <= '1';
-        int_Branch <= '1';
-        int_ALUOp <= "01";
-        branch_taken <= '1';	 
-        if_flush <= '1';
+            when "1101111" =>
+                int_ALUSrc <= '1';
+                int_MemtoReg <= '0';
+                int_RegWrite <= '1';
+                int_Branch <= '1';
+                int_ALUOp <= "01";
+                int_early_branch <= '1';  -- Always take the jump
+                if_flush <= '1';
+                branch_taken <= '1';
 
-      -- JALR (Jump and Link Register)
-      when "1100111" =>
-        int_ALUSrc <= '1';
-        int_MemtoReg <= '0';
-        int_RegWrite <= '1';
-        int_Branch <= '1';
-        int_ALUOp <= "01";
-        branch_taken <= '1';
-        
+            -- JALR (Jump and Link Register)
+            when "1100111" =>
+                int_ALUSrc <= '1';
+                int_MemtoReg <= '0';
+                int_RegWrite <= '1';
+                int_Branch <= '1';
+                int_ALUOp <= "01";
+                int_early_branch <= '1';  -- Always take the jump
+                if_flush <= '1';
+                branch_taken <= '1';
+
 
       -- Default case
       when others =>
@@ -156,7 +202,7 @@ begin
     end case;
 
     -- Set if_flush based on branch_taken
-    if_flush <= branch_taken;
+    -- if_flush <= branch_taken;
   end process;
 
  -- Output multiplexing based on cntrlsigmux OR ctrl_disable
