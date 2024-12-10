@@ -135,13 +135,13 @@ when "1100011" =>
             end if;
 
         -- BLT (100)
-                    when "100" =>
-                        if signed(rs1_final) < signed(rs2_final) then
-                            branch_taken <= '1';
-                            int_early_branch <= '1';
-                            if_flush <= '1'; 
-							int_RegWrite <= '0';  -- Prevent write-back when branching
-                        end if;
+            when "100" =>
+                if signed(rs1_final) < signed(rs2_final) then
+                    branch_taken <= '1';
+                    int_early_branch <= '1';
+                    if_flush <= '1'; 
+					int_RegWrite <= '0';  -- Prevent write-back when branching
+                end if;
 
         -- BGE (101)
         when "101" =>

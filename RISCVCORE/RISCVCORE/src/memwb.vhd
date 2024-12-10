@@ -20,7 +20,8 @@ entity memwb is
 		
 		
 		rdin         : in  STD_LOGIC_VECTOR(4 downto 0);
-		rdout         : out STD_LOGIC_VECTOR(4 downto 0)
+		rdout         : out STD_LOGIC_VECTOR(4 downto 0);
+		branchregwritecancel : in std_logic
     );
 end memwb;
 
@@ -32,7 +33,8 @@ architecture Behavioral of memwb is
 	signal	    MemtoReg_reg : std_logic;
 	signal	    RegWrite_reg : std_logic;
 	
-	signal rd_reg       : STD_LOGIC_VECTOR(4 downto 0);	
+	signal rd_reg       : STD_LOGIC_VECTOR(4 downto 0);	 
+	
 	
 	
 begin
@@ -47,15 +49,36 @@ begin
 			RegWrite_reg <= ( '0');
 			
 			rd_reg <= (others => '0');
-        elsif rising_edge(clk) then
-            -- On rising edge of clock, update internal registers
+        
+			
+			
+		
+		elsif rising_edge(clk) then
+            if 	branchregwritecancel = '1' then 
+				
+			-- On rising edge of clock, update internal registers
+            readdata2_reg <= readdata2in;
+            aluresult_reg <= aluresultin;  		   
+			
+			MemtoReg_reg <= MemtoRegin;
+			RegWrite_reg <= RegWritein;	  -- do not write to register if a branch JUST happened in the EXMEM stage, the write is invalid.
+			
+			rd_reg <= rdin;		
+				
+				
+			
+			
+			else 
+			-- On rising edge of clock, update internal registers
             readdata2_reg <= readdata2in;
             aluresult_reg <= aluresultin;  		   
 			
 			MemtoReg_reg <= MemtoRegin;
 			RegWrite_reg <= RegWritein;
 			
-			rd_reg <= rdin;
+			rd_reg <= rdin;	
+			end if;
+			
         end if;
     end process;
 
