@@ -327,6 +327,10 @@ signal DM_debug_read_enable : std_logic;  -- Data memory read enable
   signal ALURESULT_TO_MEMWB : std_logic_vector(31 downto 0);
   signal memwb_readdata_to_writebackmux : std_logic_vector(31 downto 0);
   signal memwb_aluresult_to_writebackmux : std_logic_vector(31 downto 0);
+   signal branchand_regwritecancel_to_exmem : std_logic;
+  
+  
+  
   
   -- WB control signals
   signal MEMTOREG_TO_MEMWB : std_logic;
@@ -687,6 +691,8 @@ alusrcmuxb_source2_to_exmem <= alusrcmuxB_rs2_to_alu;
       -- Register address
       rdin => idex_rd_to_exmem,
       rdout => exmem_rd_to_memwb
+	  
+	  
     );
 
 	
@@ -740,10 +746,11 @@ port map (
     port map (
       ALUZero => exmem_zero_to_branchand,
       ControlBranch => exmem_branch_to_branchand,
-      BranchResponse => branchand_jumpbranchselect_to_pc_mux
+      BranchResponse => branchand_jumpbranchselect_to_pc_mux 
+	  
     );
 	
-	
+branchand_regwritecancel_to_exmem <= 	branchand_jumpbranchselect_to_pc_mux;
 	
 
 
@@ -772,7 +779,8 @@ port map (
       
       -- Register address
       rdin => exmem_rd_to_memwb,
-      rdout => memwb_rd_to_out
+      rdout => memwb_rd_to_out ,
+	  branchregwritecancel =>  branchand_regwritecancel_to_exmem
     );
 
 

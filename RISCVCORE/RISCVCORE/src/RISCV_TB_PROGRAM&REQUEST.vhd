@@ -121,14 +121,27 @@ begin
       
 	
 		im_enable <= '0';  -- Disable instruction memory write
-		dm_enable <= '0';
+		dm_enable <= '0';		
+		
+		
+		
+		
+		
+		
+		
+		
+		
         -- Run the processor
-        for i in 0 to 100 loop
+        for i in 0 to 150 loop
             clk <= '0';
             wait for CLK_PERIOD / 2;
             clk <= '1';
             wait for CLK_PERIOD / 2;
         end loop;				   
+		
+		
+		
+		
 		
 		
 		

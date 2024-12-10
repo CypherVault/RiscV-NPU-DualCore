@@ -114,6 +114,7 @@ begin
     end process;
 
     -- Continuous assignments for outputs
+        -- Continuous assignments for outputs
     aluzeroout        <= aluzero_reg;
     aluresultout      <= aluresult_reg;
     readdata2out      <= readdata2_reg;	   
@@ -126,4 +127,5 @@ begin
     Branch 	 <= Branch_reg;
 	
     rdout	 <= rd_reg;
+	
 end Behavioral;
