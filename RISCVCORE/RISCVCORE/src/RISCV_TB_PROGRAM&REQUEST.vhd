@@ -31,19 +31,21 @@ architecture behavior of RICSVCORE_tb is
 	
 	constant INSTRUCTION_BUFFER : instruction_array := (	 
 	
-	 -- Memory initialization for RISC-V Modulo Program (47/5)
+	
+-- Memory initialization for RISC-V Modulo Program (47/5)
+
+-- Memory initialization for RISC-V Modulo Program (47/5)
 0 => x"00000000",  -- Unused position 0
 1 => x"02f00513",  -- addi x10, x0, 47    # Load dividend into x10
 2 => x"00500593",  -- addi x11, x0, 5     # Load divisor into x11
 3 => x"00000613",  -- addi x12, x0, 0     # Initialize quotient in x12
-4 => x"00050693",  -- addi x13, x10, 0    # Copy dividend to x13 (remainder)
--- loop:
-5 => x"02b6c063",  -- blt x13, x11, 32  # Branch if remainder < divisor (4 words ahead)
-6 => x"40b686b3",  -- sub x13, x13, x11   # Subtract divisor from remainder
+-- Reordered sequence
+4 => x"00050693",  -- addi x13, x10, 0    # Copy dividend to x13
+5 => x"40b686b3",  -- sub x13, x13, x11   # Subtract first
+6 => x"02b6c063",  -- blt x13, x11, 32    # Then compare
 7 => x"00160613",  -- addi x12, x12, 1    # Increment quotient
-8 => x"ff5ff06f",  -- jal x0, -12       # Jump back to loop (-2 words)
--- done:
-9 => x"00000000",  -- Unused position
+8 => x"ff5ff06f",  -- jal x0, -12        # Jump back from 32 to 169 => x"00000000",  -- Unused position
+9 => x"00000000", -- Unused position
 10 => x"00000000", -- Unused position
 11 => x"00000000", -- Unused position
 12 => x"00000000", -- Unused position
@@ -121,7 +123,7 @@ begin
 		im_enable <= '0';  -- Disable instruction memory write
 		dm_enable <= '0';
         -- Run the processor
-        for i in 0 to 35 loop
+        for i in 0 to 100 loop
             clk <= '0';
             wait for CLK_PERIOD / 2;
             clk <= '1';

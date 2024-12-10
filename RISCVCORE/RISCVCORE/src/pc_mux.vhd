@@ -14,7 +14,7 @@ architecture behavioral of pc_mux is
     signal control : std_logic;
 begin
     -- Select the control signal based on the priority
-    control <= branch or earlybranchcontrolunit;
+    control <= earlybranchcontrolunit;	  --also branch??
     
     with control select
         pcsource <= 
