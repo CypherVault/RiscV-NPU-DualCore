@@ -1,0 +1,308 @@
+/*
+ * EASE CSS stylesheet used for the generated HTML
+ */
+
+:root {
+  --hdlw:  #E04C10;
+  --hdlw_light:  #f8dcd0;
+  --hdlw_nav_bg: #DDDDDD;
+  --hdlw_table_bor: #BBBBBB;
+}
+
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    /*
+    font-size: 16px;
+    */
+    font-style: normal;
+    font-weight: normal;
+    background-color:white;
+    color: black;
+}
+
+body {
+    margin-top: 0;   
+    margin-right: 1em;
+    margin-left: 1em;
+}
+
+h1 {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #FF0000;
+}
+
+h2 {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #0000FF;
+}
+
+h3 {
+    font-size: 1em;
+    font-weight: bold;
+    color: #0000FF;
+}
+
+pre {
+    font-family: Courier;
+	line-height: 1.1em;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+span.LineNo {
+    color: black;
+}
+
+.fsmTable {
+    border: solid var(--hdlw_table_bor);
+    border-collapse: collapse;
+}
+
+.fsmTable td {
+
+    border: solid var(--hdlw_table_bor);
+    padding: 4px;
+    font-size:0.9em;
+}
+
+
+.hdlw_banner
+{
+    font-size: 0.9em;
+    height: 1.8em;
+    margin-left: -1em;
+    margin-right: -1em;
+    padding: 0;
+    background-color: var(--hdlw);
+}
+
+.hdlw_banner a
+{
+    display: block;
+    text-align: center;
+    text-decoration:none;
+    padding-top: 0.2em;
+    color: black;
+}
+
+
+.hdlw_nav {
+    /*
+    font-size: 14px;
+    */
+    background-color:var(--hdlw_nav_bg);
+    height: 1.8em;
+    margin-left:-1em;
+    margin-right:-1em;
+}
+
+.hdlw_nav table {
+    width: 100%;
+    padding-left: 2em;
+   
+}
+
+.hdlw_nav img {
+    vertical-align: middle;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+
+.tableContents
+{
+    border: none;
+    border-collapse: collapse;
+    margin-top: 1.0em;
+    margin-bottom: 0.7em;
+    margin-left: auto;
+    margin-right: auto;
+    /*
+    font-size: 12px;
+    */
+    font-size: 0.9em;
+    font-style: normal;
+    font-weight: bold;
+}
+
+
+.tableContents td
+{
+    border: solid var(--hdlw_table_bor);
+    background-color:white;
+
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+    padding-right: 2em;
+    padding-left: 2em;
+
+}
+
+.tableContents td a
+{
+    text-decoration:none;
+    color:black ;
+}
+
+td.grActive
+{
+    background-color: var(--hdlw);
+}
+
+td.grActive a
+{
+    color:white;
+}
+
+.ease_svg_diagram
+{
+    border: solid black;
+    border-width: thin;
+}
+
+.ease_svg_symbol
+{
+    border: solid black;
+    border-width: 1px;
+}
+
+.ease_list_item
+{
+    list-style-position: outside;
+    padding-left: 7px;
+    list-style-type: none;
+    vertical-align: middle;
+    position:relative;
+    left: -1em;
+}
+
+.ttTable {
+    background-color:#666666;
+}
+
+
+.ttHeader {
+    background-color:#EEEEEE;
+    padding: 7px;
+}
+
+.ttInputs{
+    background-color:#F0E68C;
+    padding: 3px;
+}
+
+.ttOutputs {
+    background-color:#ADD8E6;
+    padding: 3px;
+}
+
+/*
+  Scriptum colorschemes style settings
+*/
+.DefaultText { color : #000000;    background-color: #ffffff;  }
+.DefaultMargin { color : #000000;    background-color: #dcdcdc; padding-bottom:2px;  }
+.DefaultSelected { color : #ffff00;  }
+.DefaultSecSelected { color : #ffff00;  }
+.DefaultComment { color : #32cd32; font-style: italic;  }
+.DefaultStrings { color : #0000cd; font-weight: bold;  }
+.DefaultExpander { color : #000080; font-weight: bold;  }
+.DefaultGroup1 { color : #ff0000; font-weight: bold;  }
+.DefaultGroup2 { color : #6495ed; font-weight: bold;  }
+.DefaultGroup3 { color : #d02090;  }
+.DefaultGroup4 { color : #ff4500;  }
+.DefaultGroup5 { color : #da70d6;  }
+
+.BlueText { color : #000000;    background-color: #add8e6;  }
+.BlueMargin { color : #000000;    background-color: #87ceeb; padding-bottom:2px;  }
+.BlueSelected { color : #ffff00;  }
+.BlueSecSelected { color : #ffd700;  }
+.BlueComment { color : #2f4f4f; font-style: italic;  }
+.BlueStrings { color : #8a2be2; font-weight: bold;  }
+.BlueExpander { color : #4682b4; font-weight: bold;  }
+.BlueGroup1 { color : #a52a2a; font-weight: bold;  }
+.BlueGroup2 { color : #191970; font-weight: bold;  }
+.BlueGroup3 { color : #0000cd; font-weight: bold;  }
+.BlueGroup4 { color : #a0522d;  }
+.BlueGroup5 { color : #a52a2a;  }
+
+.DesertText { color : #ffffff;    background-color: #282828;  }
+.DesertMargin { color : #f0f0f0;    background-color: #3c3c3c; padding-bottom:2px;  }
+.DesertSelected { color : #ffd700;  }
+.DesertSecSelected { color : #ffd700;  }
+.DesertComment { color : #ffff00; font-style: italic;  }
+.DesertStrings { color : #fa8072; font-weight: bold;  }
+.DesertExpander { color : #4682b4; font-weight: bold;  }
+.DesertGroup1 { color : #f0e68c; font-weight: bold;  }
+.DesertGroup2 { color : #f5deb3; font-weight: bold;  }
+.DesertGroup3 { color : #ff7f50;  }
+.DesertGroup4 { color : #a0522d;  }
+.DesertGroup5 { color : #a52a2a;  }
+
+.EveningText { color : #ffffff;    background-color: #282828;  }
+.EveningMargin { color : #f0f0f0;    background-color: #3c3c3c; padding-bottom:2px;  }
+.EveningSelected { color : #ffffff;  }
+.EveningSecSelected { color : #141414;  }
+.EveningComment { color : #fa8072; font-style: italic;  }
+.EveningStrings { color : #a52a2a; font-weight: bold;  }
+.EveningExpander { color : #0000ff; font-weight: bold;  }
+.EveningGroup1 { color : #ffff00; font-weight: bold;  }
+.EveningGroup2 { color : #00ff00; font-weight: bold;  }
+.EveningGroup3 { color : #87ceeb;  }
+.EveningGroup4 { color : #7fffd4;  }
+.EveningGroup5 { color : #00ffff;  }
+
+.Midnight-BlackText { color : #f0f0f0;    background-color: #282828;  }
+.Midnight-BlackMargin { color : #f0f0f0;    background-color: #3c3c3c; padding-bottom:2px;  }
+.Midnight-BlackSelected { color : #ffff00;  }
+.Midnight-BlackSecSelected { color : #ffff00;  }
+.Midnight-BlackComment { color : #98fb98; font-style: italic;  }
+.Midnight-BlackStrings { color : #40e0d0; font-weight: bold;  }
+.Midnight-BlackExpander { color : #ffff00; font-weight: bold;  }
+.Midnight-BlackGroup1 { color : #fa8072; font-weight: bold;  }
+.Midnight-BlackGroup2 { color : #6495ed; font-weight: bold;  }
+.Midnight-BlackGroup3 { color : #d02090;  }
+.Midnight-BlackGroup4 { color : #ff4500;  }
+.Midnight-BlackGroup5 { color : #da70d6;  }
+
+.MorningText { color : #000000;    background-color: #f0f0f0;  }
+.MorningMargin { color : #141414;    background-color: #dcdcdc; padding-bottom:2px;  }
+.MorningSelected { color : #000000;  }
+.MorningSecSelected { color : #000000;  }
+.MorningComment { color : #0000ff; font-style: italic;  }
+.MorningStrings { color : #ff00ff; font-weight: bold;  }
+.MorningExpander { color : #0000ff; font-weight: bold;  }
+.MorningGroup1 { color : #a52a2a; font-weight: bold;  }
+.MorningGroup2 { color : #000000; font-weight: bold;  }
+.MorningGroup3 { color : #006400;  }
+.MorningGroup4 { color : #000080;  }
+.MorningGroup5 { color : #8a2be2;  }
+
+.NavyText { color : #f0f0f0;    background-color: #000080;  }
+.NavyMargin { color : #dcdcdc;    background-color: #0000ff; padding-bottom:2px;  }
+.NavySelected { color : #add8e6;  }
+.NavySecSelected { color : #ff0000;  }
+.NavyComment { color : #00ff00; font-style: italic;  }
+.NavyStrings { color : #ff00ff; font-weight: bold;  }
+.NavyExpander { color : #4682b4; font-weight: bold;  }
+.NavyGroup1 { color : #ffff00; font-weight: bold;  }
+.NavyGroup2 { color : #40e0d0; font-weight: bold;  }
+.NavyGroup3 { color : #a52a2a;  }
+.NavyGroup4 { color : #da70d6;  }
+.NavyGroup5 { color : #d8bfd8;  }
+
+.ShineText { color : #000000;    background-color: #f0f0f0;  }
+.ShineMargin { color : #000000;    background-color: #dcdcdc; padding-bottom:2px;  }
+.ShineSelected { color : #f0e68c;  }
+.ShineSecSelected { color : #000000;  }
+.ShineComment { color : #3c3c3c; font-style: italic;  }
+.ShineStrings { color : #cd5c5c; font-weight: bold;  }
+.ShineExpander { color : #ff0000; font-weight: bold;  }
+.ShineGroup1 { color : #a52a2a; font-weight: bold;  }
+.ShineGroup2 { color : #ff7f50; font-weight: bold;  }
+.ShineGroup3 { color : #006400;  }
+.ShineGroup4 { color : #d2b48c;  }
+.ShineGroup5 { color : #daa520;  }
+
