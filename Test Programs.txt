@@ -194,7 +194,7 @@ Memory = 432°F
 7 => x"00160613",  -- addi x12, x12, 1    # Increment quotient
 8 => x"ff5ff06f",  -- jal x0, -12        # Jump back from 32 to 16
 
-
+so the last incremenbted 9 is not bein saved, and the weired negative number s being sent on the last clk cycle 1000ns to jump to this point after clk.
 
 
 
