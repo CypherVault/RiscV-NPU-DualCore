@@ -23,4 +23,3 @@
 .\src\REGISTER_AXI.vhd
 .\src\internalconnections.vhd
 .\src\riscvcore_zynq.vhd
-.\src\AXI_reg_example.vhd

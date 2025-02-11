@@ -9,30 +9,29 @@ use work.types_pkg.all;
             
 entity RISCVCOREZYNQ is
     port (
-        -- System control ports	 -- WILL BE AXI
+        -- System control ports
         clock : in std_logic;
-        resetbar : in std_logic
+        resetbar : in std_logic;
         
-        -- AXI DATA INTERFACES
-       -- debug_clk : in std_logic;
---        debug_addr : in std_logic_vector(6 downto 0);  -- 7 bits for 128 addresses
---        debug_data : inout std_logic_vector(31 downto 0);
---        	 
-
-
-
-
-
-
-        -- AXI CONTROL SIGNALS
-      --  rf_enable : in std_logic;    -- Register File read enable
---        im_enable : in std_logic;    -- Instruction Memory write enable
---        dm_enable : in std_logic     -- Data Memory read enable	   
---		
-		
-		
-		
-		
+        -- Instruction Memory Interface
+        pc_out : out std_logic_vector(15 downto 0);
+        instruction_in : in std_logic_vector(31 downto 0);
+        
+        -- Register File Interface
+        reg_write : out std_logic;
+        rs1_addr : out std_logic_vector(4 downto 0);
+        rs2_addr : out std_logic_vector(4 downto 0);
+        rd_addr : out std_logic_vector(4 downto 0);
+        write_data : out std_logic_vector(31 downto 0);
+        reg1_data : in std_logic_vector(31 downto 0);
+        reg2_data : in std_logic_vector(31 downto 0);
+        
+        -- Data Memory Interface
+        mem_read : out std_logic;
+        mem_write : out std_logic;
+        mem_addr : out std_logic_vector(31 downto 0);
+        mem_write_data : out std_logic_vector(31 downto 0);
+        mem_read_data : in std_logic_vector(31 downto 0)
     );
 end entity RISCVCOREZYNQ;
 
@@ -41,15 +40,27 @@ architecture behavior of RISCVCOREZYNQ is
     component internal_connections is
         port (
             clock : in std_logic;
-            resetbar : in std_logic
-			
-			
-          ----  debug_clk : in std_logic;
-----            debug_addr : in std_logic_vector(6 downto 0);
-----            debug_data : inout std_logic_vector(31 downto 0);
---            rf_enable : in std_logic;
---            im_enable : in std_logic;
---            dm_enable : in std_logic
+            resetbar : in std_logic;
+            
+            -- Instruction Memory Interface
+            pc_out : out std_logic_vector(15 downto 0);
+            instruction_in : in std_logic_vector(31 downto 0);
+            
+            -- Register File Interface
+            reg_write : out std_logic;
+            rs1_addr : out std_logic_vector(4 downto 0);
+            rs2_addr : out std_logic_vector(4 downto 0);
+            rd_addr : out std_logic_vector(4 downto 0);
+            write_data : out std_logic_vector(31 downto 0);
+            reg1_data : in std_logic_vector(31 downto 0);
+            reg2_data : in std_logic_vector(31 downto 0);
+            
+            -- Data Memory Interface
+            mem_read : out std_logic;
+            mem_write : out std_logic;
+            mem_addr : out std_logic_vector(31 downto 0);
+            mem_write_data : out std_logic_vector(31 downto 0);
+            mem_read_data : in std_logic_vector(31 downto 0)
         );
     end component;
 
@@ -64,9 +75,27 @@ begin
         port map (
             -- System control ports
             clock => clock,
-            resetbar => resetbar
+            resetbar => resetbar,
             
+            -- Instruction Memory Interface
+            pc_out => pc_out,
+            instruction_in => instruction_in,
             
+            -- Register File Interface
+            reg_write => reg_write,
+            rs1_addr => rs1_addr,
+            rs2_addr => rs2_addr,
+            rd_addr => rd_addr,
+            write_data => write_data,
+            reg1_data => reg1_data,
+            reg2_data => reg2_data,
+            
+            -- Data Memory Interface
+            mem_read => mem_read,
+            mem_write => mem_write,
+            mem_addr => mem_addr,
+            mem_write_data => mem_write_data,
+            mem_read_data => mem_read_data
         );
 
 end architecture behavior;
