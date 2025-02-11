@@ -1,0 +1,76 @@
+[Project]
+Current Flow=Generic
+VCS=0
+version=4
+Current Config=compile
+[Configurations]
+compile=RISCV32I_ZYNQCORE
+[Library]
+RISCV32I_ZYNQCORE=.\RISCV32I_ZYNQCORE\RISCV32I_ZYNQCORE.lib
+[$LibMap$]
+RISCV32I_ZYNQCORE=.
+Active_lib=
+[Settings]
+FLOW_TYPE=HDL
+LANGUAGE=VHDL
+REFRESH_FLOW=1
+FLOWTOOLS=NONE
+FAMILY=
+[Files]
+/forwardingmuxa.vhd=-1
+/memwb.vhd=-1
+/program_counter.vhd=-1
+/types_pk.vhd=-1
+/writebackmux.vhd=-1
+/pc_mux.vhd=-1
+/pcimmadder.vhd=-1
+/pc4adder.vhd=-1
+/ifid.vhd=-1
+/INSTRUCTION_MEMORY_AXI.vhd=-1
+/immediategen.vhd=-1
+/hazardunit.vhd=-1
+/idex.vhd=-1
+/forwardingmuxb.vhd=-1
+/branch_and.vhd=-1
+/exmem.vhd=-1
+/forwarding_unit.vhd=-1
+/control_unit.vhd=-1
+/alucontrol.vhd=-1
+/alusrcmuxb.vhd=-1
+/alu.vhd=-1
+/DATA_MEM_AXI.vhd=-1
+/REGISTER_AXI.vhd=-1
+/internalconnections.vhd=-1
+/riscvcore_zynq.vhd=-1
+/AXI_reg_example.vhd=-1
+[Files.Data]
+.\src\forwardingmuxa.vhd=VHDL Source Code
+.\src\memwb.vhd=VHDL Source Code
+.\src\program_counter.vhd=VHDL Source Code
+.\src\types_pk.vhd=VHDL Source Code
+.\src\writebackmux.vhd=VHDL Source Code
+.\src\pc_mux.vhd=VHDL Source Code
+.\src\pcimmadder.vhd=VHDL Source Code
+.\src\pc4adder.vhd=VHDL Source Code
+.\src\ifid.vhd=VHDL Source Code
+.\src\INSTRUCTION_MEMORY_AXI.vhd=VHDL Source Code
+.\src\immediategen.vhd=VHDL Source Code
+.\src\hazardunit.vhd=VHDL Source Code
+.\src\idex.vhd=VHDL Source Code
+.\src\forwardingmuxb.vhd=VHDL Source Code
+.\src\branch_and.vhd=VHDL Source Code
+.\src\exmem.vhd=VHDL Source Code
+.\src\forwarding_unit.vhd=VHDL Source Code
+.\src\control_unit.vhd=VHDL Source Code
+.\src\alucontrol.vhd=VHDL Source Code
+.\src\alusrcmuxb.vhd=VHDL Source Code
+.\src\alu.vhd=VHDL Source Code
+.\src\DATA_MEM_AXI.vhd=VHDL Source Code
+.\src\REGISTER_AXI.vhd=VHDL Source Code
+.\src\internalconnections.vhd=VHDL Source Code
+.\src\riscvcore_zynq.vhd=VHDL Source Code
+.\src\AXI_reg_example.vhd=VHDL Source Code
+[HierarchyViewer]
+HierarchyInformation=riscvcorezynq|behavior|0
+ShowHide=ShowTopLevel
+Selected=

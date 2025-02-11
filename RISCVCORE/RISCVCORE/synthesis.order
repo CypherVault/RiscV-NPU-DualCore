@@ -18,6 +18,5 @@ i<>.\src\branch_and.vhd
 i<>.\src\writebackmux.vhd
 i<>.\src\memwb.vhd
 i<>.\src\instruction_memory_reprogrammable.vhd
-i<>.\src\RISCV_TB_PROGRAM&REQUEST.vhd
 i<>.\src\register_REQUEST.vhd
 i<>.\src\Data_Memory_REQUEST.vhd

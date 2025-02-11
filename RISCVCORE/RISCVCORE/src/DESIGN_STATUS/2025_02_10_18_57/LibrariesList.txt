@@ -1,0 +1,38 @@
+-------------------------------------------------------------------------------
+--
+-- Title      : List of local and global libraries visible in Library Manager
+-- Active-HDL : 15.0.261.9132
+-- Workspace  : RISCVCORE
+-- Design     : RISCVCORE
+-- Author     : chrisnielsen
+-- Company    : RISCVBusiness
+-- Date       : 2025-02-10 18:57:59
+--
+-------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Library            | Mode  | Vendor   | Version                                        | Path                                                                              | Comment
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+aldec              | RO    | Aldec    | Aldec Active-HDL                               | C:/Aldec/Active-HDL-Student-Edition/vlib/aldec                                    | VHDL procedures for calling ASDB, MATLAB, Signal Agent tasks from the VHDL code, Random package
+exemplar           | RO    | Mentor   | Mentor Graphics Precision RTL Synthesis 2017.1 | C:/Aldec/Active-HDL-Student-Edition/vlib/exemplar                                 | EXEMPLAR VHDL library
+aldec_axi_vip      | RO    | No Data  | No Data                                        | C:/Aldec/Active-HDL-Student-Edition/vlib/aldec_axi_vip                            | UVM agents for AXI interface
+aldec_axi_bfm      | RO    | No Data  | No Data                                        | C:/Aldec/Active-HDL-Student-Edition/vlib/aldec_axi_bfm                            | Bus functional models for AXI interface
+osvvm              | RO    | No Data  | SynthWorks                                     | C:/Aldec/Active-HDL-Student-Edition/vlib/osvvm                                    | OSVVM 2023.09b Utility Library
+vital2000          | RO    | No Data  | No Data                                        | C:/Aldec/Active-HDL-Student-Edition/vlib/ieee                                     | Standard IEEE packages library
+uvm_1_1d           | RO    | No Data  | No Data                                        | C:/Aldec/Active-HDL-Student-Edition/vlib/uvm-1.1d/lib                             | UVM 1.1d Library
+uvvm_util          | RO    | No Data  | Bitvis AS                                      | C:/Aldec/Active-HDL-Student-Edition/vlib/uvvm_util                                | UVVM 2023.09.16 VHDL Library
+uvm_1_2            | RO    | No Data  | No Data                                        | C:/Aldec/Active-HDL-Student-Edition/vlib/uvm-1.2/lib                              | UVM 1.2 Library
+uvm                | RO    | No Data  | No Data                                        | C:/Aldec/Active-HDL-Student-Edition/vlib/uvm-1800.2-2017/lib                      | UVM 1800.2-2017 Library
+osvvm_common       | RO    | No Data  | SynthWorks                                     | C:/Aldec/Active-HDL-Student-Edition/vlib/osvvm_common                             | OSVVM 2023.09b Common Library
+vl                 | RO    | No Data  | No Data                                        | C:/Aldec/Active-HDL-Student-Edition/vlib/vl                                       | Standard Verilog library
+ieee_proposed      | RO    | No Data  | No Data                                        | C:/Aldec/Active-HDL-Student-Edition/vlib/ieee_proposed                            | VHDL '93 compatible version of the proposed packages for the IEEE 1076-2008 standard
+uvm_1800_2_2020    | RO    | No Data  | No Data                                        | C:/Aldec/Active-HDL-Student-Edition/vlib/uvm-1800.2-2020/lib                      | UVM 1800.2-2020 Library
+riscvcore          | RW    | No Data  | No Data                                        | C:/Users/chrisnielsen/Desktop/Senior Design Project/RISCVCORE/RISCVCORE/RISCVCORE | No Data
+std                | RO    | No Data  | No Data                                        | C:/Aldec/Active-HDL-Student-Edition/vlib/std                                      | Standard VHDL library
+uvvm_vvc_framework | RO    | No Data  | Bitvis AS                                      | C:/Aldec/Active-HDL-Student-Edition/vlib/uvvm_vvc_framework                       | UVVM 2023.09.16 VVC Framework Utility Library
+ieee               | RO    | No Data  | No Data                                        | C:/Aldec/Active-HDL-Student-Edition/vlib/ieee                                     | Standard IEEE packages library
+uvm_1800_2_2017    | RO    | No Data  | No Data                                        | C:/Aldec/Active-HDL-Student-Edition/vlib/uvm-1800.2-2017/lib                      | UVM 1800.2-2017 Library
+synopsys           | RO    | No Data  | No Data                                        | C:/Aldec/Active-HDL-Student-Edition/vlib/synopsys                                 | Synopsys VHDL library
+assertions         | RO    | No Data  | No Data                                        | C:/Aldec/Active-HDL-Student-Edition/vlib/assertions                               | Aldec VHDL cast2stdulogic functions for PSL
+synplify           | RO    | Synopsys | Synopsys FPGA Products N-2017.09               | C:/Aldec/Active-HDL-Student-Edition/vlib/synplify                                 | SYNPLIFY VHDL library
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
