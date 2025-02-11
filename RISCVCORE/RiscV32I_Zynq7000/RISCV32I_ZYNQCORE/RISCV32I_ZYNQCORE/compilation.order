@@ -7,7 +7,6 @@
 .\src\pcimmadder.vhd
 .\src\pc4adder.vhd
 .\src\ifid.vhd
-.\src\INSTRUCTION_MEMORY_AXI.vhd
 .\src\immediategen.vhd
 .\src\hazardunit.vhd
 .\src\idex.vhd
@@ -19,6 +18,7 @@
 .\src\alucontrol.vhd
 .\src\alusrcmuxb.vhd
 .\src\alu.vhd
+.\src\INSTRUCTION_MEMORY_AXI.vhd
 .\src\DATA_MEM_AXI.vhd
 .\src\REGISTER_AXI.vhd
 .\src\internalconnections.vhd
