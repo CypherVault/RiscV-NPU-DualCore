@@ -13,14 +13,13 @@ use work.types_pkg.all;
         clock : in std_logic;
         resetbar : in std_logic
         
-        -- Unified debug interface (48 bits total)
+        -- to AXI external connections
 		
 		
         
-        -- Separate control signals for each memory		 
-			
-			
-		-- debug_en : in std_logic                        -- Enable bit
+        
+		
+		
 		
     );
 end entity internal_connections;
