@@ -1,0 +1,11 @@
+[Version]
+Version=15.0
+[Designs]
+riscv32i_zynqcore=.\RISCV32I_ZYNQCORE\RISCV32I_ZYNQCORE.adf
+[Browser]
+sort=order
+mode=none
+[Order]
+order=1
+[Expand]
+riscv32i_zynqcore=1

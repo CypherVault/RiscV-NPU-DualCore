@@ -9,16 +9,16 @@ use work.types_pkg.all;
             
 entity RICSVCORE is
     port (
-        -- System control ports
+        -- System control ports	 -- WILL BE AXI
         clock : in std_logic;
         resetbar : in std_logic;
         
-        -- Unified debug interface
+        -- AXI DATA INTERFACES
         debug_clk : in std_logic;
         debug_addr : in std_logic_vector(6 downto 0);  -- 7 bits for 128 addresses
         debug_data : inout std_logic_vector(31 downto 0);
         
-        -- Separate enable signals
+        -- AXI CONTROL SIGNALS
         rf_enable : in std_logic;    -- Register File read enable
         im_enable : in std_logic;    -- Instruction Memory write enable
         dm_enable : in std_logic     -- Data Memory read enable

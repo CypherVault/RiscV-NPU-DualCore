@@ -1,0 +1,52 @@
+Active-HDL 15.0.261.9132 2025-02-10 20:05:47
+
+Elaboration top modules:
+Architecture                  behavior(RISCVCOREZYNQ)
+
+
+-----------------------------------------------------------------------------------------------------------------
+Entity               | Architecture | Library           | Info | Compiler Version          | Compilation Options
+-----------------------------------------------------------------------------------------------------------------
+RISCVCOREZYNQ        | behavior     | riscv32i_zynqcore |      | 15.0.261.9132 (Windows64) | -O3
+internal_connections | behavioral   | riscv32i_zynqcore |      | 15.0.261.9132 (Windows64) | -O3
+pc_mux               | behavioral   | riscv32i_zynqcore |      | 15.0.261.9132 (Windows64) | -O3
+pc4adder             | rtl          | riscv32i_zynqcore |      | 15.0.261.9132 (Windows64) | -O3
+program_counter      | rtl          | riscv32i_zynqcore |      | 15.0.261.9132 (Windows64) | -O3
+instruction_memory   | Behavioral   | riscv32i_zynqcore |      | 15.0.261.9132 (Windows64) | -O3
+ifid                 | Behavioral   | riscv32i_zynqcore |      | 15.0.261.9132 (Windows64) | -O3
+ImmGen               | Behavioral   | riscv32i_zynqcore |      | 15.0.261.9132 (Windows64) | -O3
+pcimmadder           | behavior     | riscv32i_zynqcore |      | 15.0.261.9132 (Windows64) | -O3
+regfile              | Behavioral   | riscv32i_zynqcore |      | 15.0.261.9132 (Windows64) | -O3
+ControlUnit          | Behavioral   | riscv32i_zynqcore |      | 15.0.261.9132 (Windows64) | -O3
+hazard_unit          | Behavioral   | riscv32i_zynqcore |      | 15.0.261.9132 (Windows64) | -O3
+idex                 | Behavioral   | riscv32i_zynqcore |      | 15.0.261.9132 (Windows64) | -O3
+alucontrol           | Behavioral   | riscv32i_zynqcore |      | 15.0.261.9132 (Windows64) | -O3
+ALU                  | Behavioral   | riscv32i_zynqcore |      | 15.0.261.9132 (Windows64) | -O3
+forwardingMuxA       | Behavioral   | riscv32i_zynqcore |      | 15.0.261.9132 (Windows64) | -O3
+forwardingMuxB       | Behavioral   | riscv32i_zynqcore |      | 15.0.261.9132 (Windows64) | -O3
+ALUSrcMuxB           | Behavioral   | riscv32i_zynqcore |      | 15.0.261.9132 (Windows64) | -O3
+exmem                | Behavioral   | riscv32i_zynqcore |      | 15.0.261.9132 (Windows64) | -O3
+ForwardingUnit       | Behavioral   | riscv32i_zynqcore |      | 15.0.261.9132 (Windows64) | -O3
+data_memory          | Behavioral   | riscv32i_zynqcore |      | 15.0.261.9132 (Windows64) | -O3
+BranchAND            | Behavioral   | riscv32i_zynqcore |      | 15.0.261.9132 (Windows64) | -O3
+memwb                | Behavioral   | riscv32i_zynqcore |      | 15.0.261.9132 (Windows64) | -O3
+writebackmux         | Behavioral   | riscv32i_zynqcore |      | 15.0.261.9132 (Windows64) | -O3
+-----------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------
+VHDL Package                        | Library           | Info | Compiler Version          | Compilation Options
+-----------------------------------------------------------------------------------------------------------------
+standard                            | std               |      |                           | <unavailable>
+TEXTIO                              | std               |      | 15.0.261.9132 (Windows64) |  -2019
+std_logic_1164                      | ieee              |      | 15.0.261.9132 (Windows64) |  -2008
+types_pkg                           | riscv32i_zynqcore |      | 15.0.261.9132 (Windows64) | -O3
+NUMERIC_STD                         | ieee              |      | 15.0.261.9132 (Windows64) |  -2008
+-----------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------
+Library                             | Comment
+-----------------------------------------------------------------------------------------------------------------
+ieee                                | Standard IEEE packages library
+riscv32i_zynqcore                   | None
+std                                 | Standard VHDL library
+-----------------------------------------------------------------------------------------------------------------
