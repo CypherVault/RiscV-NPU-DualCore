@@ -1,0 +1,66 @@
+# ELBREAD: Elaboration process.
+# ELBREAD: Error: Architecture 'behavior' of entity 'riscvcorezynq' not found in library 'riscv32i_zynqcore'.
+# ELBREAD: Error: Elaboration process completed with errors.
+# Design: Error: Elaboration failed
+acom -reorder -O3 -e 100 -work RISCV32I_ZYNQCORE -2002  $dsn/src/forwardingmuxa.vhd $dsn/src/memwb.vhd $dsn/src/program_counter.vhd $dsn/src/types_pk.vhd $dsn/src/writebackmux.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/pc4adder.vhd $dsn/src/ifid.vhd $dsn/src/INSTRUCTION_MEMORY_AXI.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/forwardingmuxb.vhd $dsn/src/branch_and.vhd $dsn/src/exmem.vhd $dsn/src/forwarding_unit.vhd $dsn/src/control_unit.vhd $dsn/src/alucontrol.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/alu.vhd $dsn/src/DATA_MEM_AXI.vhd $dsn/src/REGISTER_AXI.vhd $dsn/src/internalconnections.vhd $dsn/src/riscvcore_zynq.vhd $dsn/src/AXI_reg_example.vhd
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "memwb"
+# Compile Architecture "Behavioral" of Entity "memwb"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Package "types_pkg"
+# Compile Entity "writebackmux"
+# Compile Architecture "Behavioral" of Entity "writebackmux"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "BranchAND"
+# Compile Architecture "Behavioral" of Entity "BranchAND"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "data_memory"
+# Compile Architecture "Behavioral" of Entity "data_memory"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "internal_connections"
+# Compile Architecture "behavioral" of Entity "internal_connections"
+# Compile Entity "RISCVCOREZYNQ"
+# Compile Architecture "behavior" of Entity "RISCVCOREZYNQ"
+# Compile Entity "myip"
+# Compile Architecture "arch_imp" of Entity "myip"
+# Top-level unit(s) detected:
+# Entity => RISCVCOREZYNQ
+# Entity => myip
+# Warning: ELAB1_0026: AXI_reg_example.vhd : (85, 0): There is no default binding for component "myip_slave_lite_v1_0_S00_AXI". (No entity named "myip_slave_lite_v1_0_S00_AXI" was found).
+# Compile success 0 Errors 1 Warnings  Analysis time :  0.7 [s]
+# ELBREAD: Elaboration process.
+# ELBREAD: Error: Package not found: types_pkg (library: riscv32i_zynqcore).
+# ELBREAD: Error: Elaboration process completed with errors.
+# Design: Error: Elaboration failed
+acom -O3 -e 100 -work RISCV32I_ZYNQCORE -2002  $dsn/src/forwardingmuxa.vhd $dsn/src/memwb.vhd $dsn/src/program_counter.vhd $dsn/src/types_pk.vhd $dsn/src/writebackmux.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/pc4adder.vhd $dsn/src/ifid.vhd $dsn/src/INSTRUCTION_MEMORY_AXI.vhd $dsn/src/immediategen.vhd $dsn/src/hazardunit.vhd $dsn/src/idex.vhd $dsn/src/forwardingmuxb.vhd $dsn/src/branch
