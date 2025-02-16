@@ -43,11 +43,15 @@
     <Option Name="SimulatorGccVersionVCS" Val="9.2.0"/>
     <Option Name="SimulatorGccVersionRiviera" Val="9.3.0"/>
     <Option Name="SimulatorGccVersionActiveHdl" Val="9.3.0"/>
+    <Option Name="TargetLanguage" Val="VHDL"/>
     <Option Name="BoardPart" Val="avnet.com:minized:part0:1.3"/>
     <Option Name="BoardPartRepoPaths" Val="$PPRDIR/../../../AppData/Roaming/Xilinx/Vivado/2024.2/xhub/board_store/xilinx_board_store"/>
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/registerIP_1_0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/registerIP_1_0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/registerIP_1_0"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPDefaultOutputPath" Val="$PGENDIR/sources_1"/>
     <Option Name="IPCachePermission" Val="read"/>
@@ -91,8 +95,196 @@
   <FileSets Version="1" Minor="32">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
       <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/sources_1/imports/src/alu.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RiscV32I_Zynq7000/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE/src/alu.vhd"/>
+          <Attr Name="ImportTime" Val="1739236145"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/alucontrol.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RiscV32I_Zynq7000/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE/src/alucontrol.vhd"/>
+          <Attr Name="ImportTime" Val="1739236145"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/alusrcmuxb.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RiscV32I_Zynq7000/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE/src/alusrcmuxb.vhd"/>
+          <Attr Name="ImportTime" Val="1739236145"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/branch_and.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RiscV32I_Zynq7000/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE/src/branch_and.vhd"/>
+          <Attr Name="ImportTime" Val="1739236145"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/control_unit.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RiscV32I_Zynq7000/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE/src/control_unit.vhd"/>
+          <Attr Name="ImportTime" Val="1739236145"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/exmem.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RiscV32I_Zynq7000/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE/src/exmem.vhd"/>
+          <Attr Name="ImportTime" Val="1739236145"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/forwarding_unit.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RiscV32I_Zynq7000/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE/src/forwarding_unit.vhd"/>
+          <Attr Name="ImportTime" Val="1739236145"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/forwardingmuxa.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RiscV32I_Zynq7000/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE/src/forwardingmuxa.vhd"/>
+          <Attr Name="ImportTime" Val="1739236145"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/forwardingmuxb.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RiscV32I_Zynq7000/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE/src/forwardingmuxb.vhd"/>
+          <Attr Name="ImportTime" Val="1739236145"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/hazardunit.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RiscV32I_Zynq7000/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE/src/hazardunit.vhd"/>
+          <Attr Name="ImportTime" Val="1739236145"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/idex.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RiscV32I_Zynq7000/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE/src/idex.vhd"/>
+          <Attr Name="ImportTime" Val="1739236145"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/ifid.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RiscV32I_Zynq7000/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE/src/ifid.vhd"/>
+          <Attr Name="ImportTime" Val="1739236145"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/immediategen.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RiscV32I_Zynq7000/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE/src/immediategen.vhd"/>
+          <Attr Name="ImportTime" Val="1739236145"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/pc_mux.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RiscV32I_Zynq7000/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE/src/pc_mux.vhd"/>
+          <Attr Name="ImportTime" Val="1739236145"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/pc4adder.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RiscV32I_Zynq7000/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE/src/pc4adder.vhd"/>
+          <Attr Name="ImportTime" Val="1739236145"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/program_counter.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RiscV32I_Zynq7000/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE/src/program_counter.vhd"/>
+          <Attr Name="ImportTime" Val="1739236145"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/pcimmadder.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RiscV32I_Zynq7000/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE/src/pcimmadder.vhd"/>
+          <Attr Name="ImportTime" Val="1739236145"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/memwb.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RiscV32I_Zynq7000/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE/src/memwb.vhd"/>
+          <Attr Name="ImportTime" Val="1739236145"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/writebackmux.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RiscV32I_Zynq7000/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE/src/writebackmux.vhd"/>
+          <Attr Name="ImportTime" Val="1739236145"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/internalconnections.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RiscV32I_Zynq7000/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE/src/internalconnections.vhd"/>
+          <Attr Name="ImportTime" Val="1739673597"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/types_pk.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RiscV32I_Zynq7000/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE/src/types_pk.vhd"/>
+          <Attr Name="ImportTime" Val="1739236145"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/riscvcore_zynq.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../RISCVCORE/RiscV32I_Zynq7000/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE/src/riscvcore_zynq.vhd"/>
+          <Attr Name="ImportTime" Val="1739673597"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/bd/zynq_design/zynq_design.bd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
+        <Option Name="TopModule" Val="RISCVCOREZYNQ"/>
+        <Option Name="TopLib" Val="xil_defaultlib"/>
+        <Option Name="TopArchitecture" Val="behavior"/>
+        <Option Name="TopRTLFile" Val="$PSRCDIR/sources_1/imports/src/riscvcore_zynq.vhd"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
       </Config>
     </FileSet>
@@ -103,8 +295,13 @@
       </Config>
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1" RelGenDir="$PGENDIR/sim_1">
+      <Filter Type="Srcs"/>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
+        <Option Name="TopModule" Val="RISCVCOREZYNQ"/>
+        <Option Name="TopLib" Val="xil_defaultlib"/>
+        <Option Name="TopArchitecture" Val="behavior"/>
+        <Option Name="TopRTLFile" Val="$PSRCDIR/sources_1/imports/src/riscvcore_zynq.vhd"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
@@ -121,6 +318,14 @@
     </FileSet>
     <FileSet Name="utils_1" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
       <Filter Type="Utils"/>
+      <File Path="$PSRCDIR/utils_1/imports/synth_1/RISCVCOREZYNQ.dcp">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedInSteps" Val="synth_1"/>
+          <Attr Name="AutoDcp" Val="1"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="TopAutoSet" Val="TRUE"/>
       </Config>
@@ -145,18 +350,40 @@
     </Simulator>
   </Simulators>
   <Runs Version="1" Minor="22">
-    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z007sclg225-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="true" WriteIncrSynthDcp="false" State="current" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/synth_1" ParallelReportGen="true">
+    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z007sclg225-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="true" IncrementalCheckpoint="$PSRCDIR/utils_1/imports/synth_1/RISCVCOREZYNQ.dcp" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024">
           <Desc>Vivado Synthesis Defaults</Desc>
         </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2024"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7z007sclg225-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" SynthRun="synth_1" IncludeInArchive="true" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/impl_1" ParallelReportGen="true">
+    <Run Id="synth_1_copy_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z007sclg225-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="true" WriteIncrSynthDcp="false" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/synth_1/synth_1_copy_1" AutoRQSDir="$PSRCDIR/utils_1/imports/synth_1_copy_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2024" CtrlBit="true">
+        <ReportConfig DisplayName="synthesis_report" Name="synth_1_copy_1_synth_synthesis_report_0" Spec="" RunStep="synth_design">
+          <ReportConfigOption Name="dummy_option" Type="string"/>
+        </ReportConfig>
+        <ReportConfig DisplayName="Utilization - Synth Design" Name="synth_1_copy_1_synth_report_utilization_0" Spec="report_utilization" RunStep="synth_design" Version="1" Minor="0">
+          <ReportConfigOption Name="dummy_option" Type="string"/>
+          <ReportConfigOutputOption Name="pb" Type="string" Value=""/>
+        </ReportConfig>
+      </ReportStrategy>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles>
+        <RQSFilePath/>
+      </RQSFiles>
+    </Run>
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7z007sclg225-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" SynthRun="synth_1" IncludeInArchive="true" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/impl_1" LaunchOptions="-jobs 6 " AutoRQSDir="$PSRCDIR/utils_1/imports/impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024">
           <Desc>Default settings for Implementation.</Desc>
