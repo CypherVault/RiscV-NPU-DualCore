@@ -5,9 +5,9 @@ use work.all;
 
 --types package
 library work;
-use work.types_pkg.all;	
 
-			entity internal_connections is
+
+entity internal_connections is
     port (
         -- Core signals (2 bits)
         clock : in std_logic;

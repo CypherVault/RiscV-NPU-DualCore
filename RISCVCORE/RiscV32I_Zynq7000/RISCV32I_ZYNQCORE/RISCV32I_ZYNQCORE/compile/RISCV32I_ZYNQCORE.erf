@@ -1,0 +1,1 @@
+WARNING ELAB1_0026: "There is no default binding for component "myip_slave_lite_v1_0_S00_AXI". (No entity named "myip_slave_lite_v1_0_S00_AXI" was found)." "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RiscV32I_Zynq7000/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE/src/AXI_reg_example.vhd" 85 0
