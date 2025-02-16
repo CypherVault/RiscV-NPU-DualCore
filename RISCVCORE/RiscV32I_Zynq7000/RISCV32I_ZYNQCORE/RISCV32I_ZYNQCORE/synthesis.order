@@ -22,4 +22,3 @@ i<>.\src\idex.vhd
 i<>.\src\forwardingmuxb.vhd
 i<>.\src\forwardingmuxa.vhd
 i<>.\src\pc4adder.vhd
-i<>.\src\AXI_reg_example.vhd

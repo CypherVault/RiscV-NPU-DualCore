@@ -6,21 +6,41 @@ use work.all;
 --types package
 library work;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 252758e17668681a1ddb526706b2cc9ef7bb4e64
 entity internal_connections is
     port (
         -- Core signals (2 bits)
         clock : in std_logic;
-        resetbar : in std_logic
+        resetbar : in std_logic;
         
-        -- Unified debug interface (48 bits total)
+        -- to AXI external connections
+		
+		 -- Instruction Memory Interface
+        pc_out : out std_logic_vector(15 downto 0);
+        instruction_in : in std_logic_vector(31 downto 0);
+        
+        -- Register File Interface
+        reg_write : out std_logic;
+        rs1_addr : out std_logic_vector(4 downto 0);
+        rs2_addr : out std_logic_vector(4 downto 0);
+        rd_addr : out std_logic_vector(4 downto 0);
+        write_data : out std_logic_vector(31 downto 0);
+        reg1_data : in std_logic_vector(31 downto 0);
+        reg2_data : in std_logic_vector(31 downto 0);
+        
+        -- Data Memory Interface
+        mem_read : out std_logic;
+        mem_write : out std_logic;
+        mem_addr : out std_logic_vector(31 downto 0);
+        mem_write_data : out std_logic_vector(31 downto 0);
+        mem_read_data : in std_logic_vector(31 downto 0)
+        
+        
 		
 		
-        
-        -- Separate control signals for each memory		 
-			
-			
-		-- debug_en : in std_logic                        -- Enable bit
 		
     );
 end entity internal_connections;
@@ -401,16 +421,26 @@ pc_pcout_to_ifid <= pc_pcout_to_instruction_memory;
 pc_pcout_to_pc4adder <= pc_pcout_to_instruction_memory;	
 
 
-		--TO INSTRUCTION MEMORY
-instruction_memory_inst : entity work.instruction_memory
-port map (
-    pc_address => pc_pcout_to_instruction_memory,
-    instruction => instruction_memory_instruction_to_ifid,    
-    reset => resetbar							  
-	
-	
-);
-	
+
+
+		 
+	--OBSELTE!
+
+       --
+--		--TO INSTRUCTION MEMORY
+--instruction_memory_inst : entity work.instruction_memory
+--port map (
+--    pc_address => pc_pcout_to_instruction_memory,
+--    instruction => instruction_memory_instruction_to_ifid,    
+--    reset => resetbar							  
+--	
+--	
+--);
+
+
+
+
+
 	
 	--TO IFID
 	
@@ -465,22 +495,26 @@ ifid_pcout_to_pcimmadder <= ifid_pcout_to_OUT;
 	
 	
 	
-	  -- REGISTER FILE
-REGFILE_INST : entity work.regfile
-port map (
-resetbar => resetbar, 
-
-
-
-
-    regwrite => memwb_regwrite_to_registers,
-    readregister1 => ifid_rs1_to_register,
-    readregister2 => ifid_rs2_to_register,
-    writeregisteraddress => memwb_rd_to_out,
-    writedata => writebackmux_writedata_to_registers,
-    readdata1 => registers_reg1out_to_idex,            
-    readdata2 => registers_reg2out_to_idex
-);
+	
+	
+	--OBSELTE!
+	    --
+--	  -- REGISTER FILE
+--REGFILE_INST : entity work.regfile
+--port map (
+--resetbar => resetbar, 
+--
+--
+--
+--
+--    regwrite => memwb_regwrite_to_registers,
+--    readregister1 => ifid_rs1_to_register,
+--    readregister2 => ifid_rs2_to_register,
+--    writeregisteraddress => memwb_rd_to_out,
+--    writedata => writebackmux_writedata_to_registers,
+--    readdata1 => registers_reg1out_to_idex,            
+--    readdata2 => registers_reg2out_to_idex
+--);
 
 
 
@@ -718,21 +752,31 @@ alusrcmuxb_source2_to_exmem <= alusrcmuxB_rs2_to_alu;
 
 ------MEM------------------------------------------------------------------BEGIN	
 	
-   -- DATA MEMORY
-DATA_MEMORY_INST : entity work.data_memory
-port map (        
-    clk => clock,
-    reset => resetbar,	
+   
 	
+	--OBSELTE!
 	
-    
-	
-    memwrite => exmem_memwrite_to_datamem,
-    memread => exmem_memread_to_datamem,
-    address => exmem_result_to_datamem,
-    writedata => exmem_src2_to_datamem,
-    readdata => datamem_readdata_to_memwb
-);
+	   --
+--	-- DATA MEMORY
+--DATA_MEMORY_INST : entity work.data_memory
+--port map (        
+--    clk => clock,
+--    reset => resetbar,	
+--	
+--	
+--    
+--	
+--    memwrite => exmem_memwrite_to_datamem,
+--    memread => exmem_memread_to_datamem,
+--    address => exmem_result_to_datamem,
+--    writedata => exmem_src2_to_datamem,
+--    readdata => datamem_readdata_to_memwb
+--);
+--
+--
+
+
+
 
 
 	-- TO BRANCH AND
@@ -794,17 +838,40 @@ branchand_regwritecancel_to_exmem <= 	branchand_jumpbranchselect_to_pc_mux;
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 --------------------------------------------------------------------------END		
 
-  -- Memory selection and data routing process
-process (resetbar)
-begin
-    if (resetbar = '1') then  -- or '0' depending on your active level
-        null;
-    else
-        null;
-    end if;
-end process;
+
+
+ -- Continuous signal routing to external pins
+    -- Instruction Memory
+    pc_out <= pc_pcout_to_instruction_memory;
+    instruction_memory_instruction_to_ifid <= instruction_in;
+    
+    -- Register File
+    reg_write <= memwb_regwrite_to_registers;
+    rs1_addr <= ifid_rs1_to_registers;
+    rs2_addr <= ifid_rs2_to_registers;
+    rd_addr <= memwb_regselect_to_registers;
+    write_data <= writebackmux_writedata_to_registers;
+    registers_reg1out_to_idex <= reg1_data;
+    registers_reg2out_to_idex <= reg2_data;
+    
+    -- Data Memory
+    mem_read <= exmem_memread_to_datamem;
+    mem_write <= exmem_memwrite_to_datamem;
+    mem_addr <= exmem_result_to_datamem;
+    mem_write_data <= exmem_src2_to_datamem;
+    datamem_readdata_to_memwb <= mem_read_data;
+
 
 
 
