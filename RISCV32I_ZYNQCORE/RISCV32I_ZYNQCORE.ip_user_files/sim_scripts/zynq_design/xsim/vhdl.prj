@@ -1,0 +1,16 @@
+vhdl xil_defaultlib  \
+"../../../bd/zynq_design/ipshared/7ab7/hdl/registerIP.vhd" \
+"../../../bd/zynq_design/ip/zynq_design_registerIP_0_0/sim/zynq_design_registerIP_0_0.vhd" \
+"../../../bd/zynq_design/ip/zynq_design_RISCVCOREZYNQ_0_0/sim/zynq_design_RISCVCOREZYNQ_0_0.vhd" \
+"../../../bd/zynq_design/ipshared/66fe/hdl/instructionmemIP.vhd" \
+"../../../bd/zynq_design/ip/zynq_design_instructionmemIP_0_0/sim/zynq_design_instructionmemIP_0_0.vhd" \
+"../../../bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd" \
+"../../../bd/zynq_design/ip/zynq_design_datamemIP_0_0/sim/zynq_design_datamemIP_0_0.vhd" \
+"../../../bd/zynq_design/ipshared/dfc2/hdl/controlsubsystemIP.vhd" \
+"../../../bd/zynq_design/ip/zynq_design_controlsubsystemIP_0_0/sim/zynq_design_controlsubsystemIP_0_0.vhd" \
+"../../../bd/zynq_design/ip/zynq_design_rst_ps7_0_50M_0/sim/zynq_design_rst_ps7_0_50M_0.vhd" \
+"../../../bd/zynq_design/ip/zynq_design_axi_smc_1/bd_0/ip/ip_1/sim/bd_375a_psr_aclk_0.vhd" \
+"../../../bd/zynq_design/sim/zynq_design.vhd" \
+
+# Do not sort compile order
+nosort

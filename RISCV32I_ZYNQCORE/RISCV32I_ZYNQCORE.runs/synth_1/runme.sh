@@ -41,4 +41,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log RISCVCOREZYNQ.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source RISCVCOREZYNQ.tcl
+EAStep vivado -log zynq_design_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source zynq_design_wrapper.tcl

@@ -1,0 +1,419 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Wed Feb 19 19:13:25 2025
+# Process ID         : 10376
+# Current directory  : C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/zynq_design_datamemIP_0_0_synth_1
+# Command line       : vivado.exe -log zynq_design_datamemIP_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source zynq_design_datamemIP_0_0.tcl
+# Log file           : C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/zynq_design_datamemIP_0_0_synth_1/zynq_design_datamemIP_0_0.vds
+# Journal file       : C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/zynq_design_datamemIP_0_0_synth_1\vivado.jou
+# Running On         : DESKTOP-J1G93P6
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 19044
+# Processor Detail   : Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+# CPU Frequency      : 3192 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 68558 MB
+# Swap memory        : 10200 MB
+# Total Virtual      : 78758 MB
+# Available Virtual  : 64512 MB
+#-----------------------------------------------------------
+source zynq_design_datamemIP_0_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 483.020 ; gain = 151.676
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/datamemIP_1_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/controlsubsystemIP_1_0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/controlsubsystemIP_1_0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/controlsubsystemIP_1_0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/controlsubsystemIP_1_0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/controlsubsystemIP_1_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/datamemIP_1_0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/datamemIP_1_0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/datamemIP_1_0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/datamemIP_1_0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/datamemIP_1_0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/datamemIP_1_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/instructionmemIP_1_0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'F:/Vivado/2024.2/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.cache/ip 
+Command: synth_design -top zynq_design_datamemIP_0_0 -part xc7z007sclg225-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z007s'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z007s'
+INFO: [Device 21-403] Loading part xc7z007sclg225-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 5500
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1169.863 ; gain = 465.871
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'zynq_design_datamemIP_0_0' [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ip/zynq_design_datamemIP_0_0/synth/zynq_design_datamemIP_0_0.vhd:89]
+	Parameter C_S02_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S02_AXI_ADDR_WIDTH bound to: 7 - type: integer 
+INFO: [Synth 8-3491] module 'datamemIP' declared at 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:5' bound to instance 'U0' of component 'datamemIP' [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ip/zynq_design_datamemIP_0_0/synth/zynq_design_datamemIP_0_0.vhd:172]
+INFO: [Synth 8-638] synthesizing module 'datamemIP' [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:45]
+INFO: [Synth 8-256] done synthesizing module 'datamemIP' (0#1) [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:45]
+INFO: [Synth 8-256] done synthesizing module 'zynq_design_datamemIP_0_0' (0#1) [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ip/zynq_design_datamemIP_0_0/synth/zynq_design_datamemIP_0_0.vhd:89]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[32] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[33] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[34] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[35] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[36] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[37] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[38] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[39] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[40] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[41] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[42] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[43] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[44] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[45] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[46] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[47] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[48] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[49] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[50] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[51] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[52] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[53] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[54] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[55] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[56] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[57] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[58] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[59] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[60] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[61] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[62] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[63] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[64] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[65] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[66] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[67] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[68] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[69] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[70] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[71] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[72] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[73] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[74] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[75] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[76] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[77] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[78] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[79] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[80] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[81] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[82] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[83] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[84] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[85] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[86] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[87] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[88] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[89] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[90] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[91] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[92] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[93] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[94] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[95] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[96] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[97] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[98] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[99] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[100] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[101] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[102] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[103] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[104] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[105] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[106] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[107] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[108] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[109] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[110] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[111] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[112] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[113] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[114] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[115] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[116] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[117] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[118] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[119] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[120] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[121] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[122] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[123] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[124] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[125] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[126] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element bram_mem_reg[127] was removed.  [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd:87]
+WARNING: [Synth 8-7129] Port s02_axi_awaddr[1] in module datamemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s02_axi_awaddr[0] in module datamemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s02_axi_awprot[2] in module datamemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s02_axi_awprot[1] in module datamemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s02_axi_awprot[0] in module datamemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s02_axi_wstrb[3] in module datamemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s02_axi_wstrb[2] in module datamemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s02_axi_wstrb[1] in module datamemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s02_axi_wstrb[0] in module datamemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s02_axi_araddr[1] in module datamemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s02_axi_araddr[0] in module datamemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s02_axi_arprot[2] in module datamemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s02_axi_arprot[1] in module datamemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s02_axi_arprot[0] in module datamemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module datamemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[1] in module datamemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[0] in module datamemIP is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1284.324 ; gain = 580.332
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1284.324 ; gain = 580.332
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1284.324 ; gain = 580.332
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 1284.324 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1364.445 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.042 . Memory (MB): peak = 1365.434 ; gain = 0.988
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1365.434 ; gain = 661.441
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z007sclg225-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1365.434 ; gain = 661.441
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1365.434 ; gain = 661.441
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1365.434 ; gain = 661.441
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 33    
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 2     
+	   2 Input    5 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 66 (col length:40)
+BRAMs: 100 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port s02_axi_awaddr[1] in module datamemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s02_axi_awaddr[0] in module datamemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s02_axi_awprot[2] in module datamemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s02_axi_awprot[1] in module datamemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s02_axi_awprot[0] in module datamemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s02_axi_wstrb[3] in module datamemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s02_axi_wstrb[2] in module datamemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s02_axi_wstrb[1] in module datamemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s02_axi_wstrb[0] in module datamemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s02_axi_araddr[1] in module datamemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s02_axi_araddr[0] in module datamemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s02_axi_arprot[2] in module datamemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s02_axi_arprot[1] in module datamemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s02_axi_arprot[0] in module datamemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module datamemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[1] in module datamemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port address[0] in module datamemIP is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1365.434 ; gain = 661.441
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 1478.527 ; gain = 774.535
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1479.797 ; gain = 775.805
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1494.414 ; gain = 790.422
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-5799] Converted tricell instance 'U0i_0' to logic
+CRITICAL WARNING: [Synth 8-5799] Converted tricell instance 'U0i_1' to logic
+CRITICAL WARNING: [Synth 8-5799] Converted tricell instance 'U0i_2' to logic
+CRITICAL WARNING: [Synth 8-5799] Converted tricell instance 'U0i_3' to logic
+CRITICAL WARNING: [Synth 8-5799] Converted tricell instance 'U0i_4' to logic
+CRITICAL WARNING: [Synth 8-5799] Converted tricell instance 'U0i_5' to logic
+CRITICAL WARNING: [Synth 8-5799] Converted tricell instance 'U0i_6' to logic
+CRITICAL WARNING: [Synth 8-5799] Converted tricell instance 'U0i_7' to logic
+CRITICAL WARNING: [Synth 8-5799] Converted tricell instance 'U0i_8' to logic
+CRITICAL WARNING: [Synth 8-5799] Converted tricell instance 'U0i_9' to logic
+CRITICAL WARNING: [Synth 8-5799] Converted tricell instance 'U0i_10' to logic
+CRITICAL WARNING: [Synth 8-5799] Converted tricell instance 'U0i_11' to logic
+CRITICAL WARNING: [Synth 8-5799] Converted tricell instance 'U0i_12' to logic
+CRITICAL WARNING: [Synth 8-5799] Converted tricell instance 'U0i_13' to logic
+CRITICAL WARNING: [Synth 8-5799] Converted tricell instance 'U0i_14' to logic
+CRITICAL WARNING: [Synth 8-5799] Converted tricell instance 'U0i_15' to logic
+CRITICAL WARNING: [Synth 8-5799] Converted tricell instance 'U0i_16' to logic
+CRITICAL WARNING: [Synth 8-5799] Converted tricell instance 'U0i_17' to logic
+CRITICAL WARNING: [Synth 8-5799] Converted tricell instance 'U0i_18' to logic
+CRITICAL WARNING: [Synth 8-5799] Converted tricell instance 'U0i_19' to logic
+CRITICAL WARNING: [Synth 8-5799] Converted tricell instance 'U0i_20' to logic
+CRITICAL WARNING: [Synth 8-5799] Converted tricell instance 'U0i_21' to logic
+CRITICAL WARNING: [Synth 8-5799] Converted tricell instance 'U0i_22' to logic
+CRITICAL WARNING: [Synth 8-5799] Converted tricell instance 'U0i_23' to logic
+CRITICAL WARNING: [Synth 8-5799] Converted tricell instance 'U0i_24' to logic
+CRITICAL WARNING: [Synth 8-5799] Converted tricell instance 'U0i_25' to logic
+CRITICAL WARNING: [Synth 8-5799] Converted tricell instance 'U0i_26' to logic
+CRITICAL WARNING: [Synth 8-5799] Converted tricell instance 'U0i_27' to logic
+CRITICAL WARNING: [Synth 8-5799] Converted tricell instance 'U0i_28' to logic
+CRITICAL WARNING: [Synth 8-5799] Converted tricell instance 'U0i_29' to logic
+CRITICAL WARNING: [Synth 8-5799] Converted tricell instance 'U0i_30' to logic
+CRITICAL WARNING: [Synth 8-5799] Converted tricell instance 'U0i_31' to logic
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1704.816 ; gain = 1000.824
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1704.816 ; gain = 1000.824
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1704.816 ; gain = 1000.824
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1704.816 ; gain = 1000.824
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1704.816 ; gain = 1000.824
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1704.816 ; gain = 1000.824
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+------+------+
+|      |Cell  |Count |
++------+------+------+
+|1     |LUT1  |     1|
+|2     |LUT2  |    36|
+|3     |LUT3  |     3|
+|4     |LUT4  |     2|
+|5     |LUT5  |    37|
+|6     |LUT6  |   613|
+|7     |MUXF7 |   256|
+|8     |FDRE  |  1061|
++------+------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1704.816 ; gain = 1000.824
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 32 critical warnings and 18 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:34 . Memory (MB): peak = 1704.816 ; gain = 919.715
+Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:00:36 . Memory (MB): peak = 1704.816 ; gain = 1000.824
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 1704.816 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 256 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'zynq_design_datamemIP_0_0' is not ideal for floorplanning, since the cellview 'datamemIP' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1704.816 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 35350b91
+INFO: [Common 17-83] Releasing license: Synthesis
+34 Infos, 141 Warnings, 32 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 1704.816 ; gain = 1207.117
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1704.816 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/zynq_design_datamemIP_0_0_synth_1/zynq_design_datamemIP_0_0.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file zynq_design_datamemIP_0_0_utilization_synth.rpt -pb zynq_design_datamemIP_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Feb 19 19:14:19 2025...
