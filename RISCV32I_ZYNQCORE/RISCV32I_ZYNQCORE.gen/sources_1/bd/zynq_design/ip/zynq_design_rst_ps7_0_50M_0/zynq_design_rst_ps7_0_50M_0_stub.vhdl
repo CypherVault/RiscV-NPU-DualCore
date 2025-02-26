@@ -2,10 +2,10 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
--- Date        : Wed Feb 19 18:53:15 2025
+-- Date        : Wed Feb 19 18:53:14 2025
 -- Host        : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ip/zynq_design_rst_ps7_0_50M_0/zynq_design_rst_ps7_0_50M_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top zynq_design_rst_ps7_0_50M_0 -prefix
+--               zynq_design_rst_ps7_0_50M_0_ zynq_design_rst_ps7_0_50M_0_stub.vhdl
 -- Design      : zynq_design_rst_ps7_0_50M_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z007sclg225-1

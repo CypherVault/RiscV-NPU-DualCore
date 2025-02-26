@@ -199,7 +199,7 @@
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>POLARITY</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.S05_AXI_RST.POLARITY" spirit:choiceRef="choice_list_9d8b0d81">ACTIVE_LOW</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S05_AXI_RST.POLARITY" spirit:choiceRef="choice_list_74b5137e">ACTIVE_LOW</spirit:value>
         </spirit:parameter>
       </spirit:parameters>
     </spirit:busInterface>
@@ -226,11 +226,6 @@
         <spirit:parameter>
           <spirit:name>ASSOCIATED_RESET</spirit:name>
           <spirit:value spirit:id="BUSIFPARAM_VALUE.S05_AXI_CLK.ASSOCIATED_RESET">s05_axi_aresetn</spirit:value>
-        </spirit:parameter>
-        <spirit:parameter>
-          <spirit:name>FREQ_HZ</spirit:name>
-          <spirit:description>100000000 </spirit:description>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.S05_AXI_CLK.FREQ_HZ"/>
         </spirit:parameter>
       </spirit:parameters>
     </spirit:busInterface>
@@ -315,7 +310,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>f6636dcc</spirit:value>
+            <spirit:value>bad836b4</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -678,7 +673,7 @@
       <spirit:enumeration>32</spirit:enumeration>
     </spirit:choice>
     <spirit:choice>
-      <spirit:name>choice_list_9d8b0d81</spirit:name>
+      <spirit:name>choice_list_74b5137e</spirit:name>
       <spirit:enumeration>ACTIVE_HIGH</spirit:enumeration>
       <spirit:enumeration>ACTIVE_LOW</spirit:enumeration>
     </spirit:choice>
@@ -741,7 +736,7 @@
       <spirit:file>
         <spirit:name>xgui/controlsubsystemIP_v1_0.tcl</spirit:name>
         <spirit:fileType>tclSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_f6636dcc</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_bad836b4</spirit:userFileType>
         <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
@@ -793,14 +788,14 @@
         <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>controlsubsystemIP_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2025-02-19T22:16:33Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>2</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2025-02-24T01:49:06Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2024.2</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="44d39401"/>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="b9b4eddd"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="7020b4cf"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="3d57136e"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="32d93229"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="e230f21f"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="cf4faccc"/>
     </xilinx:packagingInfo>

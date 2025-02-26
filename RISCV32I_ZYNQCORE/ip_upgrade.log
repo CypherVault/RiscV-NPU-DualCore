@@ -1,6 +1,132 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Sun Feb 23 20:49:23 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_simulation_design_controlsubsystemIP_0_2'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of zynq_simulation_design_controlsubsystemIP_0_2 (xilinx.com:user:controlsubsystemIP:1.0) from (Rev. 3) to (Rev. 2)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Sun Feb 23 20:49:22 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_controlsubsystemIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of zynq_design_controlsubsystemIP_0_0 (xilinx.com:user:controlsubsystemIP:1.0) from (Rev. 3) to (Rev. 2)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Sun Feb 23 20:31:34 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_simulation_design_controlsubsystemIP_0_2'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of zynq_simulation_design_controlsubsystemIP_0_2 (xilinx.com:user:controlsubsystemIP:1.0) from (Rev. 2) to (Rev. 3)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Sun Feb 23 20:31:32 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_controlsubsystemIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of zynq_design_controlsubsystemIP_0_0 (xilinx.com:user:controlsubsystemIP:1.0) from (Rev. 2) to (Rev. 3)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Sun Feb 23 20:28:07 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_simulation_design_controlsubsystemIP_0_2'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of zynq_simulation_design_controlsubsystemIP_0_2 (xilinx.com:user:controlsubsystemIP:1.0) from (Rev. 1) to (Rev. 2)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Sun Feb 23 20:28:04 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_controlsubsystemIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of zynq_design_controlsubsystemIP_0_0 (xilinx.com:user:controlsubsystemIP:1.0) from (Rev. 1) to (Rev. 2)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
 | Date         : Wed Feb 19 19:27:45 2025
 | Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
 | Command      : upgrade_ip

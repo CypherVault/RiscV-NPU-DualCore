@@ -48,10 +48,10 @@ vcom -work xpm -93  -incr \
 "F:/Vivado/2024.2/data/ip/xpm/xpm_VCOMP.vhd" \
 
 vcom -work xil_defaultlib -93  -incr \
-"../../../bd/zynq_design/ipshared/7ab7/hdl/registerIP.vhd" \
+"../../../bd/zynq_design/ipshared/7ac2/hdl/registerIP.vhd" \
 "../../../bd/zynq_design/ip/zynq_design_registerIP_0_0/sim/zynq_design_registerIP_0_0.vhd" \
 "../../../bd/zynq_design/ip/zynq_design_RISCVCOREZYNQ_0_0/sim/zynq_design_RISCVCOREZYNQ_0_0.vhd" \
-"../../../bd/zynq_design/ipshared/66fe/hdl/instructionmemIP.vhd" \
+"../../../bd/zynq_design/ipshared/fbcb/hdl/instructionmemIP.vhd" \
 "../../../bd/zynq_design/ip/zynq_design_instructionmemIP_0_0/sim/zynq_design_instructionmemIP_0_0.vhd" \
 "../../../bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd" \
 "../../../bd/zynq_design/ip/zynq_design_datamemIP_0_0/sim/zynq_design_datamemIP_0_0.vhd" \
@@ -69,7 +69,7 @@ vlog -work xil_defaultlib  -incr -v2k5 "+incdir+../../../../RISCV32I_ZYNQCORE.ge
 "../../../bd/zynq_design/ip/zynq_design_processing_system7_0_0/sim/zynq_design_processing_system7_0_0.v" \
 
 vcom -work xil_defaultlib -93  -incr \
-"../../../bd/zynq_design/ipshared/dfc2/hdl/controlsubsystemIP.vhd" \
+"../../../bd/zynq_design/ipshared/1432/hdl/controlsubsystemIP.vhd" \
 "../../../bd/zynq_design/ip/zynq_design_controlsubsystemIP_0_0/sim/zynq_design_controlsubsystemIP_0_0.vhd" \
 
 vcom -work lib_cdc_v1_0_3 -93  -incr \
@@ -80,9 +80,6 @@ vcom -work proc_sys_reset_v5_0_16 -93  -incr \
 
 vcom -work xil_defaultlib -93  -incr \
 "../../../bd/zynq_design/ip/zynq_design_rst_ps7_0_50M_0/sim/zynq_design_rst_ps7_0_50M_0.vhd" \
-
-vlog -work xil_defaultlib  -incr -v2k5 "+incdir+../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/ec67/hdl" "+incdir+../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/86fe/hdl" "+incdir+../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/f0b6/hdl/verilog" "+incdir+../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/0127/hdl/verilog" "+incdir+F:/Vivado/2024.2/data/xilinx_vip/include" -l xilinx_vip -l xpm -l xil_defaultlib -l axi_infrastructure_v1_1_0 -l axi_vip_v1_1_19 -l processing_system7_vip_v1_0_21 -l lib_cdc_v1_0_3 -l proc_sys_reset_v5_0_16 -l xlconstant_v1_1_9 -l smartconnect_v1_0 -l axi_register_slice_v2_1_33 \
-"../../../bd/zynq_design/ip/zynq_design_axi_smc_1/bd_0/sim/bd_375a.v" \
 
 vlog -work xlconstant_v1_1_9  -incr -v2k5 "+incdir+../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/ec67/hdl" "+incdir+../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/86fe/hdl" "+incdir+../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/f0b6/hdl/verilog" "+incdir+../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/0127/hdl/verilog" "+incdir+F:/Vivado/2024.2/data/xilinx_vip/include" -l xilinx_vip -l xpm -l xil_defaultlib -l axi_infrastructure_v1_1_0 -l axi_vip_v1_1_19 -l processing_system7_vip_v1_0_21 -l lib_cdc_v1_0_3 -l proc_sys_reset_v5_0_16 -l xlconstant_v1_1_9 -l smartconnect_v1_0 -l axi_register_slice_v2_1_33 \
 "../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/e2d2/hdl/xlconstant_v1_1_vl_rfs.v" \
@@ -185,6 +182,9 @@ vlog -work xil_defaultlib  -incr "+incdir+../../../../RISCV32I_ZYNQCORE.gen/sour
 "../../../bd/zynq_design/ip/zynq_design_axi_smc_1/bd_0/ip/ip_51/sim/bd_375a_m03wn_0.sv" \
 "../../../bd/zynq_design/ip/zynq_design_axi_smc_1/bd_0/ip/ip_52/sim/bd_375a_m03bn_0.sv" \
 "../../../bd/zynq_design/ip/zynq_design_axi_smc_1/bd_0/ip/ip_53/sim/bd_375a_m03e_0.sv" \
+
+vlog -work xil_defaultlib  -incr -v2k5 "+incdir+../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/ec67/hdl" "+incdir+../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/86fe/hdl" "+incdir+../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/f0b6/hdl/verilog" "+incdir+../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/0127/hdl/verilog" "+incdir+F:/Vivado/2024.2/data/xilinx_vip/include" -l xilinx_vip -l xpm -l xil_defaultlib -l axi_infrastructure_v1_1_0 -l axi_vip_v1_1_19 -l processing_system7_vip_v1_0_21 -l lib_cdc_v1_0_3 -l proc_sys_reset_v5_0_16 -l xlconstant_v1_1_9 -l smartconnect_v1_0 -l axi_register_slice_v2_1_33 \
+"../../../bd/zynq_design/ip/zynq_design_axi_smc_1/bd_0/sim/bd_375a.v" \
 
 vlog -work axi_register_slice_v2_1_33  -incr -v2k5 "+incdir+../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/ec67/hdl" "+incdir+../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/86fe/hdl" "+incdir+../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/f0b6/hdl/verilog" "+incdir+../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/0127/hdl/verilog" "+incdir+F:/Vivado/2024.2/data/xilinx_vip/include" -l xilinx_vip -l xpm -l xil_defaultlib -l axi_infrastructure_v1_1_0 -l axi_vip_v1_1_19 -l processing_system7_vip_v1_0_21 -l lib_cdc_v1_0_3 -l proc_sys_reset_v5_0_16 -l xlconstant_v1_1_9 -l smartconnect_v1_0 -l axi_register_slice_v2_1_33 \
 "../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/3ee4/hdl/axi_register_slice_v2_1_vl_rfs.v" \

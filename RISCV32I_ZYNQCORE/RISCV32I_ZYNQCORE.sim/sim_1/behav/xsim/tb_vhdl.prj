@@ -1,0 +1,40 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/alu.vhd" \
+"../../../../RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/alucontrol.vhd" \
+"../../../../RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/alusrcmuxb.vhd" \
+"../../../../RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/branch_and.vhd" \
+"../../../../RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/control_unit.vhd" \
+"../../../../RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/exmem.vhd" \
+"../../../../RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/forwarding_unit.vhd" \
+"../../../../RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/forwardingmuxa.vhd" \
+"../../../../RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/forwardingmuxb.vhd" \
+"../../../../RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/hazardunit.vhd" \
+"../../../../RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/idex.vhd" \
+"../../../../RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/ifid.vhd" \
+"../../../../RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/immediategen.vhd" \
+"../../../../RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/pc_mux.vhd" \
+"../../../../RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/pc4adder.vhd" \
+"../../../../RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/program_counter.vhd" \
+"../../../../RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/pcimmadder.vhd" \
+"../../../../RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/memwb.vhd" \
+"../../../../RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/writebackmux.vhd" \
+"../../../../RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/internalconnections.vhd" \
+"../../../../RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/types_pk.vhd" \
+"../../../../RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/riscvcore_zynq.vhd" \
+"../../../../RISCV32I_ZYNQCORE.ip_user_files/bd/zynq_design/ipshared/7ac2/hdl/registerIP.vhd" \
+"../../../../RISCV32I_ZYNQCORE.ip_user_files/bd/zynq_design/ip/zynq_design_registerIP_0_0/sim/zynq_design_registerIP_0_0.vhd" \
+"../../../../RISCV32I_ZYNQCORE.ip_user_files/bd/zynq_design/ip/zynq_design_RISCVCOREZYNQ_0_0/sim/zynq_design_RISCVCOREZYNQ_0_0.vhd" \
+"../../../../RISCV32I_ZYNQCORE.ip_user_files/bd/zynq_design/ipshared/fbcb/hdl/instructionmemIP.vhd" \
+"../../../../RISCV32I_ZYNQCORE.ip_user_files/bd/zynq_design/ip/zynq_design_instructionmemIP_0_0/sim/zynq_design_instructionmemIP_0_0.vhd" \
+"../../../../RISCV32I_ZYNQCORE.ip_user_files/bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd" \
+"../../../../RISCV32I_ZYNQCORE.ip_user_files/bd/zynq_design/ip/zynq_design_datamemIP_0_0/sim/zynq_design_datamemIP_0_0.vhd" \
+"../../../../RISCV32I_ZYNQCORE.ip_user_files/bd/zynq_design/ipshared/1432/hdl/controlsubsystemIP.vhd" \
+"../../../../RISCV32I_ZYNQCORE.ip_user_files/bd/zynq_design/ip/zynq_design_controlsubsystemIP_0_0/sim/zynq_design_controlsubsystemIP_0_0.vhd" \
+"../../../../RISCV32I_ZYNQCORE.ip_user_files/bd/zynq_design/ip/zynq_design_rst_ps7_0_50M_0/sim/zynq_design_rst_ps7_0_50M_0.vhd" \
+"../../../../RISCV32I_ZYNQCORE.ip_user_files/bd/zynq_design/ip/zynq_design_axi_smc_1/bd_0/ip/ip_1/sim/bd_375a_psr_aclk_0.vhd" \
+"../../../../RISCV32I_ZYNQCORE.ip_user_files/bd/zynq_design/sim/zynq_design.vhd" \
+"../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/hdl/zynq_design_wrapper.vhd" \
+
+# Do not sort compile order
+nosort

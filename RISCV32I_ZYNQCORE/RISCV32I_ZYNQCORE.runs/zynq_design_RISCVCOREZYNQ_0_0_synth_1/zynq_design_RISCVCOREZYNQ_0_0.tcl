@@ -56,6 +56,7 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "zynq_design_RISCVCOREZYNQ_0_0_synth_1" START { ROLLUP_AUTO }
+set_param bd.open.in_stealth_mode 1
 set_param project.vivado.isBlockSynthRun true
 OPTRACE "Creating in-memory project" START { }
 set_param ips.modRefOverrideMrefDirPath c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/mref
@@ -73,6 +74,10 @@ set_property target_language VHDL [current_project]
 set_property board_part_repo_paths {C:/Users/Chris/AppData/Roaming/Xilinx/Vivado/2024.2/xhub/board_store/xilinx_board_store} [current_project]
 set_property board_part avnet.com:minized:part0:1.3 [current_project]
 set_property ip_repo_paths {
+  c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/controlsubsystemIP_1_0
+  c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/instructionmemIP_1_0
+  c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0
+  c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/datamemIP_1_0
   c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/controlsubsystemIP_1_0
   c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/controlsubsystemIP_1_0
   c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/controlsubsystemIP_1_0
@@ -114,7 +119,7 @@ read_vhdl -library xil_defaultlib {
   C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/types_pk.vhd
   C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/riscvcore_zynq.vhd
 }
-read_ip -quiet c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/bd/zynq_design/ip/zynq_design_RISCVCOREZYNQ_0_0/zynq_design_RISCVCOREZYNQ_0_0.xci
+read_ip -quiet C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/bd/zynq_design/ip/zynq_design_RISCVCOREZYNQ_0_0/zynq_design_RISCVCOREZYNQ_0_0.xci
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

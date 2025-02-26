@@ -1,0 +1,44 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"1.0",
+   "Default View_TopLeft":"-1063,-97",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0
+#  -string -flagsOSRD
+preplace inst RISCVCOREZYNQ_0 -pg 1 -lvl 4 -x 730 -y 780 -defaultsOSRD
+preplace inst axi_smc -pg 1 -lvl 2 -x -60 -y 270 -defaultsOSRD
+preplace inst controlsubsystemIP_0 -pg 1 -lvl 3 -x 330 -y 510 -defaultsOSRD
+preplace inst datamemIP_0 -pg 1 -lvl 3 -x 330 -y 770 -defaultsOSRD
+preplace inst instructionmemIP_0 -pg 1 -lvl 1 -x -440 -y 740 -defaultsOSRD
+preplace inst registerIP_0 -pg 1 -lvl 2 -x -60 -y 780 -defaultsOSRD
+preplace inst rst_ps7_0_50M -pg 1 -lvl 2 -x -60 -y 90 -defaultsOSRD
+preplace netloc RISCVCOREZYNQ_0_mem_addr 1 2 3 190 930 N 930 920
+preplace netloc RISCVCOREZYNQ_0_mem_read 1 2 3 160 940 N 940 960
+preplace netloc RISCVCOREZYNQ_0_mem_write 1 2 3 140 950 N 950 950
+preplace netloc RISCVCOREZYNQ_0_mem_write_data 1 2 3 180 970 N 970 930
+preplace netloc RISCVCOREZYNQ_0_pc_out 1 0 5 -610 600 N 600 N 600 N 600 980
+preplace netloc RISCVCOREZYNQ_0_rd_addr 1 1 4 -240 980 N 980 N 980 970
+preplace netloc RISCVCOREZYNQ_0_reg_write 1 1 4 -260 990 N 990 N 990 980
+preplace netloc RISCVCOREZYNQ_0_rs1_addr 1 1 4 -250 590 N 590 N 590 990
+preplace netloc RISCVCOREZYNQ_0_rs2_addr 1 1 4 -270 610 N 610 N 610 920
+preplace netloc RISCVCOREZYNQ_0_write_data 1 1 4 -270 1000 N 1000 N 1000 940
+preplace netloc controlsubsystemIP_0_riscv_clk_enable 1 2 2 190 630 470
+preplace netloc controlsubsystemIP_0_riscv_resetbar 1 1 3 -230 630 160 620 500
+preplace netloc datamemIP_0_readdata 1 3 1 470 770n
+preplace netloc instructionmemIP_0_instruction 1 1 3 -280 640 130 910 480
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 -590 640 -290 580 170
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 1 N 70
+preplace netloc registerIP_0_readdata1 1 2 2 120 960 490
+preplace netloc registerIP_0_readdata2 1 2 2 110 920 500
+preplace netloc rst_ps7_0_50M_peripheral_aresetn 1 0 3 -580 650 -260 370 150
+preplace netloc axi_smc_M00_AXI 1 2 1 170 240n
+preplace netloc axi_smc_M01_AXI 1 2 1 140 260n
+preplace netloc axi_smc_M02_AXI 1 0 3 -600 570 N 570 130
+preplace netloc axi_smc_M03_AXI 1 1 2 -240 360 110
+levelinfo -pg 1 -1010 -440 -60 330 730 1030
+pagesize -pg 1 -db -bbox -sgen -1010 -10 1630 1030
+"
+}
+{
+   "da_clkrst_cnt":"1"
+}
