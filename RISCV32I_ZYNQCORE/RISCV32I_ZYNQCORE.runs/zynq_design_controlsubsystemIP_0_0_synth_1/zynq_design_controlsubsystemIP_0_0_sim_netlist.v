@@ -2,7 +2,7 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-// Date        : Wed Feb 19 18:53:13 2025
+// Date        : Mon Feb 24 11:01:19 2025
 // Host        : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ zynq_design_controlsubsystemIP_0_0_sim_netlist.v
@@ -284,9 +284,9 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
     s05_axi_rready,
     riscv_resetbar,
     riscv_clk_enable);
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 S05_AXI_CLK CLK" *) (* x_interface_mode = "slave S05_AXI_CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME S05_AXI_CLK, ASSOCIATED_BUSIF S05_AXI, ASSOCIATED_RESET s05_axi_aresetn, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN zynq_design_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input s05_axi_aclk;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 S05_AXI_CLK CLK" *) (* x_interface_mode = "slave S05_AXI_CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME S05_AXI_CLK, ASSOCIATED_BUSIF S05_AXI, ASSOCIATED_RESET s05_axi_aresetn, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN zynq_design_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input s05_axi_aclk;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 S05_AXI_RST RST" *) (* x_interface_mode = "slave S05_AXI_RST" *) (* x_interface_parameter = "XIL_INTERFACENAME S05_AXI_RST, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input s05_axi_aresetn;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S05_AXI AWADDR" *) (* x_interface_mode = "slave S05_AXI" *) (* x_interface_parameter = "XIL_INTERFACENAME S05_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 4, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, ID_WIDTH 0, ADDR_WIDTH 4, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 8, NUM_WRITE_OUTSTANDING 8, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN zynq_design_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input [3:0]s05_axi_awaddr;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S05_AXI AWADDR" *) (* x_interface_mode = "slave S05_AXI" *) (* x_interface_parameter = "XIL_INTERFACENAME S05_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 4, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 4, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 8, NUM_WRITE_OUTSTANDING 8, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN zynq_design_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input [3:0]s05_axi_awaddr;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 S05_AXI AWPROT" *) input [2:0]s05_axi_awprot;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 S05_AXI AWVALID" *) input s05_axi_awvalid;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 S05_AXI AWREADY" *) output s05_axi_awready;

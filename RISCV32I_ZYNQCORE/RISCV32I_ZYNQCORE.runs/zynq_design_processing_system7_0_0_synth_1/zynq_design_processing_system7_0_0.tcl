@@ -56,6 +56,7 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "zynq_design_processing_system7_0_0_synth_1" START { ROLLUP_AUTO }
+set_param bd.open.in_stealth_mode 1
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 OPTRACE "Creating in-memory project" START { }
@@ -74,6 +75,10 @@ set_property board_part_repo_paths {C:/Users/Chris/AppData/Roaming/Xilinx/Vivado
 set_property board_part avnet.com:minized:part0:1.3 [current_project]
 set_property ip_repo_paths {
   c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/controlsubsystemIP_1_0
+  c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/instructionmemIP_1_0
+  c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0
+  c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/datamemIP_1_0
+  c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/controlsubsystemIP_1_0
   c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/controlsubsystemIP_1_0
   c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/controlsubsystemIP_1_0
   c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0
@@ -90,7 +95,7 @@ set_property ip_output_repo c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_Z
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/bd/zynq_design/ip/zynq_design_processing_system7_0_0/zynq_design_processing_system7_0_0.xci
+read_ip -quiet C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/bd/zynq_design/ip/zynq_design_processing_system7_0_0/zynq_design_processing_system7_0_0.xci
 set_property used_in_implementation false [get_files -all c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ip/zynq_design_processing_system7_0_0/zynq_design_processing_system7_0_0.xdc]
 
 OPTRACE "Adding files" END { }
