@@ -1,0 +1,388 @@
+# ELBREAD: Elaboration process.
+# ELBREAD: Error: Architecture 'behavior' of entity 'ricsvcore_tb' not found in library 'riscvcore'.
+# ELBREAD: Error: Elaboration process completed with errors.
+# Design: Error: Elaboration failed
+acom -reorder -dbg -e 100 -work riscvcore -2002  $dsn/src/memwb.vhd $dsn/src/program_counter.vhd $dsn/src/types_pk.vhd $dsn/src/writebackmux.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/pc4adder.vhd $dsn/src/exmem.vhd $dsn/src/hazardunit.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory_PROGRAM.vhd $dsn/src/immediategen.vhd $dsn/src/idex.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/forwarding_unit.vhd $dsn/src/branch_and.vhd $dsn/src/control_unit.vhd $dsn/src/alucontrol.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/Data_Memory_REQUEST.vhd $dsn/src/register_REQUEST.vhd $dsn/src/internalconnections.vhd $dsn/src/RISCVCORE.vhd $dsn/src/RISCV_TB_PROGRAM&REQUEST.vhd
+# Compile Entity "memwb"
+# Compile Architecture "Behavioral" of Entity "memwb"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Package "types_pkg"
+# Compile Entity "writebackmux"
+# Compile Architecture "Behavioral" of Entity "writebackmux"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "BranchAND"
+# Compile Architecture "Behavioral" of Entity "BranchAND"
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "data_memory"
+# Compile Architecture "Behavioral" of Entity "data_memory"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "internal_connections"
+# Compile Architecture "behavioral" of Entity "internal_connections"
+# Compile Entity "RICSVCORE"
+# Compile Architecture "behavior" of Entity "RICSVCORE"
+# Compile Entity "RICSVCORE_tb"
+# Compile Architecture "behavior" of Entity "RICSVCORE_tb"
+# Top-level unit(s) detected:
+# Entity => RICSVCORE_tb
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.6 [s]
+# ELBREAD: Elaboration process.
+# ELBREAD: Error: Package not found: types_pkg (library: riscvcore).
+# ELBREAD: Error: Elaboration process completed with errors.
+# Design: Error: Elaboration failed
+# Library Manager: Library "riscvcore" contents cleared.
+acom -reorder -dbg -e 100 -work riscvcore -2002  $dsn/src/memwb.vhd $dsn/src/program_counter.vhd $dsn/src/types_pk.vhd $dsn/src/writebackmux.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/pc4adder.vhd $dsn/src/exmem.vhd $dsn/src/hazardunit.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory_PROGRAM.vhd $dsn/src/immediategen.vhd $dsn/src/idex.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/forwarding_unit.vhd $dsn/src/branch_and.vhd $dsn/src/control_unit.vhd $dsn/src/alucontrol.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/Data_Memory_REQUEST.vhd $dsn/src/register_REQUEST.vhd $dsn/src/internalconnections.vhd $dsn/src/RISCVCORE.vhd $dsn/src/RISCV_TB_PROGRAM&REQUEST.vhd
+# Compile Entity "memwb"
+# Compile Architecture "Behavioral" of Entity "memwb"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Package "types_pkg"
+# Compile Entity "writebackmux"
+# Compile Architecture "Behavioral" of Entity "writebackmux"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "BranchAND"
+# Compile Architecture "Behavioral" of Entity "BranchAND"
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "data_memory"
+# Compile Architecture "Behavioral" of Entity "data_memory"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "internal_connections"
+# Compile Architecture "behavioral" of Entity "internal_connections"
+# Compile Entity "RICSVCORE"
+# Compile Architecture "behavior" of Entity "RICSVCORE"
+# Compile Entity "RICSVCORE_tb"
+# Compile Architecture "behavior" of Entity "RICSVCORE_tb"
+# Top-level unit(s) detected:
+# Entity => RICSVCORE_tb
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.3 [s]
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+asim -O5 +access +r +m+ricsvcore_tb ricsvcore_tb behavior
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: Elaboration final pass complete - time: 0.2 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 8266 kB (elbread=427 elab2=7659 kernel=179 sdf=0)
+# KERNEL: ASDB file was created in location C:\Users\Chris\Desktop\RiscV-NPU-DualCore\RISCVCORE\RISCVCORE\src\wave.asdb
+#  9:45 PM, Saturday, March 1, 2025
+#  Simulation has been initialized
+# Warning: Cannot set breakpoint. No executable statement found or debugging data is unavailable. Compile source files with the -dbg argument of the acom/alog command or check the Enable Debug option in the Compilation | VHDL/Verilog category of the Design Settings dialog box.
+run
+# KERNEL: WARNING: NUMERIC_STD."=": metavalue detected, returning FALSE
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /RICSVCORE_tb/uut/internal_connections_inst/instruction_memory_inst,  Process: line__32.
+# KERNEL: WARNING: NUMERIC_STD."=": metavalue detected, returning FALSE
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /RICSVCORE_tb/uut/internal_connections_inst/REGFILE_INST,  Process: line__42.
+# KERNEL: WARNING: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /RICSVCORE_tb/uut/internal_connections_inst/REGFILE_INST,  Process: line__42.
+# KERNEL: WARNING: NUMERIC_STD."=": metavalue detected, returning FALSE
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /RICSVCORE_tb/uut/internal_connections_inst/REGFILE_INST,  Process: line__45.
+# KERNEL: WARNING: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /RICSVCORE_tb/uut/internal_connections_inst/REGFILE_INST,  Process: line__45.
+# KERNEL: Stopped at time 510 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 135 in process of instance "/RICSVCORE_tb/main_sim".
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/mem_select}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/rw_enable}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/IM_debug_instruction}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/RF_debug_data_out}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/DM_debug_data_out}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/IM_debug_we}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/RF_debug_read_enable}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/DM_debug_read_enable}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/rf_data_out}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/dm_data_out}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/branchand_jumpbranchselect_to_pc_mux}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/controlunit_earlybranchcontrol_to_pc_mux}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/pc4adder_pcplus4_to_pc_mux}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/pcplusimmadder_pcplusimm_to_pc_mux}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/controlunit_branch_to_idex}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/controlunit_earlybranch_to_pcmux}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/pc_pcout_to_pc4adder}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/pc_mux_pcsource_to_pc}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/hazardunit_pcwrite_to_pc}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/pc_pcout_to_instruction_memory}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/instruction_memory_instruction_to_ifid}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/pc_pcout_to_ifid}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/hazardunit_ifidwrite_to_ifid}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/controlunit_ifidflush_to_ifid}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/ifid_rs1_to_register}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/ifid_rs2_to_register}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/ifid_rd_to_idex}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/ifid_instruction_to_OUT}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/ifid_pcout_to_OUT}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/ifid_instruction_to_immediategen}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/immediategen_immediate_to_pcimmadder}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/ifid_pcout_to_pcimmadder}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/immediategen_immediate_to_idex}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/memwb_regwrite_to_registers}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/ifid_rs1_to_registers}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/ifid_rs2_to_registers}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/memwb_regselect_to_registers}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/writebackmux_writedata_to_registers}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/registers_reg1out_to_idex}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/registers_reg2out_to_idex}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/hazardunit_controldisable_to_controlunit}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/ifid_instruction_to_controlunit}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/hazardunit_cntrlsigmux_to_controlunit}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/registers_reg1out_to_controlunit}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/registers_reg2out_to_controlunit}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/controlunit_memtoreg_to_idex}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/controlunit_regwrite_to_idex}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/controlunit_memread_to_idex}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/controlunit_memwrite_to_idex}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/controlunit_earlybranchSOURCE_to_pcmux}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/controlunit_alusource_to_idex}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/contolunit_aluop_to_idex}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/controlunit_ifflush_to_ifid}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/idex_memread_to_hazardunit}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/idex_rd_to_hazardunit}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/idex_instruction_to_hazardunit}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/hazardunit_controlsigmux_to_controlunit}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/hazardunit_write_to_ifid}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/READDATA1_TO_IDEX}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/READDATA2_TO_IDEX}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/IMMEDIATE_TO_IDEX}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/MAKETHISSIGNALIMMEDIATE_FROM_IDEX}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/READDATA1_FROM_IDEX}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/READDATA2_FROM_IDEX}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/MEMTOREG_TO_IDEX}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/REGWRITE_TO_IDEX}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/idex_memtoreg_to_exmem}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/idex_regwrite_to_exmem}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/MEMREAD_TO_IDEX}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/MEMWRITE_TO_IDEX}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/BRANCH_TO_IDEX}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/idex_memread_to_exmem}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/idex_memwrite_to_exmem}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/idex_branch_to_exmem}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/ALUSRC_TO_IDEX}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/ALUOP_TO_IDEX}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/idex_alusrcb_to_alusrcmuxb}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/ALUOP_FROM_IDEX}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/RS1_TO_IDEX}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/RS2_TO_IDEX}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/RD_TO_IDEX}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/idex_rs1_to_forwardingunit}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/idex_rs2_to_forwardingunit}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/idex_rd_to_exmem}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/idex_instruction_to_alucontrol}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/idex_aluop_to_alucontrol}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/alucontrol_aluop_to_alu}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/idex_pcout_to_alu}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/idex_rs1_to_forwardingmuxa}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/exmem_rs_to_forwardingmuxa}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/memwb_rs_to_forwardingmuxa}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/forwardingunit_Amuxcntrl_to_forrwardingmuxA}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/forwardingmuxA_rs1_to_ALU}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/idex_rs2_to_forwardingmuxb}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/exmem_rs_to_forwardingmuxb}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/memwb_rs_to_forwardingmuxb}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/forwardingunit_Bmuxcntrl_to_forrwardingmuxB}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/forwardingmuxb_rs2_to_alusrcmuxb}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/idex_immediate_to_alusrcmuxb}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/ALU_SRC_B_CONTROL}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/alusrcmuxB_rs2_to_alu}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/PC_PLUS_IMM_TO_EXMEM}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/alu_zeroresult_to_exmem}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/alu_JALorBRANCH_to_exmem}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/alu_result_to_exmem}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/alusrcmuxb_source2_to_exmem}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/BRANCH_JUMP_ADDR_FROM_EXMEM}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/exmem_zero_to_branchand}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/exmem_result_to_datamem}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/exmem_src2_to_datamem}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/exmem_memtoreg_to_memwb}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/exmem_regwrite_to_memwb}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/exmem_memread_to_datamem}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/exmem_memwrite_to_datamem}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/exmem_branch_to_branchand}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/exmem_rd_to_memwb}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/MEMWRITE_TO_DATA_MEMORY}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/MEMREAD_TO_DATA_MEMORY}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/ADDRESS_TO_DATA_MEMORY}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/WRITEDATA_TO_DATA_MEMORY}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/datamem_readdata_to_memwb}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/READDATA2_TO_MEMWB}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/ALURESULT_TO_MEMWB}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/memwb_readdata_to_writebackmux}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/memwb_aluresult_to_writebackmux}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/branchand_regwritecancel_to_exmem}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/MEMTOREG_TO_MEMWB}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/REGWRITE_TO_MEMWB}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/memwb_memtoreg_to_wbmux}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/REGWRITE_FROM_MEMWB}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/RD_TO_MEMWB}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/memwb_rd_to_out}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/clock}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/resetbar}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/debug_clk}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/debug_addr}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/debug_data}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/rf_enable}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/im_enable}
+# add wave -noreg {/RICSVCORE_tb/uut/internal_connections_inst/dm_enable}
+# VSIM: 140 object(s) traced.
+# Waveform file 'untitled.awc' connected to 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/wave.asdb'.
+run
+# KERNEL: Stopped at time 520 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 135 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 530 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 135 in process of instance "/RICSVCORE_tb/main_sim".
+endsim
+# VSIM: Simulation has finished.
+# Library Manager: Library "riscvcore" contents cleared.
+acom -reorder -dbg -e 100 -work riscvcore -2002  $dsn/src/memwb.vhd $dsn/src/program_counter.vhd $dsn/src/types_pk.vhd $dsn/src/writebackmux.vhd $dsn/src/pc_mux.vhd $dsn/src/pcimmadder.vhd $dsn/src/pc4adder.vhd $dsn/src/exmem.vhd $dsn/src/hazardunit.vhd $dsn/src/ifid.vhd $dsn/src/instruction_memory_PROGRAM.vhd $dsn/src/immediategen.vhd $dsn/src/idex.vhd $dsn/src/forwardingmuxA.vhd $dsn/src/forwardingmuxB.vhd $dsn/src/forwarding_unit.vhd $dsn/src/branch_and.vhd $dsn/src/control_unit.vhd $dsn/src/alucontrol.vhd $dsn/src/alusrcmuxb.vhd $dsn/src/ALU.vhd $dsn/src/Data_Memory_REQUEST.vhd $dsn/src/register_REQUEST.vhd $dsn/src/internalconnections.vhd $dsn/src/RISCVCORE.vhd $dsn/src/RISCV_TB_PROGRAM&REQUEST.vhd
+# Compile Entity "memwb"
+# Compile Architecture "Behavioral" of Entity "memwb"
+# Compile Entity "program_counter"
+# Compile Architecture "rtl" of Entity "program_counter"
+# Compile Package "types_pkg"
+# Compile Entity "writebackmux"
+# Compile Architecture "Behavioral" of Entity "writebackmux"
+# Compile Entity "pc_mux"
+# Compile Architecture "behavioral" of Entity "pc_mux"
+# Compile Entity "pcimmadder"
+# Compile Architecture "behavior" of Entity "pcimmadder"
+# Compile Entity "pc4adder"
+# Compile Architecture "rtl" of Entity "pc4adder"
+# Compile Entity "exmem"
+# Compile Architecture "Behavioral" of Entity "exmem"
+# Compile Entity "hazard_unit"
+# Compile Architecture "Behavioral" of Entity "hazard_unit"
+# Compile Entity "ifid"
+# Compile Architecture "Behavioral" of Entity "ifid"
+# Compile Entity "instruction_memory"
+# Compile Architecture "Behavioral" of Entity "instruction_memory"
+# Compile Entity "ImmGen"
+# Compile Architecture "Behavioral" of Entity "ImmGen"
+# Compile Entity "idex"
+# Compile Architecture "Behavioral" of Entity "idex"
+# Compile Entity "forwardingMuxA"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxA"
+# Compile Entity "forwardingMuxB"
+# Compile Architecture "Behavioral" of Entity "forwardingMuxB"
+# Compile Entity "ForwardingUnit"
+# Compile Architecture "Behavioral" of Entity "ForwardingUnit"
+# Compile Entity "BranchAND"
+# Compile Architecture "Behavioral" of Entity "BranchAND"
+# Compile Entity "ControlUnit"
+# Compile Architecture "Behavioral" of Entity "ControlUnit"
+# Compile Entity "alucontrol"
+# Compile Architecture "Behavioral" of Entity "alucontrol"
+# Compile Entity "ALUSrcMuxB"
+# Compile Architecture "Behavioral" of Entity "ALUSrcMuxB"
+# Compile Entity "ALU"
+# Compile Architecture "Behavioral" of Entity "ALU"
+# Compile Entity "data_memory"
+# Compile Architecture "Behavioral" of Entity "data_memory"
+# Compile Entity "regfile"
+# Compile Architecture "Behavioral" of Entity "regfile"
+# Compile Entity "internal_connections"
+# Compile Architecture "behavioral" of Entity "internal_connections"
+# Compile Entity "RICSVCORE"
+# Compile Architecture "behavior" of Entity "RICSVCORE"
+# Compile Entity "RICSVCORE_tb"
+# Compile Architecture "behavior" of Entity "RICSVCORE_tb"
+# Top-level unit(s) detected:
+# Entity => RICSVCORE_tb
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.4 [s]
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+asim -O5 +access +r +m+ricsvcore_tb ricsvcore_tb behavior
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 8266 kB 

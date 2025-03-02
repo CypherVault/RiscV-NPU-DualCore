@@ -6,3 +6,4 @@ Breakpoint File Version 1.0
 179,true,"C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sim_1/new/zynq_wrapper_tb.sv"
 165,true,"C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sim_1/new/zynq_wrapper_tb.sv"
 163,true,"C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sim_1/new/zynq_wrapper_tb.sv"
+149,true,"C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sim_1/new/zynq_wrapper_tb.sv"
