@@ -603,8 +603,8 @@ HAZARD_UNIT_INST : entity work.hazard_unit
 	  instructionout => idex_instruction_to_alucontrol,
       
       -- Register addresses
-      rs1in => ifid_rs1_to_register,
-      rs2in => ifid_rs2_to_register,
+      rs1in => ifid_rs1_to_registers,
+      rs2in => ifid_rs2_to_registers,
       rdin => ifid_rd_to_idex,
       rs1out => idex_rs1_to_forwardingunit,
       rs2out => idex_rs2_to_forwardingunit,
@@ -853,9 +853,9 @@ branchand_regwritecancel_to_exmem <= 	branchand_jumpbranchselect_to_pc_mux;
     
     -- Register File
     reg_write <= memwb_regwrite_to_registers;
-    rs1_addr <= ifid_rs1_to_registers;
-    rs2_addr <= ifid_rs2_to_registers;
-    rd_addr <= memwb_regselect_to_registers;
+    rs1_addr <= ifid_rs1_to_register;
+    rs2_addr <= ifid_rs2_to_register;
+    rd_addr <= memwb_rd_to_out;
     write_data <= writebackmux_writedata_to_registers;
     registers_reg1out_to_idex <= reg1_data;
     registers_reg2out_to_idex <= reg2_data;
@@ -866,7 +866,7 @@ branchand_regwritecancel_to_exmem <= 	branchand_jumpbranchselect_to_pc_mux;
     mem_addr <= exmem_result_to_datamem;
     mem_write_data <= exmem_src2_to_datamem;
     datamem_readdata_to_memwb <= mem_read_data;
-
+    --mem_read_data <= datamem_readdata_to_memwb;
 
 
 
