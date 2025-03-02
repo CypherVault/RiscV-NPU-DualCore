@@ -159,25 +159,29 @@ module tb();
         $display("Clock disabled");
 	end
 
-        // Read all registers and store in an array
-        $display("Reading all registers...");
-        
-        for (i = 0; i < `REG_COUNT; i = i + 1) begin
-            `VIP.read_data(`REG_BASE + (i * 4), 4, read_data, resp);
-            registers[i] = read_data;
-            $display("Register[%0d] = %h", i, read_data);
-            repeat(2) @(posedge clk);
-        end
-
-        // Read all data memory locations and store in an array
+       
+      // Read all data memory locations using raw indexes.
         $display("Reading all data memory...");
         
-        for (i = 0; i < `DATA_MEM_SIZE; i = i + 1) begin
-            `VIP.read_data(`DATA_MEM_BASE + (i * 4), 4, read_data, resp);
+        for (i=0; i<128; i=i+1) begin    
+            `VIP.read_data(`DATA_MEM_BASE + i * 4, 4, read_data, resp); // Adjusted for word-aligned addresses.
             data_memory[i] = read_data;
-            $display("Data Memory[%0d] = %h", i, read_data);
-            repeat(2) @(posedge clk);
+            $display ("Data Memory[%d] = %h", i, read_data);
+            repeat(5) @(posedge clk);
         end
+        
+        
+ // Read all registers using raw indexes.
+        $display("Reading all registers...");
+        
+        for (i=0; i<32; i=i+1) begin    
+            `VIP.read_data(`REG_BASE + i * 4, 4, read_data, resp); // Adjusted for word-aligned addresses.
+            registers[i] = read_data;
+            $display ("Register[%d] = %h", i, read_data);
+            repeat(5) @(posedge clk);
+        end
+        
+        
 
         $display("Test Complete");
         
