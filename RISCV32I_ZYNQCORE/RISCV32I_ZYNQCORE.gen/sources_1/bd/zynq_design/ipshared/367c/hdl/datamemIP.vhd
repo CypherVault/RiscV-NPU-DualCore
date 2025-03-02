@@ -55,11 +55,6 @@ architecture arch_imp of datamemIP is
     signal internal_rdata     : std_logic_vector(C_S02_AXI_DATA_WIDTH-1 downto 0) := (others => '0');
     signal internal_rvalid    : std_logic := '0';
     
-    -- Combined write control signals
-    signal write_enable : std_logic;
-    signal write_addr  : integer range 0 to 127;
-    signal write_data  : std_logic_vector(31 downto 0);
-
     -- Address validation function
     function is_valid_address(addr: std_logic_vector) return boolean is
     begin
@@ -67,26 +62,23 @@ architecture arch_imp of datamemIP is
     end function;
 
 begin
-    -- Write control logic
-    write_enable <= '1' when (s02_axi_wvalid = '1' and internal_wready = '0') or 
-                            (memwrite = '1' and is_valid_address(address)) else '0';
-    
-    write_addr <= to_integer(unsigned(s02_axi_awaddr(6 downto 2))) when (s02_axi_wvalid = '1' and internal_wready = '0') else
-                 to_integer(unsigned(address(6 downto 2))) when (memwrite = '1' and is_valid_address(address)) else
-                 0;
-    
-    write_data <= s02_axi_wdata when (s02_axi_wvalid = '1' and internal_wready = '0') else
-                 writedata when (memwrite = '1' and is_valid_address(address)) else
-                 (others => '0');
-
-    -- Main memory process
+    -- Main memory process for both AXI and RISC-V writes
     process(s02_axi_aclk)
     begin
         if rising_edge(s02_axi_aclk) then
             if s02_axi_aresetn = '0' or reset = '0' then
                 bram_mem <= (others => x"00000000");
-            elsif write_enable = '1' then
-                bram_mem(write_addr) <= write_data;
+            else
+                -- AXI write
+                if (s02_axi_wvalid = '1' and internal_wready = '0') then
+                    bram_mem(to_integer(unsigned(s02_axi_awaddr(6 downto 2)))) <= s02_axi_wdata;
+                end if;
+                
+                -- RISC-V write - using the full 7 bits without shifting
+                if (memwrite = '1' and is_valid_address(address)) then
+                    -- Use the entire address field without shifting
+                    bram_mem(to_integer(unsigned(address(6 downto 0)))) <= writedata;
+                end if;
             end if;
         end if;
     end process;
@@ -151,10 +143,10 @@ begin
         end if;
     end process;
 
-    -- RISC-V read operation (combinatorial)
-    readdata <= bram_mem(to_integer(unsigned(address(6 downto 2)))) when 
+    -- RISC-V read operation (combinatorial) - no 'Z' outputs
+    readdata <= bram_mem(to_integer(unsigned(address(6 downto 0)))) when 
                (memread = '1' and is_valid_address(address)) else 
-               (others => 'Z');
+               (others => '0');  -- Changed from 'Z' to '0'
 
     -- AXI output assignments
     s02_axi_awready <= internal_awready;

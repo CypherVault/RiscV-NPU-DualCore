@@ -2,10 +2,10 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-// Date        : Mon Feb 24 11:02:25 2025
+// Date        : Wed Feb 19 18:55:35 2025
 // Host        : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ip/zynq_design_axi_smc_1/zynq_design_axi_smc_1_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top zynq_design_axi_smc_1 -prefix
+//               zynq_design_axi_smc_1_ zynq_design_axi_smc_1_stub.v
 // Design      : zynq_design_axi_smc_1
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z007sclg225-1
