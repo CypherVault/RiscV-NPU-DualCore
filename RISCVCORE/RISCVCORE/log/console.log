@@ -385,4 +385,239 @@ asim -O5 +access +r +m+ricsvcore_tb ricsvcore_tb behavior
 # KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
 # KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
 # KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 8266 kB 
+# Allocation: Simulator allocated 8266 kB (elbread=427 elab2=7659 kernel=179 sdf=0)
+# KERNEL: ASDB file was created in location C:\Users\Chris\Desktop\RiscV-NPU-DualCore\RISCVCORE\RISCVCORE\src\wave.asdb
+#  9:50 PM, Saturday, March 1, 2025
+#  Simulation has been initialized
+# Waveform file 'untitled.awc' connected to 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/wave.asdb'.
+run
+# KERNEL: WARNING: NUMERIC_STD."=": metavalue detected, returning FALSE
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /RICSVCORE_tb/uut/internal_connections_inst/instruction_memory_inst,  Process: line__32.
+# KERNEL: WARNING: NUMERIC_STD."=": metavalue detected, returning FALSE
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /RICSVCORE_tb/uut/internal_connections_inst/REGFILE_INST,  Process: line__42.
+# KERNEL: WARNING: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /RICSVCORE_tb/uut/internal_connections_inst/REGFILE_INST,  Process: line__42.
+# KERNEL: WARNING: NUMERIC_STD."=": metavalue detected, returning FALSE
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /RICSVCORE_tb/uut/internal_connections_inst/REGFILE_INST,  Process: line__45.
+# KERNEL: WARNING: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /RICSVCORE_tb/uut/internal_connections_inst/REGFILE_INST,  Process: line__45.
+# KERNEL: Stopped at time 510 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 520 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 530 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 540 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 550 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 560 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 2020 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 158 in process of instance "/RICSVCORE_tb/main_sim".
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 8266 kB (elbread=427 elab2=7659 kernel=179 sdf=0)
+# KERNEL: ASDB file was created in location C:\Users\Chris\Desktop\RiscV-NPU-DualCore\RISCVCORE\RISCVCORE\src\wave.asdb
+#  12:27 PM, Sunday, March 2, 2025
+#  Simulation has been initialized
+# Waveform file 'untitled.awc' connected to 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/wave.asdb'.
+run
+# KERNEL: WARNING: NUMERIC_STD."=": metavalue detected, returning FALSE
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /RICSVCORE_tb/uut/internal_connections_inst/instruction_memory_inst,  Process: line__32.
+# KERNEL: WARNING: NUMERIC_STD."=": metavalue detected, returning FALSE
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /RICSVCORE_tb/uut/internal_connections_inst/REGFILE_INST,  Process: line__42.
+# KERNEL: WARNING: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /RICSVCORE_tb/uut/internal_connections_inst/REGFILE_INST,  Process: line__42.
+# KERNEL: WARNING: NUMERIC_STD."=": metavalue detected, returning FALSE
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /RICSVCORE_tb/uut/internal_connections_inst/REGFILE_INST,  Process: line__45.
+# KERNEL: WARNING: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /RICSVCORE_tb/uut/internal_connections_inst/REGFILE_INST,  Process: line__45.
+# KERNEL: Stopped at time 510 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 520 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 530 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 540 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 550 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 560 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 570 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 580 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 590 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 600 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 610 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 620 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 630 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 640 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 8266 kB (elbread=427 elab2=7659 kernel=179 sdf=0)
+# KERNEL: ASDB file was created in location C:\Users\Chris\Desktop\RiscV-NPU-DualCore\RISCVCORE\RISCVCORE\src\wave.asdb
+#  1:06 PM, Sunday, March 2, 2025
+#  Simulation has been initialized
+# Waveform file 'untitled.awc' connected to 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/wave.asdb'.
+run
+# KERNEL: WARNING: NUMERIC_STD."=": metavalue detected, returning FALSE
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /RICSVCORE_tb/uut/internal_connections_inst/instruction_memory_inst,  Process: line__32.
+# KERNEL: WARNING: NUMERIC_STD."=": metavalue detected, returning FALSE
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /RICSVCORE_tb/uut/internal_connections_inst/REGFILE_INST,  Process: line__42.
+# KERNEL: WARNING: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /RICSVCORE_tb/uut/internal_connections_inst/REGFILE_INST,  Process: line__42.
+# KERNEL: WARNING: NUMERIC_STD."=": metavalue detected, returning FALSE
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /RICSVCORE_tb/uut/internal_connections_inst/REGFILE_INST,  Process: line__45.
+# KERNEL: WARNING: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /RICSVCORE_tb/uut/internal_connections_inst/REGFILE_INST,  Process: line__45.
+# KERNEL: Stopped at time 510 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 520 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 530 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 540 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 550 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 560 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 570 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 580 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 590 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 600 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 610 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+restart
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 8266 kB (elbread=427 elab2=7659 kernel=179 sdf=0)
+# KERNEL: ASDB file was created in location C:\Users\Chris\Desktop\RiscV-NPU-DualCore\RISCVCORE\RISCVCORE\src\wave.asdb
+#  1:22 PM, Sunday, March 2, 2025
+#  Simulation has been initialized
+# Waveform file 'untitled.awc' connected to 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/wave.asdb'.
+run
+# KERNEL: WARNING: NUMERIC_STD."=": metavalue detected, returning FALSE
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /RICSVCORE_tb/uut/internal_connections_inst/instruction_memory_inst,  Process: line__32.
+# KERNEL: WARNING: NUMERIC_STD."=": metavalue detected, returning FALSE
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /RICSVCORE_tb/uut/internal_connections_inst/REGFILE_INST,  Process: line__42.
+# KERNEL: WARNING: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /RICSVCORE_tb/uut/internal_connections_inst/REGFILE_INST,  Process: line__42.
+# KERNEL: WARNING: NUMERIC_STD."=": metavalue detected, returning FALSE
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /RICSVCORE_tb/uut/internal_connections_inst/REGFILE_INST,  Process: line__45.
+# KERNEL: WARNING: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+# KERNEL: Time: 0 ps,  Iteration: 0,  Instance: /RICSVCORE_tb/uut/internal_connections_inst/REGFILE_INST,  Process: line__45.
+# KERNEL: Stopped at time 510 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 520 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 530 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 540 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 550 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 560 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 570 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 580 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERN

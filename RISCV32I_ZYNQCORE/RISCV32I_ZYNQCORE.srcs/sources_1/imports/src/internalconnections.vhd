@@ -459,8 +459,10 @@ pc_pcout_to_pc4adder <= pc_pcout_to_instruction_memory;
 			);
 			
 			-- Connect signals to forwarding unit // fix for issue of rs1 and rs2 not getting to forwarding unit after move to extenral memory
-idex_rs1_to_forwardingunit <= ifid_rs1_to_register;
-idex_rs2_to_forwardingunit <= ifid_rs2_to_register;
+--idex_rs1_to_forwardingunit <= ifid_rs1_to_register;
+--idex_rs2_to_forwardingunit <= ifid_rs2_to_register;
+
+			
 			
 	--plus two signals carrying pcout and ifid instrcution to ID stage
 	
@@ -607,9 +609,9 @@ HAZARD_UNIT_INST : entity work.hazard_unit
 	  instructionin => ifid_instruction_to_OUT,
 	  instructionout => idex_instruction_to_alucontrol,
       
-      -- Register addresses
-      rs1in => ifid_rs1_to_registers,
-      rs2in => ifid_rs2_to_registers,
+      -- Register addresses     ifid_rs1_to_register
+      rs1in => ifid_rs1_to_register,
+      rs2in => ifid_rs2_to_register,
       rdin => ifid_rd_to_idex,
       rs1out => idex_rs1_to_forwardingunit,
       rs2out => idex_rs2_to_forwardingunit,

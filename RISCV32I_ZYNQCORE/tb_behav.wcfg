@@ -15,15 +15,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="10,978.767 ns"></ZoomStartTime>
-      <ZoomEndTime time="12,782.362 ns"></ZoomEndTime>
-      <Cursor1Time time="12,481.762 ns"></Cursor1Time>
+      <ZoomStartTime time="13,820.768 ns"></ZoomStartTime>
+      <ZoomEndTime time="16,657.847 ns"></ZoomEndTime>
+      <Cursor1Time time="15,997.751 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="234"></NameColumnWidth>
-      <ValueColumnWidth column_width="151"></ValueColumnWidth>
+      <ValueColumnWidth column_width="147"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="43" />
+   <WVObjectSize size="23" />
    <wave_markers>
       <marker time="5912421" label="" />
    </wave_markers>
@@ -71,132 +71,52 @@
       <obj_property name="ElementShortName">resetbar</obj_property>
       <obj_property name="ObjectShortName">resetbar</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/pc_out" type="array">
-      <obj_property name="ElementShortName">pc_out[15:0]</obj_property>
-      <obj_property name="ObjectShortName">pc_out[15:0]</obj_property>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_INST/input_0" type="array">
+      <obj_property name="ElementShortName">input_0[31:0]</obj_property>
+      <obj_property name="ObjectShortName">input_0[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/instruction_in" type="array">
-      <obj_property name="ElementShortName">instruction_in[31:0]</obj_property>
-      <obj_property name="ObjectShortName">instruction_in[31:0]</obj_property>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_INST/input_1" type="array">
+      <obj_property name="ElementShortName">input_1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">input_1[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/registerIP_0/s01_axi_aclk" type="logic">
-      <obj_property name="ElementShortName">s01_axi_aclk</obj_property>
-      <obj_property name="ObjectShortName">s01_axi_aclk</obj_property>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_INST/pc" type="array">
+      <obj_property name="ElementShortName">pc[15:0]</obj_property>
+      <obj_property name="ObjectShortName">pc[15:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/registerIP_0/s01_axi_aresetn" type="logic">
-      <obj_property name="ElementShortName">s01_axi_aresetn</obj_property>
-      <obj_property name="ObjectShortName">s01_axi_aresetn</obj_property>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_INST/operation" type="array">
+      <obj_property name="ElementShortName">operation[4:0]</obj_property>
+      <obj_property name="ObjectShortName">operation[4:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/registerIP_0/s01_axi_awaddr" type="array">
-      <obj_property name="ElementShortName">s01_axi_awaddr[4:0]</obj_property>
-      <obj_property name="ObjectShortName">s01_axi_awaddr[4:0]</obj_property>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_INST/ALU_output" type="array">
+      <obj_property name="ElementShortName">ALU_output[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ALU_output[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/registerIP_0/s01_axi_awprot" type="array">
-      <obj_property name="ElementShortName">s01_axi_awprot[2:0]</obj_property>
-      <obj_property name="ObjectShortName">s01_axi_awprot[2:0]</obj_property>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_INST/zero_flag" type="logic">
+      <obj_property name="ElementShortName">zero_flag</obj_property>
+      <obj_property name="ObjectShortName">zero_flag</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/registerIP_0/s01_axi_awvalid" type="logic">
-      <obj_property name="ElementShortName">s01_axi_awvalid</obj_property>
-      <obj_property name="ObjectShortName">s01_axi_awvalid</obj_property>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_INST/JALorBRANCH" type="logic">
+      <obj_property name="ElementShortName">JALorBRANCH</obj_property>
+      <obj_property name="ObjectShortName">JALorBRANCH</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/registerIP_0/s01_axi_awready" type="logic">
-      <obj_property name="ElementShortName">s01_axi_awready</obj_property>
-      <obj_property name="ObjectShortName">s01_axi_awready</obj_property>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_INST/result_temp" type="array">
+      <obj_property name="ElementShortName">result_temp[31:0]</obj_property>
+      <obj_property name="ObjectShortName">result_temp[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/registerIP_0/s01_axi_wdata" type="array">
-      <obj_property name="ElementShortName">s01_axi_wdata[31:0]</obj_property>
-      <obj_property name="ObjectShortName">s01_axi_wdata[31:0]</obj_property>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_INST/mul_result" type="array">
+      <obj_property name="ElementShortName">mul_result[63:0]</obj_property>
+      <obj_property name="ObjectShortName">mul_result[63:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/registerIP_0/s01_axi_wstrb" type="array">
-      <obj_property name="ElementShortName">s01_axi_wstrb[3:0]</obj_property>
-      <obj_property name="ObjectShortName">s01_axi_wstrb[3:0]</obj_property>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_INST/branch_condition" type="logic">
+      <obj_property name="ElementShortName">branch_condition</obj_property>
+      <obj_property name="ObjectShortName">branch_condition</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/registerIP_0/s01_axi_wvalid" type="logic">
-      <obj_property name="ElementShortName">s01_axi_wvalid</obj_property>
-      <obj_property name="ObjectShortName">s01_axi_wvalid</obj_property>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_INST/pc_plus_4" type="array">
+      <obj_property name="ElementShortName">pc_plus_4[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pc_plus_4[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/registerIP_0/s01_axi_wready" type="logic">
-      <obj_property name="ElementShortName">s01_axi_wready</obj_property>
-      <obj_property name="ObjectShortName">s01_axi_wready</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/registerIP_0/s01_axi_bresp" type="array">
-      <obj_property name="ElementShortName">s01_axi_bresp[1:0]</obj_property>
-      <obj_property name="ObjectShortName">s01_axi_bresp[1:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/registerIP_0/s01_axi_bvalid" type="logic">
-      <obj_property name="ElementShortName">s01_axi_bvalid</obj_property>
-      <obj_property name="ObjectShortName">s01_axi_bvalid</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/registerIP_0/s01_axi_bready" type="logic">
-      <obj_property name="ElementShortName">s01_axi_bready</obj_property>
-      <obj_property name="ObjectShortName">s01_axi_bready</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/registerIP_0/s01_axi_araddr" type="array">
-      <obj_property name="ElementShortName">s01_axi_araddr[4:0]</obj_property>
-      <obj_property name="ObjectShortName">s01_axi_araddr[4:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/registerIP_0/s01_axi_arprot" type="array">
-      <obj_property name="ElementShortName">s01_axi_arprot[2:0]</obj_property>
-      <obj_property name="ObjectShortName">s01_axi_arprot[2:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/registerIP_0/s01_axi_arvalid" type="logic">
-      <obj_property name="ElementShortName">s01_axi_arvalid</obj_property>
-      <obj_property name="ObjectShortName">s01_axi_arvalid</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/registerIP_0/s01_axi_arready" type="logic">
-      <obj_property name="ElementShortName">s01_axi_arready</obj_property>
-      <obj_property name="ObjectShortName">s01_axi_arready</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/registerIP_0/s01_axi_rdata" type="array">
-      <obj_property name="ElementShortName">s01_axi_rdata[31:0]</obj_property>
-      <obj_property name="ObjectShortName">s01_axi_rdata[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/registerIP_0/s01_axi_rresp" type="array">
-      <obj_property name="ElementShortName">s01_axi_rresp[1:0]</obj_property>
-      <obj_property name="ObjectShortName">s01_axi_rresp[1:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/registerIP_0/s01_axi_rvalid" type="logic">
-      <obj_property name="ElementShortName">s01_axi_rvalid</obj_property>
-      <obj_property name="ObjectShortName">s01_axi_rvalid</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/registerIP_0/s01_axi_rready" type="logic">
-      <obj_property name="ElementShortName">s01_axi_rready</obj_property>
-      <obj_property name="ObjectShortName">s01_axi_rready</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/registerIP_0/resetbar" type="logic">
-      <obj_property name="ElementShortName">resetbar</obj_property>
-      <obj_property name="ObjectShortName">resetbar</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/registerIP_0/regwrite" type="logic">
-      <obj_property name="ElementShortName">regwrite</obj_property>
-      <obj_property name="ObjectShortName">regwrite</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/registerIP_0/readregister1" type="array">
-      <obj_property name="ElementShortName">readregister1[4:0]</obj_property>
-      <obj_property name="ObjectShortName">readregister1[4:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/registerIP_0/readregister2" type="array">
-      <obj_property name="ElementShortName">readregister2[4:0]</obj_property>
-      <obj_property name="ObjectShortName">readregister2[4:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/registerIP_0/writeregisteraddress" type="array">
-      <obj_property name="ElementShortName">writeregisteraddress[4:0]</obj_property>
-      <obj_property name="ObjectShortName">writeregisteraddress[4:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/registerIP_0/writedata" type="array">
-      <obj_property name="ElementShortName">writedata[31:0]</obj_property>
-      <obj_property name="ObjectShortName">writedata[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/registerIP_0/readdata1" type="array">
-      <obj_property name="ElementShortName">readdata1[31:0]</obj_property>
-      <obj_property name="ObjectShortName">readdata1[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/registerIP_0/readdata2" type="array">
-      <obj_property name="ElementShortName">readdata2[31:0]</obj_property>
-      <obj_property name="ObjectShortName">readdata2[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/registerIP_0/S01_AXI" type="protoinst">
-      <obj_property name="ElementShortName">S01_AXI</obj_property>
-      <obj_property name="ObjectShortName">S01_AXI</obj_property>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_INST/is_jal_or_branch" type="logic">
+      <obj_property name="ElementShortName">is_jal_or_branch</obj_property>
+      <obj_property name="ObjectShortName">is_jal_or_branch</obj_property>
    </wvobject>
 </wave_config>
