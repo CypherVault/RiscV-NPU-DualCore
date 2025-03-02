@@ -15,15 +15,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="13,820.768 ns"></ZoomStartTime>
-      <ZoomEndTime time="16,657.847 ns"></ZoomEndTime>
-      <Cursor1Time time="15,997.751 ns"></Cursor1Time>
+      <ZoomStartTime time="15,920.422 ns"></ZoomStartTime>
+      <ZoomEndTime time="19,213.916 ns"></ZoomEndTime>
+      <Cursor1Time time="18,665.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="234"></NameColumnWidth>
-      <ValueColumnWidth column_width="147"></ValueColumnWidth>
+      <ValueColumnWidth column_width="135"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="23" />
+   <WVObjectSize size="42" />
    <wave_markers>
       <marker time="5912421" label="" />
    </wave_markers>
@@ -118,5 +118,82 @@
    <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_INST/is_jal_or_branch" type="logic">
       <obj_property name="ElementShortName">is_jal_or_branch</obj_property>
       <obj_property name="ObjectShortName">is_jal_or_branch</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/rstbar" type="logic">
+      <obj_property name="ElementShortName">rstbar</obj_property>
+      <obj_property name="ObjectShortName">rstbar</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/ifidwrite" type="logic">
+      <obj_property name="ElementShortName">ifidwrite</obj_property>
+      <obj_property name="ObjectShortName">ifidwrite</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/ifidflush" type="logic">
+      <obj_property name="ElementShortName">ifidflush</obj_property>
+      <obj_property name="ObjectShortName">ifidflush</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/branch_taken" type="logic">
+      <obj_property name="ElementShortName">branch_taken</obj_property>
+      <obj_property name="ObjectShortName">branch_taken</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/pcout" type="array">
+      <obj_property name="ElementShortName">pcout[15:0]</obj_property>
+      <obj_property name="ObjectShortName">pcout[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/instruction" type="array">
+      <obj_property name="ElementShortName">instruction[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instruction[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/ifidinstructionout" type="array">
+      <obj_property name="ElementShortName">ifidinstructionout[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ifidinstructionout[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/ifidpcout" type="array">
+      <obj_property name="ElementShortName">ifidpcout[15:0]</obj_property>
+      <obj_property name="ObjectShortName">ifidpcout[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/rs1_out" type="array">
+      <obj_property name="ElementShortName">rs1_out[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rs1_out[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/rs2_out" type="array">
+      <obj_property name="ElementShortName">rs2_out[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rs2_out[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/rd_out" type="array">
+      <obj_property name="ElementShortName">rd_out[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rd_out[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/instruction_reg" type="array">
+      <obj_property name="ElementShortName">instruction_reg[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instruction_reg[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/pcout_reg" type="array">
+      <obj_property name="ElementShortName">pcout_reg[15:0]</obj_property>
+      <obj_property name="ObjectShortName">pcout_reg[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/rdout_reg" type="array">
+      <obj_property name="ElementShortName">rdout_reg[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rdout_reg[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/rs1_reg" type="array">
+      <obj_property name="ElementShortName">rs1_reg[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rs1_reg[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/rs2_reg" type="array">
+      <obj_property name="ElementShortName">rs2_reg[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rs2_reg[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/registerIP_0/U0/registers" type="array">
+      <obj_property name="ElementShortName">registers[0:31][31:0]</obj_property>
+      <obj_property name="ObjectShortName">registers[0:31][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/datamemIP_0/U0/bram_mem" type="array">
+      <obj_property name="ElementShortName">bram_mem[0:127][31:0]</obj_property>
+      <obj_property name="ObjectShortName">bram_mem[0:127][31:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
 </wave_config>
