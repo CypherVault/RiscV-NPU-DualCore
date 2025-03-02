@@ -457,6 +457,11 @@ pc_pcout_to_pc4adder <= pc_pcout_to_instruction_memory;
 			
 			
 			);
+			
+			-- Connect signals to forwarding unit // fix for issue of rs1 and rs2 not getting to forwarding unit after move to extenral memory
+idex_rs1_to_forwardingunit <= ifid_rs1_to_register;
+idex_rs2_to_forwardingunit <= ifid_rs2_to_register;
+			
 	--plus two signals carrying pcout and ifid instrcution to ID stage
 	
 ifid_pcout_to_pcimmadder <= ifid_pcout_to_OUT;
