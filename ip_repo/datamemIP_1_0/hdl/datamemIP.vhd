@@ -115,8 +115,8 @@ begin
             end if;
         end if;
     end process;
-
-    -- AXI Read Channel Control
+    
+ -- AXI Read Channel Control
     process(s02_axi_aclk)
     begin
         if rising_edge(s02_axi_aclk) then
@@ -125,15 +125,15 @@ begin
                 internal_rvalid <= '0';
                 internal_rdata <= (others => '0');
             else
-                -- Read address handshake
+                -- Read address handshake logic
                 if (s02_axi_arvalid = '1' and internal_arready = '0') then
                     internal_arready <= '1';
-                    internal_rdata <= bram_mem(to_integer(unsigned(s02_axi_araddr(6 downto 2))));
+                    internal_rdata <= bram_mem(to_integer(unsigned(s02_axi_araddr))); -- Fetch data from BRAM based on address
                 else
                     internal_arready <= '0';
                 end if;
 
-                -- Read data handshake
+                -- Read data handshake logic generation
                 if (internal_arready = '1' and internal_rvalid = '0') then
                     internal_rvalid <= '1';
                 elsif (s02_axi_rready = '1') then
