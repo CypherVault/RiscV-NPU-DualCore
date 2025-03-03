@@ -678,4 +678,7 @@ run
 # Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
 run
 # KERNEL: Stopped at time 780 ns + 0.
-# Stopped in "C:/
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".
+run
+# KERNEL: Stopped at time 790 ns + 0.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/RISCV_TB_PROGRAM&REQUEST.vhd" at line 142 in process of instance "/RICSVCORE_tb/main_sim".

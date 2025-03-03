@@ -15,15 +15,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="563.106666 us"></ZoomStartTime>
-      <ZoomEndTime time="568.026667 us"></ZoomEndTime>
-      <Cursor1Time time="573.165000 us"></Cursor1Time>
+      <ZoomStartTime time="74,937.158 ns"></ZoomStartTime>
+      <ZoomEndTime time="79,807.168 ns"></ZoomEndTime>
+      <Cursor1Time time="79,485.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="234"></NameColumnWidth>
-      <ValueColumnWidth column_width="131"></ValueColumnWidth>
+      <ValueColumnWidth column_width="127"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="42" />
+   <WVObjectSize size="41" />
    <wave_markers>
       <marker time="5912421" label="" />
    </wave_markers>
@@ -186,10 +186,6 @@
    <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/rs2_reg" type="array">
       <obj_property name="ElementShortName">rs2_reg[4:0]</obj_property>
       <obj_property name="ObjectShortName">rs2_reg[4:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/registerIP_0/U0/registers" type="array">
-      <obj_property name="ElementShortName">registers[0:31][31:0]</obj_property>
-      <obj_property name="ObjectShortName">registers[0:31][31:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/dut/zynq_design_i/datamemIP_0/U0/bram_mem" type="array">
       <obj_property name="ElementShortName">bram_mem[0:127][31:0]</obj_property>

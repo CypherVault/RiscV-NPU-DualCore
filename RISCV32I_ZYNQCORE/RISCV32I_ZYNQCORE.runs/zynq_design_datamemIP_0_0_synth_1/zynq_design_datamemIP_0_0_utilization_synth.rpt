@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-| Date         : Sun Mar  2 15:49:11 2025
+| Date         : Sun Mar  2 18:40:53 2025
 | Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file zynq_design_datamemIP_0_0_utilization_synth.rpt -pb zynq_design_datamemIP_0_0_utilization_synth.pb
 | Design       : zynq_design_datamemIP_0_0
@@ -31,14 +31,14 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             | 2960 |     0 |          0 |     14400 | 20.56 |
-|   LUT as Logic          | 2960 |     0 |          0 |     14400 | 20.56 |
+| Slice LUTs*             | 3649 |     0 |          0 |     14400 | 25.34 |
+|   LUT as Logic          | 3649 |     0 |          0 |     14400 | 25.34 |
 |   LUT as Memory         |    0 |     0 |          0 |      6000 |  0.00 |
 | Slice Registers         | 4133 |     0 |          0 |     28800 | 14.35 |
 |   Register as Flip Flop | 4133 |     0 |          0 |     28800 | 14.35 |
 |   Register as Latch     |    0 |     0 |          0 |     28800 |  0.00 |
-| F7 Muxes                |  288 |     0 |          0 |      8800 |  3.27 |
-| F8 Muxes                |   52 |     0 |          0 |      4400 |  1.18 |
+| F7 Muxes                | 1056 |     0 |          0 |      8800 | 12.00 |
+| F8 Muxes                |  512 |     0 |          0 |      4400 | 11.64 |
 +-------------------------+------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 Warning! LUT value is adjusted to account for LUT combining.
@@ -150,13 +150,13 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
 | FDRE     | 4133 |        Flop & Latch |
-| LUT6     | 2635 |                 LUT |
-| MUXF7    |  288 |               MuxFx |
-| LUT4     |  198 |                 LUT |
-| LUT3     |   94 |                 LUT |
-| LUT5     |   56 |                 LUT |
-| MUXF8    |   52 |               MuxFx |
-| LUT2     |   46 |                 LUT |
+| LUT6     | 3342 |                 LUT |
+| MUXF7    | 1056 |               MuxFx |
+| MUXF8    |  512 |               MuxFx |
+| LUT4     |  200 |                 LUT |
+| LUT5     |  133 |                 LUT |
+| LUT2     |   55 |                 LUT |
+| LUT3     |   19 |                 LUT |
 | LUT1     |    1 |                 LUT |
 +----------+------+---------------------+
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z007sclg225-1" LaunchTime="1740951077" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/RISCVCOREZYNQ.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7z007sclg225-1" LaunchTime="1740958775" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/RISCVCOREZYNQ.dcp">
   <File Type="PA-TCL" Name="zynq_design_wrapper.tcl"/>
   <File Type="REPORTS-TCL" Name="zynq_design_wrapper_reports.tcl"/>
   <File Type="RDS-RDS" Name="zynq_design_wrapper.vds"/>
@@ -201,6 +201,6 @@
   <BlockFileSet Type="BlockSrcs" Name="zynq_design_RISCVCOREZYNQ_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="zynq_design_instructionmemIP_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="zynq_design_controlsubsystemIP_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="zynq_design_registerIP_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="zynq_design_datamemIP_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_design_registerIP_0_0"/>
 </GenRun>
