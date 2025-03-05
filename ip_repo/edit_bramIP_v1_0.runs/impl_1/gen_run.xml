@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7z007sclg225-1" LaunchTime="1741207344">
+  <File Type="ROUTE-PWR" Name="bytewrite_ram_1b_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="bytewrite_ram_1b.tcl"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="bytewrite_ram_1b_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="bytewrite_ram_1b_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="bytewrite_ram_1b_power_summary_routed.pb"/>
+  <File Type="OPT-RQA-PB" Name="bytewrite_ram_1b_rqa_opted.pb"/>
+  <File Type="REPORTS-TCL" Name="bytewrite_ram_1b_reports.tcl"/>
+  <File Type="OPT-TIMING" Name="bytewrite_ram_1b_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="bytewrite_ram_1b_opt.dcp"/>
+  <File Type="OPT-DRC" Name="bytewrite_ram_1b_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="bytewrite_ram_1b.hwdef"/>
+  <File Type="PWROPT-DCP" Name="bytewrite_ram_1b_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="bytewrite_ram_1b_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="bytewrite_ram_1b_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="bytewrite_ram_1b_placed.dcp"/>
+  <File Type="PLACE-IO" Name="bytewrite_ram_1b_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="bytewrite_ram_1b_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="bytewrite_ram_1b_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="bytewrite_ram_1b_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="bytewrite_ram_1b_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="bytewrite_ram_1b_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="bytewrite_ram_1b_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BIN" Name="bytewrite_ram_1b.bin"/>
+  <File Type="PLACE-TIMING" Name="bytewrite_ram_1b_timing_summary_placed.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="bytewrite_ram_1b_power_routed.rpx"/>
+  <File Type="PLACE-RQA-PB" Name="bytewrite_ram_1b_rqa_placed.pb"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="bytewrite_ram_1b_postplace_pwropt.dcp"/>
+  <File Type="BITSTR-MSK" Name="bytewrite_ram_1b.msk"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="bytewrite_ram_1b_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="bytewrite_ram_1b_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="bytewrite_ram_1b_drc_physopted.rpt"/>
+  <File Type="BITSTR-RBT" Name="bytewrite_ram_1b.rbt"/>
+  <File Type="PHYSOPT-TIMING" Name="bytewrite_ram_1b_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="bytewrite_ram_1b_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="bytewrite_ram_1b_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="bytewrite_ram_1b_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="bytewrite_ram_1b_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="bytewrite_ram_1b_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="bytewrite_ram_1b_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="bytewrite_ram_1b_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="bytewrite_ram_1b_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="bytewrite_ram_1b_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-RQS-PB" Name="bytewrite_ram_1b_rqs_routed.pb"/>
+  <File Type="ROUTE-STATUS" Name="bytewrite_ram_1b_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="bytewrite_ram_1b_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="bytewrite_ram_1b_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="bytewrite_ram_1b_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="bytewrite_ram_1b_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="bytewrite_ram_1b_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="bytewrite_ram_1b_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="bytewrite_ram_1b_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="bytewrite_ram_1b_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="bytewrite_ram_1b_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="bytewrite_ram_1b_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="bytewrite_ram_1b_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="bytewrite_ram_1b_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="bytewrite_ram_1b_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="bytewrite_ram_1b_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="bytewrite_ram_1b_bus_skew_postroute_physopted.rpt"/>
+  <File Type="BG-BIT" Name="bytewrite_ram_1b.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="bytewrite_ram_1b_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="bytewrite_ram_1b_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-NKY" Name="bytewrite_ram_1b.nky"/>
+  <File Type="BITSTR-BMM" Name="bytewrite_ram_1b_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="bytewrite_ram_1b.mmi"/>
+  <File Type="PDI-FILE" Name="bytewrite_ram_1b.pdi"/>
+  <File Type="BOOT-PDI-FILE" Name="bytewrite_ram_1b_boot.pdi"/>
+  <File Type="PL-PDI-FILE" Name="bytewrite_ram_1b_pld.pdi"/>
+  <File Type="RCFI_FILE" Name="bytewrite_ram_1b.rcfi"/>
+  <File Type="CFI_FILE" Name="bytewrite_ram_1b.cfi"/>
+  <File Type="RNPI_FILE" Name="bytewrite_ram_1b.rnpi"/>
+  <File Type="NPI_FILE" Name="bytewrite_ram_1b.npi"/>
+  <File Type="RBD_FILE" Name="bytewrite_ram_1b.rbd"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="bytewrite_ram_1b.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="bytewrite_ram_1b.sysdef"/>
+  <File Type="BG-BGN" Name="bytewrite_ram_1b.bgn"/>
+  <File Type="BG-DRC" Name="bytewrite_ram_1b.drc"/>
+  <File Type="RDI-RDI" Name="bytewrite_ram_1b.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="ROUTE-RQS" Name="bytewrite_ram_1b_routed.rqs"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="bytewrite_ram_1b_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../../../../../Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/bramIP_1_0/hdl/bramIP.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="xil_defaultlib"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../../../Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/bramIP_1_0/component.xml">
+      <FileInfo SFType="IPXACT"/>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="bytewrite_ram_1b"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024">
+      <Desc>Default settings for Implementation.</Desc>
+    </StratHandle>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>

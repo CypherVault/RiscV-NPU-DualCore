@@ -1836,10 +1836,10 @@
           "processing_system7_0/M_AXI_GP0_ACLK",
           "rst_ps7_0_50M/slowest_sync_clk",
           "axi_smc/aclk",
-          "instructionmemIP_0/s00_axi_aclk",
           "controlsubsystemIP_0/s05_axi_aclk",
           "registerIP_0/s01_axi_aclk",
-          "datamemIP_0/s02_axi_aclk"
+          "datamemIP_0/s02_axi_aclk",
+          "instructionmemIP_0/s00_axi_aclk"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
@@ -1864,10 +1864,10 @@
         "ports": [
           "rst_ps7_0_50M/peripheral_aresetn",
           "axi_smc/aresetn",
-          "instructionmemIP_0/s00_axi_aresetn",
           "controlsubsystemIP_0/s05_axi_aresetn",
           "registerIP_0/s01_axi_aresetn",
-          "datamemIP_0/s02_axi_aresetn"
+          "datamemIP_0/s02_axi_aresetn",
+          "instructionmemIP_0/s00_axi_aresetn"
         ]
       }
     },

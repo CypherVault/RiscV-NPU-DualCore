@@ -57,7 +57,7 @@ ENTITY zynq_design_instructionmemIP_0_0 IS
   PORT (
     s00_axi_aclk : IN STD_LOGIC;
     s00_axi_aresetn : IN STD_LOGIC;
-    s00_axi_awaddr : IN STD_LOGIC_VECTOR(6 DOWNTO 0);
+    s00_axi_awaddr : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
     s00_axi_awprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
     s00_axi_awvalid : IN STD_LOGIC;
     s00_axi_awready : OUT STD_LOGIC;
@@ -68,7 +68,7 @@ ENTITY zynq_design_instructionmemIP_0_0 IS
     s00_axi_bresp : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
     s00_axi_bvalid : OUT STD_LOGIC;
     s00_axi_bready : IN STD_LOGIC;
-    s00_axi_araddr : IN STD_LOGIC_VECTOR(6 DOWNTO 0);
+    s00_axi_araddr : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
     s00_axi_arprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
     s00_axi_arvalid : IN STD_LOGIC;
     s00_axi_arready : OUT STD_LOGIC;
@@ -87,12 +87,16 @@ ARCHITECTURE zynq_design_instructionmemIP_0_0_arch OF zynq_design_instructionmem
   COMPONENT instructionmemIP IS
     GENERIC (
       C_S00_AXI_DATA_WIDTH : INTEGER;
-      C_S00_AXI_ADDR_WIDTH : INTEGER
+      C_S00_AXI_ADDR_WIDTH : INTEGER;
+      SIZE : INTEGER;
+      ADDR_WIDTH : INTEGER;
+      COL_WIDTH : INTEGER;
+      NB_COL : INTEGER
     );
     PORT (
       s00_axi_aclk : IN STD_LOGIC;
       s00_axi_aresetn : IN STD_LOGIC;
-      s00_axi_awaddr : IN STD_LOGIC_VECTOR(6 DOWNTO 0);
+      s00_axi_awaddr : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
       s00_axi_awprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
       s00_axi_awvalid : IN STD_LOGIC;
       s00_axi_awready : OUT STD_LOGIC;
@@ -103,7 +107,7 @@ ARCHITECTURE zynq_design_instructionmemIP_0_0_arch OF zynq_design_instructionmem
       s00_axi_bresp : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
       s00_axi_bvalid : OUT STD_LOGIC;
       s00_axi_bready : IN STD_LOGIC;
-      s00_axi_araddr : IN STD_LOGIC_VECTOR(6 DOWNTO 0);
+      s00_axi_araddr : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
       s00_axi_arprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
       s00_axi_arvalid : IN STD_LOGIC;
       s00_axi_arready : OUT STD_LOGIC;
@@ -120,7 +124,7 @@ ARCHITECTURE zynq_design_instructionmemIP_0_0_arch OF zynq_design_instructionmem
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF zynq_design_instructionmemIP_0_0_arch : ARCHITECTURE IS "zynq_design_instructionmemIP_0_0,instructionmemIP,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF zynq_design_instructionmemIP_0_0_arch: ARCHITECTURE IS "zynq_design_instructionmemIP_0_0,instructionmemIP,{x_ipProduct=Vivado 2024.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=instructionmemIP,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=7}";
+  ATTRIBUTE CORE_GENERATION_INFO OF zynq_design_instructionmemIP_0_0_arch: ARCHITECTURE IS "zynq_design_instructionmemIP_0_0,instructionmemIP,{x_ipProduct=Vivado 2024.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=instructionmemIP,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=16,SIZE=512,ADDR_WIDTH=9,COL_WIDTH=8,NB_COL=4}";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_MODE : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
@@ -136,8 +140,8 @@ ARCHITECTURE zynq_design_instructionmemIP_0_0_arch OF zynq_design_instructionmem
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_arvalid: SIGNAL IS "xilinx.com:interface:aximm:1.0 S00_AXI ARVALID";
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_awaddr: SIGNAL IS "xilinx.com:interface:aximm:1.0 S00_AXI AWADDR";
   ATTRIBUTE X_INTERFACE_MODE OF s00_axi_awaddr: SIGNAL IS "slave S00_AXI";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF s00_axi_awaddr: SIGNAL IS "XIL_INTERFACENAME S00_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 4, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, ID_WIDTH 0, ADDR_WIDTH 7, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 8, NUM_WRITE_OUTSTANDING 8, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN zynq_design_processing_system7_0_0_FCLK_CLK0" & 
-", NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF s00_axi_awaddr: SIGNAL IS "XIL_INTERFACENAME S00_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 4, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, ID_WIDTH 0, ADDR_WIDTH 16, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 8, NUM_WRITE_OUTSTANDING 8, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN zynq_design_processing_system7_0_0_FCLK_CLK" & 
+"0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_awprot: SIGNAL IS "xilinx.com:interface:aximm:1.0 S00_AXI AWPROT";
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_awready: SIGNAL IS "xilinx.com:interface:aximm:1.0 S00_AXI AWREADY";
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_awvalid: SIGNAL IS "xilinx.com:interface:aximm:1.0 S00_AXI AWVALID";
@@ -156,7 +160,11 @@ BEGIN
   U0 : instructionmemIP
     GENERIC MAP (
       C_S00_AXI_DATA_WIDTH => 32,
-      C_S00_AXI_ADDR_WIDTH => 7
+      C_S00_AXI_ADDR_WIDTH => 16,
+      SIZE => 512,
+      ADDR_WIDTH => 9,
+      COL_WIDTH => 8,
+      NB_COL => 4
     )
     PORT MAP (
       s00_axi_aclk => s00_axi_aclk,

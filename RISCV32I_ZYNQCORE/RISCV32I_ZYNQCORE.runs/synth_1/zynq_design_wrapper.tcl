@@ -56,7 +56,19 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 3
+set_param checkpoint.writeSynthRtdsInDcp 1
 set_param bd.open.in_stealth_mode 2
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
+set_msg_config  -id {17-179}  -suppress 
+set_msg_config  -id {17-179}  -suppress 
+set_msg_config  -id {17-179}  -suppress 
+set_msg_config  -id {17-179}  -suppress 
+set_msg_config  -id {17-179}  -suppress 
+set_msg_config  -id {17-179}  -suppress 
+set_msg_config  -id {17-179}  -suppress 
+set_msg_config  -id {17-179}  -suppress 
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z007sclg225-1
 
@@ -72,6 +84,7 @@ set_property target_language VHDL [current_project]
 set_property board_part_repo_paths {C:/Users/Chris/AppData/Roaming/Xilinx/Vivado/2024.2/xhub/board_store/xilinx_board_store} [current_project]
 set_property board_part avnet.com:minized:part0:1.3 [current_project]
 set_property ip_repo_paths {
+  c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/bramIP_1_0
   c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/controlsubsystemIP_1_0
   c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/instructionmemIP_1_0
   c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0

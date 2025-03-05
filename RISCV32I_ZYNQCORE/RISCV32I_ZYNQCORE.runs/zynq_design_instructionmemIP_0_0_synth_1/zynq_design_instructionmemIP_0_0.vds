@@ -3,8 +3,8 @@
 # SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Mon Feb 24 10:59:43 2025
-# Process ID         : 11204
+# Start of session at: Wed Mar  5 17:23:30 2025
+# Process ID         : 6584
 # Current directory  : C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/zynq_design_instructionmemIP_0_0_synth_1
 # Command line       : vivado.exe -log zynq_design_instructionmemIP_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source zynq_design_instructionmemIP_0_0.tcl
 # Log file           : C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/zynq_design_instructionmemIP_0_0_synth_1/zynq_design_instructionmemIP_0_0.vds
@@ -19,11 +19,19 @@
 # Host memory        : 68558 MB
 # Swap memory        : 10200 MB
 # Total Virtual      : 78758 MB
-# Available Virtual  : 70027 MB
+# Available Virtual  : 68881 MB
 #-----------------------------------------------------------
 source zynq_design_instructionmemIP_0_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 483.305 ; gain = 153.527
+WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
+WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
+WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
+WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
+WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
+WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
+WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 482.375 ; gain = 152.297
 INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/bramIP_1_0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/controlsubsystemIP_1_0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/instructionmemIP_1_0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0'.
@@ -60,26 +68,37 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z007
 INFO: [Device 21-403] Loading part xc7z007sclg225-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 11744
+WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
+INFO: [Synth 8-7075] Helper process launched with PID 11116
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1170.273 ; gain = 467.742
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1168.684 ; gain = 467.363
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'zynq_design_instructionmemIP_0_0' [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ip/zynq_design_instructionmemIP_0_0/synth/zynq_design_instructionmemIP_0_0.vhd:84]
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
-	Parameter C_S00_AXI_ADDR_WIDTH bound to: 7 - type: integer 
-INFO: [Synth 8-3491] module 'instructionmemIP' declared at 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/fbcb/hdl/instructionmemIP.vhd:5' bound to instance 'U0' of component 'instructionmemIP' [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ip/zynq_design_instructionmemIP_0_0/synth/zynq_design_instructionmemIP_0_0.vhd:156]
-INFO: [Synth 8-638] synthesizing module 'instructionmemIP' [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/fbcb/hdl/instructionmemIP.vhd:40]
-INFO: [Synth 8-256] done synthesizing module 'instructionmemIP' (0#1) [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/fbcb/hdl/instructionmemIP.vhd:40]
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 16 - type: integer 
+	Parameter SIZE bound to: 512 - type: integer 
+	Parameter ADDR_WIDTH bound to: 9 - type: integer 
+	Parameter COL_WIDTH bound to: 8 - type: integer 
+	Parameter NB_COL bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'instructionmemIP' declared at 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/fbcb/hdl/instructionmemIP.vhd:5' bound to instance 'U0' of component 'instructionmemIP' [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ip/zynq_design_instructionmemIP_0_0/synth/zynq_design_instructionmemIP_0_0.vhd:160]
+INFO: [Synth 8-638] synthesizing module 'instructionmemIP' [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/fbcb/hdl/instructionmemIP.vhd:44]
+INFO: [Synth 8-256] done synthesizing module 'instructionmemIP' (0#1) [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/fbcb/hdl/instructionmemIP.vhd:44]
 INFO: [Synth 8-256] done synthesizing module 'zynq_design_instructionmemIP_0_0' (0#1) [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ip/zynq_design_instructionmemIP_0_0/synth/zynq_design_instructionmemIP_0_0.vhd:84]
+WARNING: [Synth 8-7129] Port s00_axi_awaddr[15] in module instructionmemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_awaddr[14] in module instructionmemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_awaddr[13] in module instructionmemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_awaddr[12] in module instructionmemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_awaddr[11] in module instructionmemIP is either unconnected or has no load
 WARNING: [Synth 8-7129] Port s00_axi_awaddr[1] in module instructionmemIP is either unconnected or has no load
 WARNING: [Synth 8-7129] Port s00_axi_awaddr[0] in module instructionmemIP is either unconnected or has no load
 WARNING: [Synth 8-7129] Port s00_axi_awprot[2] in module instructionmemIP is either unconnected or has no load
 WARNING: [Synth 8-7129] Port s00_axi_awprot[1] in module instructionmemIP is either unconnected or has no load
 WARNING: [Synth 8-7129] Port s00_axi_awprot[0] in module instructionmemIP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s00_axi_wstrb[3] in module instructionmemIP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s00_axi_wstrb[2] in module instructionmemIP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s00_axi_wstrb[1] in module instructionmemIP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s00_axi_wstrb[0] in module instructionmemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_araddr[15] in module instructionmemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_araddr[14] in module instructionmemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_araddr[13] in module instructionmemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_araddr[12] in module instructionmemIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_araddr[11] in module instructionmemIP is either unconnected or has no load
 WARNING: [Synth 8-7129] Port s00_axi_araddr[1] in module instructionmemIP is either unconnected or has no load
 WARNING: [Synth 8-7129] Port s00_axi_araddr[0] in module instructionmemIP is either unconnected or has no load
 WARNING: [Synth 8-7129] Port s00_axi_arprot[2] in module instructionmemIP is either unconnected or has no load
@@ -90,64 +109,68 @@ WARNING: [Synth 8-7129] Port pc_address[14] in module instructionmemIP is either
 WARNING: [Synth 8-7129] Port pc_address[13] in module instructionmemIP is either unconnected or has no load
 WARNING: [Synth 8-7129] Port pc_address[12] in module instructionmemIP is either unconnected or has no load
 WARNING: [Synth 8-7129] Port pc_address[11] in module instructionmemIP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc_address[10] in module instructionmemIP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc_address[9] in module instructionmemIP is either unconnected or has no load
 WARNING: [Synth 8-7129] Port pc_address[1] in module instructionmemIP is either unconnected or has no load
 WARNING: [Synth 8-7129] Port pc_address[0] in module instructionmemIP is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1290.867 ; gain = 588.336
+Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1280.891 ; gain = 579.570
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1290.867 ; gain = 588.336
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1280.891 ; gain = 579.570
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1290.867 ; gain = 588.336
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1280.891 ; gain = 579.570
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.087 . Memory (MB): peak = 1290.867 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1280.891 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1365.828 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1335.293 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.133 . Memory (MB): peak = 1366.629 ; gain = 0.801
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1335.988 ; gain = 0.695
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 1366.629 ; gain = 664.098
+Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1335.988 ; gain = 634.668
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z007sclg225-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 1366.629 ; gain = 664.098
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1335.988 ; gain = 634.668
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 1366.629 ; gain = 664.098
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1335.988 ; gain = 634.668
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-3971] The signal "instructionmemIP:/RAM_reg" was recognized as a true dual port RAM template.
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1366.629 ; gain = 664.098
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1335.988 ; gain = 634.668
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Registers : 
-	               32 Bit    Registers := 34    
+	               32 Bit    Registers := 2     
 	                1 Bit    Registers := 5     
++---RAMs : 
+	              16K Bit	(512 X 32 bit)          RAMs := 1     
 +---Muxes : 
-	   2 Input    5 Bit        Muxes := 1     
+	   5 Input   32 Bit        Muxes := 2     
+	   2 Input   32 Bit        Muxes := 4     
+	   2 Input    8 Bit        Muxes := 1     
 	   2 Input    1 Bit        Muxes := 2     
+	   5 Input    1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -164,49 +187,79 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-WARNING: [Synth 8-7129] Port s00_axi_awaddr[1] in module instructionmemIP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s00_axi_awaddr[0] in module instructionmemIP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s00_axi_awprot[2] in module instructionmemIP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s00_axi_awprot[1] in module instructionmemIP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s00_axi_awprot[0] in module instructionmemIP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s00_axi_wstrb[3] in module instructionmemIP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s00_axi_wstrb[2] in module instructionmemIP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s00_axi_wstrb[1] in module instructionmemIP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s00_axi_wstrb[0] in module instructionmemIP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s00_axi_araddr[1] in module instructionmemIP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s00_axi_araddr[0] in module instructionmemIP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s00_axi_arprot[2] in module instructionmemIP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s00_axi_arprot[1] in module instructionmemIP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port s00_axi_arprot[0] in module instructionmemIP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc_address[15] in module instructionmemIP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc_address[14] in module instructionmemIP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc_address[13] in module instructionmemIP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc_address[12] in module instructionmemIP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc_address[11] in module instructionmemIP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc_address[10] in module instructionmemIP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc_address[9] in module instructionmemIP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc_address[1] in module instructionmemIP is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pc_address[0] in module instructionmemIP is either unconnected or has no load
+INFO: [Synth 8-3917] design zynq_design_instructionmemIP_0_0 has port s00_axi_bresp[1] driven by constant 0
+INFO: [Synth 8-3917] design zynq_design_instructionmemIP_0_0 has port s00_axi_bresp[0] driven by constant 0
+INFO: [Synth 8-3917] design zynq_design_instructionmemIP_0_0 has port s00_axi_rresp[1] driven by constant 0
+INFO: [Synth 8-3917] design zynq_design_instructionmemIP_0_0 has port s00_axi_rresp[0] driven by constant 0
+WARNING: [Synth 8-7129] Port s00_axi_awaddr[15] in module zynq_design_instructionmemIP_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_awaddr[14] in module zynq_design_instructionmemIP_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_awaddr[13] in module zynq_design_instructionmemIP_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_awaddr[12] in module zynq_design_instructionmemIP_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_awaddr[11] in module zynq_design_instructionmemIP_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_awaddr[1] in module zynq_design_instructionmemIP_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_awaddr[0] in module zynq_design_instructionmemIP_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_awprot[2] in module zynq_design_instructionmemIP_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_awprot[1] in module zynq_design_instructionmemIP_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_awprot[0] in module zynq_design_instructionmemIP_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_araddr[15] in module zynq_design_instructionmemIP_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_araddr[14] in module zynq_design_instructionmemIP_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_araddr[13] in module zynq_design_instructionmemIP_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_araddr[12] in module zynq_design_instructionmemIP_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_araddr[11] in module zynq_design_instructionmemIP_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_araddr[1] in module zynq_design_instructionmemIP_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_araddr[0] in module zynq_design_instructionmemIP_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_arprot[2] in module zynq_design_instructionmemIP_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_arprot[1] in module zynq_design_instructionmemIP_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_arprot[0] in module zynq_design_instructionmemIP_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_address[15] in module zynq_design_instructionmemIP_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_address[14] in module zynq_design_instructionmemIP_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_address[13] in module zynq_design_instructionmemIP_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_address[12] in module zynq_design_instructionmemIP_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_address[11] in module zynq_design_instructionmemIP_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_address[1] in module zynq_design_instructionmemIP_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc_address[0] in module zynq_design_instructionmemIP_0_0 is either unconnected or has no load
+INFO: [Synth 8-3971] The signal "zynq_design_instructionmemIP_0_0/U0/RAM_reg" was recognized as a true dual port RAM template.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1455.754 ; gain = 753.223
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1335.988 ; gain = 634.668
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping Report (see note below)
+-------NONE-------
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 1489.500 ; gain = 786.969
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 1474.270 ; gain = 772.949
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 1490.668 ; gain = 788.137
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 1474.270 ; gain = 772.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
+-------NONE-------
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance U0/RAM_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance U0/RAM_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 1506.945 ; gain = 804.414
+Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 1483.840 ; gain = 782.520
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -224,37 +277,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:53 ; elapsed = 00:00:54 . Memory (MB): peak = 1715.953 ; gain = 1013.422
+Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1700.125 ; gain = 998.805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:53 ; elapsed = 00:00:54 . Memory (MB): peak = 1715.953 ; gain = 1013.422
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1700.125 ; gain = 998.805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:53 ; elapsed = 00:00:54 . Memory (MB): peak = 1715.953 ; gain = 1013.422
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1700.125 ; gain = 998.805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:53 ; elapsed = 00:00:54 . Memory (MB): peak = 1715.953 ; gain = 1013.422
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1700.125 ; gain = 998.805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:53 ; elapsed = 00:00:54 . Memory (MB): peak = 1715.953 ; gain = 1013.422
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1701.141 ; gain = 999.820
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:53 ; elapsed = 00:00:54 . Memory (MB): peak = 1715.953 ; gain = 1013.422
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1701.141 ; gain = 999.820
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -267,42 +320,38 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+------+------+
-|      |Cell  |Count |
-+------+------+------+
-|1     |LUT1  |     1|
-|2     |LUT2  |     3|
-|3     |LUT3  |    33|
-|4     |LUT4  |     1|
-|5     |LUT5  |    32|
-|6     |LUT6  |   576|
-|7     |MUXF7 |   256|
-|8     |MUXF8 |    64|
-|9     |FDRE  |  1061|
-+------+------+------+
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |LUT1     |     1|
+|2     |LUT2     |     3|
+|3     |LUT3     |     3|
+|4     |LUT4     |     1|
+|5     |RAMB18E1 |     2|
+|6     |FDRE     |     5|
++------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:53 ; elapsed = 00:00:54 . Memory (MB): peak = 1715.953 ; gain = 1013.422
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1701.141 ; gain = 999.820
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 24 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:35 ; elapsed = 00:00:51 . Memory (MB): peak = 1715.953 ; gain = 937.660
-Synthesis Optimization Complete : Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 1715.953 ; gain = 1013.422
+Synthesis finished with 0 errors, 0 critical warnings and 28 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:34 . Memory (MB): peak = 1701.141 ; gain = 944.723
+Synthesis Optimization Complete : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1701.141 ; gain = 999.820
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 1725.051 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 320 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1701.141 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-WARNING: [Netlist 29-101] Netlist 'zynq_design_instructionmemIP_0_0' is not ideal for floorplanning, since the cellview 'instructionmemIP' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1728.715 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1701.141 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: ddfeccf
+Synth Design complete | Checksum: 3311a9e6
 INFO: [Common 17-83] Releasing license: Synthesis
-37 Infos, 60 Warnings, 0 Critical Warnings and 0 Errors encountered.
+46 Infos, 75 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:59 ; elapsed = 00:01:01 . Memory (MB): peak = 1728.715 ; gain = 1229.520
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1728.715 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 1701.141 ; gain = 1204.441
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1701.141 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/zynq_design_instructionmemIP_0_0_synth_1/zynq_design_instructionmemIP_0_0.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file zynq_design_instructionmemIP_0_0_utilization_synth.rpt -pb zynq_design_instructionmemIP_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Feb 24 11:01:26 2025...
+INFO: [Common 17-206] Exiting Vivado at Wed Mar  5 17:24:24 2025...

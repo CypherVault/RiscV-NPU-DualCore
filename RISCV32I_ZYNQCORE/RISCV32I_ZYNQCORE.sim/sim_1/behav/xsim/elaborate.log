@@ -174,7 +174,7 @@ Compiling module xil_defaultlib.bd_375a
 Compiling module xil_defaultlib.zynq_design_axi_smc_1
 Compiling architecture arch_imp of entity xil_defaultlib.controlsubsystemIP [controlsubsystemip_default]
 Compiling architecture zynq_design_controlsubsystemip_0_0_arch of entity xil_defaultlib.zynq_design_controlsubsystemIP_0_0 [zynq_design_controlsubsystemip_0...]
-Compiling architecture arch_imp of entity xil_defaultlib.datamemIP [datamemip_default]
+Compiling architecture arch_imp of entity xil_defaultlib.datamemIP [\datamemIP(1,16)\]
 Compiling architecture zynq_design_datamemip_0_0_arch of entity xil_defaultlib.zynq_design_datamemIP_0_0 [zynq_design_datamemip_0_0_defaul...]
 Compiling architecture arch_imp of entity xil_defaultlib.instructionmemIP [instructionmemip_default]
 Compiling architecture zynq_design_instructionmemip_0_0_arch of entity xil_defaultlib.zynq_design_instructionmemIP_0_0 [zynq_design_instructionmemip_0_0...]
