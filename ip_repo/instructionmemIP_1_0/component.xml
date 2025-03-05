@@ -199,7 +199,7 @@
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>POLARITY</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXI_RST.POLARITY" spirit:choiceRef="choice_list_74b5137e">ACTIVE_LOW</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXI_RST.POLARITY" spirit:choiceRef="choice_list_9d8b0d81">ACTIVE_LOW</spirit:value>
         </spirit:parameter>
       </spirit:parameters>
     </spirit:busInterface>
@@ -336,7 +336,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH&apos;)) - 1)">6</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH&apos;)) - 1)">15</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -499,7 +499,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH&apos;)) - 1)">6</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH&apos;)) - 1)">15</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -660,7 +660,27 @@
         <spirit:name>C_S00_AXI_ADDR_WIDTH</spirit:name>
         <spirit:displayName>C S00 AXI ADDR WIDTH</spirit:displayName>
         <spirit:description>Width of S_AXI address bus</spirit:description>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH" spirit:order="4" spirit:rangeType="long">7</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH" spirit:order="4" spirit:rangeType="long">16</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>SIZE</spirit:name>
+        <spirit:displayName>Size</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.SIZE">512</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>ADDR_WIDTH</spirit:name>
+        <spirit:displayName>Addr Width</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.ADDR_WIDTH">9</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>COL_WIDTH</spirit:name>
+        <spirit:displayName>Col Width</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.COL_WIDTH">8</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>NB_COL</spirit:name>
+        <spirit:displayName>Nb Col</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.NB_COL">4</spirit:value>
       </spirit:modelParameter>
     </spirit:modelParameters>
   </spirit:model>
@@ -670,7 +690,7 @@
       <spirit:enumeration>32</spirit:enumeration>
     </spirit:choice>
     <spirit:choice>
-      <spirit:name>choice_list_74b5137e</spirit:name>
+      <spirit:name>choice_list_9d8b0d81</spirit:name>
       <spirit:enumeration>ACTIVE_HIGH</spirit:enumeration>
       <spirit:enumeration>ACTIVE_LOW</spirit:enumeration>
     </spirit:choice>
@@ -686,7 +706,7 @@
       <spirit:file>
         <spirit:name>hdl/instructionmemIP.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_74d00fb5</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_ddb59b3d</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -764,7 +784,7 @@
       <spirit:name>C_S00_AXI_ADDR_WIDTH</spirit:name>
       <spirit:displayName>C S00 AXI ADDR WIDTH</spirit:displayName>
       <spirit:description>Width of S_AXI address bus</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S00_AXI_ADDR_WIDTH" spirit:order="4" spirit:rangeType="long">7</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S00_AXI_ADDR_WIDTH" spirit:order="4" spirit:rangeType="long">16</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -801,6 +821,26 @@
       <spirit:name>Component_Name</spirit:name>
       <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">instructionmemIP_v1_0</spirit:value>
     </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>SIZE</spirit:name>
+      <spirit:displayName>Size</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SIZE">512</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>ADDR_WIDTH</spirit:name>
+      <spirit:displayName>Addr Width</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.ADDR_WIDTH">9</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>COL_WIDTH</spirit:name>
+      <spirit:displayName>Col Width</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.COL_WIDTH">8</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>NB_COL</spirit:name>
+      <spirit:displayName>Nb Col</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.NB_COL">4</spirit:value>
+    </spirit:parameter>
   </spirit:parameters>
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
@@ -812,7 +852,7 @@
       </xilinx:taxonomies>
       <xilinx:displayName>instructionmemIP_v1.0</xilinx:displayName>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2025-02-20T00:27:17Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2025-03-05T22:21:50Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2024.2</xilinx:xilinxVersion>

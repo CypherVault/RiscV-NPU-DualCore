@@ -7,7 +7,7 @@
 <Project Product="Vivado" Version="7" Minor="68" Path="c:/users/chris/desktop/riscv-npu-dualcore/riscv32i_zynqcore/riscv32i_zynqcore.tmp/controlsubsystemip_v1_0_project/controlsubsystemIP_v1_0_project.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="4920f359b3ee4e99835717326b60e935"/>
+    <Option Name="Id" Val="a070fa6f69664ffd927ab6d5b8f6c87b"/>
     <Option Name="Part" Val="xc7z007sclg225-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -49,6 +49,7 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../../../Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/controlsubsystemIP_1_0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../../../Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/instructionmemIP_1_0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../../../Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../../../Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/datamemIP_1_0"/>
