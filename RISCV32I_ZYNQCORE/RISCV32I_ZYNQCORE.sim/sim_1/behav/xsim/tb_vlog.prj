@@ -1,7 +1,6 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  --include "../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/ec67/hdl" --include "../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/86fe/hdl" --include "../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/f0b6/hdl/verilog" --include "../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/0127/hdl/verilog" --include "F:/Vivado/2024.2/data/xilinx_vip/include" \
 "../../../../RISCV32I_ZYNQCORE.ip_user_files/bd/zynq_design/ip/zynq_design_processing_system7_0_0/sim/zynq_design_processing_system7_0_0.v" \
-"../../../../RISCV32I_ZYNQCORE.ip_user_files/bd/zynq_design/ip/zynq_design_axi_smc_1/bd_0/sim/bd_375a.v" \
 "../../../../RISCV32I_ZYNQCORE.ip_user_files/bd/zynq_design/ip/zynq_design_axi_smc_1/bd_0/ip/ip_0/sim/bd_375a_one_0.v" \
 
 sv xil_defaultlib  --include "../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/ec67/hdl" --include "../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/86fe/hdl" --include "../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/f0b6/hdl/verilog" --include "../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/0127/hdl/verilog" --include "F:/Vivado/2024.2/data/xilinx_vip/include" \
@@ -59,6 +58,7 @@ sv xil_defaultlib  --include "../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zyn
 "../../../../RISCV32I_ZYNQCORE.ip_user_files/bd/zynq_design/ip/zynq_design_axi_smc_1/bd_0/ip/ip_53/sim/bd_375a_m03e_0.sv" \
 
 verilog xil_defaultlib  --include "../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/ec67/hdl" --include "../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/86fe/hdl" --include "../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/f0b6/hdl/verilog" --include "../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/0127/hdl/verilog" --include "F:/Vivado/2024.2/data/xilinx_vip/include" \
+"../../../../RISCV32I_ZYNQCORE.ip_user_files/bd/zynq_design/ip/zynq_design_axi_smc_1/bd_0/sim/bd_375a.v" \
 "../../../../RISCV32I_ZYNQCORE.ip_user_files/bd/zynq_design/ip/zynq_design_axi_smc_1/sim/zynq_design_axi_smc_1.v" \
 
 sv xil_defaultlib  --include "../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/ec67/hdl" --include "../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/86fe/hdl" --include "../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/f0b6/hdl/verilog" --include "../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/0127/hdl/verilog" --include "F:/Vivado/2024.2/data/xilinx_vip/include" \

@@ -15,7 +15,7 @@ entity RICSVCORE is
         
         -- AXI DATA INTERFACES
         debug_clk : in std_logic;
-        debug_addr : in std_logic_vector(6 downto 0);  -- 7 bits for 128 addresses
+        debug_addr : in std_logic_vector(11 downto 0);  -- 7 bits for 128 addresses
         debug_data : inout std_logic_vector(31 downto 0);
         
         -- AXI CONTROL SIGNALS
@@ -32,7 +32,7 @@ architecture behavior of RICSVCORE is
             clock : in std_logic;
             resetbar : in std_logic;
             debug_clk : in std_logic;
-            debug_addr : in std_logic_vector(6 downto 0);
+            debug_addr : in std_logic_vector(11 downto 0);
             debug_data : inout std_logic_vector(31 downto 0);
             rf_enable : in std_logic;
             im_enable : in std_logic;
