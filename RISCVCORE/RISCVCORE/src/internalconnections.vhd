@@ -15,7 +15,7 @@ use work.types_pkg.all;
         
         -- Unified debug interface (48 bits total)
         debug_clk : in std_logic;
-        debug_addr : in std_logic_vector(6 downto 0);  -- 7 bits (128 addresses)
+        debug_addr : in std_logic_vector(11 downto 0);  -- 7 bits (128 addresses)
         debug_data : inout std_logic_vector(31 downto 0);
         
         -- Separate control signals for each memory

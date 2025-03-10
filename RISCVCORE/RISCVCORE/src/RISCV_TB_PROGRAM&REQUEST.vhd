@@ -14,7 +14,7 @@ architecture behavior of RICSVCORE_tb is
             clock : in std_logic;
             resetbar : in std_logic;
             debug_clk : in std_logic;
-            debug_addr : in std_logic_vector(6 downto 0);
+            debug_addr : in std_logic_vector(11 downto 0);
             debug_data : inout std_logic_vector(31 downto 0);
             rf_enable : in std_logic;    -- Register File read enable
             im_enable : in std_logic;    -- Instruction Memory write enable
@@ -74,7 +74,7 @@ architecture behavior of RICSVCORE_tb is
     signal clk : std_logic := '0';
     signal rst : std_logic := '0';
     signal debug_clk : std_logic := '0';
-    signal debug_addr : std_logic_vector(6 downto 0) := (others => '0');
+    signal debug_addr : std_logic_vector(11 downto 0) := (others => '0');
     signal debug_data : std_logic_vector(31 downto 0) := (others => 'Z');
     signal rf_enable : std_logic := '0';
     signal im_enable : std_logic := '0';
@@ -119,7 +119,7 @@ begin
         for i in 0 to 22 loop
             debug_clk <= '1';
             -- Convert integer to 7-bit std_logic_vector for address
-            debug_addr <= std_logic_vector(to_unsigned(i, 7));
+            debug_addr <= std_logic_vector(to_unsigned(i, 12));
             debug_data <= INSTRUCTION_BUFFER(i);
             wait for 10 ns;
             debug_clk <= '0';
@@ -161,7 +161,7 @@ wait for 10 ns;  -- Allow bus to stabilize
 
 for i in 0 to 31 loop
     debug_clk <= '0';
-    debug_addr <= std_logic_vector(to_unsigned(i, 7));
+    debug_addr <= std_logic_vector(to_unsigned(i, 12));
     wait for 5 ns;  -- Setup time
     debug_clk <= '1';
     wait for 5 ns;  -- Hold time
@@ -196,7 +196,7 @@ data_mem_contents(0) <= (others => '0');
 
 for i in 0 to 127 loop
     debug_clk <= '1';
-    debug_addr <= std_logic_vector(to_unsigned(i, 7));
+    debug_addr <= std_logic_vector(to_unsigned(i, 12));
     wait for 10 ns;
    	
 	if (i=0)  then

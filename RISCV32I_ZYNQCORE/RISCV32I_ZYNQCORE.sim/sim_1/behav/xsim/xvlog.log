@@ -123,5 +123,3 @@ INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Chris/Desktop/RiscV-
 INFO: [VRFC 10-311] analyzing module bd_375a_m03bn_0
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.ip_user_files/bd/zynq_design/ip/zynq_design_axi_smc_1/bd_0/ip/ip_53/sim/bd_375a_m03e_0.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module bd_375a_m03e_0
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sim_1/new/zynq_wrapper_tb.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tb
