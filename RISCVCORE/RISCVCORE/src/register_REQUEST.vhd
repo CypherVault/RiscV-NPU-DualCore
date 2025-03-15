@@ -5,7 +5,7 @@ use work.types_pkg.ALL;
 
 entity regfile is
   port (
-    -- Original ports
+    -- Main ports
     resetbar : in std_logic;
     regwrite : in std_logic;
     readregister1 : in std_logic_vector(4 downto 0);
@@ -19,18 +19,19 @@ entity regfile is
     debug_clk : in std_logic;
     debug_address : in std_logic_vector(4 downto 0);
     debug_read_enable : in std_logic;
-    debug_data : inout std_logic_vector(31 downto 0)  -- Changed to inout
+    debug_data : inout std_logic_vector(31 downto 0)
   );
 end entity regfile;
 
 architecture Behavioral of regfile is
-  signal registers : reg_array := (others => (others => '0'));
+  signal registers : reg_array := (2 => x"00001000", others => (others => '0'));
 begin
-  -- Combinational process for write operation
+  -- Combinational write/reset process
   process(resetbar, regwrite, writeregisteraddress, writedata)
   begin
     if resetbar = '0' then
-      registers <= (others => (others => '0'));
+      -- Initialize x2 to 0x1000, others to 0 (x0 remains hardwired 0)
+      registers <= (2 => x"00004000", others => (others => '0'));
     elsif regwrite = '1' then
       if unsigned(writeregisteraddress) /= 0 then
         registers(to_integer(unsigned(writeregisteraddress))) <= writedata;
@@ -38,14 +39,14 @@ begin
     end if;
   end process;
 
-  -- Read ports (combinational)
+  -- Read ports (x0 hardwired to 0)
   readdata1 <= (others => '0') when unsigned(readregister1) = 0 else
                registers(to_integer(unsigned(readregister1)));
 
   readdata2 <= (others => '0') when unsigned(readregister2) = 0 else
                registers(to_integer(unsigned(readregister2)));
 
-  -- Debug interface with proper bidirectional control
+  -- Debug interface (synchronous to debug_clk)
   process(debug_clk, resetbar)
   begin
     if resetbar = '0' then

@@ -27,48 +27,31 @@ architecture behavior of RICSVCORE_tb is
 	
 	
 	 -- Define the instruction buffer as a constant array
-    type instruction_array is array (0 to 22) of std_logic_vector(31 downto 0);
+    type instruction_array is array (0 to 13) of std_logic_vector(31 downto 0);
 	
-	constant INSTRUCTION_BUFFER : instruction_array := (	 
+	constant INSTRUCTION_BUFFER : instruction_array := (	 					--how many insturctions 
 	
 	
--- Memory initialization for RISC-V Modulo Program (47/5)
+	  -- Memory initialization for RISC-V Program (10 + 5)
 
+0  => x"00000000",  -- NOP or unused
+1  => x"ff010113",  -- addi sp, sp, -16
+2  => x"00500793",  -- addi a5, zero, 5
+3  => x"00f12623",  -- sw a5, 12(sp)
+4  => x"00a00793",  -- addi a5, zero, 10
+5  => x"00f12423",  -- sw a5, 8(sp)
+6  => x"00c12703",  -- lw a4, 12(sp)
+7  => x"00812783",  -- lw a5, 8(sp)
+8  => x"00f707b3",  -- add a5, a4, a5
+9  => x"00f12223",  -- sw a5, 4(sp)
+10 => x"00412783",  -- lw a5, 4(sp)
+11 => x"00078513",  -- addi a0, a5, 0 (mv a0, a5)
+12 => x"01010113",  -- addi sp, sp, 16
+13 => x"00000067"   -- ret (return from the program)
 
-0 => x"00000000",  -- Unused position 0
-1 => x"00A00093",  -- addi x1, x0, 10    (load first temp 0°C)
-2 => x"01400113",  -- addi x2, x0, 20    (load second temp 20°C)
-3 => x"02500193",  -- addi x3, x0, 37    (load third temp 37°C)
-4 => x"06400213",  -- addi x4, x0, 100   (load fourth temp 100°C)
-5 => x"02000393",  -- addi x7, x0, 32    (base address for storage)
+		 );
 
--- First temperature (x1)
-6 => x"00309293",  -- slli x5, x1, 3     (multiply by 8)
-7 => x"0012d313",  -- srli x6, x5, 1     (divide by 2)
-8 => x"02030313",  -- addi x6, x6, 32    (add 32)
-9 => x"0063a023",  -- sw x6, 0(x7)       (store at base)
-
--- Second temperature (x2)
-10 => x"00311293", -- slli x5, x2, 3     (multiply by 8)
-11 => x"0012d313", -- srli x6, x5, 1     (divide by 2)
-12 => x"02030313", -- addi x6, x6, 32    (add 32)
-13 => x"0063a223", -- sw x6, 4(x7)       (store at base + 4)
-
--- Third temperature (x3)
-14 => x"00319293", -- slli x5, x3, 3     (multiply by 8)
-15 => x"0012d313", -- srli x6, x5, 1     (divide by 2)
-16 => x"02030313", -- addi x6, x6, 32    (add 32)
-17 => x"0063a423", -- sw x6, 8(x7)       (store at base + 8)
-
--- Fourth temperature (x4)
-18 => x"00321293", -- slli x5, x4, 3     (multiply by 8)
-19 => x"0012d313", -- srli x6, x5, 1     (divide by 2)
-20 => x"02030313", -- addi x6, x6, 32    (add 32)
-21 => x"0063a623", -- sw x6, 12(x7)      (store at base + 12)
-
-22 => x"00000067"  -- ret                (return)
-
-    );
+    
 	
     -- Internal signals
     signal clk : std_logic := '0';
@@ -116,7 +99,7 @@ begin
         -- Program Instruction Memory with 4 hardcoded instructions
         im_enable <= '1';  -- Enable instruction memory write
      -- Loop through all instructions
-        for i in 0 to 22 loop
+        for i in 0 to 13 loop	      												--how many insturctions 
             debug_clk <= '1';
             -- Convert integer to 7-bit std_logic_vector for address
             debug_addr <= std_logic_vector(to_unsigned(i, 12));

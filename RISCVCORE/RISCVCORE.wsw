@@ -26,3 +26,12 @@ tab=lu
 [OPENDOC|Aldec.Hde.HdePlugIn.7|.\RISCVCORE\src/Data_Memory_REQUEST.vhd|]
 TemplateId=0
 tab=lu
+[OPENDOC|Aldec.Hde.HdePlugIn.7|.\RISCVCORE\src/exmem.vhd|]
+TemplateId=0
+tab=lu
+[OPENDOC|Aldec.Hde.HdePlugIn.7|.\RISCVCORE\src/instruction_memory_PROGRAM.vhd|]
+TemplateId=0
+tab=lu
+[OPENDOC|Aldec.Hde.HdePlugIn.7|.\RISCVCORE\src/RISCVCORE.vhd|]
+TemplateId=0
+tab=lu

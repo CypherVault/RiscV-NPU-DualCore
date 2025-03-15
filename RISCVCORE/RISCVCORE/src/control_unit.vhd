@@ -33,8 +33,9 @@ entity ControlUnit is
     early_branch : out std_logic;	 
 	
 	-- input to deal with rare lockup condition
-	ctrl_disable : in std_logic
+	ctrl_disable : in std_logic;
 	
+	exmem_memread : in std_logic -- CRITICAL ADDITION FOR LOAD AWARENESS
 	
   );
 end entity ControlUnit;
@@ -55,16 +56,18 @@ begin
   rs1_addr <= instruction(19 downto 15);
   rs2_addr <= instruction(24 downto 20);
 
-  -- Select the most recent version of rs1 data
-rs1_final <= exmem_regdata when rs1_addr = exmem_rd else
-             memwb_regdata when rs1_addr = memwb_rd else
-             rs1_data;
+-- Updated data selection with load awareness (in ControlUnit)
+rs1_final <= 
+    exmem_regdata when (rs1_addr = exmem_rd and exmem_memread = '0') else  -- Only forward from non-loads
+    memwb_regdata when (rs1_addr = memwb_rd) else
+    rs1_data;
 
--- Select the most recent version of rs2 data
-rs2_final <= exmem_regdata when rs2_addr = exmem_rd else
-             memwb_regdata when rs2_addr = memwb_rd else
-             rs2_data;
-
+rs2_final <= 
+    exmem_regdata when (rs2_addr = exmem_rd and exmem_memread = '0') else  
+    memwb_regdata when (rs2_addr = memwb_rd) else
+    rs2_data;
+	
+	
   process(instruction, rs1_final, rs2_final)
   begin
     -- Default values
@@ -206,13 +209,13 @@ when "1100011" =>
   end process;
 
  -- Output multiplexing based on cntrlsigmux OR ctrl_disable
-MemtoReg <= '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_MemtoReg;
-RegWrite <= '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_RegWrite;
-MemRead <= '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_MemRead;
-MemWrite <= '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_MemWrite;
-Branch <= '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_Branch;
-ALUSrc <= '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_ALUSrc;
-ALUOp <= "00" when (cntrlsigmux = '1' or ctrl_disable = '1') else int_ALUOp;
-early_branch <= '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_early_branch;
+MemtoReg <= '0' when (ctrl_disable = '1') else int_MemtoReg;
+RegWrite <= '0' when (ctrl_disable = '1') else int_RegWrite;
+MemRead <= '0' when (ctrl_disable = '1') else int_MemRead;
+MemWrite <= '0' when (ctrl_disable = '1') else int_MemWrite;
+Branch <= '0' when (ctrl_disable = '1') else int_Branch;
+ALUSrc <= '0' when (ctrl_disable = '1') else int_ALUSrc;
+ALUOp <= "00" when (ctrl_disable = '1') else int_ALUOp;
+early_branch <= '0' when (ctrl_disable = '1') else int_early_branch;
   
 end architecture Behavioral;
