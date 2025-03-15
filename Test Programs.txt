@@ -209,3 +209,56 @@ instr_mem[7] = 32'h00160613;  // addi x12, x12, 1    # Increment quotient
 instr_mem[8] = 32'h00000013;  // addi x0, x0, 0      # NOP instruction
 instr_mem[9] = 32'hff1ff06f;  // jal x0, -16         # Jump back (adjusted offset) THIS OFFSET IS WRONG NEED TO FIX THIS INSTRUCTION test in aldec 
 
+C code first program: 10+5=15
+0  => x"00000000",  -- NOP or unused
+1  => x"ff010113",  -- addi x2, x2, -16
+2  => x"00500793",  -- addi x15, zero, 5
+3  => x"00f12623",  -- sw x15, 12(x2)
+4  => x"00a00793",  -- addi x15, x0, 10
+5  => x"00f12423",  -- sw x15, 8(x2)
+6  => x"00c12703",  -- lw x14, 12(x2)
+7  => x"00812783",  -- lw x15, 8(x2) AT HERE (processor thinks that the ADDRESS of the load into regsiter is the ADDRESS that is calcualted from that clock cycle. THEREFORE the processor needs to know that IOSNT the most updated version of tbat register 
+8  => x"00f707b3",  -- add x15, x14, x15
+9  => x"00f12223",  -- sw x15, 4(x2)
+10 => x"00412783",  -- lw x15, 4(x2)
+11 => x"00078513",  -- addi x10, x15, 0 (mv a0, a5)
+12 => x"01010113",  -- addi x2, x2, 16
+13 => x"00000067"   -- ret (return from the program)
+
+FIX FOR WEIRD ADDRESS BASED CALCULATION FO ADDING TWO TJINGS IUT IS A HAXAZRX 
+
+Haxzard unit needs to stall for one cycle to deal with LW specifically when the next instruction takes place and is ALU depenedne ton that SO,
+
+LW X, blah blah 
+
+addi X, -> bubble 
+
+resume with addi X
+
+
+
+--ONLY WHEN THE PREVIOUS CLOCK CYCLE LOAD WAS FOR A REGISTER THAT IS COMING FROM EXMEM, the ADDRESS of that register is NOT the data of the rgeister, thus IGNORE that data as it is not accurate. SW does NOT count. instead use 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

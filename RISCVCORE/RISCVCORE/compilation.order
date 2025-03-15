@@ -6,7 +6,7 @@
 .\src\pcimmadder.vhd
 .\src\pc4adder.vhd
 .\src\exmem.vhd
-.\src\hazardunit.vhd
+.\src\hazard_unit.vhd
 .\src\ifid.vhd
 .\src\instruction_memory_PROGRAM.vhd
 .\src\immediategen.vhd

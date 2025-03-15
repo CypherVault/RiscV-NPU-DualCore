@@ -32,7 +32,7 @@ PHYSSYNTH_STATUS=none
 /pcimmadder.vhd=-1
 /pc4adder.vhd=-1
 /exmem.vhd=-1
-/hazardunit.vhd=-1
+/hazard_unit.vhd=-1
 /ifid.vhd=-1
 /instruction_memory_PROGRAM.vhd=-1
 /immediategen.vhd=-1
@@ -60,6 +60,7 @@ PHYSSYNTH_STATUS=none
 /..\..\..\..\440ProjectRISCVCORE\RISCVCORE\RISCVCORE\src\TESTBENCH.awc=-1
 /..\..\..\..\SeniorDesignProject\RISCVCORE\RISCVCORE\src\untitled.asdb=-1
 /..\..\..\..\SeniorDesignProject\RISCVCORE\RISCVCORE\src\untitled.awc=-1
+/register_REQUEST.vhd=-1
 [Files.Data]
 .\src\memwb.vhd=VHDL Source Code
 .\src\program_counter.vhd=VHDL Source Code
@@ -69,7 +70,7 @@ PHYSSYNTH_STATUS=none
 .\src\pcimmadder.vhd=VHDL Source Code
 .\src\pc4adder.vhd=VHDL Source Code
 .\src\exmem.vhd=VHDL Source Code
-.\src\hazardunit.vhd=VHDL Source Code
+.\src\hazard_unit.vhd=VHDL Source Code
 .\src\ifid.vhd=VHDL Source Code
 .\src\instruction_memory_PROGRAM.vhd=VHDL Source Code
 .\src\immediategen.vhd=VHDL Source Code
@@ -97,6 +98,7 @@ PHYSSYNTH_STATUS=none
 .\..\..\..\440ProjectRISCVCORE\RISCVCORE\RISCVCORE\src\TESTBENCH.awc=Accelerated Waveform Configuration
 .\..\..\..\SeniorDesignProject\RISCVCORE\RISCVCORE\src\untitled.asdb=Accelerated Waveform File
 .\..\..\..\SeniorDesignProject\RISCVCORE\RISCVCORE\src\untitled.awc=Accelerated Waveform Configuration
+.\src\register_REQUEST.vhd=VHDL Source Code
 [folders]
 name0=ALINT-PRO Workspaces
 directory0=C:\Users\maxpro\Desktop\440Project RISCVCORE\RISCVCORE\RISCVCORE\
@@ -135,7 +137,7 @@ name11=Waveform Files
 directory11=C:\Users\maxpro\Desktop\440Project RISCVCORE\RISCVCORE\RISCVCORE\
 extension11=asdb;awc;asdbc;asdbe
 [HierarchyViewer]
-HierarchyInformation=regfile|behavioral|0 ricsvcore|behavior|0 ricsvcore_tb|behavior|0
+HierarchyInformation=ricsvcore_tb|behavior|0
 ShowHide=ShowTopLevel
 Selected=
 [LocalVhdlSets]

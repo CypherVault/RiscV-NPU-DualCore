@@ -194,11 +194,11 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="zynq_design_processing_system7_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="zynq_design_axi_smc_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_design_processing_system7_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="zynq_design_RISCVCOREZYNQ_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="zynq_design_controlsubsystemIP_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="zynq_design_registerIP_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="zynq_design_datamemIP_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="zynq_design_registerIP_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="zynq_design_instructionmemIP_0_0"/>
 </GenRun>
