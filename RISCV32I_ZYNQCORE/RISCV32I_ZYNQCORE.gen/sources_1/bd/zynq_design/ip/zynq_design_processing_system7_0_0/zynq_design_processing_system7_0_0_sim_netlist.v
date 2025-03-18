@@ -2,7 +2,7 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-// Date        : Mon Feb 24 11:01:23 2025
+// Date        : Mon Mar 17 23:47:45 2025
 // Host        : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ip/zynq_design_processing_system7_0_0/zynq_design_processing_system7_0_0_sim_netlist.v
@@ -89,7 +89,6 @@ module zynq_design_processing_system7_0_0
     M_AXI_GP0_RRESP,
     M_AXI_GP0_RDATA,
     FCLK_CLK0,
-    FCLK_CLK1,
     FCLK_RESET0_N,
     MIO,
     DDR_CAS_n,
@@ -185,7 +184,6 @@ module zynq_design_processing_system7_0_0
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI_GP0 RRESP" *) input [1:0]M_AXI_GP0_RRESP;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI_GP0 RDATA" *) input [31:0]M_AXI_GP0_RDATA;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 FCLK_CLK0 CLK" *) (* X_INTERFACE_MODE = "master" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME FCLK_CLK0, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN zynq_design_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) output FCLK_CLK0;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 FCLK_CLK1 CLK" *) (* X_INTERFACE_MODE = "master" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME FCLK_CLK1, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN zynq_design_processing_system7_0_0_FCLK_CLK1, INSERT_VIP 0" *) output FCLK_CLK1;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 FCLK_RESET0_N RST" *) (* X_INTERFACE_MODE = "master" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME FCLK_RESET0_N, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) output FCLK_RESET0_N;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO MIO" *) (* X_INTERFACE_MODE = "master" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME FIXED_IO, CAN_DEBUG false" *) inout [31:0]MIO;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR CAS_N" *) (* X_INTERFACE_MODE = "master" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DDR, CAN_DEBUG false, TIMEPERIOD_PS 1250, MEMORY_TYPE COMPONENTS, DATA_WIDTH 8, CS_ENABLED true, DATA_MASK_ENABLED true, SLOT Single, MEM_ADDR_MAP ROW_COLUMN_BANK, BURST_LENGTH 8, AXI_ARBITRATION_SCHEME TDM, CAS_LATENCY 11, CAS_WRITE_LATENCY 11" *) inout DDR_CAS_n;
@@ -229,7 +227,6 @@ module zynq_design_processing_system7_0_0
   wire DDR_VRP;
   wire DDR_WEB;
   wire FCLK_CLK0;
-  wire FCLK_CLK1;
   wire FCLK_RESET0_N;
   wire [15:0]GPIO_I;
   wire [15:0]GPIO_O;
@@ -352,6 +349,7 @@ module zynq_design_processing_system7_0_0
   wire NLW_inst_ENET1_SOF_RX_UNCONNECTED;
   wire NLW_inst_ENET1_SOF_TX_UNCONNECTED;
   wire NLW_inst_EVENT_EVENTO_UNCONNECTED;
+  wire NLW_inst_FCLK_CLK1_UNCONNECTED;
   wire NLW_inst_FCLK_CLK2_UNCONNECTED;
   wire NLW_inst_FCLK_CLK3_UNCONNECTED;
   wire NLW_inst_FCLK_RESET1_N_UNCONNECTED;
@@ -608,7 +606,7 @@ module zynq_design_processing_system7_0_0
   (* C_EN_EMIO_PJTAG = "0" *) 
   (* C_EN_EMIO_TRACE = "0" *) 
   (* C_FCLK_CLK0_BUF = "TRUE" *) 
-  (* C_FCLK_CLK1_BUF = "TRUE" *) 
+  (* C_FCLK_CLK1_BUF = "FALSE" *) 
   (* C_FCLK_CLK2_BUF = "FALSE" *) 
   (* C_FCLK_CLK3_BUF = "FALSE" *) 
   (* C_GP0_EN_MODIFIABLE_TXN = "1" *) 
@@ -775,7 +773,7 @@ module zynq_design_processing_system7_0_0
         .EVENT_STANDBYWFE(NLW_inst_EVENT_STANDBYWFE_UNCONNECTED[1:0]),
         .EVENT_STANDBYWFI(NLW_inst_EVENT_STANDBYWFI_UNCONNECTED[1:0]),
         .FCLK_CLK0(FCLK_CLK0),
-        .FCLK_CLK1(FCLK_CLK1),
+        .FCLK_CLK1(NLW_inst_FCLK_CLK1_UNCONNECTED),
         .FCLK_CLK2(NLW_inst_FCLK_CLK2_UNCONNECTED),
         .FCLK_CLK3(NLW_inst_FCLK_CLK3_UNCONNECTED),
         .FCLK_CLKTRIG0_N(1'b0),
@@ -1348,7 +1346,7 @@ endmodule
 (* C_DM_WIDTH = "2" *) (* C_DQS_WIDTH = "2" *) (* C_DQ_WIDTH = "16" *) 
 (* C_EMIO_GPIO_WIDTH = "16" *) (* C_EN_EMIO_ENET0 = "0" *) (* C_EN_EMIO_ENET1 = "0" *) 
 (* C_EN_EMIO_PJTAG = "0" *) (* C_EN_EMIO_TRACE = "0" *) (* C_FCLK_CLK0_BUF = "TRUE" *) 
-(* C_FCLK_CLK1_BUF = "TRUE" *) (* C_FCLK_CLK2_BUF = "FALSE" *) (* C_FCLK_CLK3_BUF = "FALSE" *) 
+(* C_FCLK_CLK1_BUF = "FALSE" *) (* C_FCLK_CLK2_BUF = "FALSE" *) (* C_FCLK_CLK3_BUF = "FALSE" *) 
 (* C_GP0_EN_MODIFIABLE_TXN = "1" *) (* C_GP1_EN_MODIFIABLE_TXN = "1" *) (* C_INCLUDE_ACP_TRANS_CHECK = "0" *) 
 (* C_INCLUDE_TRACE_BUFFER = "0" *) (* C_IRQ_F2P_MODE = "DIRECT" *) (* C_MIO_PRIMITIVE = "32" *) 
 (* C_M_AXI_GP0_ENABLE_STATIC_REMAP = "0" *) (* C_M_AXI_GP0_ID_WIDTH = "12" *) (* C_M_AXI_GP0_THREAD_ID_WIDTH = "12" *) 
@@ -2758,8 +2756,7 @@ module zynq_design_processing_system7_0_0_processing_system7_v5_5_processing_sys
   wire ENET0_MDIO_T_n;
   wire ENET1_MDIO_T_n;
   wire FCLK_CLK0;
-  wire FCLK_CLK1;
-  wire [1:0]FCLK_CLK_unbuffered;
+  wire [0:0]FCLK_CLK_unbuffered;
   wire FCLK_RESET0_N;
   wire [15:0]GPIO_I;
   wire [15:0]GPIO_O;
@@ -3651,6 +3648,7 @@ module zynq_design_processing_system7_0_0_processing_system7_v5_5_processing_sys
   wire PS7_i_n_700;
   wire PS7_i_n_705;
   wire PS7_i_n_706;
+  wire PS7_i_n_707;
   wire PS7_i_n_709;
   wire PS7_i_n_71;
   wire PS7_i_n_710;
@@ -3972,6 +3970,7 @@ module zynq_design_processing_system7_0_0_processing_system7_v5_5_processing_sys
   assign EVENT_STANDBYWFE[0] = \<const0> ;
   assign EVENT_STANDBYWFI[1] = \<const0> ;
   assign EVENT_STANDBYWFI[0] = \<const0> ;
+  assign FCLK_CLK1 = \<const0> ;
   assign FCLK_CLK2 = \<const0> ;
   assign FCLK_CLK3 = \<const0> ;
   assign FCLK_RESET1_N = \<const0> ;
@@ -5292,7 +5291,7 @@ module zynq_design_processing_system7_0_0_processing_system7_v5_5_processing_sys
         .EVENTEVENTO(PS7_i_n_88),
         .EVENTSTANDBYWFE({PS7_i_n_236,PS7_i_n_237}),
         .EVENTSTANDBYWFI({PS7_i_n_238,PS7_i_n_239}),
-        .FCLKCLK({PS7_i_n_705,PS7_i_n_706,FCLK_CLK_unbuffered}),
+        .FCLKCLK({PS7_i_n_705,PS7_i_n_706,PS7_i_n_707,FCLK_CLK_unbuffered}),
         .FCLKCLKTRIGN({1'b0,1'b0,1'b0,1'b0}),
         .FCLKRESETN({PS7_i_n_709,PS7_i_n_710,PS7_i_n_711,FCLK_RESET0_N}),
         .FPGAIDLEN(1'b0),
@@ -5737,12 +5736,8 @@ module zynq_design_processing_system7_0_0_processing_system7_v5_5_processing_sys
         .O(SDIO0_DATA_T[3]));
   (* BOX_TYPE = "PRIMITIVE" *) 
   BUFG \buffer_fclk_clk_0.FCLK_CLK_0_BUFG 
-       (.I(FCLK_CLK_unbuffered[0]),
+       (.I(FCLK_CLK_unbuffered),
         .O(FCLK_CLK0));
-  (* BOX_TYPE = "PRIMITIVE" *) 
-  BUFG \buffer_fclk_clk_1.FCLK_CLK_1_BUFG 
-       (.I(FCLK_CLK_unbuffered[1]),
-        .O(FCLK_CLK1));
   (* BOX_TYPE = "PRIMITIVE" *) 
   BIBUF \genblk13[0].MIO_BIBUF 
        (.IO(buffered_MIO[0]),

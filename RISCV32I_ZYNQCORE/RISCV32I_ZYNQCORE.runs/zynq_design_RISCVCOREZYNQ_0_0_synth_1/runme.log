@@ -8,13 +8,20 @@
   **** SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
   **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
   **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-  **** Start of session at: Sun Mar  2 15:14:16 2025
+  **** Start of session at: Mon Mar 17 23:34:02 2025
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source zynq_design_RISCVCOREZYNQ_0_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 483.395 ; gain = 149.328
+WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
+WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
+WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
+WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
+WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
+WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 482.828 ; gain = 151.168
 INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/bramIP_1_0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/controlsubsystemIP_1_0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/instructionmemIP_1_0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0'.
@@ -51,34 +58,39 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z007
 INFO: [Device 21-403] Loading part xc7z007sclg225-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 9832
+WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
+INFO: [Synth 8-7075] Helper process launched with PID 1732
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1173.207 ; gain = 467.992
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1170.422 ; gain = 466.906
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'zynq_design_RISCVCOREZYNQ_0_0' [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ip/zynq_design_RISCVCOREZYNQ_0_0/synth/zynq_design_RISCVCOREZYNQ_0_0.vhd:77]
-INFO: [Synth 8-3491] module 'RISCVCOREZYNQ' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/riscvcore_zynq.vhd:10' bound to instance 'U0' of component 'RISCVCOREZYNQ' [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ip/zynq_design_RISCVCOREZYNQ_0_0/synth/zynq_design_RISCVCOREZYNQ_0_0.vhd:115]
-INFO: [Synth 8-638] synthesizing module 'RISCVCOREZYNQ' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/riscvcore_zynq.vhd:38]
-INFO: [Synth 8-3491] module 'internal_connections' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/internalconnections.vhd:8' bound to instance 'internal_connections_inst' of component 'internal_connections' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/riscvcore_zynq.vhd:74]
-INFO: [Synth 8-638] synthesizing module 'internal_connections' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/internalconnections.vhd:44]
+INFO: [Synth 8-638] synthesizing module 'zynq_design_RISCVCOREZYNQ_0_0' [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ip/zynq_design_RISCVCOREZYNQ_0_0/synth/zynq_design_RISCVCOREZYNQ_0_0.vhd:79]
+INFO: [Synth 8-3491] module 'RISCVCOREZYNQ' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/riscvcore_zynq.vhd:10' bound to instance 'U0' of component 'RISCVCOREZYNQ' [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ip/zynq_design_RISCVCOREZYNQ_0_0/synth/zynq_design_RISCVCOREZYNQ_0_0.vhd:119]
+INFO: [Synth 8-638] synthesizing module 'RISCVCOREZYNQ' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/riscvcore_zynq.vhd:40]
+INFO: [Synth 8-3491] module 'internal_connections' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/internalconnections.vhd:8' bound to instance 'internal_connections_inst' of component 'internal_connections' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/riscvcore_zynq.vhd:78]
+INFO: [Synth 8-638] synthesizing module 'internal_connections' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/internalconnections.vhd:46]
 INFO: [Synth 8-638] synthesizing module 'pc_mux' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/pc_mux.vhd:13]
 INFO: [Synth 8-226] default block is never used [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/pc_mux.vhd:19]
 INFO: [Synth 8-256] done synthesizing module 'pc_mux' (0#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/pc_mux.vhd:13]
 INFO: [Synth 8-638] synthesizing module 'pc4adder' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/pc4adder.vhd:13]
 INFO: [Synth 8-256] done synthesizing module 'pc4adder' (0#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/pc4adder.vhd:13]
-INFO: [Synth 8-638] synthesizing module 'program_counter' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/program_counter.vhd:16]
-INFO: [Synth 8-256] done synthesizing module 'program_counter' (0#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/program_counter.vhd:16]
-INFO: [Synth 8-638] synthesizing module 'ifid' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/ifid.vhd:30]
-INFO: [Synth 8-256] done synthesizing module 'ifid' (0#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/ifid.vhd:30]
+INFO: [Synth 8-638] synthesizing module 'program_counter' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/program_counter.vhd:18]
+WARNING: [Synth 8-614] signal 'start' is read in the process but is not in the sensitivity list [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/program_counter.vhd:21]
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/program_counter.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'program_counter' (0#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/program_counter.vhd:18]
+INFO: [Synth 8-638] synthesizing module 'ifid' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/ifid.vhd:29]
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/ifid.vhd:37]
+INFO: [Synth 8-256] done synthesizing module 'ifid' (0#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/ifid.vhd:29]
 INFO: [Synth 8-638] synthesizing module 'ImmGen' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/immediategen.vhd:14]
 INFO: [Synth 8-256] done synthesizing module 'ImmGen' (0#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/immediategen.vhd:14]
 INFO: [Synth 8-638] synthesizing module 'pcimmadder' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/pcimmadder.vhd:13]
 INFO: [Synth 8-256] done synthesizing module 'pcimmadder' (0#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/pcimmadder.vhd:13]
-INFO: [Synth 8-638] synthesizing module 'ControlUnit' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/control_unit.vhd:42]
-INFO: [Synth 8-256] done synthesizing module 'ControlUnit' (0#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/control_unit.vhd:42]
+INFO: [Synth 8-638] synthesizing module 'ControlUnit' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/control_unit.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'ControlUnit' (0#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/control_unit.vhd:43]
 INFO: [Synth 8-638] synthesizing module 'hazard_unit' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/hazardunit.vhd:17]
 INFO: [Synth 8-256] done synthesizing module 'hazard_unit' (0#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/hazardunit.vhd:17]
-INFO: [Synth 8-638] synthesizing module 'idex' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/idex.vhd:54]
-INFO: [Synth 8-256] done synthesizing module 'idex' (0#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/idex.vhd:54]
+INFO: [Synth 8-638] synthesizing module 'idex' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/idex.vhd:55]
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/idex.vhd:80]
+INFO: [Synth 8-256] done synthesizing module 'idex' (0#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/idex.vhd:55]
 INFO: [Synth 8-638] synthesizing module 'alucontrol' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/alucontrol.vhd:12]
 INFO: [Synth 8-226] default block is never used [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/alucontrol.vhd:19]
 INFO: [Synth 8-226] default block is never used [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/alucontrol.vhd:43]
@@ -91,22 +103,23 @@ INFO: [Synth 8-638] synthesizing module 'forwardingMuxB' [C:/Users/Chris/Desktop
 INFO: [Synth 8-256] done synthesizing module 'forwardingMuxB' (0#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/forwardingmuxb.vhd:15]
 INFO: [Synth 8-638] synthesizing module 'ALUSrcMuxB' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/alusrcmuxb.vhd:13]
 INFO: [Synth 8-256] done synthesizing module 'ALUSrcMuxB' (0#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/alusrcmuxb.vhd:13]
-INFO: [Synth 8-638] synthesizing module 'exmem' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/exmem.vhd:39]
-INFO: [Synth 8-256] done synthesizing module 'exmem' (0#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/exmem.vhd:39]
-INFO: [Synth 8-638] synthesizing module 'ForwardingUnit' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/forwarding_unit.vhd:23]
-INFO: [Synth 8-256] done synthesizing module 'ForwardingUnit' (0#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/forwarding_unit.vhd:23]
+INFO: [Synth 8-638] synthesizing module 'exmem' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/exmem.vhd:40]
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/exmem.vhd:60]
+INFO: [Synth 8-256] done synthesizing module 'exmem' (0#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/exmem.vhd:40]
+INFO: [Synth 8-638] synthesizing module 'ForwardingUnit' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/forwarding_unit.vhd:19]
+INFO: [Synth 8-256] done synthesizing module 'ForwardingUnit' (0#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/forwarding_unit.vhd:19]
 INFO: [Synth 8-638] synthesizing module 'BranchAND' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/branch_and.vhd:16]
 INFO: [Synth 8-256] done synthesizing module 'BranchAND' (0#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/branch_and.vhd:16]
-INFO: [Synth 8-638] synthesizing module 'memwb' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/memwb.vhd:28]
-INFO: [Synth 8-256] done synthesizing module 'memwb' (0#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/memwb.vhd:28]
+INFO: [Synth 8-638] synthesizing module 'memwb' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/memwb.vhd:29]
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/memwb.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'memwb' (0#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/memwb.vhd:29]
 INFO: [Synth 8-638] synthesizing module 'writebackmux' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/writebackmux.vhd:13]
 INFO: [Synth 8-256] done synthesizing module 'writebackmux' (0#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/writebackmux.vhd:13]
-INFO: [Synth 8-256] done synthesizing module 'internal_connections' (0#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/internalconnections.vhd:44]
-INFO: [Synth 8-256] done synthesizing module 'RISCVCOREZYNQ' (0#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/riscvcore_zynq.vhd:38]
-INFO: [Synth 8-256] done synthesizing module 'zynq_design_RISCVCOREZYNQ_0_0' (0#1) [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ip/zynq_design_RISCVCOREZYNQ_0_0/synth/zynq_design_RISCVCOREZYNQ_0_0.vhd:77]
-WARNING: [Synth 8-6014] Unused sequential element JALorBRANCH_reg_reg was removed.  [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/exmem.vhd:72]
-WARNING: [Synth 8-3848] Net hazardunit_ifidwrite_to_ifid in module/entity internal_connections does not have driver. [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/internalconnections.vhd:112]
-WARNING: [Synth 8-3848] Net hazardunit_cntrlsigmux_to_controlunit in module/entity internal_connections does not have driver. [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/internalconnections.vhd:151]
+INFO: [Synth 8-256] done synthesizing module 'internal_connections' (0#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/internalconnections.vhd:46]
+INFO: [Synth 8-256] done synthesizing module 'RISCVCOREZYNQ' (0#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/riscvcore_zynq.vhd:40]
+INFO: [Synth 8-256] done synthesizing module 'zynq_design_RISCVCOREZYNQ_0_0' (0#1) [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ip/zynq_design_RISCVCOREZYNQ_0_0/synth/zynq_design_RISCVCOREZYNQ_0_0.vhd:79]
+WARNING: [Synth 8-6014] Unused sequential element JALorBRANCH_reg_reg was removed.  [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/exmem.vhd:73]
+WARNING: [Synth 8-3848] Net hazardunit_cntrlsigmux_to_controlunit in module/entity internal_connections does not have driver. [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/internalconnections.vhd:154]
 WARNING: [Synth 8-7129] Port branchregwritecancel in module memwb is either unconnected or has no load
 WARNING: [Synth 8-7129] Port instruction[24] in module alucontrol is either unconnected or has no load
 WARNING: [Synth 8-7129] Port instruction[23] in module alucontrol is either unconnected or has no load
@@ -150,6 +163,7 @@ WARNING: [Synth 8-7129] Port instruction[10] in module ControlUnit is either unc
 WARNING: [Synth 8-7129] Port instruction[9] in module ControlUnit is either unconnected or has no load
 WARNING: [Synth 8-7129] Port instruction[8] in module ControlUnit is either unconnected or has no load
 WARNING: [Synth 8-7129] Port instruction[7] in module ControlUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cntrlsigmux in module ControlUnit is either unconnected or has no load
 WARNING: [Synth 8-7129] Port immediate[31] in module pcimmadder is either unconnected or has no load
 WARNING: [Synth 8-7129] Port immediate[30] in module pcimmadder is either unconnected or has no load
 WARNING: [Synth 8-7129] Port immediate[29] in module pcimmadder is either unconnected or has no load
@@ -166,52 +180,51 @@ WARNING: [Synth 8-7129] Port immediate[19] in module pcimmadder is either unconn
 WARNING: [Synth 8-7129] Port immediate[18] in module pcimmadder is either unconnected or has no load
 WARNING: [Synth 8-7129] Port immediate[17] in module pcimmadder is either unconnected or has no load
 WARNING: [Synth 8-7129] Port immediate[16] in module pcimmadder is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ifidwrite in module ifid is either unconnected or has no load
 WARNING: [Synth 8-7129] Port branch_taken in module ifid is either unconnected or has no load
 WARNING: [Synth 8-7129] Port branch in module pc_mux is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1288.188 ; gain = 582.973
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1287.742 ; gain = 584.227
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1288.188 ; gain = 582.973
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1287.742 ; gain = 584.227
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1288.188 ; gain = 582.973
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1287.742 ; gain = 584.227
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.042 . Memory (MB): peak = 1288.188 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.046 . Memory (MB): peak = 1287.742 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1367.352 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1366.117 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 1367.969 ; gain = 0.617
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.037 . Memory (MB): peak = 1367.340 ; gain = 1.223
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1367.969 ; gain = 662.754
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1367.340 ; gain = 663.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z007sclg225-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1367.969 ; gain = 662.754
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1367.340 ; gain = 663.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1367.969 ; gain = 662.754
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1367.340 ; gain = 663.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1367.969 ; gain = 662.754
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1367.340 ; gain = 663.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -242,8 +255,8 @@ Detailed RTL Component Info :
 	   4 Input    5 Bit        Muxes := 1     
 	   8 Input    5 Bit        Muxes := 1     
 	   2 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 5     
 	   7 Input    1 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 4     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -309,10 +322,10 @@ WARNING: [Synth 8-7129] Port instruction[10] in module ControlUnit is either unc
 WARNING: [Synth 8-7129] Port instruction[9] in module ControlUnit is either unconnected or has no load
 WARNING: [Synth 8-7129] Port instruction[8] in module ControlUnit is either unconnected or has no load
 WARNING: [Synth 8-7129] Port instruction[7] in module ControlUnit is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ifidwrite in module ifid is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cntrlsigmux in module ControlUnit is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 1475.332 ; gain = 770.117
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 1463.785 ; gain = 760.270
 ---------------------------------------------------------------------------------
  Sort Area is  mul_result_0 : 0 0 : 3101 5754 : Used 1 time 0
  Sort Area is  mul_result_0 : 0 1 : 2653 5754 : Used 1 time 0
@@ -340,19 +353,19 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:39 ; elapsed = 00:00:40 . Memory (MB): peak = 1535.652 ; gain = 830.438
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:41 ; elapsed = 00:00:41 . Memory (MB): peak = 1530.066 ; gain = 826.551
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:40 . Memory (MB): peak = 1536.695 ; gain = 831.480
+Finished Timing Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 1531.332 ; gain = 827.816
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 1603.223 ; gain = 898.008
+Finished Technology Mapping : Time (s): cpu = 00:00:42 ; elapsed = 00:00:42 . Memory (MB): peak = 1591.258 ; gain = 887.742
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -370,37 +383,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:45 ; elapsed = 00:00:45 . Memory (MB): peak = 1760.059 ; gain = 1054.844
+Finished IO Insertion : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 1754.430 ; gain = 1050.914
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:45 ; elapsed = 00:00:45 . Memory (MB): peak = 1760.059 ; gain = 1054.844
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 1754.430 ; gain = 1050.914
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:45 ; elapsed = 00:00:45 . Memory (MB): peak = 1760.059 ; gain = 1054.844
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 1754.430 ; gain = 1050.914
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:45 ; elapsed = 00:00:45 . Memory (MB): peak = 1760.059 ; gain = 1054.844
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 1754.430 ; gain = 1050.914
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:45 ; elapsed = 00:00:45 . Memory (MB): peak = 1760.059 ; gain = 1054.844
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 1754.430 ; gain = 1050.914
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:45 ; elapsed = 00:00:45 . Memory (MB): peak = 1760.059 ; gain = 1054.844
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 1754.430 ; gain = 1050.914
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -428,37 +441,37 @@ Report Cell Usage:
 +------+--------+------+
 |1     |CARRY4  |    68|
 |2     |DSP48E1 |     3|
-|3     |LUT1    |   111|
-|4     |LUT2    |   203|
-|5     |LUT3    |   140|
-|6     |LUT4    |   243|
-|7     |LUT5    |   263|
-|8     |LUT6    |   387|
+|3     |LUT1    |   114|
+|4     |LUT2    |   153|
+|5     |LUT3    |   124|
+|6     |LUT4    |   214|
+|7     |LUT5    |   295|
+|8     |LUT6    |   448|
 |9     |FDCE    |   358|
 +------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:45 ; elapsed = 00:00:45 . Memory (MB): peak = 1760.059 ; gain = 1054.844
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 1754.430 ; gain = 1050.914
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 40 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:34 ; elapsed = 00:00:43 . Memory (MB): peak = 1760.059 ; gain = 975.062
-Synthesis Optimization Complete : Time (s): cpu = 00:00:45 ; elapsed = 00:00:45 . Memory (MB): peak = 1760.059 ; gain = 1054.844
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:36 ; elapsed = 00:00:45 . Memory (MB): peak = 1754.430 ; gain = 971.316
+Synthesis Optimization Complete : Time (s): cpu = 00:00:47 ; elapsed = 00:00:47 . Memory (MB): peak = 1754.430 ; gain = 1050.914
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.045 . Memory (MB): peak = 1769.164 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.052 . Memory (MB): peak = 1763.555 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 71 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1772.848 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1767.211 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 2b80b7b8
+Synth Design complete | Checksum: 22352930
 INFO: [Common 17-83] Releasing license: Synthesis
-82 Infos, 116 Warnings, 0 Critical Warnings and 0 Errors encountered.
+83 Infos, 128 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:49 ; elapsed = 00:00:53 . Memory (MB): peak = 1772.848 ; gain = 1275.598
+synth_design: Time (s): cpu = 00:00:51 ; elapsed = 00:00:55 . Memory (MB): peak = 1767.211 ; gain = 1268.699
 INFO: [Coretcl 2-1174] Renamed 10 cell refs.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1772.848 ; gain = 0.000
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1767.211 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/zynq_design_RISCVCOREZYNQ_0_0_synth_1/zynq_design_RISCVCOREZYNQ_0_0.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file zynq_design_RISCVCOREZYNQ_0_0_utilization_synth.rpt -pb zynq_design_RISCVCOREZYNQ_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Mar  2 15:15:19 2025...
+INFO: [Common 17-206] Exiting Vivado at Mon Mar 17 23:35:08 2025...

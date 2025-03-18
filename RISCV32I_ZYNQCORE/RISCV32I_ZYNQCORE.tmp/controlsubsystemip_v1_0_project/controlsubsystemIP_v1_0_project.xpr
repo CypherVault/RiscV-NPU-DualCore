@@ -7,7 +7,7 @@
 <Project Product="Vivado" Version="7" Minor="68" Path="c:/users/chris/desktop/riscv-npu-dualcore/riscv32i_zynqcore/riscv32i_zynqcore.tmp/controlsubsystemip_v1_0_project/controlsubsystemIP_v1_0_project.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="d660296e1c204351b1afbceca17f594c"/>
+    <Option Name="Id" Val="e7535b941f53410685aa8527a6a3c014"/>
     <Option Name="Part" Val="xc7z007sclg225-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -175,13 +175,14 @@
     </Simulator>
   </Simulators>
   <Runs Version="1" Minor="22">
-    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z007sclg225-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="true" WriteIncrSynthDcp="false" State="current" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/synth_1" ParallelReportGen="true">
+    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z007sclg225-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="true" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024">
           <Desc>Vivado Synthesis Defaults</Desc>
         </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2024"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
@@ -206,20 +207,6 @@
       <RQSFiles/>
     </Run>
   </Runs>
-  <MsgRule>
-    <MsgAttr Name="RuleType" Val="0"/>
-    <MsgAttr Name="Limit" Val="-1"/>
-    <MsgAttr Name="NewSeverity" Val="ANY"/>
-    <MsgAttr Name="Id" Val="17-179"/>
-    <MsgAttr Name="Severity" Val="ANY"/>
-    <MsgAttr Name="ShowRule" Val="0"/>
-    <MsgAttr Name="RuleSource" Val="-1"/>
-    <MsgAttr Name="StringIsRegExp" Val="0"/>
-    <MsgAttr Name="RuleId" Val="1"/>
-    <MsgAttr Name="Note" Val=""/>
-    <MsgAttr Name="Author" Val=""/>
-    <MsgAttr Name="CreatedTimestamp" Val=""/>
-  </MsgRule>
   <MsgRule>
     <MsgAttr Name="RuleType" Val="0"/>
     <MsgAttr Name="Limit" Val="-1"/>

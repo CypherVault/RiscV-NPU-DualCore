@@ -104,21 +104,24 @@ module tb();
 //  instr_mem[8] = 32'hff5ff06f;  // jal x0, -12        # Jump back from 32 to 16
       
       
-//assembled test C program 10+5 =15      
-instr_mem[0] = 32'h00000000;
-instr_mem[1] = 32'hff010113;
-instr_mem[2] = 32'h000057b7;
-instr_mem[3] = 32'h00f12623;
-instr_mem[4] = 32'h0000a7b7;
-instr_mem[5] = 32'h00f12423;
-instr_mem[6] = 32'h00c12703;
-instr_mem[7] = 32'h00812783;
-instr_mem[8] = 32'h00f707b3;
-instr_mem[9] = 32'h00f12223;
-instr_mem[10] = 32'h00412783;
-instr_mem[11] = 32'h00078513;
-instr_mem[12] = 32'h01010113;
+      
+// Memory initialization for RISC-V Program (10 + 5) with flushing forwarding stalling and hazards 
+instr_mem[0]  = 32'h00000000;  // NOP or unused
+instr_mem[1]  = 32'hff010113;  // addi sp, sp, -16
+instr_mem[2]  = 32'h00500793;  // addi a5, zero, 5
+instr_mem[3]  = 32'h00f12623;  // sw a5, 12(sp)
+instr_mem[4]  = 32'h00a00793;  // addi a5, zero, 10
+instr_mem[5]  = 32'h00f12423;  // sw a5, 8(sp)
+instr_mem[6]  = 32'h00c12703;  // lw a4, 12(sp)
+instr_mem[7]  = 32'h00812783;  // lw a5, 8(sp)
+instr_mem[8]  = 32'h00f707b3;  // add a5, a4, a5
+instr_mem[9]  = 32'h00f12223;  // sw a5, 4(sp)
+instr_mem[10] = 32'h00412783;  // lw a5, 4(sp)
+instr_mem[11] = 32'h00078513;  // addi a0, a5, 0 (mv a0, a5)
+instr_mem[12] = 32'h01010113;  // addi sp, sp, 16
+instr_mem[13] = 32'h00000067;  // ret (return from the program)
 
+// the data mememory is not properly dealing with writes to its addresses. need to relfect the adlec way of doing i t
 
       
         // Disable debug messages for a cleaner simulation log
@@ -135,22 +138,33 @@ instr_mem[12] = 32'h01010113;
         `VIP.fpga_soft_reset(32'h1);
         `VIP.fpga_soft_reset(32'h0);
 
+
+
+        $display("Toggling ON hold enable signal...RISCV CORE DISABLED, start has not been asserted yet.");
+        
+        `VIP.write_data(`CTRL_BASE + 4, 4, 32'h1, resp);  // HOLD = '1' so processor is stopped.
+        $display("HOLD enabled");
+        
+        repeat(20) @(posedge clk);
+
+
+
         // Wait for system stabilization
         repeat(10) @(posedge clk);
 
-        // Hold reset bar low (active)
+        // Hold reset bar low (active)              RESET ALL MEMORY FOR RISCVCORE
         `VIP.write_data(`CTRL_BASE + 0, 4, 32'h0, resp);  // Assert reset
         $display("Reset asserted");
 
         repeat(10) @(posedge clk);
 
-        // Release reset bar (inactive)
+        // Release reset bar (inactive)                memory allowed to update again
         `VIP.write_data(`CTRL_BASE + 0, 4, 32'h1, resp);  // De-assert reset
         $display("Reset de-asserted");
 
         repeat(10) @(posedge clk);
 
-        // Write debug data (0xFFFFFFFF) to instruction memory at different indexes
+        // Write instruction data (0xFFFFFFFF) to instruction memory at appropropriate
         $display("Writing instruction data to instruction memory...");
         
         
@@ -165,25 +179,35 @@ instr_mem[12] = 32'h01010113;
         
 //        for (i = 0; i < 8; i = i + 1) begin
 //            `VIP.read_data(`INSTR_MEM_BASE + (i * 4), 4, read_data, resp);
-//            $display("Read data from address %h: %h", `INSTR_MEM_BASE + (i * 4), read_data);
+//            $display("Read data from address %h: %h", `INSTR_MEM_BASE + (i * 4), read_data);           //debug function if we ever need to read it.
 //            
 //        end
 
 
            repeat(5) @(posedge clk);
- 	
-	for (i = 0; i < `CLOCKNUM; i = i + 1) begin
-       	// Toggle clock enable signal
-        $display("Toggling clock enable signal...");
+
+
+        $display("Toggling OFF hold enable signal...");
+
+        `VIP.write_data(`CTRL_BASE + 4, 4, 32'h0, resp);  // HOLD = '0' so processor proceeds.
+       
+        $display("Toggling ON START enable signal...RISCV CORE will now run.");
         
-        `VIP.write_data(`CTRL_BASE + 4, 4, 32'h1, resp);  // Enable clock
-        $display("Clock enabled");
+        `VIP.write_data(`CTRL_BASE + 8, 4, 32'h1, resp);  // START = '1' so processor will start to run.
+        $display("START enabled");
+       
+        repeat(1000) @(posedge clk);
+       
+       
+       $display("Toggling ON hold enable signal...RISCV CORE DISABLED.");
+        
+        `VIP.write_data(`CTRL_BASE + 4, 4, 32'h1, resp);  // HOLD = '1' so processor is stopped. we are done with running the program so now we will retreive the results.
+        $display("HOLD enabled");
+         
+         `VIP.write_data(`CTRL_BASE + 8, 4, 32'h0, resp);  // START = '0' so processor is fully stopped.
+        $display("START disabled");
         
         repeat(20) @(posedge clk);
-
-        `VIP.write_data(`CTRL_BASE + 4, 4, 32'h0, resp);  // Disable clock
-        $display("Clock disabled");
-	end
 
        // Read all registers using raw indexes.
     $display("Reading all registers...");

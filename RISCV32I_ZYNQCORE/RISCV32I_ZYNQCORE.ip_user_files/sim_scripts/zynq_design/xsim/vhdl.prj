@@ -4,18 +4,10 @@ vhdl xil_defaultlib  \
 "../../../bd/zynq_design/ip/zynq_design_RISCVCOREZYNQ_0_0/sim/zynq_design_RISCVCOREZYNQ_0_0.vhd" \
 "../../../bd/zynq_design/ipshared/fbcb/hdl/instructionmemIP.vhd" \
 "../../../bd/zynq_design/ip/zynq_design_instructionmemIP_0_0/sim/zynq_design_instructionmemIP_0_0.vhd" \
-"../../../bd/zynq_design/ipshared/367c/hdl/datamemIP.vhd" \
+"../../../bd/zynq_design/ipshared/80ab/hdl/datamemIP.vhd" \
 "../../../bd/zynq_design/ip/zynq_design_datamemIP_0_0/sim/zynq_design_datamemIP_0_0.vhd" \
-"../../../bd/zynq_design/ipshared/1432/hdl/controlsubsystemIP.vhd" \
+"../../../bd/zynq_design/ipshared/71ce/hdl/controlsubsystemIP.vhd" \
 "../../../bd/zynq_design/ip/zynq_design_controlsubsystemIP_0_0/sim/zynq_design_controlsubsystemIP_0_0.vhd" \
-
-vhdl lib_cdc_v1_0_3  \
-"../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd" \
-
-vhdl proc_sys_reset_v5_0_16  \
-"../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/0831/hdl/proc_sys_reset_v5_0_vh_rfs.vhd" \
-
-vhdl xil_defaultlib  \
 "../../../bd/zynq_design/ip/zynq_design_rst_ps7_0_50M_0/sim/zynq_design_rst_ps7_0_50M_0.vhd" \
 "../../../bd/zynq_design/ip/zynq_design_axi_smc_1/bd_0/ip/ip_1/sim/bd_375a_psr_aclk_0.vhd" \
 "../../../bd/zynq_design/sim/zynq_design.vhd" \

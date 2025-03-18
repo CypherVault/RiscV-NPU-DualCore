@@ -32,6 +32,7 @@ entity registerIP is
         s01_axi_rready  : in std_logic;
 
         -- Register File interface (RISC-V specific)
+        hold                : in std_logic;
         resetbar            : in std_logic; -- Active-low reset for RISC-V core
         regwrite            : in std_logic; -- Write enable from RISC-V core
         readregister1       : in std_logic_vector(4 downto 0); -- Read port 1 address
@@ -76,17 +77,23 @@ begin
                   writedata when (regwrite = '1') else
                   (others => '0');
 
-    -- Main BRAM process for read/write operations
-    process(s01_axi_aclk)
-    begin
-        if rising_edge(s01_axi_aclk) then
-            if s01_axi_aresetn = '0' or resetbar = '0' then
-                bram_mem <= (others => x"00000000"); -- Reset all registers to zero
-            elsif write_enable = '1' and write_addr /= 0 then
-                bram_mem(write_addr) <= write_data; -- Write data to BRAM at specified address
+   -- Main BRAM process for read/write operations
+process(s01_axi_aclk)
+begin
+    if rising_edge(s01_axi_aclk) then
+        if s01_axi_aresetn = '0' or resetbar = '0' then
+            bram_mem <= (
+                2 => x"00004000",    -- Special initialization for address 2 (stack pointer)
+                others => x"00000000" -- All other addresses set to zero
+            );
+        elsif write_enable = '1' and hold = '0' then
+            -- Explicit protection for address 0
+            if write_addr /= 0 then  -- Prevent writes to address 0 as it is REGISTER 0 as refenrce 
+                bram_mem(write_addr) <= write_data;
             end if;
         end if;
-    end process;
+    end if;
+end process;
 
     -- AXI Write Channel Control
     process(s01_axi_aclk)
@@ -96,7 +103,7 @@ begin
                 internal_awready <= '0';
                 internal_wready <= '0';
                 internal_bvalid <= '0';
-            else
+            elsif hold = '0' then
                 -- Write address handshake
                 if (s01_axi_awvalid = '1' and internal_awready = '0') then
                     internal_awready <= '1';
@@ -129,7 +136,7 @@ begin
                 internal_arready <= '0';
                 internal_rvalid <= '0';
                 internal_rdata <= (others => '0');
-            else
+            else --if hold = '0' then -- we wont need to hold here, since reading doesnt actually CHANGE THE DATA.
                 -- Read address handshake logic
                 if (s01_axi_arvalid = '1' and internal_arready = '0') then
                     internal_arready <= '1';

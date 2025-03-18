@@ -10,7 +10,9 @@ use work.types_pkg.all;
 entity RISCVCOREZYNQ is
     port (
         -- System control ports
-        clock : in std_logic;
+        start    : in std_logic;
+        hold     : in std_logic;
+        clock    : in std_logic;
         resetbar : in std_logic;
         
         -- Instruction Memory Interface
@@ -39,7 +41,9 @@ architecture behavior of RISCVCOREZYNQ is
     -- Component declaration for internal_connections
     component internal_connections is
         port (
-            clock : in std_logic;
+        start : in std_logic;
+            hold     : in std_logic;
+            clock    : in std_logic;
             resetbar : in std_logic;
             
             -- Instruction Memory Interface
@@ -74,7 +78,9 @@ begin
     internal_connections_inst : internal_connections
         port map (
             -- System control ports
-            clock => clock,
+            start    => start,
+            hold     => hold,
+            clock    => clock,
             resetbar => resetbar,
             
             -- Instruction Memory Interface

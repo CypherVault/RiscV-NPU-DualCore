@@ -872,6 +872,18 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
+        <spirit:name>hold</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
         <spirit:name>resetbar</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>

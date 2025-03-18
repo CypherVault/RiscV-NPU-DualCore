@@ -76,6 +76,7 @@ ENTITY zynq_design_registerIP_0_0 IS
     s01_axi_rresp : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
     s01_axi_rvalid : OUT STD_LOGIC;
     s01_axi_rready : IN STD_LOGIC;
+    hold : IN STD_LOGIC;
     resetbar : IN STD_LOGIC;
     regwrite : IN STD_LOGIC;
     readregister1 : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
@@ -117,6 +118,7 @@ ARCHITECTURE zynq_design_registerIP_0_0_arch OF zynq_design_registerIP_0_0 IS
       s01_axi_rresp : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
       s01_axi_rvalid : OUT STD_LOGIC;
       s01_axi_rready : IN STD_LOGIC;
+      hold : IN STD_LOGIC;
       resetbar : IN STD_LOGIC;
       regwrite : IN STD_LOGIC;
       readregister1 : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
@@ -186,6 +188,7 @@ BEGIN
       s01_axi_rresp => s01_axi_rresp,
       s01_axi_rvalid => s01_axi_rvalid,
       s01_axi_rready => s01_axi_rready,
+      hold => hold,
       resetbar => resetbar,
       regwrite => regwrite,
       readregister1 => readregister1,

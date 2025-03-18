@@ -60,7 +60,8 @@
         "s05_axi_rvalid": [ { "direction": "out" } ],
         "s05_axi_rready": [ { "direction": "in" } ],
         "riscv_resetbar": [ { "direction": "out" } ],
-        "riscv_clk_enable": [ { "direction": "out" } ]
+        "riscv_hold": [ { "direction": "out" } ],
+        "riscv_start": [ { "direction": "out" } ]
       },
       "interfaces": {
         "S05_AXI": {
@@ -144,7 +145,7 @@
           "parameters": {
             "ASSOCIATED_BUSIF": [ { "value": "S05_AXI", "value_src": "constant", "value_permission": "bd", "usage": "all" } ],
             "ASSOCIATED_RESET": [ { "value": "s05_axi_aresetn", "value_src": "constant", "value_permission": "bd", "usage": "all" } ],
-            "FREQ_HZ": [ { "value": "100000000", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "FREQ_HZ": [ { "value": "", "value_src": "constant", "value_permission": "bd", "usage": "all" } ],
             "FREQ_TOLERANCE_HZ": [ { "value": "0", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
             "PHASE": [ { "value": "0.0", "value_permission": "bd", "resolve_type": "generated", "format": "float", "is_ips_inferred": true, "is_static_object": false } ],
             "CLK_DOMAIN": [ { "value": "", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],

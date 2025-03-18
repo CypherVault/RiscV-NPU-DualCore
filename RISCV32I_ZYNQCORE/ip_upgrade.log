@@ -1,6 +1,1058 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 23:51:13 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_simulation_design_controlsubsystemIP_0_2'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the update of zynq_simulation_design_controlsubsystemIP_0_2 (xilinx.com:user:controlsubsystemIP:1.0 (Rev. 2)) to current project options.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'zynq_simulation_design_controlsubsystemIP_0_2'. These changes may impact your design.
+
+
+-Upgrade has added port 'riscv_start'
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 23:51:11 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_controlsubsystemIP_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the update of zynq_design_controlsubsystemIP_0_0 (xilinx.com:user:controlsubsystemIP:1.0 (Rev. 2)) to current project options.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'zynq_design_controlsubsystemIP_0_0'. These changes may impact your design.
+
+
+-Upgrade has added port 'riscv_start'
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 23:12:12 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_simulation_design_instructionmemIP_0_2'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the update of zynq_simulation_design_instructionmemIP_0_2 (xilinx.com:user:instructionmemIP:1.0 (Rev. 1)) to current project options.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'zynq_simulation_design_instructionmemIP_0_2'. These changes may impact your design.
+
+
+-Upgrade has removed port 'hold'
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 23:12:11 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_instructionmemIP_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the update of zynq_design_instructionmemIP_0_0 (xilinx.com:user:instructionmemIP:1.0 (Rev. 1)) to current project options.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'zynq_design_instructionmemIP_0_0'. These changes may impact your design.
+
+
+-Upgrade has removed port 'hold'
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 23:11:27 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_simulation_design_controlsubsystemIP_0_2'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_simulation_design_controlsubsystemIP_0_2 (xilinx.com:user:controlsubsystemIP:1.0 (Rev. 2)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 23:11:26 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_controlsubsystemIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_design_controlsubsystemIP_0_0 (xilinx.com:user:controlsubsystemIP:1.0 (Rev. 2)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 23:08:34 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_simulation_design_datamemIP_0_2'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_simulation_design_datamemIP_0_2 (xilinx.com:user:datamemIP:1.0 (Rev. 1)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 23:08:31 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_datamemIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_design_datamemIP_0_0 (xilinx.com:user:datamemIP:1.0 (Rev. 1)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 22:41:56 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_simulation_design_registerIP_0_2'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_simulation_design_registerIP_0_2 (xilinx.com:user:registerIP:1.0 (Rev. 1)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 22:41:53 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_registerIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_design_registerIP_0_0 (xilinx.com:user:registerIP:1.0 (Rev. 1)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 21:54:56 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_simulation_design_instructionmemIP_0_2'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the update of zynq_simulation_design_instructionmemIP_0_2 (xilinx.com:user:instructionmemIP:1.0 (Rev. 1)) to current project options.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'zynq_simulation_design_instructionmemIP_0_2'. These changes may impact your design.
+
+
+-Upgrade has removed port 'riscv_hold'
+
+-Upgrade has added port 'hold'
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 21:54:54 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_instructionmemIP_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the update of zynq_design_instructionmemIP_0_0 (xilinx.com:user:instructionmemIP:1.0 (Rev. 1)) to current project options.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'zynq_design_instructionmemIP_0_0'. These changes may impact your design.
+
+
+-Upgrade has removed port 'riscv_hold'
+
+-Upgrade has added port 'hold'
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 21:50:32 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_simulation_design_registerIP_0_2'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_simulation_design_registerIP_0_2 (xilinx.com:user:registerIP:1.0 (Rev. 1)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 21:50:32 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_simulation_design_instructionmemIP_0_2'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_simulation_design_instructionmemIP_0_2 (xilinx.com:user:instructionmemIP:1.0 (Rev. 1)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 21:50:28 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_registerIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_design_registerIP_0_0 (xilinx.com:user:registerIP:1.0 (Rev. 1)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 21:50:28 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_instructionmemIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_design_instructionmemIP_0_0 (xilinx.com:user:instructionmemIP:1.0 (Rev. 1)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 21:31:54 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_simulation_design_controlsubsystemIP_0_2'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the update of zynq_simulation_design_controlsubsystemIP_0_2 (xilinx.com:user:controlsubsystemIP:1.0 (Rev. 2)) to current project options.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'zynq_simulation_design_controlsubsystemIP_0_2'. These changes may impact your design.
+
+
+-Upgrade has removed port 'riscv_hold_enable'
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 21:31:51 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_controlsubsystemIP_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the update of zynq_design_controlsubsystemIP_0_0 (xilinx.com:user:controlsubsystemIP:1.0 (Rev. 2)) to current project options.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'zynq_design_controlsubsystemIP_0_0'. These changes may impact your design.
+
+
+-Upgrade has removed port 'riscv_hold_enable'
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 21:19:24 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_simulation_design_controlsubsystemIP_0_2'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_simulation_design_controlsubsystemIP_0_2 (xilinx.com:user:controlsubsystemIP:1.0 (Rev. 2)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 21:19:14 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_controlsubsystemIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_design_controlsubsystemIP_0_0 (xilinx.com:user:controlsubsystemIP:1.0 (Rev. 2)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 21:12:25 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_simulation_design_controlsubsystemIP_0_2'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_simulation_design_controlsubsystemIP_0_2 (xilinx.com:user:controlsubsystemIP:1.0 (Rev. 2)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 21:12:24 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_controlsubsystemIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_design_controlsubsystemIP_0_0 (xilinx.com:user:controlsubsystemIP:1.0 (Rev. 2)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 20:37:13 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_simulation_design_registerIP_0_2'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the update of zynq_simulation_design_registerIP_0_2 (xilinx.com:user:registerIP:1.0 (Rev. 1)) to current project options.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'zynq_simulation_design_registerIP_0_2'. These changes may impact your design.
+
+
+-Upgrade has added port 'hold'
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 20:37:12 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_registerIP_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the update of zynq_design_registerIP_0_0 (xilinx.com:user:registerIP:1.0 (Rev. 1)) to current project options.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'zynq_design_registerIP_0_0'. These changes may impact your design.
+
+
+-Upgrade has added port 'hold'
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 20:28:50 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_simulation_design_instructionmemIP_0_2'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the update of zynq_simulation_design_instructionmemIP_0_2 (xilinx.com:user:instructionmemIP:1.0 (Rev. 1)) to current project options.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'zynq_simulation_design_instructionmemIP_0_2'. These changes may impact your design.
+
+
+-Upgrade has added port 'riscv_hold'
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 20:28:48 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_instructionmemIP_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the update of zynq_design_instructionmemIP_0_0 (xilinx.com:user:instructionmemIP:1.0 (Rev. 1)) to current project options.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'zynq_design_instructionmemIP_0_0'. These changes may impact your design.
+
+
+-Upgrade has added port 'riscv_hold'
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 19:56:37 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_simulation_design_controlsubsystemIP_0_2'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the update of zynq_simulation_design_controlsubsystemIP_0_2 (xilinx.com:user:controlsubsystemIP:1.0 (Rev. 2)) to current project options.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'zynq_simulation_design_controlsubsystemIP_0_2'. These changes may impact your design.
+
+
+-Upgraded port 'riscv_hold' out differs from original direction in
+
+-Upgraded port 'riscv_hold_enable' in differs from original direction out
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 19:56:35 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_controlsubsystemIP_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the update of zynq_design_controlsubsystemIP_0_0 (xilinx.com:user:controlsubsystemIP:1.0 (Rev. 2)) to current project options.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'zynq_design_controlsubsystemIP_0_0'. These changes may impact your design.
+
+
+-Upgraded port 'riscv_hold' out differs from original direction in
+
+-Upgraded port 'riscv_hold_enable' in differs from original direction out
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 19:05:45 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_simulation_design_datamemIP_0_2'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the update of zynq_simulation_design_datamemIP_0_2 (xilinx.com:user:datamemIP:1.0 (Rev. 1)) to current project options.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'zynq_simulation_design_datamemIP_0_2'. These changes may impact your design.
+
+
+-Upgrade has added port 'hold'
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 19:05:44 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_datamemIP_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the update of zynq_design_datamemIP_0_0 (xilinx.com:user:datamemIP:1.0 (Rev. 1)) to current project options.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'zynq_design_datamemIP_0_0'. These changes may impact your design.
+
+
+-Upgrade has added port 'hold'
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 18:35:52 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_simulation_design_controlsubsystemIP_0_2'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the update of zynq_simulation_design_controlsubsystemIP_0_2 (xilinx.com:user:controlsubsystemIP:1.0 (Rev. 2)) to current project options.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'zynq_simulation_design_controlsubsystemIP_0_2'. These changes may impact your design.
+
+
+-Upgrade has added port 'riscv_hold'
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 18:35:50 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_controlsubsystemIP_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the update of zynq_design_controlsubsystemIP_0_0 (xilinx.com:user:controlsubsystemIP:1.0 (Rev. 2)) to current project options.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'zynq_design_controlsubsystemIP_0_0'. These changes may impact your design.
+
+
+-Upgrade has added port 'riscv_hold'
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 18:07:49 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_simulation_design_datamemIP_0_2'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_simulation_design_datamemIP_0_2 (xilinx.com:user:datamemIP:1.0 (Rev. 1)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 18:07:49 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_simulation_design_controlsubsystemIP_0_2'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the update of zynq_simulation_design_controlsubsystemIP_0_2 (xilinx.com:user:controlsubsystemIP:1.0 (Rev. 2)) to current project options.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'zynq_simulation_design_controlsubsystemIP_0_2'. These changes may impact your design.
+
+
+-Upgrade has removed port 'riscv_clk_enable'
+
+-Upgrade has added port 'riscv_hold_enable'
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 18:07:42 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_datamemIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_design_datamemIP_0_0 (xilinx.com:user:datamemIP:1.0 (Rev. 1)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 18:07:42 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_controlsubsystemIP_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the update of zynq_design_controlsubsystemIP_0_0 (xilinx.com:user:controlsubsystemIP:1.0 (Rev. 2)) to current project options.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'zynq_design_controlsubsystemIP_0_0'. These changes may impact your design.
+
+
+-Upgrade has removed port 'riscv_clk_enable'
+
+-Upgrade has added port 'riscv_hold_enable'
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 16:09:02 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_simulation_design_datamemIP_0_2'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the update of zynq_simulation_design_datamemIP_0_2 (xilinx.com:user:datamemIP:1.0 (Rev. 1)) to current project options.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'zynq_simulation_design_datamemIP_0_2'. These changes may impact your design.
+
+
+-Upgrade has removed port 'clk'
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 17 16:08:59 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_datamemIP_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the update of zynq_design_datamemIP_0_0 (xilinx.com:user:datamemIP:1.0 (Rev. 1)) to current project options.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'zynq_design_datamemIP_0_0'. These changes may impact your design.
+
+
+-Upgrade has removed port 'clk'
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
 | Date         : Wed Mar  5 17:22:11 2025
 | Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
 | Command      : upgrade_ip
