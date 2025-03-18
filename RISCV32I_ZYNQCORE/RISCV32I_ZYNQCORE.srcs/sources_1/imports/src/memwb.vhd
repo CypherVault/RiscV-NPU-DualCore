@@ -3,6 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity memwb is
     Port (
+        hold          : in  std_logic;
         clk           : in  STD_LOGIC;
         resetbar      : in  STD_LOGIC;
         readdata2in   : in  STD_LOGIC_VECTOR(31 downto 0);
@@ -53,7 +54,7 @@ begin
 			
 			
 		
-		elsif rising_edge(clk) then
+		elsif rising_edge(clk) and hold = '0' then
             if 	branchregwritecancel = '1' then 
 				
 			-- On rising edge of clock, update internal registers

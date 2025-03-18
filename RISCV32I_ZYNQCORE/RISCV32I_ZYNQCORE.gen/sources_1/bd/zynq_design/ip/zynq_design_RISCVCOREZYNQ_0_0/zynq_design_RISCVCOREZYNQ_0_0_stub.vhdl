@@ -2,7 +2,7 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
--- Date        : Sun Mar  2 15:15:19 2025
+-- Date        : Mon Mar 17 23:35:08 2025
 -- Host        : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
 --               c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ip/zynq_design_RISCVCOREZYNQ_0_0/zynq_design_RISCVCOREZYNQ_0_0_stub.vhdl
@@ -15,6 +15,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity zynq_design_RISCVCOREZYNQ_0_0 is
   Port ( 
+    start : in STD_LOGIC;
+    hold : in STD_LOGIC;
     clock : in STD_LOGIC;
     resetbar : in STD_LOGIC;
     pc_out : out STD_LOGIC_VECTOR ( 15 downto 0 );
@@ -47,13 +49,13 @@ architecture stub of zynq_design_RISCVCOREZYNQ_0_0 is
   attribute syn_black_box : boolean;
   attribute black_box_pad_pin : string;
   attribute syn_black_box of stub : architecture is true;
-  attribute black_box_pad_pin of stub : architecture is "clock,resetbar,pc_out[15:0],instruction_in[31:0],reg_write,rs1_addr[4:0],rs2_addr[4:0],rd_addr[4:0],write_data[31:0],reg1_data[31:0],reg2_data[31:0],mem_read,mem_write,mem_addr[31:0],mem_write_data[31:0],mem_read_data[31:0]";
+  attribute black_box_pad_pin of stub : architecture is "start,hold,clock,resetbar,pc_out[15:0],instruction_in[31:0],reg_write,rs1_addr[4:0],rs2_addr[4:0],rd_addr[4:0],write_data[31:0],reg1_data[31:0],reg2_data[31:0],mem_read,mem_write,mem_addr[31:0],mem_write_data[31:0],mem_read_data[31:0]";
   attribute x_interface_info : string;
   attribute x_interface_info of clock : signal is "xilinx.com:signal:clock:1.0 clock CLK";
   attribute x_interface_mode : string;
   attribute x_interface_mode of clock : signal is "slave clock";
   attribute x_interface_parameter : string;
-  attribute x_interface_parameter of clock : signal is "XIL_INTERFACENAME clock, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, INSERT_VIP 0";
+  attribute x_interface_parameter of clock : signal is "XIL_INTERFACENAME clock, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN zynq_design_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
   attribute x_core_info : string;
   attribute x_core_info of stub : architecture is "RISCVCOREZYNQ,Vivado 2024.2";
 begin

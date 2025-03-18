@@ -60,7 +60,6 @@ PHYSSYNTH_STATUS=none
 /..\..\..\..\440ProjectRISCVCORE\RISCVCORE\RISCVCORE\src\TESTBENCH.awc=-1
 /..\..\..\..\SeniorDesignProject\RISCVCORE\RISCVCORE\src\untitled.asdb=-1
 /..\..\..\..\SeniorDesignProject\RISCVCORE\RISCVCORE\src\untitled.awc=-1
-/register_REQUEST.vhd=-1
 [Files.Data]
 .\src\memwb.vhd=VHDL Source Code
 .\src\program_counter.vhd=VHDL Source Code
@@ -98,7 +97,6 @@ PHYSSYNTH_STATUS=none
 .\..\..\..\440ProjectRISCVCORE\RISCVCORE\RISCVCORE\src\TESTBENCH.awc=Accelerated Waveform Configuration
 .\..\..\..\SeniorDesignProject\RISCVCORE\RISCVCORE\src\untitled.asdb=Accelerated Waveform File
 .\..\..\..\SeniorDesignProject\RISCVCORE\RISCVCORE\src\untitled.awc=Accelerated Waveform Configuration
-.\src\register_REQUEST.vhd=VHDL Source Code
 [folders]
 name0=ALINT-PRO Workspaces
 directory0=C:\Users\maxpro\Desktop\440Project RISCVCORE\RISCVCORE\RISCVCORE\

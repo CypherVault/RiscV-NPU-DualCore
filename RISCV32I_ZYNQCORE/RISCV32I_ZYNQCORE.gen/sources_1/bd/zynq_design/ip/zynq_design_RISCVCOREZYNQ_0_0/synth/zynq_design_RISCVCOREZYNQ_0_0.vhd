@@ -55,6 +55,8 @@ USE ieee.numeric_std.ALL;
 
 ENTITY zynq_design_RISCVCOREZYNQ_0_0 IS
   PORT (
+    start : IN STD_LOGIC;
+    hold : IN STD_LOGIC;
     clock : IN STD_LOGIC;
     resetbar : IN STD_LOGIC;
     pc_out : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -79,6 +81,8 @@ ARCHITECTURE zynq_design_RISCVCOREZYNQ_0_0_arch OF zynq_design_RISCVCOREZYNQ_0_0
   ATTRIBUTE DowngradeIPIdentifiedWarnings OF zynq_design_RISCVCOREZYNQ_0_0_arch: ARCHITECTURE IS "yes";
   COMPONENT RISCVCOREZYNQ IS
     PORT (
+      start : IN STD_LOGIC;
+      hold : IN STD_LOGIC;
       clock : IN STD_LOGIC;
       resetbar : IN STD_LOGIC;
       pc_out : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -110,10 +114,12 @@ ARCHITECTURE zynq_design_RISCVCOREZYNQ_0_0_arch OF zynq_design_RISCVCOREZYNQ_0_0
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
   ATTRIBUTE X_INTERFACE_INFO OF clock: SIGNAL IS "xilinx.com:signal:clock:1.0 clock CLK";
   ATTRIBUTE X_INTERFACE_MODE OF clock: SIGNAL IS "slave clock";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF clock: SIGNAL IS "XIL_INTERFACENAME clock, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF clock: SIGNAL IS "XIL_INTERFACENAME clock, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN zynq_design_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
 BEGIN
   U0 : RISCVCOREZYNQ
     PORT MAP (
+      start => start,
+      hold => hold,
       clock => clock,
       resetbar => resetbar,
       pc_out => pc_out,

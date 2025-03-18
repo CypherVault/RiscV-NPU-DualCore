@@ -8,8 +8,10 @@ library work;
 entity internal_connections is
     port (
         -- Core signals (2 bits)
-        clock : in std_logic;
-        resetbar : in std_logic;
+        hold        : in std_logic;
+        clock       : in std_logic;
+        resetbar    : in std_logic;
+        start       : in std_logic;
         
         -- to AXI external connections
 		
@@ -109,14 +111,15 @@ signal DM_debug_read_enable : std_logic;  -- Data memory read enable
 	
 	signal instruction_memory_instruction_to_ifid : std_logic_vector(31 downto 0);						    --instruction memory & ifid
 	signal pc_pcout_to_ifid : std_logic_vector(15 downto 0);						    --PC & ifid		 
-	signal hazardunit_ifidwrite_to_ifid : std_logic;						    				--XXX & ifid
+	signal hazardunit_ifidwrite_to_ifid : std_logic;
+	signal hazardunit_ifidflush_to_ifid : std_logic; --XXX & ifid
 	signal controlunit_ifidflush_to_ifid : std_logic;	
 	signal ifid_rs1_to_register :  std_logic_vector(4 downto 0);
 	signal ifid_rs2_to_register :  std_logic_vector(4 downto 0);
 	signal ifid_rd_to_idex :  std_logic_vector(4 downto 0);	
 	signal ifid_instruction_to_OUT : std_logic_vector(31 downto 0);						    --instruction memory & ifid
 	signal ifid_pcout_to_OUT : std_logic_vector(15 downto 0);
-				   
+			   
 
 --------------------------------------------------------------------------END		
 	
@@ -401,6 +404,8 @@ begin
 	
 	pc_instance: entity work.program_counter
     port map (
+        start => start,
+        hold     => hold,
         clk      => clock,
         reset    => resetbar,
         pcwrite  => hazardunit_pcwrite_to_pc,
@@ -441,11 +446,12 @@ pc_pcout_to_pc4adder <= pc_pcout_to_instruction_memory;
 	
 	 ifid_instance: entity work.ifid
     port map (
+        hold                => hold,
         clk                 => clock,
         rstbar              => resetbar,
         branch_taken		=> branchand_jumpbranchselect_to_pc_mux,
-		ifidwrite           => hazardunit_ifidwrite_to_ifid,  
-        ifidflush           => controlunit_ifflush_to_ifid,		 --UNUSED- DO NOT IMPLEMENT
+		ifidwriteenable           => hazardunit_ifidwrite_to_ifid,  
+        ifidflush           => hazardunit_ifidflush_to_ifid,		   -- we actually need this 3-15-2025
         pcout               => pc_pcout_to_ifid,
         instruction         => instruction_memory_instruction_to_ifid,
         ifidinstructionout  => ifid_instruction_to_OUT   ,
@@ -547,7 +553,9 @@ registers_reg2out_to_controlunit  <= registers_reg2out_to_idex;
       early_branch => controlunit_earlybranch_to_pcmux,
 	  ALUSrc      => controlunit_alusource_to_idex,
       ALUOp       => contolunit_aluop_to_idex,
-      if_flush    => controlunit_ifflush_to_ifid
+      if_flush    => controlunit_ifflush_to_ifid,
+	  exmem_memread => exmem_memread_to_datamem
+	  
     );
 	
 	  -- NEED TO ADD THE EXMEM AND MEMWB forwarding signals !!! logic is implenented 
@@ -559,19 +567,21 @@ registers_reg2out_to_controlunit  <= registers_reg2out_to_idex;
 
 HAZARD_UNIT_INST : entity work.hazard_unit
     port map (
-	idexmemread => idex_memread_to_exmem,
+	idex_mem_read => idex_memread_to_exmem,
 	 ctrl_disable  => hazardunit_controldisable_to_controlunit,
-      idexrd => idex_rd_to_exmem,
+      idex_rd => idex_rd_to_exmem,
       instruction => ifid_instruction_to_OUT,
-      cntrlsigmux => hazardunit_controlsigmux_to_controlunit,
-      pcwriteenable => hazardunit_pcwrite_to_pc
-      --ifidwriteenable => hazardunit_ifidwrite_to_ifid
+      cntrl_sigmux => hazardunit_controlsigmux_to_controlunit,
+      pc_write_enable => hazardunit_pcwrite_to_pc,
+      ifid_write_en => hazardunit_ifidwrite_to_ifid,
+	  ifid_flush => 	hazardunit_ifidflush_to_ifid
     );
 
    -- TO IDEX																  
    																			  
     IDEX_INST : entity work.idex
     port map (
+      hold     => hold,
       clk => clock,
       rstbar => resetbar,
      -- branch_taken		=> branchand_jumpbranchselect_to_pc_mux,
@@ -694,6 +704,7 @@ alusrcmuxb_source2_to_exmem <= alusrcmuxB_rs2_to_alu;
 	
 	EXMEM_INST : entity work.exmem
     port map (
+      hold     => hold,
       clk => clock,
       resetbar => resetbar,
       JALorBRANCH => alu_JALorBRANCH_to_exmem,
@@ -733,7 +744,7 @@ alusrcmuxb_source2_to_exmem <= alusrcmuxB_rs2_to_alu;
 	
 	
   
-  FORWARDING_UNIT_INST : entity work.ForwardingUnit
+ FORWARDING_UNIT_INST : entity work.ForwardingUnit
     port map (
       exmemregwritecntrl => exmem_regwrite_to_memwb,
       memwbregwritecntrl => memwb_regwrite_to_registers,
@@ -744,7 +755,9 @@ alusrcmuxb_source2_to_exmem <= alusrcmuxB_rs2_to_alu;
       idexrs2 => idex_rs2_to_forwardingunit,
       
       forwardAmuxcntrl => forwardingunit_Amuxcntrl_to_forrwardingmuxA,
-      forwardBmuxcntrl => forwardingunit_Bmuxcntrl_to_forrwardingmuxB
+      forwardBmuxcntrl => forwardingunit_Bmuxcntrl_to_forrwardingmuxB,
+	  
+	  exmem_memread => exmem_memread_to_datamem
     );
 						  
 
@@ -805,6 +818,7 @@ branchand_regwritecancel_to_exmem <= 	branchand_jumpbranchselect_to_pc_mux;
 	
 	 MEMWB_INST : entity work.memwb
     port map (
+      hold     => hold,
       clk => clock,
       resetbar => resetbar,
       readdata2in => datamem_readdata_to_memwb,

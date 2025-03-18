@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x0",
+      "boundary_crc": "0x99EAC15B5065E353",
       "device": "xc7z007sclg225-1",
       "gen_directory": "../../../../RISCV32I_ZYNQCORE.gen/sim_1/bd/zynq_simulation_design",
       "name": "zynq_simulation_design",
@@ -16,7 +16,28 @@
       "datamemIP_0": "",
       "instructionmemIP_0": "",
       "registerIP_0": "",
-      "rst_ps7_0_50M": ""
+      "rst_ps7_0_50M": "",
+      "clk_wiz": ""
+    },
+    "ports": {
+      "clk_100MHz": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "FREQ_HZ": {
+            "value": "100000000"
+          }
+        }
+      },
+      "reset_rtl": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "POLARITY": {
+            "value": "ACTIVE_HIGH"
+          }
+        }
+      }
     },
     "components": {
       "RISCVCOREZYNQ_0": {
@@ -31,6 +52,12 @@
           "boundary_crc": "0x0"
         },
         "ports": {
+          "start": {
+            "direction": "I"
+          },
+          "hold": {
+            "direction": "I"
+          },
           "clock": {
             "type": "clk",
             "direction": "I"
@@ -274,6 +301,18 @@
         "xci_name": "zynq_simulation_design_rst_ps7_0_50M_1",
         "xci_path": "ip\\zynq_simulation_design_rst_ps7_0_50M_1\\zynq_simulation_design_rst_ps7_0_50M_1.xci",
         "inst_hier_path": "rst_ps7_0_50M"
+      },
+      "clk_wiz": {
+        "vlnv": "xilinx.com:ip:clk_wiz:6.0",
+        "ip_revision": "15",
+        "xci_name": "zynq_simulation_design_clk_wiz_0",
+        "xci_path": "ip\\zynq_simulation_design_clk_wiz_0\\zynq_simulation_design_clk_wiz_0.xci",
+        "inst_hier_path": "clk_wiz",
+        "parameters": {
+          "CLKOUT1_REQUESTED_OUT_FREQ": {
+            "value": "100"
+          }
+        }
       }
     },
     "interface_nets": {
@@ -363,19 +402,23 @@
           "registerIP_0/writedata"
         ]
       },
-      "controlsubsystemIP_0_riscv_clk_enable": {
+      "clk_100MHz_1": {
         "ports": [
-          "controlsubsystemIP_0/riscv_clk_enable",
-          "RISCVCOREZYNQ_0/clock",
-          "datamemIP_0/clk"
+          "clk_100MHz",
+          "clk_wiz/clk_in1"
+        ]
+      },
+      "controlsubsystemIP_0_riscv_hold_enable": {
+        "ports": [
+          "datamemIP_0/hold"
         ]
       },
       "controlsubsystemIP_0_riscv_resetbar": {
         "ports": [
           "controlsubsystemIP_0/riscv_resetbar",
-          "RISCVCOREZYNQ_0/resetbar",
           "registerIP_0/resetbar",
-          "datamemIP_0/reset"
+          "datamemIP_0/reset",
+          "RISCVCOREZYNQ_0/resetbar"
         ]
       },
       "datamemIP_0_readdata": {
@@ -392,12 +435,14 @@
       },
       "processing_system7_0_FCLK_CLK0": {
         "ports": [
+          "clk_wiz/clk_out1",
           "rst_ps7_0_50M/slowest_sync_clk",
           "axi_smc/aclk",
-          "controlsubsystemIP_0/s05_axi_aclk",
           "registerIP_0/s01_axi_aclk",
           "datamemIP_0/s02_axi_aclk",
-          "instructionmemIP_0/s00_axi_aclk"
+          "instructionmemIP_0/s00_axi_aclk",
+          "RISCVCOREZYNQ_0/clock",
+          "controlsubsystemIP_0/s05_axi_aclk"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
@@ -417,14 +462,20 @@
           "RISCVCOREZYNQ_0/reg2_data"
         ]
       },
+      "reset_rtl_1": {
+        "ports": [
+          "reset_rtl",
+          "clk_wiz/reset"
+        ]
+      },
       "rst_ps7_0_50M_peripheral_aresetn": {
         "ports": [
           "rst_ps7_0_50M/peripheral_aresetn",
           "axi_smc/aresetn",
-          "controlsubsystemIP_0/s05_axi_aresetn",
           "registerIP_0/s01_axi_aresetn",
           "datamemIP_0/s02_axi_aresetn",
-          "instructionmemIP_0/s00_axi_aresetn"
+          "instructionmemIP_0/s00_axi_aresetn",
+          "controlsubsystemIP_0/s05_axi_aresetn"
         ]
       }
     }

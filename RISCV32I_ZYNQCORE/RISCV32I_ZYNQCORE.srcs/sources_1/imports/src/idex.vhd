@@ -3,6 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity idex is
     Port (
+        hold                : in std_logic;
         clk                 : in  STD_LOGIC;
         rstbar              : in  STD_LOGIC;
         pcin                : in  STD_LOGIC_VECTOR(15 downto 0);
@@ -98,7 +99,7 @@ begin
             rs2_reg          <= (others => '0');
             rd_reg           <= (others => '0');
             
-        elsif rising_edge(clk) then	
+        elsif rising_edge(clk) and hold = '0' then	
             -- Normal operation
             pcin_reg         <= pcin;
             readdata1_reg    <= readdata1in;

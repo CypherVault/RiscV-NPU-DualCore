@@ -508,12 +508,8 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>FREQ_HZ</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S05_AXI_CLK.FREQ_HZ">100000000</spirit:value>
-          <spirit:vendorExtensions>
-            <xilinx:parameterInfo>
-              <xilinx:parameterUsage>none</xilinx:parameterUsage>
-            </xilinx:parameterInfo>
-          </spirit:vendorExtensions>
+          <spirit:description>100000000</spirit:description>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S05_AXI_CLK.FREQ_HZ"/>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>FREQ_TOLERANCE_HZ</spirit:name>
@@ -888,7 +884,19 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>riscv_clk_enable</spirit:name>
+        <spirit:name>riscv_hold</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>riscv_start</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:wireTypeDefs>
@@ -997,10 +1005,10 @@
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2024.2</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="b9b4eddd"/>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="44d39401"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="7020b4cf"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="32d93229"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="e230f21f"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="4f6f2922"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="b11a687b"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="cf4faccc"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>

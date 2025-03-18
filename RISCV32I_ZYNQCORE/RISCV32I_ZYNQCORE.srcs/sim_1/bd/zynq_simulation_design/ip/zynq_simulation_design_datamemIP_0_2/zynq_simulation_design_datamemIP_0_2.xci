@@ -67,7 +67,7 @@
         "s02_axi_rresp": [ { "direction": "out", "size_left": "1", "size_right": "0" } ],
         "s02_axi_rvalid": [ { "direction": "out" } ],
         "s02_axi_rready": [ { "direction": "in" } ],
-        "clk": [ { "direction": "in" } ],
+        "hold": [ { "direction": "in" } ],
         "reset": [ { "direction": "in" } ],
         "memwrite": [ { "direction": "in" } ],
         "memread": [ { "direction": "in" } ],
@@ -117,25 +117,25 @@
             "INSERT_VIP": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "simulation.rtl", "is_ips_inferred": true, "is_static_object": false } ]
           },
           "port_maps": {
-            "AWADDR": [ { "physical_name": "s02_axi_awaddr" } ],
-            "AWPROT": [ { "physical_name": "s02_axi_awprot" } ],
-            "AWVALID": [ { "physical_name": "s02_axi_awvalid" } ],
-            "AWREADY": [ { "physical_name": "s02_axi_awready" } ],
-            "WDATA": [ { "physical_name": "s02_axi_wdata" } ],
-            "WSTRB": [ { "physical_name": "s02_axi_wstrb" } ],
-            "WVALID": [ { "physical_name": "s02_axi_wvalid" } ],
-            "WREADY": [ { "physical_name": "s02_axi_wready" } ],
-            "BRESP": [ { "physical_name": "s02_axi_bresp" } ],
             "BVALID": [ { "physical_name": "s02_axi_bvalid" } ],
             "BREADY": [ { "physical_name": "s02_axi_bready" } ],
-            "ARADDR": [ { "physical_name": "s02_axi_araddr" } ],
+            "AWVALID": [ { "physical_name": "s02_axi_awvalid" } ],
+            "AWREADY": [ { "physical_name": "s02_axi_awready" } ],
+            "AWPROT": [ { "physical_name": "s02_axi_awprot" } ],
+            "WDATA": [ { "physical_name": "s02_axi_wdata" } ],
             "ARPROT": [ { "physical_name": "s02_axi_arprot" } ],
-            "ARVALID": [ { "physical_name": "s02_axi_arvalid" } ],
+            "ARADDR": [ { "physical_name": "s02_axi_araddr" } ],
+            "AWADDR": [ { "physical_name": "s02_axi_awaddr" } ],
             "ARREADY": [ { "physical_name": "s02_axi_arready" } ],
+            "WVALID": [ { "physical_name": "s02_axi_wvalid" } ],
+            "WREADY": [ { "physical_name": "s02_axi_wready" } ],
+            "ARVALID": [ { "physical_name": "s02_axi_arvalid" } ],
+            "WSTRB": [ { "physical_name": "s02_axi_wstrb" } ],
+            "BRESP": [ { "physical_name": "s02_axi_bresp" } ],
             "RDATA": [ { "physical_name": "s02_axi_rdata" } ],
+            "RREADY": [ { "physical_name": "s02_axi_rready" } ],
             "RRESP": [ { "physical_name": "s02_axi_rresp" } ],
-            "RVALID": [ { "physical_name": "s02_axi_rvalid" } ],
-            "RREADY": [ { "physical_name": "s02_axi_rready" } ]
+            "RVALID": [ { "physical_name": "s02_axi_rvalid" } ]
           }
         },
         "S02_AXI_RST": {
@@ -156,7 +156,7 @@
           "mode": "slave",
           "parameters": {
             "ASSOCIATED_BUSIF": [ { "value": "S02_AXI", "value_src": "constant", "value_permission": "bd", "usage": "all" } ],
-            "ASSOCIATED_RESET": [ { "value": "s02_axi_aresetn", "value_src": "constant", "value_permission": "bd", "usage": "all" } ],
+            "ASSOCIATED_RESET": [ { "value": "s02_axi_aresetn:reset", "value_src": "constant", "value_permission": "bd", "usage": "all" } ],
             "FREQ_HZ": [ { "value": "", "value_src": "constant", "value_permission": "bd", "usage": "all" } ],
             "FREQ_TOLERANCE_HZ": [ { "value": "0", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
             "PHASE": [ { "value": "0.0", "value_permission": "bd", "resolve_type": "generated", "format": "float", "is_ips_inferred": true, "is_static_object": false } ],
@@ -178,24 +178,6 @@
           },
           "port_maps": {
             "RST": [ { "physical_name": "reset" } ]
-          }
-        },
-        "clk": {
-          "vlnv": "xilinx.com:signal:clock:1.0",
-          "abstraction_type": "xilinx.com:signal:clock_rtl:1.0",
-          "mode": "slave",
-          "parameters": {
-            "FREQ_HZ": [ { "value": "100000000", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
-            "FREQ_TOLERANCE_HZ": [ { "value": "0", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
-            "PHASE": [ { "value": "0.0", "value_permission": "bd", "resolve_type": "generated", "format": "float", "is_ips_inferred": true, "is_static_object": false } ],
-            "CLK_DOMAIN": [ { "value": "", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
-            "ASSOCIATED_BUSIF": [ { "value": "", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
-            "ASSOCIATED_PORT": [ { "value": "", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
-            "ASSOCIATED_RESET": [ { "value": "", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
-            "INSERT_VIP": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "simulation.rtl", "is_ips_inferred": true, "is_static_object": false } ]
-          },
-          "port_maps": {
-            "CLK": [ { "physical_name": "clk" } ]
           }
         }
       },

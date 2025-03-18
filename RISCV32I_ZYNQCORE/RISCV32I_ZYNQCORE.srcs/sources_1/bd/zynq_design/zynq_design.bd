@@ -210,9 +210,25 @@
           "boundary_crc": "0x0"
         },
         "ports": {
+          "start": {
+            "direction": "I"
+          },
+          "hold": {
+            "direction": "I"
+          },
           "clock": {
             "type": "clk",
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "zynq_design_processing_system7_0_0_FCLK_CLK0",
+                "value_src": "default_prop"
+              }
+            }
           },
           "resetbar": {
             "direction": "I"
@@ -323,7 +339,7 @@
             "value": "100.000000"
           },
           "PCW_ACT_FPGA1_PERIPHERAL_FREQMHZ": {
-            "value": "100.000000"
+            "value": "10.000000"
           },
           "PCW_ACT_FPGA2_PERIPHERAL_FREQMHZ": {
             "value": "10.000000"
@@ -398,7 +414,7 @@
             "value": "100000000"
           },
           "PCW_CLK1_FREQ": {
-            "value": "100000000"
+            "value": "10000000"
           },
           "PCW_CLK2_FREQ": {
             "value": "10000000"
@@ -455,7 +471,7 @@
             "value": "0"
           },
           "PCW_EN_CLK1_PORT": {
-            "value": "1"
+            "value": "0"
           },
           "PCW_EN_CLK2_PORT": {
             "value": "0"
@@ -532,9 +548,6 @@
           "PCW_FCLK_CLK0_BUF": {
             "value": "TRUE"
           },
-          "PCW_FCLK_CLK1_BUF": {
-            "value": "TRUE"
-          },
           "PCW_FPGA0_PERIPHERAL_FREQMHZ": {
             "value": "100"
           },
@@ -548,9 +561,6 @@
             "value": "50"
           },
           "PCW_FPGA_FCLK0_ENABLE": {
-            "value": "1"
-          },
-          "PCW_FPGA_FCLK1_ENABLE": {
             "value": "1"
           },
           "PCW_GPIO_EMIO_GPIO_ENABLE": {
@@ -1803,19 +1813,26 @@
           "registerIP_0/writedata"
         ]
       },
-      "controlsubsystemIP_0_riscv_clk_enable": {
+      "controlsubsystemIP_0_riscv_hold_enable": {
         "ports": [
-          "controlsubsystemIP_0/riscv_clk_enable",
-          "RISCVCOREZYNQ_0/clock",
-          "datamemIP_0/clk"
+          "controlsubsystemIP_0/riscv_hold",
+          "registerIP_0/hold",
+          "datamemIP_0/hold",
+          "RISCVCOREZYNQ_0/hold"
         ]
       },
       "controlsubsystemIP_0_riscv_resetbar": {
         "ports": [
           "controlsubsystemIP_0/riscv_resetbar",
-          "RISCVCOREZYNQ_0/resetbar",
           "registerIP_0/resetbar",
-          "datamemIP_0/reset"
+          "datamemIP_0/reset",
+          "RISCVCOREZYNQ_0/resetbar"
+        ]
+      },
+      "controlsubsystemIP_0_riscv_start": {
+        "ports": [
+          "controlsubsystemIP_0/riscv_start",
+          "RISCVCOREZYNQ_0/start"
         ]
       },
       "datamemIP_0_readdata": {
@@ -1836,10 +1853,11 @@
           "processing_system7_0/M_AXI_GP0_ACLK",
           "rst_ps7_0_50M/slowest_sync_clk",
           "axi_smc/aclk",
-          "controlsubsystemIP_0/s05_axi_aclk",
           "registerIP_0/s01_axi_aclk",
           "datamemIP_0/s02_axi_aclk",
-          "instructionmemIP_0/s00_axi_aclk"
+          "instructionmemIP_0/s00_axi_aclk",
+          "RISCVCOREZYNQ_0/clock",
+          "controlsubsystemIP_0/s05_axi_aclk"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
@@ -1864,10 +1882,10 @@
         "ports": [
           "rst_ps7_0_50M/peripheral_aresetn",
           "axi_smc/aresetn",
-          "controlsubsystemIP_0/s05_axi_aresetn",
           "registerIP_0/s01_axi_aresetn",
           "datamemIP_0/s02_axi_aresetn",
-          "instructionmemIP_0/s00_axi_aresetn"
+          "instructionmemIP_0/s00_axi_aresetn",
+          "controlsubsystemIP_0/s05_axi_aresetn"
         ]
       }
     },

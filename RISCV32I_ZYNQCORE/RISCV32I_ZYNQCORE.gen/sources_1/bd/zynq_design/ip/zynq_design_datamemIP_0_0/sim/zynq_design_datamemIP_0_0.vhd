@@ -76,7 +76,7 @@ ENTITY zynq_design_datamemIP_0_0 IS
     s02_axi_rresp : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
     s02_axi_rvalid : OUT STD_LOGIC;
     s02_axi_rready : IN STD_LOGIC;
-    clk : IN STD_LOGIC;
+    hold : IN STD_LOGIC;
     reset : IN STD_LOGIC;
     memwrite : IN STD_LOGIC;
     memread : IN STD_LOGIC;
@@ -117,7 +117,7 @@ ARCHITECTURE zynq_design_datamemIP_0_0_arch OF zynq_design_datamemIP_0_0 IS
       s02_axi_rresp : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
       s02_axi_rvalid : OUT STD_LOGIC;
       s02_axi_rready : IN STD_LOGIC;
-      clk : IN STD_LOGIC;
+      hold : IN STD_LOGIC;
       reset : IN STD_LOGIC;
       memwrite : IN STD_LOGIC;
       memread : IN STD_LOGIC;
@@ -129,15 +129,12 @@ ARCHITECTURE zynq_design_datamemIP_0_0_arch OF zynq_design_datamemIP_0_0 IS
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_MODE : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
-  ATTRIBUTE X_INTERFACE_INFO OF clk: SIGNAL IS "xilinx.com:signal:clock:1.0 clk CLK";
-  ATTRIBUTE X_INTERFACE_MODE OF clk: SIGNAL IS "slave clk";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF clk: SIGNAL IS "XIL_INTERFACENAME clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF reset: SIGNAL IS "xilinx.com:signal:reset:1.0 reset RST";
   ATTRIBUTE X_INTERFACE_MODE OF reset: SIGNAL IS "slave reset";
   ATTRIBUTE X_INTERFACE_PARAMETER OF reset: SIGNAL IS "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF s02_axi_aclk: SIGNAL IS "xilinx.com:signal:clock:1.0 S02_AXI_CLK CLK";
   ATTRIBUTE X_INTERFACE_MODE OF s02_axi_aclk: SIGNAL IS "slave S02_AXI_CLK";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF s02_axi_aclk: SIGNAL IS "XIL_INTERFACENAME S02_AXI_CLK, ASSOCIATED_BUSIF S02_AXI, ASSOCIATED_RESET s02_axi_aresetn, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN zynq_design_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF s02_axi_aclk: SIGNAL IS "XIL_INTERFACENAME S02_AXI_CLK, ASSOCIATED_BUSIF S02_AXI, ASSOCIATED_RESET s02_axi_aresetn:reset, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN zynq_design_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF s02_axi_araddr: SIGNAL IS "xilinx.com:interface:aximm:1.0 S02_AXI ARADDR";
   ATTRIBUTE X_INTERFACE_INFO OF s02_axi_aresetn: SIGNAL IS "xilinx.com:signal:reset:1.0 S02_AXI_RST RST";
   ATTRIBUTE X_INTERFACE_MODE OF s02_axi_aresetn: SIGNAL IS "slave S02_AXI_RST";
@@ -192,7 +189,7 @@ BEGIN
       s02_axi_rresp => s02_axi_rresp,
       s02_axi_rvalid => s02_axi_rvalid,
       s02_axi_rready => s02_axi_rready,
-      clk => clk,
+      hold => hold,
       reset => reset,
       memwrite => memwrite,
       memread => memread,

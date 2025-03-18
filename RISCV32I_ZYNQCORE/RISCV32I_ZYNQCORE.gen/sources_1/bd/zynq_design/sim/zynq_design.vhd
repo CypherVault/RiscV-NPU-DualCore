@@ -2,7 +2,7 @@
 --Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
---Date        : Wed Mar  5 17:23:08 2025
+--Date        : Mon Mar 17 23:51:40 2025
 --Host        : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
 --Command     : generate_target zynq_design.bd
 --Design      : zynq_design
@@ -66,6 +66,7 @@ architecture STRUCTURE of zynq_design is
     s01_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
     s01_axi_rvalid : out STD_LOGIC;
     s01_axi_rready : in STD_LOGIC;
+    hold : in STD_LOGIC;
     resetbar : in STD_LOGIC;
     regwrite : in STD_LOGIC;
     readregister1 : in STD_LOGIC_VECTOR ( 4 downto 0 );
@@ -78,6 +79,8 @@ architecture STRUCTURE of zynq_design is
   end component zynq_design_registerIP_0_0;
   component zynq_design_RISCVCOREZYNQ_0_0 is
   port (
+    start : in STD_LOGIC;
+    hold : in STD_LOGIC;
     clock : in STD_LOGIC;
     resetbar : in STD_LOGIC;
     pc_out : out STD_LOGIC_VECTOR ( 15 downto 0 );
@@ -146,7 +149,7 @@ architecture STRUCTURE of zynq_design is
     s02_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
     s02_axi_rvalid : out STD_LOGIC;
     s02_axi_rready : in STD_LOGIC;
-    clk : in STD_LOGIC;
+    hold : in STD_LOGIC;
     reset : in STD_LOGIC;
     memwrite : in STD_LOGIC;
     memread : in STD_LOGIC;
@@ -230,7 +233,6 @@ architecture STRUCTURE of zynq_design is
     M_AXI_GP0_RRESP : in STD_LOGIC_VECTOR ( 1 downto 0 );
     M_AXI_GP0_RDATA : in STD_LOGIC_VECTOR ( 31 downto 0 );
     FCLK_CLK0 : out STD_LOGIC;
-    FCLK_CLK1 : out STD_LOGIC;
     FCLK_RESET0_N : out STD_LOGIC;
     MIO : inout STD_LOGIC_VECTOR ( 31 downto 0 );
     DDR_CAS_n : inout STD_LOGIC;
@@ -279,7 +281,8 @@ architecture STRUCTURE of zynq_design is
     s05_axi_rvalid : out STD_LOGIC;
     s05_axi_rready : in STD_LOGIC;
     riscv_resetbar : out STD_LOGIC;
-    riscv_clk_enable : out STD_LOGIC
+    riscv_hold : out STD_LOGIC;
+    riscv_start : out STD_LOGIC
   );
   end component zynq_design_controlsubsystemIP_0_0;
   component zynq_design_rst_ps7_0_50M_0 is
@@ -502,8 +505,9 @@ architecture STRUCTURE of zynq_design is
   signal axi_smc_M03_AXI_WREADY : STD_LOGIC;
   signal axi_smc_M03_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal axi_smc_M03_AXI_WVALID : STD_LOGIC;
-  signal controlsubsystemIP_0_riscv_clk_enable : STD_LOGIC;
+  signal controlsubsystemIP_0_riscv_hold_enable : STD_LOGIC;
   signal controlsubsystemIP_0_riscv_resetbar : STD_LOGIC;
+  signal controlsubsystemIP_0_riscv_start : STD_LOGIC;
   signal datamemIP_0_readdata : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal instructionmemIP_0_instruction : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal processing_system7_0_FCLK_CLK0 : STD_LOGIC;
@@ -549,7 +553,6 @@ architecture STRUCTURE of zynq_design is
   signal registerIP_0_readdata1 : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal registerIP_0_readdata2 : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal rst_ps7_0_50M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal NLW_processing_system7_0_FCLK_CLK1_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_I2C0_SCL_O_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_I2C0_SCL_T_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_I2C0_SDA_O_UNCONNECTED : STD_LOGIC;
@@ -604,7 +607,8 @@ architecture STRUCTURE of zynq_design is
 begin
 RISCVCOREZYNQ_0: component zynq_design_RISCVCOREZYNQ_0_0
      port map (
-      clock => controlsubsystemIP_0_riscv_clk_enable,
+      clock => processing_system7_0_FCLK_CLK0,
+      hold => controlsubsystemIP_0_riscv_hold_enable,
       instruction_in(31 downto 0) => instructionmemIP_0_instruction(31 downto 0),
       mem_addr(31 downto 0) => RISCVCOREZYNQ_0_mem_addr(31 downto 0),
       mem_read => RISCVCOREZYNQ_0_mem_read,
@@ -619,6 +623,7 @@ RISCVCOREZYNQ_0: component zynq_design_RISCVCOREZYNQ_0_0
       resetbar => controlsubsystemIP_0_riscv_resetbar,
       rs1_addr(4 downto 0) => RISCVCOREZYNQ_0_rs1_addr(4 downto 0),
       rs2_addr(4 downto 0) => RISCVCOREZYNQ_0_rs2_addr(4 downto 0),
+      start => controlsubsystemIP_0_riscv_start,
       write_data(31 downto 0) => RISCVCOREZYNQ_0_write_data(31 downto 0)
     );
 axi_smc: component zynq_design_axi_smc_1
@@ -742,8 +747,9 @@ axi_smc: component zynq_design_axi_smc_1
     );
 controlsubsystemIP_0: component zynq_design_controlsubsystemIP_0_0
      port map (
-      riscv_clk_enable => controlsubsystemIP_0_riscv_clk_enable,
+      riscv_hold => controlsubsystemIP_0_riscv_hold_enable,
       riscv_resetbar => controlsubsystemIP_0_riscv_resetbar,
+      riscv_start => controlsubsystemIP_0_riscv_start,
       s05_axi_aclk => processing_system7_0_FCLK_CLK0,
       s05_axi_araddr(3 downto 0) => axi_smc_M00_AXI_ARADDR(3 downto 0),
       s05_axi_aresetn => rst_ps7_0_50M_peripheral_aresetn(0),
@@ -769,7 +775,7 @@ controlsubsystemIP_0: component zynq_design_controlsubsystemIP_0_0
 datamemIP_0: component zynq_design_datamemIP_0_0
      port map (
       address(31 downto 0) => RISCVCOREZYNQ_0_mem_addr(31 downto 0),
-      clk => controlsubsystemIP_0_riscv_clk_enable,
+      hold => controlsubsystemIP_0_riscv_hold_enable,
       memread => RISCVCOREZYNQ_0_mem_read,
       memwrite => RISCVCOREZYNQ_0_mem_write,
       readdata(31 downto 0) => datamemIP_0_readdata(31 downto 0),
@@ -843,7 +849,6 @@ processing_system7_0: component zynq_design_processing_system7_0_0
       DDR_VRP => FIXED_IO_ddr_vrp,
       DDR_WEB => DDR_we_n,
       FCLK_CLK0 => processing_system7_0_FCLK_CLK0,
-      FCLK_CLK1 => NLW_processing_system7_0_FCLK_CLK1_UNCONNECTED,
       FCLK_RESET0_N => processing_system7_0_FCLK_RESET0_N,
       GPIO_I(15 downto 0) => B"0000000000000000",
       GPIO_O(15 downto 0) => NLW_processing_system7_0_GPIO_O_UNCONNECTED(15 downto 0),
@@ -924,6 +929,7 @@ processing_system7_0: component zynq_design_processing_system7_0_0
     );
 registerIP_0: component zynq_design_registerIP_0_0
      port map (
+      hold => controlsubsystemIP_0_riscv_hold_enable,
       readdata1(31 downto 0) => registerIP_0_readdata1(31 downto 0),
       readdata2(31 downto 0) => registerIP_0_readdata2(31 downto 0),
       readregister1(4 downto 0) => RISCVCOREZYNQ_0_rs1_addr(4 downto 0),

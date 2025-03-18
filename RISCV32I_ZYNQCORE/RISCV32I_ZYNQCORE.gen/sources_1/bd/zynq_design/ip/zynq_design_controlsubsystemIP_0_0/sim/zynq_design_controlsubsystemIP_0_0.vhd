@@ -77,7 +77,8 @@ ENTITY zynq_design_controlsubsystemIP_0_0 IS
     s05_axi_rvalid : OUT STD_LOGIC;
     s05_axi_rready : IN STD_LOGIC;
     riscv_resetbar : OUT STD_LOGIC;
-    riscv_clk_enable : OUT STD_LOGIC
+    riscv_hold : OUT STD_LOGIC;
+    riscv_start : OUT STD_LOGIC
   );
 END zynq_design_controlsubsystemIP_0_0;
 
@@ -108,7 +109,8 @@ ARCHITECTURE zynq_design_controlsubsystemIP_0_0_arch OF zynq_design_controlsubsy
       s05_axi_rvalid : OUT STD_LOGIC;
       s05_axi_rready : IN STD_LOGIC;
       riscv_resetbar : OUT STD_LOGIC;
-      riscv_clk_enable : OUT STD_LOGIC
+      riscv_hold : OUT STD_LOGIC;
+      riscv_start : OUT STD_LOGIC
     );
   END COMPONENT controlsubsystemIP;
   ATTRIBUTE X_INTERFACE_INFO : STRING;
@@ -116,7 +118,7 @@ ARCHITECTURE zynq_design_controlsubsystemIP_0_0_arch OF zynq_design_controlsubsy
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
   ATTRIBUTE X_INTERFACE_INFO OF s05_axi_aclk: SIGNAL IS "xilinx.com:signal:clock:1.0 S05_AXI_CLK CLK";
   ATTRIBUTE X_INTERFACE_MODE OF s05_axi_aclk: SIGNAL IS "slave S05_AXI_CLK";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF s05_axi_aclk: SIGNAL IS "XIL_INTERFACENAME S05_AXI_CLK, ASSOCIATED_BUSIF S05_AXI, ASSOCIATED_RESET s05_axi_aresetn, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN zynq_design_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF s05_axi_aclk: SIGNAL IS "XIL_INTERFACENAME S05_AXI_CLK, ASSOCIATED_BUSIF S05_AXI, ASSOCIATED_RESET s05_axi_aresetn, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN zynq_design_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF s05_axi_araddr: SIGNAL IS "xilinx.com:interface:aximm:1.0 S05_AXI ARADDR";
   ATTRIBUTE X_INTERFACE_INFO OF s05_axi_aresetn: SIGNAL IS "xilinx.com:signal:reset:1.0 S05_AXI_RST RST";
   ATTRIBUTE X_INTERFACE_MODE OF s05_axi_aresetn: SIGNAL IS "slave S05_AXI_RST";
@@ -126,8 +128,8 @@ ARCHITECTURE zynq_design_controlsubsystemIP_0_0_arch OF zynq_design_controlsubsy
   ATTRIBUTE X_INTERFACE_INFO OF s05_axi_arvalid: SIGNAL IS "xilinx.com:interface:aximm:1.0 S05_AXI ARVALID";
   ATTRIBUTE X_INTERFACE_INFO OF s05_axi_awaddr: SIGNAL IS "xilinx.com:interface:aximm:1.0 S05_AXI AWADDR";
   ATTRIBUTE X_INTERFACE_MODE OF s05_axi_awaddr: SIGNAL IS "slave S05_AXI";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF s05_axi_awaddr: SIGNAL IS "XIL_INTERFACENAME S05_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 4, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 4, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 8, NUM_WRITE_OUTSTANDING 8, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN zynq_design_processing_sy" & 
-"stem7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF s05_axi_awaddr: SIGNAL IS "XIL_INTERFACENAME S05_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 4, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, ID_WIDTH 0, ADDR_WIDTH 4, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 8, NUM_WRITE_OUTSTANDING 8, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN zynq_design_processing_system7_0_0_FCLK_CLK0" & 
+", NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF s05_axi_awprot: SIGNAL IS "xilinx.com:interface:aximm:1.0 S05_AXI AWPROT";
   ATTRIBUTE X_INTERFACE_INFO OF s05_axi_awready: SIGNAL IS "xilinx.com:interface:aximm:1.0 S05_AXI AWREADY";
   ATTRIBUTE X_INTERFACE_INFO OF s05_axi_awvalid: SIGNAL IS "xilinx.com:interface:aximm:1.0 S05_AXI AWVALID";
@@ -167,6 +169,7 @@ BEGIN
       s05_axi_rvalid => s05_axi_rvalid,
       s05_axi_rready => s05_axi_rready,
       riscv_resetbar => riscv_resetbar,
-      riscv_clk_enable => riscv_clk_enable
+      riscv_hold => riscv_hold,
+      riscv_start => riscv_start
     );
 END zynq_design_controlsubsystemIP_0_0_arch;

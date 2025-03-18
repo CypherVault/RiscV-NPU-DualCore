@@ -3,6 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity exmem is
     Port (
+        hold               : in  std_logic;
         clk                : in  STD_LOGIC;
         resetbar           : in  STD_LOGIC;
         aluzeroin          : in  STD_LOGIC;
@@ -76,7 +77,7 @@ begin
             -- Initialize previous branch condition
             current_branch_condition <= '0';
 			
-        elsif rising_edge(clk) then
+        elsif rising_edge(clk) and hold = '0' then
             -- Compute branch condition (AND Branch with JALorBRANCH)
             current_branch_condition <= Branchin and JALorBRANCH and aluzeroin;
             
