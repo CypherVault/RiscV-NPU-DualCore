@@ -71,6 +71,7 @@
 
 
 #ifdef XILINX_SIMULATOR
+#include "utils/xtlm_aximm_target_stub.h"
 class DllExport zynq_design_axi_smc_1 : public zynq_design_axi_smc_1_sc
 {
 public:
@@ -139,17 +140,6 @@ public:
   sc_core::sc_in< sc_dt::sc_bv<2> > M00_AXI_rresp;
   sc_core::sc_in< bool > M00_AXI_rvalid;
   sc_core::sc_out< bool > M00_AXI_rready;
-  sc_core::sc_out< sc_dt::sc_bv<12> > M01_AXI_awaddr;
-  sc_core::sc_out< sc_dt::sc_bv<3> > M01_AXI_awprot;
-  sc_core::sc_out< bool > M01_AXI_awvalid;
-  sc_core::sc_in< bool > M01_AXI_awready;
-  sc_core::sc_out< sc_dt::sc_bv<32> > M01_AXI_wdata;
-  sc_core::sc_out< sc_dt::sc_bv<4> > M01_AXI_wstrb;
-  sc_core::sc_out< bool > M01_AXI_wvalid;
-  sc_core::sc_in< bool > M01_AXI_wready;
-  sc_core::sc_in< sc_dt::sc_bv<2> > M01_AXI_bresp;
-  sc_core::sc_in< bool > M01_AXI_bvalid;
-  sc_core::sc_out< bool > M01_AXI_bready;
   sc_core::sc_out< sc_dt::sc_bv<12> > M01_AXI_araddr;
   sc_core::sc_out< sc_dt::sc_bv<3> > M01_AXI_arprot;
   sc_core::sc_out< bool > M01_AXI_arvalid;
@@ -219,6 +209,7 @@ private:
   xtlm::xaximm_xtlm2pin_t<32,12,1,1,1,1,1,1>* mp_M01_AXI_transactor;
   xtlm::xaximm_xtlm2pin_t<32,16,1,1,1,1,1,1>* mp_M02_AXI_transactor;
   xtlm::xaximm_xtlm2pin_t<32,5,1,1,1,1,1,1>* mp_M03_AXI_transactor;
+  xtlm::xtlm_aximm_target_stub* mp_M01_AXI_wr_socket_stub;
 
 };
 #endif // XILINX_SIMULATOR
@@ -227,6 +218,7 @@ private:
 
 
 #ifdef XM_SYSTEMC
+#include "utils/xtlm_aximm_target_stub.h"
 class DllExport zynq_design_axi_smc_1 : public zynq_design_axi_smc_1_sc
 {
 public:
@@ -295,17 +287,6 @@ public:
   sc_core::sc_in< sc_dt::sc_bv<2> > M00_AXI_rresp;
   sc_core::sc_in< bool > M00_AXI_rvalid;
   sc_core::sc_out< bool > M00_AXI_rready;
-  sc_core::sc_out< sc_dt::sc_bv<12> > M01_AXI_awaddr;
-  sc_core::sc_out< sc_dt::sc_bv<3> > M01_AXI_awprot;
-  sc_core::sc_out< bool > M01_AXI_awvalid;
-  sc_core::sc_in< bool > M01_AXI_awready;
-  sc_core::sc_out< sc_dt::sc_bv<32> > M01_AXI_wdata;
-  sc_core::sc_out< sc_dt::sc_bv<4> > M01_AXI_wstrb;
-  sc_core::sc_out< bool > M01_AXI_wvalid;
-  sc_core::sc_in< bool > M01_AXI_wready;
-  sc_core::sc_in< sc_dt::sc_bv<2> > M01_AXI_bresp;
-  sc_core::sc_in< bool > M01_AXI_bvalid;
-  sc_core::sc_out< bool > M01_AXI_bready;
   sc_core::sc_out< sc_dt::sc_bv<12> > M01_AXI_araddr;
   sc_core::sc_out< sc_dt::sc_bv<3> > M01_AXI_arprot;
   sc_core::sc_out< bool > M01_AXI_arvalid;
@@ -375,6 +356,7 @@ private:
   xtlm::xaximm_xtlm2pin_t<32,12,1,1,1,1,1,1>* mp_M01_AXI_transactor;
   xtlm::xaximm_xtlm2pin_t<32,16,1,1,1,1,1,1>* mp_M02_AXI_transactor;
   xtlm::xaximm_xtlm2pin_t<32,5,1,1,1,1,1,1>* mp_M03_AXI_transactor;
+  xtlm::xtlm_aximm_target_stub* mp_M01_AXI_wr_socket_stub;
 
 };
 #endif // XM_SYSTEMC
@@ -383,6 +365,7 @@ private:
 
 
 #ifdef RIVIERA
+#include "utils/xtlm_aximm_target_stub.h"
 class DllExport zynq_design_axi_smc_1 : public zynq_design_axi_smc_1_sc
 {
 public:
@@ -451,17 +434,6 @@ public:
   sc_core::sc_in< sc_dt::sc_bv<2> > M00_AXI_rresp;
   sc_core::sc_in< bool > M00_AXI_rvalid;
   sc_core::sc_out< bool > M00_AXI_rready;
-  sc_core::sc_out< sc_dt::sc_bv<12> > M01_AXI_awaddr;
-  sc_core::sc_out< sc_dt::sc_bv<3> > M01_AXI_awprot;
-  sc_core::sc_out< bool > M01_AXI_awvalid;
-  sc_core::sc_in< bool > M01_AXI_awready;
-  sc_core::sc_out< sc_dt::sc_bv<32> > M01_AXI_wdata;
-  sc_core::sc_out< sc_dt::sc_bv<4> > M01_AXI_wstrb;
-  sc_core::sc_out< bool > M01_AXI_wvalid;
-  sc_core::sc_in< bool > M01_AXI_wready;
-  sc_core::sc_in< sc_dt::sc_bv<2> > M01_AXI_bresp;
-  sc_core::sc_in< bool > M01_AXI_bvalid;
-  sc_core::sc_out< bool > M01_AXI_bready;
   sc_core::sc_out< sc_dt::sc_bv<12> > M01_AXI_araddr;
   sc_core::sc_out< sc_dt::sc_bv<3> > M01_AXI_arprot;
   sc_core::sc_out< bool > M01_AXI_arvalid;
@@ -531,6 +503,7 @@ private:
   xtlm::xaximm_xtlm2pin_t<32,12,1,1,1,1,1,1>* mp_M01_AXI_transactor;
   xtlm::xaximm_xtlm2pin_t<32,16,1,1,1,1,1,1>* mp_M02_AXI_transactor;
   xtlm::xaximm_xtlm2pin_t<32,5,1,1,1,1,1,1>* mp_M03_AXI_transactor;
+  xtlm::xtlm_aximm_target_stub* mp_M01_AXI_wr_socket_stub;
 
 };
 #endif // RIVIERA
@@ -611,17 +584,6 @@ public:
   sc_core::sc_in< sc_dt::sc_bv<2> > M00_AXI_rresp;
   sc_core::sc_in< bool > M00_AXI_rvalid;
   sc_core::sc_out< bool > M00_AXI_rready;
-  sc_core::sc_out< sc_dt::sc_bv<12> > M01_AXI_awaddr;
-  sc_core::sc_out< sc_dt::sc_bv<3> > M01_AXI_awprot;
-  sc_core::sc_out< bool > M01_AXI_awvalid;
-  sc_core::sc_in< bool > M01_AXI_awready;
-  sc_core::sc_out< sc_dt::sc_bv<32> > M01_AXI_wdata;
-  sc_core::sc_out< sc_dt::sc_bv<4> > M01_AXI_wstrb;
-  sc_core::sc_out< bool > M01_AXI_wvalid;
-  sc_core::sc_in< bool > M01_AXI_wready;
-  sc_core::sc_in< sc_dt::sc_bv<2> > M01_AXI_bresp;
-  sc_core::sc_in< bool > M01_AXI_bvalid;
-  sc_core::sc_out< bool > M01_AXI_bready;
   sc_core::sc_out< sc_dt::sc_bv<12> > M01_AXI_araddr;
   sc_core::sc_out< sc_dt::sc_bv<3> > M01_AXI_arprot;
   sc_core::sc_out< bool > M01_AXI_arvalid;
@@ -696,7 +658,6 @@ private:
   xtlm::xtlm_aximm_initiator_stub * M00_AXI_transactor_initiator_rd_socket_stub;
   xtlm::xtlm_aximm_initiator_stub * M00_AXI_transactor_initiator_wr_socket_stub;
   xtlm::xtlm_aximm_initiator_stub * M01_AXI_transactor_initiator_rd_socket_stub;
-  xtlm::xtlm_aximm_initiator_stub * M01_AXI_transactor_initiator_wr_socket_stub;
   xtlm::xtlm_aximm_initiator_stub * M02_AXI_transactor_initiator_rd_socket_stub;
   xtlm::xtlm_aximm_initiator_stub * M02_AXI_transactor_initiator_wr_socket_stub;
   xtlm::xtlm_aximm_initiator_stub * M03_AXI_transactor_initiator_rd_socket_stub;
@@ -705,6 +666,7 @@ private:
   xtlm::xtlm_aximm_target_stub * S00_AXI_transactor_target_wr_socket_stub;
 
   // Socket stubs
+  xtlm::xtlm_aximm_target_stub* mp_M01_AXI_wr_socket_stub;
 
 };
 #endif // VCSSYSTEMC
@@ -785,17 +747,6 @@ public:
   sc_core::sc_in< sc_dt::sc_bv<2> > M00_AXI_rresp;
   sc_core::sc_in< bool > M00_AXI_rvalid;
   sc_core::sc_out< bool > M00_AXI_rready;
-  sc_core::sc_out< sc_dt::sc_bv<12> > M01_AXI_awaddr;
-  sc_core::sc_out< sc_dt::sc_bv<3> > M01_AXI_awprot;
-  sc_core::sc_out< bool > M01_AXI_awvalid;
-  sc_core::sc_in< bool > M01_AXI_awready;
-  sc_core::sc_out< sc_dt::sc_bv<32> > M01_AXI_wdata;
-  sc_core::sc_out< sc_dt::sc_bv<4> > M01_AXI_wstrb;
-  sc_core::sc_out< bool > M01_AXI_wvalid;
-  sc_core::sc_in< bool > M01_AXI_wready;
-  sc_core::sc_in< sc_dt::sc_bv<2> > M01_AXI_bresp;
-  sc_core::sc_in< bool > M01_AXI_bvalid;
-  sc_core::sc_out< bool > M01_AXI_bready;
   sc_core::sc_out< sc_dt::sc_bv<12> > M01_AXI_araddr;
   sc_core::sc_out< sc_dt::sc_bv<3> > M01_AXI_arprot;
   sc_core::sc_out< bool > M01_AXI_arvalid;
@@ -870,7 +821,6 @@ private:
   xtlm::xtlm_aximm_initiator_stub * M00_AXI_transactor_initiator_rd_socket_stub;
   xtlm::xtlm_aximm_initiator_stub * M00_AXI_transactor_initiator_wr_socket_stub;
   xtlm::xtlm_aximm_initiator_stub * M01_AXI_transactor_initiator_rd_socket_stub;
-  xtlm::xtlm_aximm_initiator_stub * M01_AXI_transactor_initiator_wr_socket_stub;
   xtlm::xtlm_aximm_initiator_stub * M02_AXI_transactor_initiator_rd_socket_stub;
   xtlm::xtlm_aximm_initiator_stub * M02_AXI_transactor_initiator_wr_socket_stub;
   xtlm::xtlm_aximm_initiator_stub * M03_AXI_transactor_initiator_rd_socket_stub;
@@ -879,6 +829,7 @@ private:
   xtlm::xtlm_aximm_target_stub * S00_AXI_transactor_target_wr_socket_stub;
 
   // Socket stubs
+  xtlm::xtlm_aximm_target_stub* mp_M01_AXI_wr_socket_stub;
 
 };
 #endif // MTI_SYSTEMC

@@ -24,7 +24,7 @@ WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 9 for
 WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 3 for port 'm_axi_bid' [/wrk/ci/prod/2024.2/sw/continuous/3059/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:7157]
 WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 3 for port 'm_axi_rid' [/wrk/ci/prod/2024.2/sw/continuous/3059/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:7175]
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 64 for port 'm_axi_rdata' [/wrk/ci/prod/2024.2/sw/continuous/3059/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:7176]
-WARNING: [VRFC 10-5021] port 'mb_reset' is not connected on this instance [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.ip_user_files/bd/zynq_design/ip/zynq_design_axi_smc_1/bd_0/sim/bd_375a.v:1932]
+WARNING: [VRFC 10-5021] port 'mb_reset' is not connected on this instance [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.ip_user_files/bd/zynq_design/ip/zynq_design_axi_smc_1/bd_0/sim/bd_375a.v:1741]
 WARNING: [VRFC 10-5021] port 'ENET0_GMII_RXD' is not connected on this instance [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.ip_user_files/bd/zynq_design/ip/zynq_design_processing_system7_0_0/sim/zynq_design_processing_system7_0_0.v:251]
 WARNING: [VRFC 10-3129] assignment to input 'wr_dv_ocm_gp0' [/wrk/ci/prod/2024.2/sw/continuous/3059/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:4372]
 WARNING: [VRFC 10-3129] assignment to input 'wr_dv_ddr_gp0' [/wrk/ci/prod/2024.2/sw/continuous/3059/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:4373]
@@ -118,10 +118,7 @@ Compiling module xil_defaultlib.bd_375a_m00s2a_0
 Compiling module xil_defaultlib.bd_375a_m01e_0
 Compiling module xil_defaultlib.m01_exit_pipeline_imp_184M343
 Compiling module xil_defaultlib.bd_375a_m01arn_0
-Compiling module xil_defaultlib.bd_375a_m01awn_0
-Compiling module xil_defaultlib.bd_375a_m01bn_0
 Compiling module xil_defaultlib.bd_375a_m01rn_0
-Compiling module xil_defaultlib.bd_375a_m01wn_0
 Compiling module xil_defaultlib.m01_nodes_imp_J66H21
 Compiling module xil_defaultlib.bd_375a_m01s2a_0
 Compiling module xil_defaultlib.bd_375a_m02e_0
@@ -174,7 +171,7 @@ Compiling module xil_defaultlib.bd_375a
 Compiling module xil_defaultlib.zynq_design_axi_smc_1
 Compiling architecture arch_imp of entity xil_defaultlib.controlsubsystemIP [controlsubsystemip_default]
 Compiling architecture zynq_design_controlsubsystemip_0_0_arch of entity xil_defaultlib.zynq_design_controlsubsystemIP_0_0 [zynq_design_controlsubsystemip_0...]
-Compiling architecture arch_imp of entity xil_defaultlib.datamemIP [\datamemIP(1,16)\]
+Compiling architecture arch_imp of entity xil_defaultlib.datamemIP [datamemip_default]
 Compiling architecture zynq_design_datamemip_0_0_arch of entity xil_defaultlib.zynq_design_datamemIP_0_0 [zynq_design_datamemip_0_0_defaul...]
 Compiling architecture arch_imp of entity xil_defaultlib.instructionmemIP [instructionmemip_default]
 Compiling architecture zynq_design_instructionmemip_0_0_arch of entity xil_defaultlib.zynq_design_instructionmemIP_0_0 [zynq_design_instructionmemip_0_0...]

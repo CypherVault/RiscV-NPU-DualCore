@@ -33,23 +33,39 @@ architecture behavior of RICSVCORE_tb is
 	
 	
 	  -- Memory initialization for RISC-V Program (10 + 5)
+--
+--0  => x"00000000",  -- NOP or unused
+--1  => x"ff010113",  -- addi sp, sp, -16
+--2  => x"00500793",  -- addi a5, zero, 5
+--3  => x"00f12623",  -- sw a5, 12(sp)
+--4  => x"00a00793",  -- addi a5, zero, 10
+--5  => x"00f12423",  -- sw a5, 8(sp)
+--6  => x"00c12703",  -- lw a4, 12(sp)
+--7  => x"00812783",  -- lw a5, 8(sp)
+--8  => x"00f707b3",  -- add a5, a4, a5
+--9  => x"00f12223",  -- sw a5, 4(sp)
+--10 => x"00412783",  -- lw a5, 4(sp)
+--11 => x"00078513",  -- addi a0, a5, 0 (mv a0, a5)
+--12 => x"01010113",  -- addi sp, sp, 16
+--13 => x"00000067"   -- ret (return from the program)   
 
-0  => x"00000000",  -- NOP or unused
-1  => x"ff010113",  -- addi sp, sp, -16
-2  => x"00500793",  -- addi a5, zero, 5
-3  => x"00f12623",  -- sw a5, 12(sp)
-4  => x"00a00793",  -- addi a5, zero, 10
-5  => x"00f12423",  -- sw a5, 8(sp)
-6  => x"00c12703",  -- lw a4, 12(sp)
-7  => x"00812783",  -- lw a5, 8(sp)
-8  => x"00f707b3",  -- add a5, a4, a5
-9  => x"00f12223",  -- sw a5, 4(sp)
-10 => x"00412783",  -- lw a5, 4(sp)
-11 => x"00078513",  -- addi a0, a5, 0 (mv a0, a5)
-12 => x"01010113",  -- addi sp, sp, 16
-13 => x"00000067"   -- ret (return from the program)
 
-		 );
+ 0 => x"00000000",  -- Unused position 0
+1 => x"02f00513",  -- addi x10, x0, 47    # Load dividend into x10
+2 => x"00500593",  -- addi x11, x0, 5     # Load divisor into x11
+3 => x"00000613",  -- addi x12, x0, 0     # Initialize quotient in x12
+-- Reordered sequence
+4 => x"00050693",  -- addi x13, x10, 0    # Copy dividend to x13
+5 => x"40b686b3",  -- sub x13, x13, x11   # Subtract first
+6 => x"02b6c063",  -- blt x13, x11, 32    # Then compare
+7 => x"00160613",  -- addi x12, x12, 1    # Increment quotient
+8 => x"ff5ff06f",  -- jal x0, -12        # Jump back from 32 to 16
+9 => x"00000000",  -- Unused position 0
+10 => x"00000000",  -- Unused position 0
+11 => x"00000000",  -- Unused position 0
+12 => x"00000000",  -- Unused position 0
+13 => x"00000000"  -- Unused position 0		 
+);
 
     
 	

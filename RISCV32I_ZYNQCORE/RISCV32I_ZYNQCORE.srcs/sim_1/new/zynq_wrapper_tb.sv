@@ -11,7 +11,7 @@
 
 `define INSTR_MEM_SIZE 32 // Size of the instruction memory
 `define REG_COUNT 32 // Number of registers (5-bit address space)
-`define DATA_MEM_SIZE 128 // Number of data memory locations (7-bit address space)
+`define DATA_MEM_SIZE 4096 // Number of data memory locations (7-bit address space)
 
 module tb();
     // Clock and reset signals
@@ -121,7 +121,6 @@ instr_mem[11] = 32'h00078513;  // addi a0, a5, 0 (mv a0, a5)
 instr_mem[12] = 32'h01010113;  // addi sp, sp, 16
 instr_mem[13] = 32'h00000067;  // ret (return from the program)
 
-// the data mememory is not properly dealing with writes to its addresses. need to relfect the adlec way of doing i t
 
       
         // Disable debug messages for a cleaner simulation log
