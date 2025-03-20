@@ -211,6 +211,7 @@ instr_mem[13] = 32'h00000067;  // ret (return from the program)
        // Read all registers using raw indexes.
     $display("Reading all registers...");
     
+    
     for (i = 0; i < 32; i = i + 1) begin    
         `VIP.read_data(`REG_BASE + i, 4, read_data, resp); // Use raw index without multiplying by 4
         registers[i] = read_data;
@@ -221,13 +222,15 @@ instr_mem[13] = 32'h00000067;  // ret (return from the program)
     // Read all data memory locations using raw indexes.
     $display("Reading all data memory...");
     
-    for (i = 0; i < 128; i = i + 1) begin    
-        `VIP.read_data(`DATA_MEM_BASE + i, 4, read_data, resp); // Use raw index without multiplying by 4
-        data_memory[i] = read_data;
-        $display("Data Memory[%d] = %h", i, read_data);
-        repeat(5) @(posedge clk);
-    end
-        
+  // Testbench Read Call (Fixed)
+for (i = 0; i < 4096; i = i + 1) begin    
+    // Explicit byte addressing with 14-bit width
+    `VIP.read_data(`DATA_MEM_BASE + (i*4), 1, read_data, resp); // Single transfer
+    data_memory[i] = read_data;
+    $display("Data Memory[%d] = %h", i, read_data);
+    repeat(5) @(posedge clk);
+end
+
         
 
         $display("Test Complete");

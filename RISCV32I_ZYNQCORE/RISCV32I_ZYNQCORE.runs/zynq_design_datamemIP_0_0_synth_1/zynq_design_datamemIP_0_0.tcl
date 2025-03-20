@@ -56,6 +56,7 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "zynq_design_datamemIP_0_0_synth_1" START { ROLLUP_AUTO }
+set_param bd.open.in_stealth_mode 1
 set_msg_config  -id {17-179}  -suppress 
 set_msg_config  -id {17-179}  -suppress 
 set_msg_config  -id {17-179}  -suppress 

@@ -280,7 +280,7 @@ void zynq_design_axi_smc_1::before_end_of_elaboration()
     M01_AXI_transactor_param_props.addLong("DATA_WIDTH", "32");
     M01_AXI_transactor_param_props.addLong("FREQ_HZ", "100000000");
     M01_AXI_transactor_param_props.addLong("ID_WIDTH", "0");
-    M01_AXI_transactor_param_props.addLong("ADDR_WIDTH", "12");
+    M01_AXI_transactor_param_props.addLong("ADDR_WIDTH", "14");
     M01_AXI_transactor_param_props.addLong("AWUSER_WIDTH", "0");
     M01_AXI_transactor_param_props.addLong("ARUSER_WIDTH", "0");
     M01_AXI_transactor_param_props.addLong("WUSER_WIDTH", "0");
@@ -310,7 +310,7 @@ void zynq_design_axi_smc_1::before_end_of_elaboration()
     M01_AXI_transactor_param_props.addString("READ_WRITE_MODE", "READ_ONLY");
     M01_AXI_transactor_param_props.addString("CLK_DOMAIN", "zynq_design_processing_system7_0_0_FCLK_CLK0");
 
-    mp_M01_AXI_transactor = new xtlm::xaximm_xtlm2pin_t<32,12,1,1,1,1,1,1>("M01_AXI_transactor", M01_AXI_transactor_param_props);
+    mp_M01_AXI_transactor = new xtlm::xaximm_xtlm2pin_t<32,14,1,1,1,1,1,1>("M01_AXI_transactor", M01_AXI_transactor_param_props);
 
     // M01_AXI' transactor ports
 
@@ -713,7 +713,7 @@ void zynq_design_axi_smc_1::before_end_of_elaboration()
     M01_AXI_transactor_param_props.addLong("DATA_WIDTH", "32");
     M01_AXI_transactor_param_props.addLong("FREQ_HZ", "100000000");
     M01_AXI_transactor_param_props.addLong("ID_WIDTH", "0");
-    M01_AXI_transactor_param_props.addLong("ADDR_WIDTH", "12");
+    M01_AXI_transactor_param_props.addLong("ADDR_WIDTH", "14");
     M01_AXI_transactor_param_props.addLong("AWUSER_WIDTH", "0");
     M01_AXI_transactor_param_props.addLong("ARUSER_WIDTH", "0");
     M01_AXI_transactor_param_props.addLong("WUSER_WIDTH", "0");
@@ -743,7 +743,7 @@ void zynq_design_axi_smc_1::before_end_of_elaboration()
     M01_AXI_transactor_param_props.addString("READ_WRITE_MODE", "READ_ONLY");
     M01_AXI_transactor_param_props.addString("CLK_DOMAIN", "zynq_design_processing_system7_0_0_FCLK_CLK0");
 
-    mp_M01_AXI_transactor = new xtlm::xaximm_xtlm2pin_t<32,12,1,1,1,1,1,1>("M01_AXI_transactor", M01_AXI_transactor_param_props);
+    mp_M01_AXI_transactor = new xtlm::xaximm_xtlm2pin_t<32,14,1,1,1,1,1,1>("M01_AXI_transactor", M01_AXI_transactor_param_props);
 
     // M01_AXI' transactor ports
 
@@ -1146,7 +1146,7 @@ void zynq_design_axi_smc_1::before_end_of_elaboration()
     M01_AXI_transactor_param_props.addLong("DATA_WIDTH", "32");
     M01_AXI_transactor_param_props.addLong("FREQ_HZ", "100000000");
     M01_AXI_transactor_param_props.addLong("ID_WIDTH", "0");
-    M01_AXI_transactor_param_props.addLong("ADDR_WIDTH", "12");
+    M01_AXI_transactor_param_props.addLong("ADDR_WIDTH", "14");
     M01_AXI_transactor_param_props.addLong("AWUSER_WIDTH", "0");
     M01_AXI_transactor_param_props.addLong("ARUSER_WIDTH", "0");
     M01_AXI_transactor_param_props.addLong("WUSER_WIDTH", "0");
@@ -1176,7 +1176,7 @@ void zynq_design_axi_smc_1::before_end_of_elaboration()
     M01_AXI_transactor_param_props.addString("READ_WRITE_MODE", "READ_ONLY");
     M01_AXI_transactor_param_props.addString("CLK_DOMAIN", "zynq_design_processing_system7_0_0_FCLK_CLK0");
 
-    mp_M01_AXI_transactor = new xtlm::xaximm_xtlm2pin_t<32,12,1,1,1,1,1,1>("M01_AXI_transactor", M01_AXI_transactor_param_props);
+    mp_M01_AXI_transactor = new xtlm::xaximm_xtlm2pin_t<32,14,1,1,1,1,1,1>("M01_AXI_transactor", M01_AXI_transactor_param_props);
 
     // M01_AXI' transactor ports
 
@@ -1529,7 +1529,7 @@ zynq_design_axi_smc_1::zynq_design_axi_smc_1(const sc_core::sc_module_name& nm) 
     M01_AXI_transactor_param_props.addLong("DATA_WIDTH", "32");
     M01_AXI_transactor_param_props.addLong("FREQ_HZ", "100000000");
     M01_AXI_transactor_param_props.addLong("ID_WIDTH", "0");
-    M01_AXI_transactor_param_props.addLong("ADDR_WIDTH", "12");
+    M01_AXI_transactor_param_props.addLong("ADDR_WIDTH", "14");
     M01_AXI_transactor_param_props.addLong("AWUSER_WIDTH", "0");
     M01_AXI_transactor_param_props.addLong("ARUSER_WIDTH", "0");
     M01_AXI_transactor_param_props.addLong("WUSER_WIDTH", "0");
@@ -1559,7 +1559,7 @@ zynq_design_axi_smc_1::zynq_design_axi_smc_1(const sc_core::sc_module_name& nm) 
     M01_AXI_transactor_param_props.addString("READ_WRITE_MODE", "READ_ONLY");
     M01_AXI_transactor_param_props.addString("CLK_DOMAIN", "zynq_design_processing_system7_0_0_FCLK_CLK0");
 
-    mp_M01_AXI_transactor = new xtlm::xaximm_xtlm2pin_t<32,12,1,1,1,1,1,1>("M01_AXI_transactor", M01_AXI_transactor_param_props);
+    mp_M01_AXI_transactor = new xtlm::xaximm_xtlm2pin_t<32,14,1,1,1,1,1,1>("M01_AXI_transactor", M01_AXI_transactor_param_props);
   mp_M01_AXI_transactor->ARADDR(M01_AXI_araddr);
   mp_M01_AXI_transactor->ARPROT(M01_AXI_arprot);
   mp_M01_AXI_transactor->ARVALID(M01_AXI_arvalid);
@@ -1956,7 +1956,7 @@ zynq_design_axi_smc_1::zynq_design_axi_smc_1(const sc_core::sc_module_name& nm) 
     M01_AXI_transactor_param_props.addLong("DATA_WIDTH", "32");
     M01_AXI_transactor_param_props.addLong("FREQ_HZ", "100000000");
     M01_AXI_transactor_param_props.addLong("ID_WIDTH", "0");
-    M01_AXI_transactor_param_props.addLong("ADDR_WIDTH", "12");
+    M01_AXI_transactor_param_props.addLong("ADDR_WIDTH", "14");
     M01_AXI_transactor_param_props.addLong("AWUSER_WIDTH", "0");
     M01_AXI_transactor_param_props.addLong("ARUSER_WIDTH", "0");
     M01_AXI_transactor_param_props.addLong("WUSER_WIDTH", "0");
@@ -1986,7 +1986,7 @@ zynq_design_axi_smc_1::zynq_design_axi_smc_1(const sc_core::sc_module_name& nm) 
     M01_AXI_transactor_param_props.addString("READ_WRITE_MODE", "READ_ONLY");
     M01_AXI_transactor_param_props.addString("CLK_DOMAIN", "zynq_design_processing_system7_0_0_FCLK_CLK0");
 
-    mp_M01_AXI_transactor = new xtlm::xaximm_xtlm2pin_t<32,12,1,1,1,1,1,1>("M01_AXI_transactor", M01_AXI_transactor_param_props);
+    mp_M01_AXI_transactor = new xtlm::xaximm_xtlm2pin_t<32,14,1,1,1,1,1,1>("M01_AXI_transactor", M01_AXI_transactor_param_props);
   mp_M01_AXI_transactor->ARADDR(M01_AXI_araddr);
   mp_M01_AXI_transactor->ARPROT(M01_AXI_arprot);
   mp_M01_AXI_transactor->ARVALID(M01_AXI_arvalid);

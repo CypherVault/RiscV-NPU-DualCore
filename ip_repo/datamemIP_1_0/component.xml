@@ -262,7 +262,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S02_AXI_ADDR_WIDTH&apos;)) - 1)">11</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S02_AXI_ADDR_WIDTH&apos;)) - 1)">13</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -445,7 +445,7 @@
         <spirit:name>C_S02_AXI_ADDR_WIDTH</spirit:name>
         <spirit:displayName>C S02 AXI ADDR WIDTH</spirit:displayName>
         <spirit:description>Width of S_AXI address bus</spirit:description>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S02_AXI_ADDR_WIDTH" spirit:order="4" spirit:rangeType="long">12</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S02_AXI_ADDR_WIDTH" spirit:order="4" spirit:rangeType="long">14</spirit:value>
       </spirit:modelParameter>
     </spirit:modelParameters>
   </spirit:model>
@@ -471,7 +471,7 @@
       <spirit:file>
         <spirit:name>hdl/datamemIP.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_578ad9ed</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_a931e2c7</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -549,7 +549,7 @@
       <spirit:name>C_S02_AXI_ADDR_WIDTH</spirit:name>
       <spirit:displayName>C S02 AXI ADDR WIDTH</spirit:displayName>
       <spirit:description>Width of S_AXI address bus</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S02_AXI_ADDR_WIDTH" spirit:order="4" spirit:rangeType="long">12</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S02_AXI_ADDR_WIDTH" spirit:order="4" spirit:rangeType="long">14</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -597,7 +597,7 @@
       </xilinx:taxonomies>
       <xilinx:displayName>datamemIP_v1.0</xilinx:displayName>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2025-03-20T04:55:09Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2025-03-20T09:23:09Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2024.2</xilinx:xilinxVersion>

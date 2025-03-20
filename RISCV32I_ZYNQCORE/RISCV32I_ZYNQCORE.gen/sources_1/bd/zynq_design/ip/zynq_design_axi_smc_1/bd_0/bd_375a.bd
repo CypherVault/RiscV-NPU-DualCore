@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x8C84A217257D5A80",
+      "boundary_crc": "0xE3C6B02984B6CF5C",
       "design_src": "SBD",
       "device": "xc7z007sclg225-1",
       "name": "bd_375a",
@@ -358,7 +358,7 @@
         "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
         "parameters": {
           "ADDR_WIDTH": {
-            "value": "12",
+            "value": "14",
             "value_src": "ip_prop"
           },
           "ARUSER_WIDTH": {
@@ -5233,7 +5233,7 @@
         "inst_hier_path": "m01_sc2axi",
         "parameters": {
           "AXI_ADDR_WIDTH": {
-            "value": "12"
+            "value": "14"
           },
           "AXI_ID_WIDTH": {
             "value": "1"
@@ -5729,7 +5729,7 @@
             "inst_hier_path": "m01_exit_pipeline/m01_exit",
             "parameters": {
               "ADDR_WIDTH": {
-                "value": "12"
+                "value": "14"
               },
               "ENABLE_PIPELINING": {
                 "value": "0"

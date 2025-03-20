@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Mar 20 04:33:28 2025" VIVADOVERSION="2024.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Mar 20 05:23:57 2025" VIVADOVERSION="2024.2">
 
   <SYSTEMINFO ARCH="zynq" BOARD="avnet.com:minized:part0:1.3" DEVICE="7z007s" NAME="zynq_design" PACKAGE="clg225" SPEEDGRADE="-1"/>
 
@@ -370,7 +370,7 @@
             <CONNECTION INSTANCE="controlsubsystemIP_0" PORT="s05_axi_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="11" NAME="M01_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_smc_M01_AXI_araddr">
+        <PORT DIR="O" LEFT="13" NAME="M01_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_smc_M01_AXI_araddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="datamemIP_0" PORT="s02_axi_araddr"/>
           </CONNECTIONS>
@@ -920,7 +920,7 @@
           </PORTMAPS>
         </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="axi_smc_M01_AXI" DATAWIDTH="32" NAME="M01_AXI" TYPE="MASTER" VLNV="xilinx.com:interface:aximm:1.0">
-          <PARAMETER NAME="ADDR_WIDTH" VALUE="12"/>
+          <PARAMETER NAME="ADDR_WIDTH" VALUE="14"/>
           <PARAMETER NAME="ARUSER_WIDTH" VALUE="0"/>
           <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
           <PARAMETER NAME="BUSER_WIDTH" VALUE="0"/>
@@ -1085,8 +1085,8 @@
         <PORT DIR="O" NAME="riscv_hold" SIGIS="undef" SIGNAME="controlsubsystemIP_0_riscv_hold">
           <CONNECTIONS>
             <CONNECTION INSTANCE="RISCVCOREZYNQ_0" PORT="hold"/>
-            <CONNECTION INSTANCE="datamemIP_0" PORT="hold"/>
             <CONNECTION INSTANCE="registerIP_0" PORT="hold"/>
+            <CONNECTION INSTANCE="datamemIP_0" PORT="hold"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="riscv_resetbar" SIGIS="undef" SIGNAME="controlsubsystemIP_0_riscv_resetbar">
@@ -1271,7 +1271,7 @@
         <ADDRESSBLOCK ACCESS="" INTERFACE="S02_AXI" NAME="S02_AXI_reg" RANGE="4096" USAGE="register"/>
       </ADDRESSBLOCKS>
       <PARAMETERS>
-        <PARAMETER NAME="C_S02_AXI_ADDR_WIDTH" VALUE="12"/>
+        <PARAMETER NAME="C_S02_AXI_ADDR_WIDTH" VALUE="14"/>
         <PARAMETER NAME="C_S02_AXI_DATA_WIDTH" VALUE="32"/>
         <PARAMETER NAME="Component_Name" VALUE="zynq_design_datamemIP_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
@@ -1309,7 +1309,7 @@
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="11" NAME="s02_axi_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_smc_M01_AXI_araddr">
+        <PORT DIR="I" LEFT="13" NAME="s02_axi_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_smc_M01_AXI_araddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_smc" PORT="M01_AXI_araddr"/>
           </CONNECTIONS>
@@ -1352,7 +1352,7 @@
       </PORTS>
       <BUSINTERFACES>
         <BUSINTERFACE BUSNAME="axi_smc_M01_AXI" DATAWIDTH="32" NAME="S02_AXI" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
-          <PARAMETER NAME="ADDR_WIDTH" VALUE="12"/>
+          <PARAMETER NAME="ADDR_WIDTH" VALUE="14"/>
           <PARAMETER NAME="ARUSER_WIDTH" VALUE="0"/>
           <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
           <PARAMETER NAME="BUSER_WIDTH" VALUE="0"/>
@@ -2623,9 +2623,9 @@
             <CONNECTION INSTANCE="axi_smc" PORT="aclk"/>
             <CONNECTION INSTANCE="RISCVCOREZYNQ_0" PORT="clock"/>
             <CONNECTION INSTANCE="controlsubsystemIP_0" PORT="s05_axi_aclk"/>
-            <CONNECTION INSTANCE="datamemIP_0" PORT="s02_axi_aclk"/>
             <CONNECTION INSTANCE="instructionmemIP_0" PORT="s00_axi_aclk"/>
             <CONNECTION INSTANCE="registerIP_0" PORT="s01_axi_aclk"/>
+            <CONNECTION INSTANCE="datamemIP_0" PORT="s02_axi_aclk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="processing_system7_0_FCLK_RESET0_N">
@@ -3326,9 +3326,9 @@
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_smc" PORT="aresetn"/>
             <CONNECTION INSTANCE="controlsubsystemIP_0" PORT="s05_axi_aresetn"/>
-            <CONNECTION INSTANCE="datamemIP_0" PORT="s02_axi_aresetn"/>
             <CONNECTION INSTANCE="instructionmemIP_0" PORT="s00_axi_aresetn"/>
             <CONNECTION INSTANCE="registerIP_0" PORT="s01_axi_aresetn"/>
+            <CONNECTION INSTANCE="datamemIP_0" PORT="s02_axi_aresetn"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="peripheral_reset" POLARITY="ACTIVE_HIGH" RIGHT="0" SIGIS="rst"/>

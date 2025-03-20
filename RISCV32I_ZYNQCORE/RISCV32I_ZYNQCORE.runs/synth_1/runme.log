@@ -8,7 +8,7 @@
   **** SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
   **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
   **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-  **** Start of session at: Thu Mar 20 04:34:41 2025
+  **** Start of session at: Thu Mar 20 05:26:17 2025
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
@@ -20,7 +20,7 @@ WARNING: [Common 17-1361] You have specified a new message control rule that is 
 WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
 WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
 WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
-create_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 483.605 ; gain = 154.195
+create_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 482.688 ; gain = 152.535
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/bramIP_1_0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/controlsubsystemIP_1_0'.
@@ -52,6 +52,7 @@ INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'F:/Vivado/2024.2/data/ip'.
 WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
 Current IP cache path is c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.cache/ip 
+add_files: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 506.852 ; gain = 23.215
 Command: read_checkpoint -auto_incremental -incremental C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/utils_1/imports/synth_1/RISCVCOREZYNQ.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/utils_1/imports/synth_1/RISCVCOREZYNQ.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -65,44 +66,44 @@ INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
 WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
-INFO: [Synth 8-7075] Helper process launched with PID 12788
+INFO: [Synth 8-7075] Helper process launched with PID 1204
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1217.133 ; gain = 467.848
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1215.598 ; gain = 469.129
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'zynq_design_wrapper' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/hdl/zynq_design_wrapper.vhd:41]
 INFO: [Synth 8-3491] module 'zynq_design' declared at 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/synth/zynq_design.vhd:15' bound to instance 'zynq_design_i' of component 'zynq_design' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/hdl/zynq_design_wrapper.vhd:68]
 INFO: [Synth 8-638] synthesizing module 'zynq_design' [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/synth/zynq_design.vhd:45]
-INFO: [Synth 8-3491] module 'zynq_design_RISCVCOREZYNQ_0_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/synth_1/.Xil/Vivado-8080-DESKTOP-J1G93P6/realtime/zynq_design_RISCVCOREZYNQ_0_0_stub.vhdl:6' bound to instance 'RISCVCOREZYNQ_0' of component 'zynq_design_RISCVCOREZYNQ_0_0' [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/synth/zynq_design.vhd:571]
-INFO: [Synth 8-638] synthesizing module 'zynq_design_RISCVCOREZYNQ_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/synth_1/.Xil/Vivado-8080-DESKTOP-J1G93P6/realtime/zynq_design_RISCVCOREZYNQ_0_0_stub.vhdl:38]
-INFO: [Synth 8-3491] module 'zynq_design_axi_smc_1' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/synth_1/.Xil/Vivado-8080-DESKTOP-J1G93P6/realtime/zynq_design_axi_smc_1_stub.vhdl:6' bound to instance 'axi_smc' of component 'zynq_design_axi_smc_1' [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/synth/zynq_design.vhd:592]
-INFO: [Synth 8-638] synthesizing module 'zynq_design_axi_smc_1' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/synth_1/.Xil/Vivado-8080-DESKTOP-J1G93P6/realtime/zynq_design_axi_smc_1_stub.vhdl:123]
-INFO: [Synth 8-3491] module 'zynq_design_controlsubsystemIP_0_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/synth_1/.Xil/Vivado-8080-DESKTOP-J1G93P6/realtime/zynq_design_controlsubsystemIP_0_0_stub.vhdl:6' bound to instance 'controlsubsystemIP_0' of component 'zynq_design_controlsubsystemIP_0_0' [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/synth/zynq_design.vhd:700]
-INFO: [Synth 8-638] synthesizing module 'zynq_design_controlsubsystemIP_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/synth_1/.Xil/Vivado-8080-DESKTOP-J1G93P6/realtime/zynq_design_controlsubsystemIP_0_0_stub.vhdl:42]
-INFO: [Synth 8-3491] module 'zynq_design_datamemIP_0_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/synth_1/.Xil/Vivado-8080-DESKTOP-J1G93P6/realtime/zynq_design_datamemIP_0_0_stub.vhdl:6' bound to instance 'datamemIP_0' of component 'zynq_design_datamemIP_0_0' [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/synth/zynq_design.vhd:727]
-INFO: [Synth 8-638] synthesizing module 'zynq_design_datamemIP_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/synth_1/.Xil/Vivado-8080-DESKTOP-J1G93P6/realtime/zynq_design_datamemIP_0_0_stub.vhdl:32]
-INFO: [Synth 8-3491] module 'zynq_design_instructionmemIP_0_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/synth_1/.Xil/Vivado-8080-DESKTOP-J1G93P6/realtime/zynq_design_instructionmemIP_0_0_stub.vhdl:6' bound to instance 'instructionmemIP_0' of component 'zynq_design_instructionmemIP_0_0' [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/synth/zynq_design.vhd:744]
-INFO: [Synth 8-638] synthesizing module 'zynq_design_instructionmemIP_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/synth_1/.Xil/Vivado-8080-DESKTOP-J1G93P6/realtime/zynq_design_instructionmemIP_0_0_stub.vhdl:41]
-INFO: [Synth 8-3491] module 'zynq_design_processing_system7_0_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/synth_1/.Xil/Vivado-8080-DESKTOP-J1G93P6/realtime/zynq_design_processing_system7_0_0_stub.vhdl:6' bound to instance 'processing_system7_0' of component 'zynq_design_processing_system7_0_0' [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/synth/zynq_design.vhd:770]
-INFO: [Synth 8-638] synthesizing module 'zynq_design_processing_system7_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/synth_1/.Xil/Vivado-8080-DESKTOP-J1G93P6/realtime/zynq_design_processing_system7_0_0_stub.vhdl:113]
-INFO: [Synth 8-3491] module 'zynq_design_registerIP_0_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/synth_1/.Xil/Vivado-8080-DESKTOP-J1G93P6/realtime/zynq_design_registerIP_0_0_stub.vhdl:6' bound to instance 'registerIP_0' of component 'zynq_design_registerIP_0_0' [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/synth/zynq_design.vhd:868]
-INFO: [Synth 8-638] synthesizing module 'zynq_design_registerIP_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/synth_1/.Xil/Vivado-8080-DESKTOP-J1G93P6/realtime/zynq_design_registerIP_0_0_stub.vhdl:48]
-INFO: [Synth 8-3491] module 'zynq_design_rst_ps7_0_50M_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/synth_1/.Xil/Vivado-8080-DESKTOP-J1G93P6/realtime/zynq_design_rst_ps7_0_50M_0_stub.vhdl:6' bound to instance 'rst_ps7_0_50M' of component 'zynq_design_rst_ps7_0_50M_0' [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/synth/zynq_design.vhd:901]
-INFO: [Synth 8-638] synthesizing module 'zynq_design_rst_ps7_0_50M_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/synth_1/.Xil/Vivado-8080-DESKTOP-J1G93P6/realtime/zynq_design_rst_ps7_0_50M_0_stub.vhdl:28]
+INFO: [Synth 8-3491] module 'zynq_design_RISCVCOREZYNQ_0_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/synth_1/.Xil/Vivado-4100-DESKTOP-J1G93P6/realtime/zynq_design_RISCVCOREZYNQ_0_0_stub.vhdl:6' bound to instance 'RISCVCOREZYNQ_0' of component 'zynq_design_RISCVCOREZYNQ_0_0' [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/synth/zynq_design.vhd:571]
+INFO: [Synth 8-638] synthesizing module 'zynq_design_RISCVCOREZYNQ_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/synth_1/.Xil/Vivado-4100-DESKTOP-J1G93P6/realtime/zynq_design_RISCVCOREZYNQ_0_0_stub.vhdl:38]
+INFO: [Synth 8-3491] module 'zynq_design_axi_smc_1' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/synth_1/.Xil/Vivado-4100-DESKTOP-J1G93P6/realtime/zynq_design_axi_smc_1_stub.vhdl:6' bound to instance 'axi_smc' of component 'zynq_design_axi_smc_1' [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/synth/zynq_design.vhd:592]
+INFO: [Synth 8-638] synthesizing module 'zynq_design_axi_smc_1' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/synth_1/.Xil/Vivado-4100-DESKTOP-J1G93P6/realtime/zynq_design_axi_smc_1_stub.vhdl:123]
+INFO: [Synth 8-3491] module 'zynq_design_controlsubsystemIP_0_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/synth_1/.Xil/Vivado-4100-DESKTOP-J1G93P6/realtime/zynq_design_controlsubsystemIP_0_0_stub.vhdl:6' bound to instance 'controlsubsystemIP_0' of component 'zynq_design_controlsubsystemIP_0_0' [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/synth/zynq_design.vhd:700]
+INFO: [Synth 8-638] synthesizing module 'zynq_design_controlsubsystemIP_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/synth_1/.Xil/Vivado-4100-DESKTOP-J1G93P6/realtime/zynq_design_controlsubsystemIP_0_0_stub.vhdl:42]
+INFO: [Synth 8-3491] module 'zynq_design_datamemIP_0_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/synth_1/.Xil/Vivado-4100-DESKTOP-J1G93P6/realtime/zynq_design_datamemIP_0_0_stub.vhdl:6' bound to instance 'datamemIP_0' of component 'zynq_design_datamemIP_0_0' [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/synth/zynq_design.vhd:727]
+INFO: [Synth 8-638] synthesizing module 'zynq_design_datamemIP_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/synth_1/.Xil/Vivado-4100-DESKTOP-J1G93P6/realtime/zynq_design_datamemIP_0_0_stub.vhdl:32]
+INFO: [Synth 8-3491] module 'zynq_design_instructionmemIP_0_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/synth_1/.Xil/Vivado-4100-DESKTOP-J1G93P6/realtime/zynq_design_instructionmemIP_0_0_stub.vhdl:6' bound to instance 'instructionmemIP_0' of component 'zynq_design_instructionmemIP_0_0' [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/synth/zynq_design.vhd:744]
+INFO: [Synth 8-638] synthesizing module 'zynq_design_instructionmemIP_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/synth_1/.Xil/Vivado-4100-DESKTOP-J1G93P6/realtime/zynq_design_instructionmemIP_0_0_stub.vhdl:41]
+INFO: [Synth 8-3491] module 'zynq_design_processing_system7_0_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/synth_1/.Xil/Vivado-4100-DESKTOP-J1G93P6/realtime/zynq_design_processing_system7_0_0_stub.vhdl:6' bound to instance 'processing_system7_0' of component 'zynq_design_processing_system7_0_0' [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/synth/zynq_design.vhd:770]
+INFO: [Synth 8-638] synthesizing module 'zynq_design_processing_system7_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/synth_1/.Xil/Vivado-4100-DESKTOP-J1G93P6/realtime/zynq_design_processing_system7_0_0_stub.vhdl:113]
+INFO: [Synth 8-3491] module 'zynq_design_registerIP_0_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/synth_1/.Xil/Vivado-4100-DESKTOP-J1G93P6/realtime/zynq_design_registerIP_0_0_stub.vhdl:6' bound to instance 'registerIP_0' of component 'zynq_design_registerIP_0_0' [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/synth/zynq_design.vhd:868]
+INFO: [Synth 8-638] synthesizing module 'zynq_design_registerIP_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/synth_1/.Xil/Vivado-4100-DESKTOP-J1G93P6/realtime/zynq_design_registerIP_0_0_stub.vhdl:48]
+INFO: [Synth 8-3491] module 'zynq_design_rst_ps7_0_50M_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/synth_1/.Xil/Vivado-4100-DESKTOP-J1G93P6/realtime/zynq_design_rst_ps7_0_50M_0_stub.vhdl:6' bound to instance 'rst_ps7_0_50M' of component 'zynq_design_rst_ps7_0_50M_0' [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/synth/zynq_design.vhd:901]
+INFO: [Synth 8-638] synthesizing module 'zynq_design_rst_ps7_0_50M_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/synth_1/.Xil/Vivado-4100-DESKTOP-J1G93P6/realtime/zynq_design_rst_ps7_0_50M_0_stub.vhdl:28]
 INFO: [Synth 8-256] done synthesizing module 'zynq_design' (0#1) [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/synth/zynq_design.vhd:45]
 INFO: [Synth 8-256] done synthesizing module 'zynq_design_wrapper' (0#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/hdl/zynq_design_wrapper.vhd:41]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1332.469 ; gain = 583.184
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1329.863 ; gain = 583.395
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1332.469 ; gain = 583.184
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1329.863 ; gain = 583.395
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1332.469 ; gain = 583.184
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1329.863 ; gain = 583.395
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1332.469 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1329.863 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -127,22 +128,22 @@ Parsing XDC File [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RI
 Finished Parsing XDC File [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1332.469 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1329.863 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1332.469 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1329.863 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1332.469 ; gain = 583.184
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1329.863 ; gain = 583.395
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z007sclg225-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1332.469 ; gain = 583.184
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1329.863 ; gain = 583.395
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -329,10 +330,10 @@ Applied set_property KEEP_HIERARCHY = SOFT for zynq_design_i/controlsubsystemIP_
 Applied set_property KEEP_HIERARCHY = SOFT for zynq_design_i/rst_ps7_0_50M. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for zynq_design_i/axi_smc. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1332.469 ; gain = 583.184
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1329.863 ; gain = 583.395
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1332.469 ; gain = 583.184
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1329.863 ; gain = 583.395
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -355,25 +356,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1332.469 ; gain = 583.184
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1330.121 ; gain = 583.652
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 1502.047 ; gain = 752.762
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 1505.281 ; gain = 758.812
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 1502.121 ; gain = 752.836
+Finished Timing Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 1505.355 ; gain = 758.887
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 1512.418 ; gain = 763.133
+Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 1515.645 ; gain = 769.176
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -391,37 +392,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1728.598 ; gain = 979.312
+Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1731.766 ; gain = 985.297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1728.598 ; gain = 979.312
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1731.766 ; gain = 985.297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1728.598 ; gain = 979.312
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1731.766 ; gain = 985.297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1728.598 ; gain = 979.312
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1731.766 ; gain = 985.297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1728.598 ; gain = 979.312
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1731.766 ; gain = 985.297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1728.598 ; gain = 979.312
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1731.766 ; gain = 985.297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -455,24 +456,24 @@ Report Cell Usage:
 |8     |zynq_design_rst_ps7_0_50M_0_bbox        |     1|
 +------+----------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1728.598 ; gain = 979.312
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1731.766 ; gain = 985.297
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:29 . Memory (MB): peak = 1728.598 ; gain = 979.312
-Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1728.598 ; gain = 979.312
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:29 . Memory (MB): peak = 1731.766 ; gain = 985.297
+Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1731.766 ; gain = 985.297
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1728.598 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1731.766 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1728.598 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1739.047 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 74173481
+Synth Design complete | Checksum: e3c4a877
 INFO: [Common 17-83] Releasing license: Synthesis
 57 Infos, 21 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:40 . Memory (MB): peak = 1728.598 ; gain = 1194.363
+synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:46 . Memory (MB): peak = 1743.082 ; gain = 1209.402
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/synth_1/zynq_design_wrapper.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file zynq_design_wrapper_utilization_synth.rpt -pb zynq_design_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Mar 20 04:35:34 2025...
+INFO: [Common 17-206] Exiting Vivado at Thu Mar 20 05:27:35 2025...

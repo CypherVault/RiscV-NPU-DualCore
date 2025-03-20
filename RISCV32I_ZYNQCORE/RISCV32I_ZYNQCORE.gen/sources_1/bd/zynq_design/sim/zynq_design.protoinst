@@ -32,7 +32,7 @@
 					"interface": "xilinx.com:interface:aximm:1.0",
 					"ports": {
 						"ACLK": { "actual": "aclk"},
-						"ARADDR": { "actual": "M01_AXI_araddr[11:0]"},
+						"ARADDR": { "actual": "M01_AXI_araddr[13:0]"},
 						"ARPROT": { "actual": "M01_AXI_arprot[2:0]"},
 						"ARREADY": { "actual": "M01_AXI_arready"},
 						"ARVALID": { "actual": "M01_AXI_arvalid"},
@@ -166,7 +166,7 @@
 					"interface": "xilinx.com:interface:aximm:1.0",
 					"ports": {
 						"ACLK": { "actual": "s02_axi_aclk"},
-						"ARADDR": { "actual": "s02_axi_araddr[11:0]"},
+						"ARADDR": { "actual": "s02_axi_araddr[13:0]"},
 						"ARESETN": { "actual": "s02_axi_aresetn"},
 						"ARREADY": { "actual": "s02_axi_arready"},
 						"ARVALID": { "actual": "s02_axi_arvalid"},

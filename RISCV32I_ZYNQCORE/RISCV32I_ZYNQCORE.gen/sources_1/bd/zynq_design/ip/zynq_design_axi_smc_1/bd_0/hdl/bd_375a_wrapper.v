@@ -132,7 +132,7 @@ module bd_375a_wrapper
   input M00_AXI_wready;
   output [3:0]M00_AXI_wstrb;
   output M00_AXI_wvalid;
-  output [11:0]M01_AXI_araddr;
+  output [13:0]M01_AXI_araddr;
   output [2:0]M01_AXI_arprot;
   input M01_AXI_arready;
   output M01_AXI_arvalid;
@@ -238,7 +238,7 @@ module bd_375a_wrapper
   wire M00_AXI_wready;
   wire [3:0]M00_AXI_wstrb;
   wire M00_AXI_wvalid;
-  wire [11:0]M01_AXI_araddr;
+  wire [13:0]M01_AXI_araddr;
   wire [2:0]M01_AXI_arprot;
   wire M01_AXI_arready;
   wire M01_AXI_arvalid;
