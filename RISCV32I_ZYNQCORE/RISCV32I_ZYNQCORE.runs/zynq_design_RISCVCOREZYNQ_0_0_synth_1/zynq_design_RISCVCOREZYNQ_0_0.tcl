@@ -56,11 +56,8 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "zynq_design_RISCVCOREZYNQ_0_0_synth_1" START { ROLLUP_AUTO }
-set_param synth.incrementalSynthesisCache C:/Users/Chris/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-14604-DESKTOP-J1G93P6/incrSyn
-set_param checkpoint.writeSynthRtdsInDcp 1
-set_param bd.open.in_stealth_mode 2
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
+set_param bd.open.in_stealth_mode 1
+set_msg_config  -id {17-179}  -suppress 
 set_msg_config  -id {17-179}  -suppress 
 set_msg_config  -id {17-179}  -suppress 
 set_msg_config  -id {17-179}  -suppress 

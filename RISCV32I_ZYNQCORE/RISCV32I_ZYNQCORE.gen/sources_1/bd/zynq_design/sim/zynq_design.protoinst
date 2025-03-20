@@ -36,21 +36,10 @@
 						"ARPROT": { "actual": "M01_AXI_arprot[2:0]"},
 						"ARREADY": { "actual": "M01_AXI_arready"},
 						"ARVALID": { "actual": "M01_AXI_arvalid"},
-						"AWADDR": { "actual": "M01_AXI_awaddr[11:0]"},
-						"AWPROT": { "actual": "M01_AXI_awprot[2:0]"},
-						"AWREADY": { "actual": "M01_AXI_awready"},
-						"AWVALID": { "actual": "M01_AXI_awvalid"},
-						"BREADY": { "actual": "M01_AXI_bready"},
-						"BRESP": { "actual": "M01_AXI_bresp[1:0]"},
-						"BVALID": { "actual": "M01_AXI_bvalid"},
 						"RDATA": { "actual": "M01_AXI_rdata[31:0]"},
 						"RREADY": { "actual": "M01_AXI_rready"},
 						"RRESP": { "actual": "M01_AXI_rresp[1:0]"},
-						"RVALID": { "actual": "M01_AXI_rvalid"},
-						"WDATA": { "actual": "M01_AXI_wdata[31:0]"},
-						"WREADY": { "actual": "M01_AXI_wready"},
-						"WSTRB": { "actual": "M01_AXI_wstrb[3:0]"},
-						"WVALID": { "actual": "M01_AXI_wvalid"}
+						"RVALID": { "actual": "M01_AXI_rvalid"}
 					}
 				},
 				"/axi_smc/M02_AXI": {
@@ -179,24 +168,11 @@
 						"ACLK": { "actual": "s02_axi_aclk"},
 						"ARADDR": { "actual": "s02_axi_araddr[11:0]"},
 						"ARESETN": { "actual": "s02_axi_aresetn"},
-						"ARPROT": { "actual": "s02_axi_arprot[2:0]"},
 						"ARREADY": { "actual": "s02_axi_arready"},
 						"ARVALID": { "actual": "s02_axi_arvalid"},
-						"AWADDR": { "actual": "s02_axi_awaddr[11:0]"},
-						"AWPROT": { "actual": "s02_axi_awprot[2:0]"},
-						"AWREADY": { "actual": "s02_axi_awready"},
-						"AWVALID": { "actual": "s02_axi_awvalid"},
-						"BREADY": { "actual": "s02_axi_bready"},
-						"BRESP": { "actual": "s02_axi_bresp[1:0]"},
-						"BVALID": { "actual": "s02_axi_bvalid"},
 						"RDATA": { "actual": "s02_axi_rdata[31:0]"},
 						"RREADY": { "actual": "s02_axi_rready"},
-						"RRESP": { "actual": "s02_axi_rresp[1:0]"},
-						"RVALID": { "actual": "s02_axi_rvalid"},
-						"WDATA": { "actual": "s02_axi_wdata[31:0]"},
-						"WREADY": { "actual": "s02_axi_wready"},
-						"WSTRB": { "actual": "s02_axi_wstrb[3:0]"},
-						"WVALID": { "actual": "s02_axi_wvalid"}
+						"RVALID": { "actual": "s02_axi_rvalid"}
 					}
 				},
 				"/instructionmemIP_0/S00_AXI": {

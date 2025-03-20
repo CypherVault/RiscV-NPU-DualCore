@@ -1,6 +1,745 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Mar 20 04:32:39 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_registerIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_design_registerIP_0_0 (xilinx.com:user:registerIP:1.0 (Rev. 1)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Mar 20 04:05:42 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_registerIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_design_registerIP_0_0 (xilinx.com:user:registerIP:1.0 (Rev. 1)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Mar 20 04:05:06 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_registerIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_design_registerIP_0_0 (xilinx.com:user:registerIP:1.0 (Rev. 1)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Mar 20 03:27:09 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_registerIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_design_registerIP_0_0 (xilinx.com:user:registerIP:1.0 (Rev. 1)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Mar 20 01:15:05 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_instructionmemIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_design_instructionmemIP_0_0 (xilinx.com:user:instructionmemIP:1.0 (Rev. 1)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Mar 20 00:55:17 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_datamemIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_design_datamemIP_0_0 (xilinx.com:user:datamemIP:1.0 (Rev. 1)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Mar 20 00:41:04 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_datamemIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_design_datamemIP_0_0 (xilinx.com:user:datamemIP:1.0 (Rev. 1)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Mar 20 00:29:28 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_datamemIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_design_datamemIP_0_0 (xilinx.com:user:datamemIP:1.0 (Rev. 1)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Wed Mar 19 23:59:12 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_datamemIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_design_datamemIP_0_0 (xilinx.com:user:datamemIP:1.0 (Rev. 1)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Wed Mar 19 23:44:57 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_datamemIP_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the update of zynq_design_datamemIP_0_0 (xilinx.com:user:datamemIP:1.0 (Rev. 1)) to current project options.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'zynq_design_datamemIP_0_0'. These changes may impact your design.
+
+
+-Upgrade has removed port 'clk'
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Wed Mar 19 21:35:56 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_datamemIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_design_datamemIP_0_0 (xilinx.com:user:datamemIP:1.0 (Rev. 1)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Wed Mar 19 21:17:22 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_datamemIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_design_datamemIP_0_0 (xilinx.com:user:datamemIP:1.0 (Rev. 1)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Wed Mar 19 21:10:38 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_datamemIP_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the update of zynq_design_datamemIP_0_0 (xilinx.com:user:datamemIP:1.0 (Rev. 1)) to current project options.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'zynq_design_datamemIP_0_0'. These changes may impact your design.
+
+
+-Upgrade has added port 'hold'
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Wed Mar 19 21:09:08 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_datamemIP_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the update of zynq_design_datamemIP_0_0 (xilinx.com:user:datamemIP:1.0 (Rev. 1)) to current project options.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'zynq_design_datamemIP_0_0'. These changes may impact your design.
+
+
+-Upgrade has removed port 'hold'
+
+-Upgrade has removed port 'reset'
+
+-Upgrade has removed port 's02_axi_arprot'
+
+-Upgrade has removed port 's02_axi_awaddr'
+
+-Upgrade has removed port 's02_axi_awprot'
+
+-Upgrade has removed port 's02_axi_awready'
+
+-Upgrade has removed port 's02_axi_awvalid'
+
+-Upgrade has removed port 's02_axi_bready'
+
+-Upgrade has removed port 's02_axi_bresp'
+
+-Upgrade has removed port 's02_axi_bvalid'
+
+-Upgrade has removed port 's02_axi_rresp'
+
+-Upgrade has removed port 's02_axi_wdata'
+
+-Upgrade has removed port 's02_axi_wready'
+
+-Upgrade has removed port 's02_axi_wstrb'
+
+-Upgrade has removed port 's02_axi_wvalid'
+
+-Upgrade has added port 'clk'
+
+
+3. Customization warnings
+-------------------------
+
+Parameter 'C_RAM_PERFORMANCE' is no longer present on the upgraded IP 'zynq_design_datamemIP_0_0', and cannot be set to 'HIGH_PERFORMANCE'
+
+
+4. Debug Commands
+-----------------
+
+  The following debug information can be passed to Vivado as Tcl commands,
+in order to validate or debug the output of the upgrade flow.
+  You may consult any warnings from within this upgrade, and alter or remove
+the configuration parameter(s) which caused the warning; then execute the Tcl
+commands, and use the IP Customization GUI to verify the IP configuration.
+
+create_ip -vlnv xilinx.com:user:datamemIP:1.0 -user_name zynq_design_datamemIP_0_0
+set_property -dict "\
+  CONFIG.C_S02_AXI_ADDR_WIDTH {12} \
+  CONFIG.C_S02_AXI_BASEADDR {0xFFFFFFFF} \
+  CONFIG.C_S02_AXI_DATA_WIDTH {32} \
+  CONFIG.C_S02_AXI_HIGHADDR {0x00000000} \
+  CONFIG.Component_Name {zynq_design_datamemIP_0_0} \
+  CONFIG.S02_AXI.ADDR_WIDTH {12} \
+  CONFIG.S02_AXI.ARUSER_WIDTH {0} \
+  CONFIG.S02_AXI.AWUSER_WIDTH {0} \
+  CONFIG.S02_AXI.BUSER_WIDTH {0} \
+  CONFIG.S02_AXI.CLK_DOMAIN {zynq_design_processing_system7_0_0_FCLK_CLK0} \
+  CONFIG.S02_AXI.DATA_WIDTH {32} \
+  CONFIG.S02_AXI.FREQ_HZ {} \
+  CONFIG.S02_AXI.HAS_BRESP {1} \
+  CONFIG.S02_AXI.HAS_BURST {0} \
+  CONFIG.S02_AXI.HAS_CACHE {0} \
+  CONFIG.S02_AXI.HAS_LOCK {0} \
+  CONFIG.S02_AXI.HAS_PROT {1} \
+  CONFIG.S02_AXI.HAS_QOS {0} \
+  CONFIG.S02_AXI.HAS_REGION {0} \
+  CONFIG.S02_AXI.HAS_RRESP {1} \
+  CONFIG.S02_AXI.HAS_WSTRB {1} \
+  CONFIG.S02_AXI.ID_WIDTH {0} \
+  CONFIG.S02_AXI.INSERT_VIP {0} \
+  CONFIG.S02_AXI.MAX_BURST_LENGTH {1} \
+  CONFIG.S02_AXI.NUM_READ_OUTSTANDING {8} \
+  CONFIG.S02_AXI.NUM_READ_THREADS {1} \
+  CONFIG.S02_AXI.NUM_WRITE_OUTSTANDING {8} \
+  CONFIG.S02_AXI.NUM_WRITE_THREADS {1} \
+  CONFIG.S02_AXI.PHASE {0.0} \
+  CONFIG.S02_AXI.PROTOCOL {AXI4LITE} \
+  CONFIG.S02_AXI.READ_WRITE_MODE {READ_WRITE} \
+  CONFIG.S02_AXI.RUSER_BITS_PER_BYTE {0} \
+  CONFIG.S02_AXI.RUSER_WIDTH {0} \
+  CONFIG.S02_AXI.SUPPORTS_NARROW_BURST {0} \
+  CONFIG.S02_AXI.WIZ_DATA_WIDTH {32} \
+  CONFIG.S02_AXI.WIZ_NUM_REG {4} \
+  CONFIG.S02_AXI.WUSER_BITS_PER_BYTE {0} \
+  CONFIG.S02_AXI.WUSER_WIDTH {0} \
+  CONFIG.S02_AXI_CLK.ASSOCIATED_BUSIF {S02_AXI} \
+  CONFIG.S02_AXI_CLK.ASSOCIATED_PORT {} \
+  CONFIG.S02_AXI_CLK.ASSOCIATED_RESET {s02_axi_aresetn:reset} \
+  CONFIG.S02_AXI_CLK.CLK_DOMAIN {zynq_design_processing_system7_0_0_FCLK_CLK0} \
+  CONFIG.S02_AXI_CLK.FREQ_HZ {} \
+  CONFIG.S02_AXI_CLK.FREQ_TOLERANCE_HZ {0} \
+  CONFIG.S02_AXI_CLK.INSERT_VIP {0} \
+  CONFIG.S02_AXI_CLK.PHASE {0.0} \
+  CONFIG.S02_AXI_RST.INSERT_VIP {0} \
+  CONFIG.S02_AXI_RST.POLARITY {ACTIVE_LOW} " [get_ips zynq_design_datamemIP_0_0]
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Wed Mar 19 21:01:45 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_datamemIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_design_datamemIP_0_0 (xilinx.com:user:datamemIP:1.0 (Rev. 1)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Wed Mar 19 19:43:55 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_datamemIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_design_datamemIP_0_0 (xilinx.com:user:datamemIP:1.0 (Rev. 1)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Wed Mar 19 19:39:08 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_datamemIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_design_datamemIP_0_0 (xilinx.com:user:datamemIP:1.0 (Rev. 1)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Wed Mar 19 18:45:57 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_datamemIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_design_datamemIP_0_0 (xilinx.com:user:datamemIP:1.0 (Rev. 1)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Wed Mar 19 18:45:43 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_datamemIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_design_datamemIP_0_0 (xilinx.com:user:datamemIP:1.0 (Rev. 1)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Wed Mar 19 16:58:47 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_datamemIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_design_datamemIP_0_0 (xilinx.com:user:datamemIP:1.0 (Rev. 1)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Wed Mar 19 16:44:34 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_datamemIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_design_datamemIP_0_0 (xilinx.com:user:datamemIP:1.0 (Rev. 1)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Wed Mar 19 16:33:14 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_datamemIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_design_datamemIP_0_0 (xilinx.com:user:datamemIP:1.0 (Rev. 1)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Wed Mar 19 16:14:44 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_registerIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_design_registerIP_0_0 (xilinx.com:user:registerIP:1.0 (Rev. 1)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Wed Mar 19 16:05:59 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_datamemIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_design_datamemIP_0_0 (xilinx.com:user:datamemIP:1.0 (Rev. 1)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Tue Mar 18 23:35:16 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_registerIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_design_registerIP_0_0 (xilinx.com:user:registerIP:1.0 (Rev. 1)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Tue Mar 18 23:25:37 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_registerIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_design_registerIP_0_0 (xilinx.com:user:registerIP:1.0 (Rev. 1)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Tue Mar 18 23:07:11 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_datamemIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_design_datamemIP_0_0 (xilinx.com:user:datamemIP:1.0 (Rev. 1)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Tue Mar 18 22:07:36 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_simulation_design_datamemIP_0_2'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_simulation_design_datamemIP_0_2 (xilinx.com:user:datamemIP:1.0 (Rev. 1)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Tue Mar 18 22:07:34 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg225-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'zynq_design_datamemIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of zynq_design_datamemIP_0_0 (xilinx.com:user:datamemIP:1.0 (Rev. 1)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
 | Date         : Mon Mar 17 23:51:13 2025
 | Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
 | Command      : upgrade_ip

@@ -57,31 +57,17 @@ ENTITY zynq_design_datamemIP_0_0 IS
   PORT (
     s02_axi_aclk : IN STD_LOGIC;
     s02_axi_aresetn : IN STD_LOGIC;
-    s02_axi_awaddr : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
-    s02_axi_awprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
-    s02_axi_awvalid : IN STD_LOGIC;
-    s02_axi_awready : OUT STD_LOGIC;
-    s02_axi_wdata : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-    s02_axi_wstrb : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-    s02_axi_wvalid : IN STD_LOGIC;
-    s02_axi_wready : OUT STD_LOGIC;
-    s02_axi_bresp : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
-    s02_axi_bvalid : OUT STD_LOGIC;
-    s02_axi_bready : IN STD_LOGIC;
     s02_axi_araddr : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
-    s02_axi_arprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
     s02_axi_arvalid : IN STD_LOGIC;
     s02_axi_arready : OUT STD_LOGIC;
     s02_axi_rdata : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-    s02_axi_rresp : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
     s02_axi_rvalid : OUT STD_LOGIC;
     s02_axi_rready : IN STD_LOGIC;
     hold : IN STD_LOGIC;
-    reset : IN STD_LOGIC;
-    memwrite : IN STD_LOGIC;
-    memread : IN STD_LOGIC;
     address : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
     writedata : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+    memwrite : IN STD_LOGIC;
+    memread : IN STD_LOGIC;
     readdata : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
   );
 END zynq_design_datamemIP_0_0;
@@ -92,109 +78,63 @@ ARCHITECTURE zynq_design_datamemIP_0_0_arch OF zynq_design_datamemIP_0_0 IS
   COMPONENT datamemIP IS
     GENERIC (
       C_S02_AXI_DATA_WIDTH : INTEGER;
-      C_S02_AXI_ADDR_WIDTH : INTEGER;
-      C_RAM_PERFORMANCE : STRING
+      C_S02_AXI_ADDR_WIDTH : INTEGER
     );
     PORT (
       s02_axi_aclk : IN STD_LOGIC;
       s02_axi_aresetn : IN STD_LOGIC;
-      s02_axi_awaddr : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
-      s02_axi_awprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
-      s02_axi_awvalid : IN STD_LOGIC;
-      s02_axi_awready : OUT STD_LOGIC;
-      s02_axi_wdata : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-      s02_axi_wstrb : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-      s02_axi_wvalid : IN STD_LOGIC;
-      s02_axi_wready : OUT STD_LOGIC;
-      s02_axi_bresp : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
-      s02_axi_bvalid : OUT STD_LOGIC;
-      s02_axi_bready : IN STD_LOGIC;
       s02_axi_araddr : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
-      s02_axi_arprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
       s02_axi_arvalid : IN STD_LOGIC;
       s02_axi_arready : OUT STD_LOGIC;
       s02_axi_rdata : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-      s02_axi_rresp : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
       s02_axi_rvalid : OUT STD_LOGIC;
       s02_axi_rready : IN STD_LOGIC;
       hold : IN STD_LOGIC;
-      reset : IN STD_LOGIC;
-      memwrite : IN STD_LOGIC;
-      memread : IN STD_LOGIC;
       address : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
       writedata : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+      memwrite : IN STD_LOGIC;
+      memread : IN STD_LOGIC;
       readdata : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
     );
   END COMPONENT datamemIP;
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_MODE : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
-  ATTRIBUTE X_INTERFACE_INFO OF reset: SIGNAL IS "xilinx.com:signal:reset:1.0 reset RST";
-  ATTRIBUTE X_INTERFACE_MODE OF reset: SIGNAL IS "slave reset";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF reset: SIGNAL IS "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF s02_axi_aclk: SIGNAL IS "xilinx.com:signal:clock:1.0 S02_AXI_CLK CLK";
   ATTRIBUTE X_INTERFACE_MODE OF s02_axi_aclk: SIGNAL IS "slave S02_AXI_CLK";
   ATTRIBUTE X_INTERFACE_PARAMETER OF s02_axi_aclk: SIGNAL IS "XIL_INTERFACENAME S02_AXI_CLK, ASSOCIATED_BUSIF S02_AXI, ASSOCIATED_RESET s02_axi_aresetn:reset, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN zynq_design_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF s02_axi_araddr: SIGNAL IS "xilinx.com:interface:aximm:1.0 S02_AXI ARADDR";
+  ATTRIBUTE X_INTERFACE_MODE OF s02_axi_araddr: SIGNAL IS "slave S02_AXI";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF s02_axi_araddr: SIGNAL IS "XIL_INTERFACENAME S02_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 4, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, ID_WIDTH 0, ADDR_WIDTH 12, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_ONLY, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 0, HAS_BRESP 0, HAS_RRESP 0, NUM_READ_OUTSTANDING 8, NUM_WRITE_OUTSTANDING 8, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN zynq_design_processing_system7_0_0_FCLK_CLK0" & 
+", NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF s02_axi_aresetn: SIGNAL IS "xilinx.com:signal:reset:1.0 S02_AXI_RST RST";
   ATTRIBUTE X_INTERFACE_MODE OF s02_axi_aresetn: SIGNAL IS "slave S02_AXI_RST";
   ATTRIBUTE X_INTERFACE_PARAMETER OF s02_axi_aresetn: SIGNAL IS "XIL_INTERFACENAME S02_AXI_RST, POLARITY ACTIVE_LOW, INSERT_VIP 0";
-  ATTRIBUTE X_INTERFACE_INFO OF s02_axi_arprot: SIGNAL IS "xilinx.com:interface:aximm:1.0 S02_AXI ARPROT";
   ATTRIBUTE X_INTERFACE_INFO OF s02_axi_arready: SIGNAL IS "xilinx.com:interface:aximm:1.0 S02_AXI ARREADY";
   ATTRIBUTE X_INTERFACE_INFO OF s02_axi_arvalid: SIGNAL IS "xilinx.com:interface:aximm:1.0 S02_AXI ARVALID";
-  ATTRIBUTE X_INTERFACE_INFO OF s02_axi_awaddr: SIGNAL IS "xilinx.com:interface:aximm:1.0 S02_AXI AWADDR";
-  ATTRIBUTE X_INTERFACE_MODE OF s02_axi_awaddr: SIGNAL IS "slave S02_AXI";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF s02_axi_awaddr: SIGNAL IS "XIL_INTERFACENAME S02_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 4, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, ID_WIDTH 0, ADDR_WIDTH 12, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 8, NUM_WRITE_OUTSTANDING 8, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN zynq_design_processing_system7_0_0_FCLK_CLK" & 
-"0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
-  ATTRIBUTE X_INTERFACE_INFO OF s02_axi_awprot: SIGNAL IS "xilinx.com:interface:aximm:1.0 S02_AXI AWPROT";
-  ATTRIBUTE X_INTERFACE_INFO OF s02_axi_awready: SIGNAL IS "xilinx.com:interface:aximm:1.0 S02_AXI AWREADY";
-  ATTRIBUTE X_INTERFACE_INFO OF s02_axi_awvalid: SIGNAL IS "xilinx.com:interface:aximm:1.0 S02_AXI AWVALID";
-  ATTRIBUTE X_INTERFACE_INFO OF s02_axi_bready: SIGNAL IS "xilinx.com:interface:aximm:1.0 S02_AXI BREADY";
-  ATTRIBUTE X_INTERFACE_INFO OF s02_axi_bresp: SIGNAL IS "xilinx.com:interface:aximm:1.0 S02_AXI BRESP";
-  ATTRIBUTE X_INTERFACE_INFO OF s02_axi_bvalid: SIGNAL IS "xilinx.com:interface:aximm:1.0 S02_AXI BVALID";
   ATTRIBUTE X_INTERFACE_INFO OF s02_axi_rdata: SIGNAL IS "xilinx.com:interface:aximm:1.0 S02_AXI RDATA";
   ATTRIBUTE X_INTERFACE_INFO OF s02_axi_rready: SIGNAL IS "xilinx.com:interface:aximm:1.0 S02_AXI RREADY";
-  ATTRIBUTE X_INTERFACE_INFO OF s02_axi_rresp: SIGNAL IS "xilinx.com:interface:aximm:1.0 S02_AXI RRESP";
   ATTRIBUTE X_INTERFACE_INFO OF s02_axi_rvalid: SIGNAL IS "xilinx.com:interface:aximm:1.0 S02_AXI RVALID";
-  ATTRIBUTE X_INTERFACE_INFO OF s02_axi_wdata: SIGNAL IS "xilinx.com:interface:aximm:1.0 S02_AXI WDATA";
-  ATTRIBUTE X_INTERFACE_INFO OF s02_axi_wready: SIGNAL IS "xilinx.com:interface:aximm:1.0 S02_AXI WREADY";
-  ATTRIBUTE X_INTERFACE_INFO OF s02_axi_wstrb: SIGNAL IS "xilinx.com:interface:aximm:1.0 S02_AXI WSTRB";
-  ATTRIBUTE X_INTERFACE_INFO OF s02_axi_wvalid: SIGNAL IS "xilinx.com:interface:aximm:1.0 S02_AXI WVALID";
 BEGIN
   U0 : datamemIP
     GENERIC MAP (
       C_S02_AXI_DATA_WIDTH => 32,
-      C_S02_AXI_ADDR_WIDTH => 12,
-      C_RAM_PERFORMANCE => "HIGH_PERFORMANCE"
+      C_S02_AXI_ADDR_WIDTH => 12
     )
     PORT MAP (
       s02_axi_aclk => s02_axi_aclk,
       s02_axi_aresetn => s02_axi_aresetn,
-      s02_axi_awaddr => s02_axi_awaddr,
-      s02_axi_awprot => s02_axi_awprot,
-      s02_axi_awvalid => s02_axi_awvalid,
-      s02_axi_awready => s02_axi_awready,
-      s02_axi_wdata => s02_axi_wdata,
-      s02_axi_wstrb => s02_axi_wstrb,
-      s02_axi_wvalid => s02_axi_wvalid,
-      s02_axi_wready => s02_axi_wready,
-      s02_axi_bresp => s02_axi_bresp,
-      s02_axi_bvalid => s02_axi_bvalid,
-      s02_axi_bready => s02_axi_bready,
       s02_axi_araddr => s02_axi_araddr,
-      s02_axi_arprot => s02_axi_arprot,
       s02_axi_arvalid => s02_axi_arvalid,
       s02_axi_arready => s02_axi_arready,
       s02_axi_rdata => s02_axi_rdata,
-      s02_axi_rresp => s02_axi_rresp,
       s02_axi_rvalid => s02_axi_rvalid,
       s02_axi_rready => s02_axi_rready,
       hold => hold,
-      reset => reset,
-      memwrite => memwrite,
-      memread => memread,
       address => address,
       writedata => writedata,
+      memwrite => memwrite,
+      memread => memread,
       readdata => readdata
     );
 END zynq_design_datamemIP_0_0_arch;

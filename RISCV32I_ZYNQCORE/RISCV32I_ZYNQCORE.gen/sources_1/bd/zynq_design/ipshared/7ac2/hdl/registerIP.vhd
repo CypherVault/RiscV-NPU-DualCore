@@ -3,170 +3,168 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity registerIP is
-    generic (
-        C_S01_AXI_DATA_WIDTH : integer := 32;
-        C_S01_AXI_ADDR_WIDTH : integer := 5 -- 5 bits for 32 registers
-    );
-    port (
-        -- AXI-Lite interface ports
-        s01_axi_aclk    : in std_logic;
-        s01_axi_aresetn : in std_logic;
-        s01_axi_awaddr  : in std_logic_vector(C_S01_AXI_ADDR_WIDTH-1 downto 0);
-        s01_axi_awprot  : in std_logic_vector(2 downto 0);
-        s01_axi_awvalid : in std_logic;
-        s01_axi_awready : out std_logic;
-        s01_axi_wdata   : in std_logic_vector(C_S01_AXI_DATA_WIDTH-1 downto 0);
-        s01_axi_wstrb   : in std_logic_vector((C_S01_AXI_DATA_WIDTH/8)-1 downto 0);
-        s01_axi_wvalid  : in std_logic;
-        s01_axi_wready  : out std_logic;
-        s01_axi_bresp   : out std_logic_vector(1 downto 0);
-        s01_axi_bvalid  : out std_logic;
-        s01_axi_bready  : in std_logic;
-        s01_axi_araddr  : in std_logic_vector(C_S01_AXI_ADDR_WIDTH-1 downto 0);
-        s01_axi_arprot  : in std_logic_vector(2 downto 0);
-        s01_axi_arvalid : in std_logic;
-        s01_axi_arready : out std_logic;
-        s01_axi_rdata   : out std_logic_vector(C_S01_AXI_DATA_WIDTH-1 downto 0);
-        s01_axi_rresp   : out std_logic_vector(1 downto 0);
-        s01_axi_rvalid  : out std_logic;
-        s01_axi_rready  : in std_logic;
+  generic (
+    C_S01_AXI_DATA_WIDTH : integer := 32;
+    C_S01_AXI_ADDR_WIDTH : integer := 5
+  );
+  port (
+    -- AXI-Lite Interface
+    s01_axi_aclk    : in std_logic;
+    s01_axi_aresetn : in std_logic;
+    s01_axi_awaddr  : in std_logic_vector(C_S01_AXI_ADDR_WIDTH-1 downto 0);
+    s01_axi_awprot  : in std_logic_vector(2 downto 0);
+    s01_axi_awvalid : in std_logic;
+    s01_axi_awready : out std_logic;
+    s01_axi_wdata   : in std_logic_vector(C_S01_AXI_DATA_WIDTH-1 downto 0);
+    s01_axi_wstrb   : in std_logic_vector((C_S01_AXI_DATA_WIDTH/8)-1 downto 0);
+    s01_axi_wvalid  : in std_logic;
+    s01_axi_wready  : out std_logic;
+    s01_axi_bresp   : out std_logic_vector(1 downto 0);
+    s01_axi_bvalid  : out std_logic;
+    s01_axi_bready  : in std_logic;
+    s01_axi_araddr  : in std_logic_vector(C_S01_AXI_ADDR_WIDTH-1 downto 0);
+    s01_axi_arprot  : in std_logic_vector(2 downto 0);
+    s01_axi_arvalid : in std_logic;
+    s01_axi_arready : out std_logic;
+    s01_axi_rdata   : out std_logic_vector(C_S01_AXI_DATA_WIDTH-1 downto 0);
+    s01_axi_rresp   : out std_logic_vector(1 downto 0);
+    s01_axi_rvalid  : out std_logic;
+    s01_axi_rready  : in std_logic;
 
-        -- Register File interface (RISC-V specific)
-        hold                : in std_logic;
-        resetbar            : in std_logic; -- Active-low reset for RISC-V core
-        regwrite            : in std_logic; -- Write enable from RISC-V core
-        readregister1       : in std_logic_vector(4 downto 0); -- Read port 1 address
-        readregister2       : in std_logic_vector(4 downto 0); -- Read port 2 address
-        writeregisteraddress: in std_logic_vector(4 downto 0); -- Write port address
-        writedata           : in std_logic_vector(31 downto 0); -- Write data
-        readdata1           : out std_logic_vector(31 downto 0); -- Read data from port 1
-        readdata2           : out std_logic_vector(31 downto 0) -- Read data from port 2
-    );
+    -- RISC-V Interface
+    hold                : in std_logic;
+    resetbar            : in std_logic;
+    regwrite            : in std_logic;
+    readregister1       : in std_logic_vector(4 downto 0);
+    readregister2       : in std_logic_vector(4 downto 0);
+    writeregisteraddress: in std_logic_vector(4 downto 0);
+    writedata           : in std_logic_vector(31 downto 0);
+    readdata1           : out std_logic_vector(31 downto 0);
+    readdata2           : out std_logic_vector(31 downto 0)
+  );
 end registerIP;
 
 architecture arch_imp of registerIP is
+  type reg_array is array (0 to 31) of std_logic_vector(31 downto 0);
+  signal registers : reg_array := (2 => x"00004000", others => (others => '0'));
 
-    -- Memory array definition (BRAM-based)
-    type bram_type is array (0 to 31) of std_logic_vector(31 downto 0);
-    signal bram_mem: bram_type := (others => x"00000000");
-
-    -- Internal signals for AXI handshaking and data transfer
-    signal internal_awready   : std_logic := '0';
-    signal internal_wready    : std_logic := '0';
-    signal internal_bvalid    : std_logic := '0';
-    signal internal_arready   : std_logic := '0';
-    signal internal_rdata     : std_logic_vector(C_S01_AXI_DATA_WIDTH-1 downto 0) := (others => '0');
-    signal internal_rvalid    : std_logic := '0';
-
-    -- Combined write control signals
-    signal write_enable       : std_logic;
-    signal write_addr         : integer range 0 to 31;
-    signal write_data         : std_logic_vector(31 downto 0);
-
+  -- AXI Control Signals
+  signal awready, wready, arready, rvalid, bvalid : std_logic := '0';
 begin
 
-    -- Write control logic
-    write_enable <= '1' when (s01_axi_wvalid = '1' and internal_wready = '0') or 
-                            (regwrite = '1') else '0';
-
-    write_addr <= to_integer(unsigned(s01_axi_awaddr)) when (s01_axi_wvalid = '1' and internal_wready = '0') else
-                  to_integer(unsigned(writeregisteraddress)) when (regwrite = '1') else
-                  0;
-
-    write_data <= s01_axi_wdata when (s01_axi_wvalid = '1' and internal_wready = '0') else
-                  writedata when (regwrite = '1') else
-                  (others => '0');
-
-   -- Main BRAM process for read/write operations
-process(s01_axi_aclk)
-begin
-    if rising_edge(s01_axi_aclk) then
-        if s01_axi_aresetn = '0' or resetbar = '0' then
-            bram_mem <= (
-                2 => x"00004000",    -- Special initialization for address 2 (stack pointer)
-                others => x"00000000" -- All other addresses set to zero
-            );
-        elsif write_enable = '1' and hold = '0' then
-            -- Explicit protection for address 0
-            if write_addr /= 0 then  -- Prevent writes to address 0 as it is REGISTER 0 as refenrce 
-                bram_mem(write_addr) <= write_data;
-            end if;
+  -- Combined Write/Reset Process (AXI + RISC-V)
+  process(resetbar, s01_axi_aresetn, regwrite, s01_axi_wvalid, s01_axi_aclk)
+    variable axi_write_addr : integer;
+  begin
+    -- Async resets take priority
+    if s01_axi_aresetn = '0' or resetbar = '0' then
+      registers <= (2 => x"00004000", others => (others => '0'));
+      
+    -- Clocked writes (AXI has priority)
+    elsif rising_edge(s01_axi_aclk) and hold = '0' then
+      -- AXI-Lite Write
+      if s01_axi_wvalid = '1' and wready = '1' then
+        axi_write_addr := to_integer(unsigned(s01_axi_awaddr));
+        if axi_write_addr /= 0 then
+          registers(axi_write_addr) <= s01_axi_wdata;
         end if;
+      end if;
+      
+      -- RISC-V Write
+      if regwrite = '1' then
+        if unsigned(writeregisteraddress) /= 0 then
+          registers(to_integer(unsigned(writeregisteraddress))) <= writedata;
+        end if;
+      end if;
     end if;
-end process;
+  end process;
 
-    -- AXI Write Channel Control
-    process(s01_axi_aclk)
-    begin
-        if rising_edge(s01_axi_aclk) then
-            if s01_axi_aresetn = '0' then
-                internal_awready <= '0';
-                internal_wready <= '0';
-                internal_bvalid <= '0';
-            elsif hold = '0' then
-                -- Write address handshake
-                if (s01_axi_awvalid = '1' and internal_awready = '0') then
-                    internal_awready <= '1';
-                else
-                    internal_awready <= '0';
-                end if;
-
-                -- Write data handshake
-                if (s01_axi_wvalid = '1' and internal_wready = '0') then
-                    internal_wready <= '1';
-                else
-                    internal_wready <= '0';
-                end if;
-
-                -- Write response generation
-                if (internal_awready = '1' and internal_wready = '1' and internal_bvalid = '0') then
-                    internal_bvalid <= '1';
-                elsif (s01_axi_bready = '1') then
-                    internal_bvalid <= '0';
-                end if;
-            end if;
+  -- AXI Write Handshaking
+  process(s01_axi_aclk)
+  begin
+    if rising_edge(s01_axi_aclk) then
+      if s01_axi_aresetn = '0' then
+        awready <= '0';
+        wready  <= '0';
+        bvalid  <= '0';
+      else
+        -- AWREADY generation
+        if s01_axi_awvalid = '1' then
+          awready <= not awready;
+        else
+          awready <= '0';
         end if;
-    end process;
-
-    -- AXI Read Channel Control
-    process(s01_axi_aclk)
-    begin
-        if rising_edge(s01_axi_aclk) then
-            if s01_axi_aresetn = '0' then
-                internal_arready <= '0';
-                internal_rvalid <= '0';
-                internal_rdata <= (others => '0');
-            else --if hold = '0' then -- we wont need to hold here, since reading doesnt actually CHANGE THE DATA.
-                -- Read address handshake logic
-                if (s01_axi_arvalid = '1' and internal_arready = '0') then
-                    internal_arready <= '1';
-                    internal_rdata <= bram_mem(to_integer(unsigned(s01_axi_araddr))); -- Fetch data from BRAM based on address
-                else
-                    internal_arready <= '0';
-                end if;
-
-                -- Read data handshake logic generation
-                if (internal_arready = '1' and internal_rvalid = '0') then
-                    internal_rvalid <= '1';
-                elsif (s01_axi_rready = '1') then
-                    internal_rvalid <= '0';
-                end if;
-            end if;
+        
+        -- WREADY generation
+        if s01_axi_wvalid = '1' then
+          wready <= not wready;
+        else
+          wready <= '0';
         end if;
-    end process;
+        
+        -- BVALID generation
+        if (awready = '1' and wready = '1') then
+          bvalid <= '1';
+        elsif s01_axi_bready = '1' then
+          bvalid <= '0';
+        end if;
+      end if;
+    end if;
+  end process;
 
-    -- Combinational read ports for RISC-V core access:
-    readdata1 <= bram_mem(to_integer(unsigned(readregister1)));
-    readdata2 <= bram_mem(to_integer(unsigned(readregister2)));
+  -- AXI Read Handling
+  process(s01_axi_aclk)
+  begin
+    if rising_edge(s01_axi_aclk) then
+      if s01_axi_aresetn = '0' then
+        arready <= '0';
+        rvalid  <= '0';
+        s01_axi_rdata <= (others => '0');
+      else
+        -- ARREADY generation
+        if s01_axi_arvalid = '1' then
+          arready <= not arready;
+        else
+          arready <= '0';
+        end if;
+        
+        -- Read data capture
+        if arready = '1' then
+          s01_axi_rdata <= registers(to_integer(unsigned(s01_axi_araddr)));
+        end if;
+        
+        -- RVALID generation
+        if s01_axi_arvalid = '1' then
+          rvalid <= arready;
+        elsif s01_axi_rready = '1' then
+          rvalid <= '0';
+        end if;
+      end if;
+    end if;
+  end process;
+  
+  -- RISC-V Read Ports with write forwarding and x0 hardwired to 0
+  readdata1 <= (others => '0') when unsigned(readregister1) = 0 else
+               s01_axi_wdata when (s01_axi_wvalid = '1' and wready = '1' and 
+                                  unsigned(s01_axi_awaddr) = unsigned(readregister1)) else
+               writedata when (regwrite = '1' and 
+                              unsigned(writeregisteraddress) = unsigned(readregister1)) else
+               registers(to_integer(unsigned(readregister1)));
 
-    -- Connect AXI signals to outputs:
-    s01_axi_awready <= internal_awready;
-    s01_axi_wready <= internal_wready;
-    s01_axi_bresp <= "00"; -- OKAY response for writes.
-    s01_axi_bvalid <= internal_bvalid;
-    s01_axi_arready <= internal_arready;
-    s01_axi_rdata <= internal_rdata; 
-    s01_axi_rresp <= "00"; -- OKAY response for reads.
-    s01_axi_rvalid <= internal_rvalid;
+  readdata2 <= (others => '0') when unsigned(readregister2) = 0 else
+               s01_axi_wdata when (s01_axi_wvalid = '1' and wready = '1' and 
+                                  unsigned(s01_axi_awaddr) = unsigned(readregister2)) else
+               writedata when (regwrite = '1' and 
+                              unsigned(writeregisteraddress) = unsigned(readregister2)) else
+               registers(to_integer(unsigned(readregister2)));
+
+  -- AXI Output Assignments
+  s01_axi_awready <= awready;
+  s01_axi_wready  <= wready;
+  s01_axi_bresp   <= "00";
+  s01_axi_bvalid  <= bvalid;
+  s01_axi_arready <= arready;
+  s01_axi_rresp   <= "00";
+  s01_axi_rvalid  <= rvalid;
 
 end arch_imp;

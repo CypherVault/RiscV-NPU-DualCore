@@ -1816,17 +1816,16 @@
       "controlsubsystemIP_0_riscv_hold_enable": {
         "ports": [
           "controlsubsystemIP_0/riscv_hold",
-          "registerIP_0/hold",
+          "RISCVCOREZYNQ_0/hold",
           "datamemIP_0/hold",
-          "RISCVCOREZYNQ_0/hold"
+          "registerIP_0/hold"
         ]
       },
       "controlsubsystemIP_0_riscv_resetbar": {
         "ports": [
           "controlsubsystemIP_0/riscv_resetbar",
-          "registerIP_0/resetbar",
-          "datamemIP_0/reset",
-          "RISCVCOREZYNQ_0/resetbar"
+          "RISCVCOREZYNQ_0/resetbar",
+          "registerIP_0/resetbar"
         ]
       },
       "controlsubsystemIP_0_riscv_start": {
@@ -1853,11 +1852,11 @@
           "processing_system7_0/M_AXI_GP0_ACLK",
           "rst_ps7_0_50M/slowest_sync_clk",
           "axi_smc/aclk",
-          "registerIP_0/s01_axi_aclk",
+          "RISCVCOREZYNQ_0/clock",
+          "controlsubsystemIP_0/s05_axi_aclk",
           "datamemIP_0/s02_axi_aclk",
           "instructionmemIP_0/s00_axi_aclk",
-          "RISCVCOREZYNQ_0/clock",
-          "controlsubsystemIP_0/s05_axi_aclk"
+          "registerIP_0/s01_axi_aclk"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
@@ -1882,10 +1881,10 @@
         "ports": [
           "rst_ps7_0_50M/peripheral_aresetn",
           "axi_smc/aresetn",
-          "registerIP_0/s01_axi_aresetn",
+          "controlsubsystemIP_0/s05_axi_aresetn",
           "datamemIP_0/s02_axi_aresetn",
           "instructionmemIP_0/s00_axi_aresetn",
-          "controlsubsystemIP_0/s05_axi_aresetn"
+          "registerIP_0/s01_axi_aresetn"
         ]
       }
     },

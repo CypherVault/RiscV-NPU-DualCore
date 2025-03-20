@@ -140,7 +140,7 @@ begin
                 
                 -- Instruction fetch - register the output for better timing
                 if valid_pc_addr = '1' then
-                    instr_out <= RAM(to_integer(unsigned(pc_address(ADDR_WIDTH+1 downto 2))));
+                   -- instr_out <= RAM(to_integer(unsigned(pc_address(ADDR_WIDTH+1 downto 2))));
                 else
                     instr_out <= (others => '0');  -- Return NOP for out-of-range addresses
                 end if;
@@ -159,6 +159,6 @@ begin
     s00_axi_rvalid  <= axi_rvalid;
     
     -- Instruction output
-    instruction <= instr_out;
+    instruction <= RAM(to_integer(unsigned(pc_address(ADDR_WIDTH+1 downto 2))));
 
 end arch_imp;

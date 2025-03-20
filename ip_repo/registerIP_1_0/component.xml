@@ -793,7 +793,7 @@
       <spirit:file>
         <spirit:name>hdl/registerIP.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_3dec980c</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_85ed1119</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -919,7 +919,7 @@
       </xilinx:taxonomies>
       <xilinx:displayName>registerIP_v1.0</xilinx:displayName>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2025-03-18T00:36:05Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2025-03-20T08:32:31Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2024.2</xilinx:xilinxVersion>
