@@ -27,7 +27,7 @@ architecture behavior of RICSVCORE_tb is
 	
 	
 	 -- Define the instruction buffer as a constant array
-    type instruction_array is array (0 to 13) of std_logic_vector(31 downto 0);
+    type instruction_array is array (0 to 16) of std_logic_vector(31 downto 0);
 	
 	constant INSTRUCTION_BUFFER : instruction_array := (	 					--how many insturctions 
 	
@@ -48,23 +48,49 @@ architecture behavior of RICSVCORE_tb is
 --11 => x"00078513",  -- addi a0, a5, 0 (mv a0, a5)
 --12 => x"01010113",  -- addi sp, sp, 16
 --13 => x"00000067"   -- ret (return from the program)   
+                       --
+--
+-- 0 => x"00000000",  -- Unused position 0
+--1 => x"02f00513",  -- addi x10, x0, 47    # Load dividend into x10
+--2 => x"00500593",  -- addi x11, x0, 5     # Load divisor into x11
+--3 => x"00000613",  -- addi x12, x0, 0     # Initialize quotient in x12
+---- Reordered sequence
+--4 => x"00050693",  -- addi x13, x10, 0    # Copy dividend to x13
+--5 => x"40b686b3",  -- sub x13, x13, x11   # Subtract first
+--6 => x"02b6c063",  -- blt x13, x11, 32    # Then compare
+--7 => x"00160613",  -- addi x12, x12, 1    # Increment quotient
+--8 => x"ff5ff06f",  -- jal x0, -12        # Jump back from 32 to 16
+--9 => x"00000000",  -- Unused position 0
+--10 => x"00000000",  -- Unused position 0
+--11 => x"00000000",  -- Unused position 0
+--12 => x"00000000",  -- Unused position 0
+--13 => x"00000000"  -- Unused position 0		 	  
 
 
- 0 => x"00000000",  -- Unused position 0
-1 => x"02f00513",  -- addi x10, x0, 47    # Load dividend into x10
-2 => x"00500593",  -- addi x11, x0, 5     # Load divisor into x11
-3 => x"00000613",  -- addi x12, x0, 0     # Initialize quotient in x12
--- Reordered sequence
-4 => x"00050693",  -- addi x13, x10, 0    # Copy dividend to x13
-5 => x"40b686b3",  -- sub x13, x13, x11   # Subtract first
-6 => x"02b6c063",  -- blt x13, x11, 32    # Then compare
-7 => x"00160613",  -- addi x12, x12, 1    # Increment quotient
-8 => x"ff5ff06f",  -- jal x0, -12        # Jump back from 32 to 16
-9 => x"00000000",  -- Unused position 0
-10 => x"00000000",  -- Unused position 0
-11 => x"00000000",  -- Unused position 0
-12 => x"00000000",  -- Unused position 0
-13 => x"00000000"  -- Unused position 0		 
+
+
+	0  => x"fe010113",  -- addi sp,sp,-32
+    1  => x"00112e23",  -- sw ra,28(sp)
+    2  => x"00a00513",  -- addi a0,zero,10
+    3  => x"ff010113",  -- addi sp,sp,-16
+    4  => x"00a12623",  -- sw a0,12(sp)
+    5  => x"000117b7",  -- lui a5,0x11
+    6  => x"0c47a703",  -- lw a4,196(a5)
+    7 => x"00c12783",  -- lw a5,12(sp)
+    8  => x"00f707b3",  -- add a5,a4,a5
+    9 => x"00078513",  -- addi a0,a5,0
+    10 => x"01010113",  -- addi sp,sp,16
+    11 => x"00a12623",  -- sw a0,12(sp)
+    12 => x"00c12783",  -- lw a5,12(sp)
+    13 => x"00078513",  -- addi a0,a5,0
+    14 => x"01c12083",  -- lw ra,28(sp)
+    15 => x"02010113",  -- addi sp,sp,32
+    16 => x"00008067"   -- jalr zero,0(ra)
+
+
+
+
+
 );
 
     
@@ -115,7 +141,7 @@ begin
         -- Program Instruction Memory with 4 hardcoded instructions
         im_enable <= '1';  -- Enable instruction memory write
      -- Loop through all instructions
-        for i in 0 to 13 loop	      												--how many insturctions 
+        for i in 0 to 16 loop	      												--how many insturctions 
             debug_clk <= '1';
             -- Convert integer to 7-bit std_logic_vector for address
             debug_addr <= std_logic_vector(to_unsigned(i, 12));
