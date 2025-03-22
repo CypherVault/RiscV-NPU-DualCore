@@ -1,0 +1,251 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.60059",
+   "Default View_TopLeft":"4664,-1016",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 12 -x 6920 -y 260 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 12 -x 6920 -y 290 -defaultsOSRD
+preplace port cam_gpio -pg 1 -lvl 12 -x 6920 -y 230 -defaultsOSRD
+preplace port cam_iic -pg 1 -lvl 12 -x 6920 -y 320 -defaultsOSRD
+preplace port dphy_hs_clock -pg 1 -lvl 0 -x -110 -y 960 -defaultsOSRD
+preplace port hdmi_tx -pg 1 -lvl 12 -x 6920 -y 850 -defaultsOSRD
+preplace port port-id_dphy_clk_lp_n -pg 1 -lvl 0 -x -110 -y 780 -defaultsOSRD
+preplace port port-id_dphy_clk_lp_p -pg 1 -lvl 0 -x -110 -y 720 -defaultsOSRD
+preplace portBus dphy_data_hs_n -pg 1 -lvl 0 -x -110 -y 750 -defaultsOSRD
+preplace portBus dphy_data_hs_p -pg 1 -lvl 0 -x -110 -y 990 -defaultsOSRD
+preplace portBus dphy_data_lp_n -pg 1 -lvl 0 -x -110 -y 1050 -defaultsOSRD
+preplace portBus dphy_data_lp_p -pg 1 -lvl 0 -x -110 -y 1020 -defaultsOSRD
+preplace inst AXI_BayerToRGB_1 -pg 1 -lvl 6 -x 3500 -y 910 -defaultsOSRD
+preplace inst AXI_GammaCorrection_0 -pg 1 -lvl 7 -x 3870 -y 930 -defaultsOSRD
+preplace inst DVIClocking_0 -pg 1 -lvl 6 -x 3500 -y 720 -defaultsOSRD
+preplace inst MIPI_CSI_2_RX_0 -pg 1 -lvl 5 -x 3170 -y 890 -defaultsOSRD
+preplace inst MIPI_D_PHY_RX_0 -pg 1 -lvl 4 -x 2830 -y 1030 -defaultsOSRD
+preplace inst xlconcat_0 -pg 1 -lvl 9 -x 4810 -y 730 -defaultsOSRD
+preplace inst axi_mem_intercon -pg 1 -lvl 9 -x 4810 -y 130 -defaultsOSRD
+preplace inst axi_mem_intercon_1 -pg 1 -lvl 9 -x 4810 -y 400 -defaultsOSRD
+preplace inst axi_vdma_0 -pg 1 -lvl 8 -x 4290 -y 620 -defaultsOSRD
+preplace inst ps7_0_axi_periph -pg 1 -lvl 3 -x 1000 -y 700 -defaultsOSRD
+preplace inst v_axi4s_vid_out_0 -pg 1 -lvl 9 -x 4810 -y 970 -defaultsOSRD
+preplace inst vtg -pg 1 -lvl 8 -x 4290 -y 930 -defaultsOSRD
+preplace inst RISCVCOREZYNQ_0 -pg 1 -lvl 11 -x 6620 -y -670 -defaultsOSRD
+preplace inst instructionmemIP_0 -pg 1 -lvl 10 -x 6050 -y -350 -defaultsOSRD
+preplace inst datamemIP_0 -pg 1 -lvl 10 -x 6050 -y -830 -defaultsOSRD
+preplace inst registerIP_0 -pg 1 -lvl 10 -x 6050 -y -570 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -x 110 -y 1190 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 10 -x 6050 -y 450 -defaultsOSRD
+preplace inst rgb2dvi_0 -pg 1 -lvl 10 -x 6050 -y 910 -defaultsOSRD
+preplace inst rst_clk_wiz_0_50M -pg 1 -lvl 2 -x 490 -y 860 -defaultsOSRD
+preplace inst rst_ps7_0_100M -pg 1 -lvl 11 -x 6620 -y 380 -defaultsOSRD
+preplace inst rst_ps7_0_50M -pg 1 -lvl 11 -x 6620 -y 560 -defaultsOSRD
+preplace inst rst_vid_clk_dyn -pg 1 -lvl 7 -x 3870 -y 700 -defaultsOSRD
+preplace inst video_dynclk -pg 1 -lvl 4 -x 2830 -y 690 -defaultsOSRD
+preplace inst controlIP_0 -pg 1 -lvl 10 -x 6050 -y 90 -defaultsOSRD
+preplace inst axi_mem_intercon|s00_couplers -pg 1 -lvl 1 -x 4920 -y 140 -defaultsOSRD
+preplace inst axi_mem_intercon_1|s00_couplers -pg 1 -lvl 1 -x 4920 -y 410 -defaultsOSRD
+preplace inst ps7_0_axi_periph|xbar -pg 1 -lvl 2 -x 1710 -y 940 -defaultsOSRD
+preplace inst ps7_0_axi_periph|s00_couplers -pg 1 -lvl 1 -x 1180 -y 910 -defaultsOSRD
+preplace inst ps7_0_axi_periph|s01_couplers -pg 1 -lvl 1 -x 1180 -y 1160 -defaultsOSRD
+preplace inst ps7_0_axi_periph|m00_couplers -pg 1 -lvl 3 -x 2180 -y 610 -defaultsOSRD
+preplace inst ps7_0_axi_periph|m01_couplers -pg 1 -lvl 3 -x 2180 -y 790 -defaultsOSRD
+preplace inst ps7_0_axi_periph|m02_couplers -pg 1 -lvl 3 -x 2180 -y 970 -defaultsOSRD
+preplace inst ps7_0_axi_periph|m03_couplers -pg 1 -lvl 3 -x 2180 -y 1150 -defaultsOSRD
+preplace inst ps7_0_axi_periph|m04_couplers -pg 1 -lvl 3 -x 2180 -y 1330 -defaultsOSRD
+preplace inst ps7_0_axi_periph|m05_couplers -pg 1 -lvl 3 -x 2180 -y 1510 -defaultsOSRD
+preplace inst ps7_0_axi_periph|m06_couplers -pg 1 -lvl 3 -x 2180 -y 1690 -defaultsOSRD
+preplace inst ps7_0_axi_periph|m07_couplers -pg 1 -lvl 3 -x 2180 -y 1860 -defaultsOSRD
+preplace inst ps7_0_axi_periph|m08_couplers -pg 1 -lvl 3 -x 2180 -y 2030 -defaultsOSRD
+preplace inst ps7_0_axi_periph|m09_couplers -pg 1 -lvl 3 -x 2180 -y 2200 -defaultsOSRD
+preplace inst axi_mem_intercon|s00_couplers|auto_pc -pg 1 -lvl 1 -x 5030 -y 150 -defaultsOSRD
+preplace inst axi_mem_intercon_1|s00_couplers|auto_pc -pg 1 -lvl 1 -x 5030 -y 420 -defaultsOSRD
+preplace inst ps7_0_axi_periph|s00_couplers|auto_pc -pg 1 -lvl 1 -x 1290 -y 920 -defaultsOSRD
+preplace netloc DVIClocking_0_SerialClk 1 6 4 3670J 1110 NJ 1110 NJ 1110 5490
+preplace netloc DVIClocking_0_aLockedOut 1 6 1 N 740
+preplace netloc MIPI_D_PHY_RX_0_RxByteClkHS 1 4 1 3030 880n
+preplace netloc PixelClk_Generator_clk_out1 1 6 4 3700 800 4110 780 4460 830 5420J
+preplace netloc axi_vdma_0_mm2s_introut 1 8 1 4490 660n
+preplace netloc axi_vdma_0_s2mm_introut 1 8 1 4470 680n
+preplace netloc clk_wiz_0_locked 1 1 1 320 900n
+preplace netloc clk_wiz_1_locked 1 4 2 2990 730 NJ
+preplace netloc clk_wiz_1_pxl_clk_5x 1 4 2 3030 710 NJ
+preplace netloc dphy_clk_lp_n_1 1 0 4 -90J 210 NJ 210 NJ 210 2660J
+preplace netloc dphy_clk_lp_p_1 1 0 4 -60J 290 NJ 290 NJ 290 2650J
+preplace netloc dphy_data_hs_n_1 1 0 4 -80J 270 NJ 270 NJ 270 2620J
+preplace netloc dphy_data_hs_p_1 1 0 4 -50J 280 NJ 280 NJ 280 2610J
+preplace netloc dphy_data_lp_n_1 1 0 4 -40J 310 NJ 310 NJ 310 2530J
+preplace netloc dphy_data_lp_p_1 1 0 4 -30J 320 NJ 320 NJ 320 2520J
+preplace netloc mm_clk_150 1 1 9 210J 240 NJ 240 NJ 240 3020 760 3320 810 3700 810 4040 470 4520 620 5810
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 11 20 1100 NJ 1100 670J 330 2600 460 NJ 460 NJ 460 NJ 460 NJ 460 4470J 570 5710J 230 6300
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 10 320 190 NJ 190 NJ 190 NJ 190 NJ 190 3670 480 NJ 480 4530J 580 5740J 250 6320
+preplace netloc ref_clk_200 1 1 3 200J 230 NJ 230 2570
+preplace netloc rst_clk_wiz_0_50M_interconnect_aresetn 1 2 7 690 200 NJ 200 NJ 200 NJ 200 NJ 200 NJ 200 4570
+preplace netloc rst_clk_wiz_0_50M_peripheral_aresetn 1 2 8 700 340 2490 830 3000 1000 3330 1000 3680 1040 4100 770 4540 630 5780
+preplace netloc rst_clk_wiz_0_50M_peripheral_reset 1 2 2 680 350 2500J
+preplace netloc rst_vid_clk_dyn_peripheral_aresetn 1 7 1 4050 740n
+preplace netloc rst_vid_clk_dyn_peripheral_reset 1 7 2 4060 1080 4570J
+preplace netloc s_axil_clk_50 1 1 9 310 760 710 360 2480 850 2990 1010 NJ 1010 3700 1050 4090 490 4490J 610 5720
+preplace netloc v_axi4s_vid_out_0_locked 1 9 1 5480 900n
+preplace netloc v_axi4s_vid_out_0_vtg_ce 1 7 3 4120 750 4460J 650 5400
+preplace netloc v_tc_0_irq 1 8 1 4500 710n
+preplace netloc xlconcat_0_dout 1 9 1 5820 530n
+preplace netloc RISCVCOREZYNQ_0_pc_out 1 9 3 5750 -240 NJ -240 6870
+preplace netloc instructionmemIP_0_instruction 1 10 1 6340 -660n
+preplace netloc registerIP_0_readdata1 1 10 1 6320 -640n
+preplace netloc registerIP_0_readdata2 1 10 1 6350 -620n
+preplace netloc RISCVCOREZYNQ_0_mem_read 1 9 3 5770 -1000 NJ -1000 6850
+preplace netloc RISCVCOREZYNQ_0_mem_write 1 9 3 5790 -260 NJ -260 6820
+preplace netloc RISCVCOREZYNQ_0_mem_addr 1 9 3 5760 -1010 NJ -1010 6860
+preplace netloc RISCVCOREZYNQ_0_mem_write_data 1 9 3 5760 -250 NJ -250 6810
+preplace netloc datamemIP_0_readdata 1 10 1 6360 -830n
+preplace netloc RISCVCOREZYNQ_0_reg_write 1 9 3 5780 -990 NJ -990 6810
+preplace netloc RISCVCOREZYNQ_0_rs1_addr 1 9 3 5800 -980 NJ -980 6820
+preplace netloc RISCVCOREZYNQ_0_rs2_addr 1 9 3 5810 -970 NJ -970 6830
+preplace netloc RISCVCOREZYNQ_0_rd_addr 1 9 3 5740 -230 NJ -230 6830
+preplace netloc RISCVCOREZYNQ_0_write_data 1 9 3 5820 -960 NJ -960 6840
+preplace netloc processing_system7_0_FCLK_CLK1 1 2 9 730 -200 N -200 N -200 N -200 N -200 N -200 N -200 5710 -200 6370
+preplace netloc rst_ps7_0_50M_peripheral_aresetn 1 2 10 720 250 NJ 250 NJ 250 NJ 250 NJ 250 NJ 250 4480J 590 5700 220 NJ 220 6820
+preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 2 10 740 260 NJ 260 NJ 260 NJ 260 NJ 260 NJ 260 4550J 600 5750J 240 6350J 250 6810
+preplace netloc controlsubsystemIP_0_riscv_resetbar 1 9 2 5720 -210 6330
+preplace netloc controlsubsystemIP_0_riscv_hold 1 9 2 5730 -220 6310
+preplace netloc controlIP_0_riscv_start 1 10 1 6300 -740n
+preplace netloc AXI_BayerToRGB_1_AXI_Stream_Master 1 6 1 3690 880n
+preplace netloc AXI_GammaCorrection_0_m_axis_video 1 7 1 4070 570n
+preplace netloc MIPI_CSI_2_RX_0_m_axis_video 1 5 1 N 890
+preplace netloc MIPI_D_PHY_RX_0_D_PHY_PPI 1 4 1 3010 860n
+preplace netloc axi_mem_intercon_1_M00_AXI 1 9 1 5790 420n
+preplace netloc axi_mem_intercon_M00_AXI 1 9 1 5820 150n
+preplace netloc axi_vdma_0_M_AXIS_MM2S 1 8 1 4480 600n
+preplace netloc axi_vdma_0_M_AXI_MM2S 1 8 1 4460 130n
+preplace netloc axi_vdma_0_M_AXI_S2MM 1 8 1 4500 400n
+preplace netloc dphy_hs_clock_1 1 0 4 -70J 220 NJ 220 NJ 220 2670J
+preplace netloc processing_system7_0_DDR 1 10 2 6390J 260 N
+preplace netloc processing_system7_0_FIXED_IO 1 10 2 6400J 270 6870
+preplace netloc processing_system7_0_GPIO_0 1 10 2 6380J 240 6850
+preplace netloc processing_system7_0_IIC_0 1 10 2 6410J 280 6840
+preplace netloc processing_system7_0_M_AXI_GP0 1 2 9 760 300 NJ 300 NJ 300 NJ 300 NJ 300 NJ 300 4510J 640 NJ 640 6280
+preplace netloc ps7_0_axi_periph_M00_AXI 1 3 5 2510 550 NJ 550 NJ 550 NJ 550 NJ
+preplace netloc ps7_0_axi_periph_M01_AXI 1 3 1 2510 660n
+preplace netloc ps7_0_axi_periph_M02_AXI 1 3 5 2560J 790 2990J 770 3330J 820 NJ 820 4080
+preplace netloc ps7_0_axi_periph_M03_AXI 1 3 1 2640 910n
+preplace netloc ps7_0_axi_periph_M04_AXI 1 3 2 2630 840 NJ
+preplace netloc ps7_0_axi_periph_M05_AXI 1 3 4 2600 780 NJ 780 3310J 830 3680J
+preplace netloc rgb2dvi_0_TMDS 1 10 2 NJ 910 6810
+preplace netloc v_axi4s_vid_out_0_vid_io_out 1 9 1 5450 880n
+preplace netloc v_tc_0_vtiming_out 1 8 1 N 910
+preplace netloc ps7_0_axi_periph_M06_AXI 1 3 7 2550 10 N 10 N 10 N 10 N 10 N 10 5820
+preplace netloc ps7_0_axi_periph_M07_AXI 1 3 7 2540 -900 NJ -900 NJ -900 NJ -900 NJ -900 NJ -900 NJ
+preplace netloc ps7_0_axi_periph_M08_AXI 1 3 7 2590 -380 NJ -380 NJ -380 NJ -380 NJ -380 NJ -380 NJ
+preplace netloc processing_system7_0_M_AXI_GP1 1 2 9 750 370 NJ 370 NJ 370 NJ 370 NJ 370 NJ 370 4560J 560 5730J 260 6290
+preplace netloc ps7_0_axi_periph_M09_AXI 1 3 7 2580 -660 NJ -660 NJ -660 NJ -660 NJ -660 NJ -660 NJ
+preplace netloc axi_mem_intercon|axi_mem_intercon_ACLK_net 1 0 1 4720 150n
+preplace netloc axi_mem_intercon|axi_mem_intercon_ARESETN_net 1 0 1 4730 170n
+preplace netloc axi_mem_intercon|S00_ACLK_1 1 0 1 N 190
+preplace netloc axi_mem_intercon|S00_ARESETN_1 1 0 1 N 210
+preplace netloc axi_mem_intercon|axi_mem_intercon_to_s00_couplers 1 0 1 N 130
+preplace netloc axi_mem_intercon|s00_couplers_to_axi_mem_intercon 1 1 1 N 150
+preplace netloc axi_mem_intercon_1|axi_mem_intercon_1_ACLK_net 1 0 1 4720 420n
+preplace netloc axi_mem_intercon_1|axi_mem_intercon_1_ARESETN_net 1 0 1 4730 440n
+preplace netloc axi_mem_intercon_1|S00_ACLK_1 1 0 1 N 460
+preplace netloc axi_mem_intercon_1|S00_ARESETN_1 1 0 1 N 480
+preplace netloc axi_mem_intercon_1|axi_mem_intercon_1_to_s00_couplers 1 0 1 N 400
+preplace netloc axi_mem_intercon_1|s00_couplers_to_axi_mem_intercon_1 1 1 1 N 420
+preplace netloc ps7_0_axi_periph|ps7_0_axi_periph_ACLK_net 1 0 3 940 1020 1560 1100 1930
+preplace netloc ps7_0_axi_periph|ps7_0_axi_periph_ARESETN_net 1 0 3 960 1050 1570 1110 1940
+preplace netloc ps7_0_axi_periph|S00_ACLK_1 1 0 1 970 960n
+preplace netloc ps7_0_axi_periph|S00_ARESETN_1 1 0 1 990 980n
+preplace netloc ps7_0_axi_periph|S01_ACLK_1 1 0 1 920 1180n
+preplace netloc ps7_0_axi_periph|S01_ARESETN_1 1 0 1 990 1200n
+preplace netloc ps7_0_axi_periph|M00_ACLK_1 1 0 3 920J 760 NJ 760 1850
+preplace netloc ps7_0_axi_periph|M00_ARESETN_1 1 0 3 930J 780 1550J 770 1870
+preplace netloc ps7_0_axi_periph|M01_ACLK_1 1 0 3 950J 790 1560J 780 1880
+preplace netloc ps7_0_axi_periph|M01_ARESETN_1 1 0 3 980J 800 1570J 790 N
+preplace netloc ps7_0_axi_periph|M02_ACLK_1 1 0 3 990J 1060 1540J 1090 1920
+preplace netloc ps7_0_axi_periph|M02_ARESETN_1 1 0 3 NJ 1250 NJ 1250 1970
+preplace netloc ps7_0_axi_periph|M03_ACLK_1 1 0 3 NJ 1270 1540J 1230 1960
+preplace netloc ps7_0_axi_periph|M03_ARESETN_1 1 0 3 NJ 1290 1570J 1240 1990
+preplace netloc ps7_0_axi_periph|M04_ACLK_1 1 0 3 NJ 1310 NJ 1310 N
+preplace netloc ps7_0_axi_periph|M04_ARESETN_1 1 0 3 NJ 1330 NJ 1330 N
+preplace netloc ps7_0_axi_periph|M05_ACLK_1 1 0 3 NJ 1490 NJ 1490 N
+preplace netloc ps7_0_axi_periph|M05_ARESETN_1 1 0 3 NJ 1510 NJ 1510 N
+preplace netloc ps7_0_axi_periph|M06_ACLK_1 1 0 3 NJ 1670 NJ 1670 N
+preplace netloc ps7_0_axi_periph|M06_ARESETN_1 1 0 3 NJ 1690 NJ 1690 N
+preplace netloc ps7_0_axi_periph|M07_ACLK_1 1 0 3 NJ 1840 NJ 1840 N
+preplace netloc ps7_0_axi_periph|M07_ARESETN_1 1 0 3 NJ 1860 NJ 1860 N
+preplace netloc ps7_0_axi_periph|M08_ACLK_1 1 0 3 NJ 2010 NJ 2010 N
+preplace netloc ps7_0_axi_periph|M08_ARESETN_1 1 0 3 NJ 2030 NJ 2030 N
+preplace netloc ps7_0_axi_periph|M09_ACLK_1 1 0 3 NJ 2090 NJ 2090 1860
+preplace netloc ps7_0_axi_periph|M09_ARESETN_1 1 0 3 NJ 2110 NJ 2110 1850
+preplace netloc ps7_0_axi_periph|ps7_0_axi_periph_to_s00_couplers 1 0 1 N 900
+preplace netloc ps7_0_axi_periph|s00_couplers_to_xbar 1 1 1 1550 910n
+preplace netloc ps7_0_axi_periph|ps7_0_axi_periph_to_s01_couplers 1 0 1 910 920n
+preplace netloc ps7_0_axi_periph|s01_couplers_to_xbar 1 1 1 1550 930n
+preplace netloc ps7_0_axi_periph|m00_couplers_to_ps7_0_axi_periph 1 3 1 N 570
+preplace netloc ps7_0_axi_periph|xbar_to_m00_couplers 1 2 1 1860 570n
+preplace netloc ps7_0_axi_periph|m01_couplers_to_ps7_0_axi_periph 1 3 1 N 750
+preplace netloc ps7_0_axi_periph|xbar_to_m01_couplers 1 2 1 1910 750n
+preplace netloc ps7_0_axi_periph|m02_couplers_to_ps7_0_axi_periph 1 3 1 N 930
+preplace netloc ps7_0_axi_periph|xbar_to_m02_couplers 1 2 1 1990 890n
+preplace netloc ps7_0_axi_periph|m03_couplers_to_ps7_0_axi_periph 1 3 1 N 1110
+preplace netloc ps7_0_axi_periph|xbar_to_m03_couplers 1 2 1 1980 910n
+preplace netloc ps7_0_axi_periph|m04_couplers_to_ps7_0_axi_periph 1 3 1 N 1290
+preplace netloc ps7_0_axi_periph|xbar_to_m04_couplers 1 2 1 1950 930n
+preplace netloc ps7_0_axi_periph|m05_couplers_to_ps7_0_axi_periph 1 3 1 N 1470
+preplace netloc ps7_0_axi_periph|xbar_to_m05_couplers 1 2 1 1910 950n
+preplace netloc ps7_0_axi_periph|m06_couplers_to_ps7_0_axi_periph 1 3 1 N 1690
+preplace netloc ps7_0_axi_periph|xbar_to_m06_couplers 1 2 1 1900 970n
+preplace netloc ps7_0_axi_periph|m07_couplers_to_ps7_0_axi_periph 1 3 1 N 1860
+preplace netloc ps7_0_axi_periph|xbar_to_m07_couplers 1 2 1 1890 990n
+preplace netloc ps7_0_axi_periph|m08_couplers_to_ps7_0_axi_periph 1 3 1 N 2030
+preplace netloc ps7_0_axi_periph|xbar_to_m08_couplers 1 2 1 1880 1010n
+preplace netloc ps7_0_axi_periph|m09_couplers_to_ps7_0_axi_periph 1 3 1 N 2200
+preplace netloc ps7_0_axi_periph|xbar_to_m09_couplers 1 2 1 1870 1030n
+preplace netloc axi_mem_intercon|s00_couplers|S_ACLK_1 1 0 1 4870 150n
+preplace netloc axi_mem_intercon|s00_couplers|S_ARESETN_1 1 0 1 4880 170n
+preplace netloc axi_mem_intercon|s00_couplers|s00_couplers_to_auto_pc 1 0 1 N 130
+preplace netloc axi_mem_intercon|s00_couplers|auto_pc_to_s00_couplers 1 1 1 N 150
+preplace netloc axi_mem_intercon_1|s00_couplers|S_ACLK_1 1 0 1 4870 420n
+preplace netloc axi_mem_intercon_1|s00_couplers|S_ARESETN_1 1 0 1 4880 440n
+preplace netloc axi_mem_intercon_1|s00_couplers|s00_couplers_to_auto_pc 1 0 1 N 400
+preplace netloc axi_mem_intercon_1|s00_couplers|auto_pc_to_s00_couplers 1 1 1 N 420
+preplace netloc ps7_0_axi_periph|s00_couplers|S_ACLK_1 1 0 1 1130 920n
+preplace netloc ps7_0_axi_periph|s00_couplers|S_ARESETN_1 1 0 1 1140 940n
+preplace netloc ps7_0_axi_periph|s00_couplers|s00_couplers_to_auto_pc 1 0 1 N 900
+preplace netloc ps7_0_axi_periph|s00_couplers|auto_pc_to_s00_couplers 1 1 1 N 920
+preplace netloc ps7_0_axi_periph|m00_couplers|m00_couplers_to_m00_couplers 1 0 1 N 570
+preplace netloc ps7_0_axi_periph|m01_couplers|m01_couplers_to_m01_couplers 1 0 1 N 750
+preplace netloc ps7_0_axi_periph|m02_couplers|m02_couplers_to_m02_couplers 1 0 1 N 930
+preplace netloc ps7_0_axi_periph|m03_couplers|m03_couplers_to_m03_couplers 1 0 1 N 1110
+preplace netloc ps7_0_axi_periph|m04_couplers|m04_couplers_to_m04_couplers 1 0 1 N 1290
+preplace netloc ps7_0_axi_periph|m05_couplers|m05_couplers_to_m05_couplers 1 0 1 N 1470
+levelinfo -pg 1 -110 110 490 1000 2830 3170 3500 3870 4290 4810 6050 6620 6920
+levelinfo -hier axi_mem_intercon * 4920 *
+levelinfo -hier axi_mem_intercon_1 * 4920 *
+levelinfo -hier ps7_0_axi_periph * 1180 1710 2180 *
+levelinfo -hier axi_mem_intercon|s00_couplers * 5030 *
+levelinfo -hier axi_mem_intercon_1|s00_couplers * 5030 *
+levelinfo -hier ps7_0_axi_periph|s00_couplers * 1290 *
+levelinfo -hier ps7_0_axi_periph|m00_couplers * *
+levelinfo -hier ps7_0_axi_periph|m01_couplers * *
+levelinfo -hier ps7_0_axi_periph|m02_couplers * *
+levelinfo -hier ps7_0_axi_periph|m03_couplers * *
+levelinfo -hier ps7_0_axi_periph|m04_couplers * *
+levelinfo -hier ps7_0_axi_periph|m05_couplers * *
+pagesize -pg 1 -db -bbox -sgen -300 -2120 7040 2320
+pagesize -hier axi_mem_intercon -db -bbox -sgen 4690 40 5310 260
+pagesize -hier axi_mem_intercon_1 -db -bbox -sgen 4690 310 5310 530
+pagesize -hier ps7_0_axi_periph -db -bbox -sgen 880 400 2360 2290
+pagesize -hier axi_mem_intercon|s00_couplers -db -bbox -sgen 4840 70 5210 230
+pagesize -hier axi_mem_intercon_1|s00_couplers -db -bbox -sgen 4840 340 5210 500
+pagesize -hier ps7_0_axi_periph|s00_couplers -db -bbox -sgen 1100 840 1470 1000
+pagesize -hier ps7_0_axi_periph|m00_couplers -db -bbox -sgen 2100 540 2260 680
+pagesize -hier ps7_0_axi_periph|m01_couplers -db -bbox -sgen 2100 720 2260 860
+pagesize -hier ps7_0_axi_periph|m02_couplers -db -bbox -sgen 2100 900 2260 1040
+pagesize -hier ps7_0_axi_periph|m03_couplers -db -bbox -sgen 2100 1080 2260 1220
+pagesize -hier ps7_0_axi_periph|m04_couplers -db -bbox -sgen 2100 1260 2260 1400
+pagesize -hier ps7_0_axi_periph|m05_couplers -db -bbox -sgen 2100 1440 2260 1580
+"
+}
+{
+   "da_axi4_cnt":"6"
+}

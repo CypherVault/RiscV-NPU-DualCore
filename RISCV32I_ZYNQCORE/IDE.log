@@ -1,0 +1,83 @@
+00:08:08 DEBUG : Logs will be stored at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/IDE.log'.
+00:08:11 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\Chris\Desktop\RiscV-NPU-DualCore\RISCV32I_ZYNQCORE\temp_xsdb_launch_script.tcl
+00:08:11 INFO  : Registering command handlers for Vitis TCF services
+00:08:12 INFO  : Platform repository initialization has completed.
+00:08:16 INFO  : XSCT server has started successfully.
+00:08:22 INFO  : plnx-install-location is set to ''
+00:08:22 INFO  : Successfully done setting XSCT server connection channel  
+00:08:22 INFO  : Successfully done query RDI_DATADIR 
+00:08:22 INFO  : Successfully done setting workspace for the tool. 
+00:19:28 DEBUG : Logs will be stored at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/IDE.log'.
+00:19:30 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\Chris\Desktop\RiscV-NPU-DualCore\RISCV32I_ZYNQCORE\temp_xsdb_launch_script.tcl
+00:19:30 INFO  : Registering command handlers for Vitis TCF services
+00:19:31 INFO  : Platform repository initialization has completed.
+00:19:33 INFO  : XSCT server has started successfully.
+00:19:33 INFO  : plnx-install-location is set to ''
+00:19:33 INFO  : Successfully done setting XSCT server connection channel  
+00:19:33 INFO  : Successfully done query RDI_DATADIR 
+00:19:33 INFO  : Successfully done setting workspace for the tool. 
+12:09:26 DEBUG : Logs will be stored at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/IDE.log'.
+12:09:29 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\Chris\Desktop\RiscV-NPU-DualCore\RISCV32I_ZYNQCORE\temp_xsdb_launch_script.tcl
+12:09:30 INFO  : Registering command handlers for Vitis TCF services
+12:09:30 INFO  : Platform repository initialization has completed.
+12:09:34 INFO  : XSCT server has started successfully.
+12:09:39 INFO  : plnx-install-location is set to ''
+12:09:39 INFO  : Successfully done setting XSCT server connection channel  
+12:09:39 INFO  : Successfully done query RDI_DATADIR 
+12:09:39 INFO  : Successfully done setting workspace for the tool. 
+12:26:41 INFO  : Result from executing command 'getProjects': zynq_design_wrapper
+12:26:41 INFO  : Result from executing command 'getPlatforms': xilinx_zcu102_base_202420_1|F:/Vitis/2024.2/base_platforms/xilinx_zcu102_base_202420_1/xilinx_zcu102_base_202420_1.xpfm;xilinx_zcu102_base_dfx_202420_1|F:/Vitis/2024.2/base_platforms/xilinx_zcu102_base_dfx_202420_1/xilinx_zcu102_base_dfx_202420_1.xpfm;xilinx_zcu104_base_202420_1|F:/Vitis/2024.2/base_platforms/xilinx_zcu104_base_202420_1/xilinx_zcu104_base_202420_1.xpfm
+12:26:41 WARN  : An unexpected exception occurred in the module 'platform project logging'
+12:26:42 INFO  : Platform 'zynq_design_wrapper' is added to custom repositories.
+12:26:54 INFO  : Platform 'zynq_design_wrapper' is added to custom repositories.
+12:27:09 INFO  : Checking for BSP changes to sync application flags for project 'RV32I'...
+12:27:09 INFO  : Result from executing command 'getProjects': RV32I;RV32I_system;RemoteSystemsTempFiles;zynq_design_wrapper
+12:27:09 WARN  : Failed to closehw "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/zynq_design_wrapper/export/zynq_design_wrapper/hw/zynq_design_wrapper.xsa"
+Reason: C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/zynq_design_wrapper/export/zynq_design_wrapper/hw/zynq_design_wrapper.xsa is not available in the current workspace
+use 'getprojects' command to see list of available projects in current workspace
+12:27:09 INFO  : Result from executing command 'getProjects': RV32I;RV32I_system;RemoteSystemsTempFiles;zynq_design_wrapper
+12:27:09 ERROR : Failed to openhw "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/zynq_design_wrapper/export/zynq_design_wrapper/hw/zynq_design_wrapper.xsa"
+Reason: C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/zynq_design_wrapper/export/zynq_design_wrapper/hw/zynq_design_wrapper.xsa is not available in the current workspace
+use 'getprojects' command to see list of available projects in current workspace
+12:27:09 ERROR : Failed to update application flags from BSP for 'RV32I'. Reason: null
+java.lang.NullPointerException: null
+	at com.xilinx.sdx.sw.internal.SDxSwPlatform.<init>(SDxSwPlatform.java:305) ~[com.xilinx.sdx.sw_1.0.0.202411031917.jar:?]
+	at com.xilinx.sdx.sw.internal.SDxSwPlatform.create(SDxSwPlatform.java:214) ~[com.xilinx.sdx.sw_1.0.0.202411031917.jar:?]
+	at com.xilinx.sdx.sdk.core.util.SdkPlatformHelper.getSwPlatform(SdkPlatformHelper.java:64) ~[com.xilinx.sdx.sdk.core_1.0.0.202411031917.jar:?]
+	at com.xilinx.sdx.sdk.core.build.SdkMakefileGenerationListener.getSwPlatform(SdkMakefileGenerationListener.java:160) ~[com.xilinx.sdx.sdk.core_1.0.0.202411031917.jar:?]
+	at com.xilinx.sdx.sdk.core.build.SdkMakefileGenerationListener.syncAppFlags(SdkMakefileGenerationListener.java:78) [com.xilinx.sdx.sdk.core_1.0.0.202411031917.jar:?]
+	at com.xilinx.sdx.sdk.core.build.SdkMakefileGenerationListener.preMakefileGeneration(SdkMakefileGenerationListener.java:48) [com.xilinx.sdx.sdk.core_1.0.0.202411031917.jar:?]
+	at com.xilinx.sdk.managedbuilder.XilinxGnuMakefileGenerator.notifyPreMakefileGenerationListeners(XilinxGnuMakefileGenerator.java:91) [com.xilinx.sdk.managedbuilder_1.0.0.202411031917.jar:?]
+	at com.xilinx.sdk.managedbuilder.XilinxGnuMakefileGenerator.regenerateMakefiles(XilinxGnuMakefileGenerator.java:75) [com.xilinx.sdk.managedbuilder_1.0.0.202411031917.jar:?]
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1006) [org.eclipse.cdt.managedbuilder.core_8.6.0.201802261533.jar:?]
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:873) [org.eclipse.cdt.managedbuilder.core_8.6.0.201802261533.jar:?]
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:748) [org.eclipse.cdt.managedbuilder.core_8.6.0.201802261533.jar:?]
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:513) [org.eclipse.cdt.managedbuilder.core_8.6.0.201802261533.jar:?]
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:459) [org.eclipse.cdt.managedbuilder.core_8.6.0.201802261533.jar:?]
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:832) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45) [org.eclipse.equinox.common_3.11.0.v20200206-0817.jar:?]
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:263) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:316) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45) [org.eclipse.equinox.common_3.11.0.v20200206-0817.jar:?]
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:319) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:371) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:392) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:515) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:412) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:291) [org.eclipse.ui.ide_3.17.0.v20200217-1511.jar:?]
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) [org.eclipse.core.jobs_3.10.700.v20200106-1020.jar:?]
+12:27:10 ERROR : Failed to compute checksum of hardware specification file used by project 'RV32I'
+12:27:10 INFO  : Result from executing command 'getProjects': RV32I;RV32I_system;RemoteSystemsTempFiles;zynq_design_wrapper
+12:27:10 ERROR : Failed to openhw "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/zynq_design_wrapper/export/zynq_design_wrapper/hw/zynq_design_wrapper.xsa"
+Reason: C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/zynq_design_wrapper/export/zynq_design_wrapper/hw/zynq_design_wrapper.xsa is not available in the current workspace
+use 'getprojects' command to see list of available projects in current workspace
+12:27:10 INFO  : Result from executing command 'getProjects': RV32I;RV32I_system;RemoteSystemsTempFiles;zynq_design_wrapper
+12:27:10 ERROR : Failed to openhw "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/zynq_design_wrapper/export/zynq_design_wrapper/hw/zynq_design_wrapper.xsa"
+Reason: C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/zynq_design_wrapper/export/zynq_design_wrapper/hw/zynq_design_wrapper.xsa is not available in the current workspace
+use 'getprojects' command to see list of available projects in current workspace
+12:27:11 INFO  : Result from executing command 'getProjects': RV32I;RV32I_system;RemoteSystemsTempFiles;zynq_design_wrapper
+12:27:11 ERROR : Failed to openhw "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/zynq_design_wrapper/export/zynq_design_wrapper/hw/zynq_design_wrapper.xsa"
+Reason: C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/zynq_design_wrapper/export/zynq_design_wrapper/hw/zynq_design_wrapper.xsa is not available in the current workspace
+use 'getprojects' command to see list of available projects in current workspace
