@@ -1,0 +1,9 @@
+-IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/NPU
+-I$(ARM_COMPUTELIB)
+-I$(ARM_COMPUTELIB)/include
+-IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/NPU/zynq_7000_tutorial_3zynq7000
+-IF:/matlab2023/extern/include
+-IF:/matlab2023/simulink/include
+-IF:/matlab2023/rtw/c/src
+-IF:/matlab2023/rtw/c/src/ext_mode/common
+-IF:/matlab2023/rtw/c/ert

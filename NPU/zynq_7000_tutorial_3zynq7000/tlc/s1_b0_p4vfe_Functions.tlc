@@ -1,0 +1,475 @@
+%implements s1_b0_p4vfe_Functions "C"
+
+%function rt_powd_snf_Fcn0(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+real_T y;
+if (std::isnan(u0) || std::isnan(u1)) {
+    y = %<LibGetMathConstant(LibRealNonFinite("nan"), FcnGetDataTypeIdFromName("double"))>;
+} else {
+    real_T tmp;
+    real_T tmp_0;
+    tmp = std::abs(u0);
+    tmp_0 = std::abs(u1);
+    if (std::isinf(u1)) {
+        if (tmp == 1.0) {
+            y = 1.0;
+        } else if (tmp > 1.0) {
+            if (u1 > 0.0) {
+                y = %<LibGetMathConstant(LibRealNonFinite("inf"), FcnGetDataTypeIdFromName("double"))>;
+            } else {
+                y = 0.0;
+            }
+        } else if (u1 > 0.0) {
+            y = 0.0;
+        } else {
+            y = %<LibGetMathConstant(LibRealNonFinite("inf"), FcnGetDataTypeIdFromName("double"))>;
+        }
+    } else if (tmp_0 == 0.0) {
+        y = 1.0;
+    } else if (tmp_0 == 1.0) {
+        if (u1 > 0.0) {
+            y = u0;
+        } else {
+            y = 1.0 / u0;
+        }
+    } else if (u1 == 2.0) {
+        y = u0 * u0;
+    } else if ((u1 == 0.5) && (u0 >= 0.0)) {
+        y = std::sqrt(u0);
+    } else if ((u0 < 0.0) && (u1 > std::floor(u1))) {
+        y = %<LibGetMathConstant(LibRealNonFinite("nan"), FcnGetDataTypeIdFromName("double"))>;
+    } else {
+        y = std::pow(u0, u1);
+    }
+}
+return y;
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+extern real_T rt_powd_snf(\
+%assign comma = ""
+%<comma>real_T u0\
+%assign comma = ", "
+%<comma>real_T u1\
+%assign comma = ", "
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 0, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function zynq_7000_tutoria_contributions_Fcn1(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+real_T y[224];
+real_T absx;
+real_T absx2;
+real_T absx3;
+int32_T a;
+int32_T i2;
+int32_T ix;
+int32_T k;
+int32_T xoffset;
+int8_T tmp_data[25];
+boolean_T copyCols[25];
+static const int16_T c[224]%<(TLC_STR_CTX(0))>;
+static const real_T d[224]%<(TLC_STR_CTX(1))>;
+boolean_T exitg1;
+/*@>86a71*/for (/*@>180e8d*/i2 = /*@>180e8c*/0; /*@>180e97*/i2 < /*@>180e95*/25; /*@>180e93*/i2/*@>180eac*/++) {
+/*@>86aa6*/    for (/*@>180e9e*/xoffset = /*@>180e9d*/0; /*@>180ea8*/xoffset < /*@>180ea6*/224; /*@>180ea4*/xoffset/*@>180ead*/++) {
+        /*@>17189e*/zynq_7000_tutorial_3_B./*@>181122*/b_indices/*@>e3ac4*/[/*@>efd21*/xoffset/*@>e3ac0*/ + /*@>efe4b*/224/*@>f0236*/ * /*@>efd23*/i2]/*@>86b01*/ = /*@>16c7ef*/c/*@>16c7f1*/[/*@>16c7ee*/xoffset]/*@>86b02*/ + /*@>efd1d*/i2;
+    }
+}
+/*@>d7fae*/for (/*@>180e7c*/i2 = /*@>180e7b*/0; /*@>180e86*/i2 < /*@>180e84*/5600; /*@>180e82*/i2/*@>180eae*/++) {
+    /*@>1718aa*/zynq_7000_tutorial_3_B./*@>181125*/absx2/*@>d7fa0*/[/*@>efd10*/i2]/*@>d7fa1*/ = /*@>1718b0*/zynq_7000_tutorial_3_B./*@>181128*/b_indices/*@>16c7f7*/[/*@>16c7f4*/i2];
+}
+/*@>86b66*/for (/*@>180e5a*/xoffset = /*@>180e59*/0; /*@>180e64*/xoffset < /*@>180e62*/25; /*@>180e60*/xoffset/*@>180eaf*/++) {
+/*@>86b9e*/    for (/*@>180e6b*/k = /*@>180e6a*/0; /*@>180e75*/k < /*@>180e73*/224; /*@>180e71*/k/*@>180eb0*/++) {
+        /*@>13b2f3*/i2/*@>13b2f5*/ = /*@>efe4d*/224/*@>f0245*/ * /*@>efd32*/xoffset/*@>e3afb*/ + /*@>efd30*/k;
+        /*@>1718c2*/zynq_7000_tutorial_3_B./*@>181131*/absx3/*@>e3ae7*/[i2]/*@>86bd7*/ = /*@>16c801*/d/*@>16c803*/[/*@>16c800*/k]/*@>86be3*/ - /*@>1718c8*/zynq_7000_tutorial_3_B./*@>181134*/absx2/*@>16c809*/[/*@>16c806*/i2];
+    }
+}
+/*@>d8058*/for (/*@>180e49*/i2 = /*@>180e48*/0; /*@>180e53*/i2 < /*@>180e51*/5600; /*@>180e4f*/i2/*@>180eb1*/++) {
+    /*@>efe35*/absx/*@>86f2d*/ = /*@>15d3c7*/std::abs(/*@>1007bf*/0.175/*@>1007be*/ * /*@>1718b6*/zynq_7000_tutorial_3_B./*@>18112b*/absx3/*@>16c7fd*/[/*@>16c7fa*/i2]);
+    /*@>efe45*/absx2/*@>86ca6*/ = /*@>efe37*/absx/*@>f026a*/ * /*@>efe39*/absx;
+    /*@>efe2d*/absx3/*@>86d08*/ = /*@[17ea82*/%<(SLibCGCallSubFcn("rt_powd_snf", ["/*@>1811d0*/absx", "/*@>1811de*/3.0"], 0, 1, 0))>/*@]*/;
+    /*@>1718ce*/zynq_7000_tutorial_3_B./*@>181137*/absx3/*@>e0853*/[/*@>efe25*/i2]/*@>e085a*/ = ((((/*@>1007ea*/-0.5/*@>1007e9*/ * /*@>1007ec*/absx3/*@>1007e8*/ + /*@>1007ee*/2.5/*@>1007ed*/ * /*@>1007f0*/absx2)/*@>1007e7*/ - /*@>1007f2*/4.0/*@>1007f1*/ * /*@>1007f4*/absx)/*@>1007e6*/ + /*@>1007f5*/2.0)/*@>1007e5*/ * static_cast<real_T>((/*@>1007fa*/absx/*@>1007f8*/ > /*@>1007fb*/1.0)/*@>1007f7*/ && (/*@>1007fe*/absx/*@>1007fc*/ <= /*@>1007ff*/2.0))/*@>1007d3*/ + ((/*@>1007d8*/1.5/*@>1007d7*/ * /*@>1007da*/absx3/*@>1007d6*/ - /*@>1007dc*/2.5/*@>1007db*/ * /*@>1007de*/absx2)/*@>1007d5*/ + /*@>1007df*/1.0)/*@>1007d4*/ * static_cast<real_T>(/*@>1007e3*/absx/*@>1007e1*/ <= /*@>1007e4*/1.0))/*@>1007d1*/ * /*@>1007d2*/0.175;
+}
+/*@>163070*/std::memcpy(&/*@>1546b1*/y/*@>1546b2*/[/*@>1546a1*/0], &/*@>1718bc*/zynq_7000_tutorial_3_B./*@>18112e*/absx3/*@>1546ba*/[/*@>1546ae*/0], /*@>1546b0*/224U/*@>1546bd*/ * /*@>1546bc*/sizeof(real_T));
+/*@>87050*/for (/*@>180e27*/i2 = /*@>180e26*/0; /*@>180e31*/i2 < /*@>180e2f*/24; /*@>180e2d*/i2/*@>180eb4*/++) {
+    /*@>efc6e*/xoffset/*@>8702c*/ = (/*@>efcda*/i2 + 1)/*@>f0270*/ * /*@>efc70*/224;
+/*@>87053*/    for (/*@>180e38*/k = /*@>180e37*/0; /*@>180e42*/k < /*@>180e40*/224; /*@>180e3e*/k/*@>180eb5*/++) {
+        /*@>efd55*/y/*@>d83c8*/[/*@>efd57*/k]/*@>180eb6*/ += /*@>1718ec*/zynq_7000_tutorial_3_B./*@>181140*/absx3/*@>16c812*/[/*@>16c80d*/xoffset/*@>16c80b*/ + /*@>16c80f*/k];
+    }
+}
+/*@>163072*/std::memcpy(&/*@>1718da*/zynq_7000_tutorial_3_B./*@>18113a*/absx2/*@>154656*/[/*@>154645*/0], &/*@>1718e0*/zynq_7000_tutorial_3_B./*@>18113d*/absx3/*@>15465e*/[/*@>154652*/0], /*@>154654*/5600U/*@>154661*/ * /*@>154660*/sizeof(real_T));
+/*@>86d97*/for (/*@>180e05*/xoffset = /*@>180e04*/0; /*@>180e0f*/xoffset < /*@>180e0d*/25; /*@>180e0b*/xoffset/*@>180eb7*/++) {
+/*@>86dcf*/    for (/*@>180e16*/k = /*@>180e15*/0; /*@>180e20*/k < /*@>180e1e*/224; /*@>180e1c*/k/*@>180eb8*/++) {
+        /*@>13b2fd*/i2/*@>13b2ff*/ = /*@>efe4f*/224/*@>f0276*/ * /*@>efd61*/xoffset/*@>e3b41*/ + /*@>efd5f*/k;
+        /*@>171904*/zynq_7000_tutorial_3_B./*@>181149*/absx3/*@>e3b38*/[i2]/*@>86e08*/ = /*@>17190a*/zynq_7000_tutorial_3_B./*@>18114c*/absx2/*@>16c81e*/[/*@>16c81b*/i2]/*@>86e14*/ / /*@>16c822*/y/*@>16c824*/[/*@>16c821*/k];
+    }
+}
+/*@>1718f8*/zynq_7000_tutorial_3_B./*@>181143*/aux/*@>e3b52*/[/*@>efe50*/0]/*@>32626*/ = /*@>180d5d*/1;
+/*@>1718fe*/zynq_7000_tutorial_3_B./*@>181146*/aux/*@>e3b59*/[/*@>efe51*/1280]/*@>3262e*/ = /*@>180d60*/1280;
+/*@>325b3*/for (/*@>180df4*/i2 = /*@>180df3*/0; /*@>180dfe*/i2 < /*@>180dfc*/1279; /*@>180dfa*/i2/*@>180eb9*/++) {
+    /*@>171910*/zynq_7000_tutorial_3_B./*@>18114f*/aux/*@>e3b61*/[/*@>efd73*/i2 + 1]/*@>32640*/ = /*@>171916*/zynq_7000_tutorial_3_B./*@>181152*/aux/*@>16c82a*/[/*@>16c827*/i2]/*@>4cc9c*/ + /*@>efcc9*/1;
+    /*@>17191c*/zynq_7000_tutorial_3_B./*@>181155*/aux/*@>e3b72*/[/*@>efd7d*/i2/*@>d8519*/ + /*@>efd7f*/1281]/*@>32650*/ = /*@>171922*/zynq_7000_tutorial_3_B./*@>181158*/aux/*@>16c832*/[/*@>16c82e*/i2/*@>16c82c*/ + /*@>16c82f*/1280]/*@>4cce2*/ - /*@>efcc8*/1;
+}
+/*@>325b5*/for (/*@>180de3*/i2 = /*@>180de2*/0; /*@>180ded*/i2 < /*@>180deb*/5600; /*@>180de9*/i2/*@>180eba*/++) {
+    /*@>efe07*/xoffset/*@>e080e*/ = /*@>171928*/zynq_7000_tutorial_3_B./*@>18115b*/b_indices/*@>16c838*/[/*@>16c835*/i2];
+    /*@>86fdc*/if (static_cast<real_T>(/*@>efe13*/xoffset)/*@>89d60*/ - /*@>efc62*/1.0/*@>86fd3*/ == /*@>efc8c*/0.0) {
+        /*@>efc87*/k/*@>86fc6*/ = /*@>180d69*/0;
+    } else {
+        /*@>efc89*/k/*@>86fc8*/ = static_cast<int32_T>(/*@>15d3cf*/std::fmod(static_cast<real_T>(/*@>efe15*/xoffset)/*@>89d65*/ - /*@>efc61*/1.0, /*@>efc8b*/2560.0));
+        /*@>86fe0*/if ((/*@>efc5f*/k/*@>14896b*/ != /*@>efc5e*/0)/*@>17df38*/ && (static_cast<real_T>(/*@>efe17*/xoffset)/*@>89d70*/ - /*@>efc5d*/1.0/*@>86fd5*/ < /*@>efc85*/0.0)) {
+            /*@>efc7d*/k/*@>180ebf*/ += /*@>efc7f*/2560;
+        }
+    }
+    /*@>17192e*/zynq_7000_tutorial_3_B./*@>18115e*/b_indices/*@>e0813*/[/*@>efe11*/i2]/*@>e081a*/ = /*@>171934*/zynq_7000_tutorial_3_B./*@>181161*/aux/*@>16c83e*/[/*@>16c83b*/k];
+}
+/*@>efca1*/i2/*@>86e5d*/ = /*@>180d63*/0;
+xoffset = 0;
+/*@>d8554*/for (/*@>180dd2*/k = /*@>180dd1*/0; /*@>180ddc*/k < /*@>180dda*/25; /*@>180dd8*/k/*@>180ec0*/++) {
+    /*@>efd85*/copyCols/*@>e3b9d*/[/*@>efd83*/k]/*@>d8547*/ = /*@>efd82*/false;
+    /*@>efc67*/a/*@>86ecb*/ = /*@>efc63*/i2/*@>ddad6*/ + /*@>efdf3*/224;
+    /*@>efc65*/ix/*@>86ed5*/ = /*@>efcdc*/i2;
+    /*@>efc8d*/i2/*@>180ec1*/ += /*@>efc8f*/224;
+    exitg1 = false;
+    while/*@<86e95*/ ((!exitg1) && (/*@>efc96*/ix/*@>8b6cc*/ + /*@>efcd8*/1/*@>86e94*/ <= /*@>efc59*/a)) {
+        /*@>86e85*/if ((!/*@<a2d95*/(/*@>17193a*/zynq_7000_tutorial_3_B./*@>181164*/absx3/*@>16c84a*/[/*@>16c847*/ix]/*@>a2a86*/ == /*@>efce1*/0.0))/*@>a2d97*/ && (!/*@<a2d96*//*@>15d3d1*/std::isnan(/*@>171940*/zynq_7000_tutorial_3_B./*@>181167*/absx3/*@>16c850*/[/*@>16c84d*/ix]))) {
+            /*@>efda1*/copyCols/*@>e3bb6*/[/*@>efdf1*/k]/*@>86e6c*/ = /*@>efc90*/true;
+            exitg1 = true;
+        } else {
+            /*@>efc91*/ix/*@>180ec3*/++;
+        }
+    }
+    if (/*@>16c854*/copyCols/*@>16c856*/[k]) {
+        xoffset++;
+    }
+}
+ix = xoffset;
+xoffset = 0;
+for (i2 = 0; i2 < 25; i2++) {
+    if (/*@>16c842*/copyCols/*@>16c844*/[i2]) {
+        /*@>14ef2a*/tmp_data[xoffset]/*@>c8df0*/ = static_cast<int8_T>(i2);
+        xoffset++;
+    }
+}
+weights_size/*@>d8767*/[/*@>efdaa*/0]/*@>d8769*/ = ix;
+weights_size/*@>d8775*/[/*@>efdae*/1]/*@>d8777*/ = /*@>180d6f*/224;
+indices_size/*@>d8854*/[/*@>efdd1*/0]/*@>d8856*/ = ix;
+indices_size/*@>d8862*/[/*@>efdd5*/1]/*@>d8864*/ = /*@>180d72*/224;
+/*@>d87d5*/for (/*@>180d9d*/i2 = /*@>180d9c*/0; /*@>180da7*/i2 < /*@>180da5*/224; /*@>180da3*/i2/*@>180ec8*/++) {
+/*@>d87bf*/    for (/*@>180dae*/k = /*@>180dad*/0; /*@>180dbb*/k < ix; /*@>180db4*/k/*@>180ec9*/++) {
+        /*@>13b307*/a/*@>13b309*/ = /*@>efe52*/224/*@>f0288*/ * /*@>16c85a*/tmp_data[/*@>16c859*/k]/*@>e3bf4*/ + /*@>efdb1*/i2;
+        /*@>15c39c*/weights_data[/*@>efdb3*/k + ix * /*@>efdb5*/i2]/*@>d87ad*/ = /*@>171946*/zynq_7000_tutorial_3_B./*@>18116a*/absx3/*@>16c862*/[/*@>16c85f*/a];
+        /*@>15c39f*/indices_data[/*@>efdda*/k + ix * /*@>efddc*/i2]/*@>d889a*/ = /*@>17194c*/zynq_7000_tutorial_3_B./*@>18116d*/b_indices/*@>16c868*/[a];
+    }
+}
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void zynq_7000_tutoria_contributions(\
+%assign comma = ""
+%<comma>real_T weights_data[]\
+%assign comma = ", "
+%<comma>int32_T weights_size[2]\
+%assign comma = ", "
+%<comma>int32_T indices_data[]\
+%assign comma = ", "
+%<comma>int32_T indices_size[2]\
+%assign comma = ", "
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 1, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function zynq_7000_tutor_contributions_p_Fcn2(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+real_T y[224];
+real_T absx;
+real_T absx2;
+real_T absx3;
+int32_T a;
+int32_T i2;
+int32_T ix;
+int32_T k;
+int32_T xoffset;
+int8_T tmp_data[15];
+boolean_T copyCols[15];
+static const int16_T c[224]%<(TLC_STR_CTX(2))>;
+static const real_T d[224]%<(TLC_STR_CTX(3))>;
+boolean_T exitg1;
+/*@>8712b*/for (/*@>18132a*/i2 = /*@>181329*/0; /*@>181334*/i2 < /*@>181332*/15; /*@>181330*/i2/*@>181349*/++) {
+/*@>87160*/    for (/*@>18133b*/xoffset = /*@>18133a*/0; /*@>181345*/xoffset < /*@>181343*/224; /*@>181341*/xoffset/*@>18134a*/++) {
+        /*@>17195e*/zynq_7000_tutorial_3_B./*@>1815bf*/b_indices_k/*@>e3c18*/[/*@>eff7f*/xoffset/*@>e3c14*/ + /*@>f00a9*/224/*@>f028b*/ * /*@>eff81*/i2]/*@>871bb*/ = /*@>16c86c*/c/*@>16c86e*/[/*@>16c86b*/xoffset]/*@>871bc*/ + /*@>eff7b*/i2;
+    }
+}
+/*@>d8a03*/for (/*@>181319*/i2 = /*@>181318*/0; /*@>181323*/i2 < /*@>181321*/3360; /*@>18131f*/i2/*@>18134b*/++) {
+    /*@>17196a*/zynq_7000_tutorial_3_B./*@>1815c2*/absx2_m/*@>d89f5*/[/*@>eff6e*/i2]/*@>d89f6*/ = /*@>171970*/zynq_7000_tutorial_3_B./*@>1815c5*/b_indices_k/*@>16c874*/[/*@>16c871*/i2];
+}
+/*@>87220*/for (/*@>1812f7*/xoffset = /*@>1812f6*/0; /*@>181301*/xoffset < /*@>1812ff*/15; /*@>1812fd*/xoffset/*@>18134c*/++) {
+/*@>87258*/    for (/*@>181308*/k = /*@>181307*/0; /*@>181312*/k < /*@>181310*/224; /*@>18130e*/k/*@>18134d*/++) {
+        /*@>13c37b*/i2/*@>13c37d*/ = /*@>f00ab*/224/*@>f029a*/ * /*@>eff90*/xoffset/*@>e3c49*/ + /*@>eff8e*/k;
+        /*@>171982*/zynq_7000_tutorial_3_B./*@>1815ce*/absx3_c/*@>e3c37*/[i2]/*@>87291*/ = /*@>16c87e*/d/*@>16c880*/[/*@>16c87d*/k]/*@>8729d*/ - /*@>171988*/zynq_7000_tutorial_3_B./*@>1815d1*/absx2_m/*@>16c886*/[/*@>16c883*/i2];
+    }
+}
+/*@>d8aad*/for (/*@>1812e6*/i2 = /*@>1812e5*/0; /*@>1812f0*/i2 < /*@>1812ee*/3360; /*@>1812ec*/i2/*@>18134e*/++) {
+    /*@>f0093*/absx/*@>875e7*/ = /*@>15d3d3*/std::abs(/*@>1009bb*/0.31111111111111112/*@>1009ba*/ * /*@>171976*/zynq_7000_tutorial_3_B./*@>1815c8*/absx3_c/*@>16c87a*/[/*@>16c877*/i2]);
+    /*@>f00a3*/absx2/*@>87360*/ = /*@>f0095*/absx/*@>f02bf*/ * /*@>f0097*/absx;
+    /*@>f008b*/absx3/*@>873c2*/ = /*@[17ea9a*/%<(SLibCGCallSubFcn("rt_powd_snf", ["/*@>18166d*/absx", "/*@>18167b*/3.0"], 0, 2, 0))>/*@]*/;
+    /*@>17198e*/zynq_7000_tutorial_3_B./*@>1815d4*/absx3_c/*@>e09c2*/[/*@>f0083*/i2]/*@>e09c9*/ = ((((/*@>1009e6*/-0.5/*@>1009e5*/ * /*@>1009e8*/absx3/*@>1009e4*/ + /*@>1009ea*/2.5/*@>1009e9*/ * /*@>1009ec*/absx2)/*@>1009e3*/ - /*@>1009ee*/4.0/*@>1009ed*/ * /*@>1009f0*/absx)/*@>1009e2*/ + /*@>1009f1*/2.0)/*@>1009e1*/ * static_cast<real_T>((/*@>1009f6*/absx/*@>1009f4*/ > /*@>1009f7*/1.0)/*@>1009f3*/ && (/*@>1009fa*/absx/*@>1009f8*/ <= /*@>1009fb*/2.0))/*@>1009cf*/ + ((/*@>1009d4*/1.5/*@>1009d3*/ * /*@>1009d6*/absx3/*@>1009d2*/ - /*@>1009d8*/2.5/*@>1009d7*/ * /*@>1009da*/absx2)/*@>1009d1*/ + /*@>1009db*/1.0)/*@>1009d0*/ * static_cast<real_T>(/*@>1009df*/absx/*@>1009dd*/ <= /*@>1009e0*/1.0))/*@>1009cd*/ * /*@>1009ce*/0.31111111111111112;
+}
+/*@>163074*/std::memcpy(&/*@>15485a*/y/*@>15485b*/[/*@>15484a*/0], &/*@>17197c*/zynq_7000_tutorial_3_B./*@>1815cb*/absx3_c/*@>154863*/[/*@>154857*/0], /*@>154859*/224U/*@>154866*/ * /*@>154865*/sizeof(real_T));
+/*@>8770a*/for (/*@>1812c4*/i2 = /*@>1812c3*/0; /*@>1812ce*/i2 < /*@>1812cc*/14; /*@>1812ca*/i2/*@>181351*/++) {
+    /*@>efecc*/xoffset/*@>876e6*/ = (/*@>eff38*/i2 + 1)/*@>f02c5*/ * /*@>efece*/224;
+/*@>8770d*/    for (/*@>1812d5*/k = /*@>1812d4*/0; /*@>1812df*/k < /*@>1812dd*/224; /*@>1812db*/k/*@>181352*/++) {
+        /*@>effb3*/y/*@>d8e1d*/[/*@>effb5*/k]/*@>181353*/ += /*@>1719ac*/zynq_7000_tutorial_3_B./*@>1815dd*/absx3_c/*@>16c88f*/[/*@>16c88a*/xoffset/*@>16c888*/ + /*@>16c88c*/k];
+    }
+}
+/*@>163076*/std::memcpy(&/*@>17199a*/zynq_7000_tutorial_3_B./*@>1815d7*/absx2_m/*@>1547ff*/[/*@>1547ee*/0], &/*@>1719a0*/zynq_7000_tutorial_3_B./*@>1815da*/absx3_c/*@>154807*/[/*@>1547fb*/0], /*@>1547fd*/3360U/*@>15480a*/ * /*@>154809*/sizeof(real_T));
+/*@>87451*/for (/*@>1812a2*/xoffset = /*@>1812a1*/0; /*@>1812ac*/xoffset < /*@>1812aa*/15; /*@>1812a8*/xoffset/*@>181354*/++) {
+/*@>87489*/    for (/*@>1812b3*/k = /*@>1812b2*/0; /*@>1812bd*/k < /*@>1812bb*/224; /*@>1812b9*/k/*@>181355*/++) {
+        /*@>13c385*/i2/*@>13c387*/ = /*@>f00ad*/224/*@>f02cb*/ * /*@>effbf*/xoffset/*@>e3c8f*/ + /*@>effbd*/k;
+        /*@>1719c4*/zynq_7000_tutorial_3_B./*@>1815e6*/absx3_c/*@>e3c86*/[i2]/*@>874c2*/ = /*@>1719ca*/zynq_7000_tutorial_3_B./*@>1815e9*/absx2_m/*@>16c89b*/[/*@>16c898*/i2]/*@>874ce*/ / /*@>16c89f*/y/*@>16c8a1*/[/*@>16c89e*/k];
+    }
+}
+/*@>1719b8*/zynq_7000_tutorial_3_B./*@>1815e0*/aux_c/*@>e3ca0*/[/*@>f00ae*/0]/*@>549c3*/ = /*@>1811fa*/1;
+/*@>1719be*/zynq_7000_tutorial_3_B./*@>1815e3*/aux_c/*@>e3ca7*/[/*@>f00af*/720]/*@>549cb*/ = /*@>1811fd*/720;
+/*@>54950*/for (/*@>181291*/i2 = /*@>181290*/0; /*@>18129b*/i2 < /*@>181299*/719; /*@>181297*/i2/*@>181356*/++) {
+    /*@>1719d0*/zynq_7000_tutorial_3_B./*@>1815ec*/aux_c/*@>e3caf*/[/*@>effd1*/i2 + 1]/*@>549dd*/ = /*@>1719d6*/zynq_7000_tutorial_3_B./*@>1815ef*/aux_c/*@>16c8a7*/[/*@>16c8a4*/i2]/*@>606b3*/ + /*@>eff27*/1;
+    /*@>1719dc*/zynq_7000_tutorial_3_B./*@>1815f2*/aux_c/*@>e3cc0*/[/*@>effdb*/i2/*@>d8f6e*/ + /*@>effdd*/721]/*@>549ed*/ = /*@>1719e2*/zynq_7000_tutorial_3_B./*@>1815f5*/aux_c/*@>16c8af*/[/*@>16c8ab*/i2/*@>16c8a9*/ + /*@>16c8ac*/720]/*@>606f9*/ - /*@>eff26*/1;
+}
+/*@>54952*/for (/*@>181280*/i2 = /*@>18127f*/0; /*@>18128a*/i2 < /*@>181288*/3360; /*@>181286*/i2/*@>181357*/++) {
+    /*@>f0065*/xoffset/*@>e097d*/ = /*@>1719e8*/zynq_7000_tutorial_3_B./*@>1815f8*/b_indices_k/*@>16c8b5*/[/*@>16c8b2*/i2];
+    /*@>87696*/if (static_cast<real_T>(/*@>f0071*/xoffset)/*@>8a132*/ - /*@>efec0*/1.0/*@>8768d*/ == /*@>efeea*/0.0) {
+        /*@>efee5*/k/*@>87680*/ = /*@>181206*/0;
+    } else {
+        /*@>efee7*/k/*@>87682*/ = static_cast<int32_T>(/*@>15d3db*/std::fmod(static_cast<real_T>(/*@>f0073*/xoffset)/*@>8a137*/ - /*@>efebf*/1.0, /*@>efee9*/1440.0));
+        /*@>8769a*/if ((/*@>efebd*/k/*@>14896e*/ != /*@>efebc*/0)/*@>17df3b*/ && (static_cast<real_T>(/*@>f0075*/xoffset)/*@>8a142*/ - /*@>efebb*/1.0/*@>8768f*/ < /*@>efee3*/0.0)) {
+            /*@>efedb*/k/*@>18135c*/ += /*@>efedd*/1440;
+        }
+    }
+    /*@>1719ee*/zynq_7000_tutorial_3_B./*@>1815fb*/b_indices_k/*@>e0982*/[/*@>f006f*/i2]/*@>e0989*/ = /*@>1719f4*/zynq_7000_tutorial_3_B./*@>1815fe*/aux_c/*@>16c8bb*/[/*@>16c8b8*/k];
+}
+/*@>efeff*/i2/*@>87517*/ = /*@>181200*/0;
+xoffset = 0;
+/*@>d8fa9*/for (/*@>18126f*/k = /*@>18126e*/0; /*@>181279*/k < /*@>181277*/15; /*@>181275*/k/*@>18135d*/++) {
+    /*@>effe3*/copyCols/*@>e3ceb*/[/*@>effe1*/k]/*@>d8f9c*/ = /*@>effe0*/false;
+    /*@>efec5*/a/*@>87585*/ = /*@>efec1*/i2/*@>ddb0b*/ + /*@>f0051*/224;
+    /*@>efec3*/ix/*@>8758f*/ = /*@>eff3a*/i2;
+    /*@>efeeb*/i2/*@>18135e*/ += /*@>efeed*/224;
+    exitg1 = false;
+    while/*@<8754f*/ ((!exitg1) && (/*@>efef4*/ix/*@>8b71d*/ + /*@>eff36*/1/*@>8754e*/ <= /*@>efeb7*/a)) {
+        /*@>8753f*/if ((!/*@<a2ddf*/(/*@>1719fa*/zynq_7000_tutorial_3_B./*@>181601*/absx3_c/*@>16c8c7*/[/*@>16c8c4*/ix]/*@>a2b83*/ == /*@>eff3f*/0.0))/*@>a2de1*/ && (!/*@<a2de0*//*@>15d3dd*/std::isnan(/*@>171a00*/zynq_7000_tutorial_3_B./*@>181604*/absx3_c/*@>16c8cd*/[/*@>16c8ca*/ix]))) {
+            /*@>effff*/copyCols/*@>e3d04*/[/*@>f004f*/k]/*@>87526*/ = /*@>efeee*/true;
+            exitg1 = true;
+        } else {
+            /*@>efeef*/ix/*@>181360*/++;
+        }
+    }
+    if (/*@>16c8d1*/copyCols/*@>16c8d3*/[k]) {
+        xoffset++;
+    }
+}
+ix = xoffset;
+xoffset = 0;
+for (i2 = 0; i2 < 15; i2++) {
+    if (/*@>16c8bf*/copyCols/*@>16c8c1*/[i2]) {
+        /*@>14f112*/tmp_data[xoffset]/*@>c90aa*/ = static_cast<int8_T>(i2);
+        xoffset++;
+    }
+}
+weights_size/*@>d91bc*/[/*@>f0008*/0]/*@>d91be*/ = ix;
+weights_size/*@>d91ca*/[/*@>f000c*/1]/*@>d91cc*/ = /*@>18120c*/224;
+indices_size/*@>d92a9*/[/*@>f002f*/0]/*@>d92ab*/ = ix;
+indices_size/*@>d92b7*/[/*@>f0033*/1]/*@>d92b9*/ = /*@>18120f*/224;
+/*@>d922a*/for (/*@>18123a*/i2 = /*@>181239*/0; /*@>181244*/i2 < /*@>181242*/224; /*@>181240*/i2/*@>181365*/++) {
+/*@>d9214*/    for (/*@>18124b*/k = /*@>18124a*/0; /*@>181258*/k < ix; /*@>181251*/k/*@>181366*/++) {
+        /*@>13c38f*/a/*@>13c391*/ = /*@>f00b0*/224/*@>f02dd*/ * /*@>16c8d7*/tmp_data[/*@>16c8d6*/k]/*@>e3d40*/ + /*@>f000f*/i2;
+        /*@>15c3b9*/weights_data[/*@>f0011*/k + ix * /*@>f0013*/i2]/*@>d9202*/ = /*@>171a06*/zynq_7000_tutorial_3_B./*@>181607*/absx3_c/*@>16c8df*/[/*@>16c8dc*/a];
+        /*@>15c3bc*/indices_data[/*@>f0038*/k + ix * /*@>f003a*/i2]/*@>d92ef*/ = /*@>171a0c*/zynq_7000_tutorial_3_B./*@>18160a*/b_indices_k/*@>16c8e5*/[a];
+    }
+}
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void zynq_7000_tutor_contributions_p(\
+%assign comma = ""
+%<comma>real_T weights_data[]\
+%assign comma = ", "
+%<comma>int32_T weights_size[2]\
+%assign comma = ", "
+%<comma>int32_T indices_data[]\
+%assign comma = ", "
+%<comma>int32_T indices_size[2]\
+%assign comma = ", "
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 2, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function zyn_DeepLearningNetwork_predict_Fcn7(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+/*@>86459*/for ( int32_T /*@>1816aa*/i_0{/*@>1816a9*/0}; /*@>1816b4*/i_0 < /*@>1816b2*/224; /*@>1816b0*/i_0/*@>1816c9*/++) {
+/*@>d944b*/    for ( int32_T /*@>1816bb*/i{/*@>1816ba*/0}; /*@>1816c5*/i < /*@>1816c3*/224; /*@>1816c1*/i/*@>1816ca*/++) {
+        int32_T inMiniBatchGroup_0_f1_tmp;
+        int32_T inMiniBatchGroup_0_f1_tmp_0;
+        /*@>13c5dd*/inMiniBatchGroup_0_f1_tmp/*@>13c5df*/ = /*@>f0105*/224/*@>f02f8*/ * /*@>f0106*/i/*@>e4922*/ + /*@>f0103*/i_0;
+        /*@>13c5e7*/inMiniBatchGroup_0_f1_tmp_0/*@>13c5e9*/ = /*@>f00fe*/224/*@>f02f2*/ * /*@>f00ff*/i_0/*@>e4912*/ + /*@>f00fc*/i;
+        /*@>171a1e*/zynq_7000_tutorial_3_B./*@>181736*/inMiniBatchGroup_0_f1/*@>e490f*/[/*@>13c5eb*/inMiniBatchGroup_0_f1_tmp_0]/*@>e490e*/ = /*@>16c8ea*/varargin_1/*@>16c8ec*/[/*@>16c8e8*/inMiniBatchGroup_0_f1_tmp];
+        /*@>171a24*/zynq_7000_tutorial_3_B./*@>181739*/inMiniBatchGroup_0_f1/*@>e4932*/[inMiniBatchGroup_0_f1_tmp_0/*@>e4934*/ + /*@>f0127*/50176]/*@>e4931*/ = /*@>16c8f3*/varargin_1/*@>16c8f5*/[inMiniBatchGroup_0_f1_tmp/*@>16c8ee*/ + /*@>16c8f1*/50176];
+        /*@>171a2a*/zynq_7000_tutorial_3_B./*@>18173c*/inMiniBatchGroup_0_f1/*@>e4955*/[inMiniBatchGroup_0_f1_tmp_0/*@>e4957*/ + /*@>f0129*/100352]/*@>e4954*/ = /*@>16c8fc*/varargin_1/*@>16c8fe*/[inMiniBatchGroup_0_f1_tmp/*@>16c8f7*/ + /*@>16c8fa*/100352];
+    }
+}
+std::memcpy(/*@>16250a*/obj->getInputDataPointer(0), &zynq_7000_tutorial_3_B.inMiniBatchGroup_0_f1[0], static_cast<uint32_T>(/*@>162515*/obj->getLayerOutputSize(0, 0)));
+/*@>162526*/obj->predict();
+std::memcpy(&varargout_1[0], /*@>16252f*/obj->getLayerOutput(67, 0), static_cast<uint32_T>(/*@>162538*/obj->getLayerOutputSize(67, 0)));
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void zyn_DeepLearningNetwork_predict(\
+%assign comma = ""
+%<comma>mobilenetv20_0 *obj\
+%assign comma = ", "
+%<comma>const uint8_T varargin_1[150528]\
+%assign comma = ", "
+%<comma>real32_T varargout_1[1000]\
+%assign comma = ", "
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 7, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function convert_to_enum_mobilenetv2_lab_Fcn8(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+mobilenetv2_labels output;
+/* Initialize output value to default value for mobilenetv2_labels (tench_label) */
+output = mobilenetv2_labels::tench_label;
+if ((input >= 1) && (input <= 1000)) {
+    /* Set output value to input value if it is a member of mobilenetv2_labels */
+    output = static_cast<mobilenetv2_labels>(input);
+}
+return output;
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static mobilenetv2_labels convert_to_enum_mobilenetv2_lab(\
+%assign comma = ""
+%<comma>int32_T input\
+%assign comma = ", "
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 8, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function DeepLearningNetwork_callDelete_Fcn11(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+if (/*@>1624fb*/obj->isInitialized) {
+    /*@>1624f7*/obj->cleanup();
+}
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void DeepLearningNetwork_callDelete(\
+%assign comma = ""
+%<comma>mobilenetv20_0 *obj\
+%assign comma = ", "
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 11, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function zynq_DeepLearningNetwork_delete_Fcn12(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign _modelSS = ""
+
+%if SLibCG_FcnCallArgAccessed(0,12,0,0)
+%<SLibCG_AccessArg(0 ,12, 0)>
+%endif
+
+/*@[17eab1*/%<(SLibCGCallSubFcn("DeepLearningNetwork_callDelete", ["/*@>1817b9*/obj"], 0, 12, 0))>/*@]*/;
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void zynq_DeepLearningNetwork_delete(\
+%assign comma = ""
+%<comma>mobilenetv20_0 *obj\
+%assign comma = ", "
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 12, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function zynq__DeepLearningNetwork_setup_Fcn18(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+/*@>1624f1*/obj->setup();
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void zynq__DeepLearningNetwork_setup(\
+%assign comma = ""
+%<comma>mobilenetv20_0 *obj\
+%assign comma = ", "
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 18, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function zynq_setupDeepLearningResources_Fcn19(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+/* MATLAB Function: '<S1>/MLFB' */
+/*@[17eac8*/%<(SLibCGCallSubFcn("zynq__DeepLearningNetwork_setup", ["&/*@>1817f8*/zynq_7000_tutorial_DeepLearning./*@>1817f7*/network"], 0, 19, 0))>/*@]*/;
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void zynq_setupDeepLearningResources(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 19, fcnProtoType)>
+%return fcnBuff
+%endfunction
+

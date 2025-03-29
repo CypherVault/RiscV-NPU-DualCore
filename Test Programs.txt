@@ -225,27 +225,40 @@ C code first program: 10+5=15
 12 => x"01010113",  -- addi x2, x2, 16
 13 => x"00000067"   -- ret (return from the program)
 
-FIX FOR WEIRD ADDRESS BASED CALCULATION FO ADDING TWO TJINGS IUT IS A HAXAZRX 
+--------------------------------------------
 
-Haxzard unit needs to stall for one cycle to deal with LW specifically when the next instruction takes place and is ALU depenedne ton that SO,
+# Simple AUIPC demonstration for RISC-V32I
+# This program stores a value at a memory location using PC-relative addressing
 
-LW X, blah blah 
+# Initialize registers
+addi x1, x0, 0       # Clear x1
+addi x2, x0, 42      # Put test value 42 in x2
 
-addi X, -> bubble 
+# Use AUIPC to get a PC-relative address
+auipc x3, 0          # x3 = PC + 0 (upper 20 bits are 0, so this is just the PC)
 
-resume with addi X
+# Store the value at PC+16 (assuming 4-byte instructions)
+sw x2, 16(x3)        # Store 42 at memory location PC+16
 
+# Load the value back to verify
+lw x4, 16(x3)        # Load from memory location PC+16 into x4
 
+# If x4 equals 42, AUIPC worked correctly
 
---ONLY WHEN THE PREVIOUS CLOCK CYCLE LOAD WAS FOR A REGISTER THAT IS COMING FROM EXMEM, the ADDRESS of that register is NOT the data of the rgeister, thus IGNORE that data as it is not accurate. SW does NOT count. instead use 
-
-
-
-
-
-
-
-
+0  => x"00000000",  -- NOP or unused
+1  => x"00000093",  -- addi x1, x0, 0
+2  => x"02a00113",  -- addi x2, x0, 42
+3  => x"00000197",  -- auipc x3, 0
+4  => x"0021a823",  -- sw x2, 16(x3)
+5  => x"0101a203",  -- lw x4, 16(x3)
+6  => x"00000000",  -- NOP or unused
+7  => x"00000000",  -- NOP or unused
+8  => x"00000000",  -- NOP or unused
+9  => x"00000000",  -- NOP or unused
+10 => x"00000000",  -- NOP or unused
+11 => x"00000000",  -- NOP or unused
+12 => x"00000000",  -- NOP or unused
+13 => x"00000000"   -- NOP or unused
 
 
 

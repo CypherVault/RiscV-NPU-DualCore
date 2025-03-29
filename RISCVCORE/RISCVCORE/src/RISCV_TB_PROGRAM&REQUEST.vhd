@@ -27,13 +27,13 @@ architecture behavior of RICSVCORE_tb is
 	
 	
 	 -- Define the instruction buffer as a constant array
-    type instruction_array is array (0 to 16) of std_logic_vector(31 downto 0);
+    type instruction_array is array (0 to 9) of std_logic_vector(31 downto 0);
 	
 	constant INSTRUCTION_BUFFER : instruction_array := (	 					--how many insturctions 
 	
 	
 	  -- Memory initialization for RISC-V Program (10 + 5)
---
+--     --
 --0  => x"00000000",  -- NOP or unused
 --1  => x"ff010113",  -- addi sp, sp, -16
 --2  => x"00500793",  -- addi a5, zero, 5
@@ -48,46 +48,51 @@ architecture behavior of RICSVCORE_tb is
 --11 => x"00078513",  -- addi a0, a5, 0 (mv a0, a5)
 --12 => x"01010113",  -- addi sp, sp, 16
 --13 => x"00000067"   -- ret (return from the program)   
-                       --
+--    
+--                 
+0 => x"00000000",  -- Unused position 0
+1 => x"02f00513",  -- addi x10, x0, 47    # Load dividend into x10
+2 => x"00500593",  -- addi x11, x0, 5     # Load divisor into x11
+3 => x"00000613",  -- addi x12, x0, 0     # Initialize quotient in x12
+-- Reordered sequence
+4 => x"00050693",  -- addi x13, x10, 0    # Copy dividend to x13
+5 => x"40b686b3",  -- sub x13, x13, x11   # Subtract first
+6 => x"02b6c063",  -- blt x13, x11, 32    # Then compare
+7 => x"00160613",  -- addi x12, x12, 1    # Increment quotient
+8=> x"00000000", -- NOP
+9 => x"ff1ff06f"  -- jal x0, -16        # Jump back from 32 to 16
 --
--- 0 => x"00000000",  -- Unused position 0
---1 => x"02f00513",  -- addi x10, x0, 47    # Load dividend into x10
---2 => x"00500593",  -- addi x11, x0, 5     # Load divisor into x11
---3 => x"00000613",  -- addi x12, x0, 0     # Initialize quotient in x12
----- Reordered sequence
---4 => x"00050693",  -- addi x13, x10, 0    # Copy dividend to x13
---5 => x"40b686b3",  -- sub x13, x13, x11   # Subtract first
---6 => x"02b6c063",  -- blt x13, x11, 32    # Then compare
---7 => x"00160613",  -- addi x12, x12, 1    # Increment quotient
---8 => x"ff5ff06f",  -- jal x0, -12        # Jump back from 32 to 16
---9 => x"00000000",  -- Unused position 0
---10 => x"00000000",  -- Unused position 0
---11 => x"00000000",  -- Unused position 0
---12 => x"00000000",  -- Unused position 0
---13 => x"00000000"  -- Unused position 0		 	  
-
-
-
-
-	0  => x"fe010113",  -- addi sp,sp,-32
-    1  => x"00112e23",  -- sw ra,28(sp)
-    2  => x"00a00513",  -- addi a0,zero,10
-    3  => x"ff010113",  -- addi sp,sp,-16
-    4  => x"00a12623",  -- sw a0,12(sp)
-    5  => x"000117b7",  -- lui a5,0x11
-    6  => x"0c47a703",  -- lw a4,196(a5)
-    7 => x"00c12783",  -- lw a5,12(sp)
-    8  => x"00f707b3",  -- add a5,a4,a5
-    9 => x"00078513",  -- addi a0,a5,0
-    10 => x"01010113",  -- addi sp,sp,16
-    11 => x"00a12623",  -- sw a0,12(sp)
-    12 => x"00c12783",  -- lw a5,12(sp)
-    13 => x"00078513",  -- addi a0,a5,0
-    14 => x"01c12083",  -- lw ra,28(sp)
-    15 => x"02010113",  -- addi sp,sp,32
-    16 => x"00008067"   -- jalr zero,0(ra)
-
-
+-- --                           --
+----              						  
+  --
+--
+--  0  => x"00000000",  -- NOP or unused
+--  1 => x"00A00093",  -- addi x1, x0, 10
+--	    2 => x"01400113",  -- addi x2, x0, 20
+--	    3 => x"00208663",  -- beq x1, x2, label (won't branch)
+--	    4 => x"00209063",  -- bne x1, x2, label
+--	    5 => x"01E00193",  -- addi x3, x0, 30
+--	    6 => x"0080026f",  -- jal x4, target       LABEL
+--	    7 => x"02800293",  -- addi x5, x0, 40
+--	    8 => x"03200313"  -- addi x6, x0, 50      TARGET
+--				
+--							--								   
+--
+-- 
+--0  => x"00000000",  -- NOP or unused
+--1  => x"00000093",  -- addi x1, x0, 0
+--2  => x"02a00113",  -- addi x2, x0, 42
+--3  => x"00000197",  -- auipc x3, 0
+--4  => x"0021a823",  -- sw x2, 16(x3)
+--5  => x"0101a203",  -- lw x4, 16(x3)
+--6  => x"00000000",  -- NOP or unused
+--7  => x"00000000",  -- NOP or unused
+--8  => x"00000000",  -- NOP or unused
+--9  => x"00000000",  -- NOP or unused
+--10 => x"00000000",  -- NOP or unused
+--11 => x"00000000",  -- NOP or unused
+--12 => x"00000000",  -- NOP or unused
+--13 => x"00000000"   -- NOP or unused
 
 
 
@@ -141,7 +146,7 @@ begin
         -- Program Instruction Memory with 4 hardcoded instructions
         im_enable <= '1';  -- Enable instruction memory write
      -- Loop through all instructions
-        for i in 0 to 16 loop	      												--how many insturctions 
+        for i in 0 to 9 loop	      												--how many insturctions 
             debug_clk <= '1';
             -- Convert integer to 7-bit std_logic_vector for address
             debug_addr <= std_logic_vector(to_unsigned(i, 12));

@@ -205,17 +205,19 @@ when "1100011" =>
     end case;
 
     -- Set if_flush based on branch_taken
-    -- if_flush <= branch_taken;
+     --if_flush <= branch_taken;
   end process;
 
  -- Output multiplexing based on cntrlsigmux OR ctrl_disable
-MemtoReg <= '0' when (ctrl_disable = '1') else int_MemtoReg;
-RegWrite <= '0' when (ctrl_disable = '1') else int_RegWrite;
-MemRead <= '0' when (ctrl_disable = '1') else int_MemRead;
-MemWrite <= '0' when (ctrl_disable = '1') else int_MemWrite;
-Branch <= '0' when (ctrl_disable = '1') else int_Branch;
-ALUSrc <= '0' when (ctrl_disable = '1') else int_ALUSrc;
-ALUOp <= "00" when (ctrl_disable = '1') else int_ALUOp;
-early_branch <= '0' when (ctrl_disable = '1') else int_early_branch;
+MemtoReg <= '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_MemtoReg;
+RegWrite <= '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_RegWrite;
+MemRead <= '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_MemRead;
+MemWrite <= '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_MemWrite;
+Branch <= '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_Branch;
+ALUSrc <= '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_ALUSrc;
+ALUOp <= "00" when (cntrlsigmux = '1' or ctrl_disable = '1') else int_ALUOp;
+early_branch <= int_early_branch;		 
+
+-- '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else
   
 end architecture Behavioral;

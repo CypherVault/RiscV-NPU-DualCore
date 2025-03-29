@@ -1,0 +1,26 @@
+%% Template for generating code for Waijung ZYNQ7000 Target Blockset
+%%
+%% Reference: MATLABROOT\R2018b\toolbox\rtw\targets\ecoder\example_file_process.tlc
+
+%selectfile NULL_FILE
+
+%if GenerateSampleERTMain
+   %assign CompiledModel.GenerateSampleERTMain = TLC_FALSE
+%endif
+
+%% Get the simulation type.
+%assign mainFcnCustomizationMode = FEVAL("zynq7000.getCustomPreference", "Simulation_Mode")
+
+%if mainFcnCustomizationMode == "normal" || mainFcnCustomizationMode == "external"
+   %assign filePath = FEVAL("zynq7000.getFilePath", "zynq7000_mainlib_tlc")
+   %addincludepath "%<filePath>"
+   %include "zynq7000_mainlib.tlc"
+   %<SLibCreateSampleMain()>
+%elseif mainFcnCustomizationMode == "processor-in-the-loop"
+   %assign filePath = FEVAL("zynq7000.getFilePath", "zynq7000_pilmainlib_tlc")
+   %addincludepath "%<filePath>"
+   %include "zynq7000_pilmainlib.tlc"
+   %<SLibCreatePILSampleMain()>
+%else
+   %error Waijung2: Undefined main function customization mode
+%endif

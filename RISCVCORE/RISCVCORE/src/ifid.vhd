@@ -19,6 +19,7 @@ entity ifid is
 end ifid;
 
 architecture Behavioral of ifid is
+    constant NOP_INSTRUCTION : STD_LOGIC_VECTOR(31 downto 0) := X"00000013"; -- ADDI x0, x0, 0
     signal instruction_reg : STD_LOGIC_VECTOR(31 downto 0);
     signal pcout_reg : STD_LOGIC_VECTOR(15 downto 0);
     signal rdout_reg, rs1_reg, rs2_reg : STD_LOGIC_VECTOR(4 downto 0);
@@ -33,7 +34,8 @@ begin
             rs2_reg <= (others => '0');
         elsif rising_edge(clk) then
             if (ifidflush = '1') then  -- Priority: flush overrides write
-                instruction_reg <= (others => '0');
+				
+                instruction_reg <= NOP_INSTRUCTION;
                 pcout_reg <= (others => '0');
                 rdout_reg <= (others => '0');
                 rs1_reg <= (others => '0');

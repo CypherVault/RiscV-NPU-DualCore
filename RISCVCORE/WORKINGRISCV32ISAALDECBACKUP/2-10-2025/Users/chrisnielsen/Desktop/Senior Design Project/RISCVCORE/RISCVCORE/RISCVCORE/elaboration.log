@@ -1,0 +1,53 @@
+Active-HDL 15.0.261.9132 2025-03-28 21:20:58
+
+Elaboration top modules:
+Architecture                  behavior(RICSVCORE_tb)
+
+
+---------------------------------------------------------------------------------------------------------
+Entity               | Architecture | Library   | Info | Compiler Version          | Compilation Options
+---------------------------------------------------------------------------------------------------------
+RICSVCORE_tb         | behavior     | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+RICSVCORE            | behavior     | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+internal_connections | behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+pc_mux               | behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+pc4adder             | rtl          | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+program_counter      | rtl          | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+instruction_memory   | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+ifid                 | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+ImmGen               | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+pcimmadder           | behavior     | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+regfile              | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+ControlUnit          | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+hazard_unit          | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+idex                 | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+alucontrol           | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+ALU                  | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+forwardingMuxA       | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+forwardingMuxB       | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+ALUSrcMuxB           | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+exmem                | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+ForwardingUnit       | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+data_memory          | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+BranchAND            | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+memwb                | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+writebackmux         | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+---------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------
+VHDL Package                        | Library   | Info | Compiler Version          | Compilation Options
+---------------------------------------------------------------------------------------------------------
+standard                            | std       |      |                           | <unavailable>
+TEXTIO                              | std       |      | 15.0.261.9132 (Windows64) |  -2019
+std_logic_1164                      | ieee      |      | 15.0.261.9132 (Windows64) |  -2008
+types_pkg                           | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+NUMERIC_STD                         | ieee      |      | 15.0.261.9132 (Windows64) |  -2008
+---------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------
+Library                             | Comment
+---------------------------------------------------------------------------------------------------------
+ieee                                | Standard IEEE packages library
+riscvcore                           | None
+std                                 | Standard VHDL library
+---------------------------------------------------------------------------------------------------------

@@ -1,0 +1,49 @@
+%implements s1_b0_p4vfe_ModelInitialize "C"
+
+%function ModelInitialize(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcStartFcnOfS1B3 = OpaqueTLCBlockFcn("Start", 1, 3, 0, 29, 0)
+%assign tlcStartFcnOfS1B1 = OpaqueTLCBlockFcn("Start", 1, 1, 0, 29, 1)
+%assign tlcStartFcnOfS1B2 = OpaqueTLCBlockFcn("Start", 1, 2, 0, 29, 2)
+%assign tlcEnableFcnOfS1B1 = OpaqueTLCBlockFcn("Enable", 1, 1, 0, 29, 3)
+%assign tlcEnableFcnOfS1B2 = OpaqueTLCBlockFcn("Enable", 1, 2, 0, 29, 4)
+%<SLibInsertAsyncTaskInitializeCode(system)>
+%<SLibWriteMachineInitialize()>
+%<(SLibCGCallSubFcn("zynq_setupDeepLearningResources", [], 0, 29, 0))>;
+%<SLibCGIRDumpSystemUserCode(1, "Start", "Header")>\
+%<SLibCGIRDumpSystemUserCode(1, "Start", "Body")>\
+%if !WHITE_SPACE(tlcStartFcnOfS1B3)
+/* Start for S-Function (waijung2_basic_customcode): '<Root>/Basic Custom Code' */
+%<SLibCG_DumpSSCode("/*@[17de82*/",tlcStartFcnOfS1B3,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS1B1)
+/* Start for S-Function (waijung2_printf): '<Root>/Print' */
+%<SLibCG_DumpSSCode("/*@[17de84*/",tlcStartFcnOfS1B1,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS1B2)
+/* Start for S-Function (zynq7000_target_setup): '<Root>/Waijung 2 Target Setup' */
+%<SLibCG_DumpSSCode("/*@[17de85*/",tlcStartFcnOfS1B2,"/*@]*/")>\
+%endif
+%<SLibCGIRDumpSystemUserCode(1, "Start", "Trailer")>\
+%if !WHITE_SPACE(tlcEnableFcnOfS1B1)
+/* Enable for S-Function (waijung2_printf): '<Root>/Print' */
+%<SLibCG_DumpSSCode("/*@[17de88*/",tlcEnableFcnOfS1B1,"/*@]*/")>\
+%endif
+%if !WHITE_SPACE(tlcEnableFcnOfS1B2)
+/* Enable for S-Function (zynq7000_target_setup): '<Root>/Waijung 2 Target Setup' */
+%<SLibCG_DumpSSCode("/*@[17de89*/",tlcEnableFcnOfS1B2,"/*@]*/")>\
+%endif
+%<SLibInsertInitPeriodicCStatesFcn(system)>
+%closefile cfgTxt
+%<cfgTxt>
+%endfunction
+%function ModelInitializeFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void ModelInitialize(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 29, fcnProtoType)>
+%endfunction

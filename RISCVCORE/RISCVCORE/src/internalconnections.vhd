@@ -77,7 +77,7 @@ signal DM_debug_read_enable : std_logic;  -- Data memory read enable
 	signal pc4adder_pcplus4_to_pc_mux : std_logic_vector(15 downto 0);					--PC4ADDER & PC MUX
 	signal pcplusimmadder_pcplusimm_to_pc_mux : std_logic_vector(15 downto 0);					--PC4ADDER & PC MUX
 	signal controlunit_branch_to_idex : std_logic;
-	signal controlunit_earlybranch_to_pcmux : std_logic;
+	signal controlunit_earlybranch_to_pcmux : std_logic;	 -- this will NOW come from hazard unit as control unit was getting wiped when this was being sent out  
 	
 	
 	--TO PC 4 ADDER
@@ -147,7 +147,8 @@ signal DM_debug_read_enable : std_logic;  -- Data memory read enable
   signal controlunit_earlybranchSOURCE_to_pcmux : std_logic;
   signal controlunit_alusource_to_idex : std_logic;
   signal contolunit_aluop_to_idex : std_logic_vector(1 downto 0);
-  signal controlunit_ifflush_to_ifid : std_logic;
+  signal controlunit_ifflush_to_ifid : std_logic;		
+  signal debug_obselete_early_branch: std_logic; -- obselete no longer neeeded now moved to hazard unit
 
   -- need to make the rest of the signals for the forwarding reading and accurate early branch 
   
@@ -517,7 +518,7 @@ registers_reg2out_to_controlunit  <= registers_reg2out_to_idex;
       early_branch => controlunit_earlybranch_to_pcmux,
 	  ALUSrc      => controlunit_alusource_to_idex,
       ALUOp       => contolunit_aluop_to_idex,
-      if_flush    => controlunit_ifflush_to_ifid,
+      if_flush    => hazardunit_ifidflush_to_ifid,
 	  exmem_memread => exmem_memread_to_datamem
 	  
     );
@@ -530,15 +531,16 @@ registers_reg2out_to_controlunit  <= registers_reg2out_to_idex;
 	--TO HAZARD UNIT 
 
 HAZARD_UNIT_INST : entity work.hazard_unit
-    port map (
+    port map (		  
+	--early_branch_control => controlunit_earlybranch_to_pcmux,
 	idex_mem_read => idex_memread_to_exmem,
 	 ctrl_disable  => hazardunit_controldisable_to_controlunit,
       idex_rd => idex_rd_to_exmem,
       instruction => ifid_instruction_to_OUT,
       cntrl_sigmux => hazardunit_controlsigmux_to_controlunit,
       pc_write_enable => hazardunit_pcwrite_to_pc,
-      ifid_write_en => hazardunit_ifidwrite_to_ifid,
-	  ifid_flush => 	hazardunit_ifidflush_to_ifid
+      ifid_write_en => hazardunit_ifidwrite_to_ifid
+	  --ifid_flush => 	hazardunit_ifidflush_to_ifid
     );
 
    -- TO IDEX																  

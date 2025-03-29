@@ -1,0 +1,162 @@
+%implements s1_b0_p4vfe_TLCInterface "C"
+
+%function getInputAddr_1_1_0_27_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<1808b0*//*@>18089b*/zynq_7000_tutorial_3_B./*@>1808b8*/StringtoASCII" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_1_1_0_27_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>1808c8*/zynq_7000_tutorial_3_B./*@>1808e6*/StringtoASCII" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_1_3_0_28_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibGetGroundVarAddr(0, 3, 1, "", -1, ucv, sigIdx, reim)
+%endfunction
+
+%function getInput_1_3_0_28_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibGetGroundVar(0, 3, 1, "", -1, ucv, sigIdx, reim)
+%endfunction
+
+%function getInputAddr_1_3_0_28_0_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibGetGroundVarAddr(0, 3, 1, "", -1, ucv, sigIdx, reim)
+%endfunction
+
+%function getInput_1_3_0_28_0_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibGetGroundVar(0, 3, 1, "", -1, ucv, sigIdx, reim)
+%endfunction
+
+%function getInputAddr_1_3_0_28_0_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibGetGroundVarAddr(0, 3, 1, "", -1, ucv, sigIdx, reim)
+%endfunction
+
+%function getInput_1_3_0_28_0_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibGetGroundVar(0, 3, 1, "", -1, ucv, sigIdx, reim)
+%endfunction
+
+%function getOutputAddr_1_3_0_28_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<180939*//*@>180924*/zynq_7000_tutorial_3_ConstB./*@>180941*/BasicCustomCode_o1" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutput_1_3_0_28_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>180951*/zynq_7000_tutorial_3_ConstB./*@>18096f*/BasicCustomCode_o1" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutputAddr_1_3_0_28_0_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<180992*//*@>18097d*/zynq_7000_tutorial_3_ConstB./*@>18099a*/BasicCustomCode_o2" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutput_1_3_0_28_0_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>1809aa*/zynq_7000_tutorial_3_ConstB./*@>1809c8*/BasicCustomCode_o2" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutputAddr_1_3_0_28_0_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<1809eb*//*@>1809d6*/zynq_7000_tutorial_3_ConstB./*@>1809f3*/BasicCustomCode_o3" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutput_1_3_0_28_0_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>180a03*/zynq_7000_tutorial_3_ConstB./*@>180a21*/BasicCustomCode_o3" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_1_1_0_28_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<180a59*//*@>180a44*/zynq_7000_tutorial_3_B./*@>180a61*/StringtoASCII" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_1_1_0_28_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>180a71*/zynq_7000_tutorial_3_B./*@>180a8f*/StringtoASCII" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_1_3_0_29_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibGetGroundVarAddr(0, 3, 1, "", -1, ucv, sigIdx, reim)
+%endfunction
+
+%function getInput_1_3_0_29_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibGetGroundVar(0, 3, 1, "", -1, ucv, sigIdx, reim)
+%endfunction
+
+%function getInputAddr_1_3_0_29_0_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibGetGroundVarAddr(0, 3, 1, "", -1, ucv, sigIdx, reim)
+%endfunction
+
+%function getInput_1_3_0_29_0_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibGetGroundVar(0, 3, 1, "", -1, ucv, sigIdx, reim)
+%endfunction
+
+%function getInputAddr_1_3_0_29_0_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibGetGroundVarAddr(0, 3, 1, "", -1, ucv, sigIdx, reim)
+%endfunction
+
+%function getInput_1_3_0_29_0_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return SLibGetGroundVar(0, 3, 1, "", -1, ucv, sigIdx, reim)
+%endfunction
+
+%function getOutputAddr_1_3_0_29_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<180ae2*//*@>180acd*/zynq_7000_tutorial_3_ConstB./*@>180aea*/BasicCustomCode_o1" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutput_1_3_0_29_0_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>180afa*/zynq_7000_tutorial_3_ConstB./*@>180b18*/BasicCustomCode_o1" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutputAddr_1_3_0_29_0_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<180b3b*//*@>180b26*/zynq_7000_tutorial_3_ConstB./*@>180b43*/BasicCustomCode_o2" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutput_1_3_0_29_0_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>180b53*/zynq_7000_tutorial_3_ConstB./*@>180b71*/BasicCustomCode_o2" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutputAddr_1_3_0_29_0_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<180b94*//*@>180b7f*/zynq_7000_tutorial_3_ConstB./*@>180b9c*/BasicCustomCode_o3" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutput_1_3_0_29_0_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>180bac*/zynq_7000_tutorial_3_ConstB./*@>180bca*/BasicCustomCode_o3" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_1_1_0_29_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<180c02*//*@>180bed*/zynq_7000_tutorial_3_B./*@>180c0a*/StringtoASCII" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_1_1_0_29_1_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>180c1a*/zynq_7000_tutorial_3_B./*@>180c38*/StringtoASCII" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_1_1_0_29_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&/*@<180c85*//*@>180c70*/zynq_7000_tutorial_3_B./*@>180c8d*/StringtoASCII" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_1_1_0_29_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "/*@>180c9d*/zynq_7000_tutorial_3_B./*@>180cbb*/StringtoASCII" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+

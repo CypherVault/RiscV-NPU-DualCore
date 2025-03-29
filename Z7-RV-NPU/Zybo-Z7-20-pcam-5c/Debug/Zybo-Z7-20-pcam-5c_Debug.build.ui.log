@@ -1,35 +1,0 @@
-2025-03-22T02:00:41.959865600255-02:00:41 **** Incremental Build of configuration Debug for project Zybo-Z7-20-pcam-5c ****
-000-make all 
-000-make --no-print-directory pre-build
-000-a9-linaro-pre-build-step
-000-' '
-000-make --no-print-directory main-build
-000-'Building file: ../src/platform/platform.c'
-000-'Invoking: ARM v7 g++ compiler'
-000-arm-none-eabi-g++ -Wall -O0 -g3 -IC:/Temp/Zybo-Z7/sw/src/Zybo-Z7-20-pcam-5c/src -c -fmessage-length=0 -MT"src/platform/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/system_wrapper/export/system_wrapper/sw/system_wrapper/domain_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/platform/platform.d" -MT"src/platform/platform.o" -o "src/platform/platform.o" "../src/platform/platform.c"
-000-'Finished building: ../src/platform/platform.c'
-000-' '
-000-'Building file: ../src/ov5640/OV5640.cpp'
-000-'Invoking: ARM v7 g++ compiler'
-000-arm-none-eabi-g++ -Wall -O0 -g3 -IC:/Temp/Zybo-Z7/sw/src/Zybo-Z7-20-pcam-5c/src -c -fmessage-length=0 -MT"src/ov5640/OV5640.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/system_wrapper/export/system_wrapper/sw/system_wrapper/domain_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/ov5640/OV5640.d" -MT"src/ov5640/OV5640.o" -o "src/ov5640/OV5640.o" "../src/ov5640/OV5640.cpp"
-000-'Finished building: ../src/ov5640/OV5640.cpp'
-000-' '
-000-'Building file: ../src/main.cc'
-000-'Invoking: ARM v7 g++ compiler'
-000-arm-none-eabi-g++ -Wall -O0 -g3 -IC:/Temp/Zybo-Z7/sw/src/Zybo-Z7-20-pcam-5c/src -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/system_wrapper/export/system_wrapper/sw/system_wrapper/domain_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cc"
-000-'Finished building: ../src/main.cc'
-000-' '
-000-'Building target: Zybo-Z7-20-pcam-5c.elf'
-000-'Invoking: ARM v7 g++ linker'
-000-arm-none-eabi-g++ -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,C:/Temp/Zybo-Z7/sw/src/Zybo-Z7-20-pcam-5c/src/lscript.ld -LC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/system_wrapper/export/system_wrapper/sw/system_wrapper/domain_ps7_cortexa9_0/bsplib/lib -o "Zybo-Z7-20-pcam-5c.elf"  ./src/platform/platform.o  ./src/ov5640/OV5640.o  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
-000-'Finished building target: Zybo-Z7-20-pcam-5c.elf'
-000-' '
-000-'Invoking: ARM v7 Print Size'
-000-arm-none-eabi-size Zybo-Z7-20-pcam-5c.elf  |tee "Zybo-Z7-20-pcam-5c.elf.size"
-000-   text	   data	    bss	    dec	    hex	filename
-000- 647252	   3872	  29152	 680276	  a6154	Zybo-Z7-20-pcam-5c.elf
-000-'Finished building: Zybo-Z7-20-pcam-5c.elf.size'
-000-' '
-00255-
-02:00:47 Build Finished (took 5s.585ms)
-

@@ -1,0 +1,6 @@
+%openfile regionBuf
+[EOF]
+%closefile regionBuf
+%assign regionBuf = FEVAL("rtwprivate", "rtw_format_banner", ...
+"formatBanner", regionBuf,"classic_cpp", 0)
+%<regionBuf>
