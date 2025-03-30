@@ -1,0 +1,378 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Sun Mar 30 14:40:58 2025
+# Process ID         : 8984
+# Current directory  : C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/zynq_design_registerIP_0_1_synth_1
+# Command line       : vivado.exe -log zynq_design_registerIP_0_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source zynq_design_registerIP_0_1.tcl
+# Log file           : C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/zynq_design_registerIP_0_1_synth_1/zynq_design_registerIP_0_1.vds
+# Journal file       : C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/zynq_design_registerIP_0_1_synth_1\vivado.jou
+# Running On         : DESKTOP-J1G93P6
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 19044
+# Processor Detail   : Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+# CPU Frequency      : 3192 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 68558 MB
+# Swap memory        : 7013 MB
+# Total Virtual      : 75572 MB
+# Available Virtual  : 44360 MB
+#-----------------------------------------------------------
+source zynq_design_registerIP_0_1.tcl -notrace
+WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
+WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
+WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
+WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
+WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
+WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
+WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 483.828 ; gain = 151.500
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/bramIP_1_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/controlsubsystemIP_1_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/instructionmemIP_1_0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/datamemIP_1_0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/controlsubsystemIP_1_0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/controlsubsystemIP_1_0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/controlsubsystemIP_1_0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/controlsubsystemIP_1_0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/controlsubsystemIP_1_0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/controlsubsystemIP_1_0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/datamemIP_1_0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/datamemIP_1_0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/datamemIP_1_0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/datamemIP_1_0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/datamemIP_1_0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/datamemIP_1_0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/instructionmemIP_1_0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/instructionmemIP_1_0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'F:/Vivado/2024.2/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.cache/ip 
+Command: synth_design -top zynq_design_registerIP_0_1 -part xc7z007sclg225-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z007s'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z007s'
+INFO: [Device 21-403] Loading part xc7z007sclg225-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
+INFO: [Synth 8-7075] Helper process launched with PID 21328
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1169.855 ; gain = 466.254
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'zynq_design_registerIP_0_1' [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ip/zynq_design_registerIP_0_1/synth/zynq_design_registerIP_0_1.vhd:91]
+	Parameter C_S01_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S01_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'registerIP' declared at 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/7ac2/hdl/registerIP.vhd:5' bound to instance 'U0' of component 'registerIP' [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ip/zynq_design_registerIP_0_1/synth/zynq_design_registerIP_0_1.vhd:170]
+INFO: [Synth 8-638] synthesizing module 'registerIP' [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/7ac2/hdl/registerIP.vhd:47]
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/7ac2/hdl/registerIP.vhd:60]
+INFO: [Synth 8-256] done synthesizing module 'registerIP' (0#1) [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ipshared/7ac2/hdl/registerIP.vhd:47]
+INFO: [Synth 8-256] done synthesizing module 'zynq_design_registerIP_0_1' (0#1) [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ip/zynq_design_registerIP_0_1/synth/zynq_design_registerIP_0_1.vhd:91]
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[31] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[30] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[29] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[28] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[27] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[26] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[25] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[24] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[23] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[22] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[21] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[20] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[19] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[18] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[17] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[16] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[15] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[14] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[13] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[12] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[11] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[10] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[9] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[8] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[7] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[1] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[0] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awprot[2] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awprot[1] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awprot[0] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_wstrb[3] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_wstrb[2] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_wstrb[1] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_wstrb[0] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_araddr[31] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_araddr[30] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_araddr[29] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_araddr[28] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_araddr[27] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_araddr[26] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_araddr[25] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_araddr[24] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_araddr[23] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_araddr[22] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_araddr[21] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_araddr[20] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_araddr[19] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_araddr[18] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_araddr[17] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_araddr[16] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_araddr[15] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_araddr[14] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_araddr[13] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_araddr[12] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_araddr[11] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_araddr[10] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_araddr[9] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_araddr[8] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_araddr[7] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_araddr[1] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_araddr[0] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_arprot[2] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_arprot[1] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_arprot[0] in module registerIP is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1292.141 ; gain = 588.539
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1292.141 ; gain = 588.539
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1292.141 ; gain = 588.539
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.042 . Memory (MB): peak = 1292.141 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1367.129 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.073 . Memory (MB): peak = 1368.352 ; gain = 1.223
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1368.352 ; gain = 664.750
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z007sclg225-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1368.352 ; gain = 664.750
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1368.352 ; gain = 664.750
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1368.352 ; gain = 664.750
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 33    
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 70    
+	   2 Input    1 Bit        Muxes := 101   
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 66 (col length:40)
+BRAMs: 100 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[31] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[30] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[29] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[28] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[27] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[26] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[25] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[24] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[23] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[22] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[21] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[20] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[19] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[18] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[17] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[16] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[15] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[14] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[13] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[12] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[11] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[10] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[9] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[8] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[7] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[1] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awaddr[0] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awprot[2] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awprot[1] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_awprot[0] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_wstrb[3] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_wstrb[2] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_wstrb[1] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_wstrb[0] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_araddr[31] in module registerIP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s01_axi_araddr[30] in module registerIP is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1427.715 ; gain = 724.113
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:36 ; elapsed = 00:00:36 . Memory (MB): peak = 1477.098 ; gain = 773.496
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:36 . Memory (MB): peak = 1479.453 ; gain = 775.852
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1508.945 ; gain = 805.344
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 1705.156 ; gain = 1001.555
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 1705.156 ; gain = 1001.555
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 1705.156 ; gain = 1001.555
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 1705.156 ; gain = 1001.555
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 1705.156 ; gain = 1001.555
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 1705.156 ; gain = 1001.555
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+------+------+
+|      |Cell  |Count |
++------+------+------+
+|1     |LUT1  |     1|
+|2     |LUT2  |    17|
+|3     |LUT3  |    22|
+|4     |LUT4  |    19|
+|5     |LUT5  |   114|
+|6     |LUT6  |  1872|
+|7     |MUXF7 |   384|
+|8     |FDCE  |   991|
+|9     |FDPE  |     1|
+|10    |FDRE  |    37|
++------+------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 1705.156 ; gain = 1001.555
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 65 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:31 ; elapsed = 00:00:41 . Memory (MB): peak = 1705.156 ; gain = 925.344
+Synthesis Optimization Complete : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 1705.156 ; gain = 1001.555
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.038 . Memory (MB): peak = 1705.156 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 384 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'zynq_design_registerIP_0_1' is not ideal for floorplanning, since the cellview 'registerIP' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1705.156 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 7216fdc0
+INFO: [Common 17-83] Releasing license: Synthesis
+41 Infos, 125 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:48 ; elapsed = 00:00:49 . Memory (MB): peak = 1705.156 ; gain = 1206.527
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1705.156 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/zynq_design_registerIP_0_1_synth_1/zynq_design_registerIP_0_1.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file zynq_design_registerIP_0_1_utilization_synth.rpt -pb zynq_design_registerIP_0_1_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Mar 30 14:41:59 2025...

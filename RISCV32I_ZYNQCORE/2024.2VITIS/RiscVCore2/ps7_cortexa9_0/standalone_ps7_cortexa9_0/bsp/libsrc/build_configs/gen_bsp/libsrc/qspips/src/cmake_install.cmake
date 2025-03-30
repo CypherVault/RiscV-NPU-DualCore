@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/2024.2VITIS/RiscVCore2/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/qspips/src
+# Install script for directory: C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/2024.2VITIS/RiscvCore2/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/qspips/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

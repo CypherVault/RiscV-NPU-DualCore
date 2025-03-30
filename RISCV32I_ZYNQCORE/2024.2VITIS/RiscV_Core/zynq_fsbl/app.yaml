@@ -1,4 +1,0 @@
-domain_path: C:\Users\Chris\Desktop\RiscV-NPU-DualCore\RISCV32I_ZYNQCORE\2024.2VITIS\RiscV_Core\zynq_fsbl\zynq_fsbl_bsp
-app_src_dir: F:\Vitis\2024.2\data\embeddedsw\lib\sw_apps\zynq_fsbl
-template: zynq_fsbl
-lang: c

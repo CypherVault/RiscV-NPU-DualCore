@@ -2,7 +2,7 @@
 --Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
---Date        : Thu Mar 20 05:23:44 2025
+--Date        : Sun Mar 30 13:14:18 2025
 --Host        : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
 --Command     : generate_target zynq_design.bd
 --Design      : zynq_design
@@ -47,7 +47,7 @@ architecture STRUCTURE of zynq_design is
   port (
     s01_axi_aclk : in STD_LOGIC;
     s01_axi_aresetn : in STD_LOGIC;
-    s01_axi_awaddr : in STD_LOGIC_VECTOR ( 4 downto 0 );
+    s01_axi_awaddr : in STD_LOGIC_VECTOR ( 31 downto 0 );
     s01_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
     s01_axi_awvalid : in STD_LOGIC;
     s01_axi_awready : out STD_LOGIC;
@@ -58,7 +58,7 @@ architecture STRUCTURE of zynq_design is
     s01_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
     s01_axi_bvalid : out STD_LOGIC;
     s01_axi_bready : in STD_LOGIC;
-    s01_axi_araddr : in STD_LOGIC_VECTOR ( 4 downto 0 );
+    s01_axi_araddr : in STD_LOGIC_VECTOR ( 31 downto 0 );
     s01_axi_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
     s01_axi_arvalid : in STD_LOGIC;
     s01_axi_arready : out STD_LOGIC;
@@ -373,7 +373,7 @@ architecture STRUCTURE of zynq_design is
     M02_AXI_rresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
     M02_AXI_rvalid : in STD_LOGIC;
     M02_AXI_rready : out STD_LOGIC;
-    M03_AXI_awaddr : out STD_LOGIC_VECTOR ( 4 downto 0 );
+    M03_AXI_awaddr : out STD_LOGIC_VECTOR ( 31 downto 0 );
     M03_AXI_awprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
     M03_AXI_awvalid : out STD_LOGIC;
     M03_AXI_awready : in STD_LOGIC;
@@ -384,7 +384,7 @@ architecture STRUCTURE of zynq_design is
     M03_AXI_bresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
     M03_AXI_bvalid : in STD_LOGIC;
     M03_AXI_bready : out STD_LOGIC;
-    M03_AXI_araddr : out STD_LOGIC_VECTOR ( 4 downto 0 );
+    M03_AXI_araddr : out STD_LOGIC_VECTOR ( 31 downto 0 );
     M03_AXI_arprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
     M03_AXI_arvalid : out STD_LOGIC;
     M03_AXI_arready : in STD_LOGIC;
@@ -448,11 +448,11 @@ architecture STRUCTURE of zynq_design is
   signal axi_smc_M02_AXI_WREADY : STD_LOGIC;
   signal axi_smc_M02_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal axi_smc_M02_AXI_WVALID : STD_LOGIC;
-  signal axi_smc_M03_AXI_ARADDR : STD_LOGIC_VECTOR ( 4 downto 0 );
+  signal axi_smc_M03_AXI_ARADDR : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal axi_smc_M03_AXI_ARPROT : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal axi_smc_M03_AXI_ARREADY : STD_LOGIC;
   signal axi_smc_M03_AXI_ARVALID : STD_LOGIC;
-  signal axi_smc_M03_AXI_AWADDR : STD_LOGIC_VECTOR ( 4 downto 0 );
+  signal axi_smc_M03_AXI_AWADDR : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal axi_smc_M03_AXI_AWPROT : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal axi_smc_M03_AXI_AWREADY : STD_LOGIC;
   signal axi_smc_M03_AXI_AWVALID : STD_LOGIC;
@@ -637,11 +637,11 @@ axi_smc: component zynq_design_axi_smc_1
       M02_AXI_wready => axi_smc_M02_AXI_WREADY,
       M02_AXI_wstrb(3 downto 0) => axi_smc_M02_AXI_WSTRB(3 downto 0),
       M02_AXI_wvalid => axi_smc_M02_AXI_WVALID,
-      M03_AXI_araddr(4 downto 0) => axi_smc_M03_AXI_ARADDR(4 downto 0),
+      M03_AXI_araddr(31 downto 0) => axi_smc_M03_AXI_ARADDR(31 downto 0),
       M03_AXI_arprot(2 downto 0) => axi_smc_M03_AXI_ARPROT(2 downto 0),
       M03_AXI_arready => axi_smc_M03_AXI_ARREADY,
       M03_AXI_arvalid => axi_smc_M03_AXI_ARVALID,
-      M03_AXI_awaddr(4 downto 0) => axi_smc_M03_AXI_AWADDR(4 downto 0),
+      M03_AXI_awaddr(31 downto 0) => axi_smc_M03_AXI_AWADDR(31 downto 0),
       M03_AXI_awprot(2 downto 0) => axi_smc_M03_AXI_AWPROT(2 downto 0),
       M03_AXI_awready => axi_smc_M03_AXI_AWREADY,
       M03_AXI_awvalid => axi_smc_M03_AXI_AWVALID,
@@ -875,12 +875,12 @@ registerIP_0: component zynq_design_registerIP_0_0
       regwrite => RISCVCOREZYNQ_0_reg_write,
       resetbar => controlsubsystemIP_0_riscv_resetbar,
       s01_axi_aclk => processing_system7_0_FCLK_CLK0,
-      s01_axi_araddr(4 downto 0) => axi_smc_M03_AXI_ARADDR(4 downto 0),
+      s01_axi_araddr(31 downto 0) => axi_smc_M03_AXI_ARADDR(31 downto 0),
       s01_axi_aresetn => rst_ps7_0_50M_peripheral_aresetn(0),
       s01_axi_arprot(2 downto 0) => axi_smc_M03_AXI_ARPROT(2 downto 0),
       s01_axi_arready => axi_smc_M03_AXI_ARREADY,
       s01_axi_arvalid => axi_smc_M03_AXI_ARVALID,
-      s01_axi_awaddr(4 downto 0) => axi_smc_M03_AXI_AWADDR(4 downto 0),
+      s01_axi_awaddr(31 downto 0) => axi_smc_M03_AXI_AWADDR(31 downto 0),
       s01_axi_awprot(2 downto 0) => axi_smc_M03_AXI_AWPROT(2 downto 0),
       s01_axi_awready => axi_smc_M03_AXI_AWREADY,
       s01_axi_awvalid => axi_smc_M03_AXI_AWVALID,

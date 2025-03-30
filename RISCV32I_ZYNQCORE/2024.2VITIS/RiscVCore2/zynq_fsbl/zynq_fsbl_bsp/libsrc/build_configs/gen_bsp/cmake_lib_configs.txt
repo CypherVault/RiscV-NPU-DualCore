@@ -14,7 +14,7 @@
 -- Found assembler: F:/Vitis/2024.2/gnu/aarch32/nt/gcc-arm-none-eabi/bin/arm-none-eabi-gcc.exe
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/2024.2VITIS/RiscVCore2/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp
+-- Build files have been written to: C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/2024.2VITIS/RiscvCore2/zynq_fsbl/zynq_fsbl_bsp/libsrc/build_configs/gen_bsp
 -- Cache values
 // BOARD
 BOARD:STRING=minized
@@ -29,10 +29,10 @@ CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/bsp
 CMAKE_SIZE:FILEPATH=arm-none-eabi-size
 
 // Specs file path for using CMAKE toolchain files
-CMAKE_SPECS_FILE:STRING=C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/2024.2VITIS/RiscVCore2/zynq_fsbl/zynq_fsbl_bsp/Xilinx.spec
+CMAKE_SPECS_FILE:STRING=C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/2024.2VITIS/RiscvCore2/zynq_fsbl/zynq_fsbl_bsp/Xilinx.spec
 
 // The CMake toolchain file
-CMAKE_TOOLCHAIN_FILE:FILEPATH=C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/2024.2VITIS/RiscVCore2/zynq_fsbl/zynq_fsbl_bsp/cortexa9_toolchain.cmake
+CMAKE_TOOLCHAIN_FILE:FILEPATH=C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/2024.2VITIS/RiscvCore2/zynq_fsbl/zynq_fsbl_bsp/cortexa9_toolchain.cmake
 
 // Device Id
 DEVICE_ID:STRING=7z007s

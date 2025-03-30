@@ -1,10 +1,10 @@
 {
-  "name": "RiscVCore2",
+  "name": "RiscvCore2",
   "type": "PLATFORM",
   "configuration": {
     "description": "",
-    "xsa": "C:\\Users\\Chris\\Desktop\\RiscV-NPU-DualCore\\RISCV32I_ZYNQCORE\\zynq_design_wrapper.xsa",
-    "xsaPathInPlatform": "RiscVCore2\\hw\\zynq_design_wrapper.xsa",
+    "xsa": "C:\\Users\\Chris\\Desktop\\RiscV-NPU-DualCore\\RISCV32I_ZYNQCORE\\zynq_design_wrapper_regfileupdate.xsa",
+    "xsaPathInPlatform": "RiscvCore2\\hw\\zynq_design_wrapper_regfileupdate.xsa",
     "emulationXsa": "",
     "emulationXsaPathInPlatform": "",
     "isCustomFSBL": false,

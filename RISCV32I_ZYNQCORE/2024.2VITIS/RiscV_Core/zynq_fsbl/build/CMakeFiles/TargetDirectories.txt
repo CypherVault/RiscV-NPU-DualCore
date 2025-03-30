@@ -1,3 +1,0 @@
-C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/2024.2VITIS/RiscV_Core/zynq_fsbl/build/CMakeFiles/fsbl.elf.dir
-C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/2024.2VITIS/RiscV_Core/zynq_fsbl/build/CMakeFiles/edit_cache.dir
-C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/2024.2VITIS/RiscV_Core/zynq_fsbl/build/CMakeFiles/rebuild_cache.dir

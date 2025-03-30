@@ -152,7 +152,7 @@ module zynq_design_axi_smc_1 (
   input bit [1 : 0] M02_AXI_rresp,
   input bit_as_bool M02_AXI_rvalid,
   output bit_as_bool M02_AXI_rready,
-  output bit [4 : 0] M03_AXI_awaddr,
+  output bit [31 : 0] M03_AXI_awaddr,
   output bit [2 : 0] M03_AXI_awprot,
   output bit_as_bool M03_AXI_awvalid,
   input bit_as_bool M03_AXI_awready,
@@ -163,7 +163,7 @@ module zynq_design_axi_smc_1 (
   input bit [1 : 0] M03_AXI_bresp,
   input bit_as_bool M03_AXI_bvalid,
   output bit_as_bool M03_AXI_bready,
-  output bit [4 : 0] M03_AXI_araddr,
+  output bit [31 : 0] M03_AXI_araddr,
   output bit [2 : 0] M03_AXI_arprot,
   output bit_as_bool M03_AXI_arvalid,
   input bit_as_bool M03_AXI_arready,
@@ -266,7 +266,7 @@ module zynq_design_axi_smc_1 (aclk,aresetn,S00_AXI_awid,S00_AXI_awaddr,S00_AXI_a
   input bit [1 : 0] M02_AXI_rresp;
   input bit M02_AXI_rvalid;
   output wire M02_AXI_rready;
-  output wire [4 : 0] M03_AXI_awaddr;
+  output wire [31 : 0] M03_AXI_awaddr;
   output wire [2 : 0] M03_AXI_awprot;
   output wire M03_AXI_awvalid;
   input bit M03_AXI_awready;
@@ -277,7 +277,7 @@ module zynq_design_axi_smc_1 (aclk,aresetn,S00_AXI_awid,S00_AXI_awaddr,S00_AXI_a
   input bit [1 : 0] M03_AXI_bresp;
   input bit M03_AXI_bvalid;
   output wire M03_AXI_bready;
-  output wire [4 : 0] M03_AXI_araddr;
+  output wire [31 : 0] M03_AXI_araddr;
   output wire [2 : 0] M03_AXI_arprot;
   output wire M03_AXI_arvalid;
   input bit M03_AXI_arready;

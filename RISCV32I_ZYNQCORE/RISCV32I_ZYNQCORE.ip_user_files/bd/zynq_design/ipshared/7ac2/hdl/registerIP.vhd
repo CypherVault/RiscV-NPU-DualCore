@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 entity registerIP is
   generic (
     C_S01_AXI_DATA_WIDTH : integer := 32;
-    C_S01_AXI_ADDR_WIDTH : integer := 5
+    C_S01_AXI_ADDR_WIDTH : integer := 32
   );
   port (
     -- AXI-Lite Interface
@@ -58,7 +58,48 @@ begin
   begin
     -- Async resets take priority
     if s01_axi_aresetn = '0' or resetbar = '0' then
-      registers <= (2 => x"00004000", others => (others => '0'));
+      
+      --STACK ADDR
+--      registers <= (2 => x"00004000", others => (others => '0'));
+      
+      --DEBUG OPTION for CHRIS
+      
+      registers <= (  
+    0=> x"00000000", 
+    1 => x"00000001",
+    2 => x"00000002",
+    3 => x"00000003",
+    4 => x"00000004",
+    5 => x"00000005",
+    6 => x"00000006",
+    7 => x"00000007",
+    8 => x"00000008",
+    9 => x"00000009",
+    10 => x"0000000A",
+    11 => x"0000000B",
+    12 => x"0000000C",
+    13 => x"0000000D",
+    14 => x"0000000E",
+    15 => x"0000000F",
+    16 => x"00000010",
+    17 => x"00000011",
+    18 => x"00000012",
+    19 => x"00000013",
+    20 => x"00000014",
+    21 => x"00000015",
+    22 => x"00000016",
+    23 => x"00000017",
+    24 => x"00000018",
+    25 => x"00000019",
+    26 => x"0000001A",
+    27 => x"0000001B",
+    28 => x"0000001C",
+    29 => x"0000001D",
+    30 => x"0000001E",
+    31 => x"0000001F"
+);
+
+      
       
     -- Clocked writes (AXI has priority)
     elsif rising_edge(s01_axi_aclk) and hold = '0' then
@@ -130,7 +171,7 @@ begin
         
         -- Read data capture
         if arready = '1' then
-          s01_axi_rdata <= registers(to_integer(unsigned(s01_axi_araddr)));
+          s01_axi_rdata <= registers(to_integer(unsigned(s01_axi_araddr(C_S01_AXI_ADDR_WIDTH-1 downto 2))));
         end if;
         
         -- RVALID generation

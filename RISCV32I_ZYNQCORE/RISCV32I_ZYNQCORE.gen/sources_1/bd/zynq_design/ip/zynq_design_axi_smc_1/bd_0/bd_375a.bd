@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xE3C6B02984B6CF5C",
+      "boundary_crc": "0x9FCE31A8EAF99EBB",
       "design_src": "SBD",
       "device": "xc7z007sclg225-1",
       "name": "bd_375a",
@@ -121,7 +121,7 @@
             "value_src": "auto_prop"
           },
           "FREQ_HZ": {
-            "value": "100000000",
+            "value": "10000000",
             "value_src": "user_prop"
           },
           "HAS_BRESP": {
@@ -256,7 +256,7 @@
             "value_src": "default"
           },
           "FREQ_HZ": {
-            "value": "100000000",
+            "value": "10000000",
             "value_src": "user_prop"
           },
           "HAS_BRESP": {
@@ -382,7 +382,7 @@
             "value_src": "default"
           },
           "FREQ_HZ": {
-            "value": "100000000",
+            "value": "10000000",
             "value_src": "user_prop"
           },
           "HAS_BRESP": {
@@ -508,7 +508,7 @@
             "value_src": "default"
           },
           "FREQ_HZ": {
-            "value": "100000000",
+            "value": "10000000",
             "value_src": "user_prop"
           },
           "HAS_BRESP": {
@@ -610,8 +610,8 @@
         "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
         "parameters": {
           "ADDR_WIDTH": {
-            "value": "5",
-            "value_src": "ip_prop"
+            "value": "32",
+            "value_src": "default"
           },
           "ARUSER_WIDTH": {
             "value": "0",
@@ -634,7 +634,7 @@
             "value_src": "default"
           },
           "FREQ_HZ": {
-            "value": "100000000",
+            "value": "10000000",
             "value_src": "user_prop"
           },
           "HAS_BRESP": {
@@ -748,7 +748,7 @@
             "value_src": "default_prop"
           },
           "FREQ_HZ": {
-            "value": "100000000",
+            "value": "10000000",
             "value_src": "user_prop"
           },
           "FREQ_TOLERANCE_HZ": {
@@ -6966,7 +6966,7 @@
         "inst_hier_path": "m03_sc2axi",
         "parameters": {
           "AXI_ADDR_WIDTH": {
-            "value": "5"
+            "value": "32"
           },
           "AXI_ID_WIDTH": {
             "value": "1"
@@ -7999,7 +7999,7 @@
             "inst_hier_path": "m03_exit_pipeline/m03_exit",
             "parameters": {
               "ADDR_WIDTH": {
-                "value": "5"
+                "value": "32"
               },
               "ENABLE_PIPELINING": {
                 "value": "0"

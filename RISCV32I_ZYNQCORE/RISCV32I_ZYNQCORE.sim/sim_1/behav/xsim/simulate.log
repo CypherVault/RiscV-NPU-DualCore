@@ -1,0 +1,591 @@
+Time resolution is 1 ps
+XilinxAXIVIP: Found at Path: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master
+[0] : *ZYNQ_VIP_INFO : M_AXI_GP0 : Port is ENABLED.
+XilinxAXIVIP: Found at Path: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP1.master
+[0] : *ZYNQ_VIP_INFO : M_AXI_GP1 : Port is DISABLED.
+XilinxAXIVIP: Found at Path: tb.dut.zynq_design_i.processing_system7_0.inst.S_AXI_GP0.slave
+[0] : *ZYNQ_VIP_INFO : S_AXI_GP0 : Port is DISABLED.
+XilinxAXIVIP: Found at Path: tb.dut.zynq_design_i.processing_system7_0.inst.S_AXI_GP1.slave
+[0] : *ZYNQ_VIP_INFO : S_AXI_GP1 : Port is DISABLED.
+XilinxAXIVIP: Found at Path: tb.dut.zynq_design_i.processing_system7_0.inst.S_AXI_HP0.slave
+[0] : *ZYNQ_VIP_INFO : S_AXI_HP0 : Port is DISABLED.
+                   0 BEFORE checking line ...... x
+                   0 AFTER checking line ...... x
+XilinxAXIVIP: Found at Path: tb.dut.zynq_design_i.processing_system7_0.inst.S_AXI_HP1.slave
+[0] : *ZYNQ_VIP_INFO : S_AXI_HP1 : Port is DISABLED.
+                   0 BEFORE checking line ...... x
+                   0 AFTER checking line ...... x
+XilinxAXIVIP: Found at Path: tb.dut.zynq_design_i.processing_system7_0.inst.S_AXI_HP2.slave
+[0] : *ZYNQ_VIP_INFO : S_AXI_HP2 : Port is DISABLED.
+                   0 BEFORE checking line ...... x
+                   0 AFTER checking line ...... x
+XilinxAXIVIP: Found at Path: tb.dut.zynq_design_i.processing_system7_0.inst.S_AXI_HP3.slave
+[0] : *ZYNQ_VIP_INFO : S_AXI_HP3 : Port is DISABLED.
+                   0 BEFORE checking line ...... x
+                   0 AFTER checking line ...... x
+XilinxAXIVIP: Found at Path: tb.dut.zynq_design_i.processing_system7_0.inst.S_AXI_ACP.slave
+[0] : *ZYNQ_VIP_INFO : S_AXI_ACP : Port is DISABLED.
+[0] : *ZYNQ_VIP_INFO : Setting Debug Level Info as 1
+Starting Instruction Memory Test
+                   0 else checking line ......x
+WARNING: 50 ns tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF : ARESET_N can't be X/Z after 1 cycle of clock. To downgrade, use <hierarchy_path to VIP>.IF.set_enable_xchecks_to_warn(), or filter using clr_enable_xchecks.
+[195] : *ZYNQ_VIP_INFO : FPGA Soft Reset called for 0x1
+[195] : *ZYNQ_VIP_INFO : FPGA Soft Reset called for 0x0
+Toggling ON hold enable signal...RISCV CORE DISABLED, start has not been asserted yet.
+[195] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c00004) -> AXI Write -> 4 bytes
+wr_id called with wr_size cdc 
+                 195ID1 in strb task is 973
+[11750] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c00004) with Response 'OKAY'
+HOLD enabled
+[12045] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c00000) -> AXI Write -> 4 bytes
+wr_id called with wr_size e67 
+               12045ID1 in strb task is 5dd
+[14050] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c00000) with Response 'OKAY'
+Reset asserted
+[14145] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c00000) -> AXI Write -> 4 bytes
+wr_id called with wr_size ab5 
+               14145ID1 in strb task is 2fb
+[17150] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c00000) with Response 'OKAY'
+Reset de-asserted
+Writing instruction data to instruction memory...
+[17245] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c20000) -> AXI Write -> 4 bytes
+wr_id called with wr_size c0f 
+               17245ID1 in strb task is 542
+[18550] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c20000) with Response 'OKAY'
+Wrote 0x00000000 to address: 43c20000
+[18595] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c20004) -> AXI Write -> 4 bytes
+wr_id called with wr_size c65 
+               18595ID1 in strb task is 8d2
+[19950] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c20004) with Response 'OKAY'
+Wrote 0x02f00513 to address: 43c20004
+[19995] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c20008) -> AXI Write -> 4 bytes
+wr_id called with wr_size 5ff 
+               19995ID1 in strb task is e43
+[22450] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c20008) with Response 'OKAY'
+Wrote 0x00500593 to address: 43c20008
+[22495] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c2000c) -> AXI Write -> 4 bytes
+wr_id called with wr_size 8eb 
+               22495ID1 in strb task is 12e
+[25550] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c2000c) with Response 'OKAY'
+Wrote 0x00000613 to address: 43c2000c
+[25595] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c20010) -> AXI Write -> 4 bytes
+wr_id called with wr_size 2f1 
+               25595ID1 in strb task is d3b
+[27650] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c20010) with Response 'OKAY'
+Wrote 0x00050693 to address: 43c20010
+[27695] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c20014) -> AXI Write -> 4 bytes
+wr_id called with wr_size 466 
+               27695ID1 in strb task is c04
+[29050] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c20014) with Response 'OKAY'
+Wrote 0x40b686b3 to address: 43c20014
+[29095] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c20018) -> AXI Write -> 4 bytes
+wr_id called with wr_size 3a0 
+               29095ID1 in strb task is 9f5
+[31250] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c20018) with Response 'OKAY'
+Wrote 0x02b6c063 to address: 43c20018
+[31295] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c2001c) -> AXI Write -> 4 bytes
+wr_id called with wr_size f00 
+               31295ID1 in strb task is cbd
+[33950] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c2001c) with Response 'OKAY'
+Wrote 0x00160613 to address: 43c2001c
+[33995] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c20020) -> AXI Write -> 4 bytes
+wr_id called with wr_size cb 
+               33995ID1 in strb task is 982
+[35650] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c20020) with Response 'OKAY'
+Wrote 0x00000000 to address: 43c20020
+[35695] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c20024) -> AXI Write -> 4 bytes
+wr_id called with wr_size 99f 
+               35695ID1 in strb task is 717
+[37450] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c20024) with Response 'OKAY'
+Wrote 0xff1ff06f to address: 43c20024
+[37495] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c20028) -> AXI Write -> 4 bytes
+wr_id called with wr_size 7eb 
+               37495ID1 in strb task is 2b0
+
+Time: 39150 ns Started: 39150 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 39150 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 39150 ns
+
+Time: 39250 ns Started: 39250 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 39250 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 39250 ns
+
+Time: 39350 ns Started: 39350 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 39350 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 39350 ns
+[40250] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c20028) with Response 'OKAY'
+Wrote 0xxxxxxxxx to address: 43c20028
+[40295] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c2002c) -> AXI Write -> 4 bytes
+wr_id called with wr_size 3bc 
+               40295ID1 in strb task is ecd
+
+Time: 42150 ns Started: 42150 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 42150 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 42150 ns
+
+Time: 42250 ns Started: 42250 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 42250 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 42250 ns
+
+Time: 42350 ns Started: 42350 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 42350 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 42350 ns
+[43150] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c2002c) with Response 'OKAY'
+Wrote 0xxxxxxxxx to address: 43c2002c
+[43195] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c20030) -> AXI Write -> 4 bytes
+wr_id called with wr_size e05 
+               43195ID1 in strb task is 943
+
+Time: 45250 ns Started: 45250 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 45250 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 45250 ns
+
+Time: 45350 ns Started: 45350 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 45350 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 45350 ns
+
+Time: 45450 ns Started: 45450 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 45450 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 45450 ns
+[46250] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c20030) with Response 'OKAY'
+Wrote 0xxxxxxxxx to address: 43c20030
+[46295] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c20034) -> AXI Write -> 4 bytes
+wr_id called with wr_size b8c 
+               46295ID1 in strb task is 460
+
+Time: 48450 ns Started: 48450 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 48450 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 48450 ns
+
+Time: 48550 ns Started: 48550 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 48550 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 48550 ns
+
+Time: 48650 ns Started: 48650 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 48650 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 48650 ns
+[49350] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c20034) with Response 'OKAY'
+Wrote 0xxxxxxxxx to address: 43c20034
+[49395] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c20038) -> AXI Write -> 4 bytes
+wr_id called with wr_size 2bc 
+               49395ID1 in strb task is e1c
+
+Time: 51150 ns Started: 51150 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 51150 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 51150 ns
+
+Time: 51250 ns Started: 51250 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 51250 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 51250 ns
+
+Time: 51350 ns Started: 51350 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 51350 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 51350 ns
+[52150] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c20038) with Response 'OKAY'
+Wrote 0xxxxxxxxx to address: 43c20038
+[52195] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c2003c) -> AXI Write -> 4 bytes
+wr_id called with wr_size ed1 
+               52195ID1 in strb task is 437
+
+Time: 53550 ns Started: 53550 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 53550 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 53550 ns
+
+Time: 53650 ns Started: 53650 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 53650 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 53650 ns
+
+Time: 53750 ns Started: 53750 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 53750 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 53750 ns
+[54550] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c2003c) with Response 'OKAY'
+Wrote 0xxxxxxxxx to address: 43c2003c
+[54595] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c20040) -> AXI Write -> 4 bytes
+wr_id called with wr_size 52b 
+               54595ID1 in strb task is 40e
+
+Time: 56450 ns Started: 56450 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 56450 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 56450 ns
+
+Time: 56550 ns Started: 56550 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 56550 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 56550 ns
+
+Time: 56650 ns Started: 56650 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 56650 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 56650 ns
+[57450] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c20040) with Response 'OKAY'
+Wrote 0xxxxxxxxx to address: 43c20040
+[57495] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c20044) -> AXI Write -> 4 bytes
+wr_id called with wr_size aa8 
+               57495ID1 in strb task is 935
+
+Time: 57850 ns Started: 57850 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 57850 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 57850 ns
+
+Time: 57950 ns Started: 57950 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 57950 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 57950 ns
+
+Time: 58050 ns Started: 58050 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 58050 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 58050 ns
+[58750] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c20044) with Response 'OKAY'
+Wrote 0xxxxxxxxx to address: 43c20044
+[58795] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c20048) -> AXI Write -> 4 bytes
+wr_id called with wr_size 28d 
+               58795ID1 in strb task is 653
+
+Time: 60750 ns Started: 60750 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 60750 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 60750 ns
+
+Time: 60850 ns Started: 60850 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 60850 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 60850 ns
+
+Time: 60950 ns Started: 60950 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 60950 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 60950 ns
+[61650] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c20048) with Response 'OKAY'
+Wrote 0xxxxxxxxx to address: 43c20048
+[61695] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c2004c) -> AXI Write -> 4 bytes
+wr_id called with wr_size 331 
+               61695ID1 in strb task is d61
+
+Time: 62250 ns Started: 62250 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 62250 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 62250 ns
+
+Time: 62350 ns Started: 62350 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 62350 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 62350 ns
+
+Time: 62450 ns Started: 62450 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 62450 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 62450 ns
+[63350] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c2004c) with Response 'OKAY'
+Wrote 0xxxxxxxxx to address: 43c2004c
+[63395] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c20050) -> AXI Write -> 4 bytes
+wr_id called with wr_size 634 
+               63395ID1 in strb task is b21
+
+Time: 63950 ns Started: 63950 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 63950 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 63950 ns
+
+Time: 64050 ns Started: 64050 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 64050 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 64050 ns
+
+Time: 64150 ns Started: 64150 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 64150 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 64150 ns
+[64850] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c20050) with Response 'OKAY'
+Wrote 0xxxxxxxxx to address: 43c20050
+[64895] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c20054) -> AXI Write -> 4 bytes
+wr_id called with wr_size 54a 
+               64895ID1 in strb task is 4ca
+
+Time: 66550 ns Started: 66550 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 66550 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 66550 ns
+
+Time: 66650 ns Started: 66650 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 66650 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 66650 ns
+
+Time: 66750 ns Started: 66750 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 66750 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 66750 ns
+[67550] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c20054) with Response 'OKAY'
+Wrote 0xxxxxxxxx to address: 43c20054
+[67595] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c20058) -> AXI Write -> 4 bytes
+wr_id called with wr_size 202 
+               67595ID1 in strb task is f54
+
+Time: 68650 ns Started: 68650 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 68650 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 68650 ns
+
+Time: 68750 ns Started: 68750 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 68750 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 68750 ns
+
+Time: 68850 ns Started: 68850 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 68850 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 68850 ns
+[69650] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c20058) with Response 'OKAY'
+Wrote 0xxxxxxxxx to address: 43c20058
+[69695] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c2005c) -> AXI Write -> 4 bytes
+wr_id called with wr_size b5f 
+               69695ID1 in strb task is e35
+
+Time: 69850 ns Started: 69850 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 69850 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 69850 ns
+
+Time: 69950 ns Started: 69950 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 69950 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 69950 ns
+
+Time: 70050 ns Started: 70050 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 70050 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 70050 ns
+
+Time: 70150 ns Started: 70150 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 70150 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 70150 ns
+
+Time: 70250 ns Started: 70250 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 70250 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 70250 ns
+[71050] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c2005c) with Response 'OKAY'
+Wrote 0xxxxxxxxx to address: 43c2005c
+[71095] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c20060) -> AXI Write -> 4 bytes
+wr_id called with wr_size ff2 
+               71095ID1 in strb task is cc3
+
+Time: 73050 ns Started: 73050 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 73050 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 73050 ns
+
+Time: 73150 ns Started: 73150 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 73150 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 73150 ns
+
+Time: 73250 ns Started: 73250 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 73250 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 73250 ns
+[74050] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c20060) with Response 'OKAY'
+Wrote 0xxxxxxxxx to address: 43c20060
+[74095] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c20064) -> AXI Write -> 4 bytes
+wr_id called with wr_size 48f 
+               74095ID1 in strb task is 688
+
+Time: 74350 ns Started: 74350 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 74350 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 74350 ns
+
+Time: 74450 ns Started: 74450 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 74450 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 74450 ns
+
+Time: 74550 ns Started: 74550 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 74550 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 74550 ns
+
+Time: 74650 ns Started: 74650 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 74650 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 74650 ns
+[75350] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c20064) with Response 'OKAY'
+Wrote 0xxxxxxxxx to address: 43c20064
+[75395] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c20068) -> AXI Write -> 4 bytes
+wr_id called with wr_size e90 
+               75395ID1 in strb task is 380
+
+Time: 76950 ns Started: 76950 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 76950 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 76950 ns
+
+Time: 77050 ns Started: 77050 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 77050 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 77050 ns
+
+Time: 77150 ns Started: 77150 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 77150 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 77150 ns
+[78050] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c20068) with Response 'OKAY'
+Wrote 0xxxxxxxxx to address: 43c20068
+[78095] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c2006c) -> AXI Write -> 4 bytes
+wr_id called with wr_size 626 
+               78095ID1 in strb task is 4f6
+
+Time: 79850 ns Started: 79850 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 79850 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 79850 ns
+
+Time: 79950 ns Started: 79950 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 79950 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 79950 ns
+
+Time: 80050 ns Started: 80050 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 80050 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 80050 ns
+[80850] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c2006c) with Response 'OKAY'
+Wrote 0xxxxxxxxx to address: 43c2006c
+[80895] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c20070) -> AXI Write -> 4 bytes
+wr_id called with wr_size 9d9 
+               80895ID1 in strb task is 996
+
+Time: 82950 ns Started: 82950 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 82950 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 82950 ns
+
+Time: 83050 ns Started: 83050 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 83050 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 83050 ns
+
+Time: 83150 ns Started: 83150 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 83150 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 83150 ns
+[83850] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c20070) with Response 'OKAY'
+Wrote 0xxxxxxxxx to address: 43c20070
+[83895] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c20074) -> AXI Write -> 4 bytes
+wr_id called with wr_size 92 
+               83895ID1 in strb task is c35
+
+Time: 84150 ns Started: 84150 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 84150 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 84150 ns
+
+Time: 84250 ns Started: 84250 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 84250 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 84250 ns
+
+Time: 84350 ns Started: 84350 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 84350 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 84350 ns
+
+Time: 84450 ns Started: 84450 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 84450 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 84450 ns
+[85150] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c20074) with Response 'OKAY'
+Wrote 0xxxxxxxxx to address: 43c20074
+[85195] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c20078) -> AXI Write -> 4 bytes
+wr_id called with wr_size 185 
+               85195ID1 in strb task is 234
+
+Time: 85850 ns Started: 85850 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 85850 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 85850 ns
+
+Time: 85950 ns Started: 85950 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 85950 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 85950 ns
+
+Time: 86050 ns Started: 86050 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 86050 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 86050 ns
+[86850] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c20078) with Response 'OKAY'
+Wrote 0xxxxxxxxx to address: 43c20078
+[86895] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c2007c) -> AXI Write -> 4 bytes
+wr_id called with wr_size 9cb 
+               86895ID1 in strb task is 4c0
+
+Time: 87950 ns Started: 87950 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 87950 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 87950 ns
+
+Time: 88050 ns Started: 88050 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 88050 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 88050 ns
+
+Time: 88150 ns Started: 88150 ns Scope: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line:1937
+Fatal: AXI4_ERRM_WDATA_X: When WVALID is high, a value of X on active byte lanes of WDATA is not permitted. Spec: section A3.2.2.
+Time: 88150 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC//tb/dut/zynq_design_i/processing_system7_0/inst/M_AXI_GP0/master/IF/PC  Scope: tb.dut.zynq_design_i.processing_system7_0.inst.M_AXI_GP0.master.IF.PC.arm_amba4_pc_msg_err  File: F:/Vivado/2024.2/data/xilinx_vip/hdl/axi_vip_axi4pc.sv Line: 727
+$finish called at time : 88150 ns
+[88950] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c2007c) with Response 'OKAY'
+Wrote 0xxxxxxxxx to address: 43c2007c
+Reading back instruction memory...
+Toggling OFF hold enable signal...
+[89045] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c00004) -> AXI Write -> 4 bytes
+wr_id called with wr_size 522 
+               89045ID1 in strb task is f94
+[91350] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c00004) with Response 'OKAY'
+Toggling ON START enable signal...RISCV CORE will now run.
+[91350] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c00008) -> AXI Write -> 4 bytes
+wr_id called with wr_size 16 
+               91350ID1 in strb task is ea1
+[92750] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c00008) with Response 'OKAY'
+START enabled
+Toggling ON hold enable signal...RISCV CORE DISABLED.
+[102745] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c00004) -> AXI Write -> 4 bytes
+wr_id called with wr_size ff1 
+              102745ID1 in strb task is b82
+[104050] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c00004) with Response 'OKAY'
+HOLD enabled
+[104050] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c00008) -> AXI Write -> 4 bytes
+wr_id called with wr_size efb 
+              104050ID1 in strb task is e3b
+[105750] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Done AXI Write for Starting Address(0x43c00008) with Response 'OKAY'
+START disabled
+Reading all registers...
+[105945] : M_AXI_GP0 : *ZYNQ_VIP_INFO : Starting Address(0x43c30000) -> AXI Read -> 4 bytes
+              105945ID2 in read strb task is df1
+ERROR: Index 284213248 out of bound 0 to 31
+Time: 106550 ns  Iteration: 1  Process: /tb/dut/zynq_design_i/registerIP_0/U0/line__157
+  File: C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.ip_user_files/bd/zynq_design/ipshared/7ac2/hdl/registerIP.vhd
+
+HDL Line: C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.ip_user_files/bd/zynq_design/ipshared/7ac2/hdl/registerIP.vhd:174

@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/2024.2VITIS/RiscVCore2/zynq_fsbl/zynq_fsbl_bsp/libsrc/standalone/src/arm/cortexa9/gcc
+# Install script for directory: C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/2024.2VITIS/RiscvCore2/zynq_fsbl/zynq_fsbl_bsp/libsrc/standalone/src/arm/cortexa9/gcc
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -52,7 +52,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = F:\Vitis\2024.2\tps\win64\cmake-3.24.2\bin\cmake.exe --regenerate-during-build -SC:\Users\Chris\Desktop\RiscV-NPU-DualCore\RISCV32I_ZYNQCORE\2024.2VITIS\RiscVCore2\zynq_fsbl -BC:\Users\Chris\Desktop\RiscV-NPU-DualCore\RISCV32I_ZYNQCORE\2024.2VITIS\RiscVCore2\zynq_fsbl\build
+  command = F:\Vitis\2024.2\tps\win64\cmake-3.24.2\bin\cmake.exe --regenerate-during-build -SC:\Users\Chris\Desktop\RiscV-NPU-DualCore\RISCV32I_ZYNQCORE\2024.2VITIS\RiscvCore2\zynq_fsbl -BC:\Users\Chris\Desktop\RiscV-NPU-DualCore\RISCV32I_ZYNQCORE\2024.2VITIS\RiscvCore2\zynq_fsbl\build
   description = Re-running CMake...
   generator = 1
 

@@ -11,14 +11,14 @@
       "validated": "true"
     },
     "design_tree": {
-      "registerIP_0": "",
       "RISCVCOREZYNQ_0": "",
       "instructionmemIP_0": "",
       "datamemIP_0": "",
       "processing_system7_0": "",
       "controlsubsystemIP_0": "",
       "rst_ps7_0_50M": "",
-      "axi_smc": ""
+      "axi_smc": "",
+      "registerIP_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -191,13 +191,6 @@
       }
     },
     "components": {
-      "registerIP_0": {
-        "vlnv": "xilinx.com:user:registerIP:1.0",
-        "ip_revision": "1",
-        "xci_name": "zynq_design_registerIP_0_0",
-        "xci_path": "ip\\zynq_design_registerIP_0_0\\zynq_design_registerIP_0_0.xci",
-        "inst_hier_path": "registerIP_0"
-      },
       "RISCVCOREZYNQ_0": {
         "vlnv": "xilinx.com:module_ref:RISCVCOREZYNQ:1.0",
         "ip_revision": "1",
@@ -221,7 +214,7 @@
             "direction": "I",
             "parameters": {
               "FREQ_HZ": {
-                "value": "100000000",
+                "value": "10000000",
                 "value_src": "user_prop"
               },
               "CLK_DOMAIN": {
@@ -336,7 +329,7 @@
             "value": "10.000000"
           },
           "PCW_ACT_FPGA0_PERIPHERAL_FREQMHZ": {
-            "value": "100.000000"
+            "value": "10.000000"
           },
           "PCW_ACT_FPGA1_PERIPHERAL_FREQMHZ": {
             "value": "10.000000"
@@ -411,7 +404,7 @@
             "value": "IO PLL"
           },
           "PCW_CLK0_FREQ": {
-            "value": "100000000"
+            "value": "10000000"
           },
           "PCW_CLK1_FREQ": {
             "value": "10000000"
@@ -549,7 +542,7 @@
             "value": "TRUE"
           },
           "PCW_FPGA0_PERIPHERAL_FREQMHZ": {
-            "value": "100"
+            "value": "10"
           },
           "PCW_FPGA1_PERIPHERAL_FREQMHZ": {
             "value": "100"
@@ -1706,6 +1699,13 @@
             }
           }
         }
+      },
+      "registerIP_0": {
+        "vlnv": "xilinx.com:user:registerIP:1.0",
+        "ip_revision": "1",
+        "xci_name": "zynq_design_registerIP_0_1",
+        "xci_path": "ip\\zynq_design_registerIP_0_1\\zynq_design_registerIP_0_1.xci",
+        "inst_hier_path": "registerIP_0"
       }
     },
     "interface_nets": {
@@ -1817,8 +1817,8 @@
         "ports": [
           "controlsubsystemIP_0/riscv_hold",
           "RISCVCOREZYNQ_0/hold",
-          "registerIP_0/hold",
-          "datamemIP_0/hold"
+          "datamemIP_0/hold",
+          "registerIP_0/hold"
         ]
       },
       "controlsubsystemIP_0_riscv_resetbar": {
@@ -1853,10 +1853,10 @@
           "rst_ps7_0_50M/slowest_sync_clk",
           "axi_smc/aclk",
           "RISCVCOREZYNQ_0/clock",
-          "controlsubsystemIP_0/s05_axi_aclk",
+          "datamemIP_0/s02_axi_aclk",
           "instructionmemIP_0/s00_axi_aclk",
-          "registerIP_0/s01_axi_aclk",
-          "datamemIP_0/s02_axi_aclk"
+          "controlsubsystemIP_0/s05_axi_aclk",
+          "registerIP_0/s01_axi_aclk"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
@@ -1881,10 +1881,10 @@
         "ports": [
           "rst_ps7_0_50M/peripheral_aresetn",
           "axi_smc/aresetn",
-          "controlsubsystemIP_0/s05_axi_aresetn",
+          "datamemIP_0/s02_axi_aresetn",
           "instructionmemIP_0/s00_axi_aresetn",
-          "registerIP_0/s01_axi_aresetn",
-          "datamemIP_0/s02_axi_aresetn"
+          "controlsubsystemIP_0/s05_axi_aresetn",
+          "registerIP_0/s01_axi_aresetn"
         ]
       }
     },

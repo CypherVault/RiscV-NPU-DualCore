@@ -56,6 +56,8 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "zynq_design_instructionmemIP_0_0_synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 3
+set_param bd.open.in_stealth_mode 1
 set_msg_config  -id {17-179}  -suppress 
 set_msg_config  -id {17-179}  -suppress 
 set_msg_config  -id {17-179}  -suppress 
@@ -80,6 +82,7 @@ set_property target_language VHDL [current_project]
 set_property board_part_repo_paths {C:/Users/Chris/AppData/Roaming/Xilinx/Vivado/2024.2/xhub/board_store/xilinx_board_store} [current_project]
 set_property board_part avnet.com:minized:part0:1.3 [current_project]
 set_property ip_repo_paths {
+  c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0
   c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/bramIP_1_0
   c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/controlsubsystemIP_1_0
   c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/instructionmemIP_1_0
@@ -114,11 +117,47 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
 set_param ips.enableIPCacheLiteLoad 1
+OPTRACE "Configure IP Cache" START { }
+
+set cacheID [config_ip_cache -export -no_bom  -dir C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/zynq_design_instructionmemIP_0_0_synth_1 -new_name zynq_design_instructionmemIP_0_0 -ip [get_ips zynq_design_instructionmemIP_0_0]]
+
+OPTRACE "Configure IP Cache" END { }
+if { $cacheID == "" } {
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
 synth_design -top zynq_design_instructionmemIP_0_0 -part xc7z007sclg225-1 -incremental_mode off -mode out_of_context
 OPTRACE "synth_design" END { }
+OPTRACE "Write IP Cache" START { }
+
+#---------------------------------------------------------
+# Generate Checkpoint/Stub/Simulation Files For IP Cache
+#---------------------------------------------------------
+# disable binary constraint mode for IPCache checkpoints
+set_param constraints.enableBinaryConstraints false
+
+catch {
+ write_checkpoint -force -noxdef -rename_prefix zynq_design_instructionmemIP_0_0_ zynq_design_instructionmemIP_0_0.dcp
+
+ set ipCachedFiles {}
+ write_verilog -force -mode synth_stub -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ zynq_design_instructionmemIP_0_0_stub.v
+ lappend ipCachedFiles zynq_design_instructionmemIP_0_0_stub.v
+
+ write_vhdl -force -mode synth_stub -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ zynq_design_instructionmemIP_0_0_stub.vhdl
+ lappend ipCachedFiles zynq_design_instructionmemIP_0_0_stub.vhdl
+
+ write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ zynq_design_instructionmemIP_0_0_sim_netlist.v
+ lappend ipCachedFiles zynq_design_instructionmemIP_0_0_sim_netlist.v
+
+ write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ zynq_design_instructionmemIP_0_0_sim_netlist.vhdl
+ lappend ipCachedFiles zynq_design_instructionmemIP_0_0_sim_netlist.vhdl
+ set TIME_taken [expr [clock seconds] - $TIME_start]
+
+ if { [get_msg_config -count -severity {CRITICAL WARNING}] == 0 } {
+  config_ip_cache -add -dcp zynq_design_instructionmemIP_0_0.dcp -move_files $ipCachedFiles   -synth_runtime $TIME_taken  -ip [get_ips zynq_design_instructionmemIP_0_0]
+ }
+OPTRACE "Write IP Cache" END { }
+}
 if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
  send_msg_id runtcl-6 info "Synthesis results are not added to the cache due to CRITICAL_WARNING"
 }
@@ -164,6 +203,44 @@ if { [catch {
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
+
+
+} else {
+
+
+if { [catch {
+  file copy -force C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/zynq_design_instructionmemIP_0_0_synth_1/zynq_design_instructionmemIP_0_0.dcp c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ip/zynq_design_instructionmemIP_0_0/zynq_design_instructionmemIP_0_0.dcp
+} _RESULT ] } { 
+  send_msg_id runtcl-3 status "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
+  error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
+}
+
+if { [catch {
+  file rename -force C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/zynq_design_instructionmemIP_0_0_synth_1/zynq_design_instructionmemIP_0_0_stub.v c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ip/zynq_design_instructionmemIP_0_0/zynq_design_instructionmemIP_0_0_stub.v
+} _RESULT ] } { 
+  puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
+}
+
+if { [catch {
+  file rename -force C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/zynq_design_instructionmemIP_0_0_synth_1/zynq_design_instructionmemIP_0_0_stub.vhdl c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ip/zynq_design_instructionmemIP_0_0/zynq_design_instructionmemIP_0_0_stub.vhdl
+} _RESULT ] } { 
+  puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
+}
+
+if { [catch {
+  file rename -force C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/zynq_design_instructionmemIP_0_0_synth_1/zynq_design_instructionmemIP_0_0_sim_netlist.v c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ip/zynq_design_instructionmemIP_0_0/zynq_design_instructionmemIP_0_0_sim_netlist.v
+} _RESULT ] } { 
+  puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
+}
+
+if { [catch {
+  file rename -force C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/zynq_design_instructionmemIP_0_0_synth_1/zynq_design_instructionmemIP_0_0_sim_netlist.vhdl c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ip/zynq_design_instructionmemIP_0_0/zynq_design_instructionmemIP_0_0_sim_netlist.vhdl
+} _RESULT ] } { 
+  puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
+}
+
+close [open .end.used_ip_cache.rst w]
+}; # end if cacheID 
 
 if {[file isdir C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.ip_user_files/ip/zynq_design_instructionmemIP_0_0]} {
   catch { 

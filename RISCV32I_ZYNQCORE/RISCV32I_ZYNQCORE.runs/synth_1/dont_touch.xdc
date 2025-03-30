@@ -4,9 +4,6 @@
 # Block Designs: bd/zynq_design/zynq_design.bd
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zynq_design || ORIG_REF_NAME==zynq_design} -quiet] -quiet
 
-# IP: bd/zynq_design/ip/zynq_design_registerIP_0_0/zynq_design_registerIP_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zynq_design_registerIP_0_0 || ORIG_REF_NAME==zynq_design_registerIP_0_0} -quiet] -quiet
-
 # IP: bd/zynq_design/ip/zynq_design_RISCVCOREZYNQ_0_0/zynq_design_RISCVCOREZYNQ_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zynq_design_RISCVCOREZYNQ_0_0 || ORIG_REF_NAME==zynq_design_RISCVCOREZYNQ_0_0} -quiet] -quiet
 
@@ -27,5 +24,8 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zynq_design
 
 # IP: bd/zynq_design/ip/zynq_design_axi_smc_1/zynq_design_axi_smc_1.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zynq_design_axi_smc_1 || ORIG_REF_NAME==zynq_design_axi_smc_1} -quiet] -quiet
+
+# IP: bd/zynq_design/ip/zynq_design_registerIP_0_1/zynq_design_registerIP_0_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==zynq_design_registerIP_0_1 || ORIG_REF_NAME==zynq_design_registerIP_0_1} -quiet] -quiet
 
 # XDC: c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/zynq_design_ooc.xdc

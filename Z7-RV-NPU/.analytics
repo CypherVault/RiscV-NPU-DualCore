@@ -1,0 +1,8 @@
+timestamp=[2025-03-30 18:56:49], mode=WORKBENCH_START, duration=0:00:05.543, duration_ms=5543, data={}
+timestamp=[2025-03-30 18:56:50], mode=WORKBENCH_UI_INIT, duration=0:00:00.599, duration_ms=599, data={editors_count=0, platform_editors_count=0, projects_count=0, platform_projects_count=0, active_platform_editor=false, projects=}
+timestamp=[2025-03-30 18:56:59], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:08.576, duration_ms=8576, data={}
+timestamp=[2025-03-30 18:57:53], mode=PLATFORM_GENERATION, duration=0:00:27.532, duration_ms=27532, data={name=tutorial_3}
+timestamp=[2025-03-30 18:57:54], mode=BUILD, duration=0:00:00.315, duration_ms=315, data={name=zynq_7000_tutorial_3_zynq7000_build_app, configuration=Debug, clean_build=true}
+timestamp=[2025-03-30 18:58:58], mode=BUILD, duration=0:01:01.354, duration_ms=61354, data={name=zynq_7000_tutorial_3_zynq7000_build_app, configuration=Debug, clean_build=false}
+timestamp=[2025-03-30 18:58:59], mode=BUILD, duration=0:00:00.207, duration_ms=207, data={name=zynq_7000_tutorial_3_zynq7000_build_app_system, configuration=Debug, clean_build=true}
+timestamp=[2025-03-30 18:59:06], mode=BUILD, duration=0:00:07.646, duration_ms=7646, data={name=zynq_7000_tutorial_3_zynq7000_build_app_system, configuration=Debug, clean_build=false}

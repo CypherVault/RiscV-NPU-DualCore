@@ -318,7 +318,7 @@ rule C_STATIC_LIBRARY_LINKER__xiltimer_
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = F:\Vitis\2024.2\tps\win64\cmake-3.24.2\bin\cmake.exe --regenerate-during-build -SC:\Users\Chris\Desktop\RiscV-NPU-DualCore\RISCV32I_ZYNQCORE\2024.2VITIS\RiscVCore2\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp -BC:\Users\Chris\Desktop\RiscV-NPU-DualCore\RISCV32I_ZYNQCORE\2024.2VITIS\RiscVCore2\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp\libsrc\build_configs\gen_bsp
+  command = F:\Vitis\2024.2\tps\win64\cmake-3.24.2\bin\cmake.exe --regenerate-during-build -SC:\Users\Chris\Desktop\RiscV-NPU-DualCore\RISCV32I_ZYNQCORE\2024.2VITIS\RiscvCore2\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp -BC:\Users\Chris\Desktop\RiscV-NPU-DualCore\RISCV32I_ZYNQCORE\2024.2VITIS\RiscvCore2\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp\libsrc\build_configs\gen_bsp
   description = Re-running CMake...
   generator = 1
 

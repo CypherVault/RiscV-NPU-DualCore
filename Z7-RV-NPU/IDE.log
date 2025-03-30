@@ -1,0 +1,58 @@
+18:56:50 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\Chris\Desktop\RiscV-NPU-DualCore\Z7-RV-NPU\temp_xsdb_launch_script.tcl
+18:56:51 INFO  : Registering command handlers for Vitis TCF services
+18:56:52 INFO  : XSCT server has started successfully.
+18:56:59 INFO  : Platform repository initialization has completed.
+18:57:00 INFO  : Successfully done setting XSCT server connection channel  
+18:57:00 INFO  : plnx-install-location is set to ''
+18:57:00 INFO  : Successfully done query RDI_DATADIR 
+18:57:00 INFO  : Successfully done setting workspace for the tool. 
+18:57:21 INFO  : Platform 'tutorial_3' is added to custom repositories.
+18:57:23 INFO  : [Import] Updating active build configuration of the system project 'zynq_7000_tutorial_3_zynq7000_build_app_system' to 'Debug' after the import.
+18:57:53 INFO  : Result from executing command 'getProjects': tutorial_3
+18:57:53 INFO  : Result from executing command 'getPlatforms': tutorial_3|C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/tutorial_3.xpfm
+18:57:54 INFO  : Checking for BSP changes to sync application flags for project 'zynq_7000_tutorial_3_zynq7000_build_app'...
+18:59:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:59:16 INFO  : Jtag cable 'Digilent Zybo Z7 210351BD73B3A' is selected.
+18:59:16 INFO  : 'jtag frequency' command is executed.
+18:59:16 INFO  : Context for 'APU' is selected.
+18:59:16 INFO  : System reset is completed.
+18:59:19 INFO  : 'after 3000' command is executed.
+18:59:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BD73B3A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BD73B3A-23727093-0"}' command is executed.
+18:59:22 INFO  : Device configured successfully with "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/zynq_7000_tutorial_3_zynq7000_build_app/_ide/bitstream/tutorial_3.bit"
+18:59:22 INFO  : Context for 'APU' is selected.
+18:59:22 INFO  : Hardware design and registers information is loaded from 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/hw/tutorial_3.xsa'.
+18:59:22 INFO  : 'configparams force-mem-access 1' command is executed.
+18:59:22 INFO  : Context for 'APU' is selected.
+18:59:22 INFO  : Sourcing of 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/zynq_7000_tutorial_3_zynq7000_build_app/_ide/psinit/ps7_init.tcl' is done.
+18:59:23 INFO  : 'ps7_init' command is executed.
+18:59:23 INFO  : 'ps7_post_config' command is executed.
+18:59:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:59:30 INFO  : The application 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/zynq_7000_tutorial_3_zynq7000_build_app/Debug/zynq_7000_tutorial_3_zynq7000_build_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:59:30 INFO  : 'configparams force-mem-access 0' command is executed.
+18:59:30 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351BD73B3A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351BD73B3A-23727093-0"}
+fpga -file C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/zynq_7000_tutorial_3_zynq7000_build_app/_ide/bitstream/tutorial_3.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/hw/tutorial_3.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/zynq_7000_tutorial_3_zynq7000_build_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/zynq_7000_tutorial_3_zynq7000_build_app/Debug/zynq_7000_tutorial_3_zynq7000_build_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:59:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:59:31 INFO  : 'con' command is executed.
+18:59:31 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+18:59:31 INFO  : Launch script is exported to file 'C:\Users\Chris\Desktop\RiscV-NPU-DualCore\Z7-RV-NPU\zynq_7000_tutorial_3_zynq7000_build_app_system\_ide\scripts\systemdebugger_zynq_7000_tutorial_3_zynq7000_build_app_system_standalone.tcl'

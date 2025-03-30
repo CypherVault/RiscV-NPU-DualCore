@@ -404,7 +404,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>FREQ_HZ</spirit:name>
-          <spirit:description>100000000</spirit:description>
+          <spirit:description>10000000</spirit:description>
           <spirit:value spirit:id="BUSIFPARAM_VALUE.S02_AXI_CLK.FREQ_HZ"/>
         </spirit:parameter>
         <spirit:parameter>
@@ -500,7 +500,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Mar 20 09:25:09 UTC 2025</spirit:value>
+            <spirit:value>Sun Mar 30 16:55:03 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
@@ -518,7 +518,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Mar 20 09:23:44 UTC 2025</spirit:value>
+            <spirit:value>Sun Mar 30 16:47:56 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
@@ -549,7 +549,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Mar 20 09:23:44 UTC 2025</spirit:value>
+            <spirit:value>Sun Mar 30 16:47:56 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
@@ -569,7 +569,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Mar 20 09:23:44 UTC 2025</spirit:value>
+            <spirit:value>Sun Mar 30 16:47:56 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
@@ -589,7 +589,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Mar 20 09:23:44 UTC 2025</spirit:value>
+            <spirit:value>Sun Mar 30 16:47:56 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
@@ -609,7 +609,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Mar 20 09:23:44 UTC 2025</spirit:value>
+            <spirit:value>Sun Mar 30 16:47:56 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
@@ -920,7 +920,7 @@
     <spirit:fileSet>
       <spirit:name>xilinx_vhdlbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/80ab/hdl/datamemIP.vhd</spirit:name>
+        <spirit:name>../../ipshared/339a/hdl/datamemIP.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -935,7 +935,7 @@
     <spirit:fileSet>
       <spirit:name>xilinx_vhdlsynthesis_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/80ab/hdl/datamemIP.vhd</spirit:name>
+        <spirit:name>../../ipshared/339a/hdl/datamemIP.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -1054,12 +1054,12 @@
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2024.2</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="f553cd40"/>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="66a0f925"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="d817e464"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="6e7d1c0d"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="c50e79ab"/>
-      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="4b5b386b"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="d9ca48f5"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="a833babd"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="89bb0faa"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="07f61e65"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="5b106f72"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

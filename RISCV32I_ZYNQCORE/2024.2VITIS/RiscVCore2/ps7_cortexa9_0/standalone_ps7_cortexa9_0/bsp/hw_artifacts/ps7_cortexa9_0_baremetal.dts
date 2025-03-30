@@ -800,13 +800,13 @@
                 compatible = "simple-bus";
                 #address-cells = <0x1>;
                 #size-cells = <0x1>;
-                firmware-name = "zynq_design_wrapper.bit.bin";
+                firmware-name = "zynq_design_wrapper_regfileupdate.bit.bin";
                 phandle = <0x4e>;
 
                 clocking0: clocking0 {
                         compatible = "xlnx,fclk";
                         assigned-clocks = <&clkc 0xf>;
-                        assigned-clock-rates = <0x5f5e100>;
+                        assigned-clock-rates = <0x989680>;
                         #clock-cells = <0x0>;
                         clock-output-names = "fabric_clk";
                         clocks = <&clkc 0xf>;
@@ -868,7 +868,7 @@
                         xlnx,s01-axi-data-width = <0x20>;
                         xlnx,ip-name = "registerIP";
                         xlnx,edk-iptype = "PERIPHERAL";
-                        xlnx,s01-axi-addr-width = <0x5>;
+                        xlnx,s01-axi-addr-width = <0x20>;
                         reg = <0x43c30000 0x10000>;
                         clocks = <&clkc 0xf>;
                         xlnx,name = "registerIP_0";

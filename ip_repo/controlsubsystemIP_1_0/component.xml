@@ -229,7 +229,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>FREQ_HZ</spirit:name>
-          <spirit:description>100000000</spirit:description>
+          <spirit:description>10000000</spirit:description>
           <spirit:value spirit:id="BUSIFPARAM_VALUE.S05_AXI_CLK.FREQ_HZ"/>
         </spirit:parameter>
       </spirit:parameters>
@@ -807,7 +807,7 @@
       </xilinx:taxonomies>
       <xilinx:displayName>controlsubsystemIP_v1.0</xilinx:displayName>
       <xilinx:coreRevision>2</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2025-03-18T03:51:03Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2025-03-30T16:51:20Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2024.2</xilinx:xilinxVersion>
