@@ -4,7 +4,7 @@
 		compatible = "simple-bus";
 		#address-cells = <1>;
 		#size-cells = <1>;
-		firmware-name = "zynq_design_wrapper_regfileupdate.bit.bin";
+		firmware-name = "zynq_design_wrapper_postregdebug.bit.bin";
 		clocking0: clocking0 {
 			compatible = "xlnx,fclk";
 			assigned-clocks = <&clkc 15>;

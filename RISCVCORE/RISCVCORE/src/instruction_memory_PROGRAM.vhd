@@ -32,7 +32,7 @@ begin
     process(pc_address)
         variable address_offset : integer;
     begin
-        if is_valid_address(pc_address) then
+        if is_valid_address(pc_address) and (pc_address /= x"FFFC") then
             address_offset := to_integer(unsigned(pc_address(10 downto 2))); -- Divide by 4 using bits
             instruction <= mem(address_offset);
         else

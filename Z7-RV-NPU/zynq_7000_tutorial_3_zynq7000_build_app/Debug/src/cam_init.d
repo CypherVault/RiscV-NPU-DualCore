@@ -43,9 +43,7 @@ src/cam_init.o src/cam_init.o: ../src/cam_init.c ../src/cam_init.h \
  ../src/AXI_VDMA.h \
  C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include/xil_cache.h \
  C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include/MIPI_D_PHY_RX.h \
- C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include/MIPI_CSI_2_RX.h \
- C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include/xuartps.h \
- C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include/xuartps_hw.h
+ C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include/MIPI_CSI_2_RX.h
 
 ../src/cam_init.h:
 
@@ -142,7 +140,3 @@ C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3
 C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include/MIPI_D_PHY_RX.h:
 
 C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include/MIPI_CSI_2_RX.h:
-
-C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include/xuartps.h:
-
-C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include/xuartps_hw.h:

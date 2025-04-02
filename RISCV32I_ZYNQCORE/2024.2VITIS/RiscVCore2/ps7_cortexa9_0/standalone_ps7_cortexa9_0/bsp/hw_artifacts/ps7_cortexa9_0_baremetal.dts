@@ -800,7 +800,7 @@
                 compatible = "simple-bus";
                 #address-cells = <0x1>;
                 #size-cells = <0x1>;
-                firmware-name = "zynq_design_wrapper_regfileupdate.bit.bin";
+                firmware-name = "zynq_design_wrapper_postregdebug.bit.bin";
                 phandle = <0x4e>;
 
                 clocking0: clocking0 {

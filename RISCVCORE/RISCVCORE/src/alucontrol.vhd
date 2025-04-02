@@ -119,7 +119,7 @@ begin
                 -- U-type and J-type instructions
                 case instruction(6 downto 0) is
                     when "0110111" => aluoperation <= "00010";  -- LUI (ADD)
-                    when "0010111" => aluoperation <= "00010";  -- AUIPC (ADD)
+                    when "0010111" => aluoperation <= "10111";  -- AUIPC (ADD) UNIQUE operation code JUST to source AUIPC cause pc is a strange input to have..
                     when "1101111" => aluoperation <= "10000";  -- JAL (link operation)
                     when "1100111" => aluoperation <= "10000";  -- JALR (link operation)
                     when others => aluoperation <= "11111";

@@ -1,7 +1,7 @@
 sdt: hw_artifacts\ps7_cortexa9_0_baremetal.dts
 family: Zynq
 path: C:\Users\Chris\Desktop\RiscV-NPU-DualCore\RISCV32I_ZYNQCORE\2024.2VITIS\RiscvCore2\ps7_cortexa9_0\standalone_ps7_cortexa9_0\bsp
-config: None
+config: default
 os: standalone
 os_info:
   standalone:

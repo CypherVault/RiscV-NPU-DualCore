@@ -30,7 +30,7 @@ begin
   process(resetbar, regwrite, writeregisteraddress, writedata)
   begin
     if resetbar = '0' then
-      -- Initialize x2 to 0x1000, others to 0 (x0 remains hardwired 0)
+      -- Initialize x2 to 0x4000, others to 0 (x0 remains hardwired 0)
       registers <= (2 => x"00004000", others => (others => '0'));
     elsif regwrite = '1' then
       if unsigned(writeregisteraddress) /= 0 then
