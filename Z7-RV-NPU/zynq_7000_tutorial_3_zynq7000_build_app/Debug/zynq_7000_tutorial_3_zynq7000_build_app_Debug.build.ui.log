@@ -1,20 +1,327 @@
-2025-04-02T14:17:59.367842700255-14:17:59 **** Incremental Build of configuration Debug for project zynq_7000_tutorial_3_zynq7000_build_app ****
+2025-04-06T04:06:33.105820400255-04:06:37 **** Build of configuration Debug for project zynq_7000_tutorial_3_zynq7000_build_app ****
 000-make all 
 000-make --no-print-directory pre-build
 000-a9-linaro-pre-build-step
 000-' '
 000-make --no-print-directory main-build
+000-'Building file: ../src/AXI_VDMA.c'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/AXI_VDMA.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/AXI_VDMA.d" -MT"src/AXI_VDMA.o" -o "src/AXI_VDMA.o" "../src/AXI_VDMA.c"
+000-../src/AXI_VDMA.c: In function 'int configure_interrupt_sys(uint16_t, uint16_t)':
+000/zynq_7000_tutorial_3_zynq7000_build_app/src/AXI_VDMA.c172-1-1invalid conversion from 'void (*)(uint32_t)' {aka 'void (*)(long unsigned int)'} to 'void*' [-fpermissive]1-../src/AXI_VDMA.c:172:64: warning: invalid conversion from 'void (*)(uint32_t)' {aka 'void (*)(long unsigned int)'} to 'void*' [-fpermissive]
+000-  172 |  XAxiVdma_SetCallBack(&xaxivdma_dvr, XAXIVDMA_HANDLER_GENERAL, readHandler,
+000-      |                                                                ^~~~~~~~~~~
+000-      |                                                                |
+000-      |                                                                void (*)(uint32_t) {aka void (*)(long unsigned int)}
+000-In file included from ../src/AXI_VDMA.h:11,
+000-                 from ../src/AXI_VDMA.c:1:
+000/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include/xaxivdma.h588-1-1  initializing argument 3 of 'int XAxiVdma_SetCallBack(XAxiVdma*, u32, void*, void*, u16)'0-C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include/xaxivdma.h:588:15: note:   initializing argument 3 of 'int XAxiVdma_SetCallBack(XAxiVdma*, u32, void*, void*, u16)'
+000-  588 |         void *CallBackFunc, void *CallBackRef, u16 Direction);
+000-      |         ~~~~~~^~~~~~~~~~~~
+000/zynq_7000_tutorial_3_zynq7000_build_app/src/AXI_VDMA.c176-1-1invalid conversion from 'void (*)(uint32_t)' {aka 'void (*)(long unsigned int)'} to 'void*' [-fpermissive]1-../src/AXI_VDMA.c:176:4: warning: invalid conversion from 'void (*)(uint32_t)' {aka 'void (*)(long unsigned int)'} to 'void*' [-fpermissive]
+000-  176 |    readErrorHandler, (void *)&xaxivdma_dvr, XAXIVDMA_READ);
+000-      |    ^~~~~~~~~~~~~~~~
+000-      |    |
+000-      |    void (*)(uint32_t) {aka void (*)(long unsigned int)}
+000-In file included from ../src/AXI_VDMA.h:11,
+000-                 from ../src/AXI_VDMA.c:1:
+000/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include/xaxivdma.h588-1-1  initializing argument 3 of 'int XAxiVdma_SetCallBack(XAxiVdma*, u32, void*, void*, u16)'0-C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include/xaxivdma.h:588:15: note:   initializing argument 3 of 'int XAxiVdma_SetCallBack(XAxiVdma*, u32, void*, void*, u16)'
+000-  588 |         void *CallBackFunc, void *CallBackRef, u16 Direction);
+000-      |         ~~~~~~^~~~~~~~~~~~
+000/zynq_7000_tutorial_3_zynq7000_build_app/src/AXI_VDMA.c179-1-1invalid conversion from 'void (*)(uint32_t)' {aka 'void (*)(long unsigned int)'} to 'void*' [-fpermissive]1-../src/AXI_VDMA.c:179:4: warning: invalid conversion from 'void (*)(uint32_t)' {aka 'void (*)(long unsigned int)'} to 'void*' [-fpermissive]
+000-  179 |    writeHandler, (void *)&xaxivdma_dvr, XAXIVDMA_WRITE);
+000-      |    ^~~~~~~~~~~~
+000-      |    |
+000-      |    void (*)(uint32_t) {aka void (*)(long unsigned int)}
+000-In file included from ../src/AXI_VDMA.h:11,
+000-                 from ../src/AXI_VDMA.c:1:
+000/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include/xaxivdma.h588-1-1  initializing argument 3 of 'int XAxiVdma_SetCallBack(XAxiVdma*, u32, void*, void*, u16)'0-C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include/xaxivdma.h:588:15: note:   initializing argument 3 of 'int XAxiVdma_SetCallBack(XAxiVdma*, u32, void*, void*, u16)'
+000-  588 |         void *CallBackFunc, void *CallBackRef, u16 Direction);
+000-      |         ~~~~~~^~~~~~~~~~~~
+000/zynq_7000_tutorial_3_zynq7000_build_app/src/AXI_VDMA.c182-1-1invalid conversion from 'void (*)(uint32_t)' {aka 'void (*)(long unsigned int)'} to 'void*' [-fpermissive]1-../src/AXI_VDMA.c:182:4: warning: invalid conversion from 'void (*)(uint32_t)' {aka 'void (*)(long unsigned int)'} to 'void*' [-fpermissive]
+000-  182 |    writeErrorHandler, (void *)&xaxivdma_dvr, XAXIVDMA_WRITE);
+000-      |    ^~~~~~~~~~~~~~~~~
+000-      |    |
+000-      |    void (*)(uint32_t) {aka void (*)(long unsigned int)}
+000-In file included from ../src/AXI_VDMA.h:11,
+000-                 from ../src/AXI_VDMA.c:1:
+000/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include/xaxivdma.h588-1-1  initializing argument 3 of 'int XAxiVdma_SetCallBack(XAxiVdma*, u32, void*, void*, u16)'0-C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include/xaxivdma.h:588:15: note:   initializing argument 3 of 'int XAxiVdma_SetCallBack(XAxiVdma*, u32, void*, void*, u16)'
+000-  588 |         void *CallBackFunc, void *CallBackRef, u16 Direction);
+000-      |         ~~~~~~^~~~~~~~~~~~
+000-'Finished building: ../src/AXI_VDMA.c'
+000-' '
+000-'Building file: ../src/MWACLUtils.cpp'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/MWACLUtils.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/MWACLUtils.d" -MT"src/MWACLUtils.o" -o "src/MWACLUtils.o" "../src/MWACLUtils.cpp"
+000/zynq_7000_tutorial_3_zynq7000_build_app/src/MWACLUtils.cpp145-1-1ignoring #pragma omp parallel [-Wunknown-pragmas]1-../src/MWACLUtils.cpp:145: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+000-  145 | #pragma omp parallel for collapse(5)
+000-      | 
+000-'Finished building: ../src/MWACLUtils.cpp'
+000-' '
+000-'Building file: ../src/MWAdditionLayer.cpp'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/MWAdditionLayer.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/MWAdditionLayer.d" -MT"src/MWAdditionLayer.o" -o "src/MWAdditionLayer.o" "../src/MWAdditionLayer.cpp"
+000-'Finished building: ../src/MWAdditionLayer.cpp'
+000-' '
+000-'Building file: ../src/MWArmneonAdditionLayerImpl.cpp'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/MWArmneonAdditionLayerImpl.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/MWArmneonAdditionLayerImpl.d" -MT"src/MWArmneonAdditionLayerImpl.o" -o "src/MWArmneonAdditionLayerImpl.o" "../src/MWArmneonAdditionLayerImpl.cpp"
+000/zynq_7000_tutorial_3_zynq7000_build_app/src/MWArmneonAdditionLayerImpl.cpp56-1-1ignoring #pragma omp parallel [-Wunknown-pragmas]1-../src/MWArmneonAdditionLayerImpl.cpp:56: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+000-   56 | #pragma omp parallel for
+000-      | 
+000/zynq_7000_tutorial_3_zynq7000_build_app/src/MWArmneonAdditionLayerImpl.cpp86-1-1ignoring #pragma omp parallel [-Wunknown-pragmas]1-../src/MWArmneonAdditionLayerImpl.cpp:86: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+000-   86 | #pragma omp parallel for
+000-      | 
+000-'Finished building: ../src/MWArmneonAdditionLayerImpl.cpp'
+000-' '
+000-'Building file: ../src/MWArmneonAvgPoolingLayerImpl.cpp'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/MWArmneonAvgPoolingLayerImpl.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/MWArmneonAvgPoolingLayerImpl.d" -MT"src/MWArmneonAvgPoolingLayerImpl.o" -o "src/MWArmneonAvgPoolingLayerImpl.o" "../src/MWArmneonAvgPoolingLayerImpl.cpp"
+000-'Finished building: ../src/MWArmneonAvgPoolingLayerImpl.cpp'
+000-' '
+000-'Building file: ../src/MWArmneonCNNLayerImpl.cpp'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/MWArmneonCNNLayerImpl.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/MWArmneonCNNLayerImpl.d" -MT"src/MWArmneonCNNLayerImpl.o" -o "src/MWArmneonCNNLayerImpl.o" "../src/MWArmneonCNNLayerImpl.cpp"
+000-'Finished building: ../src/MWArmneonCNNLayerImpl.cpp'
+000-' '
+000-'Building file: ../src/MWArmneonConvLayerImpl.cpp'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/MWArmneonConvLayerImpl.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/MWArmneonConvLayerImpl.d" -MT"src/MWArmneonConvLayerImpl.o" -o "src/MWArmneonConvLayerImpl.o" "../src/MWArmneonConvLayerImpl.cpp"
+000-'Finished building: ../src/MWArmneonConvLayerImpl.cpp'
+000-' '
+000-'Building file: ../src/MWArmneonCustomLayerBase.cpp'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/MWArmneonCustomLayerBase.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/MWArmneonCustomLayerBase.d" -MT"src/MWArmneonCustomLayerBase.o" -o "src/MWArmneonCustomLayerBase.o" "../src/MWArmneonCustomLayerBase.cpp"
+000-'Finished building: ../src/MWArmneonCustomLayerBase.cpp'
+000-' '
+000-'Building file: ../src/MWArmneonElementwiseAffineLayerImpl.cpp'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/MWArmneonElementwiseAffineLayerImpl.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/MWArmneonElementwiseAffineLayerImpl.d" -MT"src/MWArmneonElementwiseAffineLayerImpl.o" -o "src/MWArmneonElementwiseAffineLayerImpl.o" "../src/MWArmneonElementwiseAffineLayerImpl.cpp"
+000-'Finished building: ../src/MWArmneonElementwiseAffineLayerImpl.cpp'
+000-' '
+000-'Building file: ../src/MWArmneonFCLayerImpl.cpp'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/MWArmneonFCLayerImpl.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/MWArmneonFCLayerImpl.d" -MT"src/MWArmneonFCLayerImpl.o" -o "src/MWArmneonFCLayerImpl.o" "../src/MWArmneonFCLayerImpl.cpp"
+000-'Finished building: ../src/MWArmneonFCLayerImpl.cpp'
+000-' '
+000-'Building file: ../src/MWArmneonFusedConvActivationLayerImpl.cpp'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/MWArmneonFusedConvActivationLayerImpl.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/MWArmneonFusedConvActivationLayerImpl.d" -MT"src/MWArmneonFusedConvActivationLayerImpl.o" -o "src/MWArmneonFusedConvActivationLayerImpl.o" "../src/MWArmneonFusedConvActivationLayerImpl.cpp"
+000/zynq_7000_tutorial_3_zynq7000_build_app/src/MWArmneonFusedConvActivationLayerImpl.cpp265-1-1ignoring #pragma omp parallel [-Wunknown-pragmas]1-../src/MWArmneonFusedConvActivationLayerImpl.cpp:265: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+000-  265 | #pragma omp parallel for collapse(3)
+000-      | 
+000-'Finished building: ../src/MWArmneonFusedConvActivationLayerImpl.cpp'
+000-' '
+000-'Building file: ../src/MWArmneonInputLayerImpl.cpp'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/MWArmneonInputLayerImpl.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/MWArmneonInputLayerImpl.d" -MT"src/MWArmneonInputLayerImpl.o" -o "src/MWArmneonInputLayerImpl.o" "../src/MWArmneonInputLayerImpl.cpp"
+000-'Finished building: ../src/MWArmneonInputLayerImpl.cpp'
+000-' '
+000-'Building file: ../src/MWArmneonLayerImplFactory.cpp'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/MWArmneonLayerImplFactory.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/MWArmneonLayerImplFactory.d" -MT"src/MWArmneonLayerImplFactory.o" -o "src/MWArmneonLayerImplFactory.o" "../src/MWArmneonLayerImplFactory.cpp"
+000-'Finished building: ../src/MWArmneonLayerImplFactory.cpp'
+000-' '
+000-'Building file: ../src/MWArmneonOutputLayerImpl.cpp'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/MWArmneonOutputLayerImpl.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/MWArmneonOutputLayerImpl.d" -MT"src/MWArmneonOutputLayerImpl.o" -o "src/MWArmneonOutputLayerImpl.o" "../src/MWArmneonOutputLayerImpl.cpp"
+000-'Finished building: ../src/MWArmneonOutputLayerImpl.cpp'
+000-' '
+000-'Building file: ../src/MWArmneonSoftmaxLayerImpl.cpp'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/MWArmneonSoftmaxLayerImpl.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/MWArmneonSoftmaxLayerImpl.d" -MT"src/MWArmneonSoftmaxLayerImpl.o" -o "src/MWArmneonSoftmaxLayerImpl.o" "../src/MWArmneonSoftmaxLayerImpl.cpp"
+000-'Finished building: ../src/MWArmneonSoftmaxLayerImpl.cpp'
+000-' '
+000-'Building file: ../src/MWArmneonTargetNetworkImpl.cpp'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/MWArmneonTargetNetworkImpl.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/MWArmneonTargetNetworkImpl.d" -MT"src/MWArmneonTargetNetworkImpl.o" -o "src/MWArmneonTargetNetworkImpl.o" "../src/MWArmneonTargetNetworkImpl.cpp"
+000-'Finished building: ../src/MWArmneonTargetNetworkImpl.cpp'
+000-' '
+000-'Building file: ../src/MWAvgPoolingLayer.cpp'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/MWAvgPoolingLayer.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/MWAvgPoolingLayer.d" -MT"src/MWAvgPoolingLayer.o" -o "src/MWAvgPoolingLayer.o" "../src/MWAvgPoolingLayer.cpp"
+000-'Finished building: ../src/MWAvgPoolingLayer.cpp'
+000-' '
+000-'Building file: ../src/MWCNNLayer.cpp'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/MWCNNLayer.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/MWCNNLayer.d" -MT"src/MWCNNLayer.o" -o "src/MWCNNLayer.o" "../src/MWCNNLayer.cpp"
+000-'Finished building: ../src/MWCNNLayer.cpp'
+000-' '
+000-'Building file: ../src/MWConvLayer.cpp'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/MWConvLayer.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/MWConvLayer.d" -MT"src/MWConvLayer.o" -o "src/MWConvLayer.o" "../src/MWConvLayer.cpp"
+000-'Finished building: ../src/MWConvLayer.cpp'
+000-' '
+000-'Building file: ../src/MWElementwiseAffineLayer.cpp'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/MWElementwiseAffineLayer.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/MWElementwiseAffineLayer.d" -MT"src/MWElementwiseAffineLayer.o" -o "src/MWElementwiseAffineLayer.o" "../src/MWElementwiseAffineLayer.cpp"
+000-'Finished building: ../src/MWElementwiseAffineLayer.cpp'
+000-' '
+000-'Building file: ../src/MWFCLayer.cpp'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/MWFCLayer.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/MWFCLayer.d" -MT"src/MWFCLayer.o" -o "src/MWFCLayer.o" "../src/MWFCLayer.cpp"
+000-'Finished building: ../src/MWFCLayer.cpp'
+000-' '
+000-'Building file: ../src/MWFusedConvActivationLayer.cpp'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/MWFusedConvActivationLayer.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/MWFusedConvActivationLayer.d" -MT"src/MWFusedConvActivationLayer.o" -o "src/MWFusedConvActivationLayer.o" "../src/MWFusedConvActivationLayer.cpp"
+000-'Finished building: ../src/MWFusedConvActivationLayer.cpp'
+000-' '
+000-'Building file: ../src/MWInputLayer.cpp'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/MWInputLayer.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/MWInputLayer.d" -MT"src/MWInputLayer.o" -o "src/MWInputLayer.o" "../src/MWInputLayer.cpp"
+000-'Finished building: ../src/MWInputLayer.cpp'
+000-' '
+000-'Building file: ../src/MWOutputLayer.cpp'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/MWOutputLayer.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/MWOutputLayer.d" -MT"src/MWOutputLayer.o" -o "src/MWOutputLayer.o" "../src/MWOutputLayer.cpp"
+000-'Finished building: ../src/MWOutputLayer.cpp'
+000-' '
+000-'Building file: ../src/MWSoftmaxLayer.cpp'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/MWSoftmaxLayer.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/MWSoftmaxLayer.d" -MT"src/MWSoftmaxLayer.o" -o "src/MWSoftmaxLayer.o" "../src/MWSoftmaxLayer.cpp"
+000-'Finished building: ../src/MWSoftmaxLayer.cpp'
+000-' '
+000-'Building file: ../src/MWTensorBase.cpp'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/MWTensorBase.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/MWTensorBase.d" -MT"src/MWTensorBase.o" -o "src/MWTensorBase.o" "../src/MWTensorBase.cpp"
+000-'Finished building: ../src/MWTensorBase.cpp'
+000-' '
+000-'Building file: ../src/OV5640.c'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/OV5640.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/OV5640.d" -MT"src/OV5640.o" -o "src/OV5640.o" "../src/OV5640.c"
+000-../src/OV5640.c: In function 'void OV5640_readReg(uint16_t, uint8_t*)':
+000/zynq_7000_tutorial_3_zynq7000_build_app/src/OV5640.c770-1-1invalid conversion from 'XStatus' {aka 'long int'} to 'ERR_IIC' [-fpermissive]1-../src/OV5640.c:770:42: warning: invalid conversion from 'XStatus' {aka 'long int'} to 'ERR_IIC' [-fpermissive]
+000-  770 |         ERR_IIC stat_write = PS_IIC_write(dev_address_, buf_addr, 2);
+000-      |                              ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+000-      |                                          |
+000-      |                                          XStatus {aka long int}
+000/zynq_7000_tutorial_3_zynq7000_build_app/src/OV5640.c772-1-1invalid conversion from 'XStatus' {aka 'long int'} to 'ERR_IIC' [-fpermissive]1-../src/OV5640.c:772:40: warning: invalid conversion from 'XStatus' {aka 'long int'} to 'ERR_IIC' [-fpermissive]
+000-  772 |         ERR_IIC stat_read = PS_IIC_read(dev_address_, buf, 1);
+000-      |                             ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+000-      |                                        |
+000-      |                                        XStatus {aka long int}
+000/zynq_7000_tutorial_3_zynq7000_build_app/src/OV5640.c784-1-1ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]1-../src/OV5640.c:784:48: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+000-  784 |                 OV5640_HardwareError(IIC_NACK, "IIC Read Error");
+000-      |                                                ^~~~~~~~~~~~~~~~
+000-../src/OV5640.c: In function 'void OV5640_writeReg(uint16_t, uint8_t)':
+000/zynq_7000_tutorial_3_zynq7000_build_app/src/OV5640.c795-1-1invalid conversion from 'XStatus' {aka 'long int'} to 'ERR_IIC' [-fpermissive]1-../src/OV5640.c:795:42: warning: invalid conversion from 'XStatus' {aka 'long int'} to 'ERR_IIC' [-fpermissive]
+000-  795 |         ERR_IIC stat_write = PS_IIC_write(dev_address_, buf_addr, 3);
+000-      |                              ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+000-      |                                          |
+000-      |                                          XStatus {aka long int}
+000/zynq_7000_tutorial_3_zynq7000_build_app/src/OV5640.c807-1-1ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]1-../src/OV5640.c:807:48: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+000-  807 |                 OV5640_HardwareError(IIC_NACK, "IIC Write Error");
+000-      |                                                ^~~~~~~~~~~~~~~~~
+000-../src/OV5640.c: In function 'void OV5640_writeRegLiquid(uint8_t)':
+000/zynq_7000_tutorial_3_zynq7000_build_app/src/OV5640.c818-1-1invalid conversion from 'XStatus' {aka 'long int'} to 'ERR_IIC' [-fpermissive]1-../src/OV5640.c:818:42: warning: invalid conversion from 'XStatus' {aka 'long int'} to 'ERR_IIC' [-fpermissive]
+000-  818 |         ERR_IIC stat_write = PS_IIC_write(dev_address_, buf, 1);
+000-      |                              ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+000-      |                                          |
+000-      |                                          XStatus {aka long int}
+000/zynq_7000_tutorial_3_zynq7000_build_app/src/OV5640.c830-1-1ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]1-../src/OV5640.c:830:48: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+000-  830 |                 OV5640_HardwareError(IIC_NACK, "IIC writeRegLiquid Error");
+000-      |                                                ^~~~~~~~~~~~~~~~~~~~~~~~~~
+000-'Finished building: ../src/OV5640.c'
+000-' '
+000-'Building file: ../src/PS_GPIO.c'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/PS_GPIO.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/PS_GPIO.d" -MT"src/PS_GPIO.o" -o "src/PS_GPIO.o" "../src/PS_GPIO.c"
+000-'Finished building: ../src/PS_GPIO.c'
+000-' '
+000-'Building file: ../src/PS_IIC.c'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/PS_IIC.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/PS_IIC.d" -MT"src/PS_IIC.o" -o "src/PS_IIC.o" "../src/PS_IIC.c"
+000-../src/PS_IIC.c: In function 'XStatus PS_IIC_read(uint8_t, uint8_t*, size_t)':
+000/zynq_7000_tutorial_3_zynq7000_build_app/src/PS_IIC.c105-1-1ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]1-../src/PS_IIC.c:105:34: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+000-  105 |         I2C_Client_TransmitError("Slave NACK");
+000-      |                                  ^~~~~~~~~~~~
+000/zynq_7000_tutorial_3_zynq7000_build_app/src/PS_IIC.c109-1-1ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]1-../src/PS_IIC.c:109:34: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+000-  109 |         I2C_Client_TransmitError("Arbitration lost");
+000-      |                                  ^~~~~~~~~~~~~~~~~~
+000/zynq_7000_tutorial_3_zynq7000_build_app/src/PS_IIC.c113-1-1ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]1-../src/PS_IIC.c:113:34: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+000-  113 |         I2C_Client_TransmitError("Other I2C error");
+000-      |                                  ^~~~~~~~~~~~~~~~~
+000-../src/PS_IIC.c: In function 'XStatus PS_IIC_write(uint8_t, const uint8_t*, size_t)':
+000/zynq_7000_tutorial_3_zynq7000_build_app/src/PS_IIC.c134-1-1ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]1-../src/PS_IIC.c:134:34: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+000-  134 |         I2C_Client_TransmitError("Slave NACK");
+000-      |                                  ^~~~~~~~~~~~
+000/zynq_7000_tutorial_3_zynq7000_build_app/src/PS_IIC.c138-1-1ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]1-../src/PS_IIC.c:138:34: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+000-  138 |         I2C_Client_TransmitError("Arbitration lost");
+000-      |                                  ^~~~~~~~~~~~~~~~~~
+000/zynq_7000_tutorial_3_zynq7000_build_app/src/PS_IIC.c142-1-1ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]1-../src/PS_IIC.c:142:34: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+000-  142 |         I2C_Client_TransmitError("Other I2C error");
+000-      |                                  ^~~~~~~~~~~~~~~~~
+000-'Finished building: ../src/PS_IIC.c'
+000-' '
+000-'Building file: ../src/VideoOutput.c'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/VideoOutput.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/VideoOutput.d" -MT"src/VideoOutput.o" -o "src/VideoOutput.o" "../src/VideoOutput.c"
+000-'Finished building: ../src/VideoOutput.c'
+000-' '
 000-'Building file: ../src/cam_init.c'
 000-'Invoking: ARM v7 g++ compiler'
-000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -IF:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/cam_init.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/cam_init.d" -MT"src/cam_init.o" -o "src/cam_init.o" "../src/cam_init.c"
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/cam_init.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/cam_init.d" -MT"src/cam_init.o" -o "src/cam_init.o" "../src/cam_init.c"
 000-../src/cam_init.c: In function 'void read_cam_rgb(uint8_t*, uint8_t*, uint8_t*)':
-000/zynq_7000_tutorial_3_zynq7000_build_app/src/cam_init.c94-1-1comparison of integer expressions of different signedness: 'u32' {aka 'long unsigned int'} and 'int' [-Wsign-compare]1-../src/cam_init.c:94:23: warning: comparison of integer expressions of different signedness: 'u32' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
-000-   94 |     for (u32 y = 0; y < Vsize_Max; y++) {
+000/zynq_7000_tutorial_3_zynq7000_build_app/src/cam_init.c91-1-1comparison of integer expressions of different signedness: 'u32' {aka 'long unsigned int'} and 'int' [-Wsign-compare]1-../src/cam_init.c:91:23: warning: comparison of integer expressions of different signedness: 'u32' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
+000-   91 |     for (u32 y = 0; y < Vsize_Max; y++) {
 000-      |                     ~~^~~~~~~~~~~
-000/zynq_7000_tutorial_3_zynq7000_build_app/src/cam_init.c95-1-1comparison of integer expressions of different signedness: 'u32' {aka 'long unsigned int'} and 'int' [-Wsign-compare]1-../src/cam_init.c:95:23: warning: comparison of integer expressions of different signedness: 'u32' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
-000-   95 |     for (u32 x = 0; x < Hsize_Max/3; x++) {
+000/zynq_7000_tutorial_3_zynq7000_build_app/src/cam_init.c92-1-1comparison of integer expressions of different signedness: 'u32' {aka 'long unsigned int'} and 'int' [-Wsign-compare]1-../src/cam_init.c:92:23: warning: comparison of integer expressions of different signedness: 'u32' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
+000-   92 |     for (u32 x = 0; x < Hsize_Max/3; x++) {
 000-      |                     ~~^~~~~~~~~~~~~
 000-'Finished building: ../src/cam_init.c'
+000-' '
+000-'Building file: ../src/ert_main.cpp'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/ert_main.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/ert_main.d" -MT"src/ert_main.o" -o "src/ert_main.o" "../src/ert_main.cpp"
+000-C:\Users\Chris\AppData\Local\Temp\ccBUtts6.s: Assembler messages:
+000/zynq_7000_tutorial_3_zynq7000_build_app81-1-1source register same as write-back base1-C:\Users\Chris\AppData\Local\Temp\ccBUtts6.s:81: Warning: source register same as write-back base
+000/zynq_7000_tutorial_3_zynq7000_build_app86-1-1source register same as write-back base1-C:\Users\Chris\AppData\Local\Temp\ccBUtts6.s:86: Warning: source register same as write-back base
+000-'Finished building: ../src/ert_main.cpp'
+000-' '
+000-'Building file: ../src/mobilenetv20_0.cpp'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/mobilenetv20_0.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/mobilenetv20_0.d" -MT"src/mobilenetv20_0.o" -o "src/mobilenetv20_0.o" "../src/mobilenetv20_0.cpp"
+000-'Finished building: ../src/mobilenetv20_0.cpp'
+000-' '
+000-'Building file: ../src/rtGetInf.cpp'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/rtGetInf.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/rtGetInf.d" -MT"src/rtGetInf.o" -o "src/rtGetInf.o" "../src/rtGetInf.cpp"
+000-'Finished building: ../src/rtGetInf.cpp'
+000-' '
+000-'Building file: ../src/rtGetNaN.cpp'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/rtGetNaN.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/rtGetNaN.d" -MT"src/rtGetNaN.o" -o "src/rtGetNaN.o" "../src/rtGetNaN.cpp"
+000-'Finished building: ../src/rtGetNaN.cpp'
+000-' '
+000-'Building file: ../src/rt_nonfinite.cpp'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/rt_nonfinite.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/rt_nonfinite.d" -MT"src/rt_nonfinite.o" -o "src/rt_nonfinite.o" "../src/rt_nonfinite.cpp"
+000-'Finished building: ../src/rt_nonfinite.cpp'
+000-' '
+000-'Building file: ../src/waijung2_hwdrvlib.cpp'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/waijung2_hwdrvlib.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/waijung2_hwdrvlib.d" -MT"src/waijung2_hwdrvlib.o" -o "src/waijung2_hwdrvlib.o" "../src/waijung2_hwdrvlib.cpp"
+000-'Finished building: ../src/waijung2_hwdrvlib.cpp'
+000-' '
+000-'Building file: ../src/zynq_7000_tutorial_3.cpp'
+000-'Invoking: ARM v7 g++ compiler'
+000-arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/zynq_7000_tutorial_3.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/zynq_7000_tutorial_3.d" -MT"src/zynq_7000_tutorial_3.o" -o "src/zynq_7000_tutorial_3.o" "../src/zynq_7000_tutorial_3.cpp"
+000-../src/zynq_7000_tutorial_3.cpp: In function 'void zynq_7000_tutorial_3_step()':
+000/zynq_7000_tutorial_3_zynq7000_build_app/src/zynq_7000_tutorial_3.cpp5817-1-1'%s' directive output may be truncated writing up to 255 bytes into a region of size 249 [-Wformat-truncation=]1-../src/zynq_7000_tutorial_3.cpp:5817:56: warning: '%s' directive output may be truncated writing up to 255 bytes into a region of size 249 [-Wformat-truncation=]
+000- 5817 |   std::snprintf(&rtb_ComposeString_0[0], 256U, "label: %s\r\n", &rtb_ToString_0
+000-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+000- 5818 |                 [0]);
+000-      |                 ~~~~                                    
+000/zynq_7000_tutorial_3_zynq7000_build_app/src/zynq_7000_tutorial_3.cpp5817-1-1'snprintf' output between 10 and 265 bytes into a destination of size 2560-../src/zynq_7000_tutorial_3.cpp:5817:16: note: 'snprintf' output between 10 and 265 bytes into a destination of size 256
+000- 5817 |   std::snprintf(&rtb_ComposeString_0[0], 256U, "label: %s\r\n", &rtb_ToString_0
+000-      |   ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+000- 5818 |                 [0]);
+000-      |                 ~~~~
+000/zynq_7000_tutorial_3_zynq7000_build_app/src/zynq_7000_tutorial_3.cpp5823-1-1'char* strncpy(char*, const char*, size_t)' output may be truncated copying 64 bytes from a string of length 255 [-Wstringop-truncation]1-../src/zynq_7000_tutorial_3.cpp:5823:10: warning: 'char* strncpy(char*, const char*, size_t)' output may be truncated copying 64 bytes from a string of length 255 [-Wstringop-truncation]
+000- 5823 |   strncpy(&tmp[0], &rtb_ComposeString_0[0], 64U);
+000-      |   ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+000-'Finished building: ../src/zynq_7000_tutorial_3.cpp'
 000-' '
 000-'Building target: zynq_7000_tutorial_3_zynq7000_build_app.elf'
 000-'Invoking: ARM v7 g++ linker'
@@ -28,5 +335,5 @@
 000-'Finished building: zynq_7000_tutorial_3_zynq7000_build_app.elf.size'
 000-' '
 00255-
-14:18:02 Build Finished (took 2s.967ms)
+04:07:31 Build Finished (took 54s.840ms)
 

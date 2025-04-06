@@ -46,7 +46,7 @@ void pipeline_mode_change(Resolution res, cam_mode_t mode)
 
 void init_cam()
 {
-
+	
 
 	PS_GPIO_Init(GPIO_DEVID);
 
@@ -66,9 +66,6 @@ void init_cam()
 	configure_interrupt_sys(VDMA_MM2S_IRPT_ID, VDMA_S2MM_IRPT_ID);
 //	OV5640_set_isp_format(ISP_RGB);
 	xil_printf("Video init done.\r\n");
-
-
-
 
 }
 

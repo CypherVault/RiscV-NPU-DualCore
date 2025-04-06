@@ -91,7 +91,7 @@
                                     									
                                     <listOptionValue builtIn="false" value="&quot;F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main&quot;"/>
                                     									
-                                    <listOptionValue builtIn="false" value="F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include&quot;"/>
+                                    <listOptionValue builtIn="false" value="&quot;F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include&quot;"/>
                                     								
                                 </option>
                                 								
@@ -405,20 +405,6 @@
         	
     </storageModule>
     	
-    <storageModule moduleId="refreshScope" versionNumber="2">
-        		
-        <configuration configurationName="Debug">
-            			
-            <resource resourceType="PROJECT" workspacePath="/zynq_7000_tutorial_3_zynq7000_build_app"/>
-            		
-        </configuration>
-        		
-        <configuration configurationName="Release">
-            			
-            <resource resourceType="PROJECT" workspacePath="/zynq_7000_tutorial_3_zynq7000_build_app"/>
-            		
-        </configuration>
-        	
-    </storageModule>
+    <storageModule moduleId="refreshScope"/>
     
 </cproject>

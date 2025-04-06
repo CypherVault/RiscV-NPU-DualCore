@@ -135,14 +135,14 @@ CPP_DEPS += \
 src/%.o: ../src/%.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: ARM v7 g++ compiler'
-	arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -IF:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"$@" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
+	arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"$@" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 src/%.o: ../src/%.cpp
 	@echo 'Building file: $<'
 	@echo 'Invoking: ARM v7 g++ compiler'
-	arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -IF:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"$@" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
+	arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"$@" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
