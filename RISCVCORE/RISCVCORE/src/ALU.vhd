@@ -20,11 +20,14 @@ architecture Behavioral of ALU is
     signal pc_plus_4 : std_logic_vector(31 downto 0);
 	 signal auipc : std_logic_vector(31 downto 0);
     signal is_jal_or_branch : std_logic;
-    
+    -- Add this signal declaration
+	signal jalr_target : std_logic_vector(31 downto 0);
 begin
     -- Multiplication calculation
     mul_result <= std_logic_vector(signed(input_0) * signed(input_1));
-    
+	
+	 jalr_target <= std_logic_vector(unsigned(input_0) + unsigned(input_1));
+	
     -- Calculate PC + 4
     pc_plus_4 <= std_logic_vector(resize(unsigned(pc), 32) + to_unsigned(4, 32));
 	
@@ -47,7 +50,7 @@ begin
 			std_logic_vector(auipc(31 downto 0)) when operation = "10111" else
         
         -- Jump and Link operations (new)
-        pc_plus_4 when operation = "10000" else  -- JAL/JALR return address
+        jalr_target when operation = "10000" else  -- JAL/JALR return address
         
         -- Branch operations (preserved)
         X"00000001" when (operation = "00101" and unsigned(input_0) < unsigned(input_1)) or

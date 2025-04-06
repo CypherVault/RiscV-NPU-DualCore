@@ -267,15 +267,28 @@ begin
     end case;
 				  
   end process;
+					   -- Output multiplexing based on cntrlsigmux OR ctrl_disable
+-- Modified to allow JAL/JALR instructions to pass through regardless of control signals
+MemtoReg <= int_MemtoReg when (instruction(6 downto 0) = "1101111" or instruction(6 downto 0) = "1100111") else
+            '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_MemtoReg;
+            
+RegWrite <= int_RegWrite when (instruction(6 downto 0) = "1101111" or instruction(6 downto 0) = "1100111") else
+            '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_RegWrite;
+            
+MemRead <= '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_MemRead;
 
-  -- Output multiplexing based on cntrlsigmux OR ctrl_disable
-  MemtoReg <= '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_MemtoReg;
-  RegWrite <= '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_RegWrite;
-  MemRead <= '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_MemRead;
-  MemWrite <= '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_MemWrite;
-  Branch <= '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_Branch;
-  ALUSrc <= '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_ALUSrc;
-  ALUOp <= "00" when (cntrlsigmux = '1' or ctrl_disable = '1') else int_ALUOp;
-  early_branch <= int_early_branch;
+MemWrite <= '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_MemWrite;
+
+Branch <= int_Branch when (instruction(6 downto 0) = "1101111" or instruction(6 downto 0) = "1100111") else
+          '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_Branch;
+          
+ALUSrc <= int_ALUSrc when (instruction(6 downto 0) = "1101111" or instruction(6 downto 0) = "1100111") else
+          '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_ALUSrc;
+          
+ALUOp <= int_ALUOp when (instruction(6 downto 0) = "1101111" or instruction(6 downto 0) = "1100111") else
+         "00" when (cntrlsigmux = '1' or ctrl_disable = '1') else int_ALUOp;
+         
+early_branch <= int_early_branch;
+
   
 end architecture Behavioral;

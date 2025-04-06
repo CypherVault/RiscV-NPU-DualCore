@@ -10,7 +10,7 @@ entity instruction_memory is
         
         -- Debug interface with updated ports
         debug_clk : in STD_LOGIC;	 
-        debug_addr : in STD_LOGIC_VECTOR(11 downto 0);  -- Increased to 9 bits for 512 entries
+        debug_addr : in STD_LOGIC_VECTOR(11 downto 0);  -- Increased to 12 bits for 512 entries
         debug_data : inout STD_LOGIC_VECTOR(31 downto 0);  -- Bidirectional data bus
         debug_we : in STD_LOGIC
     );
@@ -20,6 +20,9 @@ architecture Behavioral of instruction_memory is
     -- Memory type definition increased to 512 entries
     type memory_array is array (0 to 511) of STD_LOGIC_VECTOR(31 downto 0);
     signal mem : memory_array := (others => x"00000000");
+    
+    -- Internal debug signal to track current memory index
+    signal debug_current_index : STD_LOGIC_VECTOR(8 downto 0);  -- 9 bits for 0-511 range
     
     -- Address bounds checking function
     function is_valid_address(addr: std_logic_vector) return boolean is
@@ -35,8 +38,10 @@ begin
         if is_valid_address(pc_address) and (pc_address /= x"FFFC") then
             address_offset := to_integer(unsigned(pc_address(10 downto 2))); -- Divide by 4 using bits
             instruction <= mem(address_offset);
+            debug_current_index <= std_logic_vector(to_unsigned(address_offset, 9));  -- Update the debug index
         else
             instruction <= x"00000000";  -- Return NOP if address out of bounds
+            debug_current_index <= (others => '0');  -- Default index when address is invalid
         end if;
     end process;
 
@@ -52,9 +57,9 @@ begin
             end if;
             debug_data <= (others => 'Z');  -- Always Z during write
         elsif rising_edge(debug_clk) then
-            --debug_data <= mem(to_integer(unsigned(debug_addr)));  -- Read operation (commented out)
+            debug_data <= mem(to_integer(unsigned(debug_addr)));  -- Read operation
         else
-            --debug_data <= (others => 'Z');  -- Default state (commented out)
+            debug_data <= (others => 'Z');  -- Default state
         end if;
     end process;
 
