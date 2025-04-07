@@ -184,16 +184,21 @@ begin
     main_sim: process
     begin
         -- Reset all components
+	   rst <= '1';
+        wait for 50 ns;
         rst <= '0';
         rf_enable <= '0';
         im_enable <= '0';
         dm_enable <= '0';
         wait for 50 ns;
         rst <= '1';
+		wait for 50 ns;
+        	
 		
 		
         -- Program Instruction Memory with 4 hardcoded instructions
-        im_enable <= '1';  -- Enable instruction memory write
+
+		im_enable <= '1';  -- Enable instruction memory write
      -- Loop through all instructions
         for i in 0 to 27 loop	      												--how many insturctions 
             debug_clk <= '1';

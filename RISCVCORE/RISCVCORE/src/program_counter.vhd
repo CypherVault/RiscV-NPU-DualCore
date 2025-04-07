@@ -19,7 +19,7 @@ begin
     process (clk, reset)
     begin
         if reset = '0' then
-            pc_reg <= std_logic_vector(to_signed(-4, 16));  -- Set program counter to -4 on reset
+            pc_reg <= (others => '0');  -- Set program counter to 0 on reset
         elsif rising_edge(clk) then
             if pcwrite = '1' then
                 pc_reg <= pcsource;  -- Update program counter with pcwrite value

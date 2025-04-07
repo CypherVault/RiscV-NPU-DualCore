@@ -1,4 +1,4 @@
-Active-HDL 15.0.261.9132 2025-04-06 11:55:29
+Active-HDL 15.0.261.9132 2025-04-06 19:00:17
 
 Elaboration top modules:
 Architecture                  behavior(RICSVCORE_tb)
@@ -51,3 +51,9 @@ ieee                                | Standard IEEE packages library
 riscvcore                           | None
 std                                 | Standard VHDL library
 ---------------------------------------------------------------------------------------------------------
+
+
+Simulation Options: asim -O5 +access +r +m+ricsvcore_tb ricsvcore_tb behavior
+
+
+The performance of simulation is reduced. Version Student Edition

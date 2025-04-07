@@ -1,10 +1,10 @@
--- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+-- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2020.2.2 (win64) Build 3118627 Tue Feb  9 05:14:06 MST 2021
--- Date        : Fri Oct 27 15:23:15 2023
--- Host        : DESKTOP-4DPLSA4 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub -rename_top system_auto_pc_0 -prefix
---               system_auto_pc_0_ system_auto_pc_0_stub.vhdl
+-- Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+-- Date        : Sun Apr  6 20:18:11 2025
+-- Host        : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+-- Command     : write_vhdl -force -mode synth_stub
+--               c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0_stub.vhdl
 -- Design      : system_auto_pc_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z020clg400-1
@@ -57,6 +57,6 @@ attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
 attribute black_box_pad_pin of stub : architecture is "aclk,aresetn,s_axi_araddr[31:0],s_axi_arlen[7:0],s_axi_arsize[2:0],s_axi_arburst[1:0],s_axi_arlock[0:0],s_axi_arcache[3:0],s_axi_arprot[2:0],s_axi_arregion[3:0],s_axi_arqos[3:0],s_axi_arvalid,s_axi_arready,s_axi_rdata[63:0],s_axi_rresp[1:0],s_axi_rlast,s_axi_rvalid,s_axi_rready,m_axi_araddr[31:0],m_axi_arlen[3:0],m_axi_arsize[2:0],m_axi_arburst[1:0],m_axi_arlock[1:0],m_axi_arcache[3:0],m_axi_arprot[2:0],m_axi_arqos[3:0],m_axi_arvalid,m_axi_arready,m_axi_rdata[63:0],m_axi_rresp[1:0],m_axi_rlast,m_axi_rvalid,m_axi_rready";
 attribute X_CORE_INFO : string;
-attribute X_CORE_INFO of stub : architecture is "axi_protocol_converter_v2_1_22_axi_protocol_converter,Vivado 2020.2.2";
+attribute X_CORE_INFO of stub : architecture is "axi_protocol_converter_v2_1_22_axi_protocol_converter,Vivado 2020.2";
 begin
 end;

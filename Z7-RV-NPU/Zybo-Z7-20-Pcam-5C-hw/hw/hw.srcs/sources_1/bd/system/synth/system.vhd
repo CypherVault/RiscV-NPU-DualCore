@@ -1,8 +1,8 @@
---Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+--Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
---Tool Version: Vivado v.2020.2.2 (win64) Build 3118627 Tue Feb  9 05:14:06 MST 2021
---Date        : Mon Nov  6 12:28:15 2023
---Host        : DESKTOP-4DPLSA4 running 64-bit major release  (build 9200)
+--Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+--Date        : Sun Apr  6 20:15:28 2025
+--Host        : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
 --Command     : generate_target system.bd
 --Design      : system
 --Purpose     : IP block netlist
@@ -2964,6 +2964,231 @@ architecture STRUCTURE of system is
     s_axi_lite_aresetn : in STD_LOGIC
   );
   end component system_MIPI_D_PHY_RX_0_0;
+  component system_DVIClocking_0_0 is
+  port (
+    PixelClk5X : in STD_LOGIC;
+    PixelClk : out STD_LOGIC;
+    SerialClk : out STD_LOGIC;
+    aLockedIn : in STD_LOGIC;
+    aLockedOut : out STD_LOGIC
+  );
+  end component system_DVIClocking_0_0;
+  component system_MIPI_CSI_2_RX_0_0 is
+  port (
+    RxByteClkHS : in STD_LOGIC;
+    aClkStopstate : in STD_LOGIC;
+    aRxClkActiveHS : in STD_LOGIC;
+    RxDataHSD0 : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    RxSyncHSD0 : in STD_LOGIC;
+    RxValidHSD0 : in STD_LOGIC;
+    RxActiveHSD0 : in STD_LOGIC;
+    aD0Enable : out STD_LOGIC;
+    RxDataHSD1 : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    RxSyncHSD1 : in STD_LOGIC;
+    RxValidHSD1 : in STD_LOGIC;
+    RxActiveHSD1 : in STD_LOGIC;
+    aD1Enable : out STD_LOGIC;
+    RxDataHSD2 : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    RxSyncHSD2 : in STD_LOGIC;
+    RxValidHSD2 : in STD_LOGIC;
+    RxActiveHSD2 : in STD_LOGIC;
+    aD2Enable : out STD_LOGIC;
+    RxDataHSD3 : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    RxSyncHSD3 : in STD_LOGIC;
+    RxValidHSD3 : in STD_LOGIC;
+    RxActiveHSD3 : in STD_LOGIC;
+    aD3Enable : out STD_LOGIC;
+    aClkEnable : out STD_LOGIC;
+    m_axis_video_tdata : out STD_LOGIC_VECTOR ( 39 downto 0 );
+    m_axis_video_tvalid : out STD_LOGIC;
+    m_axis_video_tready : in STD_LOGIC;
+    m_axis_video_tlast : out STD_LOGIC;
+    m_axis_video_tuser : out STD_LOGIC_VECTOR ( 0 to 0 );
+    video_aclk : in STD_LOGIC;
+    s_axi_lite_awaddr : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s_axi_lite_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s_axi_lite_awvalid : in STD_LOGIC;
+    s_axi_lite_awready : out STD_LOGIC;
+    s_axi_lite_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    s_axi_lite_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s_axi_lite_wvalid : in STD_LOGIC;
+    s_axi_lite_wready : out STD_LOGIC;
+    s_axi_lite_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_lite_bvalid : out STD_LOGIC;
+    s_axi_lite_bready : in STD_LOGIC;
+    s_axi_lite_araddr : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s_axi_lite_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s_axi_lite_arvalid : in STD_LOGIC;
+    s_axi_lite_arready : out STD_LOGIC;
+    s_axi_lite_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    s_axi_lite_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_lite_rvalid : out STD_LOGIC;
+    s_axi_lite_rready : in STD_LOGIC;
+    s_axi_lite_aclk : in STD_LOGIC;
+    s_axi_lite_aresetn : in STD_LOGIC
+  );
+  end component system_MIPI_CSI_2_RX_0_0;
+  component system_axi_vdma_0_0 is
+  port (
+    s_axi_lite_aclk : in STD_LOGIC;
+    m_axi_mm2s_aclk : in STD_LOGIC;
+    m_axis_mm2s_aclk : in STD_LOGIC;
+    m_axi_s2mm_aclk : in STD_LOGIC;
+    s_axis_s2mm_aclk : in STD_LOGIC;
+    axi_resetn : in STD_LOGIC;
+    s_axi_lite_awvalid : in STD_LOGIC;
+    s_axi_lite_awready : out STD_LOGIC;
+    s_axi_lite_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    s_axi_lite_wvalid : in STD_LOGIC;
+    s_axi_lite_wready : out STD_LOGIC;
+    s_axi_lite_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    s_axi_lite_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_lite_bvalid : out STD_LOGIC;
+    s_axi_lite_bready : in STD_LOGIC;
+    s_axi_lite_arvalid : in STD_LOGIC;
+    s_axi_lite_arready : out STD_LOGIC;
+    s_axi_lite_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    s_axi_lite_rvalid : out STD_LOGIC;
+    s_axi_lite_rready : in STD_LOGIC;
+    s_axi_lite_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    s_axi_lite_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    mm2s_frame_ptr_out : out STD_LOGIC_VECTOR ( 5 downto 0 );
+    s2mm_frame_ptr_out : out STD_LOGIC_VECTOR ( 5 downto 0 );
+    m_axi_mm2s_araddr : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    m_axi_mm2s_arlen : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    m_axi_mm2s_arsize : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    m_axi_mm2s_arburst : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    m_axi_mm2s_arprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    m_axi_mm2s_arcache : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    m_axi_mm2s_arvalid : out STD_LOGIC;
+    m_axi_mm2s_arready : in STD_LOGIC;
+    m_axi_mm2s_rdata : in STD_LOGIC_VECTOR ( 63 downto 0 );
+    m_axi_mm2s_rresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    m_axi_mm2s_rlast : in STD_LOGIC;
+    m_axi_mm2s_rvalid : in STD_LOGIC;
+    m_axi_mm2s_rready : out STD_LOGIC;
+    m_axis_mm2s_tdata : out STD_LOGIC_VECTOR ( 23 downto 0 );
+    m_axis_mm2s_tkeep : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    m_axis_mm2s_tuser : out STD_LOGIC_VECTOR ( 0 to 0 );
+    m_axis_mm2s_tvalid : out STD_LOGIC;
+    m_axis_mm2s_tready : in STD_LOGIC;
+    m_axis_mm2s_tlast : out STD_LOGIC;
+    m_axi_s2mm_awaddr : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    m_axi_s2mm_awlen : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    m_axi_s2mm_awsize : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    m_axi_s2mm_awburst : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    m_axi_s2mm_awprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    m_axi_s2mm_awcache : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    m_axi_s2mm_awvalid : out STD_LOGIC;
+    m_axi_s2mm_awready : in STD_LOGIC;
+    m_axi_s2mm_wdata : out STD_LOGIC_VECTOR ( 63 downto 0 );
+    m_axi_s2mm_wstrb : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    m_axi_s2mm_wlast : out STD_LOGIC;
+    m_axi_s2mm_wvalid : out STD_LOGIC;
+    m_axi_s2mm_wready : in STD_LOGIC;
+    m_axi_s2mm_bresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    m_axi_s2mm_bvalid : in STD_LOGIC;
+    m_axi_s2mm_bready : out STD_LOGIC;
+    s_axis_s2mm_tdata : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    s_axis_s2mm_tkeep : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s_axis_s2mm_tuser : in STD_LOGIC_VECTOR ( 0 to 0 );
+    s_axis_s2mm_tvalid : in STD_LOGIC;
+    s_axis_s2mm_tready : out STD_LOGIC;
+    s_axis_s2mm_tlast : in STD_LOGIC;
+    mm2s_introut : out STD_LOGIC;
+    s2mm_introut : out STD_LOGIC
+  );
+  end component system_axi_vdma_0_0;
+  component system_v_axi4s_vid_out_0_0 is
+  port (
+    aclk : in STD_LOGIC;
+    aclken : in STD_LOGIC;
+    aresetn : in STD_LOGIC;
+    s_axis_video_tdata : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    s_axis_video_tvalid : in STD_LOGIC;
+    s_axis_video_tready : out STD_LOGIC;
+    s_axis_video_tuser : in STD_LOGIC;
+    s_axis_video_tlast : in STD_LOGIC;
+    fid : in STD_LOGIC;
+    vid_io_out_clk : in STD_LOGIC;
+    vid_io_out_ce : in STD_LOGIC;
+    vid_io_out_reset : in STD_LOGIC;
+    vid_active_video : out STD_LOGIC;
+    vid_vsync : out STD_LOGIC;
+    vid_hsync : out STD_LOGIC;
+    vid_vblank : out STD_LOGIC;
+    vid_hblank : out STD_LOGIC;
+    vid_field_id : out STD_LOGIC;
+    vid_data : out STD_LOGIC_VECTOR ( 23 downto 0 );
+    vtg_vsync : in STD_LOGIC;
+    vtg_hsync : in STD_LOGIC;
+    vtg_vblank : in STD_LOGIC;
+    vtg_hblank : in STD_LOGIC;
+    vtg_active_video : in STD_LOGIC;
+    vtg_field_id : in STD_LOGIC;
+    vtg_ce : out STD_LOGIC;
+    locked : out STD_LOGIC;
+    overflow : out STD_LOGIC;
+    underflow : out STD_LOGIC;
+    fifo_read_level : out STD_LOGIC_VECTOR ( 10 downto 0 );
+    status : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    sof_state_out : out STD_LOGIC
+  );
+  end component system_v_axi4s_vid_out_0_0;
+  component system_vtg_0 is
+  port (
+    clk : in STD_LOGIC;
+    clken : in STD_LOGIC;
+    s_axi_aclk : in STD_LOGIC;
+    s_axi_aclken : in STD_LOGIC;
+    gen_clken : in STD_LOGIC;
+    sof_state : in STD_LOGIC;
+    hsync_out : out STD_LOGIC;
+    hblank_out : out STD_LOGIC;
+    vsync_out : out STD_LOGIC;
+    vblank_out : out STD_LOGIC;
+    active_video_out : out STD_LOGIC;
+    resetn : in STD_LOGIC;
+    s_axi_aresetn : in STD_LOGIC;
+    s_axi_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    s_axi_awvalid : in STD_LOGIC;
+    s_axi_awready : out STD_LOGIC;
+    s_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    s_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s_axi_wvalid : in STD_LOGIC;
+    s_axi_wready : out STD_LOGIC;
+    s_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_bvalid : out STD_LOGIC;
+    s_axi_bready : in STD_LOGIC;
+    s_axi_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    s_axi_arvalid : in STD_LOGIC;
+    s_axi_arready : out STD_LOGIC;
+    s_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    s_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_rvalid : out STD_LOGIC;
+    s_axi_rready : in STD_LOGIC;
+    irq : out STD_LOGIC;
+    fsync_in : in STD_LOGIC;
+    fsync_out : out STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component system_vtg_0;
+  component system_xlconcat_0_0 is
+  port (
+    In0 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    In1 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    In2 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    dout : out STD_LOGIC_VECTOR ( 2 downto 0 )
+  );
+  end component system_xlconcat_0_0;
+  component system_clk_wiz_0_0 is
+  port (
+    clk_in1 : in STD_LOGIC;
+    clk_out1 : out STD_LOGIC;
+    clk_out2 : out STD_LOGIC;
+    clk_out3 : out STD_LOGIC;
+    locked : out STD_LOGIC
+  );
+  end component system_clk_wiz_0_0;
   component system_processing_system7_0_0 is
   port (
     GPIO_I : in STD_LOGIC_VECTOR ( 0 to 0 );
@@ -3177,186 +3402,6 @@ architecture STRUCTURE of system is
     peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component system_rst_vid_clk_dyn_0;
-  component system_DVIClocking_0_0 is
-  port (
-    PixelClk5X : in STD_LOGIC;
-    PixelClk : out STD_LOGIC;
-    SerialClk : out STD_LOGIC;
-    aLockedIn : in STD_LOGIC;
-    aLockedOut : out STD_LOGIC
-  );
-  end component system_DVIClocking_0_0;
-  component system_MIPI_CSI_2_RX_0_0 is
-  port (
-    RxByteClkHS : in STD_LOGIC;
-    aClkStopstate : in STD_LOGIC;
-    aRxClkActiveHS : in STD_LOGIC;
-    RxDataHSD0 : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    RxSyncHSD0 : in STD_LOGIC;
-    RxValidHSD0 : in STD_LOGIC;
-    RxActiveHSD0 : in STD_LOGIC;
-    aD0Enable : out STD_LOGIC;
-    RxDataHSD1 : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    RxSyncHSD1 : in STD_LOGIC;
-    RxValidHSD1 : in STD_LOGIC;
-    RxActiveHSD1 : in STD_LOGIC;
-    aD1Enable : out STD_LOGIC;
-    RxDataHSD2 : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    RxSyncHSD2 : in STD_LOGIC;
-    RxValidHSD2 : in STD_LOGIC;
-    RxActiveHSD2 : in STD_LOGIC;
-    aD2Enable : out STD_LOGIC;
-    RxDataHSD3 : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    RxSyncHSD3 : in STD_LOGIC;
-    RxValidHSD3 : in STD_LOGIC;
-    RxActiveHSD3 : in STD_LOGIC;
-    aD3Enable : out STD_LOGIC;
-    aClkEnable : out STD_LOGIC;
-    m_axis_video_tdata : out STD_LOGIC_VECTOR ( 39 downto 0 );
-    m_axis_video_tvalid : out STD_LOGIC;
-    m_axis_video_tready : in STD_LOGIC;
-    m_axis_video_tlast : out STD_LOGIC;
-    m_axis_video_tuser : out STD_LOGIC_VECTOR ( 0 to 0 );
-    video_aclk : in STD_LOGIC;
-    s_axi_lite_awaddr : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s_axi_lite_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    s_axi_lite_awvalid : in STD_LOGIC;
-    s_axi_lite_awready : out STD_LOGIC;
-    s_axi_lite_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s_axi_lite_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s_axi_lite_wvalid : in STD_LOGIC;
-    s_axi_lite_wready : out STD_LOGIC;
-    s_axi_lite_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s_axi_lite_bvalid : out STD_LOGIC;
-    s_axi_lite_bready : in STD_LOGIC;
-    s_axi_lite_araddr : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s_axi_lite_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    s_axi_lite_arvalid : in STD_LOGIC;
-    s_axi_lite_arready : out STD_LOGIC;
-    s_axi_lite_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    s_axi_lite_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s_axi_lite_rvalid : out STD_LOGIC;
-    s_axi_lite_rready : in STD_LOGIC;
-    s_axi_lite_aclk : in STD_LOGIC;
-    s_axi_lite_aresetn : in STD_LOGIC
-  );
-  end component system_MIPI_CSI_2_RX_0_0;
-  component system_axi_vdma_0_0 is
-  port (
-    s_axi_lite_aclk : in STD_LOGIC;
-    m_axi_mm2s_aclk : in STD_LOGIC;
-    m_axis_mm2s_aclk : in STD_LOGIC;
-    m_axi_s2mm_aclk : in STD_LOGIC;
-    s_axis_s2mm_aclk : in STD_LOGIC;
-    axi_resetn : in STD_LOGIC;
-    s_axi_lite_awvalid : in STD_LOGIC;
-    s_axi_lite_awready : out STD_LOGIC;
-    s_axi_lite_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    s_axi_lite_wvalid : in STD_LOGIC;
-    s_axi_lite_wready : out STD_LOGIC;
-    s_axi_lite_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s_axi_lite_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s_axi_lite_bvalid : out STD_LOGIC;
-    s_axi_lite_bready : in STD_LOGIC;
-    s_axi_lite_arvalid : in STD_LOGIC;
-    s_axi_lite_arready : out STD_LOGIC;
-    s_axi_lite_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    s_axi_lite_rvalid : out STD_LOGIC;
-    s_axi_lite_rready : in STD_LOGIC;
-    s_axi_lite_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    s_axi_lite_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    mm2s_frame_ptr_out : out STD_LOGIC_VECTOR ( 5 downto 0 );
-    s2mm_frame_ptr_out : out STD_LOGIC_VECTOR ( 5 downto 0 );
-    m_axi_mm2s_araddr : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    m_axi_mm2s_arlen : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    m_axi_mm2s_arsize : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    m_axi_mm2s_arburst : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    m_axi_mm2s_arprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    m_axi_mm2s_arcache : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    m_axi_mm2s_arvalid : out STD_LOGIC;
-    m_axi_mm2s_arready : in STD_LOGIC;
-    m_axi_mm2s_rdata : in STD_LOGIC_VECTOR ( 63 downto 0 );
-    m_axi_mm2s_rresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    m_axi_mm2s_rlast : in STD_LOGIC;
-    m_axi_mm2s_rvalid : in STD_LOGIC;
-    m_axi_mm2s_rready : out STD_LOGIC;
-    m_axis_mm2s_tdata : out STD_LOGIC_VECTOR ( 23 downto 0 );
-    m_axis_mm2s_tkeep : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    m_axis_mm2s_tuser : out STD_LOGIC_VECTOR ( 0 to 0 );
-    m_axis_mm2s_tvalid : out STD_LOGIC;
-    m_axis_mm2s_tready : in STD_LOGIC;
-    m_axis_mm2s_tlast : out STD_LOGIC;
-    m_axi_s2mm_awaddr : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    m_axi_s2mm_awlen : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    m_axi_s2mm_awsize : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    m_axi_s2mm_awburst : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    m_axi_s2mm_awprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    m_axi_s2mm_awcache : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    m_axi_s2mm_awvalid : out STD_LOGIC;
-    m_axi_s2mm_awready : in STD_LOGIC;
-    m_axi_s2mm_wdata : out STD_LOGIC_VECTOR ( 63 downto 0 );
-    m_axi_s2mm_wstrb : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    m_axi_s2mm_wlast : out STD_LOGIC;
-    m_axi_s2mm_wvalid : out STD_LOGIC;
-    m_axi_s2mm_wready : in STD_LOGIC;
-    m_axi_s2mm_bresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    m_axi_s2mm_bvalid : in STD_LOGIC;
-    m_axi_s2mm_bready : out STD_LOGIC;
-    s_axis_s2mm_tdata : in STD_LOGIC_VECTOR ( 23 downto 0 );
-    s_axis_s2mm_tkeep : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    s_axis_s2mm_tuser : in STD_LOGIC_VECTOR ( 0 to 0 );
-    s_axis_s2mm_tvalid : in STD_LOGIC;
-    s_axis_s2mm_tready : out STD_LOGIC;
-    s_axis_s2mm_tlast : in STD_LOGIC;
-    mm2s_introut : out STD_LOGIC;
-    s2mm_introut : out STD_LOGIC
-  );
-  end component system_axi_vdma_0_0;
-  component system_clk_wiz_0_0 is
-  port (
-    clk_in1 : in STD_LOGIC;
-    clk_out1 : out STD_LOGIC;
-    clk_out2 : out STD_LOGIC;
-    clk_out3 : out STD_LOGIC;
-    locked : out STD_LOGIC
-  );
-  end component system_clk_wiz_0_0;
-  component system_v_axi4s_vid_out_0_0 is
-  port (
-    aclk : in STD_LOGIC;
-    aclken : in STD_LOGIC;
-    aresetn : in STD_LOGIC;
-    s_axis_video_tdata : in STD_LOGIC_VECTOR ( 23 downto 0 );
-    s_axis_video_tvalid : in STD_LOGIC;
-    s_axis_video_tready : out STD_LOGIC;
-    s_axis_video_tuser : in STD_LOGIC;
-    s_axis_video_tlast : in STD_LOGIC;
-    fid : in STD_LOGIC;
-    vid_io_out_clk : in STD_LOGIC;
-    vid_io_out_ce : in STD_LOGIC;
-    vid_io_out_reset : in STD_LOGIC;
-    vid_active_video : out STD_LOGIC;
-    vid_vsync : out STD_LOGIC;
-    vid_hsync : out STD_LOGIC;
-    vid_vblank : out STD_LOGIC;
-    vid_hblank : out STD_LOGIC;
-    vid_field_id : out STD_LOGIC;
-    vid_data : out STD_LOGIC_VECTOR ( 23 downto 0 );
-    vtg_vsync : in STD_LOGIC;
-    vtg_hsync : in STD_LOGIC;
-    vtg_vblank : in STD_LOGIC;
-    vtg_hblank : in STD_LOGIC;
-    vtg_active_video : in STD_LOGIC;
-    vtg_field_id : in STD_LOGIC;
-    vtg_ce : out STD_LOGIC;
-    locked : out STD_LOGIC;
-    overflow : out STD_LOGIC;
-    underflow : out STD_LOGIC;
-    fifo_read_level : out STD_LOGIC_VECTOR ( 10 downto 0 );
-    status : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    sof_state_out : out STD_LOGIC
-  );
-  end component system_v_axi4s_vid_out_0_0;
   component system_video_dynclk_0 is
   port (
     s_axi_aclk : in STD_LOGIC;
@@ -3383,51 +3428,6 @@ architecture STRUCTURE of system is
     locked : out STD_LOGIC
   );
   end component system_video_dynclk_0;
-  component system_vtg_0 is
-  port (
-    clk : in STD_LOGIC;
-    clken : in STD_LOGIC;
-    s_axi_aclk : in STD_LOGIC;
-    s_axi_aclken : in STD_LOGIC;
-    gen_clken : in STD_LOGIC;
-    sof_state : in STD_LOGIC;
-    hsync_out : out STD_LOGIC;
-    hblank_out : out STD_LOGIC;
-    vsync_out : out STD_LOGIC;
-    vblank_out : out STD_LOGIC;
-    active_video_out : out STD_LOGIC;
-    resetn : in STD_LOGIC;
-    s_axi_aresetn : in STD_LOGIC;
-    s_axi_awaddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    s_axi_awvalid : in STD_LOGIC;
-    s_axi_awready : out STD_LOGIC;
-    s_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s_axi_wvalid : in STD_LOGIC;
-    s_axi_wready : out STD_LOGIC;
-    s_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s_axi_bvalid : out STD_LOGIC;
-    s_axi_bready : in STD_LOGIC;
-    s_axi_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    s_axi_arvalid : in STD_LOGIC;
-    s_axi_arready : out STD_LOGIC;
-    s_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    s_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s_axi_rvalid : out STD_LOGIC;
-    s_axi_rready : in STD_LOGIC;
-    irq : out STD_LOGIC;
-    fsync_in : in STD_LOGIC;
-    fsync_out : out STD_LOGIC_VECTOR ( 0 to 0 )
-  );
-  end component system_vtg_0;
-  component system_xlconcat_0_0 is
-  port (
-    In0 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    In1 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    In2 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    dout : out STD_LOGIC_VECTOR ( 2 downto 0 )
-  );
-  end component system_xlconcat_0_0;
   signal AXI_BayerToRGB_1_AXI_Stream_Master_TDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal AXI_BayerToRGB_1_AXI_Stream_Master_TLAST : STD_LOGIC;
   signal AXI_BayerToRGB_1_AXI_Stream_Master_TREADY : STD_LOGIC;

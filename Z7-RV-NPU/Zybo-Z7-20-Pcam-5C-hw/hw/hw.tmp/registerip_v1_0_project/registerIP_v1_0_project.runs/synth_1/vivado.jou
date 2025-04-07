@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sun Apr  6 19:45:02 2025
+# Process ID: 15744
+# Current directory: c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.tmp/registerip_v1_0_project/registerIP_v1_0_project.runs/synth_1
+# Command line: vivado.exe -log registerIP.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source registerIP.tcl
+# Log file: c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.tmp/registerip_v1_0_project/registerIP_v1_0_project.runs/synth_1/registerIP.vds
+# Journal file: c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.tmp/registerip_v1_0_project/registerIP_v1_0_project.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source registerIP.tcl -notrace

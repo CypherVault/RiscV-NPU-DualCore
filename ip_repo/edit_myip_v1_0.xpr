@@ -7,7 +7,7 @@
 <Project Product="Vivado" Version="7" Minor="68" Path="c:/users/chris/desktop/riscv-npu-dualcore/ip_repo/edit_myip_v1_0.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="4778b55da1dd42eda0fee66598f9b375"/>
+    <Option Name="Id" Val="7bdfcc81a9544b77ae57c4eb231e260b"/>
     <Option Name="Part" Val="xc7z007sclg225-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -50,9 +50,24 @@
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/myip_1_0"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/myip_1_0"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/INSTRUCTION_MEMORY_AXI_1_0"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/INSTRUCTION_MEMORY_AXI_1_0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/bramIP_1_0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/controlsubsystemIP_1_0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/instructionmemIP_1_0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/datamemIP_1_0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/controlsubsystemIP_1_0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/controlsubsystemIP_1_0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/controlsubsystemIP_1_0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/datamemIP_1_0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/datamemIP_1_0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/datamemIP_1_0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/instructionmemIP_1_0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPDefaultOutputPath" Val="$PGENDIR/sources_1"/>
     <Option Name="IPCachePermission" Val="read"/>
@@ -201,6 +216,118 @@
       <RQSFiles/>
     </Run>
   </Runs>
+  <MsgRule>
+    <MsgAttr Name="RuleType" Val="0"/>
+    <MsgAttr Name="Limit" Val="-1"/>
+    <MsgAttr Name="NewSeverity" Val="ANY"/>
+    <MsgAttr Name="Id" Val="17-179"/>
+    <MsgAttr Name="Severity" Val="ANY"/>
+    <MsgAttr Name="ShowRule" Val="0"/>
+    <MsgAttr Name="RuleSource" Val="-1"/>
+    <MsgAttr Name="StringIsRegExp" Val="0"/>
+    <MsgAttr Name="RuleId" Val="1"/>
+    <MsgAttr Name="Note" Val=""/>
+    <MsgAttr Name="Author" Val=""/>
+    <MsgAttr Name="CreatedTimestamp" Val=""/>
+  </MsgRule>
+  <MsgRule>
+    <MsgAttr Name="RuleType" Val="0"/>
+    <MsgAttr Name="Limit" Val="-1"/>
+    <MsgAttr Name="NewSeverity" Val="ANY"/>
+    <MsgAttr Name="Id" Val="17-179"/>
+    <MsgAttr Name="Severity" Val="ANY"/>
+    <MsgAttr Name="ShowRule" Val="0"/>
+    <MsgAttr Name="RuleSource" Val="-1"/>
+    <MsgAttr Name="StringIsRegExp" Val="0"/>
+    <MsgAttr Name="RuleId" Val="2"/>
+    <MsgAttr Name="Note" Val=""/>
+    <MsgAttr Name="Author" Val=""/>
+    <MsgAttr Name="CreatedTimestamp" Val=""/>
+  </MsgRule>
+  <MsgRule>
+    <MsgAttr Name="RuleType" Val="0"/>
+    <MsgAttr Name="Limit" Val="-1"/>
+    <MsgAttr Name="NewSeverity" Val="ANY"/>
+    <MsgAttr Name="Id" Val="17-179"/>
+    <MsgAttr Name="Severity" Val="ANY"/>
+    <MsgAttr Name="ShowRule" Val="0"/>
+    <MsgAttr Name="RuleSource" Val="-1"/>
+    <MsgAttr Name="StringIsRegExp" Val="0"/>
+    <MsgAttr Name="RuleId" Val="3"/>
+    <MsgAttr Name="Note" Val=""/>
+    <MsgAttr Name="Author" Val=""/>
+    <MsgAttr Name="CreatedTimestamp" Val=""/>
+  </MsgRule>
+  <MsgRule>
+    <MsgAttr Name="RuleType" Val="0"/>
+    <MsgAttr Name="Limit" Val="-1"/>
+    <MsgAttr Name="NewSeverity" Val="ANY"/>
+    <MsgAttr Name="Id" Val="17-179"/>
+    <MsgAttr Name="Severity" Val="ANY"/>
+    <MsgAttr Name="ShowRule" Val="0"/>
+    <MsgAttr Name="RuleSource" Val="-1"/>
+    <MsgAttr Name="StringIsRegExp" Val="0"/>
+    <MsgAttr Name="RuleId" Val="4"/>
+    <MsgAttr Name="Note" Val=""/>
+    <MsgAttr Name="Author" Val=""/>
+    <MsgAttr Name="CreatedTimestamp" Val=""/>
+  </MsgRule>
+  <MsgRule>
+    <MsgAttr Name="RuleType" Val="0"/>
+    <MsgAttr Name="Limit" Val="-1"/>
+    <MsgAttr Name="NewSeverity" Val="ANY"/>
+    <MsgAttr Name="Id" Val="17-179"/>
+    <MsgAttr Name="Severity" Val="ANY"/>
+    <MsgAttr Name="ShowRule" Val="0"/>
+    <MsgAttr Name="RuleSource" Val="-1"/>
+    <MsgAttr Name="StringIsRegExp" Val="0"/>
+    <MsgAttr Name="RuleId" Val="5"/>
+    <MsgAttr Name="Note" Val=""/>
+    <MsgAttr Name="Author" Val=""/>
+    <MsgAttr Name="CreatedTimestamp" Val=""/>
+  </MsgRule>
+  <MsgRule>
+    <MsgAttr Name="RuleType" Val="0"/>
+    <MsgAttr Name="Limit" Val="-1"/>
+    <MsgAttr Name="NewSeverity" Val="ANY"/>
+    <MsgAttr Name="Id" Val="17-179"/>
+    <MsgAttr Name="Severity" Val="ANY"/>
+    <MsgAttr Name="ShowRule" Val="0"/>
+    <MsgAttr Name="RuleSource" Val="-1"/>
+    <MsgAttr Name="StringIsRegExp" Val="0"/>
+    <MsgAttr Name="RuleId" Val="6"/>
+    <MsgAttr Name="Note" Val=""/>
+    <MsgAttr Name="Author" Val=""/>
+    <MsgAttr Name="CreatedTimestamp" Val=""/>
+  </MsgRule>
+  <MsgRule>
+    <MsgAttr Name="RuleType" Val="0"/>
+    <MsgAttr Name="Limit" Val="-1"/>
+    <MsgAttr Name="NewSeverity" Val="ANY"/>
+    <MsgAttr Name="Id" Val="17-179"/>
+    <MsgAttr Name="Severity" Val="ANY"/>
+    <MsgAttr Name="ShowRule" Val="0"/>
+    <MsgAttr Name="RuleSource" Val="-1"/>
+    <MsgAttr Name="StringIsRegExp" Val="0"/>
+    <MsgAttr Name="RuleId" Val="7"/>
+    <MsgAttr Name="Note" Val=""/>
+    <MsgAttr Name="Author" Val=""/>
+    <MsgAttr Name="CreatedTimestamp" Val=""/>
+  </MsgRule>
+  <MsgRule>
+    <MsgAttr Name="RuleType" Val="0"/>
+    <MsgAttr Name="Limit" Val="-1"/>
+    <MsgAttr Name="NewSeverity" Val="ANY"/>
+    <MsgAttr Name="Id" Val="17-179"/>
+    <MsgAttr Name="Severity" Val="ANY"/>
+    <MsgAttr Name="ShowRule" Val="0"/>
+    <MsgAttr Name="RuleSource" Val="-1"/>
+    <MsgAttr Name="StringIsRegExp" Val="0"/>
+    <MsgAttr Name="RuleId" Val="8"/>
+    <MsgAttr Name="Note" Val=""/>
+    <MsgAttr Name="Author" Val=""/>
+    <MsgAttr Name="CreatedTimestamp" Val=""/>
+  </MsgRule>
   <Board>
     <Jumpers/>
   </Board>

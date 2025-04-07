@@ -4,9 +4,10 @@ use IEEE.NUMERIC_STD.ALL;  -- For signed/unsigned comparisons
 
 entity ControlUnit is
   port (
-    -- Inputs
+  -- Inputs
+  	reset	:	in	std_logic;
     instruction : in std_logic_vector(31 downto 0);
-    cntrlsigmux : in std_logic;
+    --cntrlsigmux : in std_logic;
     rs1_data : in std_logic_vector(31 downto 0);
     rs2_data : in std_logic_vector(31 downto 0);
     exmem_rd : in std_logic_vector(4 downto 0);
@@ -14,7 +15,10 @@ entity ControlUnit is
     memwb_rd : in std_logic_vector(4 downto 0);
     memwb_regdata : in std_logic_vector(31 downto 0);
     
-    -- Outputs		
+    -- Outputs
+	--
+	--id
+	regOrPC	: out std_logic;
     --WB
     MemtoReg : out std_logic;
     RegWrite : out std_logic;			  
@@ -48,12 +52,29 @@ architecture Behavioral of ControlUnit is
   signal is_branch_instruction : std_logic;
   
   -- Internal signals for control outputs
-  signal int_MemtoReg, int_RegWrite, int_MemRead, int_MemWrite, int_Branch, int_ALUSrc, int_early_branch : std_logic;
+  signal int_MemtoReg, int_RegWrite, int_MemRead, int_MemWrite, int_Branch, int_ALUSrc, int_early_branch,int_regOrPC : std_logic;
   signal int_ALUOp : std_logic_vector(1 downto 0);
   
   -- New signal for ALU operation
   signal aluoperation : std_logic_vector(4 downto 0);
-begin
+begin	 
+	process(reset) begin
+		if reset = '0' then
+		    int_regOrPC <= '0';
+		    int_ALUSrc <= '0';
+		    int_MemtoReg <= '0';
+		    int_RegWrite <= '0';
+		    int_MemRead <= '0';
+		    int_MemWrite <= '0';
+		    int_Branch <= '0';
+		    int_ALUOp <= "00";
+		    if_flush <= '0';
+		    branch_taken <= '0';
+		    is_branch_instruction <= '0';
+		    int_early_branch <= '0';
+		end if;
+	end process;
+			  
   -- Extract rs1 and rs2 addresses from instruction
   rs1_addr <= instruction(19 downto 15);
   rs2_addr <= instruction(24 downto 20);
@@ -91,6 +112,8 @@ begin
             else
               aluoperation <= "00010";  -- ADD
             end if;
+			--if instruction(6 downto 0) = "1100111" then
+			--	aluoperation <= 
           when "001" => aluoperation <= "00001";  -- SLL
           when "010" => aluoperation <= "00111";  -- SLT
           when "011" => aluoperation <= "01000";  -- SLTU
@@ -124,6 +147,7 @@ begin
   process(instruction, rs1_final, rs2_final)
   begin
     -- Default values
+    int_regOrPC <= '0';
     int_ALUSrc <= '0';
     int_MemtoReg <= '0';
     int_RegWrite <= '0';
@@ -174,6 +198,7 @@ begin
         
       -- AUIPC (Add Upper Immediate to PC)
       when "0010111" =>
+	   
         int_ALUSrc <= '1';
         int_MemtoReg <= '0';
         int_RegWrite <= '1';
@@ -240,7 +265,8 @@ begin
         end case;
 
       -- JAL (Jump and Link)
-      when "1101111" =>
+      when "1101111" =>	
+	  	int_regOrPC <= '0';
         int_ALUSrc <= '1';
         int_MemtoReg <= '0';
         int_RegWrite <= '1';
@@ -252,6 +278,7 @@ begin
 
       -- JALR (Jump and Link Register)
       when "1100111" =>
+	    int_regOrPC <= '1';
         int_ALUSrc <= '1';
         int_MemtoReg <= '0';
         int_RegWrite <= '1';
@@ -263,30 +290,33 @@ begin
 
       -- Default case
       when others =>
-        null;
+      --  null;
     end case;
 				  
   end process;
 					   -- Output multiplexing based on cntrlsigmux OR ctrl_disable
 -- Modified to allow JAL/JALR instructions to pass through regardless of control signals
+regOrPC <= int_regOrPC;
+
+
 MemtoReg <= int_MemtoReg when (instruction(6 downto 0) = "1101111" or instruction(6 downto 0) = "1100111") else
-            '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_MemtoReg;
+            '0' when (ctrl_disable = '1') else int_MemtoReg;
             
 RegWrite <= int_RegWrite when (instruction(6 downto 0) = "1101111" or instruction(6 downto 0) = "1100111") else
-            '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_RegWrite;
+            '0' when (ctrl_disable = '1') else int_RegWrite;
             
-MemRead <= '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_MemRead;
+MemRead <= '0' when (ctrl_disable = '1') else int_MemRead;
 
-MemWrite <= '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_MemWrite;
+MemWrite <= '0' when (ctrl_disable = '1') else int_MemWrite;
 
 Branch <= int_Branch when (instruction(6 downto 0) = "1101111" or instruction(6 downto 0) = "1100111") else
-          '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_Branch;
+          '0' when (ctrl_disable = '1') else int_Branch;
           
 ALUSrc <= int_ALUSrc when (instruction(6 downto 0) = "1101111" or instruction(6 downto 0) = "1100111") else
-          '0' when (cntrlsigmux = '1' or ctrl_disable = '1') else int_ALUSrc;
+          '0' when (ctrl_disable = '1') else int_ALUSrc;
           
 ALUOp <= int_ALUOp when (instruction(6 downto 0) = "1101111" or instruction(6 downto 0) = "1100111") else
-         "00" when (cntrlsigmux = '1' or ctrl_disable = '1') else int_ALUOp;
+         "00" when (ctrl_disable = '1') else int_ALUOp;
          
 early_branch <= int_early_branch;
 

@@ -1,10 +1,10 @@
--- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+-- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2020.2.2 (win64) Build 3118627 Tue Feb  9 05:14:06 MST 2021
--- Date        : Fri Oct 27 15:21:45 2023
--- Host        : DESKTOP-4DPLSA4 running 64-bit major release  (build 9200)
+-- Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+-- Date        : Sun Apr  6 20:17:53 2025
+-- Host        : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
---               c:/Users/Aimagin/Downloads/Zybo-Z7-20-Pcam-5C-hw.xpr/hw/hw.srcs/sources_1/bd/system/ip/system_rst_clk_wiz_0_50M_0/system_rst_clk_wiz_0_50M_0_sim_netlist.vhdl
+--               c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/ip/system_rst_clk_wiz_0_50M_0/system_rst_clk_wiz_0_50M_0_sim_netlist.vhdl
 -- Design      : system_rst_clk_wiz_0_50M_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -1063,7 +1063,7 @@ entity system_rst_clk_wiz_0_50M_0 is
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of system_rst_clk_wiz_0_50M_0 : entity is "yes";
   attribute x_core_info : string;
-  attribute x_core_info of system_rst_clk_wiz_0_50M_0 : entity is "proc_sys_reset,Vivado 2020.2.2";
+  attribute x_core_info of system_rst_clk_wiz_0_50M_0 : entity is "proc_sys_reset,Vivado 2020.2";
 end system_rst_clk_wiz_0_50M_0;
 
 architecture STRUCTURE of system_rst_clk_wiz_0_50M_0 is

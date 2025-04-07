@@ -11,11 +11,19 @@
 
 source system_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/registerIP_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/IPrepo/registerIP_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/myip_1.0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/registerIP_1.0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/registerIP_1.0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/registerIP_1.0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/registerIP_1.0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.ipdefs/repo'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'F:/Vivado/2020.2/data/ip'.
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:registerIP:1.0'. The one found in IP location 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/registerIP_1.0' will take precedence over the same IP in location c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/IPrepo/registerIP_1.0
 WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
 Current IP cache path is c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.cache/ip 
-add_files: Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 1118.312 ; gain = 0.000
+add_files: Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 1117.723 ; gain = 0.000
 Command: synth_design -top system_wrapper -part xc7z020clg400-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
@@ -23,9 +31,9 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020
 INFO: [Device 21-403] Loading part xc7z020clg400-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 19996
+INFO: [Synth 8-7075] Helper process launched with PID 21384
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1208.270 ; gain = 89.957
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1205.871 ; gain = 88.148
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'system_wrapper' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/imports/hdl/system_wrapper.vhd:55]
 INFO: [Synth 8-3491] module 'IOBUF' declared at 'F:/Vivado/2020.2/scripts/rt/data/unisim_comp.v:36242' bound to instance 'cam_gpio_tri_iobuf_0' of component 'IOBUF' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/imports/hdl/system_wrapper.vhd:121]
@@ -39,34 +47,34 @@ INFO: [Synth 8-3491] module 'IOBUF' declared at 'F:/Vivado/2020.2/scripts/rt/dat
 INFO: [Synth 8-3491] module 'IOBUF' declared at 'F:/Vivado/2020.2/scripts/rt/data/unisim_comp.v:36242' bound to instance 'cam_iic_sda_iobuf' of component 'IOBUF' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/imports/hdl/system_wrapper.vhd:135]
 INFO: [Synth 8-3491] module 'system' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:2781' bound to instance 'system_i' of component 'system' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/imports/hdl/system_wrapper.vhd:142]
 INFO: [Synth 8-638] synthesizing module 'system' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:2832]
-INFO: [Synth 8-3491] module 'system_AXI_BayerToRGB_1_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-1152-DESKTOP-J1G93P6/realtime/system_AXI_BayerToRGB_1_0_stub.vhdl:5' bound to instance 'AXI_BayerToRGB_1' of component 'system_AXI_BayerToRGB_1_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:3879]
-INFO: [Synth 8-638] synthesizing module 'system_AXI_BayerToRGB_1_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-1152-DESKTOP-J1G93P6/realtime/system_AXI_BayerToRGB_1_0_stub.vhdl:23]
-INFO: [Synth 8-3491] module 'system_AXI_GammaCorrection_0_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-1152-DESKTOP-J1G93P6/realtime/system_AXI_GammaCorrection_0_0_stub.vhdl:5' bound to instance 'AXI_GammaCorrection_0' of component 'system_AXI_GammaCorrection_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:3894]
-INFO: [Synth 8-638] synthesizing module 'system_AXI_GammaCorrection_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-1152-DESKTOP-J1G93P6/realtime/system_AXI_GammaCorrection_0_0_stub.vhdl:44]
-INFO: [Synth 8-3491] module 'system_DVIClocking_0_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-1152-DESKTOP-J1G93P6/realtime/system_DVIClocking_0_0_stub.vhdl:5' bound to instance 'DVIClocking_0' of component 'system_DVIClocking_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:3930]
-INFO: [Synth 8-638] synthesizing module 'system_DVIClocking_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-1152-DESKTOP-J1G93P6/realtime/system_DVIClocking_0_0_stub.vhdl:16]
-INFO: [Synth 8-3491] module 'system_MIPI_CSI_2_RX_0_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-1152-DESKTOP-J1G93P6/realtime/system_MIPI_CSI_2_RX_0_0_stub.vhdl:5' bound to instance 'MIPI_CSI_2_RX_0' of component 'system_MIPI_CSI_2_RX_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:3938]
-INFO: [Synth 8-638] synthesizing module 'system_MIPI_CSI_2_RX_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-1152-DESKTOP-J1G93P6/realtime/system_MIPI_CSI_2_RX_0_0_stub.vhdl:62]
-INFO: [Synth 8-3491] module 'system_MIPI_D_PHY_RX_0_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-1152-DESKTOP-J1G93P6/realtime/system_MIPI_D_PHY_RX_0_0_stub.vhdl:5' bound to instance 'MIPI_D_PHY_RX_0' of component 'system_MIPI_D_PHY_RX_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:3992]
-INFO: [Synth 8-638] synthesizing module 'system_MIPI_D_PHY_RX_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-1152-DESKTOP-J1G93P6/realtime/system_MIPI_D_PHY_RX_0_0_stub.vhdl:88]
+INFO: [Synth 8-3491] module 'system_AXI_BayerToRGB_1_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-8856-DESKTOP-J1G93P6/realtime/system_AXI_BayerToRGB_1_0_stub.vhdl:5' bound to instance 'AXI_BayerToRGB_1' of component 'system_AXI_BayerToRGB_1_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:3879]
+INFO: [Synth 8-638] synthesizing module 'system_AXI_BayerToRGB_1_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-8856-DESKTOP-J1G93P6/realtime/system_AXI_BayerToRGB_1_0_stub.vhdl:23]
+INFO: [Synth 8-3491] module 'system_AXI_GammaCorrection_0_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-8856-DESKTOP-J1G93P6/realtime/system_AXI_GammaCorrection_0_0_stub.vhdl:5' bound to instance 'AXI_GammaCorrection_0' of component 'system_AXI_GammaCorrection_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:3894]
+INFO: [Synth 8-638] synthesizing module 'system_AXI_GammaCorrection_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-8856-DESKTOP-J1G93P6/realtime/system_AXI_GammaCorrection_0_0_stub.vhdl:44]
+INFO: [Synth 8-3491] module 'system_DVIClocking_0_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-8856-DESKTOP-J1G93P6/realtime/system_DVIClocking_0_0_stub.vhdl:5' bound to instance 'DVIClocking_0' of component 'system_DVIClocking_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:3930]
+INFO: [Synth 8-638] synthesizing module 'system_DVIClocking_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-8856-DESKTOP-J1G93P6/realtime/system_DVIClocking_0_0_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'system_MIPI_CSI_2_RX_0_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-8856-DESKTOP-J1G93P6/realtime/system_MIPI_CSI_2_RX_0_0_stub.vhdl:5' bound to instance 'MIPI_CSI_2_RX_0' of component 'system_MIPI_CSI_2_RX_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:3938]
+INFO: [Synth 8-638] synthesizing module 'system_MIPI_CSI_2_RX_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-8856-DESKTOP-J1G93P6/realtime/system_MIPI_CSI_2_RX_0_0_stub.vhdl:62]
+INFO: [Synth 8-3491] module 'system_MIPI_D_PHY_RX_0_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-8856-DESKTOP-J1G93P6/realtime/system_MIPI_D_PHY_RX_0_0_stub.vhdl:5' bound to instance 'MIPI_D_PHY_RX_0' of component 'system_MIPI_D_PHY_RX_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:3992]
+INFO: [Synth 8-638] synthesizing module 'system_MIPI_D_PHY_RX_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-8856-DESKTOP-J1G93P6/realtime/system_MIPI_D_PHY_RX_0_0_stub.vhdl:88]
 INFO: [Synth 8-638] synthesizing module 'system_axi_mem_intercon_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:1384]
 INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_1P403ZT' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:1205]
-INFO: [Synth 8-3491] module 'system_auto_pc_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-1152-DESKTOP-J1G93P6/realtime/system_auto_pc_0_stub.vhdl:5' bound to instance 'auto_pc' of component 'system_auto_pc_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:1304]
-INFO: [Synth 8-638] synthesizing module 'system_auto_pc_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-1152-DESKTOP-J1G93P6/realtime/system_auto_pc_0_stub.vhdl:44]
+INFO: [Synth 8-3491] module 'system_auto_pc_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-8856-DESKTOP-J1G93P6/realtime/system_auto_pc_0_stub.vhdl:5' bound to instance 'auto_pc' of component 'system_auto_pc_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:1304]
+INFO: [Synth 8-638] synthesizing module 'system_auto_pc_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-8856-DESKTOP-J1G93P6/realtime/system_auto_pc_0_stub.vhdl:44]
 INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_1P403ZT' (2#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:1205]
 INFO: [Synth 8-256] done synthesizing module 'system_axi_mem_intercon_0' (3#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:1384]
 INFO: [Synth 8-638] synthesizing module 'system_axi_mem_intercon_1_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:1535]
 INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_1AIV7DJ' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:1004]
-INFO: [Synth 8-3491] module 'system_auto_pc_1' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-1152-DESKTOP-J1G93P6/realtime/system_auto_pc_1_stub.vhdl:5' bound to instance 'auto_pc' of component 'system_auto_pc_1' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:1121]
-INFO: [Synth 8-638] synthesizing module 'system_auto_pc_1' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-1152-DESKTOP-J1G93P6/realtime/system_auto_pc_1_stub.vhdl:50]
+INFO: [Synth 8-3491] module 'system_auto_pc_1' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-8856-DESKTOP-J1G93P6/realtime/system_auto_pc_1_stub.vhdl:5' bound to instance 'auto_pc' of component 'system_auto_pc_1' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:1121]
+INFO: [Synth 8-638] synthesizing module 'system_auto_pc_1' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-8856-DESKTOP-J1G93P6/realtime/system_auto_pc_1_stub.vhdl:50]
 INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_1AIV7DJ' (4#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:1004]
 INFO: [Synth 8-256] done synthesizing module 'system_axi_mem_intercon_1_0' (5#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:1535]
-INFO: [Synth 8-3491] module 'system_axi_vdma_0_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-1152-DESKTOP-J1G93P6/realtime/system_axi_vdma_0_0_stub.vhdl:5' bound to instance 'axi_vdma_0' of component 'system_axi_vdma_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:4152]
-INFO: [Synth 8-638] synthesizing module 'system_axi_vdma_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-1152-DESKTOP-J1G93P6/realtime/system_axi_vdma_0_0_stub.vhdl:78]
-INFO: [Synth 8-3491] module 'system_clk_wiz_0_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-1152-DESKTOP-J1G93P6/realtime/system_clk_wiz_0_0_stub.vhdl:5' bound to instance 'clk_wiz_0' of component 'system_clk_wiz_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:4222]
-INFO: [Synth 8-638] synthesizing module 'system_clk_wiz_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-1152-DESKTOP-J1G93P6/realtime/system_clk_wiz_0_0_stub.vhdl:16]
-INFO: [Synth 8-3491] module 'system_processing_system7_0_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-1152-DESKTOP-J1G93P6/realtime/system_processing_system7_0_0_stub.vhdl:5' bound to instance 'processing_system7_0' of component 'system_processing_system7_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:4230]
-INFO: [Synth 8-638] synthesizing module 'system_processing_system7_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-1152-DESKTOP-J1G93P6/realtime/system_processing_system7_0_0_stub.vhdl:177]
+INFO: [Synth 8-3491] module 'system_axi_vdma_0_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-8856-DESKTOP-J1G93P6/realtime/system_axi_vdma_0_0_stub.vhdl:5' bound to instance 'axi_vdma_0' of component 'system_axi_vdma_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:4152]
+INFO: [Synth 8-638] synthesizing module 'system_axi_vdma_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-8856-DESKTOP-J1G93P6/realtime/system_axi_vdma_0_0_stub.vhdl:78]
+INFO: [Synth 8-3491] module 'system_clk_wiz_0_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-8856-DESKTOP-J1G93P6/realtime/system_clk_wiz_0_0_stub.vhdl:5' bound to instance 'clk_wiz_0' of component 'system_clk_wiz_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:4222]
+INFO: [Synth 8-638] synthesizing module 'system_clk_wiz_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-8856-DESKTOP-J1G93P6/realtime/system_clk_wiz_0_0_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'system_processing_system7_0_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-8856-DESKTOP-J1G93P6/realtime/system_processing_system7_0_0_stub.vhdl:5' bound to instance 'processing_system7_0' of component 'system_processing_system7_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:4230]
+INFO: [Synth 8-638] synthesizing module 'system_processing_system7_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-8856-DESKTOP-J1G93P6/realtime/system_processing_system7_0_0_stub.vhdl:177]
 INFO: [Synth 8-638] synthesizing module 'system_ps7_0_axi_periph_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:1825]
 INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_1H7AUOX' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:55]
 INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_1H7AUOX' (6#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:55]
@@ -81,24 +89,24 @@ INFO: [Synth 8-256] done synthesizing module 'm04_couplers_imp_TUCI1Y' (10#1) [C
 INFO: [Synth 8-638] synthesizing module 'm05_couplers_imp_1IWS6WN' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:581]
 INFO: [Synth 8-256] done synthesizing module 'm05_couplers_imp_1IWS6WN' (11#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:581]
 INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_11SE3QO' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:711]
-INFO: [Synth 8-3491] module 'system_auto_pc_2' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-1152-DESKTOP-J1G93P6/realtime/system_auto_pc_2_stub.vhdl:5' bound to instance 'auto_pc' of component 'system_auto_pc_2' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:894]
-INFO: [Synth 8-638] synthesizing module 'system_auto_pc_2' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-1152-DESKTOP-J1G93P6/realtime/system_auto_pc_2_stub.vhdl:70]
+INFO: [Synth 8-3491] module 'system_auto_pc_2' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-8856-DESKTOP-J1G93P6/realtime/system_auto_pc_2_stub.vhdl:5' bound to instance 'auto_pc' of component 'system_auto_pc_2' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:894]
+INFO: [Synth 8-638] synthesizing module 'system_auto_pc_2' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-8856-DESKTOP-J1G93P6/realtime/system_auto_pc_2_stub.vhdl:70]
 INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_11SE3QO' (12#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:711]
-INFO: [Synth 8-3491] module 'system_xbar_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-1152-DESKTOP-J1G93P6/realtime/system_xbar_0_stub.vhdl:5' bound to instance 'xbar' of component 'system_xbar_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:2642]
-INFO: [Synth 8-638] synthesizing module 'system_xbar_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-1152-DESKTOP-J1G93P6/realtime/system_xbar_0_stub.vhdl:51]
+INFO: [Synth 8-3491] module 'system_xbar_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-8856-DESKTOP-J1G93P6/realtime/system_xbar_0_stub.vhdl:5' bound to instance 'xbar' of component 'system_xbar_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:2642]
+INFO: [Synth 8-638] synthesizing module 'system_xbar_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-8856-DESKTOP-J1G93P6/realtime/system_xbar_0_stub.vhdl:51]
 INFO: [Synth 8-256] done synthesizing module 'system_ps7_0_axi_periph_0' (13#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:1825]
-INFO: [Synth 8-3491] module 'system_rgb2dvi_0_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-1152-DESKTOP-J1G93P6/realtime/system_rgb2dvi_0_0_stub.vhdl:5' bound to instance 'rgb2dvi_0' of component 'system_rgb2dvi_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:4563]
-INFO: [Synth 8-638] synthesizing module 'system_rgb2dvi_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-1152-DESKTOP-J1G93P6/realtime/system_rgb2dvi_0_0_stub.vhdl:22]
-INFO: [Synth 8-3491] module 'system_rst_clk_wiz_0_50M_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-1152-DESKTOP-J1G93P6/realtime/system_rst_clk_wiz_0_50M_0_stub.vhdl:5' bound to instance 'rst_clk_wiz_0_50M' of component 'system_rst_clk_wiz_0_50M_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:4577]
-INFO: [Synth 8-638] synthesizing module 'system_rst_clk_wiz_0_50M_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-1152-DESKTOP-J1G93P6/realtime/system_rst_clk_wiz_0_50M_0_stub.vhdl:21]
-INFO: [Synth 8-3491] module 'system_rst_vid_clk_dyn_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-1152-DESKTOP-J1G93P6/realtime/system_rst_vid_clk_dyn_0_stub.vhdl:5' bound to instance 'rst_vid_clk_dyn' of component 'system_rst_vid_clk_dyn_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:4590]
-INFO: [Synth 8-638] synthesizing module 'system_rst_vid_clk_dyn_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-1152-DESKTOP-J1G93P6/realtime/system_rst_vid_clk_dyn_0_stub.vhdl:21]
-INFO: [Synth 8-3491] module 'system_v_axi4s_vid_out_0_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-1152-DESKTOP-J1G93P6/realtime/system_v_axi4s_vid_out_0_0_stub.vhdl:5' bound to instance 'v_axi4s_vid_out_0' of component 'system_v_axi4s_vid_out_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:4603]
-INFO: [Synth 8-638] synthesizing module 'system_v_axi4s_vid_out_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-1152-DESKTOP-J1G93P6/realtime/system_v_axi4s_vid_out_0_0_stub.vhdl:43]
-INFO: [Synth 8-3491] module 'system_video_dynclk_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-1152-DESKTOP-J1G93P6/realtime/system_video_dynclk_0_stub.vhdl:5' bound to instance 'video_dynclk' of component 'system_video_dynclk_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:4638]
-INFO: [Synth 8-638] synthesizing module 'system_video_dynclk_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-1152-DESKTOP-J1G93P6/realtime/system_video_dynclk_0_stub.vhdl:33]
-INFO: [Synth 8-3491] module 'system_vtg_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-1152-DESKTOP-J1G93P6/realtime/system_vtg_0_stub.vhdl:5' bound to instance 'vtg' of component 'system_vtg_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:4663]
-INFO: [Synth 8-638] synthesizing module 'system_vtg_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-1152-DESKTOP-J1G93P6/realtime/system_vtg_0_stub.vhdl:44]
+INFO: [Synth 8-3491] module 'system_rgb2dvi_0_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-8856-DESKTOP-J1G93P6/realtime/system_rgb2dvi_0_0_stub.vhdl:5' bound to instance 'rgb2dvi_0' of component 'system_rgb2dvi_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:4563]
+INFO: [Synth 8-638] synthesizing module 'system_rgb2dvi_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-8856-DESKTOP-J1G93P6/realtime/system_rgb2dvi_0_0_stub.vhdl:22]
+INFO: [Synth 8-3491] module 'system_rst_clk_wiz_0_50M_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-8856-DESKTOP-J1G93P6/realtime/system_rst_clk_wiz_0_50M_0_stub.vhdl:5' bound to instance 'rst_clk_wiz_0_50M' of component 'system_rst_clk_wiz_0_50M_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:4577]
+INFO: [Synth 8-638] synthesizing module 'system_rst_clk_wiz_0_50M_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-8856-DESKTOP-J1G93P6/realtime/system_rst_clk_wiz_0_50M_0_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'system_rst_vid_clk_dyn_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-8856-DESKTOP-J1G93P6/realtime/system_rst_vid_clk_dyn_0_stub.vhdl:5' bound to instance 'rst_vid_clk_dyn' of component 'system_rst_vid_clk_dyn_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:4590]
+INFO: [Synth 8-638] synthesizing module 'system_rst_vid_clk_dyn_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-8856-DESKTOP-J1G93P6/realtime/system_rst_vid_clk_dyn_0_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'system_v_axi4s_vid_out_0_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-8856-DESKTOP-J1G93P6/realtime/system_v_axi4s_vid_out_0_0_stub.vhdl:5' bound to instance 'v_axi4s_vid_out_0' of component 'system_v_axi4s_vid_out_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:4603]
+INFO: [Synth 8-638] synthesizing module 'system_v_axi4s_vid_out_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-8856-DESKTOP-J1G93P6/realtime/system_v_axi4s_vid_out_0_0_stub.vhdl:43]
+INFO: [Synth 8-3491] module 'system_video_dynclk_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-8856-DESKTOP-J1G93P6/realtime/system_video_dynclk_0_stub.vhdl:5' bound to instance 'video_dynclk' of component 'system_video_dynclk_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:4638]
+INFO: [Synth 8-638] synthesizing module 'system_video_dynclk_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-8856-DESKTOP-J1G93P6/realtime/system_video_dynclk_0_stub.vhdl:33]
+INFO: [Synth 8-3491] module 'system_vtg_0' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-8856-DESKTOP-J1G93P6/realtime/system_vtg_0_stub.vhdl:5' bound to instance 'vtg' of component 'system_vtg_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:4663]
+INFO: [Synth 8-638] synthesizing module 'system_vtg_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/.Xil/Vivado-8856-DESKTOP-J1G93P6/realtime/system_vtg_0_stub.vhdl:44]
 INFO: [Synth 8-3491] module 'system_xlconcat_0_0' declared at 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/ip/system_xlconcat_0_0/synth/system_xlconcat_0_0.v:60' bound to instance 'xlconcat_0' of component 'system_xlconcat_0_0' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:4699]
 INFO: [Synth 8-6157] synthesizing module 'system_xlconcat_0_0' [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/ip/system_xlconcat_0_0/synth/system_xlconcat_0_0.v:60]
 INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_4_xlconcat' [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/ipshared/4b67/hdl/xlconcat_v2_1_vl_rfs.v:14]
@@ -237,18 +245,18 @@ INFO: [Synth 8-6155] done synthesizing module 'system_xlconcat_0_0' (15#1) [c:/U
 INFO: [Synth 8-256] done synthesizing module 'system' (16#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/synth/system.vhd:2832]
 INFO: [Synth 8-256] done synthesizing module 'system_wrapper' (17#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/imports/hdl/system_wrapper.vhd:55]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1277.410 ; gain = 159.098
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1274.887 ; gain = 157.164
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1277.410 ; gain = 159.098
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1274.887 ; gain = 157.164
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1277.410 ; gain = 159.098
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1274.887 ; gain = 157.164
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.073 . Memory (MB): peak = 1277.410 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.081 . Memory (MB): peak = 1274.887 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 3 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -308,23 +316,23 @@ Parsing XDC File [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20
 Finished Parsing XDC File [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1341.320 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1342.285 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 3 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 3 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1341.320 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1342.285 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'system_i/MIPI_CSI_2_RX_0' at clock pin 'video_aclk' is different from the actual clock period '6.667', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'system_i/MIPI_D_PHY_RX_0' at clock pin 'dphy_clk_hs_p' is different from the actual clock period '4.761', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1345.324 ; gain = 227.012
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1343.199 ; gain = 225.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1345.324 ; gain = 227.012
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1343.199 ; gain = 225.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -653,10 +661,10 @@ Applied set_property KEEP_HIERARCHY = SOFT for system_i/axi_mem_intercon/s00_cou
 Applied set_property KEEP_HIERARCHY = SOFT for system_i/axi_mem_intercon_1/s00_couplers/auto_pc. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for system_i/ps7_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1345.324 ; gain = 227.012
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1343.199 ; gain = 225.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1345.324 ; gain = 227.012
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1343.199 ; gain = 225.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -678,25 +686,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1345.324 ; gain = 227.012
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1343.199 ; gain = 225.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 1345.324 ; gain = 227.012
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1343.199 ; gain = 225.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 1345.324 ; gain = 227.012
+Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1343.199 ; gain = 225.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 1357.375 ; gain = 239.062
+Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1356.184 ; gain = 238.461
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -714,37 +722,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1362.160 ; gain = 243.848
+Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1362.867 ; gain = 245.145
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1362.160 ; gain = 243.848
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1362.867 ; gain = 245.145
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1362.160 ; gain = 243.848
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1362.867 ; gain = 245.145
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1362.160 ; gain = 243.848
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1362.867 ; gain = 245.145
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1362.160 ; gain = 243.848
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1362.867 ; gain = 245.145
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1362.160 ; gain = 243.848
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1362.867 ; gain = 245.145
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -799,26 +807,26 @@ Report Cell Usage:
 |19    |IOBUF                               |     3|
 +------+------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1362.160 ; gain = 243.848
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1362.867 ; gain = 245.145
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:29 . Memory (MB): peak = 1362.160 ; gain = 175.934
-Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1362.160 ; gain = 243.848
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:26 . Memory (MB): peak = 1362.867 ; gain = 176.832
+Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1362.867 ; gain = 245.145
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.061 . Memory (MB): peak = 1362.160 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.054 . Memory (MB): peak = 1362.867 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 3 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1386.727 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1382.031 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 3 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 3 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-96 Infos, 6 Warnings, 0 Critical Warnings and 0 Errors encountered.
+101 Infos, 9 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:00:53 . Memory (MB): peak = 1386.727 ; gain = 268.414
+synth_design: Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 1382.031 ; gain = 264.309
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.runs/synth_1/system_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file system_wrapper_utilization_synth.rpt -pb system_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Mar 30 19:02:24 2025...
+INFO: [Common 17-206] Exiting Vivado at Sun Apr  6 20:20:08 2025...

@@ -12,7 +12,7 @@ entity myip is
 
 		-- Parameters of Axi Slave Bus Interface S00_AXI
 		C_S00_AXI_DATA_WIDTH	: integer	:= 32;
-		C_S00_AXI_ADDR_WIDTH	: integer	:= 5
+		C_S00_AXI_ADDR_WIDTH	: integer	:= 4
 	);
 	port (
 		-- Users to add ports here
@@ -52,7 +52,7 @@ architecture arch_imp of myip is
 	component myip_slave_lite_v1_0_S00_AXI is
 		generic (
 		C_S_AXI_DATA_WIDTH	: integer	:= 32;
-		C_S_AXI_ADDR_WIDTH	: integer	:= 5
+		C_S_AXI_ADDR_WIDTH	: integer	:= 4
 		);
 		port (
 		S_AXI_ACLK	: in std_logic;

@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="39">
   <CompositeFile CompositeFileTopName="system" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1699248500"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1699248500"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1699248500"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1699248500"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1743984965"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1743984965"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1743984965"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1743984965"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\system_AXI_BayerToRGB_1_0\system_AXI_BayerToRGB_1_0.xci" Type="IP">
         <Instance HierarchyPath="AXI_BayerToRGB_1"/>
@@ -48,6 +48,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\system_axi_mem_intercon_0\system_axi_mem_intercon_0.xci" Type="IP">
+        <Instance HierarchyPath="axi_mem_intercon"/>
         <Properties IsEditable="false" IsVisible="false" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -55,6 +56,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\system_axi_mem_intercon_1_0\system_axi_mem_intercon_1_0.xci" Type="IP">
+        <Instance HierarchyPath="axi_mem_intercon_1"/>
         <Properties IsEditable="false" IsVisible="false" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -86,6 +88,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\system_ps7_0_axi_periph_0\system_ps7_0_axi_periph_0.xci" Type="IP">
+        <Instance HierarchyPath="ps7_0_axi_periph"/>
         <Properties IsEditable="false" IsVisible="false" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -156,16 +159,6 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="synth\system.vhd" Type="VHDL">
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-      </File>
-      <File Name="sim\system.vhd" Type="VHDL">
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
       <File Name="ip\system_auto_pc_0\system_auto_pc_0.xci" Type="IP">
         <Instance HierarchyPath="axi_mem_intercon/s00_couplers/auto_pc"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
@@ -188,6 +181,16 @@
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="synth\system.vhd" Type="VHDL">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+      </File>
+      <File Name="sim\system.vhd" Type="VHDL">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="system_ooc.xdc" Type="XDC">

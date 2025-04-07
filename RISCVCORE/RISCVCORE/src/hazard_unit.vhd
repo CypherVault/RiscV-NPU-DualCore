@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity hazard_unit is
-    port (
+    port (								 
         idex_mem_read   : in std_logic;
         idex_rd         : in std_logic_vector(4 downto 0);
         instruction     : in std_logic_vector(31 downto 0);
@@ -23,7 +23,7 @@ architecture Behavioral of hazard_unit is
     -- Branch detection signals
     signal is_branch      : std_logic;
     signal is_jal_jalr    : std_logic;
-begin
+begin	
     rs1    <= instruction(19 downto 15);
     rs2    <= instruction(24 downto 20);
     opcode <= instruction(6 downto 0);
@@ -58,7 +58,7 @@ begin
 
             -- For JAL/JALR, maintain bubble injection
             if is_jal_jalr = '1' then
-                cntrl_sigmux <= '1';
+                ctrl_disable <= '1';
             end if;
         end if;
     end process;

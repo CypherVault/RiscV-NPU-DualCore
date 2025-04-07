@@ -117,6 +117,7 @@ signal DM_debug_read_enable : std_logic;  -- Data memory read enable
   	 
 	 
 	 --TO PCIMMADDER
+	 signal regOrPCCntrl	: std_logic;
 	 signal immediategen_immediate_to_pcimmadder : std_logic_vector(31 downto 0);
 	 signal ifid_pcout_to_pcimmadder : std_logic_vector(15 downto 0);
 	 
@@ -137,7 +138,7 @@ signal DM_debug_read_enable : std_logic;  -- Data memory read enable
   --TO CONTROL UNIT
   signal hazardunit_controldisable_to_controlunit : std_logic;
   signal ifid_instruction_to_controlunit : std_logic_vector(31 downto 0);
-  signal hazardunit_cntrlsigmux_to_controlunit : std_logic;
+  --signal hazardunit_cntrlsigmux_to_controlunit : std_logic;
   signal registers_reg1out_to_controlunit : std_logic_vector(31 downto 0);
   signal registers_reg2out_to_controlunit : std_logic_vector(31 downto 0);
   signal controlunit_memtoreg_to_idex : std_logic;
@@ -465,9 +466,11 @@ ifid_pcout_to_pcimmadder <= ifid_pcout_to_OUT;
  
 	 pcimmadder_inst : entity work.pcimmadder
     port map (
+		regOrPC => regOrPCCntrl,
       pc        => ifid_pcout_to_pcimmadder,
-      immediate => immediategen_immediate_to_pcimmadder,
-      pcplusimm => pcplusimmadder_pcplusimm_to_pc_mux
+      regIn => registers_reg1out_to_idex,
+	  immediate => immediategen_immediate_to_pcimmadder,
+      pcOut => pcplusimmadder_pcplusimm_to_pc_mux
     );			 
 	
 	
@@ -500,8 +503,9 @@ registers_reg2out_to_controlunit  <= registers_reg2out_to_idex;
 	  --TO CONTROL UNIT
 		 CONTROLUNIT_INST : entity work.ControlUnit
     port map (
+		reset => resetbar,
       instruction => ifid_instruction_to_OUT,
-      cntrlsigmux => hazardunit_cntrlsigmux_to_controlunit,
+      --cntrlsigmux => hazardunit_cntrlsigmux_to_controlunit,
       rs1_data         => registers_reg1out_to_controlunit,
       rs2_data         => registers_reg2out_to_controlunit,
 	  ctrl_disable	   =>	  hazardunit_controldisable_to_controlunit,
@@ -510,6 +514,7 @@ registers_reg2out_to_controlunit  <= registers_reg2out_to_idex;
 	  memwb_rd		   =>	memwb_rd_to_out,
 	  memwb_regdata	   =>	writebackmux_writedata_to_registers,
 	  
+	  regOrPC =>  regOrPCCntrl,
       MemtoReg    => controlunit_memtoreg_to_idex,
       RegWrite    => controlunit_regwrite_to_idex,
       MemRead     => controlunit_memread_to_idex,
