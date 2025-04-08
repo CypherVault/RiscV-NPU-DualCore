@@ -7,6 +7,7 @@ entity program_counter is
     port (
         clk      : in  std_logic;
         reset    : in  std_logic;
+		pause	 : in  std_logic;
         pcwrite  : in  std_logic;
         pcsource : in  std_logic_vector(15 downto 0);
         pcout    : out std_logic_vector(15 downto 0)
@@ -26,8 +27,11 @@ begin
             else
                	
             end if;
-        end if;
+        end if;	
+	if (pause = '0') then
+    	pcout <= pc_reg;  -- Assign the internal pc_reg to the output port
+	end if;
     end process;
     
-    pcout <= pc_reg;  -- Assign the internal pc_reg to the output port
+
 end architecture rtl;

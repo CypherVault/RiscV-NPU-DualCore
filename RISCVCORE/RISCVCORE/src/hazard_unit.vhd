@@ -2,13 +2,15 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity hazard_unit is
-    port (								 
+    port (
+		pause			: out std_logic;
         idex_mem_read   : in std_logic;
         idex_rd         : in std_logic_vector(4 downto 0);
         instruction     : in std_logic_vector(31 downto 0);
         cntrl_sigmux    : out std_logic;
         pc_write_enable : out std_logic;
         ifid_write_en   : out std_logic;
+		idexInstruction	: in std_logic_vector(31 downto 0);
         --ifid_flush      : out std_logic;
         ctrl_disable    : out std_logic
         --early_branch_control : out std_logic  -- New output

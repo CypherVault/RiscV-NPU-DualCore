@@ -18,7 +18,6 @@ begin
     
     with control select
         pcsource <= 
-            pcplus4 when '0',
             pcplusimm when '1',
-            (others => 'X') when others;
+            pcplus4 when others;
 end behavioral;

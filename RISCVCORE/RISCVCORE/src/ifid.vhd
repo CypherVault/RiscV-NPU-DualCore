@@ -5,6 +5,7 @@ entity ifid is
     Port (
         clk : in STD_LOGIC;
         rstbar : in STD_LOGIC;
+		pause	: in std_logic;
         ifidwriteenable : in STD_LOGIC;  -- Now connected to hazard_unit
         ifidflush : in STD_LOGIC;
         branch_taken : in STD_LOGIC;
@@ -48,11 +49,14 @@ begin
                 rs2_reg <= instruction(24 downto 20);
             end if;
         end if;
+		if pause = '0' then
+		    ifidinstructionout <= instruction_reg;
+		    ifidpcout <= pcout_reg;
+		    rd_out <= rdout_reg;
+		    rs1_out <= rs1_reg;
+		    rs2_out <= rs2_reg;
+		end if;
     end process;
-
-    ifidinstructionout <= instruction_reg;
-    ifidpcout <= pcout_reg;
-    rd_out <= rdout_reg;
-    rs1_out <= rs1_reg;
-    rs2_out <= rs2_reg;
+	
+	
 end Behavioral;

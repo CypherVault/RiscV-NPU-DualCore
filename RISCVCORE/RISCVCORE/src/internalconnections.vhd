@@ -162,7 +162,7 @@ signal DM_debug_read_enable : std_logic;  -- Data memory read enable
   signal hazardunit_controlsigmux_to_controlunit : std_logic;
   -- signal hazardunit_pcwrite_to_pc : std_logic;	 also declared above 
   signal hazardunit_write_to_ifid : std_logic;
-  
+  signal pause	:	std_logic;
   
   
   -- TO IDEX
@@ -394,6 +394,7 @@ begin
     port map (
         clk      => clock,
         reset    => resetbar,
+		pause	 => pause,
         pcwrite  => hazardunit_pcwrite_to_pc,
         pcsource => pc_mux_pcsource_to_pc,
         pcout    => pc_pcout_to_instruction_memory
@@ -426,7 +427,8 @@ port map (
     port map (
         clk                 => clock,
         rstbar              => resetbar,
-        branch_taken		=> branchand_jumpbranchselect_to_pc_mux,
+        pause				=> pause,
+		branch_taken		=> branchand_jumpbranchselect_to_pc_mux,
 		ifidwriteenable           => hazardunit_ifidwrite_to_ifid,  
         ifidflush           => hazardunit_ifidflush_to_ifid,		 --UNUSED- DO NOT IMPLEMENT	  -- we may actually need this 3-15-2025
         pcout               => pc_pcout_to_ifid,
@@ -538,13 +540,15 @@ registers_reg2out_to_controlunit  <= registers_reg2out_to_idex;
 HAZARD_UNIT_INST : entity work.hazard_unit
     port map (		  
 	--early_branch_control => controlunit_earlybranch_to_pcmux,
+	pause		=> pause,
 	idex_mem_read => idex_memread_to_exmem,
 	 ctrl_disable  => hazardunit_controldisable_to_controlunit,
       idex_rd => idex_rd_to_exmem,
       instruction => ifid_instruction_to_OUT,
       cntrl_sigmux => hazardunit_controlsigmux_to_controlunit,
       pc_write_enable => hazardunit_pcwrite_to_pc,
-      ifid_write_en => hazardunit_ifidwrite_to_ifid
+      ifid_write_en => hazardunit_ifidwrite_to_ifid,
+	  idexInstruction => ifid_instruction_to_OUT
 	  --ifid_flush => 	hazardunit_ifidflush_to_ifid
     );
 
