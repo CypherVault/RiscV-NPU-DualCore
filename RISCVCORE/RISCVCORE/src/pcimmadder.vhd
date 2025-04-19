@@ -15,13 +15,18 @@ end entity pcimmadder;
 architecture behavior of pcimmadder is
 begin
     process(regOrPC, pc, immediate, regMuxIn)
-        variable temp_sum : unsigned(31 downto 0);
+		variable temp_sum : unsigned(31 downto 0);
+		variable pcVar,immVar,regVar : unsigned(31 downto 0);
     begin
+		pcVar := resize(unsigned(pc), 32);
+		immVar := unsigned(immediate(31 downto 0));
+		regVar := resize(unsigned(regMuxIN), 32);
+		
 		if regOrPC = '0' then
-			temp_sum := resize(unsigned(pc), 32) + unsigned(immediate(15 downto 0));
+			temp_sum := pcVar + immVar;
         
 		else
-			temp_sum := resize(unsigned(regMuxIN), 32) + unsigned(immediate(15 downto 0));
+			temp_sum := regVar + immVar;
 		end if;
 		
 		pcOut <= std_logic_vector(temp_sum(15 downto 0) and "1111111111111100"); --sets to closest divisor of 4

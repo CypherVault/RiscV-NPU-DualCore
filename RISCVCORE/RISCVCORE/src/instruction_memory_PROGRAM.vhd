@@ -32,7 +32,7 @@ architecture Behavioral of instruction_memory is
 
 begin
     -- Instruction fetch process with bounds checking
-    process(pc_address)
+    process(pc_address, reset)
         variable address_offset : integer;
     begin
         if is_valid_address(pc_address) and (pc_address /= x"FFFC") then

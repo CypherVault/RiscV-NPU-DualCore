@@ -19,8 +19,10 @@ architecture rtl of program_counter is
 begin
     process (clk, reset)
     begin
+		
+		
         if reset = '0' then
-            pc_reg <= (others => '0');  -- Set program counter to 0 on reset
+            pc_reg <= x"FFFC";  -- Set program counter to 0 on reset
         elsif rising_edge(clk) then
             if pcwrite = '1' then
                 pc_reg <= pcsource;  -- Update program counter with pcwrite value
