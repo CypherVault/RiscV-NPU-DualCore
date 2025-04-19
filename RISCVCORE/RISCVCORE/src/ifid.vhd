@@ -24,7 +24,9 @@ architecture Behavioral of ifid is
     signal instruction_reg : STD_LOGIC_VECTOR(31 downto 0);
     signal pcout_reg : STD_LOGIC_VECTOR(15 downto 0);
     signal rdout_reg, rs1_reg, rs2_reg : STD_LOGIC_VECTOR(4 downto 0);
+	signal zero	: std_logic_vector(31 downto 0);
 begin
+	zero <= "00000000000000000000000000000000";
     process (clk, rstbar)
     begin
         if rstbar = '0' then
@@ -55,6 +57,12 @@ begin
 		    rd_out <= rdout_reg;
 		    rs1_out <= rs1_reg;
 		    rs2_out <= rs2_reg;
+		else
+			ifidinstructionout <= zero;
+		    ifidpcout <= zero(15 downto 0);
+		    rd_out <= zero(4 downto 0);
+		    rs1_out <= zero(4 downto 0);
+		    rs2_out <= zero(4 downto 0);
 		end if;
     end process;
 	

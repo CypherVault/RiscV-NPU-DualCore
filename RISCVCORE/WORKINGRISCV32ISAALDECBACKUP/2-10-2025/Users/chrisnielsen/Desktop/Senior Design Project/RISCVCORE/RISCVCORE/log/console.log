@@ -993,4 +993,29 @@ run
 # Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/WORKINGRISCV32ISAALDECBACKUP/2-10-2025/Users/chrisnielsen/Desktop/Senior Design Project/RISCVCORE/RISCVCORE/src/register_REQUEST.vhd" at line 36 in process of instance "/RICSVCORE_tb/uut/internal_connections_inst/REGFILE_INST/line__30".
 run
 # KERNEL: Stopped at time 1015 ns + 3.
-# Stopped in "C:/Users/
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/WORKINGRISCV32ISAALDECBACKUP/2-10-2025/Users/chrisnielsen/Desktop/Senior Design Project/RISCVCORE/RISCVCORE/src/register_REQUEST.vhd" at line 36 in process of instance "/RICSVCORE_tb/uut/internal_connections_inst/REGFILE_INST/line__30".
+run
+# KERNEL: Stopped at time 1015 ns + 4.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/WORKINGRISCV32ISAALDECBACKUP/2-10-2025/Users/chrisnielsen/Desktop/Senior Design Project/RISCVCORE/RISCVCORE/src/register_REQUEST.vhd" at line 36 in process of instance "/RICSVCORE_tb/uut/internal_connections_inst/REGFILE_INST/line__30".
+run
+# KERNEL: Stopped at time 1035 ns + 3.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/WORKINGRISCV32ISAALDECBACKUP/2-10-2025/Users/chrisnielsen/Desktop/Senior Design Project/RISCVCORE/RISCVCORE/src/register_REQUEST.vhd" at line 36 in process of instance "/RICSVCORE_tb/uut/internal_connections_inst/REGFILE_INST/line__30".
+run
+# KERNEL: Stopped at time 1035 ns + 4.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/WORKINGRISCV32ISAALDECBACKUP/2-10-2025/Users/chrisnielsen/Desktop/Senior Design Project/RISCVCORE/RISCVCORE/src/register_REQUEST.vhd" at line 36 in process of instance "/RICSVCORE_tb/uut/internal_connections_inst/REGFILE_INST/line__30".
+run
+# KERNEL: Stopped at time 1075 ns + 3.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/WORKINGRISCV32ISAALDECBACKUP/2-10-2025/Users/chrisnielsen/Desktop/Senior Design Project/RISCVCORE/RISCVCORE/src/register_REQUEST.vhd" at line 36 in process of instance "/RICSVCORE_tb/uut/internal_connections_inst/REGFILE_INST/line__30".
+run
+# KERNEL: Stopped at time 1075 ns + 4.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/WORKINGRISCV32ISAALDECBACKUP/2-10-2025/Users/chrisnielsen/Desktop/Senior Design Project/RISCVCORE/RISCVCORE/src/register_REQUEST.vhd" at line 36 in process of instance "/RICSVCORE_tb/uut/internal_connections_inst/REGFILE_INST/line__30".
+run
+# KERNEL: Stopped at time 1135 ns + 3.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/WORKINGRISCV32ISAALDECBACKUP/2-10-2025/Users/chrisnielsen/Desktop/Senior Design Project/RISCVCORE/RISCVCORE/src/register_REQUEST.vhd" at line 36 in process of instance "/RICSVCORE_tb/uut/internal_connections_inst/REGFILE_INST/line__30".
+run
+# KERNEL: Stopped at time 1135 ns + 4.
+# Stopped in "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/WORKINGRISCV32ISAALDECBACKUP/2-10-2025/Users/chrisnielsen/Desktop/Senior Design Project/RISCVCORE/RISCVCORE/src/register_REQUEST.vhd" at line 36 in process of instance "/RICSVCORE_tb/uut/internal_connections_inst/REGFILE_INST/line__30".
+run
+# EXECUTION:: NOTE   : Simulation finished
+# EXECUTION:: Time: 5120 ns,  Iteration: 0,  Instance: /RICSVCORE_tb,  Process: main_sim.
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.

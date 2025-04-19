@@ -13,6 +13,7 @@
 .\src\idex.vhd
 .\src\forwardingmuxA.vhd
 .\src\forwardingmuxB.vhd
+.\src\forwardingMuxJalr.vhd
 .\src\forwarding_unit.vhd
 .\src\branch_and.vhd
 .\src\control_unit.vhd

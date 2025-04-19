@@ -1,4 +1,4 @@
-Active-HDL 15.0.261.9132 2025-04-07 21:09:58
+Active-HDL 15.0.261.9132 2025-04-18 20:10:54
 
 Elaboration top modules:
 Architecture                  behavior(RICSVCORE_tb)
@@ -16,6 +16,7 @@ program_counter      | rtl          | riscvcore |      | 15.0.261.9132 (Windows6
 instruction_memory   | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
 ifid                 | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
 ImmGen               | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
+forwardingMuxJALR    | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
 pcimmadder           | behavior     | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
 regfile              | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg
 ControlUnit          | Behavioral   | riscvcore |      | 15.0.261.9132 (Windows64) | -dbg

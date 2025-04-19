@@ -19,6 +19,7 @@ entity ControlUnit is
 	--
 	--id
 	regOrPC	: out std_logic;
+	JMuxCntrl: out std_logic_vector(1 downto 0);
     --WB
     MemtoReg : out std_logic;
     RegWrite : out std_logic;			  
@@ -50,7 +51,7 @@ architecture Behavioral of ControlUnit is
   signal rs2_final : std_logic_vector(31 downto 0);
   signal branch_taken : std_logic;
   signal is_branch_instruction : std_logic;
-  
+  signal JMuxCntrl_sig	:std_logic_vector(1 downto 0);
   -- Internal signals for control outputs
   signal int_MemtoReg, int_RegWrite, int_MemRead, int_MemWrite, int_Branch, int_ALUSrc, int_early_branch,int_regOrPC : std_logic;
   signal int_ALUOp : std_logic_vector(1 downto 0);
@@ -60,6 +61,7 @@ architecture Behavioral of ControlUnit is
 begin	 
 	process(reset) begin
 		if reset = '0' then
+			--JMuxCntrl_sig <= "00";
 		    int_regOrPC <= '0';
 		    int_ALUSrc <= '0';
 		    int_MemtoReg <= '0';
@@ -71,7 +73,7 @@ begin
 		    if_flush <= '0';
 		    branch_taken <= '0';
 		    is_branch_instruction <= '0';
-		    int_early_branch <= '0';
+		    --int_early_branch <= '0';
 		end if;
 	end process;
 			  
@@ -145,9 +147,18 @@ begin
   end process;
 	
   process(instruction, rs1_final, rs2_final)
+  
   begin
+	  
     -- Default values
-    int_regOrPC <= '0';
+    if rs1_addr = exmem_rd then	
+	    		JMuxCntrl_sig <= "10"; 
+		elsif (rs1_addr = memwb_rd) then 
+			JMuxCntrl_sig <= "01";
+		else 
+			JMuxCntrl_sig <= "00";
+		end if;
+    --int_regOrPC <= '0';
     int_ALUSrc <= '0';
     int_MemtoReg <= '0';
     int_RegWrite <= '0';
@@ -158,7 +169,7 @@ begin
     if_flush <= '0';
     branch_taken <= '0';
     is_branch_instruction <= '0';
-    int_early_branch <= '0';
+    
 
     case instruction(6 downto 0) is
       -- R-format
@@ -167,14 +178,16 @@ begin
         int_MemtoReg <= '0';
         int_RegWrite <= '1';
         int_ALUOp <= "10";
-
+	   int_early_branch <= '0';
+	   
       -- I-format arithmetic (including ADDI)
       when "0010011" =>
         int_ALUSrc <= '1';
         int_MemtoReg <= '0';
         int_RegWrite <= '1';
         int_ALUOp <= "10";
-
+	   int_early_branch <= '0';
+	   
       -- lw (load word)
       when "0000011" =>
         int_ALUSrc <= '1';
@@ -182,20 +195,23 @@ begin
         int_RegWrite <= '1';
         int_MemRead <= '1';
         int_ALUOp <= "00";
-
+	   int_early_branch <= '0';
+		
       -- sw (store word)
       when "0100011" =>
         int_ALUSrc <= '1';
         int_MemWrite <= '1';
         int_ALUOp <= "00";
-		
+	int_early_branch <= '0';
+	
       -- LUI (Load Upper Immediate)
       when "0110111" =>
         int_ALUSrc <= '1';
         int_MemtoReg <= '0';
         int_RegWrite <= '1';
         int_ALUOp <= "11";  -- Use ALUOp "11" for U-type instructions
-        
+        int_early_branch <= '0';
+		
       -- AUIPC (Add Upper Immediate to PC)
       when "0010111" =>
 	   
@@ -203,6 +219,7 @@ begin
         int_MemtoReg <= '0';
         int_RegWrite <= '1';
         int_ALUOp <= "11";  -- Use ALUOp "11" for U-type instructions
+		int_early_branch <= '0';
 		
       -- In the branch case (1100011), add handling for all branch types:
       when "1100011" =>
@@ -285,14 +302,14 @@ begin
         int_Branch <= '1';
         int_ALUOp <= "11";  -- Use ALUOp "11" for J-type instructions
         int_early_branch <= '1';  -- Always take the jump
-        if_flush <= '1';
-        branch_taken <= '1';
-
+        if_flush <= '1';  
+		
+		branch_taken <= '1';
       -- Default case
       when others =>
       --  null;
     end case;
-				  
+	
   end process;
 					   -- Output multiplexing based on cntrlsigmux OR ctrl_disable
 -- Modified to allow JAL/JALR instructions to pass through regardless of control signals
@@ -317,7 +334,9 @@ ALUSrc <= int_ALUSrc when (instruction(6 downto 0) = "1101111" or instruction(6 
           
 ALUOp <= int_ALUOp when (instruction(6 downto 0) = "1101111" or instruction(6 downto 0) = "1100111") else
          "00" when (ctrl_disable = '1') else int_ALUOp;
-         
+
+JMuxCntrl <= JMuxCntrl_sig;			 
+			 
 early_branch <= int_early_branch;
 
   

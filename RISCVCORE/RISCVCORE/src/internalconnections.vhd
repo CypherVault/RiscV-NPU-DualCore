@@ -114,13 +114,15 @@ signal DM_debug_read_enable : std_logic;  -- Data memory read enable
 	
 	--TO IMMEDIATEGEN
 	 signal ifid_instruction_to_immediategen : std_logic_vector(31 downto 0);
-  	 
+  	
+	--TO JALRMUX
+	signal forwardJCntrl		:std_logic_vector(1 downto 0);
 	 
 	 --TO PCIMMADDER
 	 signal regOrPCCntrl	: std_logic;
 	 signal immediategen_immediate_to_pcimmadder : std_logic_vector(31 downto 0);
 	 signal ifid_pcout_to_pcimmadder : std_logic_vector(15 downto 0);
-	 
+	 signal rs1_from_jalrMux		:std_logic_vector(31 downto 0);
 	 
 	 
 	 --TO IDEX
@@ -461,6 +463,17 @@ ifid_instruction_to_immediategen <=	ifid_instruction_to_OUT;
     );
  
 
+	--PCIMMADDER MUX
+
+	forwardingMuxJALR : entity work.forwardingMuxJALR
+		port map(
+			rs1 => registers_reg1out_to_idex,
+	        forwardedrs1exmem => exmem_result_to_datamem,
+	      	forwardedrs1memwb => writebackmux_writedata_to_registers,
+	        forwardJmuxcntrl =>	forwardJCntrl,
+	        MuxOutput => rs1_from_jalrMux
+		);
+	
 	
 	--TO PCIMMADDER
 	
@@ -470,7 +483,7 @@ ifid_pcout_to_pcimmadder <= ifid_pcout_to_OUT;
     port map (
 		regOrPC => regOrPCCntrl,
       pc        => ifid_pcout_to_pcimmadder,
-      regIn => registers_reg1out_to_idex,
+      regMuxIn => rs1_from_jalrMux,
 	  immediate => immediategen_immediate_to_pcimmadder,
       pcOut => pcplusimmadder_pcplusimm_to_pc_mux
     );			 
@@ -515,7 +528,7 @@ registers_reg2out_to_controlunit  <= registers_reg2out_to_idex;
 	  exmem_regdata	   =>  exmem_result_to_datamem,
 	  memwb_rd		   =>	memwb_rd_to_out,
 	  memwb_regdata	   =>	writebackmux_writedata_to_registers,
-	  
+	  JMuxCntrl => forwardJCntrl,
 	  regOrPC =>  regOrPCCntrl,
       MemtoReg    => controlunit_memtoreg_to_idex,
       RegWrite    => controlunit_regwrite_to_idex,
@@ -540,6 +553,7 @@ registers_reg2out_to_controlunit  <= registers_reg2out_to_idex;
 HAZARD_UNIT_INST : entity work.hazard_unit
     port map (		  
 	--early_branch_control => controlunit_earlybranch_to_pcmux,
+	clk => clock,
 	pause		=> pause,
 	idex_mem_read => idex_memread_to_exmem,
 	 ctrl_disable  => hazardunit_controldisable_to_controlunit,

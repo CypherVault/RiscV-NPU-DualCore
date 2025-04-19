@@ -20,3 +20,4 @@ i<>.\src\memwb.vhd
 i<>.\src\instruction_memory_reprogrammable.vhd
 i<>.\src\register_REQUEST.vhd
 i<>.\src\Data_Memory_REQUEST.vhd
+i<>.\src\forwardingMuxJalr.vhd

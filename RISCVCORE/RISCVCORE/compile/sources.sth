@@ -22,6 +22,7 @@ C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/hazard_unit.vh
 C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/control_unit.vhd=S
 C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/register_REQUEST.vhd=S
 C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/pcimmadder.vhd=S
+C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/forwardingMuxJalr.vhd=S
 C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/immediategen.vhd=S
 C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/ifid.vhd=S
 C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCVCORE/RISCVCORE/src/instruction_memory_PROGRAM.vhd=S

@@ -39,6 +39,7 @@ PHYSSYNTH_STATUS=none
 /idex.vhd=-1
 /forwardingmuxA.vhd=-1
 /forwardingmuxB.vhd=-1
+/forwardingMuxJalr.vhd=-1
 /forwarding_unit.vhd=-1
 /branch_and.vhd=-1
 /control_unit.vhd=-1
@@ -76,6 +77,7 @@ PHYSSYNTH_STATUS=none
 .\src\idex.vhd=VHDL Source Code
 .\src\forwardingmuxA.vhd=VHDL Source Code
 .\src\forwardingmuxB.vhd=VHDL Source Code
+.\src\forwardingMuxJalr.vhd=VHDL Source Code
 .\src\forwarding_unit.vhd=VHDL Source Code
 .\src\branch_and.vhd=VHDL Source Code
 .\src\control_unit.vhd=VHDL Source Code
@@ -135,7 +137,7 @@ name11=Waveform Files
 directory11=C:\Users\maxpro\Desktop\440Project RISCVCORE\RISCVCORE\RISCVCORE\
 extension11=asdb;awc;asdbc;asdbe
 [HierarchyViewer]
-HierarchyInformation=ricsvcore_tb|behavior|0
+HierarchyInformation=program_counter|rtl|0 regfile|behavioral|0 ricsvcore|behavior|0 ricsvcore_tb|behavior|0
 ShowHide=ShowTopLevel
 Selected=
 [LocalVhdlSets]
