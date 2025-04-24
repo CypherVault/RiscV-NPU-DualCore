@@ -98,8 +98,8 @@ signal DM_debug_read_enable : std_logic;  -- Data memory read enable
 	signal instruction_memory_instruction_to_ifid : std_logic_vector(31 downto 0);						    --instruction memory & ifid
 	signal pc_pcout_to_ifid : std_logic_vector(15 downto 0);						    --PC & ifid		 
 	signal hazardunit_ifidwrite_to_ifid : std_logic;
-	signal hazardunit_ifidflush_to_ifid : std_logic; --XXX & ifid
-	signal controlunit_ifidflush_to_ifid : std_logic;	
+	signal controlunit_ifidflush_to_ifid : std_logic; --XXX & ifid
+	--signal controlunit_ifidflush_to_ifid : std_logic;	
 	signal ifid_rs1_to_register :  std_logic_vector(4 downto 0);
 	signal ifid_rs2_to_register :  std_logic_vector(4 downto 0);
 	signal ifid_rd_to_idex :  std_logic_vector(4 downto 0);	
@@ -432,7 +432,7 @@ port map (
         pause				=> pause,
 		branch_taken		=> branchand_jumpbranchselect_to_pc_mux,
 		ifidwriteenable           => hazardunit_ifidwrite_to_ifid,  
-        ifidflush           => hazardunit_ifidflush_to_ifid,		 --UNUSED- DO NOT IMPLEMENT	  -- we may actually need this 3-15-2025
+        ifidflush           => controlunit_ifidflush_to_ifid,		 --UNUSED- DO NOT IMPLEMENT	  -- we may actually need this 3-15-2025
         pcout               => pc_pcout_to_ifid,
         instruction         => instruction_memory_instruction_to_ifid,
         ifidinstructionout  => ifid_instruction_to_OUT   ,
@@ -518,7 +518,8 @@ registers_reg2out_to_controlunit  <= registers_reg2out_to_idex;
 	  --TO CONTROL UNIT
 		 CONTROLUNIT_INST : entity work.ControlUnit
     port map (
-		reset => resetbar,
+	clk => clock,
+	reset => resetbar,
       instruction => ifid_instruction_to_OUT,
       --cntrlsigmux => hazardunit_cntrlsigmux_to_controlunit,
       rs1_data         => registers_reg1out_to_controlunit,
@@ -538,7 +539,7 @@ registers_reg2out_to_controlunit  <= registers_reg2out_to_idex;
       early_branch => controlunit_earlybranch_to_pcmux,
 	  ALUSrc      => controlunit_alusource_to_idex,
       ALUOp       => contolunit_aluop_to_idex,
-      if_flush    => hazardunit_ifidflush_to_ifid,
+      if_flush    => controlunit_ifidflush_to_ifid,
 	  exmem_memread => exmem_memread_to_datamem
 	  
     );
@@ -563,7 +564,7 @@ HAZARD_UNIT_INST : entity work.hazard_unit
       pc_write_enable => hazardunit_pcwrite_to_pc,
       ifid_write_en => hazardunit_ifidwrite_to_ifid,
 	  idexInstruction => ifid_instruction_to_OUT
-	  --ifid_flush => 	hazardunit_ifidflush_to_ifid
+	  --ifid_flush => 	controlunit_ifidflush_to_ifid
     );
 
    -- TO IDEX																  

@@ -5,7 +5,8 @@ use IEEE.NUMERIC_STD.ALL;  -- For signed/unsigned comparisons
 entity ControlUnit is
   port (
   -- Inputs
-  	reset	:	in	std_logic;
+     clk         : in  std_logic;
+  reset	:	in	std_logic;
     instruction : in std_logic_vector(31 downto 0);
     --cntrlsigmux : in std_logic;
     rs1_data : in std_logic_vector(31 downto 0);
@@ -50,37 +51,50 @@ architecture Behavioral of ControlUnit is
   signal rs1_final : std_logic_vector(31 downto 0);
   signal rs2_final : std_logic_vector(31 downto 0);
   signal int_ALUOp : std_logic_vector(1 downto 0);
-  signal branch_taken : std_logic;
+ 
   signal is_branch_instruction : std_logic;
-  signal JMuxCntrl_sig	:std_logic_vector(1 downto 0);
+  --signal JMuxCntrl_sig	:std_logic_vector(1 downto 0);
   -- Internal signals for control outputs
-  signal int_MemtoReg, int_RegWrite, int_MemRead, int_MemWrite, int_Branch, int_ALUSrc, int_early_branch,int_regOrPC : std_logic;
-  
+  signal int_MemtoReg, int_RegWrite, int_MemRead, int_MemWrite, int_Branch, int_ALUSrc : std_logic;
+ 
+   signal int_regOrPC : std_logic := '0';
+signal JMuxCntrl_sig : std_logic_vector(1 downto 0) := "00";
+
+  signal int_if_flush : std_logic := '0';  -- EXPLICIT INIT
+signal flush_pending : std_logic := '0'; 
+signal branch_taken : std_logic := '0';
+signal int_early_branch : std_logic := '0';
+
   
   -- New signal for ALU operation
   signal aluoperation : std_logic_vector(4 downto 0);
 begin	 
-	process(reset) 
-  	variable var_ALUOp : std_logic_vector(1 downto 0);
-  	begin
-		if reset = '0' then
-			--JMuxCntrl_sig <= "00";
-		    int_regOrPC <= '0';
-		    int_ALUSrc <= '0';
-		    int_MemtoReg <= '0';
-		    int_RegWrite <= '0';
-		    int_MemRead <= '0';
-		    int_MemWrite <= '0';
-		    int_Branch <= '0';
-		    var_ALUOp := "00";
-		    if_flush <= '0';
-		    branch_taken <= '0';
-		    is_branch_instruction <= '0';
-		    --int_early_branch <= '0';
-		end if;
-		int_ALUOp <= var_ALUOp;
-	end process;
-			  
+	
+	process(clk)
+begin
+  if rising_edge(clk) then
+    if reset = '0' then
+      int_if_flush <= '0';
+      flush_pending <= '0';
+    else
+      -- Clear flush after one active cycle
+      int_if_flush <= '0';
+      
+      -- Process new flush requests
+      if (branch_taken = '1' or int_early_branch = '1') then
+        int_if_flush <= '1';
+      end if;
+    end if;
+  end if;
+end process;
+
+
+
+
+
+	if_flush <= int_if_flush;
+	
+	
   -- Extract rs1 and rs2 addresses from instruction
   rs1_addr <= instruction(19 downto 15);
   rs2_addr <= instruction(24 downto 20);
@@ -118,10 +132,9 @@ begin
     int_MemWrite <= '0';
     int_Branch <= '0';
     var_ALUOp := "00";
-    if_flush <= '0';
-    branch_taken <= '0';
-    is_branch_instruction <= '0';
-    
+   	branch_taken <= '0';
+  int_early_branch <= '0';
+	
 
     case instruction(6 downto 0) is
       -- R-format
@@ -201,7 +214,7 @@ begin
             if signed(rs1_final) < signed(rs2_final) then
               branch_taken <= '1';
               int_early_branch <= '1';
-              if_flush <= '1'; 
+             -- if_flush <= '1'; 
               int_RegWrite <= '0';  -- Prevent write-back when branching
             end if;
 
@@ -231,32 +244,36 @@ begin
 
           when others =>
             null;
-        end case;
-
-      -- JAL (Jump and Link)
-      when "1101111" =>	
-	  	int_regOrPC <= '0';
-        int_ALUSrc <= '1';
-        int_MemtoReg <= '0';
-        int_RegWrite <= '1';
-        int_Branch <= '1';
-        var_ALUOp := "11";  -- Use ALUOp "11" for J-type instructions
-        int_early_branch <= '1';  -- Always take the jump
-        if_flush <= '1';
-        branch_taken <= '1';
-
-      -- JALR (Jump and Link Register)
-      when "1100111" =>
-	    int_regOrPC <= '1';
-        int_ALUSrc <= '1';
-        int_MemtoReg <= '0';
-        int_RegWrite <= '1';
-        int_Branch <= '1';
-        var_ALUOp := "11";  -- Use ALUOp "11" for J-type instructions
-        int_early_branch <= '1';  -- Always take the jump
-        if_flush <= '1';  
+        end case;	
 		
-		branch_taken <= '1';
+		   if branch_taken = '1' then
+         -- flush_pending <= '1';
+          int_early_branch <= '1';
+        end if;
+
+				
+ -- JAL
+      when "1101111" =>
+        int_regOrPC <= '0';
+        int_ALUSrc <= '1';
+        int_RegWrite <= '1';
+        int_Branch <= '1';
+        var_ALUOp := "11";
+        branch_taken <= '1';
+       -- flush_pending <= '1';
+        int_early_branch <= '1';
+
+      -- JALR
+      when "1100111" =>
+        int_regOrPC <= '1';
+        int_ALUSrc <= '1';
+        int_RegWrite <= '1';
+        int_Branch <= '1';
+        var_ALUOp := "11";
+        branch_taken <= '1';
+       -- flush_pending <= '1';
+        int_early_branch <= '1';
+		
       -- Default case
       when others =>
       --  null;
@@ -321,7 +338,10 @@ begin
   else
     ALUOp <= var_ALUOp;
   end if;
-
+  
+  
+ 
+  
   end process;		 -- LINE
   
   
@@ -355,3 +375,7 @@ early_branch <= int_early_branch;
 
   
 end architecture Behavioral;
+
+
+
+	  
