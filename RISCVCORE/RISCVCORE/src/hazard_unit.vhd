@@ -37,7 +37,7 @@ begin
     -- Instruction type detection
     is_branch <= '1' when opcode = "1100011" else '0';
     is_jal_jalr <= '1' when opcode = "1101111" or opcode = "1100111" else '0';	
-    process(idex_mem_read, idex_rd, rs1, rs2, opcode, is_branch, is_jal_jalr,clk)
+    process(instruction, idex_mem_read, idex_rd, rs1, rs2, opcode, is_branch, is_jal_jalr,clk)
     begin
         -- Default values
         cntrl_sigmux <= '0';
@@ -67,7 +67,7 @@ begin
             if is_jal_jalr = '1' then
 				
 				if idex_rd = jalrReg and clk = '0' then
-					--pause_sig <= not(pause_sig); --during jalr check does not set pause propperly
+					pause_sig <= not(pause_sig); --during jalr check does not set pause propperly
 					--ctrl_disable <= '0';
 				end if;
                 

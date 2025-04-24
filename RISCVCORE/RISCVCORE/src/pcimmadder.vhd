@@ -29,8 +29,8 @@ begin
 			temp_sum := regVar + immVar;
 		end if;
 		
-		pcOut <= std_logic_vector(temp_sum(15 downto 0) and "1111111111111100"); --sets to closest divisor of 4
 		
-        
+		pcOut <= std_logic_vector(temp_sum(15 downto 0) and "1111111111111100"); --sets to closest divisor of 4
+  
     end process;
 end architecture behavior;

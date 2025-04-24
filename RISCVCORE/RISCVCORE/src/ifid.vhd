@@ -35,34 +35,28 @@ begin
             rdout_reg <= (others => '0');
             rs1_reg <= (others => '0');
             rs2_reg <= (others => '0');
-        elsif rising_edge(clk) then
-            if (ifidflush = '1') then  -- Priority: flush overrides write
+        elsif pause = '0' then
+			if rising_edge(clk) then
+            	if (ifidflush = '1') then  -- Priority: flush overrides write
 				
-                instruction_reg <= NOP_INSTRUCTION;
-                pcout_reg <= (others => '0');
-                rdout_reg <= (others => '0');
-                rs1_reg <= (others => '0');
-                rs2_reg <= (others => '0');
-            elsif (ifidwriteenable = '1') then  -- Normal write operation
-                instruction_reg <= instruction;
-                pcout_reg <= pcout;
-                rdout_reg <= instruction(11 downto 7);
-                rs1_reg <= instruction(19 downto 15);
-                rs2_reg <= instruction(24 downto 20);
-            end if;
-        end if;
-		if pause = '0' then
+	                instruction_reg <= NOP_INSTRUCTION;
+	                pcout_reg <= (others => '0');
+	                rdout_reg <= (others => '0');
+	                rs1_reg <= (others => '0');
+	                rs2_reg <= (others => '0');
+	            elsif (ifidwriteenable = '1') then  -- Normal write operation
+	                instruction_reg <= instruction;
+	                pcout_reg <= pcout;
+	                rdout_reg <= instruction(11 downto 7);
+	                rs1_reg <= instruction(19 downto 15);
+	                rs2_reg <= instruction(24 downto 20);
+	            end if;
+        	end if;
 		    ifidinstructionout <= instruction_reg;
 		    ifidpcout <= pcout_reg;
 		    rd_out <= rdout_reg;
 		    rs1_out <= rs1_reg;
 		    rs2_out <= rs2_reg;
-		else
-			ifidinstructionout <= zero;
-		    ifidpcout <= zero(15 downto 0);
-		    rd_out <= zero(4 downto 0);
-		    rs1_out <= zero(4 downto 0);
-		    rs2_out <= zero(4 downto 0);
 		end if;
     end process;
 	

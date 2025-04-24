@@ -23,17 +23,14 @@ begin
 		
         if reset = '0' then
             pc_reg <= x"FFFC";  -- Set program counter to 0 on reset
-        elsif rising_edge(clk) then
-            if pcwrite = '1' then
-                pc_reg <= pcsource;  -- Update program counter with pcwrite value
-            else
-               	
-            end if;
-        end if;	
-	if (pause = '0') then
-    	pcout <= pc_reg;  -- Assign the internal pc_reg to the output port
-	end if;
+        elsif (pause = '0') then
+			if rising_edge(clk) then
+	            if pcwrite = '1' then
+	                pc_reg <= pcsource;  -- Update program counter with pcwrite value
+	            end if;
+	        end if;	
+		end if;
     end process;
-    
+    	pcout <= pc_reg;  -- Assign the internal pc_reg to the output port
 
 end architecture rtl;

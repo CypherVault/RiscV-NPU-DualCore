@@ -378,8 +378,8 @@ begin
         pcplus4 => pc4adder_pcplus4_to_pc_mux,
         pcplusimm => pcplusimmadder_pcplusimm_to_pc_mux,
         pcsource => pc_mux_pcsource_to_pc,
-		earlybranchcontrolunit => controlunit_earlybranch_to_pcmux
-		
+		earlybranchcontrolunit => controlunit_earlybranch_to_pcmux,
+		pause => pause
     );
 
     --TO PC 4 ADDER
@@ -572,6 +572,7 @@ HAZARD_UNIT_INST : entity work.hazard_unit
     port map (
       clk => clock,
       rstbar => resetbar,
+	  pause => pause,
      -- branch_taken		=> branchand_jumpbranchselect_to_pc_mux,
 	  pcin => ifid_pcout_to_pcimmadder,
       readdata1in => registers_reg1out_to_idex,

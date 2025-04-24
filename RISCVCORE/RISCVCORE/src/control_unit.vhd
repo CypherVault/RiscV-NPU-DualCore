@@ -49,17 +49,20 @@ architecture Behavioral of ControlUnit is
   signal rs2_addr : std_logic_vector(4 downto 0);
   signal rs1_final : std_logic_vector(31 downto 0);
   signal rs2_final : std_logic_vector(31 downto 0);
+  signal int_ALUOp : std_logic_vector(1 downto 0);
   signal branch_taken : std_logic;
   signal is_branch_instruction : std_logic;
   signal JMuxCntrl_sig	:std_logic_vector(1 downto 0);
   -- Internal signals for control outputs
   signal int_MemtoReg, int_RegWrite, int_MemRead, int_MemWrite, int_Branch, int_ALUSrc, int_early_branch,int_regOrPC : std_logic;
-  signal int_ALUOp : std_logic_vector(1 downto 0);
+  
   
   -- New signal for ALU operation
   signal aluoperation : std_logic_vector(4 downto 0);
 begin	 
-	process(reset) begin
+	process(reset) 
+  	variable var_ALUOp : std_logic_vector(1 downto 0);
+  	begin
 		if reset = '0' then
 			--JMuxCntrl_sig <= "00";
 		    int_regOrPC <= '0';
@@ -69,12 +72,13 @@ begin
 		    int_MemRead <= '0';
 		    int_MemWrite <= '0';
 		    int_Branch <= '0';
-		    int_ALUOp <= "00";
+		    var_ALUOp := "00";
 		    if_flush <= '0';
 		    branch_taken <= '0';
 		    is_branch_instruction <= '0';
 		    --int_early_branch <= '0';
 		end if;
+		int_ALUOp <= var_ALUOp;
 	end process;
 			  
   -- Extract rs1 and rs2 addresses from instruction
@@ -92,62 +96,10 @@ begin
       memwb_regdata when (rs2_addr = memwb_rd) else
       rs2_data;
 	
-  -- ALU operation decoder
-  process(int_ALUOp, instruction)
-  begin
-    -- Default ALU operation
-    aluoperation <= "00000";
-    
-    case int_ALUOp is
-      when "00" =>
-        aluoperation <= "00010";  -- ADD for load/store address calculation
-        
-      when "01" =>
-        aluoperation <= "00110";  -- SUB for branch comparison
-        
-      when "10" =>
-        -- R-type and I-type ALU operations
-        case instruction(14 downto 12) is
-          when "000" =>
-            if instruction(6 downto 0) = "0110011" and instruction(31 downto 25) = "0100000" then
-              aluoperation <= "00110";  -- SUB
-            else
-              aluoperation <= "00010";  -- ADD
-            end if;
-			--if instruction(6 downto 0) = "1100111" then
-			--	aluoperation <= 
-          when "001" => aluoperation <= "00001";  -- SLL
-          when "010" => aluoperation <= "00111";  -- SLT
-          when "011" => aluoperation <= "01000";  -- SLTU
-          when "100" => aluoperation <= "00100";  -- XOR
-          when "101" =>
-            if instruction(31 downto 25) = "0100000" then
-              aluoperation <= "01101";  -- SRA
-            else
-              aluoperation <= "00101";  -- SRL
-            end if;
-          when "110" => aluoperation <= "00011";  -- OR
-          when "111" => aluoperation <= "00000";  -- AND
-          when others => aluoperation <= "11111";  -- Invalid
-        end case;
-        
-      when "11" =>
-        -- U-type and J-type instructions
-        case instruction(6 downto 0) is
-          when "0110111" => aluoperation <= "00010";  -- LUI (ADD)
-          when "0010111" => aluoperation <= "10111";  -- AUIPC (ADD) UNIQUE operation code
-          when "1101111" => aluoperation <= "10000";  -- JAL (link operation)
-          when "1100111" => aluoperation <= "10000";  -- JALR (link operation)
-          when others => aluoperation <= "11111";
-        end case;
-        
-      when others =>
-        aluoperation <= "11111";  -- Invalid
-    end case;
-  end process;
+
 	
   process(instruction, rs1_final, rs2_final)
-  
+  variable var_ALUOp : std_logic_vector(1 downto 0);
   begin
 	  
     -- Default values
@@ -165,7 +117,7 @@ begin
     int_MemRead <= '0';
     int_MemWrite <= '0';
     int_Branch <= '0';
-    int_ALUOp <= "00";
+    var_ALUOp := "00";
     if_flush <= '0';
     branch_taken <= '0';
     is_branch_instruction <= '0';
@@ -177,7 +129,7 @@ begin
         int_ALUSrc <= '0';
         int_MemtoReg <= '0';
         int_RegWrite <= '1';
-        int_ALUOp <= "10";
+        var_ALUOp := "10";
 	   int_early_branch <= '0';
 	   
       -- I-format arithmetic (including ADDI)
@@ -185,7 +137,7 @@ begin
         int_ALUSrc <= '1';
         int_MemtoReg <= '0';
         int_RegWrite <= '1';
-        int_ALUOp <= "10";
+        var_ALUOp := "10";
 	   int_early_branch <= '0';
 	   
       -- lw (load word)
@@ -194,14 +146,14 @@ begin
         int_MemtoReg <= '1';
         int_RegWrite <= '1';
         int_MemRead <= '1';
-        int_ALUOp <= "00";
+        var_ALUOp := "00";
 	   int_early_branch <= '0';
 		
       -- sw (store word)
       when "0100011" =>
         int_ALUSrc <= '1';
         int_MemWrite <= '1';
-        int_ALUOp <= "00";
+        var_ALUOp := "00";
 	int_early_branch <= '0';
 	
       -- LUI (Load Upper Immediate)
@@ -209,7 +161,7 @@ begin
         int_ALUSrc <= '1';
         int_MemtoReg <= '0';
         int_RegWrite <= '1';
-        int_ALUOp <= "11";  -- Use ALUOp "11" for U-type instructions
+        var_ALUOp := "11";  -- Use ALUOp "11" for U-type instructions
         int_early_branch <= '0';
 		
       -- AUIPC (Add Upper Immediate to PC)
@@ -218,13 +170,13 @@ begin
         int_ALUSrc <= '1';
         int_MemtoReg <= '0';
         int_RegWrite <= '1';
-        int_ALUOp <= "11";  -- Use ALUOp "11" for U-type instructions
+        var_ALUOp := "11";  -- Use ALUOp "11" for U-type instructions
 		int_early_branch <= '0';
 		
       -- In the branch case (1100011), add handling for all branch types:
       when "1100011" =>
         int_Branch <= '1';
-        int_ALUOp <= "01";
+        var_ALUOp := "01";
         is_branch_instruction <= '1';
 
         case instruction(14 downto 12) is
@@ -288,7 +240,7 @@ begin
         int_MemtoReg <= '0';
         int_RegWrite <= '1';
         int_Branch <= '1';
-        int_ALUOp <= "11";  -- Use ALUOp "11" for J-type instructions
+        var_ALUOp := "11";  -- Use ALUOp "11" for J-type instructions
         int_early_branch <= '1';  -- Always take the jump
         if_flush <= '1';
         branch_taken <= '1';
@@ -300,7 +252,7 @@ begin
         int_MemtoReg <= '0';
         int_RegWrite <= '1';
         int_Branch <= '1';
-        int_ALUOp <= "11";  -- Use ALUOp "11" for J-type instructions
+        var_ALUOp := "11";  -- Use ALUOp "11" for J-type instructions
         int_early_branch <= '1';  -- Always take the jump
         if_flush <= '1';  
 		
@@ -309,8 +261,70 @@ begin
       when others =>
       --  null;
     end case;
-	
-  end process;
+    
+    case var_ALUOp is
+      when "00" =>
+        aluoperation <= "00010";  -- ADD for load/store address calculation
+        
+      when "01" =>
+        aluoperation <= "00110";  -- SUB for branch comparison
+        
+      when "10" =>
+        -- R-type and I-type ALU operations
+        case instruction(14 downto 12) is
+          when "000" =>
+            if instruction(6 downto 0) = "0110011" and instruction(31 downto 25) = "0100000" then
+              aluoperation <= "00110";  -- SUB
+            else
+              aluoperation <= "00010";  -- ADD
+            end if;
+			--if instruction(6 downto 0) = "1100111" then
+			--	aluoperation <= 
+          when "001" => aluoperation <= "00001";  -- SLL
+          when "010" => aluoperation <= "00111";  -- SLT
+          when "011" => aluoperation <= "01000";  -- SLTU
+          when "100" => aluoperation <= "00100";  -- XOR
+          when "101" =>
+            if instruction(31 downto 25) = "0100000" then
+              aluoperation <= "01101";  -- SRA
+            else
+              aluoperation <= "00101";  -- SRL
+            end if;
+          when "110" => aluoperation <= "00011";  -- OR
+          when "111" => aluoperation <= "00000";  -- AND
+          when others => aluoperation <= "11111";  -- Invalid
+        end case;
+        
+      when "11" =>
+        -- U-type and J-type instructions
+        case instruction(6 downto 0) is
+          when "0110111" => aluoperation <= "00010";  -- LUI (ADD)
+          when "0010111" => aluoperation <= "10111";  -- AUIPC (ADD) UNIQUE operation code
+          when "1101111" => aluoperation <= "10000";  -- JAL (link operation)
+          when "1100111" => aluoperation <= "10000";  -- JALR (link operation)
+          when others => aluoperation <= "11111";
+        end case;
+        
+      when others =>
+        aluoperation <= "11111";  -- Invalid
+    end case;
+	--
+--	 -- Direct assignment from variable to output signal
+--  ALUOp <= var_ALUOp when (instruction(6 downto 0) = "1101111" or instruction(6 downto 0) = "1100111") else	 "00" when (ctrl_disable = '1') else var_ALUOp;
+--	  
+	  
+	  -- Replace concurrent-style assignment with sequential if-else
+  if (instruction(6 downto 0) = "1101111" or instruction(6 downto 0) = "1100111") then
+    ALUOp <= var_ALUOp;
+  elsif (ctrl_disable = '1') then
+    ALUOp <= "00";
+  else
+    ALUOp <= var_ALUOp;
+  end if;
+
+  end process;		 -- LINE
+  
+  
 					   -- Output multiplexing based on cntrlsigmux OR ctrl_disable
 -- Modified to allow JAL/JALR instructions to pass through regardless of control signals
 regOrPC <= int_regOrPC;
@@ -332,8 +346,8 @@ Branch <= int_Branch when (instruction(6 downto 0) = "1101111" or instruction(6 
 ALUSrc <= int_ALUSrc when (instruction(6 downto 0) = "1101111" or instruction(6 downto 0) = "1100111") else
           '0' when (ctrl_disable = '1') else int_ALUSrc;
           
-ALUOp <= int_ALUOp when (instruction(6 downto 0) = "1101111" or instruction(6 downto 0) = "1100111") else
-         "00" when (ctrl_disable = '1') else int_ALUOp;
+--ALUOp <= var_ALUOp when (instruction(6 downto 0) = "1101111" or instruction(6 downto 0) = "1100111") else
+ --        "00" when (ctrl_disable = '1') else var_ALUOp;
 
 JMuxCntrl <= JMuxCntrl_sig;			 
 			 

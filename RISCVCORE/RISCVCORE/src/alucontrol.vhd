@@ -14,7 +14,7 @@ begin
     process(instruction, aluop)
     begin
         -- Default operation
-        aluoperation <= "11111";
+        -- aluoperation <= "11111";
 
         case aluop is
             when "00" =>

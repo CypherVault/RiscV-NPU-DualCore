@@ -6,7 +6,8 @@ entity pc_mux is
         branch : in std_logic;	 --control
         earlybranchcontrolunit : in std_logic;	 --control
         pcplus4, pcplusimm : in std_logic_vector(15 downto 0);
-        pcsource : out std_logic_vector(15 downto 0)
+        pcsource : out std_logic_vector(15 downto 0);
+		pause	: in std_logic
     );
 end pc_mux;
 
@@ -18,15 +19,15 @@ begin
 	process (earlybranchcontrolunit,pcplus4,pcplusimm)
 	begin
 	--	control <= earlybranchcontrolunit;
-	
-		if earlybranchcontrolunit = '1' then
-			muxOut <= pcplusimm;
-		else
-			muxOut <= pcplus4;
+		if pause = '0' then
+			if earlybranchcontrolunit = '1' then
+				muxOut <= pcplusimm;
+			else
+				muxOut <= pcplus4;
+			end if;		
 		end if;
-	end process;		
+	end process;	
 	pcsource <= muxOut;	
-		
 		
 		
 		

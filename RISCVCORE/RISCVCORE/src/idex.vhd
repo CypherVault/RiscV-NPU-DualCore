@@ -5,6 +5,7 @@ entity idex is
     Port (
         clk                 : in  STD_LOGIC;
         rstbar              : in  STD_LOGIC;
+		pause				: in  std_logic;
         pcin                : in  STD_LOGIC_VECTOR(15 downto 0);
         instructionin        : in  STD_LOGIC_VECTOR(31 downto 0);   
         instructionout       : out STD_LOGIC_VECTOR(31 downto 0); 
@@ -98,28 +99,50 @@ begin
             rs2_reg          <= (others => '0');
             rd_reg           <= (others => '0');
             
-        elsif rising_edge(clk) then	
-            -- Normal operation
-            pcin_reg         <= pcin;
-            readdata1_reg    <= readdata1in;
-            readdata2_reg    <= readdata2in;
-            immediate_reg    <= immediatein;
-            instruction_reg  <= instructionin;
-            
-            -- Normal control signal passing
-            MemtoReg_reg     <= MemtoRegin;
-            RegWrite_reg     <= RegWritein;
-            MemRead_reg      <= MemReadin;
-            MemWrite_reg     <= MemWritein;
-            Branch_reg       <= Branchin;
-            ALUSrc_reg       <= ALUSrcin;
-            ALUOp_reg        <= ALUOpin;
-            
-            -- Normal register address passing
-            rs1_reg          <= rs1in;
-            rs2_reg          <= rs2in;
-            rd_reg           <= rdin;
-        end if;
+        elsif rising_edge(clk) then
+			if pause = '0' then
+	            -- Normal operation
+	            pcin_reg         <= pcin;
+	            readdata1_reg    <= readdata1in;
+	            readdata2_reg    <= readdata2in;
+	            immediate_reg    <= immediatein;
+	            instruction_reg  <= instructionin;
+	            
+	            -- Normal control signal passing
+	            MemtoReg_reg     <= MemtoRegin;
+	            RegWrite_reg     <= RegWritein;
+	            MemRead_reg      <= MemReadin;
+	            MemWrite_reg     <= MemWritein;
+	            Branch_reg       <= Branchin;
+	            ALUSrc_reg       <= ALUSrcin;
+	            ALUOp_reg        <= ALUOpin;
+	            
+	            -- Normal register address passing
+	            rs1_reg          <= rs1in;
+	            rs2_reg          <= rs2in;
+	            rd_reg           <= rdin;
+			else
+				pcin_reg         <= (others => '0');
+	            readdata1_reg    <= (others => '0');
+	            readdata2_reg    <= (others => '0');
+	            immediate_reg    <= (others => '0');
+	            instruction_reg  <= (others => '0');
+	            
+	            -- Normal control signal passing
+	            MemtoReg_reg     <= '0';
+	            RegWrite_reg     <= '0';
+	            MemRead_reg      <= '0';
+	            MemWrite_reg     <= '0';
+	            Branch_reg       <= '0';
+	            ALUSrc_reg       <= '0';
+	            ALUOp_reg        <= (others => '0');
+	            
+	            -- Normal register address passing
+	            rs1_reg          <= (others => '0');
+	            rs2_reg          <= (others => '0');
+	            rd_reg           <= (others => '0');
+	    	end if;    
+		end if;
     end process;
 
     -- Continuous assignments for outputs

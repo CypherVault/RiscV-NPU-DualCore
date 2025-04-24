@@ -12,5 +12,8 @@ end entity pc4adder;
 
 architecture rtl of pc4adder is
 begin
-    pcplus4 <= std_logic_vector(unsigned(pcout) + 4);
+	process(pcout)
+	begin
+    	pcplus4 <= std_logic_vector(unsigned(pcout) + 4);
+	end process;
 end architecture rtl;

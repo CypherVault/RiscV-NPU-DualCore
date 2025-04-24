@@ -102,13 +102,14 @@ architecture behavior of RICSVCORE_tb is
 0  => x"ff010113",  -- addi sp, sp, -16
 1  => x"00112623",  -- sw ra, 12(sp)
 2  => x"00000097",  -- auipc ra, 0x0
+
 3  => x"03c080e7",  -- jalr ra, 60(ra) # 100b8 <main>	 FIRST JUMP from this 
 4  => x"00000013",  -- addi zero, zero, 0
 5  => x"00c12083",  -- lw ra, 12(sp)
 6  => x"01010113",  -- addi sp, sp, 16
 7  => x"00008067",  -- jalr zero, 0(ra)
 
--- add_to_global:
+ --add_to_global:
 8  => x"ff010113",  -- addi sp, sp, -16
 9  => x"00a12623",  -- sw a0, 12(sp)
 10 => x"000117b7",  -- lui a5, 0x11
@@ -119,7 +120,7 @@ architecture behavior of RICSVCORE_tb is
 15 => x"01010113",  -- addi sp, sp, 16
 16 => x"00008067",  -- jalr zero, 0(ra)
 
--- main:
+ --main:
 17 => x"fe010113",  -- addi sp, sp, -32				   TO THIS FIRST JUMP
 18 => x"00112e23",  -- sw ra, 28(sp)
 19 => x"00a00513",  -- addi a0, zero, 10
@@ -130,7 +131,7 @@ architecture behavior of RICSVCORE_tb is
 24 => x"00078513",  -- addi a0, a5, 0
 25 => x"01c12083",  -- lw ra, 28(sp)
 26 => x"02010113",  -- addi sp, sp, 32
-27 => x"00008067"  -- jalr zero, 0(ra)
+27 => x"00008067",  -- jalr zero, 0(ra)
 
 
 
@@ -144,7 +145,7 @@ architecture behavior of RICSVCORE_tb is
 --	4 => x"01001203"
 --
 --
-
+  others => (others => '0')
 );
 
     
