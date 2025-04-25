@@ -518,7 +518,8 @@ registers_reg2out_to_controlunit  <= registers_reg2out_to_idex;
 	  --TO CONTROL UNIT
 		 CONTROLUNIT_INST : entity work.ControlUnit
     port map (
-	clk => clock,
+	clk => clock,  
+	pause => pause,
 	reset => resetbar,
       instruction => ifid_instruction_to_OUT,
       --cntrlsigmux => hazardunit_cntrlsigmux_to_controlunit,

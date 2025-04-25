@@ -5,7 +5,8 @@ use IEEE.NUMERIC_STD.ALL;  -- For signed/unsigned comparisons
 entity ControlUnit is
   port (
   -- Inputs
-     clk         : in  std_logic;
+  clk         : in  std_logic;
+  pause : in std_logic;
   reset	:	in	std_logic;
     instruction : in std_logic_vector(31 downto 0);
     --cntrlsigmux : in std_logic;
@@ -65,29 +66,56 @@ signal flush_pending : std_logic := '0';
 signal branch_taken : std_logic := '0';
 signal int_early_branch : std_logic := '0';
 
-  
+--signal sync_pause      : std_logic_vector(1 downto 0) := "00";
+    signal was_paused      : std_logic := '0';
+	signal sync_pause      : std_logic_vector(2 downto 0) := "000";
+    signal pause_rising    : std_logic := '0';
+    signal pause_falling   : std_logic := '0';
+	
+	signal branch_prev    : std_logic := '0';
+signal early_prev     : std_logic := '0';
+	
+	
   -- New signal for ALU operation
   signal aluoperation : std_logic_vector(4 downto 0);
 begin	 
 	
-	process(clk)
+-- Proper 3-stage synchronizer (clock-sensitive only)
+    process(clk)
+    begin
+        if rising_edge(clk) then
+            sync_pause <= sync_pause(1 downto 0) & pause;
+        end if;
+    end process;
+
+    -- Edge detection for precise control
+    pause_rising  <= '1' when sync_pause(2 downto 1) = "01" else '0';
+    pause_falling <= '1' when sync_pause(2 downto 1) = "10" else '0';
+
+   -- Replace existing flush process with:
+process(clk)
 begin
   if rising_edge(clk) then
     if reset = '0' then
       int_if_flush <= '0';
-      flush_pending <= '0';
+      branch_prev <= '0';
+      early_prev <= '0';
     else
-      -- Clear flush after one active cycle
-      int_if_flush <= '0';
+      -- Track previous states for edge detection
+      branch_prev <= branch_taken;
+      early_prev <= int_early_branch;
       
-      -- Process new flush requests
-      if (branch_taken = '1' or int_early_branch = '1') then
+      -- Default flush inactive
+      int_if_flush <= '0';
+
+      -- Detect rising edges on branch signals
+      if (branch_taken = '1' and branch_prev = '0') or
+         (int_early_branch = '1' and early_prev = '0') then
         int_if_flush <= '1';
       end if;
     end if;
   end if;
 end process;
-
 
 
 
