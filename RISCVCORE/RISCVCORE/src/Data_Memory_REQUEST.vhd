@@ -25,11 +25,15 @@ end entity data_memory;
 architecture Behavioral of data_memory is
     type mem_array_4096 is array(0 to 4095) of std_logic_vector(31 downto 0);
     signal mem : mem_array_4096 := (others => (others => '0'));
-    
+    signal var_dataout	: std_logic_vector(31 downto 0);
     -- Validate 16KB range (0x00000000–0x00003FFF)
     function is_valid_address(addr: std_logic_vector) return boolean is
     begin
-        return unsigned(addr(31 downto 14)) = 0;  -- Check upper 18 bits
+		if unsigned(addr(31 downto 14)) = 0 then
+			return TRUE;
+		else
+        	return FALSE;  -- Check upper 18 bits
+		end if;
     end function;
     
     -- Direct word indexing (no division needed)
@@ -48,7 +52,8 @@ begin
             end if;
         end if;
     end process;
-
+	
+	
     -- Main memory read operation
     readdata <= mem(word_index) when (memread = '1' and is_valid_address(address)) 
                 else (others => 'Z');

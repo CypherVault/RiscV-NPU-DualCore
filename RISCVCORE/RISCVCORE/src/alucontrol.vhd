@@ -19,8 +19,11 @@ begin
         case aluop is
             when "00" =>
                 -- Load/Store operations (I-type)
-                aluoperation <= "00010";  -- ADD for address calculation
-
+				if(instruction(14 downto 12) = "010" and instruction(6 downto 0) = "0100011") then
+					aluoperation <= "10001";	--store word
+				else
+					aluoperation <= "00010";  -- load word		
+					end if;
               when "01" =>  -- Branch and Jump operations
                 case instruction(6 downto 0) is
                     when "1101111" => aluoperation <= "10000";  -- JAL

@@ -205,6 +205,7 @@ signal DM_debug_read_enable : std_logic;  -- Data memory read enable
   signal idex_rs1_to_forwardingunit : std_logic_vector(4 downto 0);
   signal idex_rs2_to_forwardingunit : std_logic_vector(4 downto 0);
   signal idex_rd_to_exmem : std_logic_vector(4 downto 0);
+  
 
   
 --------------------------------------------------------------------------END
@@ -230,7 +231,7 @@ signal DM_debug_read_enable : std_logic;  -- Data memory read enable
 --	signal alu_zeroresult_to_exmem : std_logic;
 	
 	signal idex_pcout_to_alu : std_logic_vector(15 downto 0);
-
+	signal alu_addrout_to_exmem : std_logic_vector(31 downto 0);
 	
 	--TO FORWARDINGMUXA
 	
@@ -308,6 +309,7 @@ signal DM_debug_read_enable : std_logic;  -- Data memory read enable
 	
 	
 	--signal CLK_TO_DATA_MEMORY : std_logic;
+	
   signal MEMWRITE_TO_DATA_MEMORY : std_logic;
   signal MEMREAD_TO_DATA_MEMORY : std_logic;
   signal ADDRESS_TO_DATA_MEMORY : std_logic_vector(31 downto 0);
@@ -616,7 +618,7 @@ HAZARD_UNIT_INST : entity work.hazard_unit
       rdin => ifid_rd_to_idex,
       rs1out => idex_rs1_to_forwardingunit,
       rs2out => idex_rs2_to_forwardingunit,
-      rdout => idex_rd_to_exmem
+      rdout => idex_rd_to_exmem	 
     );
    
    	  
@@ -649,7 +651,9 @@ HAZARD_UNIT_INST : entity work.hazard_unit
       operation => alucontrol_aluop_to_alu,
       ALU_output => alu_result_to_exmem,
       zero_flag => alu_zeroresult_to_exmem,
-	  JALorBRANCH => alu_JALorBRANCH_to_exmem
+	  JALorBRANCH => alu_JALorBRANCH_to_exmem,
+	  rdin => idex_rd_to_exmem,
+	  data_mem_addr_out => alu_addrout_to_exmem
     );
 		
 	
@@ -721,9 +725,10 @@ alusrcmuxb_source2_to_exmem <= alusrcmuxB_rs2_to_alu;
       Branch => exmem_branch_to_branchand,
       
       -- Register address
-      rdin => idex_rd_to_exmem,
-      rdout => exmem_rd_to_memwb
-	  
+      rdin => idex_rd_to_exmem,	--change
+      rdout => exmem_rd_to_memwb,
+	  dataMemRdIn => alu_addrout_to_exmem,
+	  dataMemRdOut => ADDRESS_TO_DATA_MEMORY
 	  
     );
 
@@ -768,7 +773,7 @@ port map (
     debug_data => dm_data_out,  -- Connects to shared data bus
     memwrite => exmem_memwrite_to_datamem,
     memread => exmem_memread_to_datamem,
-    address => exmem_result_to_datamem,
+    address => ADDRESS_TO_DATA_MEMORY,
     writedata => exmem_src2_to_datamem,
     readdata => datamem_readdata_to_memwb
 );

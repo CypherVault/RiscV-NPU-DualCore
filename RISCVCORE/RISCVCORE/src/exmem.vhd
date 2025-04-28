@@ -31,6 +31,8 @@ entity exmem is
         MemWrite : out std_logic;
         Branch : out std_logic;	   
 		
+		dataMemRdOut	: out std_logic_vector(31 downto 0);
+        dataMemRdIn 	: in std_logic_vector(31 downto 0);
         rdin         : in  STD_LOGIC_VECTOR(4 downto 0);
         rdout         : out STD_LOGIC_VECTOR(4 downto 0)
     );
@@ -52,6 +54,7 @@ architecture Behavioral of exmem is
     signal JALorBRANCH_reg : std_logic;  -- New signal for JAL or Branch
 			
     signal rd_reg       : STD_LOGIC_VECTOR(4 downto 0);
+	signal addrReg		: std_logic_vector(31 downto 0);
     
     -- New signal to track previous branch condition
     signal current_branch_condition : STD_LOGIC;
@@ -109,6 +112,9 @@ begin
                 JALorBRANCH_reg <= JALorBRANCH;  -- Store new input
 			
                 rd_reg <= rdin;
+				addrReg <= dataMemRdIn; 
+				
+				
             end if;
         end if;
     end process;
@@ -127,5 +133,6 @@ begin
     Branch 	 <= Branch_reg;
 	
     rdout	 <= rd_reg;
+	dataMemRdOut <= addrReg;
 	
 end Behavioral;
