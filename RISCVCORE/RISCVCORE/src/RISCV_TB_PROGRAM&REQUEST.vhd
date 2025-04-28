@@ -31,7 +31,10 @@ architecture behavior of RICSVCORE_tb is
     type instruction_array is array (0 to 32) of std_logic_vector(31 downto 0);
 	
 	constant INSTRUCTION_BUFFER : instruction_array := (	 					--how many insturctions 
-	                  
+	
+	
+	
+	--1 => x"000117b7",  -- lui a5, 0x11
 	
 	   --Memory-- initialization for RISC-V Program (10 + 5)
 --     ------    --           
@@ -134,52 +137,7 @@ architecture behavior of RICSVCORE_tb is
 27 => x"00008067",  -- jalr zero, 0(ra)
 ----
 --	   
-
-	  
-
-
---ss_start:          
---0  => x"ff010113",  -- addi sp, sp, -16
---1  => x"00112623",  -- sw ra, 12(sp)
---2  => x"00000097",  -- auipc ra, 0x0
---3  => x"048080e7",  -- jalr ra, 72(ra) -- jump to main (instruction 18)
---4  => x"00000013",  -- addi zero, zero, 0
---5  => x"00c12083",  -- lw ra, 12(sp)
---6  => x"01010113",  -- addi sp, sp, 16
---7  => x"00008067",  -- jalr zero, 0(ra)
---
-----add_to_global:
---8  => x"ff010113",  -- addi sp, sp, -16
---9  => x"00112423",  -- sw ra, 8(sp)     -- Save return address
---10 => x"00a12623",  -- sw a0, 12(sp)
---11 => x"00000793",  -- addi a5, x0, 0
---12 => x"80078793",  -- addi a5, a5, 2048
---13 => x"0b47a703",  -- lw a4, 180(a5)
---14 => x"00c12783",  -- lw a5, 12(sp)
---15 => x"00f707b3",  -- add a5, a4, a5
---16 => x"00078513",  -- addi a0, a5, 0
---17 => x"00812083",  -- lw ra, 8(sp)     -- Restore return address
---18 => x"01010113",  -- addi sp, sp, 16
---19 => x"00008067",  -- jalr zero, 0(ra)
---
-----main:
---20 => x"fe010113",  -- addi sp, sp, -32
---21 => x"00112e23",  -- sw ra, 28(sp)
---22 => x"00a00513",  -- addi a0, zero, 10
---23 => x"00000097",  -- auipc ra, 0x0
---24 => x"fc4080e7",  -- jalr ra, -60(ra) -- jump to add_to_global (instruction 8)
---25 => x"00a12623",  -- sw a0, 12(sp)
---26 => x"00c12783",  -- lw a5, 12(sp)
---27 => x"00078513",  -- addi a0, a5, 0
---28 => x"01c12083",  -- lw ra, 28(sp)
---29 => x"02010113",  -- addi sp, sp, 32
---30 => x"00008067",  -- jalr zero, 0(ra)
-
-
-
-
---
-            --
+					   
 --   
 --        0 => x"02a00093",
 --        1 => x"00102823",

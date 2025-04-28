@@ -33,8 +33,8 @@ begin
         pcadderimm <= std_logic_vector(resize(signed(instruction(31) & instruction(7) & instruction(30 downto 25) & instruction(11 downto 8) & '0'), 32));
       -- U-type instructions
       when "0110111" | "0010111" =>
-        immediate <= instruction(31 downto 12) & x"000";
-      	 pcadderimm <= instruction(31 downto 12) & x"000";
+        immediate <= x"000" & instruction(31 downto 12) ;
+      	 pcadderimm <= x"000" & instruction(31 downto 12) ;
       -- J-type instructions
       when "1101111" =>
         immediate <= std_logic_vector(resize(signed(instruction(31) & instruction(19 downto 12) & instruction(20) & instruction(30 downto 21) & '0'), 32));

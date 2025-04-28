@@ -1,7 +1,5 @@
 #include <stdio.h>
 
-int global_var = 42;  // Global variable
-
 int add_to_global(int x);
 
 void _start() {
@@ -9,7 +7,7 @@ void _start() {
 }
 
 int add_to_global(int x) {
-    return global_var + x;  // Function that adds input to global_var
+    return 42 + x;  // Function that adds input to global_var
 }
 
 int main() {

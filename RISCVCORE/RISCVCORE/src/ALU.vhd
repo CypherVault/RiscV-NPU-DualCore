@@ -56,7 +56,8 @@ begin
 			
 			--auipc value
 			std_logic_vector(auipc(31 downto 0)) when operation = "10111" else
-        
+        	-- lui value
+			input_1 when operation = "10011" else
 				
         -- Jump and Link operations (new)
         jalr_return when operation = "10000" else  -- JAL/JALR return address
