@@ -50,7 +50,10 @@ begin
 		pause_sig <= '0';
 		
         -- Load-Use Hazard: Stall pipeline
-        if (idex_mem_read = '1' and (idex_rd = rs1 or idex_rd = rs2)) then
+        if (idex_mem_read = '1' and (idex_rd = rs1 or idex_rd = rs2)) then	
+			
+			--if () then
+			
             cntrl_sigmux <= '1';
             pc_write_enable <= '0';
             ctrl_disable <= '1';

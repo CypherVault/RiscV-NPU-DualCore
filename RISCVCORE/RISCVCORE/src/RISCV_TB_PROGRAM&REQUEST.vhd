@@ -37,7 +37,7 @@ architecture behavior of RICSVCORE_tb is
 	--1 => x"000117b7",  -- lui a5, 0x11
 	
 	   --Memory-- initialization for RISC-V Program (10 + 5)
---     ------    --           
+--  --   ------    --           
 --0  => x"00000000",  -- NOP or unused
 --1  => x"ff010113",  -- addi sp, sp, -16
 --2  => x"00500793",  -- addi a5, zero, 5
@@ -52,7 +52,7 @@ architecture behavior of RICSVCORE_tb is
 --11 => x"00078513",  -- addi a0, a5, 0 (mv a0, a5)
 --12 => x"01010113",  -- addi sp, sp, 16
 --13 => x"00000067",   -- ret (return from the program)   
-------                        
+--------                        
      --   --    --     
 --0 => x"00000000",  -- Unused position 0
 --1 => x"02f00513",  -- addi x10, x0, 47    # Load dividend into x10
@@ -100,43 +100,142 @@ architecture behavior of RICSVCORE_tb is
 
 
 
-      ----     --     --
-------   ---- -- _start:          
+      ----     --     --           --
+--------   ---- -- _start:           THIS ONE USES GLOBALS WHICH WE DO NOT SUPPORT
+--0  => x"ff010113",  -- addi sp, sp, -16
+--1  => x"00112623",  -- sw ra, 12(sp)
+--2  => x"00000097",  -- auipc ra, 0x0
+--
+--3  => x"03c080e7",  -- jalr ra, 60(ra) # 100b8 <main>	 FIRST JUMP from this 
+--4  => x"00000013",  -- addi zero, zero, 0
+--5  => x"00c12083",  -- lw ra, 12(sp)
+--6  => x"01010113",  -- addi sp, sp, 16
+--7  => x"00008067",  -- jalr zero, 0(ra)
+--
+-- --add_to_global:
+--8  => x"ff010113",  -- addi sp, sp, -16
+--9  => x"00a12623",  -- sw a0, 12(sp)
+--10 => x"000117b7",  -- lui a5, 0x11
+--11 => x"0e47a703",  -- lw a4, 228(a5) # 110e4 <global_var>
+--12 => x"00c12783",  -- lw a5, 12(sp)
+--13 => x"00f707b3",  -- add a5, a4, a5
+--14 => x"00078513",  -- addi a0, a5, 0
+--15 => x"01010113",  -- addi sp, sp, 16
+--16 => x"00008067",  -- jalr zero, 0(ra)
+--
+-- --main:
+--17 => x"fe010113",  -- addi sp, sp, -32				   TO THIS FIRST JUMP
+--18 => x"00112e23",  -- sw ra, 28(sp)
+--19 => x"00a00513",  -- addi a0, zero, 10
+--20 => x"00000097",  -- auipc ra, 0x0
+--21 => x"fd0080e7",  -- jalr ra, -48(ra) # 10094 <add_to_global>
+--22 => x"00a12623",  -- sw a0, 12(sp)
+--23 => x"00c12783",  -- lw a5, 12(sp)
+--24 => x"00078513",  -- addi a0, a5, 0
+--25 => x"01c12083",  -- lw ra, 28(sp)
+--26 => x"02010113",  -- addi sp, sp, 32
+--27 => x"00008067",  -- jalr zero, 0(ra)
+------
+--	   	 
+      --        --
+------start        
+--0  => x"ff010113",  -- addi sp, sp, -16		  --disceret non global variables 
+--1  => x"00112623",  -- sw ra, 12(sp)
+--2  => x"00000097",  -- auipc ra, 0x0
+--3  => x"034080e7",  -- jalr ra, 52(ra) # 10090 <main>
+--4  => x"00000013",  -- addi zero, zero, 0
+--5  => x"00c12083",  -- lw ra, 12(sp)
+--6  => x"01010113",  -- addi sp, sp, 16
+--7  => x"00008067",  -- jalr zero, 0(ra)
+---- add_to_global:
+--8  => x"ff010113",  -- addi sp, sp, -16
+--9  => x"00a12623",  -- sw a0, 12(sp)
+--10 => x"00c12783",  -- lw a5, 12(sp)
+--11 => x"02a78793",  -- addi a5, a5, 42
+--12 => x"00078513",  -- addi a0, a5, 0
+--13 => x"01010113",  -- addi sp, sp, 16
+--14 => x"00008067",  -- jalr zero, 0(ra)
+---- main:
+--15 => x"fe010113",  -- addi sp, sp, -32
+--16 => x"00112e23",  -- sw ra, 28(sp)
+--17 => x"00a00513",  -- addi a0, zero, 10
+--18 => x"00000097",  -- auipc ra, 0x0
+--19 => x"fd8080e7",  -- jalr ra, -40(ra) # 10074 <add_to_global>
+--20 => x"00a12623",  -- sw a0, 12(sp)
+--21 => x"00c12783",  -- lw a5, 12(sp)
+--22 => x"00078513",  -- addi a0, a5, 0
+--23 => x"01c12083",  -- lw ra, 28(sp)
+--24 => x"02010113",  -- addi sp, sp, 32
+--25 => x"00008067",  -- jalr zero, 0(ra)
+--
+
+           --
+-- --_start:													 -- basic 3+5 program		WORKS perftec
+--0  => x"ff010113",  -- addi sp, sp, -16
+--1  => x"00112623",  -- sw ra, 12(sp)
+--2  => x"00000097",  -- auipc ra, 0x0
+--3  => x"018080e7",  -- jalr ra, 24(ra) # 10074 <main>
+--4  => x"00000013",  -- addi zero, zero, 0
+--5  => x"00c12083",  -- lw ra, 12(sp)
+--6  => x"01010113",  -- addi sp, sp, 16
+--7  => x"00008067",  -- jalr zero, 0(ra)
+--
+----main:
+--8  => x"ff010113",  -- addi sp, sp, -16
+--9  => x"00500793",  -- addi a5, zero, 5
+--10 => x"00f12623",  -- sw a5, 12(sp)
+--11 => x"00300793",  -- addi a5, zero, 3
+--12 => x"00f12423",  -- sw a5, 8(sp)
+--13 => x"00012223",  -- sw zero, 4(sp)
+--14 => x"00c12703",  -- lw a4, 12(sp)
+--15 => x"00812783",  -- lw a5, 8(sp)
+--16 => x"00f707b3",  -- add a5, a4, a5
+--17 => x"00f12223",  -- sw a5, 4(sp)
+--18 => x"00412783",  -- lw a5, 4(sp)
+--19 => x"00078513",  -- addi a0, a5, 0
+--20 => x"01010113",  -- addi sp, sp, 16
+--21 => x"00008067",  -- jalr zero, 0(ra)
+--
+
+
+
+	--_start:								  --3+5 	 if >7 -2 equals 6 at end 
 0  => x"ff010113",  -- addi sp, sp, -16
 1  => x"00112623",  -- sw ra, 12(sp)
 2  => x"00000097",  -- auipc ra, 0x0
-
-3  => x"03c080e7",  -- jalr ra, 60(ra) # 100b8 <main>	 FIRST JUMP from this 
+3  => x"018080e7",  -- jalr ra, 24(ra) # 10074 <main>
 4  => x"00000013",  -- addi zero, zero, 0
 5  => x"00c12083",  -- lw ra, 12(sp)
 6  => x"01010113",  -- addi sp, sp, 16
 7  => x"00008067",  -- jalr zero, 0(ra)
 
- --add_to_global:
+--main:
 8  => x"ff010113",  -- addi sp, sp, -16
-9  => x"00a12623",  -- sw a0, 12(sp)
-10 => x"000117b7",  -- lui a5, 0x11
-11 => x"0e47a703",  -- lw a4, 228(a5) # 110e4 <global_var>
-12 => x"00c12783",  -- lw a5, 12(sp)
-13 => x"00f707b3",  -- add a5, a4, a5
-14 => x"00078513",  -- addi a0, a5, 0
-15 => x"01010113",  -- addi sp, sp, 16
-16 => x"00008067",  -- jalr zero, 0(ra)
+9  => x"00500793",  -- addi a5, zero, 5
+10 => x"00f12423",  -- sw a5, 8(sp)
+11 => x"00300793",  -- addi a5, zero, 3
+12 => x"00f12223",  -- sw a5, 4(sp)
+13 => x"00012623",  -- sw zero, 12(sp)
+14 => x"00812703",  -- lw a4, 8(sp)
+15 => x"00412783",  -- lw a5, 4(sp)
+16 => x"00f707b3",  -- add a5, a4, a5
+17 => x"00f12623",  -- sw a5, 12(sp)
+18 => x"00c12703",  -- lw a4, 12(sp)
+19 => x"00700793",  -- addi a5, zero, 7
+20 => x"00e7da63",  -- bge a5, a4, 100b8 <main+0x44>
+21 => x"00c12783",  -- lw a5, 12(sp)
+22 => x"ffe78793",  -- addi a5, a5, -2
+23 => x"00f12623",  -- sw a5, 12(sp)
+24 => x"0100006f",  -- jal zero, 100c4 <main+0x50>
+25 => x"00c12783",  -- lw a5, 12(sp)
+26 => x"00278793",  -- addi a5, a5, 2
+27 => x"00f12623",  -- sw a5, 12(sp)
+28 => x"00c12783",  -- lw a5, 12(sp)
+29 => x"00078513",  -- addi a0, a5, 0
+30 => x"01010113",  -- addi sp, sp, 16
+31 => x"00008067",  -- jalr zero, 0(ra)
 
- --main:
-17 => x"fe010113",  -- addi sp, sp, -32				   TO THIS FIRST JUMP
-18 => x"00112e23",  -- sw ra, 28(sp)
-19 => x"00a00513",  -- addi a0, zero, 10
-20 => x"00000097",  -- auipc ra, 0x0
-21 => x"fd0080e7",  -- jalr ra, -48(ra) # 10094 <add_to_global>
-22 => x"00a12623",  -- sw a0, 12(sp)
-23 => x"00c12783",  -- lw a5, 12(sp)
-24 => x"00078513",  -- addi a0, a5, 0
-25 => x"01c12083",  -- lw ra, 28(sp)
-26 => x"02010113",  -- addi sp, sp, 32
-27 => x"00008067",  -- jalr zero, 0(ra)
-----
---	   
+
 					   
 --   
 --        0 => x"02a00093",

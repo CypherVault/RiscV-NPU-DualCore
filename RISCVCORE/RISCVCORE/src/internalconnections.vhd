@@ -231,7 +231,9 @@ signal DM_debug_read_enable : std_logic;  -- Data memory read enable
 --	signal alu_zeroresult_to_exmem : std_logic;
 	
 	signal idex_pcout_to_alu : std_logic_vector(15 downto 0);
-	signal alu_addrout_to_exmem : std_logic_vector(31 downto 0);
+	signal alu_addrout_to_exmem : std_logic_vector(31 downto 0); 
+	signal forwardingunit_alu_direct_access_to_alu :  std_logic_vector(1 downto 0);
+	--signal DataMem_datamem_data_access_to_alu : std_logic_vector(31 downto 0);
 	
 	--TO FORWARDINGMUXA
 	
@@ -654,7 +656,9 @@ HAZARD_UNIT_INST : entity work.hazard_unit
 	  JALorBRANCH => alu_JALorBRANCH_to_exmem,
 	  rdin => idex_rd_to_exmem,
 	  data_mem_addr_out => alu_addrout_to_exmem,
-	  xs1 => forwardingmuxB_rs2_to_alusrcmuxB
+	  xs1 => forwardingmuxB_rs2_to_alusrcmuxB,
+	  alu_direct_access=>forwardingunit_alu_direct_access_to_alu,
+	  datamem_data_access => datamem_readdata_to_memwb
     );
 		
 	
@@ -753,7 +757,8 @@ alusrcmuxb_source2_to_exmem <= alusrcmuxB_rs2_to_alu;
       forwardAmuxcntrl => forwardingunit_Amuxcntrl_to_forrwardingmuxA,
       forwardBmuxcntrl => forwardingunit_Bmuxcntrl_to_forrwardingmuxB,
 	  
-	  exmem_memread => exmem_memread_to_datamem
+	  exmem_memread => exmem_memread_to_datamem,
+	  alu_direct_access => forwardingunit_alu_direct_access_to_alu
     );
 						  
 

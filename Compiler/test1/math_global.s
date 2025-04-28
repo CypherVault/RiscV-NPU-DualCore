@@ -5,6 +5,14 @@
 	.attribute unaligned_access, 0
 	.attribute stack_align, 16
 	.text
+	.globl	global_var
+	.section	.sdata,"aw"
+	.align	2
+	.type	global_var, @object
+	.size	global_var, 4
+global_var:
+	.word	-559038737
+	.text
 	.align	2
 	.globl	_start
 	.type	_start, @function
@@ -23,8 +31,10 @@ _start:
 add_to_global:
 	addi	sp,sp,-16
 	sw	a0,12(sp)
+	lui	a5,%hi(global_var)
+	lw	a4,%lo(global_var)(a5)
 	lw	a5,12(sp)
-	addi	a5,a5,42
+	add	a5,a4,a5
 	mv	a0,a5
 	addi	sp,sp,16
 	jr	ra

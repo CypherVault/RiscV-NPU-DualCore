@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+volatile int global_var = 0xDEADBEEF;  // Global variable
+
 int add_to_global(int x);
 
 void _start() {
@@ -7,7 +9,7 @@ void _start() {
 }
 
 int add_to_global(int x) {
-    return 42 + x;  // Function that adds input to global_var
+    return global_var + x;  // Function that adds input to global_var
 }
 
 int main() {

@@ -17,3 +17,11 @@
 04:07:32 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\Chris\Desktop\RiscV-NPU-DualCore\Z7-RV-NPU\zynq_7000_tutorial_3_zynq7000_build_app\_ide\bitstream' in project 'zynq_7000_tutorial_3_zynq7000_build_app'.
 04:07:32 INFO  : The file 'C:\Users\Chris\Desktop\RiscV-NPU-DualCore\Z7-RV-NPU\zynq_7000_tutorial_3_zynq7000_build_app\_ide\psinit\ps7_init.tcl' stored in project is removed.
 04:07:39 INFO  : The updated ps init files are copied from platform to folder 'C:\Users\Chris\Desktop\RiscV-NPU-DualCore\Z7-RV-NPU\zynq_7000_tutorial_3_zynq7000_build_app\_ide\psinit' in project 'zynq_7000_tutorial_3_zynq7000_build_app'.
+11:29:01 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\Chris\Desktop\RiscV-NPU-DualCore\Z7-RV-NPU\temp_xsdb_launch_script.tcl
+11:29:05 INFO  : XSCT server has started successfully.
+11:29:05 INFO  : Successfully done setting XSCT server connection channel  
+11:29:05 INFO  : plnx-install-location is set to ''
+11:29:05 INFO  : Successfully done setting workspace for the tool. 
+11:29:13 INFO  : Platform repository initialization has completed.
+11:29:14 INFO  : Registering command handlers for Vitis TCF services
+11:29:22 INFO  : Successfully done query RDI_DATADIR 
