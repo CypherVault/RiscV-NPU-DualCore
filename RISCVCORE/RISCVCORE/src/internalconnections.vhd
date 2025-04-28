@@ -653,7 +653,8 @@ HAZARD_UNIT_INST : entity work.hazard_unit
       zero_flag => alu_zeroresult_to_exmem,
 	  JALorBRANCH => alu_JALorBRANCH_to_exmem,
 	  rdin => idex_rd_to_exmem,
-	  data_mem_addr_out => alu_addrout_to_exmem
+	  data_mem_addr_out => alu_addrout_to_exmem,
+	  xs1 => forwardingmuxB_rs2_to_alusrcmuxB
     );
 		
 	

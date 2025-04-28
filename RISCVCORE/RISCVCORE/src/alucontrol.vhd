@@ -22,7 +22,7 @@ begin
 				if(instruction(14 downto 12) = "010" and instruction(6 downto 0) = "0100011") then
 					aluoperation <= "10001";	--store word
 				else
-					aluoperation <= "00010";  -- load word		
+					aluoperation <= "10010";  -- load word		
 					end if;
               when "01" =>  -- Branch and Jump operations
                 case instruction(6 downto 0) is

@@ -51,7 +51,8 @@ begin
                 pcout_reg <= pcout;
                 rs1_reg <= instruction(19 downto 15);
                 rs2_reg <= instruction(24 downto 20);
-                rd_reg <= instruction(11 downto 7);
+				rd_reg <= instruction(11 downto 7);
+
             end if;
         end if;
     end process;

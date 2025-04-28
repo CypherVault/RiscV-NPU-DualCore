@@ -8,6 +8,7 @@ entity ALU is
         pc : in std_logic_vector(15 downto 0);  -- Added PC input
         operation : in std_logic_vector(4 downto 0);  -- Increased to 5 bits
 		rdin : in std_logic_vector(4 downto 0);  -- Increased to 5 bits
+		xs1 : in std_logic_vector(31 downto 0);			-- special sw use of rs2 value 
 		data_mem_addr_out	: out std_logic_vector(31 downto 0);
         ALU_output : out std_logic_vector(31 downto 0);
         zero_flag : out std_logic;
@@ -51,7 +52,7 @@ begin
         mul_result(31 downto 0) when operation = "01000" else
         std_logic_vector(shift_right(unsigned(input_0), to_integer(unsigned(input_1(4 downto 0))))) when operation = "01001" else
         std_logic_vector(shift_right(signed(input_0), to_integer(unsigned(input_1(4 downto 0))))) when operation = "01101" else
-		std_logic_vector(input_0) when operation = "10001" else	
+		std_logic_vector(xs1) when operation = "10001" else	
 			
 			--auipc value
 			std_logic_vector(auipc(31 downto 0)) when operation = "10111" else
@@ -84,7 +85,7 @@ begin
         '0';
 		
 	var_addr_out <= 
-		std_logic_vector(signed(input_1)+signed(rdin)) when operation = "10001" else
+		std_logic_vector(signed(input_1)+signed(input_0)) when operation = "10001" else
 		std_logic_vector(signed(input_0) + signed(input_1)) when operation = "10010" else
 			(others => '0');
 
