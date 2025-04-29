@@ -46,7 +46,7 @@
 -- 
 -- DO NOT MODIFY THIS FILE.
 
--- IP VLNV: xilinx.com:user:instructionmemIP:1.0
+-- IP VLNV: xilinx.com:user:instructionmemIP:1.1
 -- IP Revision: 1
 
 LIBRARY ieee;

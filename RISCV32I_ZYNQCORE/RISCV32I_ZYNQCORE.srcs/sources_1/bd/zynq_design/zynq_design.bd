@@ -293,7 +293,7 @@
         }
       },
       "instructionmemIP_0": {
-        "vlnv": "xilinx.com:user:instructionmemIP:1.0",
+        "vlnv": "xilinx.com:user:instructionmemIP:1.1",
         "ip_revision": "1",
         "xci_name": "zynq_design_instructionmemIP_0_0",
         "xci_path": "ip\\zynq_design_instructionmemIP_0_0\\zynq_design_instructionmemIP_0_0.xci",
@@ -1854,9 +1854,9 @@
           "axi_smc/aclk",
           "RISCVCOREZYNQ_0/clock",
           "datamemIP_0/s02_axi_aclk",
-          "instructionmemIP_0/s00_axi_aclk",
           "controlsubsystemIP_0/s05_axi_aclk",
-          "registerIP_0/s01_axi_aclk"
+          "registerIP_0/s01_axi_aclk",
+          "instructionmemIP_0/s00_axi_aclk"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
@@ -1882,9 +1882,9 @@
           "rst_ps7_0_50M/peripheral_aresetn",
           "axi_smc/aresetn",
           "datamemIP_0/s02_axi_aresetn",
-          "instructionmemIP_0/s00_axi_aresetn",
           "controlsubsystemIP_0/s05_axi_aresetn",
-          "registerIP_0/s01_axi_aresetn"
+          "registerIP_0/s01_axi_aresetn",
+          "instructionmemIP_0/s00_axi_aresetn"
         ]
       }
     },

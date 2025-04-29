@@ -3,7 +3,7 @@
   "ip_inst": {
     "xci_name": "zynq_design_instructionmemIP_0_0",
     "cell_name": "instructionmemIP_0",
-    "component_reference": "xilinx.com:user:instructionmemIP:1.0",
+    "component_reference": "xilinx.com:user:instructionmemIP:1.1",
     "ip_revision": "1",
     "gen_directory": "../../../../../../RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ip/zynq_design_instructionmemIP_0_0",
     "parameters": {

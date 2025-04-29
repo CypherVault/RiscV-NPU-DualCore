@@ -57,7 +57,6 @@ if {$::dispatch::connected} {
 
 OPTRACE "zynq_design_RISCVCOREZYNQ_0_0_synth_1" START { ROLLUP_AUTO }
 set_param bd.open.in_stealth_mode 1
-set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config  -id {17-179}  -suppress 
 set_msg_config  -id {17-179}  -suppress 
 set_msg_config  -id {17-179}  -suppress 
@@ -83,6 +82,9 @@ set_property target_language VHDL [current_project]
 set_property board_part_repo_paths {C:/Users/Chris/AppData/Roaming/Xilinx/Vivado/2024.2/xhub/board_store/xilinx_board_store} [current_project]
 set_property board_part avnet.com:minized:part0:1.3 [current_project]
 set_property ip_repo_paths {
+  c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/myip_1_0
+  c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0
+  c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0
   c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/bramIP_1_0
   c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/controlsubsystemIP_1_0
   c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/instructionmemIP_1_0
@@ -112,6 +114,7 @@ read_vhdl -library xil_defaultlib {
   C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/branch_and.vhd
   C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/control_unit.vhd
   C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/exmem.vhd
+  C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/new/forwardingMuxJALR.vhd
   C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/forwarding_unit.vhd
   C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/forwardingmuxa.vhd
   C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/forwardingmuxb.vhd

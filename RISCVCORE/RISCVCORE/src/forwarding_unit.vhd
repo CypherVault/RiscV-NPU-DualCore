@@ -12,8 +12,8 @@ entity ForwardingUnit is
         idexrs1       : in STD_LOGIC_VECTOR(4 downto 0);
         idexrs2       : in STD_LOGIC_VECTOR(4 downto 0);
         forwardAmuxcntrl : out STD_LOGIC_VECTOR(1 downto 0);
-        forwardBmuxcntrl : out STD_LOGIC_VECTOR(1 downto 0);
-		alu_direct_access : out STD_LOGIC_VECTOR(1 downto 0)
+        forwardBmuxcntrl : out STD_LOGIC_VECTOR(1 downto 0)
+		
     );
 end ForwardingUnit;
 
@@ -32,8 +32,7 @@ begin
             forwardAmuxcntrl <= "10";  -- EX/MEM data valid (non-load)	
 		elsif (exmemregwritecntrl = '1' and exmemrd /= "00000" and 
             exmemrd = idexrs1 and exmem_memread = '1') then  -- Critical check
-            -- tell ALU to use direct output from data mem as the value was read immediatly by our hardware.
-			alu_direct_access <= "01"; -- direct access for RS1
+            
 			
         elsif (memwbregwritecntrl = '1' and memwbrd /= "00000" and 
                memwbrd = idexrs1) then
@@ -44,8 +43,7 @@ begin
             exmemrd = idexrs2 and exmem_memread = '0') then  -- Critical check
             forwardBmuxcntrl <= "10";
         elsif (memwbregwritecntrl = '1' and memwbrd /= "00000" and memwbrd = idexrs2 and exmem_memread = '1') then  -- Critical check
-        		 -- tell ALU to use direct output from data mem as the value was read immediatly by our hardware.
-			alu_direct_access <= "10"; -- direct access for RS1
+        	
 		elsif (memwbregwritecntrl = '1' and memwbrd /= "00000" and 
                memwbrd = idexrs1) then
             forwardAmuxcntrl <= "01";  -- MEM/WB data

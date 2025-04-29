@@ -3,8 +3,8 @@
 # SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Sun Mar 30 12:53:17 2025
-# Process ID         : 16156
+# Start of session at: Tue Apr 29 00:35:42 2025
+# Process ID         : 17996
 # Current directory  : C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/zynq_design_instructionmemIP_0_0_synth_1
 # Command line       : vivado.exe -log zynq_design_instructionmemIP_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source zynq_design_instructionmemIP_0_0.tcl
 # Log file           : C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/zynq_design_instructionmemIP_0_0_synth_1/zynq_design_instructionmemIP_0_0.vds
@@ -17,8 +17,8 @@
 # CPU Physical cores : 6
 # CPU Logical cores  : 12
 # Host memory        : 68558 MB
-# Swap memory        : 7013 MB
-# Total Virtual      : 75572 MB
-# Available Virtual  : 46215 MB
+# Swap memory        : 3809 MB
+# Total Virtual      : 72367 MB
+# Available Virtual  : 45958 MB
 #-----------------------------------------------------------
 source zynq_design_instructionmemIP_0_0.tcl -notrace

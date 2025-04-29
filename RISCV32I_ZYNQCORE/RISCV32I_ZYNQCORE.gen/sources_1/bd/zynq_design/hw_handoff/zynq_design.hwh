@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun Mar 30 14:40:44 2025" VIVADOVERSION="2024.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Apr 29 00:35:00 2025" VIVADOVERSION="2024.2">
 
   <SYSTEMINFO ARCH="zynq" BOARD="avnet.com:minized:part0:1.3" DEVICE="7z007s" NAME="zynq_design" PACKAGE="clg225" SPEEDGRADE="-1"/>
 
@@ -1396,7 +1396,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/instructionmemIP_0" HWVERSION="1.0" INSTANCE="instructionmemIP_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="instructionmemIP" VLNV="xilinx.com:user:instructionmemIP:1.0">
+    <MODULE COREREVISION="1" FULLNAME="/instructionmemIP_0" HWVERSION="1.1" INSTANCE="instructionmemIP_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="instructionmemIP" VLNV="xilinx.com:user:instructionmemIP:1.1">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="S00_AXI" NAME="S00_AXI_reg" RANGE="4096" USAGE="register"/>
@@ -2623,9 +2623,9 @@
             <CONNECTION INSTANCE="axi_smc" PORT="aclk"/>
             <CONNECTION INSTANCE="RISCVCOREZYNQ_0" PORT="clock"/>
             <CONNECTION INSTANCE="datamemIP_0" PORT="s02_axi_aclk"/>
-            <CONNECTION INSTANCE="instructionmemIP_0" PORT="s00_axi_aclk"/>
             <CONNECTION INSTANCE="controlsubsystemIP_0" PORT="s05_axi_aclk"/>
             <CONNECTION INSTANCE="registerIP_0" PORT="s01_axi_aclk"/>
+            <CONNECTION INSTANCE="instructionmemIP_0" PORT="s00_axi_aclk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="processing_system7_0_FCLK_RESET0_N">
@@ -3326,9 +3326,9 @@
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_smc" PORT="aresetn"/>
             <CONNECTION INSTANCE="datamemIP_0" PORT="s02_axi_aresetn"/>
-            <CONNECTION INSTANCE="instructionmemIP_0" PORT="s00_axi_aresetn"/>
             <CONNECTION INSTANCE="controlsubsystemIP_0" PORT="s05_axi_aresetn"/>
             <CONNECTION INSTANCE="registerIP_0" PORT="s01_axi_aresetn"/>
+            <CONNECTION INSTANCE="instructionmemIP_0" PORT="s00_axi_aresetn"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="peripheral_reset" POLARITY="ACTIVE_HIGH" RIGHT="0" SIGIS="rst"/>

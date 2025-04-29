@@ -238,7 +238,7 @@
                 "SX": "/instructionmemIP_0",
                 "SI": "S00_AXI",
                 "SS": "S00_AXI_reg",
-                "SV": "xilinx.com:user:instructionmemIP:1.0",
+                "SV": "xilinx.com:user:instructionmemIP:1.1",
                 "TM": "both",
                 "TU": "register"
             },

@@ -14,13 +14,16 @@ begin
     process(instruction, aluop)
     begin
         -- Default operation
-        aluoperation <= "11111";
+        -- aluoperation <= "11111";
 
         case aluop is
             when "00" =>
                 -- Load/Store operations (I-type)
-                aluoperation <= "00010";  -- ADD for address calculation
-
+				if(instruction(14 downto 12) = "010" and instruction(6 downto 0) = "0100011") then
+					aluoperation <= "10001";	--store word
+				else
+					aluoperation <= "10010";  -- load word		
+					end if;
               when "01" =>  -- Branch and Jump operations
                 case instruction(6 downto 0) is
                     when "1101111" => aluoperation <= "10000";  -- JAL
@@ -118,8 +121,8 @@ begin
             when "11" =>
                 -- U-type and J-type instructions
                 case instruction(6 downto 0) is
-                    when "0110111" => aluoperation <= "00010";  -- LUI (ADD)
-                    when "0010111" => aluoperation <= "00010";  -- AUIPC (ADD)
+                    when "0110111" => aluoperation <= "10011";  -- LUI (ADD)	-- needs to be just 0 and input 2 
+                    when "0010111" => aluoperation <= "10111";  -- AUIPC (ADD) UNIQUE operation code JUST to source AUIPC cause pc is a strange input to have..
                     when "1101111" => aluoperation <= "10000";  -- JAL (link operation)
                     when "1100111" => aluoperation <= "10000";  -- JALR (link operation)
                     when others => aluoperation <= "11111";

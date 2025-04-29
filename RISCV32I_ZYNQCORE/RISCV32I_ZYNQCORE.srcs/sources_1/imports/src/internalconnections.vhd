@@ -129,9 +129,15 @@ signal DM_debug_read_enable : std_logic;  -- Data memory read enable
 	 signal ifid_instruction_to_immediategen : std_logic_vector(31 downto 0);
   	 
 	 
+	--TO JALRMUX
+	signal forwardJCntrl		:std_logic_vector(1 downto 0);
+	 
 	 --TO PCIMMADDER
+	 signal regOrPCCntrl	: std_logic;
 	 signal immediategen_immediate_to_pcimmadder : std_logic_vector(31 downto 0);
 	 signal ifid_pcout_to_pcimmadder : std_logic_vector(15 downto 0);
+	 signal rs1_from_jalrMux		:std_logic_vector(31 downto 0);
+	 
 	 
 	 
 	 
@@ -173,7 +179,7 @@ signal DM_debug_read_enable : std_logic;  -- Data memory read enable
   signal hazardunit_controlsigmux_to_controlunit : std_logic;
   -- signal hazardunit_pcwrite_to_pc : std_logic;	 also declared above 
   signal hazardunit_write_to_ifid : std_logic;
-  
+    signal pause	:	std_logic;
   
   
   -- TO IDEX
@@ -239,7 +245,8 @@ signal DM_debug_read_enable : std_logic;  -- Data memory read enable
 --	signal alu_zeroresult_to_exmem : std_logic;
 	
 	signal idex_pcout_to_alu : std_logic_vector(15 downto 0);
-
+	signal alu_addrout_to_exmem : std_logic_vector(31 downto 0); 
+	
 	
 	--TO FORWARDINGMUXA
 	
@@ -387,8 +394,8 @@ begin
         pcplus4 => pc4adder_pcplus4_to_pc_mux,
         pcplusimm => pcplusimmadder_pcplusimm_to_pc_mux,
         pcsource => pc_mux_pcsource_to_pc,
-		earlybranchcontrolunit => controlunit_earlybranch_to_pcmux
-		
+		earlybranchcontrolunit => controlunit_earlybranch_to_pcmux,
+		pause => pause
     );
 
     --TO PC 4 ADDER
@@ -406,6 +413,7 @@ begin
         start => start,
         hold     => hold,
         clk      => clock,
+        pause	 => pause,
         reset    => resetbar,
         pcwrite  => hazardunit_pcwrite_to_pc,
         pcsource => pc_mux_pcsource_to_pc,
@@ -447,6 +455,7 @@ pc_pcout_to_pc4adder <= pc_pcout_to_instruction_memory;
     port map (
         clk                 => clock,
         rstbar              => resetbar,
+        pause				=> pause,
         branch_taken		=> branchand_jumpbranchselect_to_pc_mux,
 		ifidwriteenable           => hazardunit_ifidwrite_to_ifid,  
         ifidflush           => hazardunit_ifidflush_to_ifid,		 --UNUSED- DO NOT IMPLEMENT	  -- we may actually need this 3-15-2025
@@ -486,20 +495,32 @@ ifid_instruction_to_immediategen <=	ifid_instruction_to_OUT;
       immediate   => immediategen_immediate_to_idex
     );
  
+ 
+--PCIMMADDER MUX
 
+	forwardingMuxJALR : entity work.forwardingMuxJALR
+		port map(
+			rs1 => registers_reg1out_to_idex,
+	        forwardedrs1exmem => exmem_result_to_datamem,
+	      	forwardedrs1memwb => writebackmux_writedata_to_registers,
+	        forwardJmuxcntrl =>	forwardJCntrl,
+	        MuxOutput => rs1_from_jalrMux
+		);
+	
 	
 	--TO PCIMMADDER
 	
 ifid_pcout_to_pcimmadder <= ifid_pcout_to_OUT;
  
+
 	 pcimmadder_inst : entity work.pcimmadder
     port map (
+	  regOrPC => regOrPCCntrl,
       pc        => ifid_pcout_to_pcimmadder,
-      immediate => immediategen_immediate_to_pcimmadder,
-      pcplusimm => pcplusimmadder_pcplusimm_to_pc_mux
-    );			 
-	
-	
+      regMuxIn => rs1_from_jalrMux,
+	  immediate => immediategen_immediate_to_pcimmadder,
+      pcOut => pcplusimmadder_pcplusimm_to_pc_mux
+    );		
 	
 	
 	
@@ -533,8 +554,11 @@ registers_reg2out_to_controlunit  <= registers_reg2out_to_idex;
 	  --TO CONTROL UNIT
 		 CONTROLUNIT_INST : entity work.ControlUnit
     port map (
+	clk => clock,  
+	pause => pause,
+	reset => resetbar,
       instruction => ifid_instruction_to_OUT,
-      cntrlsigmux => hazardunit_cntrlsigmux_to_controlunit,
+      --cntrlsigmux => hazardunit_cntrlsigmux_to_controlunit,
       rs1_data         => registers_reg1out_to_controlunit,
       rs2_data         => registers_reg2out_to_controlunit,
 	  ctrl_disable	   =>	  hazardunit_controldisable_to_controlunit,
@@ -542,7 +566,8 @@ registers_reg2out_to_controlunit  <= registers_reg2out_to_idex;
 	  exmem_regdata	   =>  exmem_result_to_datamem,
 	  memwb_rd		   =>	memwb_rd_to_out,
 	  memwb_regdata	   =>	writebackmux_writedata_to_registers,
-	  
+	  JMuxCntrl => forwardJCntrl,
+	  regOrPC =>  regOrPCCntrl,
       MemtoReg    => controlunit_memtoreg_to_idex,
       RegWrite    => controlunit_regwrite_to_idex,
       MemRead     => controlunit_memread_to_idex,
@@ -551,10 +576,11 @@ registers_reg2out_to_controlunit  <= registers_reg2out_to_idex;
       early_branch => controlunit_earlybranch_to_pcmux,
 	  ALUSrc      => controlunit_alusource_to_idex,
       ALUOp       => contolunit_aluop_to_idex,
-      if_flush    => hazardunit_ifidflush_to_ifid,
+      if_flush    => controlunit_ifidflush_to_ifid,
 	  exmem_memread => exmem_memread_to_datamem
 	  
     );
+	
 	
 	  -- NEED TO ADD THE EXMEM AND MEMWB forwarding signals !!! logic is implenented 
 
@@ -566,14 +592,17 @@ registers_reg2out_to_controlunit  <= registers_reg2out_to_idex;
 HAZARD_UNIT_INST : entity work.hazard_unit
     port map (		  
 	--early_branch_control => controlunit_earlybranch_to_pcmux,
+	clk => clock,
+	pause		=> pause,
 	idex_mem_read => idex_memread_to_exmem,
 	 ctrl_disable  => hazardunit_controldisable_to_controlunit,
       idex_rd => idex_rd_to_exmem,
       instruction => ifid_instruction_to_OUT,
       cntrl_sigmux => hazardunit_controlsigmux_to_controlunit,
       pc_write_enable => hazardunit_pcwrite_to_pc,
-      ifid_write_en => hazardunit_ifidwrite_to_ifid
-	  --ifid_flush => 	hazardunit_ifidflush_to_ifid
+      ifid_write_en => hazardunit_ifidwrite_to_ifid,
+	  idexInstruction => ifid_instruction_to_OUT
+	  --ifid_flush => 	controlunit_ifidflush_to_ifid
     );
 
    -- TO IDEX																  
@@ -583,7 +612,8 @@ HAZARD_UNIT_INST : entity work.hazard_unit
       hold     => hold,
       clk => clock,
       rstbar => resetbar,
-     -- branch_taken		=> branchand_jumpbranchselect_to_pc_mux,
+       pause => pause,
+      -- branch_taken		=> branchand_jumpbranchselect_to_pc_mux,
 	  pcin => ifid_pcout_to_pcimmadder,
       readdata1in => registers_reg1out_to_idex,
       readdata2in => registers_reg2out_to_idex,
@@ -618,13 +648,13 @@ HAZARD_UNIT_INST : entity work.hazard_unit
 	  instructionin => ifid_instruction_to_OUT,
 	  instructionout => idex_instruction_to_alucontrol,
       
-      -- Register addresses     ifid_rs1_to_register
+      -- Register addresses
       rs1in => ifid_rs1_to_register,
       rs2in => ifid_rs2_to_register,
       rdin => ifid_rd_to_idex,
       rs1out => idex_rs1_to_forwardingunit,
       rs2out => idex_rs2_to_forwardingunit,
-      rdout => idex_rd_to_exmem
+      rdout => idex_rd_to_exmem	
     );
    
    	  
@@ -657,8 +687,13 @@ HAZARD_UNIT_INST : entity work.hazard_unit
       operation => alucontrol_aluop_to_alu,
       ALU_output => alu_result_to_exmem,
       zero_flag => alu_zeroresult_to_exmem,
-	  JALorBRANCH => alu_JALorBRANCH_to_exmem
+	  JALorBRANCH => alu_JALorBRANCH_to_exmem,
+	  rdin => idex_rd_to_exmem,
+	  data_mem_addr_out => alu_addrout_to_exmem,
+	  xs1 => forwardingmuxB_rs2_to_alusrcmuxB
+	 
     );
+		
 		
 	
 	

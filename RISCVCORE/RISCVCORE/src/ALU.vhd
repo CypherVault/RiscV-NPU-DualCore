@@ -13,8 +13,8 @@ entity ALU is
         ALU_output : out std_logic_vector(31 downto 0);
         zero_flag : out std_logic;
         JALorBRANCH : out std_logic;
-		alu_direct_access : in std_logic_vector(1 downto 0); 
-		datamem_data_access : in std_logic_vector(31 downto 0)
+		alu_direct_access : in std_logic_vector(1 downto 0) 
+		
 		
     );
 end entity ALU;
@@ -33,9 +33,8 @@ entity ALU is
 		data_mem_addr_out	: out std_logic_vector(31 downto 0);
         ALU_output : out std_logic_vector(31 downto 0);
         zero_flag : out std_logic;
-        JALorBRANCH : out std_logic;
-		alu_direct_access : in std_logic_vector(1 downto 0); 
-		datamem_data_access : in std_logic_vector(31 downto 0)
+        JALorBRANCH : out std_logic
+		
 		
     );
 end entity ALU;

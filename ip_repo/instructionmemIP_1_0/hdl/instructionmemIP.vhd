@@ -158,7 +158,8 @@ begin
     s00_axi_rresp   <= "00";  -- OKAY response
     s00_axi_rvalid  <= axi_rvalid;
     
-    -- Instruction output
-    instruction <= RAM(to_integer(unsigned(pc_address(ADDR_WIDTH+1 downto 2))));
+   instruction <= RAM(to_integer(unsigned(pc_address(ADDR_WIDTH+1 downto 2)))) 
+               when pc_address /= x"FFFC" else 
+               (others => '0');
 
 end arch_imp;

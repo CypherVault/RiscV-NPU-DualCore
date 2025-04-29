@@ -46,7 +46,7 @@
 -- 
 -- DO NOT MODIFY THIS FILE.
 
--- IP VLNV: xilinx.com:user:instructionmemIP:1.0
+-- IP VLNV: xilinx.com:user:instructionmemIP:1.1
 -- IP Revision: 1
 
 LIBRARY ieee;
@@ -124,7 +124,7 @@ ARCHITECTURE zynq_design_instructionmemIP_0_0_arch OF zynq_design_instructionmem
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF zynq_design_instructionmemIP_0_0_arch : ARCHITECTURE IS "zynq_design_instructionmemIP_0_0,instructionmemIP,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF zynq_design_instructionmemIP_0_0_arch: ARCHITECTURE IS "zynq_design_instructionmemIP_0_0,instructionmemIP,{x_ipProduct=Vivado 2024.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=instructionmemIP,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=16,SIZE=512,ADDR_WIDTH=9,COL_WIDTH=8,NB_COL=4}";
+  ATTRIBUTE CORE_GENERATION_INFO OF zynq_design_instructionmemIP_0_0_arch: ARCHITECTURE IS "zynq_design_instructionmemIP_0_0,instructionmemIP,{x_ipProduct=Vivado 2024.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=instructionmemIP,x_ipVersion=1.1,x_ipCoreRevision=1,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=16,SIZE=512,ADDR_WIDTH=9,COL_WIDTH=8,NB_COL=4}";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_MODE : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;

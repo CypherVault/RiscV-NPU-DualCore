@@ -7,6 +7,7 @@ entity program_counter is
     port (
         hold     : in std_logic;
         start    : in std_logic;
+        pause	 : in  std_logic;
         clk      : in  std_logic;
         reset    : in  std_logic;
         pcwrite  : in  std_logic;
@@ -21,8 +22,8 @@ begin
     process (clk, reset)
     begin
         if reset = '0' then
-            pc_reg <= (others => '0');  -- Set program counter to 0 on reset
-        elsif rising_edge(clk) and hold = '0' and start = '1' then
+            pc_reg <= x"FFFC";  -- Set program counter to 0 on reset
+        elsif rising_edge(clk) and hold = '0' and start = '1' and pause = '0' then
             if pcwrite = '1' then
                 pc_reg <= pcsource;  -- Update program counter with pcwrite value
             else

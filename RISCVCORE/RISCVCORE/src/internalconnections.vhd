@@ -485,7 +485,7 @@ ifid_pcout_to_pcimmadder <= ifid_pcout_to_OUT;
  
 	 pcimmadder_inst : entity work.pcimmadder
     port map (
-		regOrPC => regOrPCCntrl,
+	  regOrPC => regOrPCCntrl,
       pc        => ifid_pcout_to_pcimmadder,
       regMuxIn => rs1_from_jalrMux,
 	  immediate => immediategen_immediate_to_pcimmadder,
@@ -656,9 +656,8 @@ HAZARD_UNIT_INST : entity work.hazard_unit
 	  JALorBRANCH => alu_JALorBRANCH_to_exmem,
 	  rdin => idex_rd_to_exmem,
 	  data_mem_addr_out => alu_addrout_to_exmem,
-	  xs1 => forwardingmuxB_rs2_to_alusrcmuxB,
-	  alu_direct_access=>forwardingunit_alu_direct_access_to_alu,
-	  datamem_data_access => datamem_readdata_to_memwb
+	  xs1 => forwardingmuxB_rs2_to_alusrcmuxB
+	 
     );
 		
 	
@@ -757,8 +756,8 @@ alusrcmuxb_source2_to_exmem <= alusrcmuxB_rs2_to_alu;
       forwardAmuxcntrl => forwardingunit_Amuxcntrl_to_forrwardingmuxA,
       forwardBmuxcntrl => forwardingunit_Bmuxcntrl_to_forrwardingmuxB,
 	  
-	  exmem_memread => exmem_memread_to_datamem,
-	  alu_direct_access => forwardingunit_alu_direct_access_to_alu
+	  exmem_memread => exmem_memread_to_datamem
+	 
     );
 						  
 
