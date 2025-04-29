@@ -14,7 +14,7 @@ LIBSOURCES=($wildcard *.c)
 OUTS = ($wildcard *.o)
 
 libs:
-	echo "Compiling controlsubsystemIP..."
+	echo "Compiling registerIP..."
 	$(COMPILER) $(COMPILER_FLAGS) $(EXTRA_COMPILER_FLAGS) $(INCLUDES) $(LIBSOURCES)
 	$(ARCHIVER) -r ${RELEASEDIR}/${LIB} ${OUTS}
 	make clean

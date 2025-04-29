@@ -15,15 +15,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="77,691.666 ns"></ZoomStartTime>
-      <ZoomEndTime time="77,879.667 ns"></ZoomEndTime>
-      <Cursor1Time time="78,350.000 ns"></Cursor1Time>
+      <ZoomStartTime time="76,287.500 ns"></ZoomStartTime>
+      <ZoomEndTime time="77,442.501 ns"></ZoomEndTime>
+      <Cursor1Time time="77,250.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="234"></NameColumnWidth>
-      <ValueColumnWidth column_width="83"></ValueColumnWidth>
+      <ValueColumnWidth column_width="79"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="20" />
+   <WVObjectSize size="43" />
    <wave_markers>
       <marker time="5912421" label="" />
    </wave_markers>
@@ -106,5 +106,100 @@
    <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/NOP_INSTRUCTION" type="array">
       <obj_property name="ElementShortName">NOP_INSTRUCTION[31:0]</obj_property>
       <obj_property name="ObjectShortName">NOP_INSTRUCTION[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_INST/input_0" type="array">
+      <obj_property name="ElementShortName">input_0[31:0]</obj_property>
+      <obj_property name="ObjectShortName">input_0[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_INST/input_1" type="array">
+      <obj_property name="ElementShortName">input_1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">input_1[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_INST/pc" type="array">
+      <obj_property name="ElementShortName">pc[15:0]</obj_property>
+      <obj_property name="ObjectShortName">pc[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_INST/operation" type="array">
+      <obj_property name="ElementShortName">operation[4:0]</obj_property>
+      <obj_property name="ObjectShortName">operation[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_INST/rdin" type="array">
+      <obj_property name="ElementShortName">rdin[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rdin[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_INST/xs1" type="array">
+      <obj_property name="ElementShortName">xs1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">xs1[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_INST/data_mem_addr_out" type="array">
+      <obj_property name="ElementShortName">data_mem_addr_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_mem_addr_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_INST/ALU_output" type="array">
+      <obj_property name="ElementShortName">ALU_output[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ALU_output[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_INST/zero_flag" type="logic">
+      <obj_property name="ElementShortName">zero_flag</obj_property>
+      <obj_property name="ObjectShortName">zero_flag</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_INST/JALorBRANCH" type="logic">
+      <obj_property name="ElementShortName">JALorBRANCH</obj_property>
+      <obj_property name="ObjectShortName">JALorBRANCH</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_INST/result_temp" type="array">
+      <obj_property name="ElementShortName">result_temp[31:0]</obj_property>
+      <obj_property name="ObjectShortName">result_temp[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_INST/mul_result" type="array">
+      <obj_property name="ElementShortName">mul_result[63:0]</obj_property>
+      <obj_property name="ObjectShortName">mul_result[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_INST/branch_condition" type="logic">
+      <obj_property name="ElementShortName">branch_condition</obj_property>
+      <obj_property name="ObjectShortName">branch_condition</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_INST/pc_plus_4" type="array">
+      <obj_property name="ElementShortName">pc_plus_4[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pc_plus_4[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_INST/auipc" type="array">
+      <obj_property name="ElementShortName">auipc[31:0]</obj_property>
+      <obj_property name="ObjectShortName">auipc[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_INST/is_jal_or_branch" type="logic">
+      <obj_property name="ElementShortName">is_jal_or_branch</obj_property>
+      <obj_property name="ObjectShortName">is_jal_or_branch</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_INST/jalr_return" type="array">
+      <obj_property name="ElementShortName">jalr_return[31:0]</obj_property>
+      <obj_property name="ObjectShortName">jalr_return[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_INST/var_addr_out" type="array">
+      <obj_property name="ElementShortName">var_addr_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">var_addr_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/FORWARDING_MUX_A_INST/rs1" type="array">
+      <obj_property name="ElementShortName">rs1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rs1[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/FORWARDING_MUX_A_INST/forwardedrs1exmem" type="array">
+      <obj_property name="ElementShortName">forwardedrs1exmem[31:0]</obj_property>
+      <obj_property name="ObjectShortName">forwardedrs1exmem[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/FORWARDING_MUX_A_INST/forwardedrs1memwb" type="array">
+      <obj_property name="ElementShortName">forwardedrs1memwb[31:0]</obj_property>
+      <obj_property name="ObjectShortName">forwardedrs1memwb[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/FORWARDING_MUX_A_INST/forwardAmuxcntrl" type="array">
+      <obj_property name="ElementShortName">forwardAmuxcntrl[1:0]</obj_property>
+      <obj_property name="ObjectShortName">forwardAmuxcntrl[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/FORWARDING_MUX_A_INST/MuxOutput" type="array">
+      <obj_property name="ElementShortName">MuxOutput[31:0]</obj_property>
+      <obj_property name="ObjectShortName">MuxOutput[31:0]</obj_property>
    </wvobject>
 </wave_config>
