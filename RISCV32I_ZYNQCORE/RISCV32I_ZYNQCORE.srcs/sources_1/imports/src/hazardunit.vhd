@@ -70,9 +70,11 @@ begin
             -- For JAL/JALR, maintain bubble injection
             if is_jal_jalr = '1' then
 				
-				if idex_rd = jalrReg and clk = '0' then
-					pause_sig <= not(pause_sig); --during jalr check does not set pause propperly
+				if idex_rd = jalrReg and not(jalrReg = "00000") then
+					pause_sig <= '1'; --during jalr check does not set pause propperly
 					--ctrl_disable <= '0';
+				else
+					pause_sig <= '0';
 				end if;
                 
             end if;

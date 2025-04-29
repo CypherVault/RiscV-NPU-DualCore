@@ -50,4 +50,194 @@ WARNING: [VRFC 10-3705] select index 4 into 'rd_cnt' is out of bounds [/wrk/ci/p
 WARNING: [VRFC 10-3705] select index 4 into 'rresp_time_cnt' is out of bounds [/wrk/ci/prod/2024.2/sw/continuous/3059/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:8386]
 WARNING: [VRFC 10-3705] select index 4 into 'rd_fifo_rd_ptr' is out of bounds [/wrk/ci/prod/2024.2/sw/continuous/3059/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:8391]
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling package xil_defaultlib.types_pkg
+Compiling package ieee.vital_timing
+Compiling package ieee.vital_primitives
+Compiling package unisim.vpkg
+Compiling package ieee.std_logic_arith
+Compiling package synopsys.attributes
+Compiling package ieee.std_logic_misc
+Compiling package smartconnect_v1_0.sc_util_v1_0_4_pkg
+Compiling package xilinx_vip.axi_vip_pkg
+Compiling package xilinx_vip.xil_common_vip_pkg
+Compiling package std.std
+Compiling architecture behavioral of entity xil_defaultlib.pc_mux [pc_mux_default]
+Compiling architecture rtl of entity xil_defaultlib.pc4adder [pc4adder_default]
+Compiling architecture rtl of entity xil_defaultlib.program_counter [program_counter_default]
+Compiling architecture behavioral of entity xil_defaultlib.ifid [ifid_default]
+Compiling architecture behavioral of entity xil_defaultlib.ImmGen [immgen_default]
+Compiling architecture behavioral of entity xil_defaultlib.forwardingMuxJALR [forwardingmuxjalr_default]
+Compiling architecture behavior of entity xil_defaultlib.pcimmadder [pcimmadder_default]
+Compiling architecture behavioral of entity xil_defaultlib.ControlUnit [controlunit_default]
+Compiling architecture behavioral of entity xil_defaultlib.hazard_unit [hazard_unit_default]
+Compiling architecture behavioral of entity xil_defaultlib.idex [idex_default]
+Compiling architecture behavioral of entity xil_defaultlib.alucontrol [alucontrol_default]
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.forwardingMuxA [forwardingmuxa_default]
+Compiling architecture behavioral of entity xil_defaultlib.forwardingMuxB [forwardingmuxb_default]
+Compiling architecture behavioral of entity xil_defaultlib.ALUSrcMuxB [alusrcmuxb_default]
+Compiling architecture behavioral of entity xil_defaultlib.exmem [exmem_default]
+Compiling architecture behavioral of entity xil_defaultlib.ForwardingUnit [forwardingunit_default]
+Compiling architecture behavioral of entity xil_defaultlib.BranchAND [branchand_default]
+Compiling architecture behavioral of entity xil_defaultlib.memwb [memwb_default]
+Compiling architecture behavioral of entity xil_defaultlib.writebackmux [writebackmux_default]
+Compiling architecture behavioral of entity xil_defaultlib.internal_connections [internal_connections_default]
+Compiling architecture behavior of entity xil_defaultlib.RISCVCOREZYNQ [riscvcorezynq_default]
+Compiling architecture zynq_design_riscvcorezynq_0_0_arch of entity xil_defaultlib.zynq_design_RISCVCOREZYNQ_0_0 [zynq_design_riscvcorezynq_0_0_de...]
+Compiling module xlconstant_v1_1_9.xlconstant_v1_1_9_xlconstant(CON...
+Compiling module xil_defaultlib.bd_375a_one_0
+Compiling architecture fdre_v of entity unisim.FDRE [fdre_default]
+Compiling architecture fdre_v of entity unisim.FDRE [\FDRE(init='1')\]
+Compiling architecture fdr_v of entity unisim.FDR [fdr_default]
+Compiling architecture implementation of entity lib_cdc_v1_0_3.cdc_sync [\cdc_sync(c_vector_width=2,c_mtb...]
+Compiling architecture srl16e_v of entity unisim.SRL16E [\SRL16E(init="1111111111111111")...]
+Compiling architecture srl16_v of entity unisim.SRL16 [\SRL16(init="1111111111111111")(...]
+Compiling architecture imp of entity proc_sys_reset_v5_0_16.lpf [\lpf(c_ext_rst_width=4,c_aux_rst...]
+Compiling architecture imp of entity proc_sys_reset_v5_0_16.upcnt_n [\upcnt_n(c_size=6)\]
+Compiling architecture imp of entity proc_sys_reset_v5_0_16.sequence_psr [sequence_psr_default]
+Compiling architecture imp of entity proc_sys_reset_v5_0_16.proc_sys_reset [\proc_sys_reset(c_family="zynq",...]
+Compiling architecture bd_375a_psr_aclk_0_arch of entity xil_defaultlib.bd_375a_psr_aclk_0 [bd_375a_psr_aclk_0_default]
+Compiling module xil_defaultlib.clk_map_imp_V88RQ0
+Compiling module xpm.xpm_cdc_async_rst(DEST_SYNC_FF=3...
+Compiling module xil_defaultlib.bd_375a_m00e_0
+Compiling module xil_defaultlib.m00_exit_pipeline_imp_11RSL8J
+Compiling module xil_defaultlib.bd_375a_m00arn_0
+Compiling module xil_defaultlib.bd_375a_m00awn_0
+Compiling module xil_defaultlib.bd_375a_m00bn_0
+Compiling module xil_defaultlib.bd_375a_m00rn_0
+Compiling module xil_defaultlib.bd_375a_m00wn_0
+Compiling module xil_defaultlib.m00_nodes_imp_1NYH773
+Compiling module xil_defaultlib.bd_375a_m00s2a_0
+Compiling module xil_defaultlib.bd_375a_m01e_0
+Compiling module xil_defaultlib.m01_exit_pipeline_imp_184M343
+Compiling module xil_defaultlib.bd_375a_m01arn_0
+Compiling module xil_defaultlib.bd_375a_m01rn_0
+Compiling module xil_defaultlib.m01_nodes_imp_J66H21
+Compiling module xil_defaultlib.bd_375a_m01s2a_0
+Compiling module xil_defaultlib.bd_375a_m02e_0
+Compiling module xil_defaultlib.m02_exit_pipeline_imp_1A6LS77
+Compiling module xil_defaultlib.bd_375a_m02arn_0
+Compiling module xil_defaultlib.bd_375a_m02awn_0
+Compiling module xil_defaultlib.bd_375a_m02bn_0
+Compiling module xil_defaultlib.bd_375a_m02rn_0
+Compiling module xil_defaultlib.bd_375a_m02wn_0
+Compiling module xil_defaultlib.m02_nodes_imp_FY3QPU
+Compiling module xil_defaultlib.bd_375a_m02s2a_0
+Compiling module xil_defaultlib.bd_375a_m03e_0
+Compiling module xil_defaultlib.m03_exit_pipeline_imp_1D7JGEB
+Compiling module xil_defaultlib.bd_375a_m03arn_0
+Compiling module xil_defaultlib.bd_375a_m03awn_0
+Compiling module xil_defaultlib.bd_375a_m03bn_0
+Compiling module xil_defaultlib.bd_375a_m03rn_0
+Compiling module xil_defaultlib.bd_375a_m03wn_0
+Compiling module xil_defaultlib.m03_nodes_imp_19MRKAC
+Compiling module xil_defaultlib.bd_375a_m03s2a_0
+Compiling module xil_defaultlib.bd_375a_s00a2s_0
+Compiling module xil_defaultlib.bd_375a_s00mmu_0
+Compiling module xil_defaultlib.bd_375a_s00sic_0
+Compiling module xil_defaultlib.bd_375a_s00tr_0
+Compiling module xil_defaultlib.s00_entry_pipeline_imp_32C9KW
+Compiling module xil_defaultlib.bd_375a_sarn_0
+Compiling module xil_defaultlib.bd_375a_sawn_0
+Compiling module xil_defaultlib.bd_375a_sbn_0
+Compiling module xil_defaultlib.bd_375a_srn_0
+Compiling module xil_defaultlib.bd_375a_swn_0
+Compiling module xil_defaultlib.s00_nodes_imp_8IMR2Y
+Compiling module xil_defaultlib.bd_375a_arinsw_0
+Compiling module xil_defaultlib.bd_375a_aroutsw_0
+Compiling module xil_defaultlib.bd_375a_awinsw_0
+Compiling module xil_defaultlib.bd_375a_awoutsw_0
+Compiling module xil_defaultlib.bd_375a_binsw_0
+Compiling module xil_defaultlib.bd_375a_boutsw_0
+Compiling module xil_defaultlib.bd_375a_arni_0
+Compiling module xil_defaultlib.bd_375a_awni_0
+Compiling module xil_defaultlib.bd_375a_bni_0
+Compiling module xil_defaultlib.bd_375a_rni_0
+Compiling module xil_defaultlib.bd_375a_wni_0
+Compiling module xil_defaultlib.i_nodes_imp_1D7VYK6
+Compiling module xil_defaultlib.bd_375a_rinsw_0
+Compiling module xil_defaultlib.bd_375a_routsw_0
+Compiling module xil_defaultlib.bd_375a_winsw_0
+Compiling module xil_defaultlib.bd_375a_woutsw_0
+Compiling module xil_defaultlib.switchboards_imp_WJDN66
+Compiling module xil_defaultlib.bd_375a
+Compiling module xil_defaultlib.zynq_design_axi_smc_1
+Compiling architecture arch_imp of entity xil_defaultlib.controlsubsystemIP [controlsubsystemip_default]
+Compiling architecture zynq_design_controlsubsystemip_0_0_arch of entity xil_defaultlib.zynq_design_controlsubsystemIP_0_0 [zynq_design_controlsubsystemip_0...]
+Compiling architecture arch_imp of entity xil_defaultlib.datamemIP [datamemip_default]
+Compiling architecture zynq_design_datamemip_0_0_arch of entity xil_defaultlib.zynq_design_datamemIP_0_0 [zynq_design_datamemip_0_0_defaul...]
+Compiling architecture arch_imp of entity xil_defaultlib.instructionmemIP [instructionmemip_default]
+Compiling architecture zynq_design_instructionmemip_0_0_arch of entity xil_defaultlib.zynq_design_instructionmemIP_0_0 [zynq_design_instructionmemip_0_0...]
+Compiling module processing_system7_vip_v1_0_21.processing_system7_vip_v1_0_21_g...
+Compiling module processing_system7_vip_v1_0_21.processing_system7_vip_v1_0_21_g...
+Compiling module processing_system7_vip_v1_0_21.processing_system7_vip_v1_0_21_a...
+Compiling module processing_system7_vip_v1_0_21.processing_system7_vip_v1_0_21_a...
+Compiling module processing_system7_vip_v1_0_21.processing_system7_vip_v1_0_21_f...
+Compiling module processing_system7_vip_v1_0_21.processing_system7_vip_v1_0_21_a...
+Compiling module processing_system7_vip_v1_0_21.processing_system7_vip_v1_0_21_a...
+Compiling module processing_system7_vip_v1_0_21.processing_system7_vip_v1_0_21_a...
+Compiling module processing_system7_vip_v1_0_21.processing_system7_vip_v1_0_21_a...
+Compiling module processing_system7_vip_v1_0_21.processing_system7_vip_v1_0_21_s...
+Compiling module processing_system7_vip_v1_0_21.processing_system7_vip_v1_0_21_i...
+Compiling module processing_system7_vip_v1_0_21.processing_system7_vip_v1_0_21_s...
+Compiling module processing_system7_vip_v1_0_21.processing_system7_vip_v1_0_21_d...
+Compiling module processing_system7_vip_v1_0_21.processing_system7_vip_v1_0_21_o...
+Compiling module processing_system7_vip_v1_0_21.processing_system7_vip_v1_0_21_o...
+Compiling module processing_system7_vip_v1_0_21.processing_system7_vip_v1_0_21_r...
+Compiling module processing_system7_vip_v1_0_21.processing_system7_vip_v1_0_21_r...
+Compiling module xilinx_vip.axi_vip_axi4pc(WDATA_WIDTH=32,RD...
+Compiling module xilinx_vip.cb
+Compiling module xilinx_vip.axi_vip_if(C_AXI_PROTOCOL=1,C_AX...
+Compiling module axi_vip_v1_1_19.axi_vip_v1_1_19_top(C_AXI_PROTOC...
+Compiling module processing_system7_vip_v1_0_21.processing_system7_vip_v1_0_21_a...
+Compiling module processing_system7_vip_v1_0_21.processing_system7_vip_v1_0_21_a...
+Compiling module xilinx_vip.axi_vip_axi4pc(WDATA_WIDTH=32,RD...
+Compiling module xilinx_vip.cb
+Compiling module xilinx_vip.axi_vip_if(C_AXI_PROTOCOL=1,C_AX...
+Compiling module axi_vip_v1_1_19.axi_vip_v1_1_19_top(C_AXI_PROTOC...
+WARNING: [VRFC 10-3705] select index 64 into 'wrp_strb' is out of bounds [/wrk/ci/prod/2024.2/sw/continuous/3059/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:6134]
+Compiling module processing_system7_vip_v1_0_21.processing_system7_vip_v1_0_21_a...
+Compiling module processing_system7_vip_v1_0_21.processing_system7_vip_v1_0_21_a...
+Compiling module xilinx_vip.axi_vip_axi4pc(PROTOCOL=1,RID_WI...
+Compiling module xilinx_vip.cb
+Compiling module xilinx_vip.axi_vip_if(C_AXI_PROTOCOL=1,C_AX...
+Compiling module axi_vip_v1_1_19.axi_vip_v1_1_19_top(C_AXI_PROTOC...
+Compiling module processing_system7_vip_v1_0_21.processing_system7_vip_v1_0_21_i...
+WARNING: [VRFC 10-3705] select index 128 into 'wrp_strb' is out of bounds [/wrk/ci/prod/2024.2/sw/continuous/3059/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:10898]
+Compiling module processing_system7_vip_v1_0_21.processing_system7_vip_v1_0_21_a...
+Compiling module processing_system7_vip_v1_0_21.processing_system7_vip_v1_0_21_a...
+Compiling module processing_system7_vip_v1_0_21.processing_system7_vip_v1_0_21_a...
+Compiling module processing_system7_vip_v1_0_21.processing_system7_vip_v1_0_21_a...
+Compiling module xilinx_vip.axi_vip_axi4pc(PROTOCOL=1,RID_WI...
+Compiling module xilinx_vip.cb
+Compiling module xilinx_vip.axi_vip_if(C_AXI_PROTOCOL=1,C_AX...
+Compiling module axi_vip_v1_1_19.axi_vip_v1_1_19_top(C_AXI_PROTOC...
+WARNING: [VRFC 10-3705] select index 128 into 'wrp_strb' is out of bounds [/wrk/ci/prod/2024.2/sw/continuous/3059/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:7772]
+WARNING: [VRFC 10-3705] select index 4 into 'wr_fifo_rd_ptr' is out of bounds [/wrk/ci/prod/2024.2/sw/continuous/3059/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:7985]
+WARNING: [VRFC 10-3705] select index 4 into 'ar_cnt' is out of bounds [/wrk/ci/prod/2024.2/sw/continuous/3059/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:8124]
+WARNING: [VRFC 10-3705] select index 4 into 'wr_rresp_cnt' is out of bounds [/wrk/ci/prod/2024.2/sw/continuous/3059/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:8221]
+WARNING: [VRFC 10-3705] select index 4 into 'rd_fifo_wr_ptr' is out of bounds [/wrk/ci/prod/2024.2/sw/continuous/3059/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:8240]
+WARNING: [VRFC 10-3705] select index 4 into 'rd_cnt' is out of bounds [/wrk/ci/prod/2024.2/sw/continuous/3059/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:8381]
+WARNING: [VRFC 10-3705] select index 4 into 'rresp_time_cnt' is out of bounds [/wrk/ci/prod/2024.2/sw/continuous/3059/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:8386]
+WARNING: [VRFC 10-3705] select index 4 into 'rd_fifo_rd_ptr' is out of bounds [/wrk/ci/prod/2024.2/sw/continuous/3059/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:8391]
+Compiling module processing_system7_vip_v1_0_21.processing_system7_vip_v1_0_21_a...
+Compiling module processing_system7_vip_v1_0_21.processing_system7_vip_v1_0_21(C...
+Compiling module xil_defaultlib.zynq_design_processing_system7_0...
+Compiling architecture arch_imp of entity xil_defaultlib.registerIP [registerip_default]
+Compiling architecture zynq_design_registerip_0_1_arch of entity xil_defaultlib.zynq_design_registerIP_0_1 [zynq_design_registerip_0_1_defau...]
+Compiling architecture imp of entity proc_sys_reset_v5_0_16.lpf [\lpf(c_ext_rst_width=4,c_aux_rst...]
+Compiling architecture imp of entity proc_sys_reset_v5_0_16.proc_sys_reset [\proc_sys_reset(c_family="zynq",...]
+Compiling architecture zynq_design_rst_ps7_0_50m_0_arch of entity xil_defaultlib.zynq_design_rst_ps7_0_50M_0 [zynq_design_rst_ps7_0_50m_0_defa...]
+Compiling architecture structure of entity xil_defaultlib.zynq_design [zynq_design_default]
+Compiling architecture structure of entity xil_defaultlib.zynq_design_wrapper [zynq_design_wrapper_default]
+Compiling module xil_defaultlib.tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_behav

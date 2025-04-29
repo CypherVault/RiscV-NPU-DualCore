@@ -86,7 +86,7 @@ signal DM_debug_read_enable : std_logic;  -- Data memory read enable
 	--TO PC	
 	signal pc_mux_pcsource_to_pc : std_logic_vector(15 downto 0);						    --PC MUX & PC
 	signal hazardunit_pcwrite_to_pc :  std_logic;					    							--XXX and PC
-	
+	signal hazardunit_true_pause_to_pc :  std_logic;	
 	
 	--TO INSTRUCTION MEMORY
 	
@@ -403,7 +403,9 @@ begin
 		pause	 => pause,
         pcwrite  => hazardunit_pcwrite_to_pc,
         pcsource => pc_mux_pcsource_to_pc,
+		--true_pause => hazardunit_true_pause_to_pc,
         pcout    => pc_pcout_to_instruction_memory
+		
         
     );
 
@@ -568,6 +570,7 @@ HAZARD_UNIT_INST : entity work.hazard_unit
       cntrl_sigmux => hazardunit_controlsigmux_to_controlunit,
       pc_write_enable => hazardunit_pcwrite_to_pc,
       ifid_write_en => hazardunit_ifidwrite_to_ifid,
+	  true_pause =>    hazardunit_true_pause_to_pc,
 	  idexInstruction => ifid_instruction_to_OUT
 	  --ifid_flush => 	controlunit_ifidflush_to_ifid
     );

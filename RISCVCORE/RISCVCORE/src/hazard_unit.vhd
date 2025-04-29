@@ -14,9 +14,10 @@ entity hazard_unit is
         ifid_write_en   : out std_logic;
 		idexInstruction	: in std_logic_vector(31 downto 0);
         --ifid_flush      : out std_logic;
-        ctrl_disable    : out std_logic
-        --early_branch_control : out std_logic  -- New output
-    );
+        ctrl_disable    : out std_logic;
+        --early_branch_control : out std_logic  -- New output  
+		true_pause 	 : out std_logic
+    );				  
 end entity;
 
 architecture Behavioral of hazard_unit is
@@ -27,6 +28,7 @@ architecture Behavioral of hazard_unit is
     -- Branch detection signals
     signal is_branch      : std_logic;
     signal is_jal_jalr    : std_logic;
+	signal true_pause_sig	  : std_logic;
 	signal pause_sig	  : std_logic;
 begin	
     rs1    <= instruction(19 downto 15);
@@ -49,6 +51,10 @@ begin
         --early_branch_control <= '0';
 		pause_sig <= '0';
 		
+    true_pause_sig <= '0';  -- Explicit reset
+    
+	
+	
         -- Load-Use Hazard: Stall pipeline
         if (idex_mem_read = '1' and (idex_rd = rs1 or idex_rd = rs2)) then	
 			
@@ -70,14 +76,17 @@ begin
             -- For JAL/JALR, maintain bubble injection
             if is_jal_jalr = '1' then
 				
-				if idex_rd = jalrReg and clk = '0' then
-					pause_sig <= not(pause_sig); --during jalr check does not set pause propperly
+				if idex_rd = jalrReg and not(jalrReg = "00000") then
+					pause_sig <= '1'; --during jalr check does not set pause propperly
 					--ctrl_disable <= '0';
+				else
+					pause_sig <= '0';
 				end if;
                 
             end if;
         end if;		
-    end process;
-	    pause <= pause_sig;
+    end process; 
 	
+	
+	    pause <= pause_sig;
 end architecture;

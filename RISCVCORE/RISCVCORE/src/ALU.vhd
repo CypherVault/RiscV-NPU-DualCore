@@ -12,27 +12,6 @@ entity ALU is
 		data_mem_addr_out	: out std_logic_vector(31 downto 0);
         ALU_output : out std_logic_vector(31 downto 0);
         zero_flag : out std_logic;
-        JALorBRANCH : out std_logic;
-		alu_direct_access : in std_logic_vector(1 downto 0) 
-		
-		
-    );
-end entity ALU;
-
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;   
-use ieee.numeric_std.all;
-
-entity ALU is
-    port (
-        input_0, input_1 : in std_logic_vector(31 downto 0);
-        pc : in std_logic_vector(15 downto 0);  -- Added PC input
-        operation : in std_logic_vector(4 downto 0);  -- Increased to 5 bits
-		rdin : in std_logic_vector(4 downto 0);  -- Increased to 5 bits
-		xs1 : in std_logic_vector(31 downto 0);			-- special sw use of rs2 value 
-		data_mem_addr_out	: out std_logic_vector(31 downto 0);
-        ALU_output : out std_logic_vector(31 downto 0);
-        zero_flag : out std_logic;
         JALorBRANCH : out std_logic
 		
 		
