@@ -15,168 +15,96 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="11,008.125 ns"></ZoomStartTime>
-      <ZoomEndTime time="11,052.376 ns"></ZoomEndTime>
-      <Cursor1Time time="11,037.225 ns"></Cursor1Time>
+      <ZoomStartTime time="77,691.666 ns"></ZoomStartTime>
+      <ZoomEndTime time="77,879.667 ns"></ZoomEndTime>
+      <Cursor1Time time="78,350.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="234"></NameColumnWidth>
-      <ValueColumnWidth column_width="87"></ValueColumnWidth>
+      <ValueColumnWidth column_width="83"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="38" />
+   <WVObjectSize size="20" />
    <wave_markers>
       <marker time="5912421" label="" />
    </wave_markers>
-   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/IDEX_INST/hold" type="logic">
-      <obj_property name="ElementShortName">hold</obj_property>
-      <obj_property name="ObjectShortName">hold</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/IDEX_INST/clk" type="logic">
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/IDEX_INST/rstbar" type="logic">
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/rstbar" type="logic">
       <obj_property name="ElementShortName">rstbar</obj_property>
       <obj_property name="ObjectShortName">rstbar</obj_property>
    </wvobject>
-   <wvobject fp_name="vbus353" type="vbus">
-      <obj_property name="label">IDEX</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/pause" type="logic">
+      <obj_property name="ElementShortName">pause</obj_property>
+      <obj_property name="ObjectShortName">pause</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/IDEX_INST/pcin" type="array">
-      <obj_property name="ElementShortName">pcin[15:0]</obj_property>
-      <obj_property name="ObjectShortName">pcin[15:0]</obj_property>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/ifidwriteenable" type="logic">
+      <obj_property name="ElementShortName">ifidwriteenable</obj_property>
+      <obj_property name="ObjectShortName">ifidwriteenable</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/IDEX_INST/instructionin" type="array">
-      <obj_property name="ElementShortName">instructionin[31:0]</obj_property>
-      <obj_property name="ObjectShortName">instructionin[31:0]</obj_property>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/ifidflush" type="logic">
+      <obj_property name="ElementShortName">ifidflush</obj_property>
+      <obj_property name="ObjectShortName">ifidflush</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/IDEX_INST/instructionout" type="array">
-      <obj_property name="ElementShortName">instructionout[31:0]</obj_property>
-      <obj_property name="ObjectShortName">instructionout[31:0]</obj_property>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/branch_taken" type="logic">
+      <obj_property name="ElementShortName">branch_taken</obj_property>
+      <obj_property name="ObjectShortName">branch_taken</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/IDEX_INST/readdata1in" type="array">
-      <obj_property name="ElementShortName">readdata1in[31:0]</obj_property>
-      <obj_property name="ObjectShortName">readdata1in[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/IDEX_INST/readdata2in" type="array">
-      <obj_property name="ElementShortName">readdata2in[31:0]</obj_property>
-      <obj_property name="ObjectShortName">readdata2in[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/IDEX_INST/immediatein" type="array">
-      <obj_property name="ElementShortName">immediatein[31:0]</obj_property>
-      <obj_property name="ObjectShortName">immediatein[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/IDEX_INST/immediateout" type="array">
-      <obj_property name="ElementShortName">immediateout[31:0]</obj_property>
-      <obj_property name="ObjectShortName">immediateout[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/IDEX_INST/pcout" type="array">
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/pcout" type="array">
       <obj_property name="ElementShortName">pcout[15:0]</obj_property>
       <obj_property name="ObjectShortName">pcout[15:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/IDEX_INST/readdata1out" type="array">
-      <obj_property name="ElementShortName">readdata1out[31:0]</obj_property>
-      <obj_property name="ObjectShortName">readdata1out[31:0]</obj_property>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/instruction" type="array">
+      <obj_property name="ElementShortName">instruction[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instruction[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/IDEX_INST/readdata2out" type="array">
-      <obj_property name="ElementShortName">readdata2out[31:0]</obj_property>
-      <obj_property name="ObjectShortName">readdata2out[31:0]</obj_property>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/ifidinstructionout" type="array">
+      <obj_property name="ElementShortName">ifidinstructionout[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ifidinstructionout[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/IDEX_INST/rs1in" type="array">
-      <obj_property name="ElementShortName">rs1in[4:0]</obj_property>
-      <obj_property name="ObjectShortName">rs1in[4:0]</obj_property>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/ifidpcout" type="array">
+      <obj_property name="ElementShortName">ifidpcout[15:0]</obj_property>
+      <obj_property name="ObjectShortName">ifidpcout[15:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/IDEX_INST/rs2in" type="array">
-      <obj_property name="ElementShortName">rs2in[4:0]</obj_property>
-      <obj_property name="ObjectShortName">rs2in[4:0]</obj_property>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/rs1_out" type="array">
+      <obj_property name="ElementShortName">rs1_out[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rs1_out[4:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/IDEX_INST/rdin" type="array">
-      <obj_property name="ElementShortName">rdin[4:0]</obj_property>
-      <obj_property name="ObjectShortName">rdin[4:0]</obj_property>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/rs2_out" type="array">
+      <obj_property name="ElementShortName">rs2_out[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rs2_out[4:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/IDEX_INST/rs1out" type="array">
-      <obj_property name="ElementShortName">rs1out[4:0]</obj_property>
-      <obj_property name="ObjectShortName">rs1out[4:0]</obj_property>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/rd_out" type="array">
+      <obj_property name="ElementShortName">rd_out[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rd_out[4:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/IDEX_INST/rs2out" type="array">
-      <obj_property name="ElementShortName">rs2out[4:0]</obj_property>
-      <obj_property name="ObjectShortName">rs2out[4:0]</obj_property>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/instruction_reg" type="array">
+      <obj_property name="ElementShortName">instruction_reg[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instruction_reg[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/IDEX_INST/rdout" type="array">
-      <obj_property name="ElementShortName">rdout[4:0]</obj_property>
-      <obj_property name="ObjectShortName">rdout[4:0]</obj_property>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/pcout_reg" type="array">
+      <obj_property name="ElementShortName">pcout_reg[15:0]</obj_property>
+      <obj_property name="ObjectShortName">pcout_reg[15:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="vbus373" type="vbus">
-      <obj_property name="label">ALU</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/rs1_reg" type="array">
+      <obj_property name="ElementShortName">rs1_reg[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rs1_reg[4:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_INST/input_0" type="array">
-      <obj_property name="ElementShortName">input_0[31:0]</obj_property>
-      <obj_property name="ObjectShortName">input_0[31:0]</obj_property>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/rs2_reg" type="array">
+      <obj_property name="ElementShortName">rs2_reg[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rs2_reg[4:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_INST/input_1" type="array">
-      <obj_property name="ElementShortName">input_1[31:0]</obj_property>
-      <obj_property name="ObjectShortName">input_1[31:0]</obj_property>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/rd_reg" type="array">
+      <obj_property name="ElementShortName">rd_reg[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rd_reg[4:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_INST/pc" type="array">
-      <obj_property name="ElementShortName">pc[15:0]</obj_property>
-      <obj_property name="ObjectShortName">pc[15:0]</obj_property>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/zero" type="array">
+      <obj_property name="ElementShortName">zero[31:0]</obj_property>
+      <obj_property name="ObjectShortName">zero[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_INST/ALU_output" type="array">
-      <obj_property name="ElementShortName">ALU_output[31:0]</obj_property>
-      <obj_property name="ObjectShortName">ALU_output[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="vbus378" type="vbus">
-      <obj_property name="label">EXMEM</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/EXMEM_INST/aluresultin" type="array">
-      <obj_property name="ElementShortName">aluresultin[31:0]</obj_property>
-      <obj_property name="ObjectShortName">aluresultin[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/EXMEM_INST/readdata2in" type="array">
-      <obj_property name="ElementShortName">readdata2in[31:0]</obj_property>
-      <obj_property name="ObjectShortName">readdata2in[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/EXMEM_INST/aluresultout" type="array">
-      <obj_property name="ElementShortName">aluresultout[31:0]</obj_property>
-      <obj_property name="ObjectShortName">aluresultout[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/EXMEM_INST/readdata2out" type="array">
-      <obj_property name="ElementShortName">readdata2out[31:0]</obj_property>
-      <obj_property name="ObjectShortName">readdata2out[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/EXMEM_INST/rdin" type="array">
-      <obj_property name="ElementShortName">rdin[4:0]</obj_property>
-      <obj_property name="ObjectShortName">rdin[4:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/EXMEM_INST/rdout" type="array">
-      <obj_property name="ElementShortName">rdout[4:0]</obj_property>
-      <obj_property name="ObjectShortName">rdout[4:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="vbus390" type="vbus">
-      <obj_property name="label">FMA</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/FORWARDING_MUX_A_INST/rs1" type="array">
-      <obj_property name="ElementShortName">rs1[31:0]</obj_property>
-      <obj_property name="ObjectShortName">rs1[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/FORWARDING_MUX_A_INST/forwardedrs1exmem" type="array">
-      <obj_property name="ElementShortName">forwardedrs1exmem[31:0]</obj_property>
-      <obj_property name="ObjectShortName">forwardedrs1exmem[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/FORWARDING_MUX_A_INST/forwardedrs1memwb" type="array">
-      <obj_property name="ElementShortName">forwardedrs1memwb[31:0]</obj_property>
-      <obj_property name="ObjectShortName">forwardedrs1memwb[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/FORWARDING_MUX_A_INST/forwardAmuxcntrl" type="array">
-      <obj_property name="ElementShortName">forwardAmuxcntrl[1:0]</obj_property>
-      <obj_property name="ObjectShortName">forwardAmuxcntrl[1:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/FORWARDING_MUX_A_INST/MuxOutput" type="array">
-      <obj_property name="ElementShortName">MuxOutput[31:0]</obj_property>
-      <obj_property name="ObjectShortName">MuxOutput[31:0]</obj_property>
+   <wvobject fp_name="/tb/dut/zynq_design_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ifid_instance/NOP_INSTRUCTION" type="array">
+      <obj_property name="ElementShortName">NOP_INSTRUCTION[31:0]</obj_property>
+      <obj_property name="ObjectShortName">NOP_INSTRUCTION[31:0]</obj_property>
    </wvobject>
 </wave_config>

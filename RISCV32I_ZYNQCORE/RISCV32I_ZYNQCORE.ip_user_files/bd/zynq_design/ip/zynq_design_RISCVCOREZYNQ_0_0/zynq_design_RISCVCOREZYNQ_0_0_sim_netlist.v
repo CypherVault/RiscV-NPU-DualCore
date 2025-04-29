@@ -2,7 +2,7 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-// Date        : Tue Apr 29 16:32:50 2025
+// Date        : Tue Apr 29 17:12:08 2025
 // Host        : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ip/zynq_design_RISCVCOREZYNQ_0_0/zynq_design_RISCVCOREZYNQ_0_0_sim_netlist.v
@@ -2489,7 +2489,8 @@ module zynq_design_RISCVCOREZYNQ_0_0_RISCVCOREZYNQ
         .I4(resetbar),
         .O(int_if_flush_i_1_n_0));
   zynq_design_RISCVCOREZYNQ_0_0_internal_connections internal_connections_inst
-       (.MemRead_reg_reg(mem_read),
+       (.AR(\pc_reg[15]_i_2_n_0 ),
+        .MemRead_reg_reg(mem_read),
         .Q(Q),
         .branch_prev(\CONTROLUNIT_INST/branch_prev ),
         .branch_prev_reg(branch_prev_i_1_n_0),
@@ -2505,7 +2506,6 @@ module zynq_design_RISCVCOREZYNQ_0_0_RISCVCOREZYNQ
         .mem_write(mem_write),
         .mem_write_data(mem_write_data),
         .pc_out(pc_out),
-        .\pc_reg_reg[1] (\pc_reg[15]_i_2_n_0 ),
         .\rd_reg_reg[4] (\rd_reg_reg[4] ),
         .\readdata2_reg_reg[0] (\readdata2_reg_reg[0] ),
         .\readdata2_reg_reg[10] (\readdata2_reg_reg[10] ),
@@ -4398,7 +4398,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_exmem
     mem_write_data,
     current_branch_condition0,
     clock,
-    \rd_reg_reg[4]_1 ,
+    AR,
     MemtoReg_reg_reg_0,
     RegWrite_reg_reg_0,
     MemRead_reg_reg_1,
@@ -4491,7 +4491,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_exmem
     mul_result__0_31,
     CO,
     \readdata2_reg_reg[0]_0 ,
-    \rd_reg_reg[4]_2 );
+    \rd_reg_reg[4]_1 );
   output current_branch_condition;
   output [0:0]E;
   output exmem_memtoreg_to_memwb;
@@ -4601,7 +4601,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_exmem
   output [31:0]mem_write_data;
   input current_branch_condition0;
   input clock;
-  input \rd_reg_reg[4]_1 ;
+  input [0:0]AR;
   input MemtoReg_reg_reg_0;
   input RegWrite_reg_reg_0;
   input MemRead_reg_reg_1;
@@ -4694,10 +4694,11 @@ module zynq_design_RISCVCOREZYNQ_0_0_exmem
   input mul_result__0_31;
   input [0:0]CO;
   input [0:0]\readdata2_reg_reg[0]_0 ;
-  input [4:0]\rd_reg_reg[4]_2 ;
+  input [4:0]\rd_reg_reg[4]_1 ;
 
   wire [31:31]\ALU_INST/data10 ;
   wire [30:29]\ALU_INST/data3 ;
+  wire [0:0]AR;
   wire [0:0]CO;
   wire [29:0]D;
   wire [0:0]E;
@@ -5075,10 +5076,9 @@ module zynq_design_RISCVCOREZYNQ_0_0_exmem
   wire mul_result__0_9;
   wire [4:0]mul_result__3;
   wire mul_result_i_36_n_0;
-  wire [30:29]p_1_in;
+  wire [30:29]p_2_in;
   wire [4:0]\rd_reg_reg[4]_0 ;
-  wire \rd_reg_reg[4]_1 ;
-  wire [4:0]\rd_reg_reg[4]_2 ;
+  wire [4:0]\rd_reg_reg[4]_1 ;
   wire [3:0]\readdata2_reg[0]_i_2 ;
   wire \readdata2_reg[0]_i_2_0 ;
   wire \readdata2_reg[10]_i_1__0_n_0 ;
@@ -5147,19 +5147,19 @@ module zynq_design_RISCVCOREZYNQ_0_0_exmem
   FDCE MemRead_reg_reg
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(MemRead_reg_reg_1),
         .Q(MemRead_reg_reg_0));
   FDCE MemWrite_reg_reg
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(MemWrite_reg_reg_0),
         .Q(mem_write));
   FDCE MemtoReg_reg_reg
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(MemtoReg_reg_reg_0),
         .Q(exmem_memtoreg_to_memwb));
   LUT1 #(
@@ -5170,7 +5170,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_exmem
   FDCE RegWrite_reg_reg
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(RegWrite_reg_reg_0),
         .Q(exmem_regwrite_to_memwb));
   LUT6 #(
@@ -6774,7 +6774,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_exmem
         .I3(\aluresult_reg_reg[29]_8 ),
         .I4(\aluresult_reg_reg[29]_9 ),
         .I5(current_branch_condition),
-        .O(p_1_in[29]));
+        .O(p_2_in[29]));
   (* SOFT_HLUTNM = "soft_lutpair51" *) 
   LUT4 #(
     .INIT(16'h028A)) 
@@ -7090,7 +7090,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_exmem
         .I3(\aluresult_reg_reg[29]_8 ),
         .I4(\aluresult_reg_reg[30]_4 ),
         .I5(current_branch_condition),
-        .O(p_1_in[30]));
+        .O(p_2_in[30]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \aluresult_reg[30]_i_10 
@@ -7781,67 +7781,67 @@ module zynq_design_RISCVCOREZYNQ_0_0_exmem
   FDCE \aluresult_reg_reg[0] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[0]),
         .Q(\aluresult_reg_reg[31]_1 [0]));
   FDCE \aluresult_reg_reg[10] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[10]),
         .Q(\aluresult_reg_reg[31]_1 [10]));
   FDCE \aluresult_reg_reg[11] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[11]),
         .Q(\aluresult_reg_reg[31]_1 [11]));
   FDCE \aluresult_reg_reg[12] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[12]),
         .Q(\aluresult_reg_reg[31]_1 [12]));
   FDCE \aluresult_reg_reg[13] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[13]),
         .Q(\aluresult_reg_reg[31]_1 [13]));
   FDCE \aluresult_reg_reg[14] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[14]),
         .Q(\aluresult_reg_reg[31]_1 [14]));
   FDCE \aluresult_reg_reg[15] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[15]),
         .Q(\aluresult_reg_reg[31]_1 [15]));
   FDCE \aluresult_reg_reg[16] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[16]),
         .Q(\aluresult_reg_reg[31]_1 [16]));
   FDCE \aluresult_reg_reg[17] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[17]),
         .Q(\aluresult_reg_reg[31]_1 [17]));
   FDCE \aluresult_reg_reg[18] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[18]),
         .Q(\aluresult_reg_reg[31]_1 [18]));
   FDCE \aluresult_reg_reg[19] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[19]),
         .Q(\aluresult_reg_reg[31]_1 [19]));
   (* ADDER_THRESHOLD = "35" *) 
@@ -7855,55 +7855,55 @@ module zynq_design_RISCVCOREZYNQ_0_0_exmem
   FDCE \aluresult_reg_reg[1] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[1]),
         .Q(\aluresult_reg_reg[31]_1 [1]));
   FDCE \aluresult_reg_reg[20] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[20]),
         .Q(\aluresult_reg_reg[31]_1 [20]));
   FDCE \aluresult_reg_reg[21] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[21]),
         .Q(\aluresult_reg_reg[31]_1 [21]));
   FDCE \aluresult_reg_reg[22] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[22]),
         .Q(\aluresult_reg_reg[31]_1 [22]));
   FDCE \aluresult_reg_reg[23] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[23]),
         .Q(\aluresult_reg_reg[31]_1 [23]));
   FDCE \aluresult_reg_reg[24] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[24]),
         .Q(\aluresult_reg_reg[31]_1 [24]));
   FDCE \aluresult_reg_reg[25] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[25]),
         .Q(\aluresult_reg_reg[31]_1 [25]));
   FDCE \aluresult_reg_reg[26] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[26]),
         .Q(\aluresult_reg_reg[31]_1 [26]));
   FDCE \aluresult_reg_reg[27] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[27]),
         .Q(\aluresult_reg_reg[31]_1 [27]));
   (* ADDER_THRESHOLD = "35" *) 
@@ -7925,31 +7925,31 @@ module zynq_design_RISCVCOREZYNQ_0_0_exmem
   FDCE \aluresult_reg_reg[28] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[28]),
         .Q(\aluresult_reg_reg[31]_1 [28]));
   FDCE \aluresult_reg_reg[29] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
-        .D(p_1_in[29]),
+        .CLR(AR),
+        .D(p_2_in[29]),
         .Q(\aluresult_reg_reg[31]_1 [29]));
   FDCE \aluresult_reg_reg[2] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[2]),
         .Q(\aluresult_reg_reg[31]_1 [2]));
   FDCE \aluresult_reg_reg[30] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
-        .D(p_1_in[30]),
+        .CLR(AR),
+        .D(p_2_in[30]),
         .Q(\aluresult_reg_reg[31]_1 [30]));
   FDCE \aluresult_reg_reg[31] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[29]),
         .Q(\aluresult_reg_reg[31]_1 [31]));
   (* ADDER_THRESHOLD = "35" *) 
@@ -7963,49 +7963,49 @@ module zynq_design_RISCVCOREZYNQ_0_0_exmem
   FDCE \aluresult_reg_reg[3] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[3]),
         .Q(\aluresult_reg_reg[31]_1 [3]));
   FDCE \aluresult_reg_reg[4] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[4]),
         .Q(\aluresult_reg_reg[31]_1 [4]));
   FDCE \aluresult_reg_reg[5] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[5]),
         .Q(\aluresult_reg_reg[31]_1 [5]));
   FDCE \aluresult_reg_reg[6] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[6]),
         .Q(\aluresult_reg_reg[31]_1 [6]));
   FDCE \aluresult_reg_reg[7] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[7]),
         .Q(\aluresult_reg_reg[31]_1 [7]));
   FDCE \aluresult_reg_reg[8] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[8]),
         .Q(\aluresult_reg_reg[31]_1 [8]));
   FDCE \aluresult_reg_reg[9] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[9]),
         .Q(\aluresult_reg_reg[31]_1 [9]));
   FDCE current_branch_condition_reg
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(current_branch_condition0),
         .Q(current_branch_condition));
   LUT4 #(
@@ -8889,32 +8889,32 @@ module zynq_design_RISCVCOREZYNQ_0_0_exmem
   FDCE \rd_reg_reg[0] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
-        .D(\rd_reg_reg[4]_2 [0]),
+        .CLR(AR),
+        .D(\rd_reg_reg[4]_1 [0]),
         .Q(\rd_reg_reg[4]_0 [0]));
   FDCE \rd_reg_reg[1] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
-        .D(\rd_reg_reg[4]_2 [1]),
+        .CLR(AR),
+        .D(\rd_reg_reg[4]_1 [1]),
         .Q(\rd_reg_reg[4]_0 [1]));
   FDCE \rd_reg_reg[2] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
-        .D(\rd_reg_reg[4]_2 [2]),
+        .CLR(AR),
+        .D(\rd_reg_reg[4]_1 [2]),
         .Q(\rd_reg_reg[4]_0 [2]));
   FDCE \rd_reg_reg[3] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
-        .D(\rd_reg_reg[4]_2 [3]),
+        .CLR(AR),
+        .D(\rd_reg_reg[4]_1 [3]),
         .Q(\rd_reg_reg[4]_0 [3]));
   FDCE \rd_reg_reg[4] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
-        .D(\rd_reg_reg[4]_2 [4]),
+        .CLR(AR),
+        .D(\rd_reg_reg[4]_1 [4]),
         .Q(\rd_reg_reg[4]_0 [4]));
   (* SOFT_HLUTNM = "soft_lutpair65" *) 
   LUT2 #(
@@ -9435,193 +9435,193 @@ module zynq_design_RISCVCOREZYNQ_0_0_exmem
   FDCE \readdata2_reg_reg[0] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg_reg[0]_0 ),
         .Q(mem_write_data[0]));
   FDCE \readdata2_reg_reg[10] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[10]_i_1__0_n_0 ),
         .Q(mem_write_data[10]));
   FDCE \readdata2_reg_reg[11] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[11]_i_1__0_n_0 ),
         .Q(mem_write_data[11]));
   FDCE \readdata2_reg_reg[12] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[12]_i_1__0_n_0 ),
         .Q(mem_write_data[12]));
   FDCE \readdata2_reg_reg[13] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[13]_i_1__0_n_0 ),
         .Q(mem_write_data[13]));
   FDCE \readdata2_reg_reg[14] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[14]_i_1__0_n_0 ),
         .Q(mem_write_data[14]));
   FDCE \readdata2_reg_reg[15] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[15]_i_1__0_n_0 ),
         .Q(mem_write_data[15]));
   FDCE \readdata2_reg_reg[16] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[16]_i_1__0_n_0 ),
         .Q(mem_write_data[16]));
   FDCE \readdata2_reg_reg[17] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[17]_i_1__0_n_0 ),
         .Q(mem_write_data[17]));
   FDCE \readdata2_reg_reg[18] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[18]_i_1__0_n_0 ),
         .Q(mem_write_data[18]));
   FDCE \readdata2_reg_reg[19] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[19]_i_1__0_n_0 ),
         .Q(mem_write_data[19]));
   FDCE \readdata2_reg_reg[1] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[1]_i_1__0_n_0 ),
         .Q(mem_write_data[1]));
   FDCE \readdata2_reg_reg[20] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[20]_i_1__0_n_0 ),
         .Q(mem_write_data[20]));
   FDCE \readdata2_reg_reg[21] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[21]_i_1__0_n_0 ),
         .Q(mem_write_data[21]));
   FDCE \readdata2_reg_reg[22] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[22]_i_1__0_n_0 ),
         .Q(mem_write_data[22]));
   FDCE \readdata2_reg_reg[23] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[23]_i_1__0_n_0 ),
         .Q(mem_write_data[23]));
   FDCE \readdata2_reg_reg[24] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[24]_i_1__0_n_0 ),
         .Q(mem_write_data[24]));
   FDCE \readdata2_reg_reg[25] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[25]_i_1__0_n_0 ),
         .Q(mem_write_data[25]));
   FDCE \readdata2_reg_reg[26] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[26]_i_1__0_n_0 ),
         .Q(mem_write_data[26]));
   FDCE \readdata2_reg_reg[27] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[27]_i_1__0_n_0 ),
         .Q(mem_write_data[27]));
   FDCE \readdata2_reg_reg[28] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[28]_i_1__0_n_0 ),
         .Q(mem_write_data[28]));
   FDCE \readdata2_reg_reg[29] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[29]_i_1__0_n_0 ),
         .Q(mem_write_data[29]));
   FDCE \readdata2_reg_reg[2] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[2]_i_1__0_n_0 ),
         .Q(mem_write_data[2]));
   FDCE \readdata2_reg_reg[30] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[30]_i_1__0_n_0 ),
         .Q(mem_write_data[30]));
   FDCE \readdata2_reg_reg[31] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[31]_i_1__0_n_0 ),
         .Q(mem_write_data[31]));
   FDCE \readdata2_reg_reg[3] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[3]_i_1__0_n_0 ),
         .Q(mem_write_data[3]));
   FDCE \readdata2_reg_reg[4] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[4]_i_1__0_n_0 ),
         .Q(mem_write_data[4]));
   FDCE \readdata2_reg_reg[5] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[5]_i_1__0_n_0 ),
         .Q(mem_write_data[5]));
   FDCE \readdata2_reg_reg[6] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[6]_i_1__0_n_0 ),
         .Q(mem_write_data[6]));
   FDCE \readdata2_reg_reg[7] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[7]_i_1__0_n_0 ),
         .Q(mem_write_data[7]));
   FDCE \readdata2_reg_reg[8] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[8]_i_1__0_n_0 ),
         .Q(mem_write_data[8]));
   FDCE \readdata2_reg_reg[9] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[9]_i_1__0_n_0 ),
         .Q(mem_write_data[9]));
   LUT4 #(
@@ -10036,7 +10036,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_idex
     \instruction_reg_reg[12]_0 ,
     \ALUOp_reg_reg[1]_0 ,
     clock,
-    \rd_reg_reg[4]_1 ,
+    AR,
     MemWrite_reg_reg_1,
     forwardingmuxA_rs1_to_ALU,
     int_MemtoReg__4,
@@ -10100,7 +10100,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_idex
     \pcin_reg_reg[15]_2 ,
     \rs1_reg_reg[4]_2 ,
     \rs2_reg_reg[4]_2 ,
-    \rd_reg_reg[4]_2 );
+    \rd_reg_reg[4]_1 );
   output idex_branch_to_exmem;
   output idex_alusrcb_to_alusrcmuxb;
   output [0:0]\immediate_reg_reg[30]_0 ;
@@ -10197,7 +10197,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_idex
   output [0:0]\instruction_reg_reg[12]_0 ;
   output [4:0]\ALUOp_reg_reg[1]_0 ;
   input clock;
-  input \rd_reg_reg[4]_1 ;
+  input [0:0]AR;
   input MemWrite_reg_reg_1;
   input [31:0]forwardingmuxA_rs1_to_ALU;
   input int_MemtoReg__4;
@@ -10261,7 +10261,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_idex
   input [14:0]\pcin_reg_reg[15]_2 ;
   input [4:0]\rs1_reg_reg[4]_2 ;
   input [4:0]\rs2_reg_reg[4]_2 ;
-  input [4:0]\rd_reg_reg[4]_2 ;
+  input [4:0]\rd_reg_reg[4]_1 ;
 
   wire \ALUOp_reg[0]_i_1_n_0 ;
   wire \ALUOp_reg[1]_i_1_n_0 ;
@@ -10273,6 +10273,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_idex
   wire [15:0]\ALU_INST/data10 ;
   wire [3:1]\ALU_INST/data3 ;
   wire [30:25]\ALU_INST/data8 ;
+  wire [0:0]AR;
   wire Branch_reg_i_1_n_0;
   wire [0:0]CO;
   wire [16:0]D;
@@ -10573,8 +10574,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_idex
   wire [0:0]\pcin_reg_reg[15]_1 ;
   wire [14:0]\pcin_reg_reg[15]_2 ;
   wire [4:0]\rd_reg_reg[4]_0 ;
-  wire \rd_reg_reg[4]_1 ;
-  wire [4:0]\rd_reg_reg[4]_2 ;
+  wire [4:0]\rd_reg_reg[4]_1 ;
   wire \readdata1_reg[0]_i_1_n_0 ;
   wire \readdata1_reg[10]_i_1_n_0 ;
   wire \readdata1_reg[11]_i_1_n_0 ;
@@ -10682,13 +10682,13 @@ module zynq_design_RISCVCOREZYNQ_0_0_idex
   FDCE \ALUOp_reg_reg[0] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\ALUOp_reg[0]_i_1_n_0 ),
         .Q(idex_aluop_to_alucontrol[0]));
   FDCE \ALUOp_reg_reg[1] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\ALUOp_reg[1]_i_1_n_0 ),
         .Q(idex_aluop_to_alucontrol[1]));
   (* SOFT_HLUTNM = "soft_lutpair79" *) 
@@ -10703,7 +10703,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_idex
   FDCE ALUSrc_reg_reg
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(ALUSrc_reg_i_1_n_0),
         .Q(idex_alusrcb_to_alusrcmuxb));
   (* SOFT_HLUTNM = "soft_lutpair79" *) 
@@ -10718,7 +10718,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_idex
   FDCE Branch_reg_reg
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(Branch_reg_i_1_n_0),
         .Q(idex_branch_to_exmem));
   (* SOFT_HLUTNM = "soft_lutpair81" *) 
@@ -10739,7 +10739,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_idex
   FDCE MemRead_reg_reg
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(MemRead_reg_i_1__0_n_0),
         .Q(idex_memread_to_exmem));
   (* SOFT_HLUTNM = "soft_lutpair96" *) 
@@ -10752,7 +10752,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_idex
   FDCE MemWrite_reg_reg
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(MemWrite_reg_reg_1),
         .Q(idex_memwrite_to_exmem));
   (* SOFT_HLUTNM = "soft_lutpair78" *) 
@@ -10783,7 +10783,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_idex
   FDCE MemtoReg_reg_reg
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(MemtoReg_reg_i_1_n_0),
         .Q(idex_memtoreg_to_exmem));
   (* SOFT_HLUTNM = "soft_lutpair78" *) 
@@ -10805,7 +10805,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_idex
   FDCE RegWrite_reg_reg
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(RegWrite_reg_i_1__0_n_0),
         .Q(idex_regwrite_to_exmem));
   LUT6 #(
@@ -12649,295 +12649,295 @@ module zynq_design_RISCVCOREZYNQ_0_0_idex
   FDCE \immediate_reg_reg[0] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\immediate_reg_reg[31]_1 [0]),
         .Q(idex_immediate_to_alusrcmuxb[0]));
   FDCE \immediate_reg_reg[10] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\immediate_reg_reg[31]_1 [10]),
         .Q(idex_immediate_to_alusrcmuxb[10]));
   FDCE \immediate_reg_reg[11] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\immediate_reg_reg[31]_1 [11]),
         .Q(idex_immediate_to_alusrcmuxb[11]));
   FDCE \immediate_reg_reg[12] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\immediate_reg_reg[31]_1 [12]),
         .Q(idex_immediate_to_alusrcmuxb[12]));
   FDCE \immediate_reg_reg[13] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\immediate_reg_reg[31]_1 [13]),
         .Q(idex_immediate_to_alusrcmuxb[13]));
   FDCE \immediate_reg_reg[14] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\immediate_reg_reg[31]_1 [14]),
         .Q(idex_immediate_to_alusrcmuxb[14]));
   FDCE \immediate_reg_reg[15] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\immediate_reg_reg[31]_1 [15]),
         .Q(idex_immediate_to_alusrcmuxb[15]));
   FDCE \immediate_reg_reg[16] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\immediate_reg_reg[31]_1 [16]),
         .Q(idex_immediate_to_alusrcmuxb[16]));
   FDCE \immediate_reg_reg[17] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\immediate_reg_reg[31]_1 [17]),
         .Q(idex_immediate_to_alusrcmuxb[17]));
   FDCE \immediate_reg_reg[18] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\immediate_reg_reg[31]_1 [18]),
         .Q(idex_immediate_to_alusrcmuxb[18]));
   FDCE \immediate_reg_reg[19] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\immediate_reg_reg[31]_1 [19]),
         .Q(idex_immediate_to_alusrcmuxb[19]));
   FDCE \immediate_reg_reg[1] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\immediate_reg_reg[31]_1 [1]),
         .Q(idex_immediate_to_alusrcmuxb[1]));
   FDCE \immediate_reg_reg[20] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\immediate_reg_reg[31]_1 [20]),
         .Q(idex_immediate_to_alusrcmuxb[20]));
   FDCE \immediate_reg_reg[21] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\immediate_reg_reg[31]_1 [21]),
         .Q(idex_immediate_to_alusrcmuxb[21]));
   FDCE \immediate_reg_reg[22] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\immediate_reg_reg[31]_1 [22]),
         .Q(idex_immediate_to_alusrcmuxb[22]));
   FDCE \immediate_reg_reg[23] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\immediate_reg_reg[31]_1 [23]),
         .Q(idex_immediate_to_alusrcmuxb[23]));
   FDCE \immediate_reg_reg[24] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\immediate_reg_reg[31]_1 [24]),
         .Q(idex_immediate_to_alusrcmuxb[24]));
   FDCE \immediate_reg_reg[25] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\immediate_reg_reg[31]_1 [25]),
         .Q(idex_immediate_to_alusrcmuxb[25]));
   FDCE \immediate_reg_reg[26] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\immediate_reg_reg[31]_1 [26]),
         .Q(idex_immediate_to_alusrcmuxb[26]));
   FDCE \immediate_reg_reg[27] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\immediate_reg_reg[31]_1 [27]),
         .Q(idex_immediate_to_alusrcmuxb[27]));
   FDCE \immediate_reg_reg[28] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\immediate_reg_reg[31]_1 [28]),
         .Q(idex_immediate_to_alusrcmuxb[28]));
   FDCE \immediate_reg_reg[29] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\immediate_reg_reg[31]_1 [29]),
         .Q(idex_immediate_to_alusrcmuxb[29]));
   FDCE \immediate_reg_reg[2] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\immediate_reg_reg[31]_1 [2]),
         .Q(idex_immediate_to_alusrcmuxb[2]));
   FDCE \immediate_reg_reg[30] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\immediate_reg_reg[31]_1 [30]),
         .Q(idex_immediate_to_alusrcmuxb[30]));
   FDCE \immediate_reg_reg[31] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\immediate_reg_reg[31]_1 [31]),
         .Q(idex_immediate_to_alusrcmuxb[31]));
   FDCE \immediate_reg_reg[3] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\immediate_reg_reg[31]_1 [3]),
         .Q(idex_immediate_to_alusrcmuxb[3]));
   FDCE \immediate_reg_reg[4] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\immediate_reg_reg[31]_1 [4]),
         .Q(Q));
   FDCE \immediate_reg_reg[5] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\immediate_reg_reg[31]_1 [5]),
         .Q(idex_immediate_to_alusrcmuxb[5]));
   FDCE \immediate_reg_reg[6] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\immediate_reg_reg[31]_1 [6]),
         .Q(idex_immediate_to_alusrcmuxb[6]));
   FDCE \immediate_reg_reg[7] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\immediate_reg_reg[31]_1 [7]),
         .Q(idex_immediate_to_alusrcmuxb[7]));
   FDCE \immediate_reg_reg[8] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\immediate_reg_reg[31]_1 [8]),
         .Q(idex_immediate_to_alusrcmuxb[8]));
   FDCE \immediate_reg_reg[9] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\immediate_reg_reg[31]_1 [9]),
         .Q(idex_immediate_to_alusrcmuxb[9]));
   FDCE \instruction_reg_reg[0] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[0]),
         .Q(idex_instruction_to_alucontrol[0]));
   FDCE \instruction_reg_reg[12] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[7]),
         .Q(idex_instruction_to_alucontrol[12]));
   FDCE \instruction_reg_reg[13] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[8]),
         .Q(idex_instruction_to_alucontrol[13]));
   FDCE \instruction_reg_reg[14] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[9]),
         .Q(idex_instruction_to_alucontrol[14]));
   FDCE \instruction_reg_reg[1] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[1]),
         .Q(idex_instruction_to_alucontrol[1]));
   FDCE \instruction_reg_reg[25] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[10]),
         .Q(idex_instruction_to_alucontrol[25]));
   FDCE \instruction_reg_reg[26] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[11]),
         .Q(idex_instruction_to_alucontrol[26]));
   FDCE \instruction_reg_reg[27] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[12]),
         .Q(idex_instruction_to_alucontrol[27]));
   FDCE \instruction_reg_reg[28] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[13]),
         .Q(idex_instruction_to_alucontrol[28]));
   FDCE \instruction_reg_reg[29] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[14]),
         .Q(idex_instruction_to_alucontrol[29]));
   FDCE \instruction_reg_reg[2] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[2]),
         .Q(idex_instruction_to_alucontrol[2]));
   FDCE \instruction_reg_reg[30] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[15]),
         .Q(idex_instruction_to_alucontrol[30]));
   FDCE \instruction_reg_reg[31] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[16]),
         .Q(idex_instruction_to_alucontrol[31]));
   FDCE \instruction_reg_reg[3] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[3]),
         .Q(idex_instruction_to_alucontrol[3]));
   FDCE \instruction_reg_reg[4] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[4]),
         .Q(idex_instruction_to_alucontrol[4]));
   FDCE \instruction_reg_reg[5] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[5]),
         .Q(idex_instruction_to_alucontrol[5]));
   FDCE \instruction_reg_reg[6] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(D[6]),
         .Q(idex_instruction_to_alucontrol[6]));
   LUT3 #(
@@ -13252,91 +13252,91 @@ module zynq_design_RISCVCOREZYNQ_0_0_idex
   FDCE \pcin_reg_reg[10] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\pcin_reg_reg[15]_2 [9]),
         .Q(\pcin_reg_reg[15]_0 [9]));
   FDCE \pcin_reg_reg[11] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\pcin_reg_reg[15]_2 [10]),
         .Q(\pcin_reg_reg[15]_0 [10]));
   FDCE \pcin_reg_reg[12] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\pcin_reg_reg[15]_2 [11]),
         .Q(\pcin_reg_reg[15]_0 [11]));
   FDCE \pcin_reg_reg[13] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\pcin_reg_reg[15]_2 [12]),
         .Q(\pcin_reg_reg[15]_0 [12]));
   FDCE \pcin_reg_reg[14] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\pcin_reg_reg[15]_2 [13]),
         .Q(\pcin_reg_reg[15]_0 [13]));
   FDCE \pcin_reg_reg[15] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\pcin_reg_reg[15]_2 [14]),
         .Q(\pcin_reg_reg[15]_0 [14]));
   FDCE \pcin_reg_reg[1] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\pcin_reg_reg[15]_2 [0]),
         .Q(\pcin_reg_reg[15]_0 [0]));
   FDCE \pcin_reg_reg[2] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\pcin_reg_reg[15]_2 [1]),
         .Q(\pcin_reg_reg[15]_0 [1]));
   FDCE \pcin_reg_reg[3] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\pcin_reg_reg[15]_2 [2]),
         .Q(\pcin_reg_reg[15]_0 [2]));
   FDCE \pcin_reg_reg[4] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\pcin_reg_reg[15]_2 [3]),
         .Q(\pcin_reg_reg[15]_0 [3]));
   FDCE \pcin_reg_reg[5] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\pcin_reg_reg[15]_2 [4]),
         .Q(\pcin_reg_reg[15]_0 [4]));
   FDCE \pcin_reg_reg[6] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\pcin_reg_reg[15]_2 [5]),
         .Q(\pcin_reg_reg[15]_0 [5]));
   FDCE \pcin_reg_reg[7] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\pcin_reg_reg[15]_2 [6]),
         .Q(\pcin_reg_reg[15]_0 [6]));
   FDCE \pcin_reg_reg[8] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\pcin_reg_reg[15]_2 [7]),
         .Q(\pcin_reg_reg[15]_0 [7]));
   FDCE \pcin_reg_reg[9] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\pcin_reg_reg[15]_2 [8]),
         .Q(\pcin_reg_reg[15]_0 [8]));
   (* SOFT_HLUTNM = "soft_lutpair94" *) 
@@ -13377,32 +13377,32 @@ module zynq_design_RISCVCOREZYNQ_0_0_idex
   FDCE \rd_reg_reg[0] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
-        .D(\rd_reg_reg[4]_2 [0]),
+        .CLR(AR),
+        .D(\rd_reg_reg[4]_1 [0]),
         .Q(idex_rd_to_exmem[0]));
   FDCE \rd_reg_reg[1] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
-        .D(\rd_reg_reg[4]_2 [1]),
+        .CLR(AR),
+        .D(\rd_reg_reg[4]_1 [1]),
         .Q(idex_rd_to_exmem[1]));
   FDCE \rd_reg_reg[2] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
-        .D(\rd_reg_reg[4]_2 [2]),
+        .CLR(AR),
+        .D(\rd_reg_reg[4]_1 [2]),
         .Q(idex_rd_to_exmem[2]));
   FDCE \rd_reg_reg[3] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
-        .D(\rd_reg_reg[4]_2 [3]),
+        .CLR(AR),
+        .D(\rd_reg_reg[4]_1 [3]),
         .Q(idex_rd_to_exmem[3]));
   FDCE \rd_reg_reg[4] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
-        .D(\rd_reg_reg[4]_2 [4]),
+        .CLR(AR),
+        .D(\rd_reg_reg[4]_1 [4]),
         .Q(idex_rd_to_exmem[4]));
   (* SOFT_HLUTNM = "soft_lutpair113" *) 
   LUT2 #(
@@ -13631,193 +13631,193 @@ module zynq_design_RISCVCOREZYNQ_0_0_idex
   FDCE \readdata1_reg_reg[0] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata1_reg[0]_i_1_n_0 ),
         .Q(\readdata1_reg_reg[31]_0 [0]));
   FDCE \readdata1_reg_reg[10] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata1_reg[10]_i_1_n_0 ),
         .Q(\readdata1_reg_reg[31]_0 [10]));
   FDCE \readdata1_reg_reg[11] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata1_reg[11]_i_1_n_0 ),
         .Q(\readdata1_reg_reg[31]_0 [11]));
   FDCE \readdata1_reg_reg[12] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata1_reg[12]_i_1_n_0 ),
         .Q(\readdata1_reg_reg[31]_0 [12]));
   FDCE \readdata1_reg_reg[13] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata1_reg[13]_i_1_n_0 ),
         .Q(\readdata1_reg_reg[31]_0 [13]));
   FDCE \readdata1_reg_reg[14] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata1_reg[14]_i_1_n_0 ),
         .Q(\readdata1_reg_reg[31]_0 [14]));
   FDCE \readdata1_reg_reg[15] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata1_reg[15]_i_1_n_0 ),
         .Q(\readdata1_reg_reg[31]_0 [15]));
   FDCE \readdata1_reg_reg[16] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata1_reg[16]_i_1_n_0 ),
         .Q(\readdata1_reg_reg[31]_0 [16]));
   FDCE \readdata1_reg_reg[17] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata1_reg[17]_i_1_n_0 ),
         .Q(\readdata1_reg_reg[31]_0 [17]));
   FDCE \readdata1_reg_reg[18] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata1_reg[18]_i_1_n_0 ),
         .Q(\readdata1_reg_reg[31]_0 [18]));
   FDCE \readdata1_reg_reg[19] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata1_reg[19]_i_1_n_0 ),
         .Q(\readdata1_reg_reg[31]_0 [19]));
   FDCE \readdata1_reg_reg[1] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata1_reg[1]_i_1_n_0 ),
         .Q(\readdata1_reg_reg[31]_0 [1]));
   FDCE \readdata1_reg_reg[20] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata1_reg[20]_i_1_n_0 ),
         .Q(\readdata1_reg_reg[31]_0 [20]));
   FDCE \readdata1_reg_reg[21] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata1_reg[21]_i_1_n_0 ),
         .Q(\readdata1_reg_reg[31]_0 [21]));
   FDCE \readdata1_reg_reg[22] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata1_reg[22]_i_1_n_0 ),
         .Q(\readdata1_reg_reg[31]_0 [22]));
   FDCE \readdata1_reg_reg[23] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata1_reg[23]_i_1_n_0 ),
         .Q(\readdata1_reg_reg[31]_0 [23]));
   FDCE \readdata1_reg_reg[24] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata1_reg[24]_i_1_n_0 ),
         .Q(\readdata1_reg_reg[31]_0 [24]));
   FDCE \readdata1_reg_reg[25] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata1_reg[25]_i_1_n_0 ),
         .Q(\readdata1_reg_reg[31]_0 [25]));
   FDCE \readdata1_reg_reg[26] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata1_reg[26]_i_1_n_0 ),
         .Q(\readdata1_reg_reg[31]_0 [26]));
   FDCE \readdata1_reg_reg[27] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata1_reg[27]_i_1_n_0 ),
         .Q(\readdata1_reg_reg[31]_0 [27]));
   FDCE \readdata1_reg_reg[28] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata1_reg[28]_i_1_n_0 ),
         .Q(\readdata1_reg_reg[31]_0 [28]));
   FDCE \readdata1_reg_reg[29] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata1_reg[29]_i_1_n_0 ),
         .Q(\readdata1_reg_reg[31]_0 [29]));
   FDCE \readdata1_reg_reg[2] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata1_reg[2]_i_1_n_0 ),
         .Q(\readdata1_reg_reg[31]_0 [2]));
   FDCE \readdata1_reg_reg[30] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata1_reg[30]_i_1_n_0 ),
         .Q(\readdata1_reg_reg[31]_0 [30]));
   FDCE \readdata1_reg_reg[31] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata1_reg[31]_i_1_n_0 ),
         .Q(\readdata1_reg_reg[31]_0 [31]));
   FDCE \readdata1_reg_reg[3] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata1_reg[3]_i_1_n_0 ),
         .Q(\readdata1_reg_reg[31]_0 [3]));
   FDCE \readdata1_reg_reg[4] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata1_reg[4]_i_1_n_0 ),
         .Q(\readdata1_reg_reg[31]_0 [4]));
   FDCE \readdata1_reg_reg[5] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata1_reg[5]_i_1_n_0 ),
         .Q(\readdata1_reg_reg[31]_0 [5]));
   FDCE \readdata1_reg_reg[6] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata1_reg[6]_i_1_n_0 ),
         .Q(\readdata1_reg_reg[31]_0 [6]));
   FDCE \readdata1_reg_reg[7] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata1_reg[7]_i_1_n_0 ),
         .Q(\readdata1_reg_reg[31]_0 [7]));
   FDCE \readdata1_reg_reg[8] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata1_reg[8]_i_1_n_0 ),
         .Q(\readdata1_reg_reg[31]_0 [8]));
   FDCE \readdata1_reg_reg[9] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata1_reg[9]_i_1_n_0 ),
         .Q(\readdata1_reg_reg[31]_0 [9]));
   LUT2 #(
@@ -14053,193 +14053,193 @@ module zynq_design_RISCVCOREZYNQ_0_0_idex
   FDCE \readdata2_reg_reg[0] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[0]_i_1_n_0 ),
         .Q(\readdata2_reg_reg[31]_0 [0]));
   FDCE \readdata2_reg_reg[10] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[10]_i_1_n_0 ),
         .Q(\readdata2_reg_reg[31]_0 [10]));
   FDCE \readdata2_reg_reg[11] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[11]_i_1_n_0 ),
         .Q(\readdata2_reg_reg[31]_0 [11]));
   FDCE \readdata2_reg_reg[12] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[12]_i_1_n_0 ),
         .Q(\readdata2_reg_reg[31]_0 [12]));
   FDCE \readdata2_reg_reg[13] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[13]_i_1_n_0 ),
         .Q(\readdata2_reg_reg[31]_0 [13]));
   FDCE \readdata2_reg_reg[14] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[14]_i_1_n_0 ),
         .Q(\readdata2_reg_reg[31]_0 [14]));
   FDCE \readdata2_reg_reg[15] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[15]_i_1_n_0 ),
         .Q(\readdata2_reg_reg[31]_0 [15]));
   FDCE \readdata2_reg_reg[16] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[16]_i_1_n_0 ),
         .Q(\readdata2_reg_reg[31]_0 [16]));
   FDCE \readdata2_reg_reg[17] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[17]_i_1_n_0 ),
         .Q(\readdata2_reg_reg[31]_0 [17]));
   FDCE \readdata2_reg_reg[18] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[18]_i_1_n_0 ),
         .Q(\readdata2_reg_reg[31]_0 [18]));
   FDCE \readdata2_reg_reg[19] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[19]_i_1_n_0 ),
         .Q(\readdata2_reg_reg[31]_0 [19]));
   FDCE \readdata2_reg_reg[1] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[1]_i_1_n_0 ),
         .Q(\readdata2_reg_reg[31]_0 [1]));
   FDCE \readdata2_reg_reg[20] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[20]_i_1_n_0 ),
         .Q(\readdata2_reg_reg[31]_0 [20]));
   FDCE \readdata2_reg_reg[21] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[21]_i_1_n_0 ),
         .Q(\readdata2_reg_reg[31]_0 [21]));
   FDCE \readdata2_reg_reg[22] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[22]_i_1_n_0 ),
         .Q(\readdata2_reg_reg[31]_0 [22]));
   FDCE \readdata2_reg_reg[23] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[23]_i_1_n_0 ),
         .Q(\readdata2_reg_reg[31]_0 [23]));
   FDCE \readdata2_reg_reg[24] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[24]_i_1_n_0 ),
         .Q(\readdata2_reg_reg[31]_0 [24]));
   FDCE \readdata2_reg_reg[25] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[25]_i_1_n_0 ),
         .Q(\readdata2_reg_reg[31]_0 [25]));
   FDCE \readdata2_reg_reg[26] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[26]_i_1_n_0 ),
         .Q(\readdata2_reg_reg[31]_0 [26]));
   FDCE \readdata2_reg_reg[27] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[27]_i_1_n_0 ),
         .Q(\readdata2_reg_reg[31]_0 [27]));
   FDCE \readdata2_reg_reg[28] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[28]_i_1_n_0 ),
         .Q(\readdata2_reg_reg[31]_0 [28]));
   FDCE \readdata2_reg_reg[29] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[29]_i_1_n_0 ),
         .Q(\readdata2_reg_reg[31]_0 [29]));
   FDCE \readdata2_reg_reg[2] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[2]_i_1_n_0 ),
         .Q(\readdata2_reg_reg[31]_0 [2]));
   FDCE \readdata2_reg_reg[30] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[30]_i_1_n_0 ),
         .Q(\readdata2_reg_reg[31]_0 [30]));
   FDCE \readdata2_reg_reg[31] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[31]_i_1_n_0 ),
         .Q(\readdata2_reg_reg[31]_0 [31]));
   FDCE \readdata2_reg_reg[3] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[3]_i_1_n_0 ),
         .Q(\readdata2_reg_reg[31]_0 [3]));
   FDCE \readdata2_reg_reg[4] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[4]_i_1_n_0 ),
         .Q(\readdata2_reg_reg[31]_0 [4]));
   FDCE \readdata2_reg_reg[5] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[5]_i_1_n_0 ),
         .Q(\readdata2_reg_reg[31]_0 [5]));
   FDCE \readdata2_reg_reg[6] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[6]_i_1_n_0 ),
         .Q(\readdata2_reg_reg[31]_0 [6]));
   FDCE \readdata2_reg_reg[7] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[7]_i_1_n_0 ),
         .Q(\readdata2_reg_reg[31]_0 [7]));
   FDCE \readdata2_reg_reg[8] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[8]_i_1_n_0 ),
         .Q(\readdata2_reg_reg[31]_0 [8]));
   FDCE \readdata2_reg_reg[9] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\readdata2_reg[9]_i_1_n_0 ),
         .Q(\readdata2_reg_reg[31]_0 [9]));
   LUT4 #(
@@ -14391,61 +14391,61 @@ module zynq_design_RISCVCOREZYNQ_0_0_idex
   FDCE \rs1_reg_reg[0] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\rs1_reg_reg[4]_2 [0]),
         .Q(\rs1_reg_reg[4]_1 [0]));
   FDCE \rs1_reg_reg[1] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\rs1_reg_reg[4]_2 [1]),
         .Q(\rs1_reg_reg[4]_1 [1]));
   FDCE \rs1_reg_reg[2] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\rs1_reg_reg[4]_2 [2]),
         .Q(\rs1_reg_reg[4]_1 [2]));
   FDCE \rs1_reg_reg[3] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\rs1_reg_reg[4]_2 [3]),
         .Q(\rs1_reg_reg[4]_1 [3]));
   FDCE \rs1_reg_reg[4] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\rs1_reg_reg[4]_2 [4]),
         .Q(\rs1_reg_reg[4]_1 [4]));
   FDCE \rs2_reg_reg[0] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\rs2_reg_reg[4]_2 [0]),
         .Q(\rs2_reg_reg[4]_1 [0]));
   FDCE \rs2_reg_reg[1] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\rs2_reg_reg[4]_2 [1]),
         .Q(\rs2_reg_reg[4]_1 [1]));
   FDCE \rs2_reg_reg[2] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\rs2_reg_reg[4]_2 [2]),
         .Q(\rs2_reg_reg[4]_1 [2]));
   FDCE \rs2_reg_reg[3] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\rs2_reg_reg[4]_2 [3]),
         .Q(\rs2_reg_reg[4]_1 [3]));
   FDCE \rs2_reg_reg[4] 
        (.C(clock),
         .CE(1'b1),
-        .CLR(\rd_reg_reg[4]_1 ),
+        .CLR(AR),
         .D(\rs2_reg_reg[4]_2 [4]),
         .Q(\rs2_reg_reg[4]_1 [4]));
 endmodule
@@ -14516,14 +14516,14 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     instruction_reg0,
     p_0_in,
     clock,
-    \rs2_reg_reg[4]_2 ,
+    AR,
     \rs1_reg_reg[3]_1 ,
     \rs1_reg_reg[4]_2 ,
     \rs1_reg_reg[0]_1 ,
     \rs1_reg_reg[1]_1 ,
     \rs1_reg_reg[2]_1 ,
     \rs2_reg_reg[3]_1 ,
-    \rs2_reg_reg[4]_3 ,
+    \rs2_reg_reg[4]_2 ,
     \rs2_reg_reg[0]_1 ,
     \rs2_reg_reg[1]_1 ,
     \rs2_reg_reg[2]_1 ,
@@ -14638,14 +14638,14 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
   input instruction_reg0;
   input [21:0]p_0_in;
   input clock;
-  input \rs2_reg_reg[4]_2 ;
+  input [0:0]AR;
   input \rs1_reg_reg[3]_1 ;
   input \rs1_reg_reg[4]_2 ;
   input \rs1_reg_reg[0]_1 ;
   input \rs1_reg_reg[1]_1 ;
   input \rs1_reg_reg[2]_1 ;
   input \rs2_reg_reg[3]_1 ;
-  input \rs2_reg_reg[4]_3 ;
+  input \rs2_reg_reg[4]_2 ;
   input \rs2_reg_reg[0]_1 ;
   input \rs2_reg_reg[1]_1 ;
   input \rs2_reg_reg[2]_1 ;
@@ -14697,6 +14697,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
   input [0:0]\muxOut_reg[15]_i_4_1 ;
   input [14:0]\pcout_reg_reg[15]_1 ;
 
+  wire [0:0]AR;
   wire [0:0]CO;
   wire \CONTROLUNIT_INST/data0 ;
   wire \CONTROLUNIT_INST/data1 ;
@@ -14918,7 +14919,6 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
   wire \rs2_reg_reg[4]_0 ;
   wire [4:0]\rs2_reg_reg[4]_1 ;
   wire \rs2_reg_reg[4]_2 ;
-  wire \rs2_reg_reg[4]_3 ;
   wire [3:0]\NLW_muxOut_reg[15]_i_10_O_UNCONNECTED ;
   wire [3:0]\NLW_muxOut_reg[15]_i_14_O_UNCONNECTED ;
   wire [3:0]\NLW_muxOut_reg[15]_i_18_O_UNCONNECTED ;
@@ -17046,7 +17046,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \instruction_reg_reg[0] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(p_0_in[0]),
         .Q(ifid_instruction_to_OUT[0]));
   FDCE #(
@@ -17054,7 +17054,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \instruction_reg_reg[10] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(p_0_in[10]),
         .Q(\instruction_reg_reg[11]_0 [3]));
   FDCE #(
@@ -17062,7 +17062,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \instruction_reg_reg[11] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(p_0_in[11]),
         .Q(\instruction_reg_reg[11]_0 [4]));
   FDCE #(
@@ -17070,7 +17070,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \instruction_reg_reg[12] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(p_0_in[12]),
         .Q(ifid_instruction_to_OUT[12]));
   FDCE #(
@@ -17078,7 +17078,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \instruction_reg_reg[13] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(p_0_in[13]),
         .Q(ifid_instruction_to_OUT[13]));
   FDCE #(
@@ -17086,7 +17086,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \instruction_reg_reg[14] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(p_0_in[14]),
         .Q(ifid_instruction_to_OUT[14]));
   FDCE #(
@@ -17094,7 +17094,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \instruction_reg_reg[1] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(p_0_in[1]),
         .Q(ifid_instruction_to_OUT[1]));
   FDCE #(
@@ -17102,7 +17102,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \instruction_reg_reg[25] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(p_0_in[15]),
         .Q(ifid_instruction_to_OUT[25]));
   FDCE #(
@@ -17110,7 +17110,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \instruction_reg_reg[26] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(p_0_in[16]),
         .Q(ifid_instruction_to_OUT[26]));
   FDCE #(
@@ -17118,7 +17118,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \instruction_reg_reg[27] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(p_0_in[17]),
         .Q(ifid_instruction_to_OUT[27]));
   FDCE #(
@@ -17126,7 +17126,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \instruction_reg_reg[28] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(p_0_in[18]),
         .Q(ifid_instruction_to_OUT[28]));
   FDCE #(
@@ -17134,7 +17134,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \instruction_reg_reg[29] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(p_0_in[19]),
         .Q(ifid_instruction_to_OUT[29]));
   FDCE #(
@@ -17142,7 +17142,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \instruction_reg_reg[2] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(p_0_in[2]),
         .Q(ifid_instruction_to_OUT[2]));
   FDCE #(
@@ -17150,7 +17150,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \instruction_reg_reg[30] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(p_0_in[20]),
         .Q(ifid_instruction_to_OUT[30]));
   FDCE #(
@@ -17158,7 +17158,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \instruction_reg_reg[31] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(p_0_in[21]),
         .Q(ifid_instruction_to_OUT[31]));
   FDCE #(
@@ -17166,7 +17166,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \instruction_reg_reg[3] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(p_0_in[3]),
         .Q(ifid_instruction_to_OUT[3]));
   FDCE #(
@@ -17174,7 +17174,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \instruction_reg_reg[4] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(p_0_in[4]),
         .Q(ifid_instruction_to_OUT[4]));
   FDCE #(
@@ -17182,7 +17182,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \instruction_reg_reg[5] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(p_0_in[5]),
         .Q(ifid_instruction_to_OUT[5]));
   FDCE #(
@@ -17190,7 +17190,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \instruction_reg_reg[6] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(p_0_in[6]),
         .Q(ifid_instruction_to_OUT[6]));
   FDCE #(
@@ -17198,7 +17198,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \instruction_reg_reg[7] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(p_0_in[7]),
         .Q(\instruction_reg_reg[11]_0 [0]));
   FDCE #(
@@ -17206,7 +17206,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \instruction_reg_reg[8] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(p_0_in[8]),
         .Q(\instruction_reg_reg[11]_0 [1]));
   FDCE #(
@@ -17214,7 +17214,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \instruction_reg_reg[9] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(p_0_in[9]),
         .Q(\instruction_reg_reg[11]_0 [2]));
   (* SOFT_HLUTNM = "soft_lutpair179" *) 
@@ -18122,7 +18122,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \pcout_reg_reg[10] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(\pcout_reg_reg[15]_1 [9]),
         .Q(ifid_pcout_to_OUT[10]));
   FDCE #(
@@ -18130,7 +18130,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \pcout_reg_reg[11] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(\pcout_reg_reg[15]_1 [10]),
         .Q(ifid_pcout_to_OUT[11]));
   FDCE #(
@@ -18138,7 +18138,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \pcout_reg_reg[12] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(\pcout_reg_reg[15]_1 [11]),
         .Q(ifid_pcout_to_OUT[12]));
   FDCE #(
@@ -18146,7 +18146,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \pcout_reg_reg[13] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(\pcout_reg_reg[15]_1 [12]),
         .Q(ifid_pcout_to_OUT[13]));
   FDCE #(
@@ -18154,7 +18154,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \pcout_reg_reg[14] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(\pcout_reg_reg[15]_1 [13]),
         .Q(ifid_pcout_to_OUT[14]));
   FDCE #(
@@ -18162,7 +18162,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \pcout_reg_reg[15] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(\pcout_reg_reg[15]_1 [14]),
         .Q(ifid_pcout_to_OUT[15]));
   FDCE #(
@@ -18170,7 +18170,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \pcout_reg_reg[1] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(\pcout_reg_reg[15]_1 [0]),
         .Q(ifid_pcout_to_OUT[1]));
   FDCE #(
@@ -18178,7 +18178,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \pcout_reg_reg[2] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(\pcout_reg_reg[15]_1 [1]),
         .Q(ifid_pcout_to_OUT[2]));
   FDCE #(
@@ -18186,7 +18186,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \pcout_reg_reg[3] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(\pcout_reg_reg[15]_1 [2]),
         .Q(ifid_pcout_to_OUT[3]));
   FDCE #(
@@ -18194,7 +18194,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \pcout_reg_reg[4] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(\pcout_reg_reg[15]_1 [3]),
         .Q(ifid_pcout_to_OUT[4]));
   FDCE #(
@@ -18202,7 +18202,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \pcout_reg_reg[5] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(\pcout_reg_reg[15]_1 [4]),
         .Q(ifid_pcout_to_OUT[5]));
   FDCE #(
@@ -18210,7 +18210,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \pcout_reg_reg[6] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(\pcout_reg_reg[15]_1 [5]),
         .Q(ifid_pcout_to_OUT[6]));
   FDCE #(
@@ -18218,7 +18218,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \pcout_reg_reg[7] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(\pcout_reg_reg[15]_1 [6]),
         .Q(ifid_pcout_to_OUT[7]));
   FDCE #(
@@ -18226,7 +18226,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \pcout_reg_reg[8] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(\pcout_reg_reg[15]_1 [7]),
         .Q(ifid_pcout_to_OUT[8]));
   FDCE #(
@@ -18234,7 +18234,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \pcout_reg_reg[9] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(\pcout_reg_reg[15]_1 [8]),
         .Q(ifid_pcout_to_OUT[9]));
   (* SOFT_HLUTNM = "soft_lutpair164" *) 
@@ -18312,7 +18312,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \rs1_reg_reg[0] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(\rs1_reg_reg[0]_1 ),
         .Q(\rs1_reg_reg[0]_0 ));
   FDCE #(
@@ -18320,7 +18320,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \rs1_reg_reg[1] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(\rs1_reg_reg[1]_1 ),
         .Q(\rs1_reg_reg[1]_0 ));
   FDCE #(
@@ -18328,7 +18328,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \rs1_reg_reg[2] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(\rs1_reg_reg[2]_1 ),
         .Q(\rs1_reg_reg[2]_0 ));
   FDCE #(
@@ -18336,7 +18336,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \rs1_reg_reg[3] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(\rs1_reg_reg[3]_1 ),
         .Q(\rs1_reg_reg[3]_0 ));
   FDCE #(
@@ -18344,7 +18344,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \rs1_reg_reg[4] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(\rs1_reg_reg[4]_2 ),
         .Q(\rs1_reg_reg[4]_0 ));
   (* SOFT_HLUTNM = "soft_lutpair168" *) 
@@ -18387,7 +18387,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \rs2_reg_reg[0] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(\rs2_reg_reg[0]_1 ),
         .Q(\rs2_reg_reg[0]_0 ));
   FDCE #(
@@ -18395,7 +18395,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \rs2_reg_reg[1] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(\rs2_reg_reg[1]_1 ),
         .Q(\rs2_reg_reg[1]_0 ));
   FDCE #(
@@ -18403,7 +18403,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \rs2_reg_reg[2] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(\rs2_reg_reg[2]_1 ),
         .Q(\rs2_reg_reg[2]_0 ));
   FDCE #(
@@ -18411,7 +18411,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \rs2_reg_reg[3] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
+        .CLR(AR),
         .D(\rs2_reg_reg[3]_1 ),
         .Q(\rs2_reg_reg[3]_0 ));
   FDCE #(
@@ -18419,8 +18419,8 @@ module zynq_design_RISCVCOREZYNQ_0_0_ifid
     \rs2_reg_reg[4] 
        (.C(clock),
         .CE(instruction_reg0),
-        .CLR(\rs2_reg_reg[4]_2 ),
-        .D(\rs2_reg_reg[4]_3 ),
+        .CLR(AR),
+        .D(\rs2_reg_reg[4]_2 ),
         .Q(\rs2_reg_reg[4]_0 ));
 endmodule
 
@@ -18480,7 +18480,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_internal_connections
     \readdata2_reg_reg[29] ,
     \readdata2_reg_reg[30] ,
     clock,
-    \pc_reg_reg[1] ,
+    AR,
     early_prev_reg,
     branch_prev_reg,
     int_if_flush_reg,
@@ -18544,7 +18544,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_internal_connections
   output \readdata2_reg_reg[29] ;
   output \readdata2_reg_reg[30] ;
   input clock;
-  input \pc_reg_reg[1] ;
+  input [0:0]AR;
   input early_prev_reg;
   input branch_prev_reg;
   input int_if_flush_reg;
@@ -18616,6 +18616,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_internal_connections
   wire ALU_INST_n_97;
   wire ALU_INST_n_98;
   wire ALU_INST_n_99;
+  wire [0:0]AR;
   wire CONTROLUNIT_INST_n_10;
   wire CONTROLUNIT_INST_n_11;
   wire CONTROLUNIT_INST_n_12;
@@ -19209,7 +19210,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_internal_connections
   wire p_0_in;
   wire [31:0]p_0_in_0;
   wire p_0_in_2;
-  wire [31:0]p_1_in;
+  wire [31:0]p_2_in;
   wire pc_4_adder_instance_n_14;
   wire pc_instance_n_0;
   wire pc_instance_n_16;
@@ -19230,7 +19231,6 @@ module zynq_design_RISCVCOREZYNQ_0_0_internal_connections
   wire [15:1]pc_mux_pcsource_to_pc;
   wire [14:0]pc_out;
   wire pc_reg0;
-  wire \pc_reg_reg[1] ;
   wire pcimmadder_inst_n_10;
   wire pcimmadder_inst_n_11;
   wire pcimmadder_inst_n_12;
@@ -19299,7 +19299,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_internal_connections
 
   zynq_design_RISCVCOREZYNQ_0_0_alucontrol ALU_CONTROL_INST
        (.CO(result_temp6),
-        .D({p_1_in[31],p_1_in[28:0]}),
+        .D({p_2_in[31],p_2_in[28:0]}),
         .E(IDEX_INST_n_236),
         .Q(idex_pcout_to_alu),
         .\aluoperation_reg[1]_0 (ALU_CONTROL_INST_n_32),
@@ -19575,8 +19575,9 @@ module zynq_design_RISCVCOREZYNQ_0_0_internal_connections
         .pcOut1_carry_i_12(ifid_instance_n_173),
         .regOrPCCntrl(regOrPCCntrl));
   zynq_design_RISCVCOREZYNQ_0_0_exmem EXMEM_INST
-       (.CO(IDEX_INST_n_171),
-        .D({p_1_in[31],p_1_in[28:0]}),
+       (.AR(AR),
+        .CO(IDEX_INST_n_171),
+        .D({p_2_in[31],p_2_in[28:0]}),
         .E(p_0_in),
         .MemRead_reg_reg_0(MemRead_reg_reg),
         .MemRead_reg_reg_1(IDEX_INST_n_43),
@@ -19745,8 +19746,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_internal_connections
         .mul_result__0_9(EXMEM_INST_n_224),
         .mul_result__3(mul_result__3[20:16]),
         .\rd_reg_reg[4]_0 (exmem_rd_to_memwb),
-        .\rd_reg_reg[4]_1 (\pc_reg_reg[1] ),
-        .\rd_reg_reg[4]_2 ({IDEX_INST_n_37,IDEX_INST_n_38,IDEX_INST_n_39,IDEX_INST_n_40,IDEX_INST_n_41}),
+        .\rd_reg_reg[4]_1 ({IDEX_INST_n_37,IDEX_INST_n_38,IDEX_INST_n_39,IDEX_INST_n_40,IDEX_INST_n_41}),
         .\readdata2_reg[0]_i_2 (idex_rs2_to_forwardingunit[3:0]),
         .\readdata2_reg[0]_i_2_0 (IDEX_INST_n_136),
         .\readdata2_reg_reg[0]_0 (MEMWB_INST_n_31),
@@ -19783,6 +19783,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_internal_connections
         .\ALUOp_reg_reg[1]_0 ({IDEX_INST_n_237,IDEX_INST_n_238,IDEX_INST_n_239,IDEX_INST_n_240,IDEX_INST_n_241}),
         .\ALUOp_reg_reg[1]_1 (ifid_instance_n_31),
         .ALUSrc_reg_reg_0(ifid_instance_n_32),
+        .AR(AR),
         .CO(result_temp6),
         .D({ifid_instance_n_92,ifid_instance_n_93,ifid_instance_n_94,ifid_instance_n_95,ifid_instance_n_96,ifid_instance_n_97,ifid_instance_n_98,ifid_instance_n_99,ifid_instance_n_100,ifid_instance_n_101,ifid_instance_n_102,ifid_instance_n_103,ifid_instance_n_104,ifid_instance_n_105,ifid_instance_n_106,ifid_instance_n_107,ifid_instance_n_108}),
         .DI({IDEX_INST_n_142,IDEX_INST_n_143,IDEX_INST_n_144,IDEX_INST_n_145}),
@@ -19926,8 +19927,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_internal_connections
         .\pcin_reg_reg[15]_1 (IDEX_INST_n_171),
         .\pcin_reg_reg[15]_2 ({ifid_instance_n_156,ifid_instance_n_157,ifid_instance_n_158,ifid_instance_n_159,ifid_instance_n_160,ifid_instance_n_161,ifid_instance_n_162,ifid_instance_n_163,ifid_instance_n_164,ifid_instance_n_165,ifid_instance_n_166,ifid_instance_n_167,ifid_instance_n_168,ifid_instance_n_169,ifid_instance_n_170}),
         .\rd_reg_reg[4]_0 ({IDEX_INST_n_37,IDEX_INST_n_38,IDEX_INST_n_39,IDEX_INST_n_40,IDEX_INST_n_41}),
-        .\rd_reg_reg[4]_1 (\pc_reg_reg[1] ),
-        .\rd_reg_reg[4]_2 ({ifid_instance_n_15,ifid_instance_n_16,ifid_instance_n_17,ifid_instance_n_18,ifid_instance_n_19}),
+        .\rd_reg_reg[4]_1 ({ifid_instance_n_15,ifid_instance_n_16,ifid_instance_n_17,ifid_instance_n_18,ifid_instance_n_19}),
         .\readdata1_reg_reg[31]_0 (idex_rs1_to_forwardingmuxa),
         .\readdata2_reg[31]_i_3 (exmem_rd_to_memwb[4]),
         .\readdata2_reg_reg[31]_0 (idex_rs2_to_forwardingmuxb),
@@ -19941,7 +19941,8 @@ module zynq_design_RISCVCOREZYNQ_0_0_internal_connections
         .\rs2_reg_reg[4]_2 ({ifid_instance_n_21,ifid_instance_n_22,ifid_instance_n_23,ifid_instance_n_24,ifid_instance_n_25}),
         .start(start));
   zynq_design_RISCVCOREZYNQ_0_0_memwb MEMWB_INST
-       (.E(p_0_in),
+       (.AR(AR),
+        .E(p_0_in),
         .Q(\rd_reg_reg[4] ),
         .\aluresult_reg_reg[31]_0 (Q),
         .clock(clock),
@@ -19955,8 +19956,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_internal_connections
         .forwardingmuxb_rs2_to_alusrcmuxb(forwardingmuxb_rs2_to_alusrcmuxb[0]),
         .mem_read_data(mem_read_data),
         .mul_result(idex_rs1_to_forwardingunit),
-        .\rd_reg_reg[4]_0 (\pc_reg_reg[1] ),
-        .\rd_reg_reg[4]_1 (exmem_rd_to_memwb),
+        .\rd_reg_reg[4]_0 (exmem_rd_to_memwb),
         .\readdata2_reg[5]_i_2 (idex_rs2_to_forwardingunit),
         .\readdata2_reg_reg[0]_0 (\readdata2_reg_reg[0] ),
         .\readdata2_reg_reg[0]_1 (idex_rs2_to_forwardingmuxb[0]),
@@ -20020,7 +20020,8 @@ module zynq_design_RISCVCOREZYNQ_0_0_internal_connections
         .\readdata2_reg_reg[9]_1 (\readdata2_reg_reg[9] ),
         .reg_write(reg_write));
   zynq_design_RISCVCOREZYNQ_0_0_ifid ifid_instance
-       (.CO(data2_1),
+       (.AR(AR),
+        .CO(data2_1),
         .D({ifid_instance_n_35,ifid_instance_n_36,ifid_instance_n_37,ifid_instance_n_38}),
         .DI({ifid_instance_n_207,ifid_instance_n_208,ifid_instance_n_209,ifid_instance_n_210}),
         .O(pcplusimmadder_pcplusimm_to_pc_mux),
@@ -20140,8 +20141,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_internal_connections
         .\rs2_reg_reg[3]_1 (CONTROLUNIT_INST_n_10),
         .\rs2_reg_reg[4]_0 (\rs2_reg_reg[4] ),
         .\rs2_reg_reg[4]_1 ({ifid_instance_n_21,ifid_instance_n_22,ifid_instance_n_23,ifid_instance_n_24,ifid_instance_n_25}),
-        .\rs2_reg_reg[4]_2 (\pc_reg_reg[1] ),
-        .\rs2_reg_reg[4]_3 (CONTROLUNIT_INST_n_11));
+        .\rs2_reg_reg[4]_2 (CONTROLUNIT_INST_n_11));
   zynq_design_RISCVCOREZYNQ_0_0_pc4adder pc_4_adder_instance
        (.D(pc_4_adder_instance_n_14),
         .Q(pc_out),
@@ -20149,14 +20149,14 @@ module zynq_design_RISCVCOREZYNQ_0_0_internal_connections
         .\pc_reg_reg[15] (plusOp),
         .\pc_reg_reg[1] (controlunit_earlybranch_to_pcmux));
   zynq_design_RISCVCOREZYNQ_0_0_program_counter pc_instance
-       (.E(pc_reg0),
+       (.AR(AR),
+        .E(pc_reg0),
         .Q(pc_out),
         .S(pc_instance_n_0),
         .clock(clock),
         .controlunit_ifidflush_to_ifid(controlunit_ifidflush_to_ifid),
         .\pc_reg_reg[15]_0 ({pc_instance_n_16,pc_instance_n_17,pc_instance_n_18,pc_instance_n_19,pc_instance_n_20,pc_instance_n_21,pc_instance_n_22,pc_instance_n_23,pc_instance_n_24,pc_instance_n_25,pc_instance_n_26,pc_instance_n_27,pc_instance_n_28,pc_instance_n_29,pc_instance_n_30}),
-        .\pc_reg_reg[15]_1 (pc_mux_pcsource_to_pc),
-        .\pc_reg_reg[1]_0 (\pc_reg_reg[1] ));
+        .\pc_reg_reg[15]_1 (pc_mux_pcsource_to_pc));
   zynq_design_RISCVCOREZYNQ_0_0_pc_mux pc_mux_inst
        (.D({ifid_instance_n_35,ifid_instance_n_36,ifid_instance_n_37,ifid_instance_n_38,pcimmadder_inst_n_4,pcimmadder_inst_n_5,pcimmadder_inst_n_6,pcimmadder_inst_n_7,pcimmadder_inst_n_8,pcimmadder_inst_n_9,pcimmadder_inst_n_10,pcimmadder_inst_n_11,pcimmadder_inst_n_12,pcimmadder_inst_n_13,pc_4_adder_instance_n_14}),
         .E(p_0_in_2),
@@ -20243,7 +20243,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_memwb
     E,
     exmem_memtoreg_to_memwb,
     clock,
-    \rd_reg_reg[4]_0 ,
+    AR,
     exmem_regwrite_to_memwb,
     forwardBmuxcntrl12_out,
     \aluresult_reg_reg[31]_0 ,
@@ -20252,7 +20252,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_memwb
     \readdata2_reg[5]_i_2 ,
     mul_result,
     mem_read_data,
-    \rd_reg_reg[4]_1 );
+    \rd_reg_reg[4]_0 );
   output reg_write;
   output \readdata2_reg_reg[5]_0 ;
   output forwardBmuxcntrl0__0;
@@ -20321,7 +20321,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_memwb
   input [0:0]E;
   input exmem_memtoreg_to_memwb;
   input clock;
-  input \rd_reg_reg[4]_0 ;
+  input [0:0]AR;
   input exmem_regwrite_to_memwb;
   input forwardBmuxcntrl12_out;
   input [31:0]\aluresult_reg_reg[31]_0 ;
@@ -20330,8 +20330,9 @@ module zynq_design_RISCVCOREZYNQ_0_0_memwb
   input [4:0]\readdata2_reg[5]_i_2 ;
   input [4:0]mul_result;
   input [31:0]mem_read_data;
-  input [4:0]\rd_reg_reg[4]_1 ;
+  input [4:0]\rd_reg_reg[4]_0 ;
 
+  wire [0:0]AR;
   wire [0:0]E;
   wire \FORWARDING_UNIT_INST/p_5_in ;
   wire [4:0]Q;
@@ -20351,8 +20352,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_memwb
   wire [31:0]memwb_readdata_to_writebackmux;
   wire [4:0]mul_result;
   wire mul_result_i_39_n_0;
-  wire \rd_reg_reg[4]_0 ;
-  wire [4:0]\rd_reg_reg[4]_1 ;
+  wire [4:0]\rd_reg_reg[4]_0 ;
   wire \readdata2_reg[31]_i_8_n_0 ;
   wire [4:0]\readdata2_reg[5]_i_2 ;
   wire \readdata2_reg_reg[0]_0 ;
@@ -20420,205 +20420,205 @@ module zynq_design_RISCVCOREZYNQ_0_0_memwb
   FDCE MemtoReg_reg_reg
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(exmem_memtoreg_to_memwb),
         .Q(memwb_memtoreg_to_wbmux));
   FDCE RegWrite_reg_reg
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(exmem_regwrite_to_memwb),
         .Q(reg_write));
   FDCE \aluresult_reg_reg[0] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(\aluresult_reg_reg[31]_0 [0]),
         .Q(memwb_aluresult_to_writebackmux[0]));
   FDCE \aluresult_reg_reg[10] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(\aluresult_reg_reg[31]_0 [10]),
         .Q(memwb_aluresult_to_writebackmux[10]));
   FDCE \aluresult_reg_reg[11] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(\aluresult_reg_reg[31]_0 [11]),
         .Q(memwb_aluresult_to_writebackmux[11]));
   FDCE \aluresult_reg_reg[12] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(\aluresult_reg_reg[31]_0 [12]),
         .Q(memwb_aluresult_to_writebackmux[12]));
   FDCE \aluresult_reg_reg[13] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(\aluresult_reg_reg[31]_0 [13]),
         .Q(memwb_aluresult_to_writebackmux[13]));
   FDCE \aluresult_reg_reg[14] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(\aluresult_reg_reg[31]_0 [14]),
         .Q(memwb_aluresult_to_writebackmux[14]));
   FDCE \aluresult_reg_reg[15] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(\aluresult_reg_reg[31]_0 [15]),
         .Q(memwb_aluresult_to_writebackmux[15]));
   FDCE \aluresult_reg_reg[16] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(\aluresult_reg_reg[31]_0 [16]),
         .Q(memwb_aluresult_to_writebackmux[16]));
   FDCE \aluresult_reg_reg[17] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(\aluresult_reg_reg[31]_0 [17]),
         .Q(memwb_aluresult_to_writebackmux[17]));
   FDCE \aluresult_reg_reg[18] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(\aluresult_reg_reg[31]_0 [18]),
         .Q(memwb_aluresult_to_writebackmux[18]));
   FDCE \aluresult_reg_reg[19] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(\aluresult_reg_reg[31]_0 [19]),
         .Q(memwb_aluresult_to_writebackmux[19]));
   FDCE \aluresult_reg_reg[1] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(\aluresult_reg_reg[31]_0 [1]),
         .Q(memwb_aluresult_to_writebackmux[1]));
   FDCE \aluresult_reg_reg[20] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(\aluresult_reg_reg[31]_0 [20]),
         .Q(memwb_aluresult_to_writebackmux[20]));
   FDCE \aluresult_reg_reg[21] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(\aluresult_reg_reg[31]_0 [21]),
         .Q(memwb_aluresult_to_writebackmux[21]));
   FDCE \aluresult_reg_reg[22] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(\aluresult_reg_reg[31]_0 [22]),
         .Q(memwb_aluresult_to_writebackmux[22]));
   FDCE \aluresult_reg_reg[23] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(\aluresult_reg_reg[31]_0 [23]),
         .Q(memwb_aluresult_to_writebackmux[23]));
   FDCE \aluresult_reg_reg[24] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(\aluresult_reg_reg[31]_0 [24]),
         .Q(memwb_aluresult_to_writebackmux[24]));
   FDCE \aluresult_reg_reg[25] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(\aluresult_reg_reg[31]_0 [25]),
         .Q(memwb_aluresult_to_writebackmux[25]));
   FDCE \aluresult_reg_reg[26] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(\aluresult_reg_reg[31]_0 [26]),
         .Q(memwb_aluresult_to_writebackmux[26]));
   FDCE \aluresult_reg_reg[27] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(\aluresult_reg_reg[31]_0 [27]),
         .Q(memwb_aluresult_to_writebackmux[27]));
   FDCE \aluresult_reg_reg[28] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(\aluresult_reg_reg[31]_0 [28]),
         .Q(memwb_aluresult_to_writebackmux[28]));
   FDCE \aluresult_reg_reg[29] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(\aluresult_reg_reg[31]_0 [29]),
         .Q(memwb_aluresult_to_writebackmux[29]));
   FDCE \aluresult_reg_reg[2] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(\aluresult_reg_reg[31]_0 [2]),
         .Q(memwb_aluresult_to_writebackmux[2]));
   FDCE \aluresult_reg_reg[30] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(\aluresult_reg_reg[31]_0 [30]),
         .Q(memwb_aluresult_to_writebackmux[30]));
   FDCE \aluresult_reg_reg[31] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(\aluresult_reg_reg[31]_0 [31]),
         .Q(memwb_aluresult_to_writebackmux[31]));
   FDCE \aluresult_reg_reg[3] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(\aluresult_reg_reg[31]_0 [3]),
         .Q(memwb_aluresult_to_writebackmux[3]));
   FDCE \aluresult_reg_reg[4] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(\aluresult_reg_reg[31]_0 [4]),
         .Q(memwb_aluresult_to_writebackmux[4]));
   FDCE \aluresult_reg_reg[5] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(\aluresult_reg_reg[31]_0 [5]),
         .Q(memwb_aluresult_to_writebackmux[5]));
   FDCE \aluresult_reg_reg[6] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(\aluresult_reg_reg[31]_0 [6]),
         .Q(memwb_aluresult_to_writebackmux[6]));
   FDCE \aluresult_reg_reg[7] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(\aluresult_reg_reg[31]_0 [7]),
         .Q(memwb_aluresult_to_writebackmux[7]));
   FDCE \aluresult_reg_reg[8] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(\aluresult_reg_reg[31]_0 [8]),
         .Q(memwb_aluresult_to_writebackmux[8]));
   FDCE \aluresult_reg_reg[9] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(\aluresult_reg_reg[31]_0 [9]),
         .Q(memwb_aluresult_to_writebackmux[9]));
   LUT6 #(
@@ -20654,32 +20654,32 @@ module zynq_design_RISCVCOREZYNQ_0_0_memwb
   FDCE \rd_reg_reg[0] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
-        .D(\rd_reg_reg[4]_1 [0]),
+        .CLR(AR),
+        .D(\rd_reg_reg[4]_0 [0]),
         .Q(Q[0]));
   FDCE \rd_reg_reg[1] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
-        .D(\rd_reg_reg[4]_1 [1]),
+        .CLR(AR),
+        .D(\rd_reg_reg[4]_0 [1]),
         .Q(Q[1]));
   FDCE \rd_reg_reg[2] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
-        .D(\rd_reg_reg[4]_1 [2]),
+        .CLR(AR),
+        .D(\rd_reg_reg[4]_0 [2]),
         .Q(Q[2]));
   FDCE \rd_reg_reg[3] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
-        .D(\rd_reg_reg[4]_1 [3]),
+        .CLR(AR),
+        .D(\rd_reg_reg[4]_0 [3]),
         .Q(Q[3]));
   FDCE \rd_reg_reg[4] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
-        .D(\rd_reg_reg[4]_1 [4]),
+        .CLR(AR),
+        .D(\rd_reg_reg[4]_0 [4]),
         .Q(Q[4]));
   LUT2 #(
     .INIT(4'h2)) 
@@ -20989,193 +20989,193 @@ module zynq_design_RISCVCOREZYNQ_0_0_memwb
   FDCE \readdata2_reg_reg[0] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(mem_read_data[0]),
         .Q(memwb_readdata_to_writebackmux[0]));
   FDCE \readdata2_reg_reg[10] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(mem_read_data[10]),
         .Q(memwb_readdata_to_writebackmux[10]));
   FDCE \readdata2_reg_reg[11] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(mem_read_data[11]),
         .Q(memwb_readdata_to_writebackmux[11]));
   FDCE \readdata2_reg_reg[12] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(mem_read_data[12]),
         .Q(memwb_readdata_to_writebackmux[12]));
   FDCE \readdata2_reg_reg[13] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(mem_read_data[13]),
         .Q(memwb_readdata_to_writebackmux[13]));
   FDCE \readdata2_reg_reg[14] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(mem_read_data[14]),
         .Q(memwb_readdata_to_writebackmux[14]));
   FDCE \readdata2_reg_reg[15] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(mem_read_data[15]),
         .Q(memwb_readdata_to_writebackmux[15]));
   FDCE \readdata2_reg_reg[16] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(mem_read_data[16]),
         .Q(memwb_readdata_to_writebackmux[16]));
   FDCE \readdata2_reg_reg[17] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(mem_read_data[17]),
         .Q(memwb_readdata_to_writebackmux[17]));
   FDCE \readdata2_reg_reg[18] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(mem_read_data[18]),
         .Q(memwb_readdata_to_writebackmux[18]));
   FDCE \readdata2_reg_reg[19] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(mem_read_data[19]),
         .Q(memwb_readdata_to_writebackmux[19]));
   FDCE \readdata2_reg_reg[1] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(mem_read_data[1]),
         .Q(memwb_readdata_to_writebackmux[1]));
   FDCE \readdata2_reg_reg[20] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(mem_read_data[20]),
         .Q(memwb_readdata_to_writebackmux[20]));
   FDCE \readdata2_reg_reg[21] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(mem_read_data[21]),
         .Q(memwb_readdata_to_writebackmux[21]));
   FDCE \readdata2_reg_reg[22] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(mem_read_data[22]),
         .Q(memwb_readdata_to_writebackmux[22]));
   FDCE \readdata2_reg_reg[23] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(mem_read_data[23]),
         .Q(memwb_readdata_to_writebackmux[23]));
   FDCE \readdata2_reg_reg[24] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(mem_read_data[24]),
         .Q(memwb_readdata_to_writebackmux[24]));
   FDCE \readdata2_reg_reg[25] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(mem_read_data[25]),
         .Q(memwb_readdata_to_writebackmux[25]));
   FDCE \readdata2_reg_reg[26] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(mem_read_data[26]),
         .Q(memwb_readdata_to_writebackmux[26]));
   FDCE \readdata2_reg_reg[27] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(mem_read_data[27]),
         .Q(memwb_readdata_to_writebackmux[27]));
   FDCE \readdata2_reg_reg[28] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(mem_read_data[28]),
         .Q(memwb_readdata_to_writebackmux[28]));
   FDCE \readdata2_reg_reg[29] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(mem_read_data[29]),
         .Q(memwb_readdata_to_writebackmux[29]));
   FDCE \readdata2_reg_reg[2] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(mem_read_data[2]),
         .Q(memwb_readdata_to_writebackmux[2]));
   FDCE \readdata2_reg_reg[30] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(mem_read_data[30]),
         .Q(memwb_readdata_to_writebackmux[30]));
   FDCE \readdata2_reg_reg[31] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(mem_read_data[31]),
         .Q(memwb_readdata_to_writebackmux[31]));
   FDCE \readdata2_reg_reg[3] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(mem_read_data[3]),
         .Q(memwb_readdata_to_writebackmux[3]));
   FDCE \readdata2_reg_reg[4] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(mem_read_data[4]),
         .Q(memwb_readdata_to_writebackmux[4]));
   FDCE \readdata2_reg_reg[5] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(mem_read_data[5]),
         .Q(memwb_readdata_to_writebackmux[5]));
   FDCE \readdata2_reg_reg[6] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(mem_read_data[6]),
         .Q(memwb_readdata_to_writebackmux[6]));
   FDCE \readdata2_reg_reg[7] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(mem_read_data[7]),
         .Q(memwb_readdata_to_writebackmux[7]));
   FDCE \readdata2_reg_reg[8] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(mem_read_data[8]),
         .Q(memwb_readdata_to_writebackmux[8]));
   FDCE \readdata2_reg_reg[9] 
        (.C(clock),
         .CE(E),
-        .CLR(\rd_reg_reg[4]_0 ),
+        .CLR(AR),
         .D(mem_read_data[9]),
         .Q(memwb_readdata_to_writebackmux[9]));
   (* SOFT_HLUTNM = "soft_lutpair158" *) 
@@ -21882,7 +21882,7 @@ module zynq_design_RISCVCOREZYNQ_0_0_program_counter
     E,
     \pc_reg_reg[15]_1 ,
     clock,
-    \pc_reg_reg[1]_0 );
+    AR);
   output [0:0]S;
   output [14:0]Q;
   output [14:0]\pc_reg_reg[15]_0 ;
@@ -21890,8 +21890,9 @@ module zynq_design_RISCVCOREZYNQ_0_0_program_counter
   input [0:0]E;
   input [14:0]\pc_reg_reg[15]_1 ;
   input clock;
-  input \pc_reg_reg[1]_0 ;
+  input [0:0]AR;
 
+  wire [0:0]AR;
   wire [0:0]E;
   wire [14:0]Q;
   wire [0:0]S;
@@ -21899,96 +21900,95 @@ module zynq_design_RISCVCOREZYNQ_0_0_program_counter
   wire controlunit_ifidflush_to_ifid;
   wire [14:0]\pc_reg_reg[15]_0 ;
   wire [14:0]\pc_reg_reg[15]_1 ;
-  wire \pc_reg_reg[1]_0 ;
 
   FDCE \pc_reg_reg[10] 
        (.C(clock),
         .CE(E),
-        .CLR(\pc_reg_reg[1]_0 ),
+        .CLR(AR),
         .D(\pc_reg_reg[15]_1 [9]),
         .Q(Q[9]));
   FDCE \pc_reg_reg[11] 
        (.C(clock),
         .CE(E),
-        .CLR(\pc_reg_reg[1]_0 ),
+        .CLR(AR),
         .D(\pc_reg_reg[15]_1 [10]),
         .Q(Q[10]));
   FDCE \pc_reg_reg[12] 
        (.C(clock),
         .CE(E),
-        .CLR(\pc_reg_reg[1]_0 ),
+        .CLR(AR),
         .D(\pc_reg_reg[15]_1 [11]),
         .Q(Q[11]));
   FDCE \pc_reg_reg[13] 
        (.C(clock),
         .CE(E),
-        .CLR(\pc_reg_reg[1]_0 ),
+        .CLR(AR),
         .D(\pc_reg_reg[15]_1 [12]),
         .Q(Q[12]));
   FDCE \pc_reg_reg[14] 
        (.C(clock),
         .CE(E),
-        .CLR(\pc_reg_reg[1]_0 ),
+        .CLR(AR),
         .D(\pc_reg_reg[15]_1 [13]),
         .Q(Q[13]));
   FDCE \pc_reg_reg[15] 
        (.C(clock),
         .CE(E),
-        .CLR(\pc_reg_reg[1]_0 ),
+        .CLR(AR),
         .D(\pc_reg_reg[15]_1 [14]),
         .Q(Q[14]));
   FDCE \pc_reg_reg[1] 
        (.C(clock),
         .CE(E),
-        .CLR(\pc_reg_reg[1]_0 ),
+        .CLR(AR),
         .D(\pc_reg_reg[15]_1 [0]),
         .Q(Q[0]));
   FDCE \pc_reg_reg[2] 
        (.C(clock),
         .CE(E),
-        .CLR(\pc_reg_reg[1]_0 ),
+        .CLR(AR),
         .D(\pc_reg_reg[15]_1 [1]),
         .Q(Q[1]));
   FDCE \pc_reg_reg[3] 
        (.C(clock),
         .CE(E),
-        .CLR(\pc_reg_reg[1]_0 ),
+        .CLR(AR),
         .D(\pc_reg_reg[15]_1 [2]),
         .Q(Q[2]));
   FDCE \pc_reg_reg[4] 
        (.C(clock),
         .CE(E),
-        .CLR(\pc_reg_reg[1]_0 ),
+        .CLR(AR),
         .D(\pc_reg_reg[15]_1 [3]),
         .Q(Q[3]));
   FDCE \pc_reg_reg[5] 
        (.C(clock),
         .CE(E),
-        .CLR(\pc_reg_reg[1]_0 ),
+        .CLR(AR),
         .D(\pc_reg_reg[15]_1 [4]),
         .Q(Q[4]));
   FDCE \pc_reg_reg[6] 
        (.C(clock),
         .CE(E),
-        .CLR(\pc_reg_reg[1]_0 ),
+        .CLR(AR),
         .D(\pc_reg_reg[15]_1 [5]),
         .Q(Q[5]));
   FDCE \pc_reg_reg[7] 
        (.C(clock),
         .CE(E),
-        .CLR(\pc_reg_reg[1]_0 ),
+        .CLR(AR),
         .D(\pc_reg_reg[15]_1 [6]),
         .Q(Q[6]));
   FDCE \pc_reg_reg[8] 
        (.C(clock),
         .CE(E),
-        .CLR(\pc_reg_reg[1]_0 ),
+        .CLR(AR),
         .D(\pc_reg_reg[15]_1 [7]),
         .Q(Q[7]));
   FDCE \pc_reg_reg[9] 
        (.C(clock),
         .CE(E),
-        .CLR(\pc_reg_reg[1]_0 ),
+        .CLR(AR),
         .D(\pc_reg_reg[15]_1 [8]),
         .Q(Q[8]));
   (* SOFT_HLUTNM = "soft_lutpair198" *) 

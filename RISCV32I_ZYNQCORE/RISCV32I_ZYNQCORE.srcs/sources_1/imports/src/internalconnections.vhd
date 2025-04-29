@@ -246,7 +246,8 @@ signal DM_debug_read_enable : std_logic;  -- Data memory read enable
 	
 	signal idex_pcout_to_alu : std_logic_vector(15 downto 0);
 	signal alu_addrout_to_exmem : std_logic_vector(31 downto 0); 
-	
+	 
+	--signal forwardingunit_alu_direct_access_to_alu :  std_logic_vector(1 downto 0);
 	
 	--TO FORWARDINGMUXA
 	
@@ -739,7 +740,7 @@ alusrcmuxb_source2_to_exmem <= alusrcmuxB_rs2_to_alu;
 	EXMEM_INST : entity work.exmem
     port map (
       hold     => hold,
-      clk => clock,
+     clk => clock,
       resetbar => resetbar,
       JALorBRANCH => alu_JALorBRANCH_to_exmem,
       aluzeroin => alu_zeroresult_to_exmem,
@@ -765,9 +766,10 @@ alusrcmuxb_source2_to_exmem <= alusrcmuxB_rs2_to_alu;
       Branch => exmem_branch_to_branchand,
       
       -- Register address
-      rdin => idex_rd_to_exmem,
-      rdout => exmem_rd_to_memwb
-	  
+      rdin => idex_rd_to_exmem,	--change
+      rdout => exmem_rd_to_memwb,
+	  dataMemRdIn => alu_addrout_to_exmem,
+	  dataMemRdOut => ADDRESS_TO_DATA_MEMORY
 	  
     );
 
@@ -918,7 +920,7 @@ branchand_regwritecancel_to_exmem <= 	branchand_jumpbranchselect_to_pc_mux;
     -- Data Memory
     mem_read <= exmem_memread_to_datamem;
     mem_write <= exmem_memwrite_to_datamem;
-    mem_addr <= exmem_result_to_datamem;
+    mem_addr <= ADDRESS_TO_DATA_MEMORY;
     mem_write_data <= exmem_src2_to_datamem;
     datamem_readdata_to_memwb <= mem_read_data;
     --mem_read_data <= datamem_readdata_to_memwb;

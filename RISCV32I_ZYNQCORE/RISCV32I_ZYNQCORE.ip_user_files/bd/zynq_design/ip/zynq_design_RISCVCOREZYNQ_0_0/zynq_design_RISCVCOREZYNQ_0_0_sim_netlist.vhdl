@@ -2,7 +2,7 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
--- Date        : Tue Apr 29 16:32:50 2025
+-- Date        : Tue Apr 29 17:12:08 2025
 -- Host        : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ip/zynq_design_RISCVCOREZYNQ_0_0/zynq_design_RISCVCOREZYNQ_0_0_sim_netlist.vhdl
@@ -4738,7 +4738,7 @@ entity zynq_design_RISCVCOREZYNQ_0_0_exmem is
     mem_write_data : out STD_LOGIC_VECTOR ( 31 downto 0 );
     current_branch_condition0 : in STD_LOGIC;
     clock : in STD_LOGIC;
-    \rd_reg_reg[4]_1\ : in STD_LOGIC;
+    AR : in STD_LOGIC_VECTOR ( 0 to 0 );
     MemtoReg_reg_reg_0 : in STD_LOGIC;
     RegWrite_reg_reg_0 : in STD_LOGIC;
     MemRead_reg_reg_1 : in STD_LOGIC;
@@ -4831,7 +4831,7 @@ entity zynq_design_RISCVCOREZYNQ_0_0_exmem is
     \mul_result__0_31\ : in STD_LOGIC;
     CO : in STD_LOGIC_VECTOR ( 0 to 0 );
     \readdata2_reg_reg[0]_0\ : in STD_LOGIC_VECTOR ( 0 to 0 );
-    \rd_reg_reg[4]_2\ : in STD_LOGIC_VECTOR ( 4 downto 0 )
+    \rd_reg_reg[4]_1\ : in STD_LOGIC_VECTOR ( 4 downto 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of zynq_design_RISCVCOREZYNQ_0_0_exmem : entity is "exmem";
@@ -5069,7 +5069,7 @@ architecture STRUCTURE of zynq_design_RISCVCOREZYNQ_0_0_exmem is
   signal \^immediate_reg_reg[1]\ : STD_LOGIC;
   signal \^immediate_reg_reg[1]_0\ : STD_LOGIC;
   signal mul_result_i_36_n_0 : STD_LOGIC;
-  signal p_1_in : STD_LOGIC_VECTOR ( 30 downto 29 );
+  signal p_2_in : STD_LOGIC_VECTOR ( 30 downto 29 );
   signal \^rd_reg_reg[4]_0\ : STD_LOGIC_VECTOR ( 4 downto 0 );
   signal \readdata2_reg[10]_i_1__0_n_0\ : STD_LOGIC;
   signal \readdata2_reg[11]_i_1__0_n_0\ : STD_LOGIC;
@@ -5243,7 +5243,7 @@ MemRead_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => MemRead_reg_reg_1,
       Q => \^memread_reg_reg_0\
     );
@@ -5251,7 +5251,7 @@ MemWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => MemWrite_reg_reg_0,
       Q => mem_write
     );
@@ -5259,7 +5259,7 @@ MemtoReg_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => MemtoReg_reg_reg_0,
       Q => exmem_memtoreg_to_memwb
     );
@@ -5275,7 +5275,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => RegWrite_reg_reg_0,
       Q => \^exmem_regwrite_to_memwb\
     );
@@ -7351,7 +7351,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
       I3 => \aluresult_reg_reg[29]_8\,
       I4 => \aluresult_reg_reg[29]_9\,
       I5 => \^current_branch_condition\,
-      O => p_1_in(29)
+      O => p_2_in(29)
     );
 \aluresult_reg[29]_i_11\: unisim.vcomponents.LUT4
     generic map(
@@ -7744,7 +7744,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
       I3 => \aluresult_reg_reg[29]_8\,
       I4 => \aluresult_reg_reg[30]_4\,
       I5 => \^current_branch_condition\,
-      O => p_1_in(30)
+      O => p_2_in(30)
     );
 \aluresult_reg[30]_i_10\: unisim.vcomponents.LUT6
     generic map(
@@ -8629,7 +8629,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(0),
       Q => \^aluresult_reg_reg[31]_1\(0)
     );
@@ -8637,7 +8637,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(10),
       Q => \^aluresult_reg_reg[31]_1\(10)
     );
@@ -8645,7 +8645,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(11),
       Q => \^aluresult_reg_reg[31]_1\(11)
     );
@@ -8653,7 +8653,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(12),
       Q => \^aluresult_reg_reg[31]_1\(12)
     );
@@ -8661,7 +8661,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(13),
       Q => \^aluresult_reg_reg[31]_1\(13)
     );
@@ -8669,7 +8669,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(14),
       Q => \^aluresult_reg_reg[31]_1\(14)
     );
@@ -8677,7 +8677,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(15),
       Q => \^aluresult_reg_reg[31]_1\(15)
     );
@@ -8685,7 +8685,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(16),
       Q => \^aluresult_reg_reg[31]_1\(16)
     );
@@ -8693,7 +8693,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(17),
       Q => \^aluresult_reg_reg[31]_1\(17)
     );
@@ -8701,7 +8701,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(18),
       Q => \^aluresult_reg_reg[31]_1\(18)
     );
@@ -8709,7 +8709,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(19),
       Q => \^aluresult_reg_reg[31]_1\(19)
     );
@@ -8732,7 +8732,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(1),
       Q => \^aluresult_reg_reg[31]_1\(1)
     );
@@ -8740,7 +8740,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(20),
       Q => \^aluresult_reg_reg[31]_1\(20)
     );
@@ -8748,7 +8748,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(21),
       Q => \^aluresult_reg_reg[31]_1\(21)
     );
@@ -8756,7 +8756,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(22),
       Q => \^aluresult_reg_reg[31]_1\(22)
     );
@@ -8764,7 +8764,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(23),
       Q => \^aluresult_reg_reg[31]_1\(23)
     );
@@ -8772,7 +8772,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(24),
       Q => \^aluresult_reg_reg[31]_1\(24)
     );
@@ -8780,7 +8780,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(25),
       Q => \^aluresult_reg_reg[31]_1\(25)
     );
@@ -8788,7 +8788,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(26),
       Q => \^aluresult_reg_reg[31]_1\(26)
     );
@@ -8796,7 +8796,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(27),
       Q => \^aluresult_reg_reg[31]_1\(27)
     );
@@ -8834,7 +8834,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(28),
       Q => \^aluresult_reg_reg[31]_1\(28)
     );
@@ -8842,15 +8842,15 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
-      D => p_1_in(29),
+      CLR => AR(0),
+      D => p_2_in(29),
       Q => \^aluresult_reg_reg[31]_1\(29)
     );
 \aluresult_reg_reg[2]\: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(2),
       Q => \^aluresult_reg_reg[31]_1\(2)
     );
@@ -8858,15 +8858,15 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
-      D => p_1_in(30),
+      CLR => AR(0),
+      D => p_2_in(30),
       Q => \^aluresult_reg_reg[31]_1\(30)
     );
 \aluresult_reg_reg[31]\: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(29),
       Q => \^aluresult_reg_reg[31]_1\(31)
     );
@@ -8890,7 +8890,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(3),
       Q => \^aluresult_reg_reg[31]_1\(3)
     );
@@ -8898,7 +8898,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(4),
       Q => \^aluresult_reg_reg[31]_1\(4)
     );
@@ -8906,7 +8906,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(5),
       Q => \^aluresult_reg_reg[31]_1\(5)
     );
@@ -8914,7 +8914,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(6),
       Q => \^aluresult_reg_reg[31]_1\(6)
     );
@@ -8922,7 +8922,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(7),
       Q => \^aluresult_reg_reg[31]_1\(7)
     );
@@ -8930,7 +8930,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(8),
       Q => \^aluresult_reg_reg[31]_1\(8)
     );
@@ -8938,7 +8938,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(9),
       Q => \^aluresult_reg_reg[31]_1\(9)
     );
@@ -8946,7 +8946,7 @@ current_branch_condition_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => current_branch_condition0,
       Q => \^current_branch_condition\
     );
@@ -10171,40 +10171,40 @@ mul_result_i_9: unisim.vcomponents.LUT5
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
-      D => \rd_reg_reg[4]_2\(0),
+      CLR => AR(0),
+      D => \rd_reg_reg[4]_1\(0),
       Q => \^rd_reg_reg[4]_0\(0)
     );
 \rd_reg_reg[1]\: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
-      D => \rd_reg_reg[4]_2\(1),
+      CLR => AR(0),
+      D => \rd_reg_reg[4]_1\(1),
       Q => \^rd_reg_reg[4]_0\(1)
     );
 \rd_reg_reg[2]\: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
-      D => \rd_reg_reg[4]_2\(2),
+      CLR => AR(0),
+      D => \rd_reg_reg[4]_1\(2),
       Q => \^rd_reg_reg[4]_0\(2)
     );
 \rd_reg_reg[3]\: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
-      D => \rd_reg_reg[4]_2\(3),
+      CLR => AR(0),
+      D => \rd_reg_reg[4]_1\(3),
       Q => \^rd_reg_reg[4]_0\(3)
     );
 \rd_reg_reg[4]\: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
-      D => \rd_reg_reg[4]_2\(4),
+      CLR => AR(0),
+      D => \rd_reg_reg[4]_1\(4),
       Q => \^rd_reg_reg[4]_0\(4)
     );
 \readdata2_reg[10]_i_1__0\: unisim.vcomponents.LUT2
@@ -10888,7 +10888,7 @@ mul_result_i_9: unisim.vcomponents.LUT5
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg_reg[0]_0\(0),
       Q => mem_write_data(0)
     );
@@ -10896,7 +10896,7 @@ mul_result_i_9: unisim.vcomponents.LUT5
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[10]_i_1__0_n_0\,
       Q => mem_write_data(10)
     );
@@ -10904,7 +10904,7 @@ mul_result_i_9: unisim.vcomponents.LUT5
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[11]_i_1__0_n_0\,
       Q => mem_write_data(11)
     );
@@ -10912,7 +10912,7 @@ mul_result_i_9: unisim.vcomponents.LUT5
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[12]_i_1__0_n_0\,
       Q => mem_write_data(12)
     );
@@ -10920,7 +10920,7 @@ mul_result_i_9: unisim.vcomponents.LUT5
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[13]_i_1__0_n_0\,
       Q => mem_write_data(13)
     );
@@ -10928,7 +10928,7 @@ mul_result_i_9: unisim.vcomponents.LUT5
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[14]_i_1__0_n_0\,
       Q => mem_write_data(14)
     );
@@ -10936,7 +10936,7 @@ mul_result_i_9: unisim.vcomponents.LUT5
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[15]_i_1__0_n_0\,
       Q => mem_write_data(15)
     );
@@ -10944,7 +10944,7 @@ mul_result_i_9: unisim.vcomponents.LUT5
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[16]_i_1__0_n_0\,
       Q => mem_write_data(16)
     );
@@ -10952,7 +10952,7 @@ mul_result_i_9: unisim.vcomponents.LUT5
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[17]_i_1__0_n_0\,
       Q => mem_write_data(17)
     );
@@ -10960,7 +10960,7 @@ mul_result_i_9: unisim.vcomponents.LUT5
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[18]_i_1__0_n_0\,
       Q => mem_write_data(18)
     );
@@ -10968,7 +10968,7 @@ mul_result_i_9: unisim.vcomponents.LUT5
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[19]_i_1__0_n_0\,
       Q => mem_write_data(19)
     );
@@ -10976,7 +10976,7 @@ mul_result_i_9: unisim.vcomponents.LUT5
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[1]_i_1__0_n_0\,
       Q => mem_write_data(1)
     );
@@ -10984,7 +10984,7 @@ mul_result_i_9: unisim.vcomponents.LUT5
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[20]_i_1__0_n_0\,
       Q => mem_write_data(20)
     );
@@ -10992,7 +10992,7 @@ mul_result_i_9: unisim.vcomponents.LUT5
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[21]_i_1__0_n_0\,
       Q => mem_write_data(21)
     );
@@ -11000,7 +11000,7 @@ mul_result_i_9: unisim.vcomponents.LUT5
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[22]_i_1__0_n_0\,
       Q => mem_write_data(22)
     );
@@ -11008,7 +11008,7 @@ mul_result_i_9: unisim.vcomponents.LUT5
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[23]_i_1__0_n_0\,
       Q => mem_write_data(23)
     );
@@ -11016,7 +11016,7 @@ mul_result_i_9: unisim.vcomponents.LUT5
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[24]_i_1__0_n_0\,
       Q => mem_write_data(24)
     );
@@ -11024,7 +11024,7 @@ mul_result_i_9: unisim.vcomponents.LUT5
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[25]_i_1__0_n_0\,
       Q => mem_write_data(25)
     );
@@ -11032,7 +11032,7 @@ mul_result_i_9: unisim.vcomponents.LUT5
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[26]_i_1__0_n_0\,
       Q => mem_write_data(26)
     );
@@ -11040,7 +11040,7 @@ mul_result_i_9: unisim.vcomponents.LUT5
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[27]_i_1__0_n_0\,
       Q => mem_write_data(27)
     );
@@ -11048,7 +11048,7 @@ mul_result_i_9: unisim.vcomponents.LUT5
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[28]_i_1__0_n_0\,
       Q => mem_write_data(28)
     );
@@ -11056,7 +11056,7 @@ mul_result_i_9: unisim.vcomponents.LUT5
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[29]_i_1__0_n_0\,
       Q => mem_write_data(29)
     );
@@ -11064,7 +11064,7 @@ mul_result_i_9: unisim.vcomponents.LUT5
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[2]_i_1__0_n_0\,
       Q => mem_write_data(2)
     );
@@ -11072,7 +11072,7 @@ mul_result_i_9: unisim.vcomponents.LUT5
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[30]_i_1__0_n_0\,
       Q => mem_write_data(30)
     );
@@ -11080,7 +11080,7 @@ mul_result_i_9: unisim.vcomponents.LUT5
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[31]_i_1__0_n_0\,
       Q => mem_write_data(31)
     );
@@ -11088,7 +11088,7 @@ mul_result_i_9: unisim.vcomponents.LUT5
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[3]_i_1__0_n_0\,
       Q => mem_write_data(3)
     );
@@ -11096,7 +11096,7 @@ mul_result_i_9: unisim.vcomponents.LUT5
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[4]_i_1__0_n_0\,
       Q => mem_write_data(4)
     );
@@ -11104,7 +11104,7 @@ mul_result_i_9: unisim.vcomponents.LUT5
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[5]_i_1__0_n_0\,
       Q => mem_write_data(5)
     );
@@ -11112,7 +11112,7 @@ mul_result_i_9: unisim.vcomponents.LUT5
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[6]_i_1__0_n_0\,
       Q => mem_write_data(6)
     );
@@ -11120,7 +11120,7 @@ mul_result_i_9: unisim.vcomponents.LUT5
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[7]_i_1__0_n_0\,
       Q => mem_write_data(7)
     );
@@ -11128,7 +11128,7 @@ mul_result_i_9: unisim.vcomponents.LUT5
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[8]_i_1__0_n_0\,
       Q => mem_write_data(8)
     );
@@ -11136,7 +11136,7 @@ mul_result_i_9: unisim.vcomponents.LUT5
      port map (
       C => clock,
       CE => \^e\(0),
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[9]_i_1__0_n_0\,
       Q => mem_write_data(9)
     );
@@ -11696,7 +11696,7 @@ entity zynq_design_RISCVCOREZYNQ_0_0_idex is
     \instruction_reg_reg[12]_0\ : out STD_LOGIC_VECTOR ( 0 to 0 );
     \ALUOp_reg_reg[1]_0\ : out STD_LOGIC_VECTOR ( 4 downto 0 );
     clock : in STD_LOGIC;
-    \rd_reg_reg[4]_1\ : in STD_LOGIC;
+    AR : in STD_LOGIC_VECTOR ( 0 to 0 );
     MemWrite_reg_reg_1 : in STD_LOGIC;
     forwardingmuxA_rs1_to_ALU : in STD_LOGIC_VECTOR ( 31 downto 0 );
     \int_MemtoReg__4\ : in STD_LOGIC;
@@ -11760,7 +11760,7 @@ entity zynq_design_RISCVCOREZYNQ_0_0_idex is
     \pcin_reg_reg[15]_2\ : in STD_LOGIC_VECTOR ( 14 downto 0 );
     \rs1_reg_reg[4]_2\ : in STD_LOGIC_VECTOR ( 4 downto 0 );
     \rs2_reg_reg[4]_2\ : in STD_LOGIC_VECTOR ( 4 downto 0 );
-    \rd_reg_reg[4]_2\ : in STD_LOGIC_VECTOR ( 4 downto 0 )
+    \rd_reg_reg[4]_1\ : in STD_LOGIC_VECTOR ( 4 downto 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of zynq_design_RISCVCOREZYNQ_0_0_idex : entity is "idex";
@@ -12178,7 +12178,7 @@ begin
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \ALUOp_reg[0]_i_1_n_0\,
       Q => idex_aluop_to_alucontrol(0)
     );
@@ -12186,7 +12186,7 @@ begin
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \ALUOp_reg[1]_i_1_n_0\,
       Q => idex_aluop_to_alucontrol(1)
     );
@@ -12205,7 +12205,7 @@ ALUSrc_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => ALUSrc_reg_i_1_n_0,
       Q => \^idex_alusrcb_to_alusrcmuxb\
     );
@@ -12224,7 +12224,7 @@ Branch_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => Branch_reg_i_1_n_0,
       Q => idex_branch_to_exmem
     );
@@ -12251,7 +12251,7 @@ MemRead_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \MemRead_reg_i_1__0_n_0\,
       Q => idex_memread_to_exmem
     );
@@ -12268,7 +12268,7 @@ MemWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => MemWrite_reg_reg_1,
       Q => idex_memwrite_to_exmem
     );
@@ -12307,7 +12307,7 @@ MemtoReg_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => MemtoReg_reg_i_1_n_0,
       Q => idex_memtoreg_to_exmem
     );
@@ -12335,7 +12335,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \RegWrite_reg_i_1__0_n_0\,
       Q => idex_regwrite_to_exmem
     );
@@ -14791,7 +14791,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \immediate_reg_reg[31]_1\(0),
       Q => idex_immediate_to_alusrcmuxb(0)
     );
@@ -14799,7 +14799,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \immediate_reg_reg[31]_1\(10),
       Q => idex_immediate_to_alusrcmuxb(10)
     );
@@ -14807,7 +14807,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \immediate_reg_reg[31]_1\(11),
       Q => idex_immediate_to_alusrcmuxb(11)
     );
@@ -14815,7 +14815,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \immediate_reg_reg[31]_1\(12),
       Q => idex_immediate_to_alusrcmuxb(12)
     );
@@ -14823,7 +14823,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \immediate_reg_reg[31]_1\(13),
       Q => idex_immediate_to_alusrcmuxb(13)
     );
@@ -14831,7 +14831,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \immediate_reg_reg[31]_1\(14),
       Q => idex_immediate_to_alusrcmuxb(14)
     );
@@ -14839,7 +14839,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \immediate_reg_reg[31]_1\(15),
       Q => idex_immediate_to_alusrcmuxb(15)
     );
@@ -14847,7 +14847,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \immediate_reg_reg[31]_1\(16),
       Q => idex_immediate_to_alusrcmuxb(16)
     );
@@ -14855,7 +14855,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \immediate_reg_reg[31]_1\(17),
       Q => idex_immediate_to_alusrcmuxb(17)
     );
@@ -14863,7 +14863,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \immediate_reg_reg[31]_1\(18),
       Q => idex_immediate_to_alusrcmuxb(18)
     );
@@ -14871,7 +14871,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \immediate_reg_reg[31]_1\(19),
       Q => idex_immediate_to_alusrcmuxb(19)
     );
@@ -14879,7 +14879,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \immediate_reg_reg[31]_1\(1),
       Q => idex_immediate_to_alusrcmuxb(1)
     );
@@ -14887,7 +14887,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \immediate_reg_reg[31]_1\(20),
       Q => idex_immediate_to_alusrcmuxb(20)
     );
@@ -14895,7 +14895,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \immediate_reg_reg[31]_1\(21),
       Q => idex_immediate_to_alusrcmuxb(21)
     );
@@ -14903,7 +14903,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \immediate_reg_reg[31]_1\(22),
       Q => idex_immediate_to_alusrcmuxb(22)
     );
@@ -14911,7 +14911,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \immediate_reg_reg[31]_1\(23),
       Q => idex_immediate_to_alusrcmuxb(23)
     );
@@ -14919,7 +14919,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \immediate_reg_reg[31]_1\(24),
       Q => idex_immediate_to_alusrcmuxb(24)
     );
@@ -14927,7 +14927,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \immediate_reg_reg[31]_1\(25),
       Q => idex_immediate_to_alusrcmuxb(25)
     );
@@ -14935,7 +14935,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \immediate_reg_reg[31]_1\(26),
       Q => idex_immediate_to_alusrcmuxb(26)
     );
@@ -14943,7 +14943,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \immediate_reg_reg[31]_1\(27),
       Q => idex_immediate_to_alusrcmuxb(27)
     );
@@ -14951,7 +14951,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \immediate_reg_reg[31]_1\(28),
       Q => idex_immediate_to_alusrcmuxb(28)
     );
@@ -14959,7 +14959,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \immediate_reg_reg[31]_1\(29),
       Q => idex_immediate_to_alusrcmuxb(29)
     );
@@ -14967,7 +14967,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \immediate_reg_reg[31]_1\(2),
       Q => idex_immediate_to_alusrcmuxb(2)
     );
@@ -14975,7 +14975,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \immediate_reg_reg[31]_1\(30),
       Q => idex_immediate_to_alusrcmuxb(30)
     );
@@ -14983,7 +14983,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \immediate_reg_reg[31]_1\(31),
       Q => idex_immediate_to_alusrcmuxb(31)
     );
@@ -14991,7 +14991,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \immediate_reg_reg[31]_1\(3),
       Q => idex_immediate_to_alusrcmuxb(3)
     );
@@ -14999,7 +14999,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \immediate_reg_reg[31]_1\(4),
       Q => \^q\(0)
     );
@@ -15007,7 +15007,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \immediate_reg_reg[31]_1\(5),
       Q => idex_immediate_to_alusrcmuxb(5)
     );
@@ -15015,7 +15015,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \immediate_reg_reg[31]_1\(6),
       Q => idex_immediate_to_alusrcmuxb(6)
     );
@@ -15023,7 +15023,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \immediate_reg_reg[31]_1\(7),
       Q => idex_immediate_to_alusrcmuxb(7)
     );
@@ -15031,7 +15031,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \immediate_reg_reg[31]_1\(8),
       Q => idex_immediate_to_alusrcmuxb(8)
     );
@@ -15039,7 +15039,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \immediate_reg_reg[31]_1\(9),
       Q => idex_immediate_to_alusrcmuxb(9)
     );
@@ -15047,7 +15047,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(0),
       Q => idex_instruction_to_alucontrol(0)
     );
@@ -15055,7 +15055,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(7),
       Q => idex_instruction_to_alucontrol(12)
     );
@@ -15063,7 +15063,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(8),
       Q => idex_instruction_to_alucontrol(13)
     );
@@ -15071,7 +15071,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(9),
       Q => idex_instruction_to_alucontrol(14)
     );
@@ -15079,7 +15079,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(1),
       Q => idex_instruction_to_alucontrol(1)
     );
@@ -15087,7 +15087,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(10),
       Q => idex_instruction_to_alucontrol(25)
     );
@@ -15095,7 +15095,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(11),
       Q => idex_instruction_to_alucontrol(26)
     );
@@ -15103,7 +15103,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(12),
       Q => idex_instruction_to_alucontrol(27)
     );
@@ -15111,7 +15111,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(13),
       Q => idex_instruction_to_alucontrol(28)
     );
@@ -15119,7 +15119,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(14),
       Q => idex_instruction_to_alucontrol(29)
     );
@@ -15127,7 +15127,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(2),
       Q => idex_instruction_to_alucontrol(2)
     );
@@ -15135,7 +15135,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(15),
       Q => idex_instruction_to_alucontrol(30)
     );
@@ -15143,7 +15143,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(16),
       Q => idex_instruction_to_alucontrol(31)
     );
@@ -15151,7 +15151,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(3),
       Q => idex_instruction_to_alucontrol(3)
     );
@@ -15159,7 +15159,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(4),
       Q => idex_instruction_to_alucontrol(4)
     );
@@ -15167,7 +15167,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(5),
       Q => idex_instruction_to_alucontrol(5)
     );
@@ -15175,7 +15175,7 @@ current_branch_condition_reg_i_27: unisim.vcomponents.CARRY4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => D(6),
       Q => idex_instruction_to_alucontrol(6)
     );
@@ -15614,7 +15614,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \pcin_reg_reg[15]_2\(9),
       Q => \^pcin_reg_reg[15]_0\(9)
     );
@@ -15622,7 +15622,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \pcin_reg_reg[15]_2\(10),
       Q => \^pcin_reg_reg[15]_0\(10)
     );
@@ -15630,7 +15630,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \pcin_reg_reg[15]_2\(11),
       Q => \^pcin_reg_reg[15]_0\(11)
     );
@@ -15638,7 +15638,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \pcin_reg_reg[15]_2\(12),
       Q => \^pcin_reg_reg[15]_0\(12)
     );
@@ -15646,7 +15646,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \pcin_reg_reg[15]_2\(13),
       Q => \^pcin_reg_reg[15]_0\(13)
     );
@@ -15654,7 +15654,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \pcin_reg_reg[15]_2\(14),
       Q => \^pcin_reg_reg[15]_0\(14)
     );
@@ -15662,7 +15662,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \pcin_reg_reg[15]_2\(0),
       Q => \^pcin_reg_reg[15]_0\(0)
     );
@@ -15670,7 +15670,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \pcin_reg_reg[15]_2\(1),
       Q => \^pcin_reg_reg[15]_0\(1)
     );
@@ -15678,7 +15678,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \pcin_reg_reg[15]_2\(2),
       Q => \^pcin_reg_reg[15]_0\(2)
     );
@@ -15686,7 +15686,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \pcin_reg_reg[15]_2\(3),
       Q => \^pcin_reg_reg[15]_0\(3)
     );
@@ -15694,7 +15694,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \pcin_reg_reg[15]_2\(4),
       Q => \^pcin_reg_reg[15]_0\(4)
     );
@@ -15702,7 +15702,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \pcin_reg_reg[15]_2\(5),
       Q => \^pcin_reg_reg[15]_0\(5)
     );
@@ -15710,7 +15710,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \pcin_reg_reg[15]_2\(6),
       Q => \^pcin_reg_reg[15]_0\(6)
     );
@@ -15718,7 +15718,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \pcin_reg_reg[15]_2\(7),
       Q => \^pcin_reg_reg[15]_0\(7)
     );
@@ -15726,7 +15726,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \pcin_reg_reg[15]_2\(8),
       Q => \^pcin_reg_reg[15]_0\(8)
     );
@@ -15779,40 +15779,40 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
-      D => \rd_reg_reg[4]_2\(0),
+      CLR => AR(0),
+      D => \rd_reg_reg[4]_1\(0),
       Q => idex_rd_to_exmem(0)
     );
 \rd_reg_reg[1]\: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
-      D => \rd_reg_reg[4]_2\(1),
+      CLR => AR(0),
+      D => \rd_reg_reg[4]_1\(1),
       Q => idex_rd_to_exmem(1)
     );
 \rd_reg_reg[2]\: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
-      D => \rd_reg_reg[4]_2\(2),
+      CLR => AR(0),
+      D => \rd_reg_reg[4]_1\(2),
       Q => idex_rd_to_exmem(2)
     );
 \rd_reg_reg[3]\: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
-      D => \rd_reg_reg[4]_2\(3),
+      CLR => AR(0),
+      D => \rd_reg_reg[4]_1\(3),
       Q => idex_rd_to_exmem(3)
     );
 \rd_reg_reg[4]\: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
-      D => \rd_reg_reg[4]_2\(4),
+      CLR => AR(0),
+      D => \rd_reg_reg[4]_1\(4),
       Q => idex_rd_to_exmem(4)
     );
 \readdata1_reg[0]_i_1\: unisim.vcomponents.LUT2
@@ -16107,7 +16107,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata1_reg[0]_i_1_n_0\,
       Q => \readdata1_reg_reg[31]_0\(0)
     );
@@ -16115,7 +16115,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata1_reg[10]_i_1_n_0\,
       Q => \readdata1_reg_reg[31]_0\(10)
     );
@@ -16123,7 +16123,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata1_reg[11]_i_1_n_0\,
       Q => \readdata1_reg_reg[31]_0\(11)
     );
@@ -16131,7 +16131,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata1_reg[12]_i_1_n_0\,
       Q => \readdata1_reg_reg[31]_0\(12)
     );
@@ -16139,7 +16139,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata1_reg[13]_i_1_n_0\,
       Q => \readdata1_reg_reg[31]_0\(13)
     );
@@ -16147,7 +16147,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata1_reg[14]_i_1_n_0\,
       Q => \readdata1_reg_reg[31]_0\(14)
     );
@@ -16155,7 +16155,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata1_reg[15]_i_1_n_0\,
       Q => \readdata1_reg_reg[31]_0\(15)
     );
@@ -16163,7 +16163,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata1_reg[16]_i_1_n_0\,
       Q => \readdata1_reg_reg[31]_0\(16)
     );
@@ -16171,7 +16171,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata1_reg[17]_i_1_n_0\,
       Q => \readdata1_reg_reg[31]_0\(17)
     );
@@ -16179,7 +16179,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata1_reg[18]_i_1_n_0\,
       Q => \readdata1_reg_reg[31]_0\(18)
     );
@@ -16187,7 +16187,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata1_reg[19]_i_1_n_0\,
       Q => \readdata1_reg_reg[31]_0\(19)
     );
@@ -16195,7 +16195,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata1_reg[1]_i_1_n_0\,
       Q => \readdata1_reg_reg[31]_0\(1)
     );
@@ -16203,7 +16203,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata1_reg[20]_i_1_n_0\,
       Q => \readdata1_reg_reg[31]_0\(20)
     );
@@ -16211,7 +16211,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata1_reg[21]_i_1_n_0\,
       Q => \readdata1_reg_reg[31]_0\(21)
     );
@@ -16219,7 +16219,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata1_reg[22]_i_1_n_0\,
       Q => \readdata1_reg_reg[31]_0\(22)
     );
@@ -16227,7 +16227,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata1_reg[23]_i_1_n_0\,
       Q => \readdata1_reg_reg[31]_0\(23)
     );
@@ -16235,7 +16235,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata1_reg[24]_i_1_n_0\,
       Q => \readdata1_reg_reg[31]_0\(24)
     );
@@ -16243,7 +16243,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata1_reg[25]_i_1_n_0\,
       Q => \readdata1_reg_reg[31]_0\(25)
     );
@@ -16251,7 +16251,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata1_reg[26]_i_1_n_0\,
       Q => \readdata1_reg_reg[31]_0\(26)
     );
@@ -16259,7 +16259,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata1_reg[27]_i_1_n_0\,
       Q => \readdata1_reg_reg[31]_0\(27)
     );
@@ -16267,7 +16267,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata1_reg[28]_i_1_n_0\,
       Q => \readdata1_reg_reg[31]_0\(28)
     );
@@ -16275,7 +16275,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata1_reg[29]_i_1_n_0\,
       Q => \readdata1_reg_reg[31]_0\(29)
     );
@@ -16283,7 +16283,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata1_reg[2]_i_1_n_0\,
       Q => \readdata1_reg_reg[31]_0\(2)
     );
@@ -16291,7 +16291,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata1_reg[30]_i_1_n_0\,
       Q => \readdata1_reg_reg[31]_0\(30)
     );
@@ -16299,7 +16299,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata1_reg[31]_i_1_n_0\,
       Q => \readdata1_reg_reg[31]_0\(31)
     );
@@ -16307,7 +16307,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata1_reg[3]_i_1_n_0\,
       Q => \readdata1_reg_reg[31]_0\(3)
     );
@@ -16315,7 +16315,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata1_reg[4]_i_1_n_0\,
       Q => \readdata1_reg_reg[31]_0\(4)
     );
@@ -16323,7 +16323,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata1_reg[5]_i_1_n_0\,
       Q => \readdata1_reg_reg[31]_0\(5)
     );
@@ -16331,7 +16331,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata1_reg[6]_i_1_n_0\,
       Q => \readdata1_reg_reg[31]_0\(6)
     );
@@ -16339,7 +16339,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata1_reg[7]_i_1_n_0\,
       Q => \readdata1_reg_reg[31]_0\(7)
     );
@@ -16347,7 +16347,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata1_reg[8]_i_1_n_0\,
       Q => \readdata1_reg_reg[31]_0\(8)
     );
@@ -16355,7 +16355,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata1_reg[9]_i_1_n_0\,
       Q => \readdata1_reg_reg[31]_0\(9)
     );
@@ -16660,7 +16660,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[0]_i_1_n_0\,
       Q => \readdata2_reg_reg[31]_0\(0)
     );
@@ -16668,7 +16668,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[10]_i_1_n_0\,
       Q => \readdata2_reg_reg[31]_0\(10)
     );
@@ -16676,7 +16676,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[11]_i_1_n_0\,
       Q => \readdata2_reg_reg[31]_0\(11)
     );
@@ -16684,7 +16684,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[12]_i_1_n_0\,
       Q => \readdata2_reg_reg[31]_0\(12)
     );
@@ -16692,7 +16692,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[13]_i_1_n_0\,
       Q => \readdata2_reg_reg[31]_0\(13)
     );
@@ -16700,7 +16700,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[14]_i_1_n_0\,
       Q => \readdata2_reg_reg[31]_0\(14)
     );
@@ -16708,7 +16708,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[15]_i_1_n_0\,
       Q => \readdata2_reg_reg[31]_0\(15)
     );
@@ -16716,7 +16716,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[16]_i_1_n_0\,
       Q => \readdata2_reg_reg[31]_0\(16)
     );
@@ -16724,7 +16724,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[17]_i_1_n_0\,
       Q => \readdata2_reg_reg[31]_0\(17)
     );
@@ -16732,7 +16732,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[18]_i_1_n_0\,
       Q => \readdata2_reg_reg[31]_0\(18)
     );
@@ -16740,7 +16740,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[19]_i_1_n_0\,
       Q => \readdata2_reg_reg[31]_0\(19)
     );
@@ -16748,7 +16748,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[1]_i_1_n_0\,
       Q => \readdata2_reg_reg[31]_0\(1)
     );
@@ -16756,7 +16756,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[20]_i_1_n_0\,
       Q => \readdata2_reg_reg[31]_0\(20)
     );
@@ -16764,7 +16764,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[21]_i_1_n_0\,
       Q => \readdata2_reg_reg[31]_0\(21)
     );
@@ -16772,7 +16772,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[22]_i_1_n_0\,
       Q => \readdata2_reg_reg[31]_0\(22)
     );
@@ -16780,7 +16780,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[23]_i_1_n_0\,
       Q => \readdata2_reg_reg[31]_0\(23)
     );
@@ -16788,7 +16788,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[24]_i_1_n_0\,
       Q => \readdata2_reg_reg[31]_0\(24)
     );
@@ -16796,7 +16796,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[25]_i_1_n_0\,
       Q => \readdata2_reg_reg[31]_0\(25)
     );
@@ -16804,7 +16804,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[26]_i_1_n_0\,
       Q => \readdata2_reg_reg[31]_0\(26)
     );
@@ -16812,7 +16812,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[27]_i_1_n_0\,
       Q => \readdata2_reg_reg[31]_0\(27)
     );
@@ -16820,7 +16820,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[28]_i_1_n_0\,
       Q => \readdata2_reg_reg[31]_0\(28)
     );
@@ -16828,7 +16828,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[29]_i_1_n_0\,
       Q => \readdata2_reg_reg[31]_0\(29)
     );
@@ -16836,7 +16836,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[2]_i_1_n_0\,
       Q => \readdata2_reg_reg[31]_0\(2)
     );
@@ -16844,7 +16844,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[30]_i_1_n_0\,
       Q => \readdata2_reg_reg[31]_0\(30)
     );
@@ -16852,7 +16852,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[31]_i_1_n_0\,
       Q => \readdata2_reg_reg[31]_0\(31)
     );
@@ -16860,7 +16860,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[3]_i_1_n_0\,
       Q => \readdata2_reg_reg[31]_0\(3)
     );
@@ -16868,7 +16868,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[4]_i_1_n_0\,
       Q => \readdata2_reg_reg[31]_0\(4)
     );
@@ -16876,7 +16876,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[5]_i_1_n_0\,
       Q => \readdata2_reg_reg[31]_0\(5)
     );
@@ -16884,7 +16884,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[6]_i_1_n_0\,
       Q => \readdata2_reg_reg[31]_0\(6)
     );
@@ -16892,7 +16892,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[7]_i_1_n_0\,
       Q => \readdata2_reg_reg[31]_0\(7)
     );
@@ -16900,7 +16900,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[8]_i_1_n_0\,
       Q => \readdata2_reg_reg[31]_0\(8)
     );
@@ -16908,7 +16908,7 @@ mul_result_i_37: unisim.vcomponents.LUT2
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \readdata2_reg[9]_i_1_n_0\,
       Q => \readdata2_reg_reg[31]_0\(9)
     );
@@ -17115,7 +17115,7 @@ result_temp3_carry_i_4: unisim.vcomponents.LUT4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \rs1_reg_reg[4]_2\(0),
       Q => \^rs1_reg_reg[4]_1\(0)
     );
@@ -17123,7 +17123,7 @@ result_temp3_carry_i_4: unisim.vcomponents.LUT4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \rs1_reg_reg[4]_2\(1),
       Q => \^rs1_reg_reg[4]_1\(1)
     );
@@ -17131,7 +17131,7 @@ result_temp3_carry_i_4: unisim.vcomponents.LUT4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \rs1_reg_reg[4]_2\(2),
       Q => \^rs1_reg_reg[4]_1\(2)
     );
@@ -17139,7 +17139,7 @@ result_temp3_carry_i_4: unisim.vcomponents.LUT4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \rs1_reg_reg[4]_2\(3),
       Q => \^rs1_reg_reg[4]_1\(3)
     );
@@ -17147,7 +17147,7 @@ result_temp3_carry_i_4: unisim.vcomponents.LUT4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \rs1_reg_reg[4]_2\(4),
       Q => \^rs1_reg_reg[4]_1\(4)
     );
@@ -17155,7 +17155,7 @@ result_temp3_carry_i_4: unisim.vcomponents.LUT4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \rs2_reg_reg[4]_2\(0),
       Q => \^rs2_reg_reg[4]_1\(0)
     );
@@ -17163,7 +17163,7 @@ result_temp3_carry_i_4: unisim.vcomponents.LUT4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \rs2_reg_reg[4]_2\(1),
       Q => \^rs2_reg_reg[4]_1\(1)
     );
@@ -17171,7 +17171,7 @@ result_temp3_carry_i_4: unisim.vcomponents.LUT4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \rs2_reg_reg[4]_2\(2),
       Q => \^rs2_reg_reg[4]_1\(2)
     );
@@ -17179,7 +17179,7 @@ result_temp3_carry_i_4: unisim.vcomponents.LUT4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \rs2_reg_reg[4]_2\(3),
       Q => \^rs2_reg_reg[4]_1\(3)
     );
@@ -17187,7 +17187,7 @@ result_temp3_carry_i_4: unisim.vcomponents.LUT4
      port map (
       C => clock,
       CE => '1',
-      CLR => \rd_reg_reg[4]_1\,
+      CLR => AR(0),
       D => \rs2_reg_reg[4]_2\(4),
       Q => \^rs2_reg_reg[4]_1\(4)
     );
@@ -17262,14 +17262,14 @@ entity zynq_design_RISCVCOREZYNQ_0_0_ifid is
     instruction_reg0 : in STD_LOGIC;
     p_0_in : in STD_LOGIC_VECTOR ( 21 downto 0 );
     clock : in STD_LOGIC;
-    \rs2_reg_reg[4]_2\ : in STD_LOGIC;
+    AR : in STD_LOGIC_VECTOR ( 0 to 0 );
     \rs1_reg_reg[3]_1\ : in STD_LOGIC;
     \rs1_reg_reg[4]_2\ : in STD_LOGIC;
     \rs1_reg_reg[0]_1\ : in STD_LOGIC;
     \rs1_reg_reg[1]_1\ : in STD_LOGIC;
     \rs1_reg_reg[2]_1\ : in STD_LOGIC;
     \rs2_reg_reg[3]_1\ : in STD_LOGIC;
-    \rs2_reg_reg[4]_3\ : in STD_LOGIC;
+    \rs2_reg_reg[4]_2\ : in STD_LOGIC;
     \rs2_reg_reg[0]_1\ : in STD_LOGIC;
     \rs2_reg_reg[1]_1\ : in STD_LOGIC;
     \rs2_reg_reg[2]_1\ : in STD_LOGIC;
@@ -20364,7 +20364,7 @@ branch_prev_i_2: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => p_0_in(0),
       Q => ifid_instruction_to_OUT(0)
     );
@@ -20375,7 +20375,7 @@ branch_prev_i_2: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => p_0_in(10),
       Q => \^instruction_reg_reg[11]_0\(3)
     );
@@ -20386,7 +20386,7 @@ branch_prev_i_2: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => p_0_in(11),
       Q => \^instruction_reg_reg[11]_0\(4)
     );
@@ -20397,7 +20397,7 @@ branch_prev_i_2: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => p_0_in(12),
       Q => ifid_instruction_to_OUT(12)
     );
@@ -20408,7 +20408,7 @@ branch_prev_i_2: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => p_0_in(13),
       Q => ifid_instruction_to_OUT(13)
     );
@@ -20419,7 +20419,7 @@ branch_prev_i_2: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => p_0_in(14),
       Q => ifid_instruction_to_OUT(14)
     );
@@ -20430,7 +20430,7 @@ branch_prev_i_2: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => p_0_in(1),
       Q => ifid_instruction_to_OUT(1)
     );
@@ -20441,7 +20441,7 @@ branch_prev_i_2: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => p_0_in(15),
       Q => ifid_instruction_to_OUT(25)
     );
@@ -20452,7 +20452,7 @@ branch_prev_i_2: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => p_0_in(16),
       Q => ifid_instruction_to_OUT(26)
     );
@@ -20463,7 +20463,7 @@ branch_prev_i_2: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => p_0_in(17),
       Q => ifid_instruction_to_OUT(27)
     );
@@ -20474,7 +20474,7 @@ branch_prev_i_2: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => p_0_in(18),
       Q => ifid_instruction_to_OUT(28)
     );
@@ -20485,7 +20485,7 @@ branch_prev_i_2: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => p_0_in(19),
       Q => ifid_instruction_to_OUT(29)
     );
@@ -20496,7 +20496,7 @@ branch_prev_i_2: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => p_0_in(2),
       Q => ifid_instruction_to_OUT(2)
     );
@@ -20507,7 +20507,7 @@ branch_prev_i_2: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => p_0_in(20),
       Q => ifid_instruction_to_OUT(30)
     );
@@ -20518,7 +20518,7 @@ branch_prev_i_2: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => p_0_in(21),
       Q => ifid_instruction_to_OUT(31)
     );
@@ -20529,7 +20529,7 @@ branch_prev_i_2: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => p_0_in(3),
       Q => ifid_instruction_to_OUT(3)
     );
@@ -20540,7 +20540,7 @@ branch_prev_i_2: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => p_0_in(4),
       Q => ifid_instruction_to_OUT(4)
     );
@@ -20551,7 +20551,7 @@ branch_prev_i_2: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => p_0_in(5),
       Q => ifid_instruction_to_OUT(5)
     );
@@ -20562,7 +20562,7 @@ branch_prev_i_2: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => p_0_in(6),
       Q => ifid_instruction_to_OUT(6)
     );
@@ -20573,7 +20573,7 @@ branch_prev_i_2: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => p_0_in(7),
       Q => \^instruction_reg_reg[11]_0\(0)
     );
@@ -20584,7 +20584,7 @@ branch_prev_i_2: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => p_0_in(8),
       Q => \^instruction_reg_reg[11]_0\(1)
     );
@@ -20595,7 +20595,7 @@ branch_prev_i_2: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => p_0_in(9),
       Q => \^instruction_reg_reg[11]_0\(2)
     );
@@ -21830,7 +21830,7 @@ pcOut1_carry_i_9: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => \pcout_reg_reg[15]_1\(9),
       Q => ifid_pcout_to_OUT(10)
     );
@@ -21841,7 +21841,7 @@ pcOut1_carry_i_9: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => \pcout_reg_reg[15]_1\(10),
       Q => ifid_pcout_to_OUT(11)
     );
@@ -21852,7 +21852,7 @@ pcOut1_carry_i_9: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => \pcout_reg_reg[15]_1\(11),
       Q => ifid_pcout_to_OUT(12)
     );
@@ -21863,7 +21863,7 @@ pcOut1_carry_i_9: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => \pcout_reg_reg[15]_1\(12),
       Q => ifid_pcout_to_OUT(13)
     );
@@ -21874,7 +21874,7 @@ pcOut1_carry_i_9: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => \pcout_reg_reg[15]_1\(13),
       Q => ifid_pcout_to_OUT(14)
     );
@@ -21885,7 +21885,7 @@ pcOut1_carry_i_9: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => \pcout_reg_reg[15]_1\(14),
       Q => ifid_pcout_to_OUT(15)
     );
@@ -21896,7 +21896,7 @@ pcOut1_carry_i_9: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => \pcout_reg_reg[15]_1\(0),
       Q => ifid_pcout_to_OUT(1)
     );
@@ -21907,7 +21907,7 @@ pcOut1_carry_i_9: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => \pcout_reg_reg[15]_1\(1),
       Q => ifid_pcout_to_OUT(2)
     );
@@ -21918,7 +21918,7 @@ pcOut1_carry_i_9: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => \pcout_reg_reg[15]_1\(2),
       Q => ifid_pcout_to_OUT(3)
     );
@@ -21929,7 +21929,7 @@ pcOut1_carry_i_9: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => \pcout_reg_reg[15]_1\(3),
       Q => ifid_pcout_to_OUT(4)
     );
@@ -21940,7 +21940,7 @@ pcOut1_carry_i_9: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => \pcout_reg_reg[15]_1\(4),
       Q => ifid_pcout_to_OUT(5)
     );
@@ -21951,7 +21951,7 @@ pcOut1_carry_i_9: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => \pcout_reg_reg[15]_1\(5),
       Q => ifid_pcout_to_OUT(6)
     );
@@ -21962,7 +21962,7 @@ pcOut1_carry_i_9: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => \pcout_reg_reg[15]_1\(6),
       Q => ifid_pcout_to_OUT(7)
     );
@@ -21973,7 +21973,7 @@ pcOut1_carry_i_9: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => \pcout_reg_reg[15]_1\(7),
       Q => ifid_pcout_to_OUT(8)
     );
@@ -21984,7 +21984,7 @@ pcOut1_carry_i_9: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => \pcout_reg_reg[15]_1\(8),
       Q => ifid_pcout_to_OUT(9)
     );
@@ -22085,7 +22085,7 @@ pcOut1_carry_i_9: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => \rs1_reg_reg[0]_1\,
       Q => \^rs1_reg_reg[0]_0\
     );
@@ -22096,7 +22096,7 @@ pcOut1_carry_i_9: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => \rs1_reg_reg[1]_1\,
       Q => \^rs1_reg_reg[1]_0\
     );
@@ -22107,7 +22107,7 @@ pcOut1_carry_i_9: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => \rs1_reg_reg[2]_1\,
       Q => \^rs1_reg_reg[2]_0\
     );
@@ -22118,7 +22118,7 @@ pcOut1_carry_i_9: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => \rs1_reg_reg[3]_1\,
       Q => \^rs1_reg_reg[3]_0\
     );
@@ -22129,7 +22129,7 @@ pcOut1_carry_i_9: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => \rs1_reg_reg[4]_2\,
       Q => \^rs1_reg_reg[4]_0\
     );
@@ -22185,7 +22185,7 @@ pcOut1_carry_i_9: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => \rs2_reg_reg[0]_1\,
       Q => \^rs2_reg_reg[0]_0\
     );
@@ -22196,7 +22196,7 @@ pcOut1_carry_i_9: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => \rs2_reg_reg[1]_1\,
       Q => \^rs2_reg_reg[1]_0\
     );
@@ -22207,7 +22207,7 @@ pcOut1_carry_i_9: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => \rs2_reg_reg[2]_1\,
       Q => \^rs2_reg_reg[2]_0\
     );
@@ -22218,7 +22218,7 @@ pcOut1_carry_i_9: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
+      CLR => AR(0),
       D => \rs2_reg_reg[3]_1\,
       Q => \^rs2_reg_reg[3]_0\
     );
@@ -22229,8 +22229,8 @@ pcOut1_carry_i_9: unisim.vcomponents.LUT6
         port map (
       C => clock,
       CE => instruction_reg0,
-      CLR => \rs2_reg_reg[4]_2\,
-      D => \rs2_reg_reg[4]_3\,
+      CLR => AR(0),
+      D => \rs2_reg_reg[4]_2\,
       Q => \^rs2_reg_reg[4]_0\
     );
 end STRUCTURE;
@@ -22308,7 +22308,7 @@ entity zynq_design_RISCVCOREZYNQ_0_0_memwb is
     E : in STD_LOGIC_VECTOR ( 0 to 0 );
     exmem_memtoreg_to_memwb : in STD_LOGIC;
     clock : in STD_LOGIC;
-    \rd_reg_reg[4]_0\ : in STD_LOGIC;
+    AR : in STD_LOGIC_VECTOR ( 0 to 0 );
     exmem_regwrite_to_memwb : in STD_LOGIC;
     forwardBmuxcntrl12_out : in STD_LOGIC;
     \aluresult_reg_reg[31]_0\ : in STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -22317,7 +22317,7 @@ entity zynq_design_RISCVCOREZYNQ_0_0_memwb is
     \readdata2_reg[5]_i_2\ : in STD_LOGIC_VECTOR ( 4 downto 0 );
     mul_result : in STD_LOGIC_VECTOR ( 4 downto 0 );
     mem_read_data : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    \rd_reg_reg[4]_1\ : in STD_LOGIC_VECTOR ( 4 downto 0 )
+    \rd_reg_reg[4]_0\ : in STD_LOGIC_VECTOR ( 4 downto 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of zynq_design_RISCVCOREZYNQ_0_0_memwb : entity is "memwb";
@@ -22404,7 +22404,7 @@ MemtoReg_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => exmem_memtoreg_to_memwb,
       Q => memwb_memtoreg_to_wbmux
     );
@@ -22412,7 +22412,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => exmem_regwrite_to_memwb,
       Q => \^reg_write\
     );
@@ -22420,7 +22420,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => \aluresult_reg_reg[31]_0\(0),
       Q => memwb_aluresult_to_writebackmux(0)
     );
@@ -22428,7 +22428,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => \aluresult_reg_reg[31]_0\(10),
       Q => memwb_aluresult_to_writebackmux(10)
     );
@@ -22436,7 +22436,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => \aluresult_reg_reg[31]_0\(11),
       Q => memwb_aluresult_to_writebackmux(11)
     );
@@ -22444,7 +22444,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => \aluresult_reg_reg[31]_0\(12),
       Q => memwb_aluresult_to_writebackmux(12)
     );
@@ -22452,7 +22452,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => \aluresult_reg_reg[31]_0\(13),
       Q => memwb_aluresult_to_writebackmux(13)
     );
@@ -22460,7 +22460,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => \aluresult_reg_reg[31]_0\(14),
       Q => memwb_aluresult_to_writebackmux(14)
     );
@@ -22468,7 +22468,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => \aluresult_reg_reg[31]_0\(15),
       Q => memwb_aluresult_to_writebackmux(15)
     );
@@ -22476,7 +22476,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => \aluresult_reg_reg[31]_0\(16),
       Q => memwb_aluresult_to_writebackmux(16)
     );
@@ -22484,7 +22484,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => \aluresult_reg_reg[31]_0\(17),
       Q => memwb_aluresult_to_writebackmux(17)
     );
@@ -22492,7 +22492,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => \aluresult_reg_reg[31]_0\(18),
       Q => memwb_aluresult_to_writebackmux(18)
     );
@@ -22500,7 +22500,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => \aluresult_reg_reg[31]_0\(19),
       Q => memwb_aluresult_to_writebackmux(19)
     );
@@ -22508,7 +22508,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => \aluresult_reg_reg[31]_0\(1),
       Q => memwb_aluresult_to_writebackmux(1)
     );
@@ -22516,7 +22516,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => \aluresult_reg_reg[31]_0\(20),
       Q => memwb_aluresult_to_writebackmux(20)
     );
@@ -22524,7 +22524,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => \aluresult_reg_reg[31]_0\(21),
       Q => memwb_aluresult_to_writebackmux(21)
     );
@@ -22532,7 +22532,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => \aluresult_reg_reg[31]_0\(22),
       Q => memwb_aluresult_to_writebackmux(22)
     );
@@ -22540,7 +22540,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => \aluresult_reg_reg[31]_0\(23),
       Q => memwb_aluresult_to_writebackmux(23)
     );
@@ -22548,7 +22548,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => \aluresult_reg_reg[31]_0\(24),
       Q => memwb_aluresult_to_writebackmux(24)
     );
@@ -22556,7 +22556,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => \aluresult_reg_reg[31]_0\(25),
       Q => memwb_aluresult_to_writebackmux(25)
     );
@@ -22564,7 +22564,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => \aluresult_reg_reg[31]_0\(26),
       Q => memwb_aluresult_to_writebackmux(26)
     );
@@ -22572,7 +22572,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => \aluresult_reg_reg[31]_0\(27),
       Q => memwb_aluresult_to_writebackmux(27)
     );
@@ -22580,7 +22580,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => \aluresult_reg_reg[31]_0\(28),
       Q => memwb_aluresult_to_writebackmux(28)
     );
@@ -22588,7 +22588,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => \aluresult_reg_reg[31]_0\(29),
       Q => memwb_aluresult_to_writebackmux(29)
     );
@@ -22596,7 +22596,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => \aluresult_reg_reg[31]_0\(2),
       Q => memwb_aluresult_to_writebackmux(2)
     );
@@ -22604,7 +22604,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => \aluresult_reg_reg[31]_0\(30),
       Q => memwb_aluresult_to_writebackmux(30)
     );
@@ -22612,7 +22612,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => \aluresult_reg_reg[31]_0\(31),
       Q => memwb_aluresult_to_writebackmux(31)
     );
@@ -22620,7 +22620,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => \aluresult_reg_reg[31]_0\(3),
       Q => memwb_aluresult_to_writebackmux(3)
     );
@@ -22628,7 +22628,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => \aluresult_reg_reg[31]_0\(4),
       Q => memwb_aluresult_to_writebackmux(4)
     );
@@ -22636,7 +22636,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => \aluresult_reg_reg[31]_0\(5),
       Q => memwb_aluresult_to_writebackmux(5)
     );
@@ -22644,7 +22644,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => \aluresult_reg_reg[31]_0\(6),
       Q => memwb_aluresult_to_writebackmux(6)
     );
@@ -22652,7 +22652,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => \aluresult_reg_reg[31]_0\(7),
       Q => memwb_aluresult_to_writebackmux(7)
     );
@@ -22660,7 +22660,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => \aluresult_reg_reg[31]_0\(8),
       Q => memwb_aluresult_to_writebackmux(8)
     );
@@ -22668,7 +22668,7 @@ RegWrite_reg_reg: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => \aluresult_reg_reg[31]_0\(9),
       Q => memwb_aluresult_to_writebackmux(9)
     );
@@ -22715,40 +22715,40 @@ mul_result_i_39: unisim.vcomponents.LUT6
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
-      D => \rd_reg_reg[4]_1\(0),
+      CLR => AR(0),
+      D => \rd_reg_reg[4]_0\(0),
       Q => \^q\(0)
     );
 \rd_reg_reg[1]\: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
-      D => \rd_reg_reg[4]_1\(1),
+      CLR => AR(0),
+      D => \rd_reg_reg[4]_0\(1),
       Q => \^q\(1)
     );
 \rd_reg_reg[2]\: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
-      D => \rd_reg_reg[4]_1\(2),
+      CLR => AR(0),
+      D => \rd_reg_reg[4]_0\(2),
       Q => \^q\(2)
     );
 \rd_reg_reg[3]\: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
-      D => \rd_reg_reg[4]_1\(3),
+      CLR => AR(0),
+      D => \rd_reg_reg[4]_0\(3),
       Q => \^q\(3)
     );
 \rd_reg_reg[4]\: unisim.vcomponents.FDCE
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
-      D => \rd_reg_reg[4]_1\(4),
+      CLR => AR(0),
+      D => \rd_reg_reg[4]_0\(4),
       Q => \^q\(4)
     );
 \readdata2_reg[0]_i_1__0\: unisim.vcomponents.LUT2
@@ -23126,7 +23126,7 @@ mul_result_i_39: unisim.vcomponents.LUT6
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => mem_read_data(0),
       Q => memwb_readdata_to_writebackmux(0)
     );
@@ -23134,7 +23134,7 @@ mul_result_i_39: unisim.vcomponents.LUT6
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => mem_read_data(10),
       Q => memwb_readdata_to_writebackmux(10)
     );
@@ -23142,7 +23142,7 @@ mul_result_i_39: unisim.vcomponents.LUT6
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => mem_read_data(11),
       Q => memwb_readdata_to_writebackmux(11)
     );
@@ -23150,7 +23150,7 @@ mul_result_i_39: unisim.vcomponents.LUT6
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => mem_read_data(12),
       Q => memwb_readdata_to_writebackmux(12)
     );
@@ -23158,7 +23158,7 @@ mul_result_i_39: unisim.vcomponents.LUT6
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => mem_read_data(13),
       Q => memwb_readdata_to_writebackmux(13)
     );
@@ -23166,7 +23166,7 @@ mul_result_i_39: unisim.vcomponents.LUT6
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => mem_read_data(14),
       Q => memwb_readdata_to_writebackmux(14)
     );
@@ -23174,7 +23174,7 @@ mul_result_i_39: unisim.vcomponents.LUT6
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => mem_read_data(15),
       Q => memwb_readdata_to_writebackmux(15)
     );
@@ -23182,7 +23182,7 @@ mul_result_i_39: unisim.vcomponents.LUT6
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => mem_read_data(16),
       Q => memwb_readdata_to_writebackmux(16)
     );
@@ -23190,7 +23190,7 @@ mul_result_i_39: unisim.vcomponents.LUT6
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => mem_read_data(17),
       Q => memwb_readdata_to_writebackmux(17)
     );
@@ -23198,7 +23198,7 @@ mul_result_i_39: unisim.vcomponents.LUT6
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => mem_read_data(18),
       Q => memwb_readdata_to_writebackmux(18)
     );
@@ -23206,7 +23206,7 @@ mul_result_i_39: unisim.vcomponents.LUT6
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => mem_read_data(19),
       Q => memwb_readdata_to_writebackmux(19)
     );
@@ -23214,7 +23214,7 @@ mul_result_i_39: unisim.vcomponents.LUT6
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => mem_read_data(1),
       Q => memwb_readdata_to_writebackmux(1)
     );
@@ -23222,7 +23222,7 @@ mul_result_i_39: unisim.vcomponents.LUT6
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => mem_read_data(20),
       Q => memwb_readdata_to_writebackmux(20)
     );
@@ -23230,7 +23230,7 @@ mul_result_i_39: unisim.vcomponents.LUT6
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => mem_read_data(21),
       Q => memwb_readdata_to_writebackmux(21)
     );
@@ -23238,7 +23238,7 @@ mul_result_i_39: unisim.vcomponents.LUT6
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => mem_read_data(22),
       Q => memwb_readdata_to_writebackmux(22)
     );
@@ -23246,7 +23246,7 @@ mul_result_i_39: unisim.vcomponents.LUT6
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => mem_read_data(23),
       Q => memwb_readdata_to_writebackmux(23)
     );
@@ -23254,7 +23254,7 @@ mul_result_i_39: unisim.vcomponents.LUT6
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => mem_read_data(24),
       Q => memwb_readdata_to_writebackmux(24)
     );
@@ -23262,7 +23262,7 @@ mul_result_i_39: unisim.vcomponents.LUT6
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => mem_read_data(25),
       Q => memwb_readdata_to_writebackmux(25)
     );
@@ -23270,7 +23270,7 @@ mul_result_i_39: unisim.vcomponents.LUT6
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => mem_read_data(26),
       Q => memwb_readdata_to_writebackmux(26)
     );
@@ -23278,7 +23278,7 @@ mul_result_i_39: unisim.vcomponents.LUT6
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => mem_read_data(27),
       Q => memwb_readdata_to_writebackmux(27)
     );
@@ -23286,7 +23286,7 @@ mul_result_i_39: unisim.vcomponents.LUT6
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => mem_read_data(28),
       Q => memwb_readdata_to_writebackmux(28)
     );
@@ -23294,7 +23294,7 @@ mul_result_i_39: unisim.vcomponents.LUT6
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => mem_read_data(29),
       Q => memwb_readdata_to_writebackmux(29)
     );
@@ -23302,7 +23302,7 @@ mul_result_i_39: unisim.vcomponents.LUT6
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => mem_read_data(2),
       Q => memwb_readdata_to_writebackmux(2)
     );
@@ -23310,7 +23310,7 @@ mul_result_i_39: unisim.vcomponents.LUT6
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => mem_read_data(30),
       Q => memwb_readdata_to_writebackmux(30)
     );
@@ -23318,7 +23318,7 @@ mul_result_i_39: unisim.vcomponents.LUT6
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => mem_read_data(31),
       Q => memwb_readdata_to_writebackmux(31)
     );
@@ -23326,7 +23326,7 @@ mul_result_i_39: unisim.vcomponents.LUT6
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => mem_read_data(3),
       Q => memwb_readdata_to_writebackmux(3)
     );
@@ -23334,7 +23334,7 @@ mul_result_i_39: unisim.vcomponents.LUT6
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => mem_read_data(4),
       Q => memwb_readdata_to_writebackmux(4)
     );
@@ -23342,7 +23342,7 @@ mul_result_i_39: unisim.vcomponents.LUT6
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => mem_read_data(5),
       Q => memwb_readdata_to_writebackmux(5)
     );
@@ -23350,7 +23350,7 @@ mul_result_i_39: unisim.vcomponents.LUT6
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => mem_read_data(6),
       Q => memwb_readdata_to_writebackmux(6)
     );
@@ -23358,7 +23358,7 @@ mul_result_i_39: unisim.vcomponents.LUT6
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => mem_read_data(7),
       Q => memwb_readdata_to_writebackmux(7)
     );
@@ -23366,7 +23366,7 @@ mul_result_i_39: unisim.vcomponents.LUT6
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => mem_read_data(8),
       Q => memwb_readdata_to_writebackmux(8)
     );
@@ -23374,7 +23374,7 @@ mul_result_i_39: unisim.vcomponents.LUT6
      port map (
       C => clock,
       CE => E(0),
-      CLR => \rd_reg_reg[4]_0\,
+      CLR => AR(0),
       D => mem_read_data(9),
       Q => memwb_readdata_to_writebackmux(9)
     );
@@ -24273,7 +24273,7 @@ entity zynq_design_RISCVCOREZYNQ_0_0_program_counter is
     E : in STD_LOGIC_VECTOR ( 0 to 0 );
     \pc_reg_reg[15]_1\ : in STD_LOGIC_VECTOR ( 14 downto 0 );
     clock : in STD_LOGIC;
-    \pc_reg_reg[1]_0\ : in STD_LOGIC
+    AR : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of zynq_design_RISCVCOREZYNQ_0_0_program_counter : entity is "program_counter";
@@ -24302,7 +24302,7 @@ begin
      port map (
       C => clock,
       CE => E(0),
-      CLR => \pc_reg_reg[1]_0\,
+      CLR => AR(0),
       D => \pc_reg_reg[15]_1\(9),
       Q => \^q\(9)
     );
@@ -24310,7 +24310,7 @@ begin
      port map (
       C => clock,
       CE => E(0),
-      CLR => \pc_reg_reg[1]_0\,
+      CLR => AR(0),
       D => \pc_reg_reg[15]_1\(10),
       Q => \^q\(10)
     );
@@ -24318,7 +24318,7 @@ begin
      port map (
       C => clock,
       CE => E(0),
-      CLR => \pc_reg_reg[1]_0\,
+      CLR => AR(0),
       D => \pc_reg_reg[15]_1\(11),
       Q => \^q\(11)
     );
@@ -24326,7 +24326,7 @@ begin
      port map (
       C => clock,
       CE => E(0),
-      CLR => \pc_reg_reg[1]_0\,
+      CLR => AR(0),
       D => \pc_reg_reg[15]_1\(12),
       Q => \^q\(12)
     );
@@ -24334,7 +24334,7 @@ begin
      port map (
       C => clock,
       CE => E(0),
-      CLR => \pc_reg_reg[1]_0\,
+      CLR => AR(0),
       D => \pc_reg_reg[15]_1\(13),
       Q => \^q\(13)
     );
@@ -24342,7 +24342,7 @@ begin
      port map (
       C => clock,
       CE => E(0),
-      CLR => \pc_reg_reg[1]_0\,
+      CLR => AR(0),
       D => \pc_reg_reg[15]_1\(14),
       Q => \^q\(14)
     );
@@ -24350,7 +24350,7 @@ begin
      port map (
       C => clock,
       CE => E(0),
-      CLR => \pc_reg_reg[1]_0\,
+      CLR => AR(0),
       D => \pc_reg_reg[15]_1\(0),
       Q => \^q\(0)
     );
@@ -24358,7 +24358,7 @@ begin
      port map (
       C => clock,
       CE => E(0),
-      CLR => \pc_reg_reg[1]_0\,
+      CLR => AR(0),
       D => \pc_reg_reg[15]_1\(1),
       Q => \^q\(1)
     );
@@ -24366,7 +24366,7 @@ begin
      port map (
       C => clock,
       CE => E(0),
-      CLR => \pc_reg_reg[1]_0\,
+      CLR => AR(0),
       D => \pc_reg_reg[15]_1\(2),
       Q => \^q\(2)
     );
@@ -24374,7 +24374,7 @@ begin
      port map (
       C => clock,
       CE => E(0),
-      CLR => \pc_reg_reg[1]_0\,
+      CLR => AR(0),
       D => \pc_reg_reg[15]_1\(3),
       Q => \^q\(3)
     );
@@ -24382,7 +24382,7 @@ begin
      port map (
       C => clock,
       CE => E(0),
-      CLR => \pc_reg_reg[1]_0\,
+      CLR => AR(0),
       D => \pc_reg_reg[15]_1\(4),
       Q => \^q\(4)
     );
@@ -24390,7 +24390,7 @@ begin
      port map (
       C => clock,
       CE => E(0),
-      CLR => \pc_reg_reg[1]_0\,
+      CLR => AR(0),
       D => \pc_reg_reg[15]_1\(5),
       Q => \^q\(5)
     );
@@ -24398,7 +24398,7 @@ begin
      port map (
       C => clock,
       CE => E(0),
-      CLR => \pc_reg_reg[1]_0\,
+      CLR => AR(0),
       D => \pc_reg_reg[15]_1\(6),
       Q => \^q\(6)
     );
@@ -24406,7 +24406,7 @@ begin
      port map (
       C => clock,
       CE => E(0),
-      CLR => \pc_reg_reg[1]_0\,
+      CLR => AR(0),
       D => \pc_reg_reg[15]_1\(7),
       Q => \^q\(7)
     );
@@ -24414,7 +24414,7 @@ begin
      port map (
       C => clock,
       CE => E(0),
-      CLR => \pc_reg_reg[1]_0\,
+      CLR => AR(0),
       D => \pc_reg_reg[15]_1\(8),
       Q => \^q\(8)
     );
@@ -24622,7 +24622,7 @@ entity zynq_design_RISCVCOREZYNQ_0_0_internal_connections is
     \readdata2_reg_reg[29]\ : out STD_LOGIC;
     \readdata2_reg_reg[30]\ : out STD_LOGIC;
     clock : in STD_LOGIC;
-    \pc_reg_reg[1]\ : in STD_LOGIC;
+    AR : in STD_LOGIC_VECTOR ( 0 to 0 );
     early_prev_reg : in STD_LOGIC;
     branch_prev_reg : in STD_LOGIC;
     int_if_flush_reg : in STD_LOGIC;
@@ -25280,7 +25280,7 @@ architecture STRUCTURE of zynq_design_RISCVCOREZYNQ_0_0_internal_connections is
   signal p_0_in : STD_LOGIC;
   signal p_0_in_0 : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal p_0_in_2 : STD_LOGIC;
-  signal p_1_in : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal p_2_in : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal pc_4_adder_instance_n_14 : STD_LOGIC;
   signal pc_instance_n_0 : STD_LOGIC;
   signal pc_instance_n_16 : STD_LOGIC;
@@ -25413,8 +25413,8 @@ begin
 ALU_CONTROL_INST: entity work.zynq_design_RISCVCOREZYNQ_0_0_alucontrol
      port map (
       CO(0) => result_temp6,
-      D(29) => p_1_in(31),
-      D(28 downto 0) => p_1_in(28 downto 0),
+      D(29) => p_2_in(31),
+      D(28 downto 0) => p_2_in(28 downto 0),
       E(0) => IDEX_INST_n_236,
       Q(14 downto 0) => idex_pcout_to_alu(15 downto 1),
       \aluoperation_reg[1]_0\ => ALU_CONTROL_INST_n_32,
@@ -25919,9 +25919,10 @@ CONTROLUNIT_INST: entity work.zynq_design_RISCVCOREZYNQ_0_0_ControlUnit
     );
 EXMEM_INST: entity work.zynq_design_RISCVCOREZYNQ_0_0_exmem
      port map (
+      AR(0) => AR(0),
       CO(0) => IDEX_INST_n_171,
-      D(29) => p_1_in(31),
-      D(28 downto 0) => p_1_in(28 downto 0),
+      D(29) => p_2_in(31),
+      D(28 downto 0) => p_2_in(28 downto 0),
       E(0) => p_0_in,
       MemRead_reg_reg_0 => \^memread_reg_reg\,
       MemRead_reg_reg_1 => IDEX_INST_n_43,
@@ -26196,12 +26197,11 @@ EXMEM_INST: entity work.zynq_design_RISCVCOREZYNQ_0_0_exmem
       \mul_result__0_9\ => EXMEM_INST_n_224,
       \mul_result__3\(4 downto 0) => \mul_result__3\(20 downto 16),
       \rd_reg_reg[4]_0\(4 downto 0) => exmem_rd_to_memwb(4 downto 0),
-      \rd_reg_reg[4]_1\ => \pc_reg_reg[1]\,
-      \rd_reg_reg[4]_2\(4) => IDEX_INST_n_37,
-      \rd_reg_reg[4]_2\(3) => IDEX_INST_n_38,
-      \rd_reg_reg[4]_2\(2) => IDEX_INST_n_39,
-      \rd_reg_reg[4]_2\(1) => IDEX_INST_n_40,
-      \rd_reg_reg[4]_2\(0) => IDEX_INST_n_41,
+      \rd_reg_reg[4]_1\(4) => IDEX_INST_n_37,
+      \rd_reg_reg[4]_1\(3) => IDEX_INST_n_38,
+      \rd_reg_reg[4]_1\(2) => IDEX_INST_n_39,
+      \rd_reg_reg[4]_1\(1) => IDEX_INST_n_40,
+      \rd_reg_reg[4]_1\(0) => IDEX_INST_n_41,
       \readdata2_reg[0]_i_2\(3 downto 0) => idex_rs2_to_forwardingunit(3 downto 0),
       \readdata2_reg[0]_i_2_0\ => IDEX_INST_n_136,
       \readdata2_reg_reg[0]_0\(0) => MEMWB_INST_n_31,
@@ -26244,6 +26244,7 @@ IDEX_INST: entity work.zynq_design_RISCVCOREZYNQ_0_0_idex
       \ALUOp_reg_reg[1]_0\(0) => IDEX_INST_n_241,
       \ALUOp_reg_reg[1]_1\ => ifid_instance_n_31,
       ALUSrc_reg_reg_0 => ifid_instance_n_32,
+      AR(0) => AR(0),
       CO(0) => result_temp6,
       D(16) => ifid_instance_n_92,
       D(15) => ifid_instance_n_93,
@@ -26488,12 +26489,11 @@ IDEX_INST: entity work.zynq_design_RISCVCOREZYNQ_0_0_idex
       \rd_reg_reg[4]_0\(2) => IDEX_INST_n_39,
       \rd_reg_reg[4]_0\(1) => IDEX_INST_n_40,
       \rd_reg_reg[4]_0\(0) => IDEX_INST_n_41,
-      \rd_reg_reg[4]_1\ => \pc_reg_reg[1]\,
-      \rd_reg_reg[4]_2\(4) => ifid_instance_n_15,
-      \rd_reg_reg[4]_2\(3) => ifid_instance_n_16,
-      \rd_reg_reg[4]_2\(2) => ifid_instance_n_17,
-      \rd_reg_reg[4]_2\(1) => ifid_instance_n_18,
-      \rd_reg_reg[4]_2\(0) => ifid_instance_n_19,
+      \rd_reg_reg[4]_1\(4) => ifid_instance_n_15,
+      \rd_reg_reg[4]_1\(3) => ifid_instance_n_16,
+      \rd_reg_reg[4]_1\(2) => ifid_instance_n_17,
+      \rd_reg_reg[4]_1\(1) => ifid_instance_n_18,
+      \rd_reg_reg[4]_1\(0) => ifid_instance_n_19,
       \readdata1_reg_reg[31]_0\(31 downto 0) => idex_rs1_to_forwardingmuxa(31 downto 0),
       \readdata2_reg[31]_i_3\(0) => exmem_rd_to_memwb(4),
       \readdata2_reg_reg[31]_0\(31 downto 0) => idex_rs2_to_forwardingmuxb(31 downto 0),
@@ -26517,6 +26517,7 @@ IDEX_INST: entity work.zynq_design_RISCVCOREZYNQ_0_0_idex
     );
 MEMWB_INST: entity work.zynq_design_RISCVCOREZYNQ_0_0_memwb
      port map (
+      AR(0) => AR(0),
       E(0) => p_0_in,
       Q(4 downto 0) => \^rd_reg_reg[4]\(4 downto 0),
       \aluresult_reg_reg[31]_0\(31 downto 0) => \^q\(31 downto 0),
@@ -26531,8 +26532,7 @@ MEMWB_INST: entity work.zynq_design_RISCVCOREZYNQ_0_0_memwb
       forwardingmuxb_rs2_to_alusrcmuxb(0) => forwardingmuxb_rs2_to_alusrcmuxb(0),
       mem_read_data(31 downto 0) => mem_read_data(31 downto 0),
       mul_result(4 downto 0) => idex_rs1_to_forwardingunit(4 downto 0),
-      \rd_reg_reg[4]_0\ => \pc_reg_reg[1]\,
-      \rd_reg_reg[4]_1\(4 downto 0) => exmem_rd_to_memwb(4 downto 0),
+      \rd_reg_reg[4]_0\(4 downto 0) => exmem_rd_to_memwb(4 downto 0),
       \readdata2_reg[5]_i_2\(4 downto 0) => idex_rs2_to_forwardingunit(4 downto 0),
       \readdata2_reg_reg[0]_0\ => \^readdata2_reg_reg[0]\,
       \readdata2_reg_reg[0]_1\(0) => idex_rs2_to_forwardingmuxb(0),
@@ -26598,6 +26598,7 @@ MEMWB_INST: entity work.zynq_design_RISCVCOREZYNQ_0_0_memwb
     );
 ifid_instance: entity work.zynq_design_RISCVCOREZYNQ_0_0_ifid
      port map (
+      AR(0) => AR(0),
       CO(0) => data2_1,
       D(3) => ifid_instance_n_35,
       D(2) => ifid_instance_n_36,
@@ -26893,8 +26894,7 @@ ifid_instance: entity work.zynq_design_RISCVCOREZYNQ_0_0_ifid
       \rs2_reg_reg[4]_1\(2) => ifid_instance_n_23,
       \rs2_reg_reg[4]_1\(1) => ifid_instance_n_24,
       \rs2_reg_reg[4]_1\(0) => ifid_instance_n_25,
-      \rs2_reg_reg[4]_2\ => \pc_reg_reg[1]\,
-      \rs2_reg_reg[4]_3\ => CONTROLUNIT_INST_n_11
+      \rs2_reg_reg[4]_2\ => CONTROLUNIT_INST_n_11
     );
 pc_4_adder_instance: entity work.zynq_design_RISCVCOREZYNQ_0_0_pc4adder
      port map (
@@ -26906,6 +26906,7 @@ pc_4_adder_instance: entity work.zynq_design_RISCVCOREZYNQ_0_0_pc4adder
     );
 pc_instance: entity work.zynq_design_RISCVCOREZYNQ_0_0_program_counter
      port map (
+      AR(0) => AR(0),
       E(0) => pc_reg0,
       Q(14 downto 0) => \^pc_out\(14 downto 0),
       S(0) => pc_instance_n_0,
@@ -26926,8 +26927,7 @@ pc_instance: entity work.zynq_design_RISCVCOREZYNQ_0_0_program_counter
       \pc_reg_reg[15]_0\(2) => pc_instance_n_28,
       \pc_reg_reg[15]_0\(1) => pc_instance_n_29,
       \pc_reg_reg[15]_0\(0) => pc_instance_n_30,
-      \pc_reg_reg[15]_1\(14 downto 0) => pc_mux_pcsource_to_pc(15 downto 1),
-      \pc_reg_reg[1]_0\ => \pc_reg_reg[1]\
+      \pc_reg_reg[15]_1\(14 downto 0) => pc_mux_pcsource_to_pc(15 downto 1)
     );
 pc_mux_inst: entity work.zynq_design_RISCVCOREZYNQ_0_0_pc_mux
      port map (
@@ -27098,6 +27098,7 @@ int_if_flush_i_1: unisim.vcomponents.LUT5
     );
 internal_connections_inst: entity work.zynq_design_RISCVCOREZYNQ_0_0_internal_connections
      port map (
+      AR(0) => \pc_reg[15]_i_2_n_0\,
       MemRead_reg_reg => mem_read,
       Q(31 downto 0) => Q(31 downto 0),
       branch_prev => \CONTROLUNIT_INST/branch_prev\,
@@ -27114,7 +27115,6 @@ internal_connections_inst: entity work.zynq_design_RISCVCOREZYNQ_0_0_internal_co
       mem_write => mem_write,
       mem_write_data(31 downto 0) => mem_write_data(31 downto 0),
       pc_out(14 downto 0) => pc_out(14 downto 0),
-      \pc_reg_reg[1]\ => \pc_reg[15]_i_2_n_0\,
       \rd_reg_reg[4]\(4 downto 0) => \rd_reg_reg[4]\(4 downto 0),
       \readdata2_reg_reg[0]\ => \readdata2_reg_reg[0]\,
       \readdata2_reg_reg[10]\ => \readdata2_reg_reg[10]\,
