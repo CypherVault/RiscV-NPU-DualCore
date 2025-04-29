@@ -22,8 +22,8 @@ begin
     process (clk, reset)
     begin
         if reset = '0' then
-            pc_reg <= x"FFFC";  -- Set program counter to 0 on reset
-        elsif rising_edge(clk) and hold = '0' and start = '1' and pause = '0' then
+           pc_reg <= (others => '0');  -- Set program counter to 0 on reset
+        elsif hold = '0' and start = '1' and pause = '0' then
             if pcwrite = '1' then
                 pc_reg <= pcsource;  -- Update program counter with pcwrite value
             else

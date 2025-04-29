@@ -169,35 +169,70 @@ architecture behavior of RICSVCORE_tb is
 --25 => x"00008067",  -- jalr zero, 0(ra)
 --
 
-           --                 
- --_start:													 -- basic 3+5 program		WORKS perftec
+--           --                 
+-- --_start:													 -- basic 3+5 program		WORKS perftec
+--0  => x"ff010113",  -- addi sp, sp, -16
+--1  => x"00112623",  -- sw ra, 12(sp)
+--2  => x"00000097",  -- auipc ra, 0x0
+--3  => x"018080e7",  -- jalr ra, 24(ra) # 10074 <main>
+--4  => x"00000013",  -- addi zero, zero, 0
+--5  => x"00c12083",  -- lw ra, 12(sp)
+--6  => x"01010113",  -- addi sp, sp, 16
+--7  => x"00008067",  -- jalr zero, 0(ra)
+--
+----main:
+--8  => x"ff010113",  -- addi sp, sp, -16
+--9  => x"00500793",  -- addi a5, zero, 5
+--10 => x"00f12623",  -- sw a5, 12(sp)
+--11 => x"00300793",  -- addi a5, zero, 3
+--12 => x"00f12423",  -- sw a5, 8(sp)
+--13 => x"00012223",  -- sw zero, 4(sp)
+--14 => x"00c12703",  -- lw a4, 12(sp)
+--15 => x"00812783",  -- lw a5, 8(sp)
+--16 => x"00f707b3",  -- add a5, a4, a5
+--17 => x"00f12223",  -- sw a5, 4(sp)
+--18 => x"00412783",  -- lw a5, 4(sp)
+--19 => x"00078513",  -- addi a0, a5, 0
+--20 => x"01010113",  -- addi sp, sp, 16
+--21 => x"00008067",  -- jalr zero, 0(ra)
+--
+--
+
+
+  --_start:												-- 3+5 and terminates and stays in finish 
 0  => x"ff010113",  -- addi sp, sp, -16
 1  => x"00112623",  -- sw ra, 12(sp)
 2  => x"00000097",  -- auipc ra, 0x0
-3  => x"018080e7",  -- jalr ra, 24(ra) # 10074 <main>
-4  => x"00000013",  -- addi zero, zero, 0
-5  => x"00c12083",  -- lw ra, 12(sp)
-6  => x"01010113",  -- addi sp, sp, 16
-7  => x"00008067",  -- jalr zero, 0(ra)
+3  => x"020080e7",  -- jalr ra, 32(ra) # 1007c <main>
+4  => x"00000097",  -- auipc ra, 0x0
+5  => x"050080e7",  -- jalr ra, 80(ra) # 100b4 <finish>
+6  => x"00000013",  -- addi zero, zero, 0
+7  => x"00c12083",  -- lw ra, 12(sp)
+8  => x"01010113",  -- addi sp, sp, 16
+9  => x"00008067",  -- jalr zero, 0(ra)
 
 --main:
-8  => x"ff010113",  -- addi sp, sp, -16
-9  => x"00500793",  -- addi a5, zero, 5
-10 => x"00f12623",  -- sw a5, 12(sp)
-11 => x"00300793",  -- addi a5, zero, 3
-12 => x"00f12423",  -- sw a5, 8(sp)
-13 => x"00012223",  -- sw zero, 4(sp)
-14 => x"00c12703",  -- lw a4, 12(sp)
-15 => x"00812783",  -- lw a5, 8(sp)
-16 => x"00f707b3",  -- add a5, a4, a5
-17 => x"00f12223",  -- sw a5, 4(sp)
-18 => x"00412783",  -- lw a5, 4(sp)
-19 => x"00078513",  -- addi a0, a5, 0
-20 => x"01010113",  -- addi sp, sp, 16
-21 => x"00008067",  -- jalr zero, 0(ra)
+10 => x"ff010113",  -- addi sp, sp, -16
+11 => x"00500793",  -- addi a5, zero, 5
+12 => x"00f12623",  -- sw a5, 12(sp)
+13 => x"00300793",  -- addi a5, zero, 3
+14 => x"00f12423",  -- sw a5, 8(sp)
+15 => x"00012223",  -- sw zero, 4(sp)
+16 => x"00c12703",  -- lw a4, 12(sp)
+17 => x"00812783",  -- lw a5, 8(sp)
+18 => x"00f707b3",  -- add a5, a4, a5
+19 => x"00f12223",  -- sw a5, 4(sp)
+20 => x"00412783",  -- lw a5, 4(sp)
+21 => x"00078513",  -- addi a0, a5, 0
+22 => x"01010113",  -- addi sp, sp, 16
+23 => x"00008067",  -- jalr zero, 0(ra)
+
+--finish:
+24 => x"0000006f",  -- jal zero, 100b4 <finish>
 
 
-        
+
+
 --
 --	--_start:								  --3+5 	 if >7 -2 equals 6 at end 
 --0  => x"ff010113",  -- addi sp, sp, -16

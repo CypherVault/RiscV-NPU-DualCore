@@ -2,6 +2,7 @@
 
 void _start() {
     main();
+  finish();
 }
 
 int main() {
@@ -14,4 +15,11 @@ int main() {
 
     // Return the result
     return result;
+}
+
+int finish(){
+
+while (1){
+}
+
 }

@@ -9,7 +9,7 @@
 
 `define CLOCKNUM 100 // Define the number of clock cycles here
 
-`define INSTR_MEM_SIZE 32 // Size of the instruction memory
+`define INSTR_MEM_SIZE 25 // Size of the instruction memory
 `define REG_COUNT 32 // Number of registers (5-bit address space)
 `define DATA_MEM_SIZE 4096 // Number of data memory locations (7-bit address space)
 
@@ -91,18 +91,18 @@ module tb();
 //    instr_mem[21] = 32'h0063a623; // sw x6, 12(x7)      (store at base + 12)
 //    instr_mem[22] = 32'h00000067; // ret                (return)
 
-// modulo program
-  instr_mem[0] = 32'h00000000;  // Unused position 0
-  instr_mem[1] = 32'h02f00513;  // addi x10, x0, 47    # Load dividend into x10
-  instr_mem[2] = 32'h00500593;  // addi x11, x0, 5     # Load divisor into x11
-  instr_mem[3] = 32'h00000613;  // addi x12, x0, 0     # Initialize quotient in x12
-  // Reordered sequence
-  instr_mem[4] = 32'h00050693;  // addi x13, x10, 0    # Copy dividend to x13
-  instr_mem[5] = 32'h40b686b3;  // sub x13, x13, x11   # Subtract first
-  instr_mem[6] = 32'h02b6c063;  // blt x13, x11, 32    # Then compare
-  instr_mem[7] = 32'h00160613;  // addi x12, x12, 1    # Increment quotient
-  instr_mem[8] = 32'h00000000;  // NOP        # Jump back from 32 to 16
-  instr_mem[9] = 32'hff1ff06f;  // jal x0, -16        # Jump back from 32 to 16
+//// modulo program
+//  instr_mem[0] = 32'h00000000;  // Unused position 0
+//  instr_mem[1] = 32'h02f00513;  // addi x10, x0, 47    # Load dividend into x10
+//  instr_mem[2] = 32'h00500593;  // addi x11, x0, 5     # Load divisor into x11
+//  instr_mem[3] = 32'h00000613;  // addi x12, x0, 0     # Initialize quotient in x12
+//  // Reordered sequence
+//  instr_mem[4] = 32'h00050693;  // addi x13, x10, 0    # Copy dividend to x13
+//  instr_mem[5] = 32'h40b686b3;  // sub x13, x13, x11   # Subtract first
+//  instr_mem[6] = 32'h02b6c063;  // blt x13, x11, 32    # Then compare
+//  instr_mem[7] = 32'h00160613;  // addi x12, x12, 1    # Increment quotient
+//  instr_mem[8] = 32'h00000000;  // NOP        # Jump back from 32 to 16
+//  instr_mem[9] = 32'hff1ff06f;  // jal x0, -16        # Jump back from 32 to 16
       
       
       
@@ -122,7 +122,36 @@ module tb();
 //instr_mem[12] = 32'h01010113;  // addi sp, sp, 16
 //instr_mem[13] = 32'h00000067;  // ret (return from the program)
 
+// _start section
+instr_mem[0]  = 32'hff010113;  // addi sp, sp, -16
+instr_mem[1]  = 32'h00112623;  // sw ra, 12(sp)
+instr_mem[2]  = 32'h00000097;  // auipc ra, 0x0
+instr_mem[3]  = 32'h020080e7;  // jalr ra, 32(ra) # 1007c <main>
+instr_mem[4]  = 32'h00000097;  // auipc ra, 0x0
+instr_mem[5]  = 32'h050080e7;  // jalr ra, 80(ra) # 100b4 <finish>
+instr_mem[6]  = 32'h00000013;  // addi zero, zero, 0
+instr_mem[7]  = 32'h00c12083;  // lw ra, 12(sp)
+instr_mem[8]  = 32'h01010113;  // addi sp, sp, 16
+instr_mem[9]  = 32'h00008067;  // jalr zero, 0(ra)
 
+// main section
+instr_mem[10] = 32'hff010113;  // addi sp, sp, -16
+instr_mem[11] = 32'h00500793;  // addi a5, zero, 5
+instr_mem[12] = 32'h00f12623;  // sw a5, 12(sp)
+instr_mem[13] = 32'h00300793;  // addi a5, zero, 3
+instr_mem[14] = 32'h00f12423;  // sw a5, 8(sp)
+instr_mem[15] = 32'h00012223;  // sw zero, 4(sp)
+instr_mem[16] = 32'h00c12703;  // lw a4, 12(sp)
+instr_mem[17] = 32'h00812783;  // lw a5, 8(sp)
+instr_mem[18] = 32'h00f707b3;  // add a5, a4, a5
+instr_mem[19] = 32'h00f12223;  // sw a5, 4(sp)
+instr_mem[20] = 32'h00412783;  // lw a5, 4(sp)
+instr_mem[21] = 32'h00078513;  // addi a0, a5, 0
+instr_mem[22] = 32'h01010113;  // addi sp, sp, 16
+instr_mem[23] = 32'h00008067;  // jalr zero, 0(ra)
+
+// finish section
+instr_mem[24] = 32'h0000006f;  // jal zero, finish (infinite loop)
 
 
 
@@ -199,7 +228,19 @@ module tb();
         `VIP.write_data(`CTRL_BASE + 8, 4, 32'h1, resp);  // START = '1' so processor will start to run.
         $display("START enabled");
        
-        repeat(1000) @(posedge clk);
+       
+       
+       
+       
+       
+       
+      repeat(2000) @(edge clk);  // Steps through both rising and falling edges for 1000 clock cycles
+
+       
+       
+       
+       
+       
        
        
        $display("Toggling ON hold enable signal...RISCV CORE DISABLED.");

@@ -1,2 +1,12 @@
 Breakpoint File Version 1.0
-240,true,"C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sim_1/new/zynq_wrapper_tb.sv"
+228,true,"C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sim_1/new/zynq_wrapper_tb.sv"
+229,true,"C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sim_1/new/zynq_wrapper_tb.sv"
+114,true,"C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/control_unit.vhd"
+28,true,"C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/program_counter.vhd"
+27,true,"C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/program_counter.vhd"
+237,true,"C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sim_1/new/zynq_wrapper_tb.sv"
+82,true,"C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.ip_user_files/bd/zynq_design/ipshared/71ce/hdl/controlsubsystemIP.vhd"
+224,true,"C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sim_1/new/zynq_wrapper_tb.sv"
+177,true,"C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sim_1/new/zynq_wrapper_tb.sv"
+35,true,"C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/program_counter.vhd"
+74,true,"C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/hazardunit.vhd"

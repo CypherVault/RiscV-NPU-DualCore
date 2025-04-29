@@ -8,7 +8,7 @@
   **** SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
   **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
   **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-  **** Start of session at: Tue Apr 29 00:33:04 2025
+  **** Start of session at: Tue Apr 29 02:31:30 2025
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
@@ -18,9 +18,7 @@ WARNING: [Common 17-1361] You have specified a new message control rule that is 
 WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
 WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
 WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
-WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
-WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
-create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 483.594 ; gain = 150.766
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 481.215 ; gain = 150.734
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/myip_1_0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0'.
@@ -65,9 +63,9 @@ INFO: [Device 21-403] Loading part xc7z007sclg225-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
 WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
-INFO: [Synth 8-7075] Helper process launched with PID 14036
+INFO: [Synth 8-7075] Helper process launched with PID 18008
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 1171.527 ; gain = 467.805
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1170.621 ; gain = 466.211
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'zynq_design_RISCVCOREZYNQ_0_0' [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ip/zynq_design_RISCVCOREZYNQ_0_0/synth/zynq_design_RISCVCOREZYNQ_0_0.vhd:79]
 INFO: [Synth 8-3491] module 'RISCVCOREZYNQ' declared at 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/riscvcore_zynq.vhd:10' bound to instance 'U0' of component 'RISCVCOREZYNQ' [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ip/zynq_design_RISCVCOREZYNQ_0_0/synth/zynq_design_RISCVCOREZYNQ_0_0.vhd:119]
@@ -80,9 +78,11 @@ INFO: [Synth 8-256] done synthesizing module 'pc_mux' (0#1) [C:/Users/Chris/Desk
 INFO: [Synth 8-638] synthesizing module 'pc4adder' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/pc4adder.vhd:13]
 INFO: [Synth 8-256] done synthesizing module 'pc4adder' (0#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/pc4adder.vhd:13]
 INFO: [Synth 8-638] synthesizing module 'program_counter' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/program_counter.vhd:19]
-WARNING: [Synth 8-614] signal 'pause' is read in the process but is not in the sensitivity list [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/program_counter.vhd:22]
 WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/program_counter.vhd:22]
 WARNING: [Synth 8-614] signal 'start' is read in the process but is not in the sensitivity list [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/program_counter.vhd:22]
+WARNING: [Synth 8-614] signal 'pause' is read in the process but is not in the sensitivity list [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/program_counter.vhd:22]
+WARNING: [Synth 8-614] signal 'pcwrite' is read in the process but is not in the sensitivity list [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/program_counter.vhd:22]
+WARNING: [Synth 8-614] signal 'pcsource' is read in the process but is not in the sensitivity list [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/program_counter.vhd:22]
 INFO: [Synth 8-256] done synthesizing module 'program_counter' (0#1) [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/program_counter.vhd:19]
 INFO: [Synth 8-638] synthesizing module 'ifid' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/ifid.vhd:22]
 WARNING: [Synth 8-614] signal 'pause' is read in the process but is not in the sensitivity list [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/ifid.vhd:31]
@@ -139,7 +139,6 @@ INFO: [Synth 8-256] done synthesizing module 'RISCVCOREZYNQ' (0#1) [C:/Users/Chr
 INFO: [Synth 8-256] done synthesizing module 'zynq_design_RISCVCOREZYNQ_0_0' (0#1) [c:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/ip/zynq_design_RISCVCOREZYNQ_0_0/synth/zynq_design_RISCVCOREZYNQ_0_0.vhd:79]
 WARNING: [Synth 8-6014] Unused sequential element sync_pause_reg was removed.  [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/control_unit.vhd:87]
 WARNING: [Synth 8-6014] Unused sequential element JALorBRANCH_reg_reg was removed.  [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/exmem.vhd:73]
-WARNING: [Synth 8-3848] Net hazardunit_ifidflush_to_ifid in module/entity internal_connections does not have driver. [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/internalconnections.vhd:115]
 WARNING: [Synth 8-7129] Port branchregwritecancel in module memwb is either unconnected or has no load
 WARNING: [Synth 8-7129] Port rdin[4] in module ALU is either unconnected or has no load
 WARNING: [Synth 8-7129] Port rdin[3] in module ALU is either unconnected or has no load
@@ -242,51 +241,52 @@ WARNING: [Synth 8-7129] Port immediate[25] in module pcimmadder is either unconn
 WARNING: [Synth 8-7129] Port immediate[24] in module pcimmadder is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1289.645 ; gain = 585.922
+Finished RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1289.605 ; gain = 585.195
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1289.645 ; gain = 585.922
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1289.605 ; gain = 585.195
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1289.645 ; gain = 585.922
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1289.605 ; gain = 585.195
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.056 . Memory (MB): peak = 1289.645 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.056 . Memory (MB): peak = 1289.605 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1366.785 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1367.266 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.045 . Memory (MB): peak = 1367.473 ; gain = 0.688
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.049 . Memory (MB): peak = 1367.770 ; gain = 0.504
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1367.473 ; gain = 663.750
+Finished Constraint Validation : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 1367.770 ; gain = 663.359
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z007sclg225-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1367.473 ; gain = 663.750
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 1367.770 ; gain = 663.359
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1367.473 ; gain = 663.750
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1367.770 ; gain = 663.359
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-327] inferring latch for variable 'muxOut_reg' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/pc_mux.vhd:24]
+WARNING: [Synth 8-327] inferring latch for variable 'pc_reg_reg' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/program_counter.vhd:25]
 WARNING: [Synth 8-327] inferring latch for variable 'int_regOrPC_reg' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/control_unit.vhd:285]
 WARNING: [Synth 8-327] inferring latch for variable 'aluoperation_reg' [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sources_1/imports/src/alucontrol.vhd:23]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1367.473 ; gain = 663.750
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1367.770 ; gain = 663.359
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -300,7 +300,7 @@ Detailed RTL Component Info :
 	   2 Input     32 Bit         XORs := 1     
 +---Registers : 
 	               32 Bit    Registers := 9     
-	               16 Bit    Registers := 3     
+	               16 Bit    Registers := 2     
 	                5 Bit    Registers := 8     
 	                2 Bit    Registers := 1     
 	                1 Bit    Registers := 18    
@@ -350,7 +350,7 @@ DSP Report: Generating DSP mul_result, operation Mode is: (PCIN>>17)+A*B.
 DSP Report: operator mul_result is absorbed into DSP mul_result.
 DSP Report: operator mul_result is absorbed into DSP mul_result.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1456.113 ; gain = 752.391
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:56 ; elapsed = 00:00:57 . Memory (MB): peak = 1464.227 ; gain = 759.816
 ---------------------------------------------------------------------------------
  Sort Area is  mul_result_0 : 0 0 : 3101 5754 : Used 1 time 0
  Sort Area is  mul_result_0 : 0 1 : 2653 5754 : Used 1 time 0
@@ -378,20 +378,21 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 1538.492 ; gain = 834.770
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:07 ; elapsed = 00:01:08 . Memory (MB): peak = 1539.504 ; gain = 835.094
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 1539.562 ; gain = 835.840
+Finished Timing Optimization : Time (s): cpu = 00:01:07 ; elapsed = 00:01:08 . Memory (MB): peak = 1540.723 ; gain = 836.312
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-3332] Sequential element (U0/internal_connections_inst/pc_mux_inst/muxOut_reg[0]) is unused and will be removed from module zynq_design_RISCVCOREZYNQ_0_0.
+INFO: [Synth 8-3332] Sequential element (U0/internal_connections_inst/pc_instance/pc_reg_reg[0]) is unused and will be removed from module zynq_design_RISCVCOREZYNQ_0_0.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:46 ; elapsed = 00:00:48 . Memory (MB): peak = 1598.855 ; gain = 895.133
+Finished Technology Mapping : Time (s): cpu = 00:01:08 ; elapsed = 00:01:09 . Memory (MB): peak = 1600.215 ; gain = 895.805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -409,37 +410,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:51 ; elapsed = 00:00:53 . Memory (MB): peak = 1761.098 ; gain = 1057.375
+Finished IO Insertion : Time (s): cpu = 00:01:13 ; elapsed = 00:01:14 . Memory (MB): peak = 1762.699 ; gain = 1058.289
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:51 ; elapsed = 00:00:53 . Memory (MB): peak = 1761.098 ; gain = 1057.375
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:13 ; elapsed = 00:01:14 . Memory (MB): peak = 1762.699 ; gain = 1058.289
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:51 ; elapsed = 00:00:53 . Memory (MB): peak = 1761.098 ; gain = 1057.375
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:13 ; elapsed = 00:01:14 . Memory (MB): peak = 1762.699 ; gain = 1058.289
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:52 ; elapsed = 00:00:53 . Memory (MB): peak = 1761.098 ; gain = 1057.375
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:13 ; elapsed = 00:01:14 . Memory (MB): peak = 1762.699 ; gain = 1058.289
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:52 ; elapsed = 00:00:53 . Memory (MB): peak = 1761.098 ; gain = 1057.375
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:13 ; elapsed = 00:01:14 . Memory (MB): peak = 1762.699 ; gain = 1058.289
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:52 ; elapsed = 00:00:53 . Memory (MB): peak = 1761.098 ; gain = 1057.375
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:13 ; elapsed = 00:01:14 . Memory (MB): peak = 1762.699 ; gain = 1058.289
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -467,42 +468,44 @@ Report Cell Usage:
 +------+--------+------+
 |1     |CARRY4  |    72|
 |2     |DSP48E1 |     3|
-|3     |LUT1    |     6|
-|4     |LUT2    |   156|
+|3     |LUT1    |     5|
+|4     |LUT2    |   205|
 |5     |LUT3    |   162|
 |6     |LUT4    |   249|
-|7     |LUT5    |   371|
-|8     |LUT6    |   346|
+|7     |LUT5    |   372|
+|8     |LUT6    |   347|
 |9     |MUXF7   |    77|
-|10    |FDCE    |   344|
-|11    |FDPE    |    14|
+|10    |FDCE    |   343|
+|11    |FDRE    |     3|
 |12    |LD      |    21|
+|13    |LDC     |    15|
 +------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:52 ; elapsed = 00:00:53 . Memory (MB): peak = 1761.098 ; gain = 1057.375
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:13 ; elapsed = 00:01:14 . Memory (MB): peak = 1762.699 ; gain = 1058.289
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 107 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:40 ; elapsed = 00:00:50 . Memory (MB): peak = 1761.098 ; gain = 979.547
-Synthesis Optimization Complete : Time (s): cpu = 00:00:52 ; elapsed = 00:00:53 . Memory (MB): peak = 1761.098 ; gain = 1057.375
+Synthesis finished with 0 errors, 0 critical warnings and 108 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:59 ; elapsed = 00:01:12 . Memory (MB): peak = 1762.699 ; gain = 980.125
+Synthesis Optimization Complete : Time (s): cpu = 00:01:14 ; elapsed = 00:01:15 . Memory (MB): peak = 1762.699 ; gain = 1058.289
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.054 . Memory (MB): peak = 1770.254 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 173 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.096 . Memory (MB): peak = 1771.770 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 188 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 1 inverter(s) to 15 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1773.902 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1775.473 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 21 instances were transformed.
+  A total of 36 instances were transformed.
   LD => LDCE: 6 instances
   LD => LDCE (inverted pins: G): 15 instances
+  LDC => LDCE: 15 instances
 
-Synth Design complete | Checksum: 6bbc9fb
+Synth Design complete | Checksum: 860fd7f5
 INFO: [Common 17-83] Releasing license: Synthesis
-90 Infos, 145 Warnings, 0 Critical Warnings and 0 Errors encountered.
+91 Infos, 145 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:56 ; elapsed = 00:01:02 . Memory (MB): peak = 1773.902 ; gain = 1275.070
+synth_design: Time (s): cpu = 00:01:19 ; elapsed = 00:01:25 . Memory (MB): peak = 1775.473 ; gain = 1277.094
 INFO: [Coretcl 2-1174] Renamed 13 cell refs.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1773.902 ; gain = 0.000
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1775.473 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.runs/zynq_design_RISCVCOREZYNQ_0_0_synth_1/zynq_design_RISCVCOREZYNQ_0_0.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file zynq_design_RISCVCOREZYNQ_0_0_utilization_synth.rpt -pb zynq_design_RISCVCOREZYNQ_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Apr 29 00:34:18 2025...
+INFO: [Common 17-206] Exiting Vivado at Tue Apr 29 02:33:08 2025...

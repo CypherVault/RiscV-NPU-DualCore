@@ -63,8 +63,6 @@ set_msg_config  -id {17-179}  -suppress
 set_msg_config  -id {17-179}  -suppress 
 set_msg_config  -id {17-179}  -suppress 
 set_msg_config  -id {17-179}  -suppress 
-set_msg_config  -id {17-179}  -suppress 
-set_msg_config  -id {17-179}  -suppress 
 set_param project.vivado.isBlockSynthRun true
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z007sclg225-1

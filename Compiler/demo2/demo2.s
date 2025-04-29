@@ -12,6 +12,7 @@ _start:
 	addi	sp,sp,-16
 	sw	ra,12(sp)
 	call	main
+	call	finish
 	nop
 	lw	ra,12(sp)
 	addi	sp,sp,16
@@ -36,4 +37,11 @@ main:
 	addi	sp,sp,16
 	jr	ra
 	.size	main, .-main
+	.align	2
+	.globl	finish
+	.type	finish, @function
+finish:
+.L5:
+	j	.L5
+	.size	finish, .-finish
 	.ident	"GCC: (GNU) 10.1.0"
