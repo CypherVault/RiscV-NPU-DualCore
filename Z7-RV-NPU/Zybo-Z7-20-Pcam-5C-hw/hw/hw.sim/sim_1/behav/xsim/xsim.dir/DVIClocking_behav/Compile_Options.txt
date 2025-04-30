@@ -1,0 +1,1 @@
+-wto "4d36220322584524ad30fa3332bd180c" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "xilinx_vip" -L "unisims_ver" -L "unimacro_ver" -L "secureip" -L "xpm" --snapshot "DVIClocking_behav" "xil_defaultlib.DVIClocking" "xil_defaultlib.glbl" -log "elaborate.log" 

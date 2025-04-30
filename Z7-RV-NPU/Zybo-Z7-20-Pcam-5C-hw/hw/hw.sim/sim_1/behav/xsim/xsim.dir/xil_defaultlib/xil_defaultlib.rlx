@@ -1,0 +1,8 @@
+0.7
+2020.2
+Nov 18 2020
+09:47:47
+C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.sim/sim_1/behav/xsim/glbl.v,1605673890,verilog,,,,glbl,,axi_vip_v1_1_8;processing_system7_vip_v1_0_10;xilinx_vip,,,,,,
+C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/imports/hdl/DVIClocking.vhd,1743375589,vhdl,,,,dviclocking,,,,,,,,
+C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/imports/hdl/SyncAsync.vhd,1743375589,vhdl,C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/imports/hdl/SyncAsyncReset.vhd,,,syncasync,,,,,,,,
+C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/imports/hdl/SyncAsyncReset.vhd,1743375589,vhdl,C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/imports/hdl/DVIClocking.vhd,,,resetbridge,,,,,,,,
