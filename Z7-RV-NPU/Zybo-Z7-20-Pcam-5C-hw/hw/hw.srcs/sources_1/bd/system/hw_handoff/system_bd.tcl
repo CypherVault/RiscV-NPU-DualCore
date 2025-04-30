@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# DVIClocking
+# DVIClocking, RISCVCOREZYNQ
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -220,6 +220,17 @@ proc create_root_design { parentCell } {
    CONFIG.kNoOfDataLanes {2} \
  ] $MIPI_D_PHY_RX_0
 
+  # Create instance: RISCVCOREZYNQ_0, and set properties
+  set block_name RISCVCOREZYNQ
+  set block_cell_name RISCVCOREZYNQ_0
+  if { [catch {set RISCVCOREZYNQ_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $RISCVCOREZYNQ_0 eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
   # Create instance: axi_mem_intercon, and set properties
   set axi_mem_intercon [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_mem_intercon ]
   set_property -dict [ list \
@@ -285,6 +296,21 @@ proc create_root_design { parentCell } {
    CONFIG.USE_PHASE_ALIGNMENT {false} \
    CONFIG.USE_RESET {false} \
  ] $clk_wiz_0
+
+  # Create instance: controlsubsystemIP_0, and set properties
+  set controlsubsystemIP_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:controlsubsystemIP:1.0 controlsubsystemIP_0 ]
+
+  # Create instance: datamemIP_0, and set properties
+  set datamemIP_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:datamemIP:1.0 datamemIP_0 ]
+  set_property -dict [ list \
+   CONFIG.C_S02_AXI_ADDR_WIDTH {14} \
+ ] $datamemIP_0
+
+  # Create instance: instructionmemIP_0, and set properties
+  set instructionmemIP_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:instructionmemIP:1.0 instructionmemIP_0 ]
+  set_property -dict [ list \
+   CONFIG.C_S00_AXI_ADDR_WIDTH {16} \
+ ] $instructionmemIP_0
 
   # Create instance: processing_system7_0, and set properties
   set processing_system7_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0 ]
@@ -415,7 +441,7 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_EN_CAN0 {0} \
    CONFIG.PCW_EN_CAN1 {0} \
    CONFIG.PCW_EN_CLK0_PORT {1} \
-   CONFIG.PCW_EN_CLK1_PORT {0} \
+   CONFIG.PCW_EN_CLK1_PORT {1} \
    CONFIG.PCW_EN_CLK2_PORT {0} \
    CONFIG.PCW_EN_CLK3_PORT {0} \
    CONFIG.PCW_EN_CLKTRIG0_PORT {0} \
@@ -480,8 +506,8 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_FCLK0_PERIPHERAL_DIVISOR0 {5} \
    CONFIG.PCW_FCLK0_PERIPHERAL_DIVISOR1 {2} \
    CONFIG.PCW_FCLK1_PERIPHERAL_CLKSRC {IO PLL} \
-   CONFIG.PCW_FCLK1_PERIPHERAL_DIVISOR0 {1} \
-   CONFIG.PCW_FCLK1_PERIPHERAL_DIVISOR1 {1} \
+   CONFIG.PCW_FCLK1_PERIPHERAL_DIVISOR0 {10} \
+   CONFIG.PCW_FCLK1_PERIPHERAL_DIVISOR1 {10} \
    CONFIG.PCW_FCLK2_PERIPHERAL_CLKSRC {IO PLL} \
    CONFIG.PCW_FCLK2_PERIPHERAL_DIVISOR0 {1} \
    CONFIG.PCW_FCLK2_PERIPHERAL_DIVISOR1 {1} \
@@ -489,15 +515,15 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_FCLK3_PERIPHERAL_DIVISOR0 {1} \
    CONFIG.PCW_FCLK3_PERIPHERAL_DIVISOR1 {1} \
    CONFIG.PCW_FCLK_CLK0_BUF {TRUE} \
-   CONFIG.PCW_FCLK_CLK1_BUF {FALSE} \
+   CONFIG.PCW_FCLK_CLK1_BUF {TRUE} \
    CONFIG.PCW_FCLK_CLK2_BUF {FALSE} \
    CONFIG.PCW_FCLK_CLK3_BUF {FALSE} \
    CONFIG.PCW_FPGA0_PERIPHERAL_FREQMHZ {100} \
-   CONFIG.PCW_FPGA1_PERIPHERAL_FREQMHZ {200} \
+   CONFIG.PCW_FPGA1_PERIPHERAL_FREQMHZ {10} \
    CONFIG.PCW_FPGA2_PERIPHERAL_FREQMHZ {200} \
    CONFIG.PCW_FPGA3_PERIPHERAL_FREQMHZ {50} \
    CONFIG.PCW_FPGA_FCLK0_ENABLE {1} \
-   CONFIG.PCW_FPGA_FCLK1_ENABLE {0} \
+   CONFIG.PCW_FPGA_FCLK1_ENABLE {1} \
    CONFIG.PCW_FPGA_FCLK2_ENABLE {0} \
    CONFIG.PCW_FPGA_FCLK3_ENABLE {0} \
    CONFIG.PCW_FTM_CTI_IN0 {<Select>} \
@@ -1161,7 +1187,7 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_USE_FABRIC_INTERRUPT {1} \
    CONFIG.PCW_USE_HIGH_OCM {0} \
    CONFIG.PCW_USE_M_AXI_GP0 {1} \
-   CONFIG.PCW_USE_M_AXI_GP1 {0} \
+   CONFIG.PCW_USE_M_AXI_GP1 {1} \
    CONFIG.PCW_USE_PROC_EVENT_BUS {0} \
    CONFIG.PCW_USE_PS_SLCR_REGISTERS {0} \
    CONFIG.PCW_USE_S_AXI_ACP {0} \
@@ -1188,6 +1214,18 @@ proc create_root_design { parentCell } {
    CONFIG.SYNCHRONIZATION_STAGES {2} \
  ] $ps7_0_axi_periph
 
+  # Create instance: ps7_0_axi_periph_1, and set properties
+  set ps7_0_axi_periph_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 ps7_0_axi_periph_1 ]
+  set_property -dict [ list \
+   CONFIG.NUM_MI {4} \
+ ] $ps7_0_axi_periph_1
+
+  # Create instance: registerIP_0, and set properties
+  set registerIP_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:registerIP:1.0 registerIP_0 ]
+  set_property -dict [ list \
+   CONFIG.C_S01_AXI_ADDR_WIDTH {32} \
+ ] $registerIP_0
+
   # Create instance: rgb2dvi_0, and set properties
   set rgb2dvi_0 [ create_bd_cell -type ip -vlnv digilentinc.com:ip:rgb2dvi:1.4 rgb2dvi_0 ]
   set_property -dict [ list \
@@ -1199,6 +1237,9 @@ proc create_root_design { parentCell } {
 
   # Create instance: rst_clk_wiz_0_50M, and set properties
   set rst_clk_wiz_0_50M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_clk_wiz_0_50M ]
+
+  # Create instance: rst_ps7_0_10M, and set properties
+  set rst_ps7_0_10M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_ps7_0_10M ]
 
   # Create instance: rst_vid_clk_dyn, and set properties
   set rst_vid_clk_dyn [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_vid_clk_dyn ]
@@ -1285,6 +1326,11 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net processing_system7_0_GPIO_0 [get_bd_intf_ports cam_gpio] [get_bd_intf_pins processing_system7_0/GPIO_0]
   connect_bd_intf_net -intf_net processing_system7_0_IIC_0 [get_bd_intf_ports cam_iic] [get_bd_intf_pins processing_system7_0/IIC_0]
   connect_bd_intf_net -intf_net processing_system7_0_M_AXI_GP0 [get_bd_intf_pins processing_system7_0/M_AXI_GP0] [get_bd_intf_pins ps7_0_axi_periph/S00_AXI]
+  connect_bd_intf_net -intf_net processing_system7_0_M_AXI_GP1 [get_bd_intf_pins processing_system7_0/M_AXI_GP1] [get_bd_intf_pins ps7_0_axi_periph_1/S00_AXI]
+  connect_bd_intf_net -intf_net ps7_0_axi_periph_1_M00_AXI [get_bd_intf_pins controlsubsystemIP_0/S05_AXI] [get_bd_intf_pins ps7_0_axi_periph_1/M00_AXI]
+  connect_bd_intf_net -intf_net ps7_0_axi_periph_1_M01_AXI [get_bd_intf_pins datamemIP_0/S02_AXI] [get_bd_intf_pins ps7_0_axi_periph_1/M01_AXI]
+  connect_bd_intf_net -intf_net ps7_0_axi_periph_1_M02_AXI [get_bd_intf_pins instructionmemIP_0/S00_AXI] [get_bd_intf_pins ps7_0_axi_periph_1/M02_AXI]
+  connect_bd_intf_net -intf_net ps7_0_axi_periph_1_M03_AXI [get_bd_intf_pins ps7_0_axi_periph_1/M03_AXI] [get_bd_intf_pins registerIP_0/S01_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M00_AXI [get_bd_intf_pins axi_vdma_0/S_AXI_LITE] [get_bd_intf_pins ps7_0_axi_periph/M00_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M01_AXI [get_bd_intf_pins ps7_0_axi_periph/M01_AXI] [get_bd_intf_pins video_dynclk/s_axi_lite]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M02_AXI [get_bd_intf_pins ps7_0_axi_periph/M02_AXI] [get_bd_intf_pins vtg/ctrl]
@@ -1300,24 +1346,43 @@ proc create_root_design { parentCell } {
   connect_bd_net -net DVIClocking_0_aLockedOut [get_bd_pins DVIClocking_0/aLockedOut] [get_bd_pins rst_vid_clk_dyn/dcm_locked]
   connect_bd_net -net MIPI_D_PHY_RX_0_RxByteClkHS [get_bd_pins MIPI_CSI_2_RX_0/RxByteClkHS] [get_bd_pins MIPI_D_PHY_RX_0/RxByteClkHS]
   connect_bd_net -net PixelClk_Generator_clk_out1 [get_bd_pins DVIClocking_0/PixelClk] [get_bd_pins rgb2dvi_0/PixelClk] [get_bd_pins rst_vid_clk_dyn/slowest_sync_clk] [get_bd_pins v_axi4s_vid_out_0/vid_io_out_clk] [get_bd_pins vtg/clk]
+  connect_bd_net -net RISCVCOREZYNQ_0_mem_addr [get_bd_pins RISCVCOREZYNQ_0/mem_addr] [get_bd_pins datamemIP_0/address]
+  connect_bd_net -net RISCVCOREZYNQ_0_mem_read [get_bd_pins RISCVCOREZYNQ_0/mem_read] [get_bd_pins datamemIP_0/memread]
+  connect_bd_net -net RISCVCOREZYNQ_0_mem_write [get_bd_pins RISCVCOREZYNQ_0/mem_write] [get_bd_pins datamemIP_0/memwrite]
+  connect_bd_net -net RISCVCOREZYNQ_0_mem_write_data [get_bd_pins RISCVCOREZYNQ_0/mem_write_data] [get_bd_pins datamemIP_0/writedata]
+  connect_bd_net -net RISCVCOREZYNQ_0_pc_out [get_bd_pins RISCVCOREZYNQ_0/pc_out] [get_bd_pins instructionmemIP_0/pc_address]
+  connect_bd_net -net RISCVCOREZYNQ_0_rd_addr [get_bd_pins RISCVCOREZYNQ_0/rd_addr] [get_bd_pins registerIP_0/writeregisteraddress]
+  connect_bd_net -net RISCVCOREZYNQ_0_reg_write [get_bd_pins RISCVCOREZYNQ_0/reg_write] [get_bd_pins registerIP_0/regwrite]
+  connect_bd_net -net RISCVCOREZYNQ_0_rs1_addr [get_bd_pins RISCVCOREZYNQ_0/rs1_addr] [get_bd_pins registerIP_0/readregister1]
+  connect_bd_net -net RISCVCOREZYNQ_0_rs2_addr [get_bd_pins RISCVCOREZYNQ_0/rs2_addr] [get_bd_pins registerIP_0/readregister2]
+  connect_bd_net -net RISCVCOREZYNQ_0_write_data [get_bd_pins RISCVCOREZYNQ_0/write_data] [get_bd_pins registerIP_0/writedata]
   connect_bd_net -net axi_vdma_0_mm2s_introut [get_bd_pins axi_vdma_0/mm2s_introut] [get_bd_pins xlconcat_0/In1]
   connect_bd_net -net axi_vdma_0_s2mm_introut [get_bd_pins axi_vdma_0/s2mm_introut] [get_bd_pins xlconcat_0/In2]
   connect_bd_net -net clk_wiz_0_locked [get_bd_pins clk_wiz_0/locked] [get_bd_pins rst_clk_wiz_0_50M/dcm_locked]
   connect_bd_net -net clk_wiz_1_locked [get_bd_pins DVIClocking_0/aLockedIn] [get_bd_pins video_dynclk/locked]
   connect_bd_net -net clk_wiz_1_pxl_clk_5x [get_bd_pins DVIClocking_0/PixelClk5X] [get_bd_pins video_dynclk/pxl_clk_5x]
+  connect_bd_net -net controlsubsystemIP_0_riscv_hold [get_bd_pins RISCVCOREZYNQ_0/hold] [get_bd_pins controlsubsystemIP_0/riscv_hold] [get_bd_pins datamemIP_0/hold] [get_bd_pins registerIP_0/hold]
+  connect_bd_net -net controlsubsystemIP_0_riscv_resetbar [get_bd_pins RISCVCOREZYNQ_0/resetbar] [get_bd_pins controlsubsystemIP_0/riscv_resetbar] [get_bd_pins registerIP_0/resetbar]
+  connect_bd_net -net controlsubsystemIP_0_riscv_start [get_bd_pins RISCVCOREZYNQ_0/start] [get_bd_pins controlsubsystemIP_0/riscv_start]
+  connect_bd_net -net datamemIP_0_readdata [get_bd_pins RISCVCOREZYNQ_0/mem_read_data] [get_bd_pins datamemIP_0/readdata]
   connect_bd_net -net dphy_clk_lp_n_1 [get_bd_ports dphy_clk_lp_n] [get_bd_pins MIPI_D_PHY_RX_0/dphy_clk_lp_n]
   connect_bd_net -net dphy_clk_lp_p_1 [get_bd_ports dphy_clk_lp_p] [get_bd_pins MIPI_D_PHY_RX_0/dphy_clk_lp_p]
   connect_bd_net -net dphy_data_hs_n_1 [get_bd_ports dphy_data_hs_n] [get_bd_pins MIPI_D_PHY_RX_0/dphy_data_hs_n]
   connect_bd_net -net dphy_data_hs_p_1 [get_bd_ports dphy_data_hs_p] [get_bd_pins MIPI_D_PHY_RX_0/dphy_data_hs_p]
   connect_bd_net -net dphy_data_lp_n_1 [get_bd_ports dphy_data_lp_n] [get_bd_pins MIPI_D_PHY_RX_0/dphy_data_lp_n]
   connect_bd_net -net dphy_data_lp_p_1 [get_bd_ports dphy_data_lp_p] [get_bd_pins MIPI_D_PHY_RX_0/dphy_data_lp_p]
+  connect_bd_net -net instructionmemIP_0_instruction [get_bd_pins RISCVCOREZYNQ_0/instruction_in] [get_bd_pins instructionmemIP_0/instruction]
   connect_bd_net -net mm_clk_150 [get_bd_pins AXI_BayerToRGB_1/StreamClk] [get_bd_pins AXI_GammaCorrection_0/StreamClk] [get_bd_pins MIPI_CSI_2_RX_0/video_aclk] [get_bd_pins axi_mem_intercon/ACLK] [get_bd_pins axi_mem_intercon/M00_ACLK] [get_bd_pins axi_mem_intercon/S00_ACLK] [get_bd_pins axi_mem_intercon_1/ACLK] [get_bd_pins axi_mem_intercon_1/M00_ACLK] [get_bd_pins axi_mem_intercon_1/S00_ACLK] [get_bd_pins axi_vdma_0/m_axi_mm2s_aclk] [get_bd_pins axi_vdma_0/m_axi_s2mm_aclk] [get_bd_pins axi_vdma_0/m_axis_mm2s_aclk] [get_bd_pins axi_vdma_0/s_axis_s2mm_aclk] [get_bd_pins clk_wiz_0/clk_out2] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP2_ACLK] [get_bd_pins v_axi4s_vid_out_0/aclk]
   connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins video_dynclk/clk_in1]
-  connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_clk_wiz_0_50M/ext_reset_in] [get_bd_pins rst_vid_clk_dyn/ext_reset_in]
+  connect_bd_net -net processing_system7_0_FCLK_CLK1 [get_bd_pins RISCVCOREZYNQ_0/clock] [get_bd_pins controlsubsystemIP_0/s05_axi_aclk] [get_bd_pins datamemIP_0/s02_axi_aclk] [get_bd_pins instructionmemIP_0/s00_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK1] [get_bd_pins processing_system7_0/M_AXI_GP1_ACLK] [get_bd_pins ps7_0_axi_periph_1/ACLK] [get_bd_pins ps7_0_axi_periph_1/M00_ACLK] [get_bd_pins ps7_0_axi_periph_1/M01_ACLK] [get_bd_pins ps7_0_axi_periph_1/M02_ACLK] [get_bd_pins ps7_0_axi_periph_1/M03_ACLK] [get_bd_pins ps7_0_axi_periph_1/S00_ACLK] [get_bd_pins registerIP_0/s01_axi_aclk] [get_bd_pins rst_ps7_0_10M/slowest_sync_clk]
+  connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_clk_wiz_0_50M/ext_reset_in] [get_bd_pins rst_ps7_0_10M/ext_reset_in] [get_bd_pins rst_vid_clk_dyn/ext_reset_in]
   connect_bd_net -net ref_clk_200 [get_bd_pins MIPI_D_PHY_RX_0/RefClk] [get_bd_pins clk_wiz_0/clk_out3]
+  connect_bd_net -net registerIP_0_readdata1 [get_bd_pins RISCVCOREZYNQ_0/reg1_data] [get_bd_pins registerIP_0/readdata1]
+  connect_bd_net -net registerIP_0_readdata2 [get_bd_pins RISCVCOREZYNQ_0/reg2_data] [get_bd_pins registerIP_0/readdata2]
   connect_bd_net -net rst_clk_wiz_0_50M_interconnect_aresetn [get_bd_pins axi_mem_intercon/ARESETN] [get_bd_pins axi_mem_intercon_1/ARESETN] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins rst_clk_wiz_0_50M/interconnect_aresetn]
   connect_bd_net -net rst_clk_wiz_0_50M_peripheral_aresetn [get_bd_pins AXI_BayerToRGB_1/sStreamReset_n] [get_bd_pins AXI_GammaCorrection_0/aAxiLiteReset_n] [get_bd_pins AXI_GammaCorrection_0/sStreamReset_n] [get_bd_pins MIPI_CSI_2_RX_0/s_axi_lite_aresetn] [get_bd_pins MIPI_D_PHY_RX_0/s_axi_lite_aresetn] [get_bd_pins axi_mem_intercon/M00_ARESETN] [get_bd_pins axi_mem_intercon/S00_ARESETN] [get_bd_pins axi_mem_intercon_1/M00_ARESETN] [get_bd_pins axi_mem_intercon_1/S00_ARESETN] [get_bd_pins axi_vdma_0/axi_resetn] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/M02_ARESETN] [get_bd_pins ps7_0_axi_periph/M03_ARESETN] [get_bd_pins ps7_0_axi_periph/M04_ARESETN] [get_bd_pins ps7_0_axi_periph/M05_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_clk_wiz_0_50M/peripheral_aresetn] [get_bd_pins v_axi4s_vid_out_0/aresetn] [get_bd_pins video_dynclk/s_axi_aresetn] [get_bd_pins vtg/s_axi_aresetn]
   connect_bd_net -net rst_clk_wiz_0_50M_peripheral_reset [get_bd_pins MIPI_D_PHY_RX_0/aRst] [get_bd_pins rst_clk_wiz_0_50M/peripheral_reset]
+  connect_bd_net -net rst_ps7_0_10M_peripheral_aresetn [get_bd_pins controlsubsystemIP_0/s05_axi_aresetn] [get_bd_pins datamemIP_0/s02_axi_aresetn] [get_bd_pins instructionmemIP_0/s00_axi_aresetn] [get_bd_pins ps7_0_axi_periph_1/ARESETN] [get_bd_pins ps7_0_axi_periph_1/M00_ARESETN] [get_bd_pins ps7_0_axi_periph_1/M01_ARESETN] [get_bd_pins ps7_0_axi_periph_1/M02_ARESETN] [get_bd_pins ps7_0_axi_periph_1/M03_ARESETN] [get_bd_pins ps7_0_axi_periph_1/S00_ARESETN] [get_bd_pins registerIP_0/s01_axi_aresetn] [get_bd_pins rst_ps7_0_10M/peripheral_aresetn]
   connect_bd_net -net rst_vid_clk_dyn_peripheral_aresetn [get_bd_pins rst_vid_clk_dyn/peripheral_aresetn] [get_bd_pins vtg/resetn]
   connect_bd_net -net rst_vid_clk_dyn_peripheral_reset [get_bd_pins rst_vid_clk_dyn/peripheral_reset] [get_bd_pins v_axi4s_vid_out_0/vid_io_out_reset]
   connect_bd_net -net s_axil_clk_50 [get_bd_pins AXI_GammaCorrection_0/AxiLiteClk] [get_bd_pins MIPI_CSI_2_RX_0/s_axi_lite_aclk] [get_bd_pins MIPI_D_PHY_RX_0/s_axi_lite_aclk] [get_bd_pins axi_vdma_0/s_axi_lite_aclk] [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/M02_ACLK] [get_bd_pins ps7_0_axi_periph/M03_ACLK] [get_bd_pins ps7_0_axi_periph/M04_ACLK] [get_bd_pins ps7_0_axi_periph/M05_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_clk_wiz_0_50M/slowest_sync_clk] [get_bd_pins video_dynclk/s_axi_aclk] [get_bd_pins vtg/s_axi_aclk]
@@ -1333,6 +1398,10 @@ proc create_root_design { parentCell } {
   assign_bd_address -offset 0x43C30000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs MIPI_CSI_2_RX_0/S_AXI_LITE/S_AXI_LITE_reg] -force
   assign_bd_address -offset 0x43C20000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs MIPI_D_PHY_RX_0/S_AXI_LITE/S_AXI_LITE_reg] -force
   assign_bd_address -offset 0x43000000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_vdma_0/S_AXI_LITE/Reg] -force
+  assign_bd_address -offset 0x83C00000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs controlsubsystemIP_0/S05_AXI/S05_AXI_reg] -force
+  assign_bd_address -offset 0x83C10000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs datamemIP_0/S02_AXI/S02_AXI_reg] -force
+  assign_bd_address -offset 0x83C20000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs instructionmemIP_0/S00_AXI/S00_AXI_reg] -force
+  assign_bd_address -offset 0x83C30000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs registerIP_0/S01_AXI/S01_AXI_reg] -force
   assign_bd_address -offset 0x43C00000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs video_dynclk/s_axi_lite/Reg] -force
   assign_bd_address -offset 0x43C10000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs vtg/ctrl/Reg] -force
 

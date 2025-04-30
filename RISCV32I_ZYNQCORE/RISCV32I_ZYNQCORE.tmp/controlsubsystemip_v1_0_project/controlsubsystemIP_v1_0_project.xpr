@@ -7,7 +7,7 @@
 <Project Product="Vivado" Version="7" Minor="68" Path="c:/users/chris/desktop/riscv-npu-dualcore/riscv32i_zynqcore/riscv32i_zynqcore.tmp/controlsubsystemip_v1_0_project/controlsubsystemIP_v1_0_project.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="bfed539e30b6476ea2a50f3ade3b84d3"/>
+    <Option Name="Id" Val="65c62a3b005941d98e295ebf4335cfdb"/>
     <Option Name="Part" Val="xc7z007sclg225-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -49,6 +49,8 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../../../Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/myip_1_0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../../../Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../../../Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/registerIP_1_0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../../../Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/bramIP_1_0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../../../Users/Chris/Desktop/RiscV-NPU-DualCore/ip_repo/controlsubsystemIP_1_0"/>
@@ -207,34 +209,6 @@
       <RQSFiles/>
     </Run>
   </Runs>
-  <MsgRule>
-    <MsgAttr Name="RuleType" Val="0"/>
-    <MsgAttr Name="Limit" Val="-1"/>
-    <MsgAttr Name="NewSeverity" Val="ANY"/>
-    <MsgAttr Name="Id" Val="17-179"/>
-    <MsgAttr Name="Severity" Val="ANY"/>
-    <MsgAttr Name="ShowRule" Val="0"/>
-    <MsgAttr Name="RuleSource" Val="-1"/>
-    <MsgAttr Name="StringIsRegExp" Val="0"/>
-    <MsgAttr Name="RuleId" Val="1"/>
-    <MsgAttr Name="Note" Val=""/>
-    <MsgAttr Name="Author" Val=""/>
-    <MsgAttr Name="CreatedTimestamp" Val=""/>
-  </MsgRule>
-  <MsgRule>
-    <MsgAttr Name="RuleType" Val="0"/>
-    <MsgAttr Name="Limit" Val="-1"/>
-    <MsgAttr Name="NewSeverity" Val="ANY"/>
-    <MsgAttr Name="Id" Val="17-179"/>
-    <MsgAttr Name="Severity" Val="ANY"/>
-    <MsgAttr Name="ShowRule" Val="0"/>
-    <MsgAttr Name="RuleSource" Val="-1"/>
-    <MsgAttr Name="StringIsRegExp" Val="0"/>
-    <MsgAttr Name="RuleId" Val="2"/>
-    <MsgAttr Name="Note" Val=""/>
-    <MsgAttr Name="Author" Val=""/>
-    <MsgAttr Name="CreatedTimestamp" Val=""/>
-  </MsgRule>
   <MsgRule>
     <MsgAttr Name="RuleType" Val="0"/>
     <MsgAttr Name="Limit" Val="-1"/>

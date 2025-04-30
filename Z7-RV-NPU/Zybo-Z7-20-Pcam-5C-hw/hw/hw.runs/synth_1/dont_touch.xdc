@@ -67,6 +67,30 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==system_xlco
 # IP: bd/system/ip/system_xbar_0/system_xbar_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==system_xbar_0 || ORIG_REF_NAME==system_xbar_0} -quiet] -quiet
 
+# IP: bd/system/ip/system_instructionmemIP_0_0/system_instructionmemIP_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==system_instructionmemIP_0_0 || ORIG_REF_NAME==system_instructionmemIP_0_0} -quiet] -quiet
+
+# IP: bd/system/ip/system_controlsubsystemIP_0_0/system_controlsubsystemIP_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==system_controlsubsystemIP_0_0 || ORIG_REF_NAME==system_controlsubsystemIP_0_0} -quiet] -quiet
+
+# IP: bd/system/ip/system_registerIP_0_0/system_registerIP_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==system_registerIP_0_0 || ORIG_REF_NAME==system_registerIP_0_0} -quiet] -quiet
+
+# IP: bd/system/ip/system_datamemIP_0_0/system_datamemIP_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==system_datamemIP_0_0 || ORIG_REF_NAME==system_datamemIP_0_0} -quiet] -quiet
+
+# IP: bd/system/ip/system_RISCVCOREZYNQ_0_0/system_RISCVCOREZYNQ_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==system_RISCVCOREZYNQ_0_0 || ORIG_REF_NAME==system_RISCVCOREZYNQ_0_0} -quiet] -quiet
+
+# IP: bd/system/ip/system_xbar_1/system_xbar_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==system_xbar_1 || ORIG_REF_NAME==system_xbar_1} -quiet] -quiet
+
+# IP: bd/system/ip/system_ps7_0_axi_periph_1_0/system_ps7_0_axi_periph_1_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==system_ps7_0_axi_periph_1_0 || ORIG_REF_NAME==system_ps7_0_axi_periph_1_0} -quiet] -quiet
+
+# IP: bd/system/ip/system_rst_ps7_0_10M_0/system_rst_ps7_0_10M_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==system_rst_ps7_0_10M_0 || ORIG_REF_NAME==system_rst_ps7_0_10M_0} -quiet] -quiet
+
 # IP: bd/system/ip/system_auto_pc_0/system_auto_pc_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==system_auto_pc_0 || ORIG_REF_NAME==system_auto_pc_0} -quiet] -quiet
 
@@ -75,5 +99,8 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==system_auto
 
 # IP: bd/system/ip/system_auto_pc_2/system_auto_pc_2.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==system_auto_pc_2 || ORIG_REF_NAME==system_auto_pc_2} -quiet] -quiet
+
+# IP: bd/system/ip/system_auto_pc_3/system_auto_pc_3.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==system_auto_pc_3 || ORIG_REF_NAME==system_auto_pc_3} -quiet] -quiet
 
 # XDC: bd/system/system_ooc.xdc

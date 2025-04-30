@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Sun Apr  6 20:24:05 2025
+| Date         : Tue Apr 29 23:18:53 2025
 | Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file system_wrapper_methodology_drc_routed.rpt -pb system_wrapper_methodology_drc_routed.pb -rpx system_wrapper_methodology_drc_routed.rpx
 | Design       : system_wrapper
@@ -23,17 +23,18 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 25
+             Violations found: 47
 +-----------+------------------+-------------------------------------------------+------------+
 | Rule      | Severity         | Description                                     | Violations |
 +-----------+------------------+-------------------------------------------------+------------+
 | TIMING-1  | Critical Warning | Invalid clock waveform on Clock Modifying Block | 2          |
 | TIMING-3  | Critical Warning | Invalid primary clock on Clock Modifying Block  | 2          |
-| LUTAR-1   | Warning          | LUT drives async reset alert                    | 4          |
+| LUTAR-1   | Warning          | LUT drives async reset alert                    | 5          |
 | TIMING-9  | Warning          | Unknown CDC Logic                               | 1          |
 | TIMING-15 | Warning          | Large hold violation on inter-clock path        | 1          |
 | TIMING-16 | Warning          | Large setup violation                           | 2          |
 | TIMING-18 | Warning          | Missing input or output delay                   | 12         |
+| TIMING-20 | Warning          | Non-clocked latch                               | 21         |
 | XDCB-5    | Warning          | Runtime inefficient way to find pin objects     | 1          |
 +-----------+------------------+-------------------------------------------------+------------+
 
@@ -125,6 +126,26 @@ system_i/axi_mem_intercon_1/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_in
  (the first 15 of 32 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
+LUTAR-1#5 Warning
+LUT drives async reset alert  
+LUT cell system_i/registerIP_0/U0/registers[1][31]_i_3, with 2 or more inputs, drives asynchronous preset/clear pin(s) system_i/registerIP_0/U0/registers_reg[10][0]/CLR,
+system_i/registerIP_0/U0/registers_reg[10][10]/CLR,
+system_i/registerIP_0/U0/registers_reg[10][11]/CLR,
+system_i/registerIP_0/U0/registers_reg[10][12]/CLR,
+system_i/registerIP_0/U0/registers_reg[10][13]/CLR,
+system_i/registerIP_0/U0/registers_reg[10][14]/CLR,
+system_i/registerIP_0/U0/registers_reg[10][15]/CLR,
+system_i/registerIP_0/U0/registers_reg[10][16]/CLR,
+system_i/registerIP_0/U0/registers_reg[10][17]/CLR,
+system_i/registerIP_0/U0/registers_reg[10][18]/CLR,
+system_i/registerIP_0/U0/registers_reg[10][19]/CLR,
+system_i/registerIP_0/U0/registers_reg[10][1]/CLR,
+system_i/registerIP_0/U0/registers_reg[10][20]/CLR,
+system_i/registerIP_0/U0/registers_reg[10][21]/CLR,
+system_i/registerIP_0/U0/registers_reg[10][22]/CLR
+ (the first 15 of 992 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
 TIMING-9#1 Warning
 Unknown CDC Logic  
 One or more asynchronous Clock Domain Crossing has been detected between 2 clock domains through a set_false_path or a set_clock_groups or set_max_delay -datapath_only constraint but no double-registers logic synchronizer has been found on the side of the capture clock. It is recommended to run report_cdc for a complete and detailed CDC coverage. Please consider using XPM_CDC to avoid Critical severities
@@ -205,9 +226,114 @@ Missing input or output delay
 An output delay is missing on hdmi_tx_data_p[2] relative to clock(s) video_dynclk
 Related violations: <none>
 
+TIMING-20#1 Warning
+Non-clocked latch  
+The latch system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_CONTROL_INST/aluoperation_reg[0] cannot be properly analyzed as its control pin system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_CONTROL_INST/aluoperation_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#2 Warning
+Non-clocked latch  
+The latch system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_CONTROL_INST/aluoperation_reg[1] cannot be properly analyzed as its control pin system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_CONTROL_INST/aluoperation_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#3 Warning
+Non-clocked latch  
+The latch system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_CONTROL_INST/aluoperation_reg[2] cannot be properly analyzed as its control pin system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_CONTROL_INST/aluoperation_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#4 Warning
+Non-clocked latch  
+The latch system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_CONTROL_INST/aluoperation_reg[3] cannot be properly analyzed as its control pin system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_CONTROL_INST/aluoperation_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#5 Warning
+Non-clocked latch  
+The latch system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_CONTROL_INST/aluoperation_reg[4] cannot be properly analyzed as its control pin system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/ALU_CONTROL_INST/aluoperation_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#6 Warning
+Non-clocked latch  
+The latch system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/CONTROLUNIT_INST/int_regOrPC_reg cannot be properly analyzed as its control pin system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/CONTROLUNIT_INST/int_regOrPC_reg/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#7 Warning
+Non-clocked latch  
+The latch system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/pc_mux_inst/muxOut_reg[10] cannot be properly analyzed as its control pin system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/pc_mux_inst/muxOut_reg[10]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#8 Warning
+Non-clocked latch  
+The latch system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/pc_mux_inst/muxOut_reg[11] cannot be properly analyzed as its control pin system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/pc_mux_inst/muxOut_reg[11]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#9 Warning
+Non-clocked latch  
+The latch system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/pc_mux_inst/muxOut_reg[12] cannot be properly analyzed as its control pin system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/pc_mux_inst/muxOut_reg[12]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#10 Warning
+Non-clocked latch  
+The latch system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/pc_mux_inst/muxOut_reg[13] cannot be properly analyzed as its control pin system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/pc_mux_inst/muxOut_reg[13]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#11 Warning
+Non-clocked latch  
+The latch system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/pc_mux_inst/muxOut_reg[14] cannot be properly analyzed as its control pin system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/pc_mux_inst/muxOut_reg[14]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#12 Warning
+Non-clocked latch  
+The latch system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/pc_mux_inst/muxOut_reg[15] cannot be properly analyzed as its control pin system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/pc_mux_inst/muxOut_reg[15]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#13 Warning
+Non-clocked latch  
+The latch system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/pc_mux_inst/muxOut_reg[1] cannot be properly analyzed as its control pin system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/pc_mux_inst/muxOut_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#14 Warning
+Non-clocked latch  
+The latch system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/pc_mux_inst/muxOut_reg[2] cannot be properly analyzed as its control pin system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/pc_mux_inst/muxOut_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#15 Warning
+Non-clocked latch  
+The latch system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/pc_mux_inst/muxOut_reg[3] cannot be properly analyzed as its control pin system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/pc_mux_inst/muxOut_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#16 Warning
+Non-clocked latch  
+The latch system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/pc_mux_inst/muxOut_reg[4] cannot be properly analyzed as its control pin system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/pc_mux_inst/muxOut_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#17 Warning
+Non-clocked latch  
+The latch system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/pc_mux_inst/muxOut_reg[5] cannot be properly analyzed as its control pin system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/pc_mux_inst/muxOut_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#18 Warning
+Non-clocked latch  
+The latch system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/pc_mux_inst/muxOut_reg[6] cannot be properly analyzed as its control pin system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/pc_mux_inst/muxOut_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#19 Warning
+Non-clocked latch  
+The latch system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/pc_mux_inst/muxOut_reg[7] cannot be properly analyzed as its control pin system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/pc_mux_inst/muxOut_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#20 Warning
+Non-clocked latch  
+The latch system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/pc_mux_inst/muxOut_reg[8] cannot be properly analyzed as its control pin system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/pc_mux_inst/muxOut_reg[8]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#21 Warning
+Non-clocked latch  
+The latch system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/pc_mux_inst/muxOut_reg[9] cannot be properly analyzed as its control pin system_i/RISCVCOREZYNQ_0/U0/internal_connections_inst/pc_mux_inst/muxOut_reg[9]/G is not reached by a timing clock
+Related violations: <none>
+
 XDCB-5#1 Warning
 Runtime inefficient way to find pin objects  
-The option '-through : [get_pins -filter {NAME =~ *SyncAsync*/oSyncStages_reg[0]/D} -hier]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '9' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+The option '-through : [get_pins -filter {NAME =~ *SyncAsync*/oSyncStages_reg[0]/D} -hier]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '11' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
 Current XDC: c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/ip/system_rgb2dvi_0_0/src/rgb2dvi.xdc (Line: 5)
 Related violations: <none>
 

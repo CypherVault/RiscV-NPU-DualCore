@@ -50,9 +50,9 @@ proc create_ipi_design { offsetfile design_name } {
 	connect_bd_net [get_bd_pins axi_peri_interconnect/M00_ARESETN] [get_bd_pins sys_reset_0/peripheral_aresetn]
 
 	# Connect all clock & reset of registerIP_0 slave interfaces..
-	connect_bd_intf_net [get_bd_intf_pins axi_peri_interconnect/M00_AXI] [get_bd_intf_pins registerIP_0/REGISTER_AXI]
-	connect_bd_net [get_bd_pins registerIP_0/register_axi_aclk] [get_bd_pins sys_clk_0/clk_out1]
-	connect_bd_net [get_bd_pins registerIP_0/register_axi_aresetn] [get_bd_pins sys_reset_0/peripheral_aresetn]
+	connect_bd_intf_net [get_bd_intf_pins axi_peri_interconnect/M00_AXI] [get_bd_intf_pins registerIP_0/S01_AXI]
+	connect_bd_net [get_bd_pins registerIP_0/s01_axi_aclk] [get_bd_pins sys_clk_0/clk_out1]
+	connect_bd_net [get_bd_pins registerIP_0/s01_axi_aresetn] [get_bd_pins sys_reset_0/peripheral_aresetn]
 
 
 	# Auto assign address
@@ -65,8 +65,8 @@ proc create_ipi_design { offsetfile design_name } {
 	set fp [open $offset_file "w"]
 	puts $fp "# Configuration address parameters"
 
-	set offset [get_property OFFSET [get_bd_addr_segs /jtag_axi_0/Data/SEG_registerIP_0_REGISTER_AXI_* ]]
-	puts $fp "set register_axi_addr ${offset}"
+	set offset [get_property OFFSET [get_bd_addr_segs /jtag_axi_0/Data/SEG_registerIP_0_S01_AXI_* ]]
+	puts $fp "set s01_axi_addr ${offset}"
 
 	close $fp
 }

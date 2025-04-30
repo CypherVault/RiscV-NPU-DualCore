@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Sun Apr  6 20:20:08 2025
+| Date         : Tue Apr 29 23:12:31 2025
 | Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file system_wrapper_utilization_synth.rpt -pb system_wrapper_utilization_synth.pb
 | Design       : system_wrapper
@@ -157,19 +157,27 @@ Table of Contents
 +--------------------------------+------+
 |            Ref Name            | Used |
 +--------------------------------+------+
+| system_xbar_1                  |    1 |
 | system_xbar_0                  |    1 |
 | system_vtg_0                   |    1 |
 | system_video_dynclk_0          |    1 |
 | system_v_axi4s_vid_out_0_0     |    1 |
 | system_rst_vid_clk_dyn_0       |    1 |
+| system_rst_ps7_0_10M_0         |    1 |
 | system_rst_clk_wiz_0_50M_0     |    1 |
 | system_rgb2dvi_0_0             |    1 |
+| system_registerIP_0_0          |    1 |
 | system_processing_system7_0_0  |    1 |
+| system_instructionmemIP_0_0    |    1 |
+| system_datamemIP_0_0           |    1 |
+| system_controlsubsystemIP_0_0  |    1 |
 | system_clk_wiz_0_0             |    1 |
 | system_axi_vdma_0_0            |    1 |
+| system_auto_pc_3               |    1 |
 | system_auto_pc_2               |    1 |
 | system_auto_pc_1               |    1 |
 | system_auto_pc_0               |    1 |
+| system_RISCVCOREZYNQ_0_0       |    1 |
 | system_MIPI_D_PHY_RX_0_0       |    1 |
 | system_MIPI_CSI_2_RX_0_0       |    1 |
 | system_DVIClocking_0_0         |    1 |
