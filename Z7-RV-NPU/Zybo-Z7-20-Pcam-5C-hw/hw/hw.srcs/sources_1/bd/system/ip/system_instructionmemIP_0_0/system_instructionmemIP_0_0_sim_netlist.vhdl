@@ -1,10 +1,10 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
--- Date        : Tue Apr 29 23:03:31 2025
+-- Date        : Tue Apr 29 23:03:29 2025
 -- Host        : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/ip/system_instructionmemIP_0_0/system_instructionmemIP_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top system_instructionmemIP_0_0 -prefix
+--               system_instructionmemIP_0_0_ system_instructionmemIP_0_0_sim_netlist.vhdl
 -- Design      : system_instructionmemIP_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -40,8 +40,6 @@ entity system_instructionmemIP_0_0_instructionmemIP is
     s00_axi_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
     s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of system_instructionmemIP_0_0_instructionmemIP : entity is "instructionmemIP";
 end system_instructionmemIP_0_0_instructionmemIP;
 
 architecture STRUCTURE of system_instructionmemIP_0_0_instructionmemIP is

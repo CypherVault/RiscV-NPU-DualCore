@@ -17,9 +17,14 @@ int main() {
     return result;
 }
 
-int finish(){
-
-while (1){
-}
-
+int finish() {
+asm volatile(
+    "addi x0, x0, 1550"
+    :
+    :
+    :
+);
+    while (1) {
+        __asm__ __volatile__("nop");
+    }
 }

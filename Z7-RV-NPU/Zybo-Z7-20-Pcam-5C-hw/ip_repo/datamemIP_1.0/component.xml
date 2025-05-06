@@ -436,7 +436,7 @@
       <spirit:file>
         <spirit:name>hdl/datamemIP_v1_0.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_a931e2c7</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_7c280b93</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -562,7 +562,7 @@
       </xilinx:taxonomies>
       <xilinx:displayName>datamemIP_v1.0</xilinx:displayName>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2025-04-30T02:34:13Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2025-05-06T00:10:54Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@e657ccf_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/datamemIP_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@38053c1d_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/datamemIP_1.0</xilinx:tag>
@@ -589,6 +589,27 @@
         <xilinx:tag xilinx:name="ui.data.coregen.dd@5bd35b11_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/datamemIP_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@77c932f5_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/datamemIP_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@3e6fcb30_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/datamemIP_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@27d23a40_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/datamemIP_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@229ba34a_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/datamemIP_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b610621_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/datamemIP_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4f7ddda3_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/datamemIP_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4f88e0f0_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/datamemIP_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2272dfcd_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/datamemIP_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@693b0e13_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/datamemIP_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4893fdf8_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/datamemIP_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@8545ce8_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/datamemIP_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d65dd59_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/datamemIP_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@71330f4b_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/datamemIP_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b06c07c_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/datamemIP_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1fd604a5_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/datamemIP_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2755b8f2_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/datamemIP_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f70767f_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/datamemIP_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@453e6cf7_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/datamemIP_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b8b1492_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/datamemIP_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@168346da_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/datamemIP_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@67d9eee8_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/datamemIP_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1328e059_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/datamemIP_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@61a2bd00_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/datamemIP_1.0</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>

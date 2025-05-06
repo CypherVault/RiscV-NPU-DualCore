@@ -137,7 +137,7 @@ name11=Waveform Files
 directory11=C:\Users\maxpro\Desktop\440Project RISCVCORE\RISCVCORE\RISCVCORE\
 extension11=asdb;awc;asdbc;asdbe
 [HierarchyViewer]
-HierarchyInformation=program_counter|rtl|0 regfile|behavioral|0 ricsvcore|behavior|0 ricsvcore_tb|behavior|0
+HierarchyInformation=
 ShowHide=ShowTopLevel
 Selected=
 [LocalVhdlSets]

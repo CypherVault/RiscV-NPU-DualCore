@@ -645,6 +645,19 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
+        <spirit:name>riscv_program_finish</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
         <spirit:name>riscv_resetbar</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
@@ -707,7 +720,7 @@
       <spirit:file>
         <spirit:name>hdl/controlsubsystemIP.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_6b65f8c0</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_8c5f8456</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -807,7 +820,7 @@
       </xilinx:taxonomies>
       <xilinx:displayName>controlsubsystemIP_v1.0</xilinx:displayName>
       <xilinx:coreRevision>2</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2025-03-30T16:51:20Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2025-05-06T00:47:04Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2024.2</xilinx:xilinxVersion>

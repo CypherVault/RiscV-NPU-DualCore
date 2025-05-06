@@ -1,48 +1,49 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"0.653078",
-   "Default View_TopLeft":"171,900",
+   "Default View_ScaleFactor":"0.659332",
+   "Default View_TopLeft":"-551,259",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0
 #  -string -flagsOSRD
 preplace port DDR -pg 1 -lvl 5 -x 1710 -y 1050 -defaultsOSRD
 preplace port FIXED_IO -pg 1 -lvl 5 -x 1710 -y 1080 -defaultsOSRD
 preplace inst RISCVCOREZYNQ_0 -pg 1 -lvl 4 -x 1450 -y 850 -defaultsOSRD
-preplace inst instructionmemIP_0 -pg 1 -lvl 3 -x 820 -y 1320 -defaultsOSRD
-preplace inst datamemIP_0 -pg 1 -lvl 3 -x 820 -y 860 -defaultsOSRD
+preplace inst instructionmemIP_0 -pg 1 -lvl 3 -x 860 -y 1330 -defaultsOSRD
+preplace inst datamemIP_0 -pg 1 -lvl 3 -x 860 -y 860 -defaultsOSRD
 preplace inst processing_system7_0 -pg 1 -lvl 1 -x 50 -y 1130 -defaultsOSRD
-preplace inst controlsubsystemIP_0 -pg 1 -lvl 3 -x 820 -y 1170 -defaultsOSRD
+preplace inst controlsubsystemIP_0 -pg 1 -lvl 3 -x 860 -y 1170 -defaultsOSRD
 preplace inst rst_ps7_0_50M -pg 1 -lvl 1 -x 50 -y 1390 -defaultsOSRD
 preplace inst axi_smc -pg 1 -lvl 2 -x 410 -y 970 -defaultsOSRD
-preplace inst registerIP_0 -pg 1 -lvl 3 -x 820 -y 600 -defaultsOSRD
-preplace netloc RISCVCOREZYNQ_0_mem_addr 1 2 3 640 1000 NJ 1000 1640
-preplace netloc RISCVCOREZYNQ_0_mem_read 1 2 3 630 1010 NJ 1010 1670
-preplace netloc RISCVCOREZYNQ_0_mem_write 1 2 3 610 1030 NJ 1030 1680
-preplace netloc RISCVCOREZYNQ_0_mem_write_data 1 2 3 620 1020 NJ 1020 1650
-preplace netloc RISCVCOREZYNQ_0_pc_out 1 2 3 650 1070 NJ 1070 1690
-preplace netloc RISCVCOREZYNQ_0_rd_addr 1 2 3 620 420 NJ 420 1680
-preplace netloc RISCVCOREZYNQ_0_reg_write 1 2 3 630 430 NJ 430 1640
-preplace netloc RISCVCOREZYNQ_0_rs1_addr 1 2 3 640 440 NJ 440 1670
-preplace netloc RISCVCOREZYNQ_0_rs2_addr 1 2 3 610 410 NJ 410 1660
-preplace netloc RISCVCOREZYNQ_0_write_data 1 2 3 650 450 NJ 450 1650
-preplace netloc controlsubsystemIP_0_riscv_hold_enable 1 2 2 660 990 1010
-preplace netloc controlsubsystemIP_0_riscv_resetbar 1 2 2 600 1040 1030
-preplace netloc controlsubsystemIP_0_riscv_start 1 3 1 1000 780n
-preplace netloc datamemIP_0_readdata 1 3 1 990 860n
-preplace netloc instructionmemIP_0_instruction 1 3 1 1050 860n
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 4 -160 1280 260 1070 580 1050 980J
+preplace inst registerIP_0 -pg 1 -lvl 3 -x 860 -y 600 -defaultsOSRD
+preplace netloc RISCVCOREZYNQ_0_mem_addr 1 2 3 680 1000 NJ 1000 1640
+preplace netloc RISCVCOREZYNQ_0_mem_read 1 2 3 670 1010 NJ 1010 1660
+preplace netloc RISCVCOREZYNQ_0_mem_write 1 2 3 650 1030 NJ 1030 1670
+preplace netloc RISCVCOREZYNQ_0_mem_write_data 1 2 3 660 1020 NJ 1020 1650
+preplace netloc RISCVCOREZYNQ_0_pc_out 1 2 3 690 1070 NJ 1070 1690
+preplace netloc RISCVCOREZYNQ_0_rd_addr 1 2 3 560 400 NJ 400 1650
+preplace netloc RISCVCOREZYNQ_0_reg_write 1 2 3 580 420 NJ 420 1670
+preplace netloc RISCVCOREZYNQ_0_rs1_addr 1 2 3 620 440 NJ 440 1640
+preplace netloc RISCVCOREZYNQ_0_rs2_addr 1 2 3 610 430 NJ 430 1660
+preplace netloc RISCVCOREZYNQ_0_write_data 1 2 3 570 410 NJ 410 1680
+preplace netloc controlsubsystemIP_0_riscv_hold_enable 1 2 2 690 990 1060
+preplace netloc controlsubsystemIP_0_riscv_resetbar 1 2 2 640 1040 1080
+preplace netloc controlsubsystemIP_0_riscv_start 1 3 1 1050 780n
+preplace netloc datamemIP_0_readdata 1 3 1 1040 860n
+preplace netloc instructionmemIP_0_instruction 1 3 1 1100 860n
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 4 -160 1280 260 1070 590 1050 1030J
 preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 -150 1290 250
-preplace netloc registerIP_0_readdata1 1 3 1 1040 590n
-preplace netloc registerIP_0_readdata2 1 3 1 1020 610n
-preplace netloc rst_ps7_0_50M_peripheral_aresetn 1 1 2 270 1090 590
-preplace netloc axi_smc_M00_AXI 1 2 1 570 940n
-preplace netloc axi_smc_M01_AXI 1 2 1 560 790n
-preplace netloc axi_smc_M02_AXI 1 2 1 560 980n
+preplace netloc registerIP_0_readdata1 1 3 1 1090 580n
+preplace netloc registerIP_0_readdata2 1 3 1 1070 600n
+preplace netloc rst_ps7_0_50M_peripheral_aresetn 1 1 2 270 1090 600
+preplace netloc registerIP_0_PROGRAM_FINISH 1 2 2 630 450 1030
+preplace netloc axi_smc_M00_AXI 1 2 1 580 940n
+preplace netloc axi_smc_M01_AXI 1 2 1 570 790n
+preplace netloc axi_smc_M02_AXI 1 2 1 570 980n
 preplace netloc axi_smc_M03_AXI 1 2 1 550 510n
-preplace netloc processing_system7_0_DDR 1 1 4 NJ 1060 NJ 1060 1040J 1050 NJ
+preplace netloc processing_system7_0_DDR 1 1 4 NJ 1060 NJ 1060 1090J 1050 NJ
 preplace netloc processing_system7_0_FIXED_IO 1 1 4 NJ 1080 NJ 1080 NJ 1080 NJ
 preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 250 950n
-levelinfo -pg 1 -180 50 410 820 1450 1710
+levelinfo -pg 1 -180 50 410 860 1450 1710
 pagesize -pg 1 -db -bbox -sgen -180 0 1830 1490
 "
 }

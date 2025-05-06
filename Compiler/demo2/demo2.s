@@ -41,7 +41,17 @@ main:
 	.globl	finish
 	.type	finish, @function
 finish:
+ #APP
+# 21 "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Compiler/demo2/demo2.c" 1
+	addi x0, x0, 1550
+# 0 "" 2
+ #NO_APP
 .L5:
+ #APP
+# 28 "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/Compiler/demo2/demo2.c" 1
+	nop
+# 0 "" 2
+ #NO_APP
 	j	.L5
 	.size	finish, .-finish
 	.ident	"GCC: (GNU) 10.1.0"

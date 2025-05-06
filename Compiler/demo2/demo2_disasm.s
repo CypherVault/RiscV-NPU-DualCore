@@ -33,4 +33,6 @@ Disassembly of section .text:
    100b0:	00008067          	jalr	zero,0(ra)
 
 000100b4 <finish>:
-   100b4:	0000006f          	jal	zero,100b4 <finish>
+   100b4:	60e00013          	addi	zero,zero,1550
+   100b8:	00000013          	addi	zero,zero,0
+   100bc:	ffdff06f          	jal	zero,100b8 <finish+0x4>

@@ -2,7 +2,7 @@
 --Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
---Date        : Tue Apr 29 18:28:34 2025
+--Date        : Mon May  5 20:50:33 2025
 --Host        : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
 --Command     : generate_target zynq_design.bd
 --Design      : zynq_design
@@ -232,6 +232,7 @@ architecture STRUCTURE of zynq_design is
     s05_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
     s05_axi_rvalid : out STD_LOGIC;
     s05_axi_rready : in STD_LOGIC;
+    riscv_program_finish : in STD_LOGIC;
     riscv_resetbar : out STD_LOGIC;
     riscv_hold : out STD_LOGIC;
     riscv_start : out STD_LOGIC
@@ -391,7 +392,8 @@ architecture STRUCTURE of zynq_design is
     writeregisteraddress : in STD_LOGIC_VECTOR ( 4 downto 0 );
     writedata : in STD_LOGIC_VECTOR ( 31 downto 0 );
     readdata1 : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    readdata2 : out STD_LOGIC_VECTOR ( 31 downto 0 )
+    readdata2 : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    PROGRAM_FINISH : out STD_LOGIC
   );
   end component zynq_design_registerIP_0_1;
   signal RISCVCOREZYNQ_0_mem_addr : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -512,6 +514,7 @@ architecture STRUCTURE of zynq_design is
   signal processing_system7_0_M_AXI_GP0_WREADY : STD_LOGIC;
   signal processing_system7_0_M_AXI_GP0_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal processing_system7_0_M_AXI_GP0_WVALID : STD_LOGIC;
+  signal registerIP_0_PROGRAM_FINISH : STD_LOGIC;
   signal registerIP_0_readdata1 : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal registerIP_0_readdata2 : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal rst_ps7_0_50M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
@@ -700,6 +703,7 @@ axi_smc: component zynq_design_axi_smc_1
 controlsubsystemIP_0: component zynq_design_controlsubsystemIP_0_0
      port map (
       riscv_hold => controlsubsystemIP_0_riscv_hold_enable,
+      riscv_program_finish => registerIP_0_PROGRAM_FINISH,
       riscv_resetbar => controlsubsystemIP_0_riscv_resetbar,
       riscv_start => controlsubsystemIP_0_riscv_start,
       s05_axi_aclk => processing_system7_0_FCLK_CLK0,
@@ -867,6 +871,7 @@ processing_system7_0: component zynq_design_processing_system7_0_0
     );
 registerIP_0: component zynq_design_registerIP_0_1
      port map (
+      PROGRAM_FINISH => registerIP_0_PROGRAM_FINISH,
       hold => controlsubsystemIP_0_riscv_hold_enable,
       readdata1(31 downto 0) => registerIP_0_readdata1(31 downto 0),
       readdata2(31 downto 0) => registerIP_0_readdata2(31 downto 0),

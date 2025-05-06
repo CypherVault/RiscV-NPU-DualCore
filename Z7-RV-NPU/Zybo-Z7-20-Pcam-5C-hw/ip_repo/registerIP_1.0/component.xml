@@ -750,6 +750,19 @@
           </spirit:wireTypeDefs>
         </spirit:wire>
       </spirit:port>
+      <spirit:port>
+        <spirit:name>PROGRAM_FINISH</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
     </spirit:ports>
     <spirit:modelParameters>
       <spirit:modelParameter xsi:type="spirit:nameValueTypeType" spirit:dataType="integer">
@@ -788,7 +801,7 @@
       <spirit:file>
         <spirit:name>hdl/registerIP_v1_0.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_434dff93</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_41714883</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -914,7 +927,7 @@
       </xilinx:taxonomies>
       <xilinx:displayName>registerIP_v1.0</xilinx:displayName>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2025-04-30T02:33:22Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2025-05-06T00:56:27Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@103b2508_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/registerIP_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@2ff4aa09_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/registerIP_1.0</xilinx:tag>
@@ -943,6 +956,16 @@
         <xilinx:tag xilinx:name="ui.data.coregen.dd@44048d88_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/registerIP_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@720951e7_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/registerIP_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@44884f9a_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/registerIP_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@19b67736_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/registerIP_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@9c6ad16_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/registerIP_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5dd36be8_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/registerIP_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@23f2744c_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/registerIP_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b231529_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/registerIP_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13b5d144_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/registerIP_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33b0a9c8_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/registerIP_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f9847fd_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/registerIP_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@674cbda5_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/registerIP_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@519ff3f3_ARCHIVE_LOCATION">c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/ip_repo/registerIP_1.0</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>

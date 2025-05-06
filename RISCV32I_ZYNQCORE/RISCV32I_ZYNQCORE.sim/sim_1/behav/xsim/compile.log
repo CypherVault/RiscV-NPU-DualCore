@@ -136,3 +136,19 @@ INFO: [VRFC 10-311] analyzing module m03_nodes_imp_19MRKAC
 INFO: [VRFC 10-311] analyzing module s00_entry_pipeline_imp_32C9KW
 INFO: [VRFC 10-311] analyzing module s00_nodes_imp_8IMR2Y
 INFO: [VRFC 10-311] analyzing module switchboards_imp_WJDN66
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sim_1/new/zynq_wrapper_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.ip_user_files/bd/zynq_design/ipshared/71ce/hdl/controlsubsystemIP.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'controlsubsystemIP'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.ip_user_files/bd/zynq_design/ip/zynq_design_controlsubsystemIP_0_0/sim/zynq_design_controlsubsystemIP_0_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'zynq_design_controlsubsystemIP_0_0'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.ip_user_files/bd/zynq_design/ip/zynq_design_axi_smc_1/bd_0/ip/ip_1/sim/bd_375a_psr_aclk_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'bd_375a_psr_aclk_0'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.ip_user_files/bd/zynq_design/ipshared/7ac2/hdl/registerIP.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'registerIP'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.ip_user_files/bd/zynq_design/ip/zynq_design_registerIP_0_1/sim/zynq_design_registerIP_0_1.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'zynq_design_registerIP_0_1'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.ip_user_files/bd/zynq_design/sim/zynq_design.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'zynq_design'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.gen/sources_1/bd/zynq_design/hdl/zynq_design_wrapper.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'zynq_design_wrapper'

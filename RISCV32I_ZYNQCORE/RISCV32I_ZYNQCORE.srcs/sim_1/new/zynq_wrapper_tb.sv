@@ -122,6 +122,37 @@ module tb();
 //instr_mem[12] = 32'h01010113;  // addi sp, sp, 16
 //instr_mem[13] = 32'h00000067;  // ret (return from the program)
 
+//// _start section
+//instr_mem[0]  = 32'hff010113;  // addi sp, sp, -16
+//instr_mem[1]  = 32'h00112623;  // sw ra, 12(sp)
+//instr_mem[2]  = 32'h00000097;  // auipc ra, 0x0
+//instr_mem[3]  = 32'h020080e7;  // jalr ra, 32(ra) # 1007c <main>
+//instr_mem[4]  = 32'h00000097;  // auipc ra, 0x0
+//instr_mem[5]  = 32'h050080e7;  // jalr ra, 80(ra) # 100b4 <finish>
+//instr_mem[6]  = 32'h00000013;  // addi zero, zero, 0
+//instr_mem[7]  = 32'h00c12083;  // lw ra, 12(sp)
+//instr_mem[8]  = 32'h01010113;  // addi sp, sp, 16
+//instr_mem[9]  = 32'h00008067;  // jalr zero, 0(ra)
+
+//// main section
+//instr_mem[10] = 32'hff010113;  // addi sp, sp, -16
+//instr_mem[11] = 32'h00500793;  // addi a5, zero, 5
+//instr_mem[12] = 32'h00f12623;  // sw a5, 12(sp)
+//instr_mem[13] = 32'h00300793;  // addi a5, zero, 3
+//instr_mem[14] = 32'h00f12423;  // sw a5, 8(sp)
+//instr_mem[15] = 32'h00012223;  // sw zero, 4(sp)
+//instr_mem[16] = 32'h00c12703;  // lw a4, 12(sp)
+//instr_mem[17] = 32'h00812783;  // lw a5, 8(sp)
+//instr_mem[18] = 32'h00f707b3;  // add a5, a4, a5
+//instr_mem[19] = 32'h00f12223;  // sw a5, 4(sp)
+//instr_mem[20] = 32'h00412783;  // lw a5, 4(sp)
+//instr_mem[21] = 32'h00078513;  // addi a0, a5, 0
+//instr_mem[22] = 32'h01010113;  // addi sp, sp, 16
+//instr_mem[23] = 32'h00008067;  // jalr zero, 0(ra)
+
+//// finish section
+//instr_mem[24] = 32'h0000006f;  // jal zero, finish (infinite loop)
+
 // _start section
 instr_mem[0]  = 32'hff010113;  // addi sp, sp, -16
 instr_mem[1]  = 32'h00112623;  // sw ra, 12(sp)
@@ -151,9 +182,9 @@ instr_mem[22] = 32'h01010113;  // addi sp, sp, 16
 instr_mem[23] = 32'h00008067;  // jalr zero, 0(ra)
 
 // finish section
-instr_mem[24] = 32'h0000006f;  // jal zero, finish (infinite loop)
-
-
+instr_mem[24] = 32'h60e00013;  // addi zero, zero, 1550
+instr_mem[25] = 32'h00000013;  // addi zero zero
+instr_mem[26] = 32'hffdff06f;  // jal zero, finish (infinite loop)
 
       
         // Disable debug messages for a cleaner simulation log
@@ -241,28 +272,29 @@ instr_mem[24] = 32'h0000006f;  // jal zero, finish (infinite loop)
        
        
        
+       //riscv should now be able to STOP itself
        
-       
-       $display("Toggling ON hold enable signal...RISCV CORE DISABLED.");
+//       $display("Toggling ON hold enable signal...RISCV CORE DISABLED.");
         
-        `VIP.write_data(`CTRL_BASE + 4, 4, 32'h1, resp);  // HOLD = '1' so processor is stopped. we are done with running the program so now we will retreive the results.
-        $display("HOLD enabled");
+//        `VIP.write_data(`CTRL_BASE + 4, 4, 32'h1, resp);  // HOLD = '1' so processor is stopped. we are done with running the program so now we will retreive the results.
+//        $display("HOLD enabled");
          
-         `VIP.write_data(`CTRL_BASE + 8, 4, 32'h0, resp);  // START = '0' so processor is fully stopped.
-        $display("START disabled");
+//         `VIP.write_data(`CTRL_BASE + 8, 4, 32'h0, resp);  // START = '0' so processor is fully stopped.
+//        $display("START disabled");
         
-        repeat(20) @(posedge clk);
+//        repeat(20) @(posedge clk);
 
        // Read all registers using raw indexes.
     $display("Reading all registers...");
     
     
     for (i = 0; i < 32; i = i + 1) begin    
-        `VIP.read_data(`REG_BASE + i, 4, read_data, resp); // Use raw index without multiplying by 4
-        registers[i] = read_data;
-        $display("Register[%d] = %h", i, read_data);
-        repeat(5) @(posedge clk);
-    end
+    `VIP.read_data(`REG_BASE + (i*4), 4, read_data, resp); // Multiply by 4 for word addressing
+    registers[i] = read_data;
+    $display("Register[%d] = %h", i, read_data);
+    repeat(5) @(posedge clk);
+end
+
 
     // Read all data memory locations using raw indexes.
     $display("Reading all data memory...");

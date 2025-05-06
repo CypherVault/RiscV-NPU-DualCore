@@ -27,7 +27,8 @@ entity controlsubsystemIP is
         s05_axi_rvalid  : out std_logic;
         s05_axi_rready  : in std_logic;
         
-        --inputs to enable direct risc controll
+        -- Inputs to enable direct RISC control
+        riscv_program_finish : in std_logic;  -- NEW PROGRAM FINISH SIGNAL
         -- Outputs to control RISC-V core and memory components
         riscv_resetbar   : out std_logic; -- Active-low reset signal
         riscv_hold : out std_logic; -- Clock enable signal
@@ -61,7 +62,7 @@ begin
             internal_wready <= '0';
             internal_bvalid <= '0';
             reset_control_reg <= '1'; -- Default reset high (inactive)
-            start_control_reg <= '0';  -- Reset start signal to 0, as processor shouldnt start right away.
+            start_control_reg <= '0';  -- Reset start signal to 0
             
         else
             -- Write address handshake
@@ -76,11 +77,10 @@ begin
                 internal_wready <= '1';
 
                 -- Decode address and update control registers
-                
-                    case unsigned(s05_axi_awaddr) is
+                case unsigned(s05_axi_awaddr) is
                 when "0000" => reset_control_reg <= s05_axi_wdata(0);
                 when "0100" => hold_enable_reg   <= s05_axi_wdata(0);
-                when "1000" => start_control_reg <= s05_axi_wdata(0);  -- NEW
+                when "1000" => start_control_reg <= s05_axi_wdata(0);
                 when others => null;
                 end case;
 
@@ -94,10 +94,17 @@ begin
             elsif (s05_axi_bready = '1') then
                 internal_bvalid <= '0';
             end if;
+
+            -- NEW PROGRAM FINISH OVERRIDE LOGIC
+            if riscv_program_finish = '1' then
+                hold_enable_reg <= '1';
+                start_control_reg <= '0';
+            end if;
         end if;
     end if;
 end process;
 
+-- Rest of the architecture remains unchanged
 -- AXI Read Channel (handles reads from control registers)
 process(s05_axi_aclk)
 begin
@@ -115,7 +122,7 @@ begin
                 case unsigned(s05_axi_araddr) is
                 when "0000" => internal_rdata(0) <= reset_control_reg;
                 when "0100" => internal_rdata(0) <= hold_enable_reg;
-                when "1000" => internal_rdata(0) <= start_control_reg;  -- NEW -- for emnabling pc count 
+                when "1000" => internal_rdata(0) <= start_control_reg;
                 when others => internal_rdata    <= (others => '0');
                 end case;
 
@@ -136,7 +143,7 @@ end process;
 -- Output assignments
 riscv_resetbar <= reset_control_reg;
 riscv_hold     <= hold_enable_reg;
-riscv_start    <= start_control_reg;  -- NEW
+riscv_start    <= start_control_reg;
 -- Connect AXI signals to outputs:
 s05_axi_awready <= internal_awready;
 s05_axi_wready  <= internal_wready;

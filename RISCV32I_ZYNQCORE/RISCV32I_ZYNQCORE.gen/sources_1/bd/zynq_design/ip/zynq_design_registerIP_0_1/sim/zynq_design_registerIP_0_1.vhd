@@ -84,7 +84,8 @@ ENTITY zynq_design_registerIP_0_1 IS
     writeregisteraddress : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
     writedata : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
     readdata1 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-    readdata2 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+    readdata2 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+    PROGRAM_FINISH : OUT STD_LOGIC
   );
 END zynq_design_registerIP_0_1;
 
@@ -126,7 +127,8 @@ ARCHITECTURE zynq_design_registerIP_0_1_arch OF zynq_design_registerIP_0_1 IS
       writeregisteraddress : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
       writedata : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
       readdata1 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-      readdata2 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+      readdata2 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+      PROGRAM_FINISH : OUT STD_LOGIC
     );
   END COMPONENT registerIP;
   ATTRIBUTE X_INTERFACE_INFO : STRING;
@@ -196,6 +198,7 @@ BEGIN
       writeregisteraddress => writeregisteraddress,
       writedata => writedata,
       readdata1 => readdata1,
-      readdata2 => readdata2
+      readdata2 => readdata2,
+      PROGRAM_FINISH => PROGRAM_FINISH
     );
 END zynq_design_registerIP_0_1_arch;

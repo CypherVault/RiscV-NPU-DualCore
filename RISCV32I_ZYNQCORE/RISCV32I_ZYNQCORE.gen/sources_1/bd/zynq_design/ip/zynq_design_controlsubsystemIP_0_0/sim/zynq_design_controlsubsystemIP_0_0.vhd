@@ -76,6 +76,7 @@ ENTITY zynq_design_controlsubsystemIP_0_0 IS
     s05_axi_rresp : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
     s05_axi_rvalid : OUT STD_LOGIC;
     s05_axi_rready : IN STD_LOGIC;
+    riscv_program_finish : IN STD_LOGIC;
     riscv_resetbar : OUT STD_LOGIC;
     riscv_hold : OUT STD_LOGIC;
     riscv_start : OUT STD_LOGIC
@@ -108,6 +109,7 @@ ARCHITECTURE zynq_design_controlsubsystemIP_0_0_arch OF zynq_design_controlsubsy
       s05_axi_rresp : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
       s05_axi_rvalid : OUT STD_LOGIC;
       s05_axi_rready : IN STD_LOGIC;
+      riscv_program_finish : IN STD_LOGIC;
       riscv_resetbar : OUT STD_LOGIC;
       riscv_hold : OUT STD_LOGIC;
       riscv_start : OUT STD_LOGIC
@@ -168,6 +170,7 @@ BEGIN
       s05_axi_rresp => s05_axi_rresp,
       s05_axi_rvalid => s05_axi_rvalid,
       s05_axi_rready => s05_axi_rready,
+      riscv_program_finish => riscv_program_finish,
       riscv_resetbar => riscv_resetbar,
       riscv_hold => riscv_hold,
       riscv_start => riscv_start

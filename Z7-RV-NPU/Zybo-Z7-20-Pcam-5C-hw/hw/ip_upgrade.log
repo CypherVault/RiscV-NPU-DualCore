@@ -1,6 +1,112 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+| Date         : Mon May  5 20:56:45 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'system_registerIP_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the conversion of system_registerIP_0_0 (xilinx.com:user:registerIP:1.0 (Rev. 1)) to Vivado generation flows.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'system_registerIP_0_0'. These changes may impact your design.
+
+
+-Upgrade has added port 'PROGRAM_FINISH'
+
+
+
+
+
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+| Date         : Mon May  5 20:55:22 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'system_controlsubsystemIP_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the conversion of system_controlsubsystemIP_0_0 (xilinx.com:user:controlsubsystemIP:1.0 (Rev. 1)) to Vivado generation flows.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'system_controlsubsystemIP_0_0'. These changes may impact your design.
+
+
+-Upgrade has added port 'riscv_program_finish'
+
+
+
+
+
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+| Date         : Mon May  5 20:11:04 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'system_datamemIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of system_datamemIP_0_0 (xilinx.com:user:datamemIP:1.0 (Rev. 1)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+| Date         : Mon May  5 18:56:52 2025
+| Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'system_datamemIP_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of system_datamemIP_0_0 (xilinx.com:user:datamemIP:1.0 (Rev. 1)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
 | Date         : Tue Apr 29 22:35:57 2025
 | Host         : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
 | Command      : upgrade_ip

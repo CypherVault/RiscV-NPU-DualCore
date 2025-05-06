@@ -40,17 +40,17 @@ entity registerIP is
     writeregisteraddress: in std_logic_vector(4 downto 0);
     writedata           : in std_logic_vector(31 downto 0);
     readdata1           : out std_logic_vector(31 downto 0);
-    readdata2           : out std_logic_vector(31 downto 0)
+    readdata2           : out std_logic_vector(31 downto 0);
+    
+    -- New output
+    PROGRAM_FINISH      : out std_logic  -- ADDED
   );
 end registerIP;
 
 architecture arch_imp of registerIP is
   type reg_array is array (0 to 31) of std_logic_vector(31 downto 0);
   signal registers : reg_array := (2 => x"00004000", others => (others => '0'));
-
-
-
-
+  signal program_finish_reg : std_logic := '0';  -- ADDED
 
   -- AXI Control Signals
   signal awready, wready, arready, rvalid, bvalid : std_logic := '0';
@@ -63,9 +63,9 @@ begin
     -- Async resets take priority
     if s01_axi_aresetn = '0' or resetbar = '0' then
       registers <= (2 => x"00004000", others => (others => '0'));
+      program_finish_reg <= '0';  -- ADDED RESET
       
-      
-       --DEBUG OPTION for CHRIS
+      --DEBUG OPTION for CHRIS
       
 --      registers <= (  
 --    0=> x"00000000", 
@@ -101,9 +101,7 @@ begin
 --    30 => x"0000001E",
 --    31 => x"0000001F"
 --);
-      
-      
-      
+
     -- Clocked writes (AXI has priority)
     elsif rising_edge(s01_axi_aclk) and hold = '0' then
       -- AXI-Lite Write
@@ -118,6 +116,11 @@ begin
       if regwrite = '1' then
         if unsigned(writeregisteraddress) /= 0 then
           registers(to_integer(unsigned(writeregisteraddress))) <= writedata;
+        end if;
+        
+        -- ADDED PROGRAM FINISH CONDITION
+        if unsigned(writeregisteraddress) = 0 and writedata = x"0000060E" then
+          program_finish_reg <= '1';
         end if;
       end if;
     end if;
@@ -210,5 +213,8 @@ begin
   s01_axi_arready <= arready;
   s01_axi_rresp   <= "00";
   s01_axi_rvalid  <= rvalid;
+
+  -- ADDED PROGRAM FINISH OUTPUT
+  PROGRAM_FINISH <= program_finish_reg;
 
 end arch_imp;

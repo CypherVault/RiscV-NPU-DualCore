@@ -39,6 +39,8 @@ WARNING: [VRFC 10-3129] assignment to input 'ddr_rd_qos' [/wrk/ci/prod/2024.2/sw
 WARNING: [VRFC 10-3129] assignment to input 'ddr_wr_qos' [/wrk/ci/prod/2024.2/sw/continuous/3059/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:1091]
 WARNING: [VRFC 10-3129] assignment to input 'ddr_rd_qos' [/wrk/ci/prod/2024.2/sw/continuous/3059/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:1115]
 WARNING: [VRFC 10-3027] 'ocm_wr_strb_port0' was previously declared with a different range [/wrk/ci/prod/2024.2/sw/continuous/3059/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:3809]
+WARNING: [VRFC 10-3705] select index 25 into 'instr_mem' is out of bounds [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sim_1/new/zynq_wrapper_tb.sv:186]
+WARNING: [VRFC 10-3705] select index 26 into 'instr_mem' is out of bounds [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sim_1/new/zynq_wrapper_tb.sv:187]
 WARNING: [VRFC 10-3705] select index 64 into 'wrp_strb' is out of bounds [/wrk/ci/prod/2024.2/sw/continuous/3059/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:6134]
 WARNING: [VRFC 10-3705] select index 128 into 'wrp_strb' is out of bounds [/wrk/ci/prod/2024.2/sw/continuous/3059/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:10898]
 WARNING: [VRFC 10-3705] select index 128 into 'wrp_strb' is out of bounds [/wrk/ci/prod/2024.2/sw/continuous/3059/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:7772]
@@ -238,6 +240,8 @@ Compiling architecture imp of entity proc_sys_reset_v5_0_16.proc_sys_reset [\pro
 Compiling architecture zynq_design_rst_ps7_0_50m_0_arch of entity xil_defaultlib.zynq_design_rst_ps7_0_50M_0 [zynq_design_rst_ps7_0_50m_0_defa...]
 Compiling architecture structure of entity xil_defaultlib.zynq_design [zynq_design_default]
 Compiling architecture structure of entity xil_defaultlib.zynq_design_wrapper [zynq_design_wrapper_default]
+WARNING: [VRFC 10-3705] select index 25 into 'instr_mem' is out of bounds [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sim_1/new/zynq_wrapper_tb.sv:186]
+WARNING: [VRFC 10-3705] select index 26 into 'instr_mem' is out of bounds [C:/Users/Chris/Desktop/RiscV-NPU-DualCore/RISCV32I_ZYNQCORE/RISCV32I_ZYNQCORE.srcs/sim_1/new/zynq_wrapper_tb.sv:187]
 Compiling module xil_defaultlib.tb
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot tb_behav

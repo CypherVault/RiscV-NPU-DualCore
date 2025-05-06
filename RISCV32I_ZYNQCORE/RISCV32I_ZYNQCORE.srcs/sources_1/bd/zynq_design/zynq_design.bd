@@ -1853,16 +1853,22 @@
           "rst_ps7_0_50M/slowest_sync_clk",
           "axi_smc/aclk",
           "RISCVCOREZYNQ_0/clock",
+          "instructionmemIP_0/s00_axi_aclk",
           "datamemIP_0/s02_axi_aclk",
           "controlsubsystemIP_0/s05_axi_aclk",
-          "registerIP_0/s01_axi_aclk",
-          "instructionmemIP_0/s00_axi_aclk"
+          "registerIP_0/s01_axi_aclk"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
         "ports": [
           "processing_system7_0/FCLK_RESET0_N",
           "rst_ps7_0_50M/ext_reset_in"
+        ]
+      },
+      "registerIP_0_PROGRAM_FINISH": {
+        "ports": [
+          "registerIP_0/PROGRAM_FINISH",
+          "controlsubsystemIP_0/riscv_program_finish"
         ]
       },
       "registerIP_0_readdata1": {
@@ -1881,10 +1887,10 @@
         "ports": [
           "rst_ps7_0_50M/peripheral_aresetn",
           "axi_smc/aresetn",
+          "instructionmemIP_0/s00_axi_aresetn",
           "datamemIP_0/s02_axi_aresetn",
           "controlsubsystemIP_0/s05_axi_aresetn",
-          "registerIP_0/s01_axi_aresetn",
-          "instructionmemIP_0/s00_axi_aresetn"
+          "registerIP_0/s01_axi_aresetn"
         ]
       }
     },
