@@ -1,2 +1,0 @@
-timestamp=[2025-03-22 18:19:31], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:06.740, duration_ms=6740, data={}
-timestamp=[2025-03-22 18:19:56], mode=APP_CREATION, duration=0:00:32.212, duration_ms=32212, data={name=zynq_7000_tutorial_3_zynq7000_build_app, project_type=sdk, os=standalone, processor=null, runtime=cpp, platform=C:\Users\Chris\Desktop\RiscV-NPU-DualCore\NPU\zynq_7000_tutorial_3_zynq7000_ws\zynq_7000_tutorial3\export\zynq_7000_tutorial3\zynq_7000_tutorial3.xpfm, application_type=application}
