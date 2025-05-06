@@ -1,0 +1,10 @@
+21:20:30 **** Incremental Build of configuration Debug for project zynq_7000_tutorial_3_zynq7000_build_app_system ****
+make all 
+Generating bif file for the system project
+generate_system_bif.bat 50462 C:/Users/Chris/Downloads/clean/tutorial_3/export/tutorial_3/tutorial_3.xpfm standalone_domain C:/Users/Chris/Downloads/clean/zynq_7000_tutorial_3_zynq7000_build_app_system/Debug/system.bif
+sdcard_gen --xpfm C:/Users/Chris/Downloads/clean/tutorial_3/export/tutorial_3/tutorial_3.xpfm --sys_config tutorial_3 --bif C:/Users/Chris/Downloads/clean/zynq_7000_tutorial_3_zynq7000_build_app_system/Debug/system.bif --bitstream C:/Users/Chris/Downloads/clean/zynq_7000_tutorial_3_zynq7000_build_app/_ide/bitstream/tutorial_3.bit --elf C:/Users/Chris/Downloads/clean/zynq_7000_tutorial_3_zynq7000_build_app/Debug/zynq_7000_tutorial_3_zynq7000_build_app.elf,ps7_cortexa9_0
+creating BOOT.BIN using C:/Users/Chris/Downloads/clean/zynq_7000_tutorial_3_zynq7000_build_app/_ide/bitstream/tutorial_3.bit
+Running F:/Vitis/2020.2/bin/bootgen  -image C:/Users/Chris/Downloads/clean/zynq_7000_tutorial_3_zynq7000_build_app_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
+
+21:20:36 Build Finished (took 6s.272ms)
+

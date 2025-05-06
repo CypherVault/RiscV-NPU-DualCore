@@ -1,0 +1,80 @@
+Nothing to build in platform 'tutorial_3'
+
+21:20:26 **** Incremental Build of configuration Debug for project zynq_7000_tutorial_3_zynq7000_build_app ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+' '
+make --no-print-directory main-build
+'Building file: ../src/ert_main.cpp'
+'Invoking: ARM v7 g++ compiler'
+arm-none-eabi-g++ -DUSE_20_02_1_LIBRARY -DNO_MULTI_THREADING -DBARE_METAL -Wall -O2 -g3 -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main" -I"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\include" -c -fmessage-length=0 -MT"src/ert_main.o" -mcpu=cortex-a9 -mfpu=neon -fpermissive -mfloat-abi=hard -std=c++11 -g -IC:/Users/Chris/Downloads/clean/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bspinclude/include -MMD -MP -MF"src/ert_main.d" -MT"src/ert_main.o" -o "src/ert_main.o" "../src/ert_main.cpp"
+../src/ert_main.cpp: In function 'int_T main()':
+../src/ert_main.cpp:56:36: warning: invalid conversion from 'unsigned int' to 'int*' [-fpermissive]
+   56 | #define XPAR_REGISTERIP_0_BASEADDR 0x83c30000
+      |                                    ^~~~~~~~~~
+      |                                    |
+      |                                    unsigned int
+../src/ert_main.cpp:168:16: note: in expansion of macro 'XPAR_REGISTERIP_0_BASEADDR'
+  168 |   int* regIP = XPAR_REGISTERIP_0_BASEADDR;
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/ert_main.cpp:40:35: warning: invalid conversion from 'unsigned int' to 'int*' [-fpermissive]
+   40 | #define XPAR_DATAMEMIP_0_BASEADDR 0x83c50000
+      |                                   ^~~~~~~~~~
+      |                                   |
+      |                                   unsigned int
+../src/ert_main.cpp:169:20: note: in expansion of macro 'XPAR_DATAMEMIP_0_BASEADDR'
+  169 |   int* dataMemIP = XPAR_DATAMEMIP_0_BASEADDR;
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/ert_main.cpp:48:42: warning: invalid conversion from 'unsigned int' to 'int*' [-fpermissive]
+   48 | #define XPAR_INSTRUCTIONMEMIP_0_BASEADDR 0x83c20000
+      |                                          ^~~~~~~~~~
+      |                                          |
+      |                                          unsigned int
+../src/ert_main.cpp:170:27: note: in expansion of macro 'XPAR_INSTRUCTIONMEMIP_0_BASEADDR'
+  170 |   int* instructionMemIP = XPAR_INSTRUCTIONMEMIP_0_BASEADDR;
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/ert_main.cpp:32:44: warning: invalid conversion from 'unsigned int' to 'int*' [-fpermissive]
+   32 | #define XPAR_CONTROLSUBSYSTEMIP_0_BASEADDR 0x83C00000
+      |                                            ^~~~~~~~~~
+      |                                            |
+      |                                            unsigned int
+../src/ert_main.cpp:171:29: note: in expansion of macro 'XPAR_CONTROLSUBSYSTEMIP_0_BASEADDR'
+  171 |   int* controlSubSystemIP = XPAR_CONTROLSUBSYSTEMIP_0_BASEADDR;
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/ert_main.cpp:414:53: warning: NULL used in arithmetic [-Wpointer-arith]
+  414 |                            if(INSTRUCTIONCODE[i] != NULL){
+      |                                                     ^~~~
+../src/ert_main.cpp: At global scope:
+../src/ert_main.cpp:580:17: warning: 'void UartHandler(void*, u32, unsigned int)' defined but not used [-Wunused-function]
+  580 |     static void UartHandler(void *CallBackRef, u32 Event, unsigned int EventData)
+      |                 ^~~~~~~~~~~
+../src/ert_main.cpp:94:12: warning: 'UartRxBytes' defined but not used [-Wunused-variable]
+   94 | static int UartRxBytes = 0;
+      |            ^~~~~~~~~~~
+../src/ert_main.cpp:93:13: warning: 'UartRxBuffer' defined but not used [-Wunused-variable]
+   93 | static char UartRxBuffer[INSTRUCTION_SIZE * 8 + 3]; // S + payload + P + null terminator
+      |             ^~~~~~~~~~~~
+C:\Users\Chris\AppData\Local\Temp\ccbBRcev.s: Assembler messages:
+C:\Users\Chris\AppData\Local\Temp\ccbBRcev.s:81: Warning: source register same as write-back base
+C:\Users\Chris\AppData\Local\Temp\ccbBRcev.s:86: Warning: source register same as write-back base
+'Finished building: ../src/ert_main.cpp'
+' '
+'Building target: zynq_7000_tutorial_3_zynq7000_build_app.elf'
+'Invoking: ARM v7 g++ linker'
+arm-none-eabi-g++ -L"F:\waijung2\targets\zynq7000\utils\ComputeLibrary-main\lib" -mcpu=cortex-a9 -mfpu=neon -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Users/Chris/Downloads/clean/tutorial_3/export/tutorial_3/sw/tutorial_3/standalone_domain/bsplib/lib -o "zynq_7000_tutorial_3_zynq7000_build_app.elf"  ./src/AXI_VDMA.o ./src/MWACLUtils.o ./src/MWAdditionLayer.o ./src/MWArmneonAdditionLayerImpl.o ./src/MWArmneonAvgPoolingLayerImpl.o ./src/MWArmneonCNNLayerImpl.o ./src/MWArmneonConvLayerImpl.o ./src/MWArmneonCustomLayerBase.o ./src/MWArmneonElementwiseAffineLayerImpl.o ./src/MWArmneonFCLayerImpl.o ./src/MWArmneonFusedConvActivationLayerImpl.o ./src/MWArmneonInputLayerImpl.o ./src/MWArmneonLayerImplFactory.o ./src/MWArmneonOutputLayerImpl.o ./src/MWArmneonSoftmaxLayerImpl.o ./src/MWArmneonTargetNetworkImpl.o ./src/MWAvgPoolingLayer.o ./src/MWCNNLayer.o ./src/MWConvLayer.o ./src/MWElementwiseAffineLayer.o ./src/MWFCLayer.o ./src/MWFusedConvActivationLayer.o ./src/MWInputLayer.o ./src/MWOutputLayer.o ./src/MWSoftmaxLayer.o ./src/MWTensorBase.o ./src/OV5640.o ./src/PS_GPIO.o ./src/PS_IIC.o ./src/VideoOutput.o ./src/cam_init.o ./src/ert_main.o ./src/mobilenetv20_0.o ./src/rtGetInf.o ./src/rtGetNaN.o ./src/rt_nonfinite.o ./src/waijung2_hwdrvlib.o ./src/zynq_7000_tutorial_3.o   -lm -larm_compute-static -larm_compute_core-static -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group -Wl,--start-group,-lxilffs,-lxil,-lgcc,-lc,--end-group
+'Finished building target: zynq_7000_tutorial_3_zynq7000_build_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size zynq_7000_tutorial_3_zynq7000_build_app.elf  |tee "zynq_7000_tutorial_3_zynq7000_build_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+2876981	  20124	215692752	218589857	d076aa1	zynq_7000_tutorial_3_zynq7000_build_app.elf
+'Finished building: zynq_7000_tutorial_3_zynq7000_build_app.elf.size'
+' '
+21:20:30 **** Incremental Build of configuration Debug for project zynq_7000_tutorial_3_zynq7000_build_app_system ****
+make all 
+Generating bif file for the system project
+generate_system_bif.bat 50462 C:/Users/Chris/Downloads/clean/tutorial_3/export/tutorial_3/tutorial_3.xpfm standalone_domain C:/Users/Chris/Downloads/clean/zynq_7000_tutorial_3_zynq7000_build_app_system/Debug/system.bif
+sdcard_gen --xpfm C:/Users/Chris/Downloads/clean/tutorial_3/export/tutorial_3/tutorial_3.xpfm --sys_config tutorial_3 --bif C:/Users/Chris/Downloads/clean/zynq_7000_tutorial_3_zynq7000_build_app_system/Debug/system.bif --bitstream C:/Users/Chris/Downloads/clean/zynq_7000_tutorial_3_zynq7000_build_app/_ide/bitstream/tutorial_3.bit --elf C:/Users/Chris/Downloads/clean/zynq_7000_tutorial_3_zynq7000_build_app/Debug/zynq_7000_tutorial_3_zynq7000_build_app.elf,ps7_cortexa9_0
+creating BOOT.BIN using C:/Users/Chris/Downloads/clean/zynq_7000_tutorial_3_zynq7000_build_app/_ide/bitstream/tutorial_3.bit
+Running F:/Vitis/2020.2/bin/bootgen  -image C:/Users/Chris/Downloads/clean/zynq_7000_tutorial_3_zynq7000_build_app_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN

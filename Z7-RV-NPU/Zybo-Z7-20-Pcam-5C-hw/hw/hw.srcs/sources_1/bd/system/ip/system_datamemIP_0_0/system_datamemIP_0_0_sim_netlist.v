@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-// Date        : Mon May  5 20:12:51 2025
+// Date        : Mon May  5 21:39:55 2025
 // Host        : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/ip/system_datamemIP_0_0/system_datamemIP_0_0_sim_netlist.v
@@ -29,9 +29,9 @@ module system_datamemIP_0_0
     memwrite,
     memread,
     readdata);
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 S02_AXI_CLK CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME S02_AXI_CLK, ASSOCIATED_BUSIF S02_AXI, ASSOCIATED_RESET s02_axi_aresetn, FREQ_HZ 10000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN system_processing_system7_0_0_FCLK_CLK1, INSERT_VIP 0" *) input s02_axi_aclk;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 S02_AXI_CLK CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME S02_AXI_CLK, ASSOCIATED_BUSIF S02_AXI, ASSOCIATED_RESET s02_axi_aresetn, FREQ_HZ 1e+07, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN system_processing_system7_0_0_FCLK_CLK1, INSERT_VIP 0" *) input s02_axi_aclk;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 S02_AXI_RST RST" *) (* x_interface_parameter = "XIL_INTERFACENAME S02_AXI_RST, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input s02_axi_aresetn;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S02_AXI ARADDR" *) (* x_interface_parameter = "XIL_INTERFACENAME S02_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 4, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 10000000, ID_WIDTH 0, ADDR_WIDTH 14, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_ONLY, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 0, HAS_BRESP 0, HAS_RRESP 0, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.000, CLK_DOMAIN system_processing_system7_0_0_FCLK_CLK1, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input [13:0]s02_axi_araddr;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S02_AXI ARADDR" *) (* x_interface_parameter = "XIL_INTERFACENAME S02_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 4, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 1e+07, ID_WIDTH 0, ADDR_WIDTH 14, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_ONLY, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 0, HAS_BRESP 0, HAS_RRESP 0, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.000, CLK_DOMAIN system_processing_system7_0_0_FCLK_CLK1, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input [13:0]s02_axi_araddr;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 S02_AXI ARVALID" *) input s02_axi_arvalid;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 S02_AXI ARREADY" *) output s02_axi_arready;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 S02_AXI RDATA" *) output [31:0]s02_axi_rdata;
@@ -3288,7 +3288,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "0" *) 
   (* ram_slice_end = "0" *) 
   RAM128X1D #(
-    .INIT(128'hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_0_127_0_0
        (.A(address[6:0]),
         .D(writedata[0]),
@@ -3513,7 +3513,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "1" *) 
   (* ram_slice_end = "1" *) 
   RAM128X1D #(
-    .INIT(128'hCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_0_127_1_1
        (.A(address[6:0]),
         .D(writedata[1]),
@@ -3722,7 +3722,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "2" *) 
   (* ram_slice_end = "2" *) 
   RAM128X1D #(
-    .INIT(128'hF0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_0_127_2_2
        (.A(address[6:0]),
         .D(writedata[2]),
@@ -3779,7 +3779,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "3" *) 
   (* ram_slice_end = "3" *) 
   RAM128X1D #(
-    .INIT(128'hFF00FF00FF00FF00FF00FF00FF00FF00)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_0_127_3_3
        (.A(address[6:0]),
         .D(writedata[3]),
@@ -3798,7 +3798,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "4" *) 
   (* ram_slice_end = "4" *) 
   RAM128X1D #(
-    .INIT(128'hFFFF0000FFFF0000FFFF0000FFFF0000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_0_127_4_4
        (.A(address[6:0]),
         .D(writedata[4]),
@@ -3817,7 +3817,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "5" *) 
   (* ram_slice_end = "5" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFF00000000FFFFFFFF00000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_0_127_5_5
        (.A(address[6:0]),
         .D(writedata[5]),
@@ -3836,7 +3836,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "6" *) 
   (* ram_slice_end = "6" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFF0000000000000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_0_127_6_6
        (.A(address[6:0]),
         .D(writedata[6]),
@@ -3912,7 +3912,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "0" *) 
   (* ram_slice_end = "0" *) 
   RAM128X1D #(
-    .INIT(128'hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1024_1151_0_0
        (.A(address[6:0]),
         .D(writedata[0]),
@@ -3941,7 +3941,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "10" *) 
   (* ram_slice_end = "10" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1024_1151_10_10
        (.A(address[6:0]),
         .D(writedata[10]),
@@ -4131,7 +4131,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "1" *) 
   (* ram_slice_end = "1" *) 
   RAM128X1D #(
-    .INIT(128'hCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1024_1151_1_1
        (.A(address[6:0]),
         .D(writedata[1]),
@@ -4340,7 +4340,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "2" *) 
   (* ram_slice_end = "2" *) 
   RAM128X1D #(
-    .INIT(128'hF0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1024_1151_2_2
        (.A(address[6:0]),
         .D(writedata[2]),
@@ -4397,7 +4397,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "3" *) 
   (* ram_slice_end = "3" *) 
   RAM128X1D #(
-    .INIT(128'hFF00FF00FF00FF00FF00FF00FF00FF00)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1024_1151_3_3
        (.A(address[6:0]),
         .D(writedata[3]),
@@ -4416,7 +4416,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "4" *) 
   (* ram_slice_end = "4" *) 
   RAM128X1D #(
-    .INIT(128'hFFFF0000FFFF0000FFFF0000FFFF0000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1024_1151_4_4
        (.A(address[6:0]),
         .D(writedata[4]),
@@ -4435,7 +4435,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "5" *) 
   (* ram_slice_end = "5" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFF00000000FFFFFFFF00000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1024_1151_5_5
        (.A(address[6:0]),
         .D(writedata[5]),
@@ -4454,7 +4454,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "6" *) 
   (* ram_slice_end = "6" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFF0000000000000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1024_1151_6_6
        (.A(address[6:0]),
         .D(writedata[6]),
@@ -4530,7 +4530,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "0" *) 
   (* ram_slice_end = "0" *) 
   RAM128X1D #(
-    .INIT(128'hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1152_1279_0_0
        (.A(address[6:0]),
         .D(writedata[0]),
@@ -4559,7 +4559,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "10" *) 
   (* ram_slice_end = "10" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1152_1279_10_10
        (.A(address[6:0]),
         .D(writedata[10]),
@@ -4749,7 +4749,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "1" *) 
   (* ram_slice_end = "1" *) 
   RAM128X1D #(
-    .INIT(128'hCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1152_1279_1_1
        (.A(address[6:0]),
         .D(writedata[1]),
@@ -4958,7 +4958,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "2" *) 
   (* ram_slice_end = "2" *) 
   RAM128X1D #(
-    .INIT(128'hF0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1152_1279_2_2
        (.A(address[6:0]),
         .D(writedata[2]),
@@ -5015,7 +5015,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "3" *) 
   (* ram_slice_end = "3" *) 
   RAM128X1D #(
-    .INIT(128'hFF00FF00FF00FF00FF00FF00FF00FF00)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1152_1279_3_3
        (.A(address[6:0]),
         .D(writedata[3]),
@@ -5034,7 +5034,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "4" *) 
   (* ram_slice_end = "4" *) 
   RAM128X1D #(
-    .INIT(128'hFFFF0000FFFF0000FFFF0000FFFF0000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1152_1279_4_4
        (.A(address[6:0]),
         .D(writedata[4]),
@@ -5053,7 +5053,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "5" *) 
   (* ram_slice_end = "5" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFF00000000FFFFFFFF00000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1152_1279_5_5
        (.A(address[6:0]),
         .D(writedata[5]),
@@ -5072,7 +5072,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "6" *) 
   (* ram_slice_end = "6" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFF0000000000000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1152_1279_6_6
        (.A(address[6:0]),
         .D(writedata[6]),
@@ -5091,7 +5091,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "7" *) 
   (* ram_slice_end = "7" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1152_1279_7_7
        (.A(address[6:0]),
         .D(writedata[7]),
@@ -5148,7 +5148,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "0" *) 
   (* ram_slice_end = "0" *) 
   RAM128X1D #(
-    .INIT(128'hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1280_1407_0_0
        (.A(address[6:0]),
         .D(writedata[0]),
@@ -5177,7 +5177,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "10" *) 
   (* ram_slice_end = "10" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1280_1407_10_10
        (.A(address[6:0]),
         .D(writedata[10]),
@@ -5367,7 +5367,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "1" *) 
   (* ram_slice_end = "1" *) 
   RAM128X1D #(
-    .INIT(128'hCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1280_1407_1_1
        (.A(address[6:0]),
         .D(writedata[1]),
@@ -5576,7 +5576,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "2" *) 
   (* ram_slice_end = "2" *) 
   RAM128X1D #(
-    .INIT(128'hF0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1280_1407_2_2
        (.A(address[6:0]),
         .D(writedata[2]),
@@ -5633,7 +5633,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "3" *) 
   (* ram_slice_end = "3" *) 
   RAM128X1D #(
-    .INIT(128'hFF00FF00FF00FF00FF00FF00FF00FF00)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1280_1407_3_3
        (.A(address[6:0]),
         .D(writedata[3]),
@@ -5652,7 +5652,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "4" *) 
   (* ram_slice_end = "4" *) 
   RAM128X1D #(
-    .INIT(128'hFFFF0000FFFF0000FFFF0000FFFF0000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1280_1407_4_4
        (.A(address[6:0]),
         .D(writedata[4]),
@@ -5671,7 +5671,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "5" *) 
   (* ram_slice_end = "5" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFF00000000FFFFFFFF00000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1280_1407_5_5
        (.A(address[6:0]),
         .D(writedata[5]),
@@ -5690,7 +5690,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "6" *) 
   (* ram_slice_end = "6" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFF0000000000000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1280_1407_6_6
        (.A(address[6:0]),
         .D(writedata[6]),
@@ -5728,7 +5728,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "8" *) 
   (* ram_slice_end = "8" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1280_1407_8_8
        (.A(address[6:0]),
         .D(writedata[8]),
@@ -5766,7 +5766,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "0" *) 
   (* ram_slice_end = "0" *) 
   RAM128X1D #(
-    .INIT(128'hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_128_255_0_0
        (.A(address[6:0]),
         .D(writedata[0]),
@@ -5985,7 +5985,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "1" *) 
   (* ram_slice_end = "1" *) 
   RAM128X1D #(
-    .INIT(128'hCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_128_255_1_1
        (.A(address[6:0]),
         .D(writedata[1]),
@@ -6194,7 +6194,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "2" *) 
   (* ram_slice_end = "2" *) 
   RAM128X1D #(
-    .INIT(128'hF0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_128_255_2_2
        (.A(address[6:0]),
         .D(writedata[2]),
@@ -6251,7 +6251,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "3" *) 
   (* ram_slice_end = "3" *) 
   RAM128X1D #(
-    .INIT(128'hFF00FF00FF00FF00FF00FF00FF00FF00)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_128_255_3_3
        (.A(address[6:0]),
         .D(writedata[3]),
@@ -6270,7 +6270,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "4" *) 
   (* ram_slice_end = "4" *) 
   RAM128X1D #(
-    .INIT(128'hFFFF0000FFFF0000FFFF0000FFFF0000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_128_255_4_4
        (.A(address[6:0]),
         .D(writedata[4]),
@@ -6289,7 +6289,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "5" *) 
   (* ram_slice_end = "5" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFF00000000FFFFFFFF00000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_128_255_5_5
        (.A(address[6:0]),
         .D(writedata[5]),
@@ -6308,7 +6308,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "6" *) 
   (* ram_slice_end = "6" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFF0000000000000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_128_255_6_6
        (.A(address[6:0]),
         .D(writedata[6]),
@@ -6327,7 +6327,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "7" *) 
   (* ram_slice_end = "7" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_128_255_7_7
        (.A(address[6:0]),
         .D(writedata[7]),
@@ -6384,7 +6384,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "0" *) 
   (* ram_slice_end = "0" *) 
   RAM128X1D #(
-    .INIT(128'hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1408_1535_0_0
        (.A(address[6:0]),
         .D(writedata[0]),
@@ -6413,7 +6413,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "10" *) 
   (* ram_slice_end = "10" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1408_1535_10_10
        (.A(address[6:0]),
         .D(writedata[10]),
@@ -6603,7 +6603,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "1" *) 
   (* ram_slice_end = "1" *) 
   RAM128X1D #(
-    .INIT(128'hCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1408_1535_1_1
        (.A(address[6:0]),
         .D(writedata[1]),
@@ -6812,7 +6812,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "2" *) 
   (* ram_slice_end = "2" *) 
   RAM128X1D #(
-    .INIT(128'hF0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1408_1535_2_2
        (.A(address[6:0]),
         .D(writedata[2]),
@@ -6869,7 +6869,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "3" *) 
   (* ram_slice_end = "3" *) 
   RAM128X1D #(
-    .INIT(128'hFF00FF00FF00FF00FF00FF00FF00FF00)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1408_1535_3_3
        (.A(address[6:0]),
         .D(writedata[3]),
@@ -6888,7 +6888,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "4" *) 
   (* ram_slice_end = "4" *) 
   RAM128X1D #(
-    .INIT(128'hFFFF0000FFFF0000FFFF0000FFFF0000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1408_1535_4_4
        (.A(address[6:0]),
         .D(writedata[4]),
@@ -6907,7 +6907,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "5" *) 
   (* ram_slice_end = "5" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFF00000000FFFFFFFF00000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1408_1535_5_5
        (.A(address[6:0]),
         .D(writedata[5]),
@@ -6926,7 +6926,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "6" *) 
   (* ram_slice_end = "6" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFF0000000000000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1408_1535_6_6
        (.A(address[6:0]),
         .D(writedata[6]),
@@ -6945,7 +6945,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "7" *) 
   (* ram_slice_end = "7" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1408_1535_7_7
        (.A(address[6:0]),
         .D(writedata[7]),
@@ -6964,7 +6964,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "8" *) 
   (* ram_slice_end = "8" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1408_1535_8_8
        (.A(address[6:0]),
         .D(writedata[8]),
@@ -7002,7 +7002,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "0" *) 
   (* ram_slice_end = "0" *) 
   RAM128X1D #(
-    .INIT(128'hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1536_1663_0_0
        (.A(address[6:0]),
         .D(writedata[0]),
@@ -7031,7 +7031,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "10" *) 
   (* ram_slice_end = "10" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1536_1663_10_10
        (.A(address[6:0]),
         .D(writedata[10]),
@@ -7221,7 +7221,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "1" *) 
   (* ram_slice_end = "1" *) 
   RAM128X1D #(
-    .INIT(128'hCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1536_1663_1_1
        (.A(address[6:0]),
         .D(writedata[1]),
@@ -7430,7 +7430,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "2" *) 
   (* ram_slice_end = "2" *) 
   RAM128X1D #(
-    .INIT(128'hF0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1536_1663_2_2
        (.A(address[6:0]),
         .D(writedata[2]),
@@ -7487,7 +7487,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "3" *) 
   (* ram_slice_end = "3" *) 
   RAM128X1D #(
-    .INIT(128'hFF00FF00FF00FF00FF00FF00FF00FF00)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1536_1663_3_3
        (.A(address[6:0]),
         .D(writedata[3]),
@@ -7506,7 +7506,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "4" *) 
   (* ram_slice_end = "4" *) 
   RAM128X1D #(
-    .INIT(128'hFFFF0000FFFF0000FFFF0000FFFF0000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1536_1663_4_4
        (.A(address[6:0]),
         .D(writedata[4]),
@@ -7525,7 +7525,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "5" *) 
   (* ram_slice_end = "5" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFF00000000FFFFFFFF00000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1536_1663_5_5
        (.A(address[6:0]),
         .D(writedata[5]),
@@ -7544,7 +7544,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "6" *) 
   (* ram_slice_end = "6" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFF0000000000000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1536_1663_6_6
        (.A(address[6:0]),
         .D(writedata[6]),
@@ -7601,7 +7601,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "9" *) 
   (* ram_slice_end = "9" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1536_1663_9_9
        (.A(address[6:0]),
         .D(writedata[9]),
@@ -7620,7 +7620,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "0" *) 
   (* ram_slice_end = "0" *) 
   RAM128X1D #(
-    .INIT(128'hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1664_1791_0_0
        (.A(address[6:0]),
         .D(writedata[0]),
@@ -7649,7 +7649,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "10" *) 
   (* ram_slice_end = "10" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1664_1791_10_10
        (.A(address[6:0]),
         .D(writedata[10]),
@@ -7839,7 +7839,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "1" *) 
   (* ram_slice_end = "1" *) 
   RAM128X1D #(
-    .INIT(128'hCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1664_1791_1_1
        (.A(address[6:0]),
         .D(writedata[1]),
@@ -8048,7 +8048,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "2" *) 
   (* ram_slice_end = "2" *) 
   RAM128X1D #(
-    .INIT(128'hF0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1664_1791_2_2
        (.A(address[6:0]),
         .D(writedata[2]),
@@ -8105,7 +8105,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "3" *) 
   (* ram_slice_end = "3" *) 
   RAM128X1D #(
-    .INIT(128'hFF00FF00FF00FF00FF00FF00FF00FF00)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1664_1791_3_3
        (.A(address[6:0]),
         .D(writedata[3]),
@@ -8124,7 +8124,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "4" *) 
   (* ram_slice_end = "4" *) 
   RAM128X1D #(
-    .INIT(128'hFFFF0000FFFF0000FFFF0000FFFF0000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1664_1791_4_4
        (.A(address[6:0]),
         .D(writedata[4]),
@@ -8143,7 +8143,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "5" *) 
   (* ram_slice_end = "5" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFF00000000FFFFFFFF00000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1664_1791_5_5
        (.A(address[6:0]),
         .D(writedata[5]),
@@ -8162,7 +8162,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "6" *) 
   (* ram_slice_end = "6" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFF0000000000000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1664_1791_6_6
        (.A(address[6:0]),
         .D(writedata[6]),
@@ -8181,7 +8181,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "7" *) 
   (* ram_slice_end = "7" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1664_1791_7_7
        (.A(address[6:0]),
         .D(writedata[7]),
@@ -8219,7 +8219,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "9" *) 
   (* ram_slice_end = "9" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1664_1791_9_9
        (.A(address[6:0]),
         .D(writedata[9]),
@@ -8238,7 +8238,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "0" *) 
   (* ram_slice_end = "0" *) 
   RAM128X1D #(
-    .INIT(128'hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1792_1919_0_0
        (.A(address[6:0]),
         .D(writedata[0]),
@@ -8267,7 +8267,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "10" *) 
   (* ram_slice_end = "10" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1792_1919_10_10
        (.A(address[6:0]),
         .D(writedata[10]),
@@ -8457,7 +8457,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "1" *) 
   (* ram_slice_end = "1" *) 
   RAM128X1D #(
-    .INIT(128'hCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1792_1919_1_1
        (.A(address[6:0]),
         .D(writedata[1]),
@@ -8666,7 +8666,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "2" *) 
   (* ram_slice_end = "2" *) 
   RAM128X1D #(
-    .INIT(128'hF0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1792_1919_2_2
        (.A(address[6:0]),
         .D(writedata[2]),
@@ -8723,7 +8723,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "3" *) 
   (* ram_slice_end = "3" *) 
   RAM128X1D #(
-    .INIT(128'hFF00FF00FF00FF00FF00FF00FF00FF00)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1792_1919_3_3
        (.A(address[6:0]),
         .D(writedata[3]),
@@ -8742,7 +8742,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "4" *) 
   (* ram_slice_end = "4" *) 
   RAM128X1D #(
-    .INIT(128'hFFFF0000FFFF0000FFFF0000FFFF0000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1792_1919_4_4
        (.A(address[6:0]),
         .D(writedata[4]),
@@ -8761,7 +8761,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "5" *) 
   (* ram_slice_end = "5" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFF00000000FFFFFFFF00000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1792_1919_5_5
        (.A(address[6:0]),
         .D(writedata[5]),
@@ -8780,7 +8780,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "6" *) 
   (* ram_slice_end = "6" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFF0000000000000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1792_1919_6_6
        (.A(address[6:0]),
         .D(writedata[6]),
@@ -8818,7 +8818,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "8" *) 
   (* ram_slice_end = "8" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1792_1919_8_8
        (.A(address[6:0]),
         .D(writedata[8]),
@@ -8837,7 +8837,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "9" *) 
   (* ram_slice_end = "9" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1792_1919_9_9
        (.A(address[6:0]),
         .D(writedata[9]),
@@ -8856,7 +8856,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "0" *) 
   (* ram_slice_end = "0" *) 
   RAM128X1D #(
-    .INIT(128'hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1920_2047_0_0
        (.A(address[6:0]),
         .D(writedata[0]),
@@ -8885,7 +8885,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "10" *) 
   (* ram_slice_end = "10" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1920_2047_10_10
        (.A(address[6:0]),
         .D(writedata[10]),
@@ -9075,7 +9075,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "1" *) 
   (* ram_slice_end = "1" *) 
   RAM128X1D #(
-    .INIT(128'hCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1920_2047_1_1
        (.A(address[6:0]),
         .D(writedata[1]),
@@ -9284,7 +9284,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "2" *) 
   (* ram_slice_end = "2" *) 
   RAM128X1D #(
-    .INIT(128'hF0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1920_2047_2_2
        (.A(address[6:0]),
         .D(writedata[2]),
@@ -9341,7 +9341,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "3" *) 
   (* ram_slice_end = "3" *) 
   RAM128X1D #(
-    .INIT(128'hFF00FF00FF00FF00FF00FF00FF00FF00)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1920_2047_3_3
        (.A(address[6:0]),
         .D(writedata[3]),
@@ -9360,7 +9360,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "4" *) 
   (* ram_slice_end = "4" *) 
   RAM128X1D #(
-    .INIT(128'hFFFF0000FFFF0000FFFF0000FFFF0000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1920_2047_4_4
        (.A(address[6:0]),
         .D(writedata[4]),
@@ -9379,7 +9379,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "5" *) 
   (* ram_slice_end = "5" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFF00000000FFFFFFFF00000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1920_2047_5_5
        (.A(address[6:0]),
         .D(writedata[5]),
@@ -9398,7 +9398,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "6" *) 
   (* ram_slice_end = "6" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFF0000000000000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1920_2047_6_6
        (.A(address[6:0]),
         .D(writedata[6]),
@@ -9417,7 +9417,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "7" *) 
   (* ram_slice_end = "7" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1920_2047_7_7
        (.A(address[6:0]),
         .D(writedata[7]),
@@ -9436,7 +9436,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "8" *) 
   (* ram_slice_end = "8" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1920_2047_8_8
        (.A(address[6:0]),
         .D(writedata[8]),
@@ -9455,7 +9455,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "9" *) 
   (* ram_slice_end = "9" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_1920_2047_9_9
        (.A(address[6:0]),
         .D(writedata[9]),
@@ -9474,7 +9474,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "0" *) 
   (* ram_slice_end = "0" *) 
   RAM128X1D #(
-    .INIT(128'hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2048_2175_0_0
        (.A(address[6:0]),
         .D(writedata[0]),
@@ -9522,7 +9522,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "11" *) 
   (* ram_slice_end = "11" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2048_2175_11_11
        (.A(address[6:0]),
         .D(writedata[11]),
@@ -9693,7 +9693,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "1" *) 
   (* ram_slice_end = "1" *) 
   RAM128X1D #(
-    .INIT(128'hCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2048_2175_1_1
        (.A(address[6:0]),
         .D(writedata[1]),
@@ -9902,7 +9902,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "2" *) 
   (* ram_slice_end = "2" *) 
   RAM128X1D #(
-    .INIT(128'hF0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2048_2175_2_2
        (.A(address[6:0]),
         .D(writedata[2]),
@@ -9959,7 +9959,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "3" *) 
   (* ram_slice_end = "3" *) 
   RAM128X1D #(
-    .INIT(128'hFF00FF00FF00FF00FF00FF00FF00FF00)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2048_2175_3_3
        (.A(address[6:0]),
         .D(writedata[3]),
@@ -9978,7 +9978,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "4" *) 
   (* ram_slice_end = "4" *) 
   RAM128X1D #(
-    .INIT(128'hFFFF0000FFFF0000FFFF0000FFFF0000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2048_2175_4_4
        (.A(address[6:0]),
         .D(writedata[4]),
@@ -9997,7 +9997,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "5" *) 
   (* ram_slice_end = "5" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFF00000000FFFFFFFF00000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2048_2175_5_5
        (.A(address[6:0]),
         .D(writedata[5]),
@@ -10016,7 +10016,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "6" *) 
   (* ram_slice_end = "6" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFF0000000000000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2048_2175_6_6
        (.A(address[6:0]),
         .D(writedata[6]),
@@ -10092,7 +10092,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "0" *) 
   (* ram_slice_end = "0" *) 
   RAM128X1D #(
-    .INIT(128'hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2176_2303_0_0
        (.A(address[6:0]),
         .D(writedata[0]),
@@ -10140,7 +10140,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "11" *) 
   (* ram_slice_end = "11" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2176_2303_11_11
        (.A(address[6:0]),
         .D(writedata[11]),
@@ -10311,7 +10311,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "1" *) 
   (* ram_slice_end = "1" *) 
   RAM128X1D #(
-    .INIT(128'hCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2176_2303_1_1
        (.A(address[6:0]),
         .D(writedata[1]),
@@ -10520,7 +10520,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "2" *) 
   (* ram_slice_end = "2" *) 
   RAM128X1D #(
-    .INIT(128'hF0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2176_2303_2_2
        (.A(address[6:0]),
         .D(writedata[2]),
@@ -10577,7 +10577,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "3" *) 
   (* ram_slice_end = "3" *) 
   RAM128X1D #(
-    .INIT(128'hFF00FF00FF00FF00FF00FF00FF00FF00)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2176_2303_3_3
        (.A(address[6:0]),
         .D(writedata[3]),
@@ -10596,7 +10596,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "4" *) 
   (* ram_slice_end = "4" *) 
   RAM128X1D #(
-    .INIT(128'hFFFF0000FFFF0000FFFF0000FFFF0000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2176_2303_4_4
        (.A(address[6:0]),
         .D(writedata[4]),
@@ -10615,7 +10615,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "5" *) 
   (* ram_slice_end = "5" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFF00000000FFFFFFFF00000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2176_2303_5_5
        (.A(address[6:0]),
         .D(writedata[5]),
@@ -10634,7 +10634,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "6" *) 
   (* ram_slice_end = "6" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFF0000000000000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2176_2303_6_6
        (.A(address[6:0]),
         .D(writedata[6]),
@@ -10653,7 +10653,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "7" *) 
   (* ram_slice_end = "7" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2176_2303_7_7
        (.A(address[6:0]),
         .D(writedata[7]),
@@ -10710,7 +10710,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "0" *) 
   (* ram_slice_end = "0" *) 
   RAM128X1D #(
-    .INIT(128'hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2304_2431_0_0
        (.A(address[6:0]),
         .D(writedata[0]),
@@ -10758,7 +10758,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "11" *) 
   (* ram_slice_end = "11" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2304_2431_11_11
        (.A(address[6:0]),
         .D(writedata[11]),
@@ -10929,7 +10929,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "1" *) 
   (* ram_slice_end = "1" *) 
   RAM128X1D #(
-    .INIT(128'hCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2304_2431_1_1
        (.A(address[6:0]),
         .D(writedata[1]),
@@ -11138,7 +11138,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "2" *) 
   (* ram_slice_end = "2" *) 
   RAM128X1D #(
-    .INIT(128'hF0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2304_2431_2_2
        (.A(address[6:0]),
         .D(writedata[2]),
@@ -11195,7 +11195,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "3" *) 
   (* ram_slice_end = "3" *) 
   RAM128X1D #(
-    .INIT(128'hFF00FF00FF00FF00FF00FF00FF00FF00)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2304_2431_3_3
        (.A(address[6:0]),
         .D(writedata[3]),
@@ -11214,7 +11214,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "4" *) 
   (* ram_slice_end = "4" *) 
   RAM128X1D #(
-    .INIT(128'hFFFF0000FFFF0000FFFF0000FFFF0000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2304_2431_4_4
        (.A(address[6:0]),
         .D(writedata[4]),
@@ -11233,7 +11233,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "5" *) 
   (* ram_slice_end = "5" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFF00000000FFFFFFFF00000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2304_2431_5_5
        (.A(address[6:0]),
         .D(writedata[5]),
@@ -11252,7 +11252,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "6" *) 
   (* ram_slice_end = "6" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFF0000000000000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2304_2431_6_6
        (.A(address[6:0]),
         .D(writedata[6]),
@@ -11290,7 +11290,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "8" *) 
   (* ram_slice_end = "8" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2304_2431_8_8
        (.A(address[6:0]),
         .D(writedata[8]),
@@ -11328,7 +11328,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "0" *) 
   (* ram_slice_end = "0" *) 
   RAM128X1D #(
-    .INIT(128'hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2432_2559_0_0
        (.A(address[6:0]),
         .D(writedata[0]),
@@ -11376,7 +11376,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "11" *) 
   (* ram_slice_end = "11" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2432_2559_11_11
        (.A(address[6:0]),
         .D(writedata[11]),
@@ -11547,7 +11547,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "1" *) 
   (* ram_slice_end = "1" *) 
   RAM128X1D #(
-    .INIT(128'hCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2432_2559_1_1
        (.A(address[6:0]),
         .D(writedata[1]),
@@ -11756,7 +11756,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "2" *) 
   (* ram_slice_end = "2" *) 
   RAM128X1D #(
-    .INIT(128'hF0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2432_2559_2_2
        (.A(address[6:0]),
         .D(writedata[2]),
@@ -11813,7 +11813,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "3" *) 
   (* ram_slice_end = "3" *) 
   RAM128X1D #(
-    .INIT(128'hFF00FF00FF00FF00FF00FF00FF00FF00)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2432_2559_3_3
        (.A(address[6:0]),
         .D(writedata[3]),
@@ -11832,7 +11832,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "4" *) 
   (* ram_slice_end = "4" *) 
   RAM128X1D #(
-    .INIT(128'hFFFF0000FFFF0000FFFF0000FFFF0000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2432_2559_4_4
        (.A(address[6:0]),
         .D(writedata[4]),
@@ -11851,7 +11851,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "5" *) 
   (* ram_slice_end = "5" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFF00000000FFFFFFFF00000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2432_2559_5_5
        (.A(address[6:0]),
         .D(writedata[5]),
@@ -11870,7 +11870,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "6" *) 
   (* ram_slice_end = "6" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFF0000000000000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2432_2559_6_6
        (.A(address[6:0]),
         .D(writedata[6]),
@@ -11889,7 +11889,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "7" *) 
   (* ram_slice_end = "7" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2432_2559_7_7
        (.A(address[6:0]),
         .D(writedata[7]),
@@ -11908,7 +11908,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "8" *) 
   (* ram_slice_end = "8" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2432_2559_8_8
        (.A(address[6:0]),
         .D(writedata[8]),
@@ -11946,7 +11946,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "0" *) 
   (* ram_slice_end = "0" *) 
   RAM128X1D #(
-    .INIT(128'hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2560_2687_0_0
        (.A(address[6:0]),
         .D(writedata[0]),
@@ -11994,7 +11994,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "11" *) 
   (* ram_slice_end = "11" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2560_2687_11_11
        (.A(address[6:0]),
         .D(writedata[11]),
@@ -12165,7 +12165,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "1" *) 
   (* ram_slice_end = "1" *) 
   RAM128X1D #(
-    .INIT(128'hCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2560_2687_1_1
        (.A(address[6:0]),
         .D(writedata[1]),
@@ -12374,7 +12374,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "2" *) 
   (* ram_slice_end = "2" *) 
   RAM128X1D #(
-    .INIT(128'hF0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2560_2687_2_2
        (.A(address[6:0]),
         .D(writedata[2]),
@@ -12431,7 +12431,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "3" *) 
   (* ram_slice_end = "3" *) 
   RAM128X1D #(
-    .INIT(128'hFF00FF00FF00FF00FF00FF00FF00FF00)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2560_2687_3_3
        (.A(address[6:0]),
         .D(writedata[3]),
@@ -12450,7 +12450,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "4" *) 
   (* ram_slice_end = "4" *) 
   RAM128X1D #(
-    .INIT(128'hFFFF0000FFFF0000FFFF0000FFFF0000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2560_2687_4_4
        (.A(address[6:0]),
         .D(writedata[4]),
@@ -12469,7 +12469,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "5" *) 
   (* ram_slice_end = "5" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFF00000000FFFFFFFF00000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2560_2687_5_5
        (.A(address[6:0]),
         .D(writedata[5]),
@@ -12488,7 +12488,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "6" *) 
   (* ram_slice_end = "6" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFF0000000000000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2560_2687_6_6
        (.A(address[6:0]),
         .D(writedata[6]),
@@ -12545,7 +12545,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "9" *) 
   (* ram_slice_end = "9" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2560_2687_9_9
        (.A(address[6:0]),
         .D(writedata[9]),
@@ -12564,7 +12564,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "0" *) 
   (* ram_slice_end = "0" *) 
   RAM128X1D #(
-    .INIT(128'hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_256_383_0_0
        (.A(address[6:0]),
         .D(writedata[0]),
@@ -12783,7 +12783,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "1" *) 
   (* ram_slice_end = "1" *) 
   RAM128X1D #(
-    .INIT(128'hCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_256_383_1_1
        (.A(address[6:0]),
         .D(writedata[1]),
@@ -12992,7 +12992,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "2" *) 
   (* ram_slice_end = "2" *) 
   RAM128X1D #(
-    .INIT(128'hF0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_256_383_2_2
        (.A(address[6:0]),
         .D(writedata[2]),
@@ -13049,7 +13049,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "3" *) 
   (* ram_slice_end = "3" *) 
   RAM128X1D #(
-    .INIT(128'hFF00FF00FF00FF00FF00FF00FF00FF00)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_256_383_3_3
        (.A(address[6:0]),
         .D(writedata[3]),
@@ -13068,7 +13068,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "4" *) 
   (* ram_slice_end = "4" *) 
   RAM128X1D #(
-    .INIT(128'hFFFF0000FFFF0000FFFF0000FFFF0000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_256_383_4_4
        (.A(address[6:0]),
         .D(writedata[4]),
@@ -13087,7 +13087,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "5" *) 
   (* ram_slice_end = "5" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFF00000000FFFFFFFF00000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_256_383_5_5
        (.A(address[6:0]),
         .D(writedata[5]),
@@ -13106,7 +13106,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "6" *) 
   (* ram_slice_end = "6" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFF0000000000000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_256_383_6_6
        (.A(address[6:0]),
         .D(writedata[6]),
@@ -13144,7 +13144,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "8" *) 
   (* ram_slice_end = "8" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_256_383_8_8
        (.A(address[6:0]),
         .D(writedata[8]),
@@ -13182,7 +13182,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "0" *) 
   (* ram_slice_end = "0" *) 
   RAM128X1D #(
-    .INIT(128'hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2688_2815_0_0
        (.A(address[6:0]),
         .D(writedata[0]),
@@ -13230,7 +13230,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "11" *) 
   (* ram_slice_end = "11" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2688_2815_11_11
        (.A(address[6:0]),
         .D(writedata[11]),
@@ -13401,7 +13401,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "1" *) 
   (* ram_slice_end = "1" *) 
   RAM128X1D #(
-    .INIT(128'hCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2688_2815_1_1
        (.A(address[6:0]),
         .D(writedata[1]),
@@ -13610,7 +13610,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "2" *) 
   (* ram_slice_end = "2" *) 
   RAM128X1D #(
-    .INIT(128'hF0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2688_2815_2_2
        (.A(address[6:0]),
         .D(writedata[2]),
@@ -13667,7 +13667,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "3" *) 
   (* ram_slice_end = "3" *) 
   RAM128X1D #(
-    .INIT(128'hFF00FF00FF00FF00FF00FF00FF00FF00)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2688_2815_3_3
        (.A(address[6:0]),
         .D(writedata[3]),
@@ -13686,7 +13686,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "4" *) 
   (* ram_slice_end = "4" *) 
   RAM128X1D #(
-    .INIT(128'hFFFF0000FFFF0000FFFF0000FFFF0000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2688_2815_4_4
        (.A(address[6:0]),
         .D(writedata[4]),
@@ -13705,7 +13705,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "5" *) 
   (* ram_slice_end = "5" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFF00000000FFFFFFFF00000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2688_2815_5_5
        (.A(address[6:0]),
         .D(writedata[5]),
@@ -13724,7 +13724,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "6" *) 
   (* ram_slice_end = "6" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFF0000000000000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2688_2815_6_6
        (.A(address[6:0]),
         .D(writedata[6]),
@@ -13743,7 +13743,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "7" *) 
   (* ram_slice_end = "7" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2688_2815_7_7
        (.A(address[6:0]),
         .D(writedata[7]),
@@ -13781,7 +13781,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "9" *) 
   (* ram_slice_end = "9" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2688_2815_9_9
        (.A(address[6:0]),
         .D(writedata[9]),
@@ -13800,7 +13800,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "0" *) 
   (* ram_slice_end = "0" *) 
   RAM128X1D #(
-    .INIT(128'hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2816_2943_0_0
        (.A(address[6:0]),
         .D(writedata[0]),
@@ -13848,7 +13848,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "11" *) 
   (* ram_slice_end = "11" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2816_2943_11_11
        (.A(address[6:0]),
         .D(writedata[11]),
@@ -14019,7 +14019,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "1" *) 
   (* ram_slice_end = "1" *) 
   RAM128X1D #(
-    .INIT(128'hCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2816_2943_1_1
        (.A(address[6:0]),
         .D(writedata[1]),
@@ -14228,7 +14228,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "2" *) 
   (* ram_slice_end = "2" *) 
   RAM128X1D #(
-    .INIT(128'hF0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2816_2943_2_2
        (.A(address[6:0]),
         .D(writedata[2]),
@@ -14285,7 +14285,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "3" *) 
   (* ram_slice_end = "3" *) 
   RAM128X1D #(
-    .INIT(128'hFF00FF00FF00FF00FF00FF00FF00FF00)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2816_2943_3_3
        (.A(address[6:0]),
         .D(writedata[3]),
@@ -14304,7 +14304,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "4" *) 
   (* ram_slice_end = "4" *) 
   RAM128X1D #(
-    .INIT(128'hFFFF0000FFFF0000FFFF0000FFFF0000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2816_2943_4_4
        (.A(address[6:0]),
         .D(writedata[4]),
@@ -14323,7 +14323,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "5" *) 
   (* ram_slice_end = "5" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFF00000000FFFFFFFF00000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2816_2943_5_5
        (.A(address[6:0]),
         .D(writedata[5]),
@@ -14342,7 +14342,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "6" *) 
   (* ram_slice_end = "6" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFF0000000000000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2816_2943_6_6
        (.A(address[6:0]),
         .D(writedata[6]),
@@ -14380,7 +14380,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "8" *) 
   (* ram_slice_end = "8" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2816_2943_8_8
        (.A(address[6:0]),
         .D(writedata[8]),
@@ -14399,7 +14399,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "9" *) 
   (* ram_slice_end = "9" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2816_2943_9_9
        (.A(address[6:0]),
         .D(writedata[9]),
@@ -14418,7 +14418,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "0" *) 
   (* ram_slice_end = "0" *) 
   RAM128X1D #(
-    .INIT(128'hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2944_3071_0_0
        (.A(address[6:0]),
         .D(writedata[0]),
@@ -14466,7 +14466,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "11" *) 
   (* ram_slice_end = "11" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2944_3071_11_11
        (.A(address[6:0]),
         .D(writedata[11]),
@@ -14637,7 +14637,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "1" *) 
   (* ram_slice_end = "1" *) 
   RAM128X1D #(
-    .INIT(128'hCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2944_3071_1_1
        (.A(address[6:0]),
         .D(writedata[1]),
@@ -14846,7 +14846,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "2" *) 
   (* ram_slice_end = "2" *) 
   RAM128X1D #(
-    .INIT(128'hF0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2944_3071_2_2
        (.A(address[6:0]),
         .D(writedata[2]),
@@ -14903,7 +14903,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "3" *) 
   (* ram_slice_end = "3" *) 
   RAM128X1D #(
-    .INIT(128'hFF00FF00FF00FF00FF00FF00FF00FF00)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2944_3071_3_3
        (.A(address[6:0]),
         .D(writedata[3]),
@@ -14922,7 +14922,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "4" *) 
   (* ram_slice_end = "4" *) 
   RAM128X1D #(
-    .INIT(128'hFFFF0000FFFF0000FFFF0000FFFF0000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2944_3071_4_4
        (.A(address[6:0]),
         .D(writedata[4]),
@@ -14941,7 +14941,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "5" *) 
   (* ram_slice_end = "5" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFF00000000FFFFFFFF00000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2944_3071_5_5
        (.A(address[6:0]),
         .D(writedata[5]),
@@ -14960,7 +14960,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "6" *) 
   (* ram_slice_end = "6" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFF0000000000000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2944_3071_6_6
        (.A(address[6:0]),
         .D(writedata[6]),
@@ -14979,7 +14979,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "7" *) 
   (* ram_slice_end = "7" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2944_3071_7_7
        (.A(address[6:0]),
         .D(writedata[7]),
@@ -14998,7 +14998,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "8" *) 
   (* ram_slice_end = "8" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2944_3071_8_8
        (.A(address[6:0]),
         .D(writedata[8]),
@@ -15017,7 +15017,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "9" *) 
   (* ram_slice_end = "9" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_2944_3071_9_9
        (.A(address[6:0]),
         .D(writedata[9]),
@@ -15036,7 +15036,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "0" *) 
   (* ram_slice_end = "0" *) 
   RAM128X1D #(
-    .INIT(128'hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3072_3199_0_0
        (.A(address[6:0]),
         .D(writedata[0]),
@@ -15065,7 +15065,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "10" *) 
   (* ram_slice_end = "10" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3072_3199_10_10
        (.A(address[6:0]),
         .D(writedata[10]),
@@ -15084,7 +15084,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "11" *) 
   (* ram_slice_end = "11" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3072_3199_11_11
        (.A(address[6:0]),
         .D(writedata[11]),
@@ -15255,7 +15255,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "1" *) 
   (* ram_slice_end = "1" *) 
   RAM128X1D #(
-    .INIT(128'hCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3072_3199_1_1
        (.A(address[6:0]),
         .D(writedata[1]),
@@ -15464,7 +15464,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "2" *) 
   (* ram_slice_end = "2" *) 
   RAM128X1D #(
-    .INIT(128'hF0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3072_3199_2_2
        (.A(address[6:0]),
         .D(writedata[2]),
@@ -15521,7 +15521,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "3" *) 
   (* ram_slice_end = "3" *) 
   RAM128X1D #(
-    .INIT(128'hFF00FF00FF00FF00FF00FF00FF00FF00)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3072_3199_3_3
        (.A(address[6:0]),
         .D(writedata[3]),
@@ -15540,7 +15540,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "4" *) 
   (* ram_slice_end = "4" *) 
   RAM128X1D #(
-    .INIT(128'hFFFF0000FFFF0000FFFF0000FFFF0000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3072_3199_4_4
        (.A(address[6:0]),
         .D(writedata[4]),
@@ -15559,7 +15559,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "5" *) 
   (* ram_slice_end = "5" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFF00000000FFFFFFFF00000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3072_3199_5_5
        (.A(address[6:0]),
         .D(writedata[5]),
@@ -15578,7 +15578,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "6" *) 
   (* ram_slice_end = "6" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFF0000000000000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3072_3199_6_6
        (.A(address[6:0]),
         .D(writedata[6]),
@@ -15654,7 +15654,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "0" *) 
   (* ram_slice_end = "0" *) 
   RAM128X1D #(
-    .INIT(128'hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3200_3327_0_0
        (.A(address[6:0]),
         .D(writedata[0]),
@@ -15683,7 +15683,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "10" *) 
   (* ram_slice_end = "10" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3200_3327_10_10
        (.A(address[6:0]),
         .D(writedata[10]),
@@ -15702,7 +15702,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "11" *) 
   (* ram_slice_end = "11" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3200_3327_11_11
        (.A(address[6:0]),
         .D(writedata[11]),
@@ -15873,7 +15873,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "1" *) 
   (* ram_slice_end = "1" *) 
   RAM128X1D #(
-    .INIT(128'hCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3200_3327_1_1
        (.A(address[6:0]),
         .D(writedata[1]),
@@ -16082,7 +16082,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "2" *) 
   (* ram_slice_end = "2" *) 
   RAM128X1D #(
-    .INIT(128'hF0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3200_3327_2_2
        (.A(address[6:0]),
         .D(writedata[2]),
@@ -16139,7 +16139,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "3" *) 
   (* ram_slice_end = "3" *) 
   RAM128X1D #(
-    .INIT(128'hFF00FF00FF00FF00FF00FF00FF00FF00)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3200_3327_3_3
        (.A(address[6:0]),
         .D(writedata[3]),
@@ -16158,7 +16158,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "4" *) 
   (* ram_slice_end = "4" *) 
   RAM128X1D #(
-    .INIT(128'hFFFF0000FFFF0000FFFF0000FFFF0000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3200_3327_4_4
        (.A(address[6:0]),
         .D(writedata[4]),
@@ -16177,7 +16177,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "5" *) 
   (* ram_slice_end = "5" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFF00000000FFFFFFFF00000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3200_3327_5_5
        (.A(address[6:0]),
         .D(writedata[5]),
@@ -16196,7 +16196,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "6" *) 
   (* ram_slice_end = "6" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFF0000000000000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3200_3327_6_6
        (.A(address[6:0]),
         .D(writedata[6]),
@@ -16215,7 +16215,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "7" *) 
   (* ram_slice_end = "7" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3200_3327_7_7
        (.A(address[6:0]),
         .D(writedata[7]),
@@ -16272,7 +16272,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "0" *) 
   (* ram_slice_end = "0" *) 
   RAM128X1D #(
-    .INIT(128'hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3328_3455_0_0
        (.A(address[6:0]),
         .D(writedata[0]),
@@ -16301,7 +16301,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "10" *) 
   (* ram_slice_end = "10" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3328_3455_10_10
        (.A(address[6:0]),
         .D(writedata[10]),
@@ -16320,7 +16320,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "11" *) 
   (* ram_slice_end = "11" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3328_3455_11_11
        (.A(address[6:0]),
         .D(writedata[11]),
@@ -16491,7 +16491,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "1" *) 
   (* ram_slice_end = "1" *) 
   RAM128X1D #(
-    .INIT(128'hCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3328_3455_1_1
        (.A(address[6:0]),
         .D(writedata[1]),
@@ -16700,7 +16700,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "2" *) 
   (* ram_slice_end = "2" *) 
   RAM128X1D #(
-    .INIT(128'hF0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3328_3455_2_2
        (.A(address[6:0]),
         .D(writedata[2]),
@@ -16757,7 +16757,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "3" *) 
   (* ram_slice_end = "3" *) 
   RAM128X1D #(
-    .INIT(128'hFF00FF00FF00FF00FF00FF00FF00FF00)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3328_3455_3_3
        (.A(address[6:0]),
         .D(writedata[3]),
@@ -16776,7 +16776,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "4" *) 
   (* ram_slice_end = "4" *) 
   RAM128X1D #(
-    .INIT(128'hFFFF0000FFFF0000FFFF0000FFFF0000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3328_3455_4_4
        (.A(address[6:0]),
         .D(writedata[4]),
@@ -16795,7 +16795,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "5" *) 
   (* ram_slice_end = "5" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFF00000000FFFFFFFF00000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3328_3455_5_5
        (.A(address[6:0]),
         .D(writedata[5]),
@@ -16814,7 +16814,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "6" *) 
   (* ram_slice_end = "6" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFF0000000000000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3328_3455_6_6
        (.A(address[6:0]),
         .D(writedata[6]),
@@ -16852,7 +16852,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "8" *) 
   (* ram_slice_end = "8" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3328_3455_8_8
        (.A(address[6:0]),
         .D(writedata[8]),
@@ -16890,7 +16890,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "0" *) 
   (* ram_slice_end = "0" *) 
   RAM128X1D #(
-    .INIT(128'hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3456_3583_0_0
        (.A(address[6:0]),
         .D(writedata[0]),
@@ -16919,7 +16919,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "10" *) 
   (* ram_slice_end = "10" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3456_3583_10_10
        (.A(address[6:0]),
         .D(writedata[10]),
@@ -16938,7 +16938,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "11" *) 
   (* ram_slice_end = "11" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3456_3583_11_11
        (.A(address[6:0]),
         .D(writedata[11]),
@@ -17109,7 +17109,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "1" *) 
   (* ram_slice_end = "1" *) 
   RAM128X1D #(
-    .INIT(128'hCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3456_3583_1_1
        (.A(address[6:0]),
         .D(writedata[1]),
@@ -17318,7 +17318,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "2" *) 
   (* ram_slice_end = "2" *) 
   RAM128X1D #(
-    .INIT(128'hF0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3456_3583_2_2
        (.A(address[6:0]),
         .D(writedata[2]),
@@ -17375,7 +17375,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "3" *) 
   (* ram_slice_end = "3" *) 
   RAM128X1D #(
-    .INIT(128'hFF00FF00FF00FF00FF00FF00FF00FF00)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3456_3583_3_3
        (.A(address[6:0]),
         .D(writedata[3]),
@@ -17394,7 +17394,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "4" *) 
   (* ram_slice_end = "4" *) 
   RAM128X1D #(
-    .INIT(128'hFFFF0000FFFF0000FFFF0000FFFF0000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3456_3583_4_4
        (.A(address[6:0]),
         .D(writedata[4]),
@@ -17413,7 +17413,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "5" *) 
   (* ram_slice_end = "5" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFF00000000FFFFFFFF00000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3456_3583_5_5
        (.A(address[6:0]),
         .D(writedata[5]),
@@ -17432,7 +17432,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "6" *) 
   (* ram_slice_end = "6" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFF0000000000000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3456_3583_6_6
        (.A(address[6:0]),
         .D(writedata[6]),
@@ -17451,7 +17451,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "7" *) 
   (* ram_slice_end = "7" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3456_3583_7_7
        (.A(address[6:0]),
         .D(writedata[7]),
@@ -17470,7 +17470,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "8" *) 
   (* ram_slice_end = "8" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3456_3583_8_8
        (.A(address[6:0]),
         .D(writedata[8]),
@@ -17508,7 +17508,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "0" *) 
   (* ram_slice_end = "0" *) 
   RAM128X1D #(
-    .INIT(128'hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3584_3711_0_0
        (.A(address[6:0]),
         .D(writedata[0]),
@@ -17537,7 +17537,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "10" *) 
   (* ram_slice_end = "10" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3584_3711_10_10
        (.A(address[6:0]),
         .D(writedata[10]),
@@ -17556,7 +17556,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "11" *) 
   (* ram_slice_end = "11" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3584_3711_11_11
        (.A(address[6:0]),
         .D(writedata[11]),
@@ -17727,7 +17727,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "1" *) 
   (* ram_slice_end = "1" *) 
   RAM128X1D #(
-    .INIT(128'hCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3584_3711_1_1
        (.A(address[6:0]),
         .D(writedata[1]),
@@ -17936,7 +17936,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "2" *) 
   (* ram_slice_end = "2" *) 
   RAM128X1D #(
-    .INIT(128'hF0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3584_3711_2_2
        (.A(address[6:0]),
         .D(writedata[2]),
@@ -17993,7 +17993,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "3" *) 
   (* ram_slice_end = "3" *) 
   RAM128X1D #(
-    .INIT(128'hFF00FF00FF00FF00FF00FF00FF00FF00)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3584_3711_3_3
        (.A(address[6:0]),
         .D(writedata[3]),
@@ -18012,7 +18012,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "4" *) 
   (* ram_slice_end = "4" *) 
   RAM128X1D #(
-    .INIT(128'hFFFF0000FFFF0000FFFF0000FFFF0000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3584_3711_4_4
        (.A(address[6:0]),
         .D(writedata[4]),
@@ -18031,7 +18031,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "5" *) 
   (* ram_slice_end = "5" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFF00000000FFFFFFFF00000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3584_3711_5_5
        (.A(address[6:0]),
         .D(writedata[5]),
@@ -18050,7 +18050,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "6" *) 
   (* ram_slice_end = "6" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFF0000000000000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3584_3711_6_6
        (.A(address[6:0]),
         .D(writedata[6]),
@@ -18107,7 +18107,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "9" *) 
   (* ram_slice_end = "9" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3584_3711_9_9
        (.A(address[6:0]),
         .D(writedata[9]),
@@ -18126,7 +18126,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "0" *) 
   (* ram_slice_end = "0" *) 
   RAM128X1D #(
-    .INIT(128'hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3712_3839_0_0
        (.A(address[6:0]),
         .D(writedata[0]),
@@ -18155,7 +18155,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "10" *) 
   (* ram_slice_end = "10" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3712_3839_10_10
        (.A(address[6:0]),
         .D(writedata[10]),
@@ -18174,7 +18174,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "11" *) 
   (* ram_slice_end = "11" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3712_3839_11_11
        (.A(address[6:0]),
         .D(writedata[11]),
@@ -18345,7 +18345,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "1" *) 
   (* ram_slice_end = "1" *) 
   RAM128X1D #(
-    .INIT(128'hCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3712_3839_1_1
        (.A(address[6:0]),
         .D(writedata[1]),
@@ -18554,7 +18554,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "2" *) 
   (* ram_slice_end = "2" *) 
   RAM128X1D #(
-    .INIT(128'hF0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3712_3839_2_2
        (.A(address[6:0]),
         .D(writedata[2]),
@@ -18611,7 +18611,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "3" *) 
   (* ram_slice_end = "3" *) 
   RAM128X1D #(
-    .INIT(128'hFF00FF00FF00FF00FF00FF00FF00FF00)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3712_3839_3_3
        (.A(address[6:0]),
         .D(writedata[3]),
@@ -18630,7 +18630,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "4" *) 
   (* ram_slice_end = "4" *) 
   RAM128X1D #(
-    .INIT(128'hFFFF0000FFFF0000FFFF0000FFFF0000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3712_3839_4_4
        (.A(address[6:0]),
         .D(writedata[4]),
@@ -18649,7 +18649,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "5" *) 
   (* ram_slice_end = "5" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFF00000000FFFFFFFF00000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3712_3839_5_5
        (.A(address[6:0]),
         .D(writedata[5]),
@@ -18668,7 +18668,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "6" *) 
   (* ram_slice_end = "6" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFF0000000000000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3712_3839_6_6
        (.A(address[6:0]),
         .D(writedata[6]),
@@ -18687,7 +18687,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "7" *) 
   (* ram_slice_end = "7" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3712_3839_7_7
        (.A(address[6:0]),
         .D(writedata[7]),
@@ -18725,7 +18725,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "9" *) 
   (* ram_slice_end = "9" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3712_3839_9_9
        (.A(address[6:0]),
         .D(writedata[9]),
@@ -18744,7 +18744,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "0" *) 
   (* ram_slice_end = "0" *) 
   RAM128X1D #(
-    .INIT(128'hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3840_3967_0_0
        (.A(address[6:0]),
         .D(writedata[0]),
@@ -18773,7 +18773,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "10" *) 
   (* ram_slice_end = "10" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3840_3967_10_10
        (.A(address[6:0]),
         .D(writedata[10]),
@@ -18792,7 +18792,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "11" *) 
   (* ram_slice_end = "11" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3840_3967_11_11
        (.A(address[6:0]),
         .D(writedata[11]),
@@ -18963,7 +18963,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "1" *) 
   (* ram_slice_end = "1" *) 
   RAM128X1D #(
-    .INIT(128'hCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3840_3967_1_1
        (.A(address[6:0]),
         .D(writedata[1]),
@@ -19172,7 +19172,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "2" *) 
   (* ram_slice_end = "2" *) 
   RAM128X1D #(
-    .INIT(128'hF0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3840_3967_2_2
        (.A(address[6:0]),
         .D(writedata[2]),
@@ -19229,7 +19229,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "3" *) 
   (* ram_slice_end = "3" *) 
   RAM128X1D #(
-    .INIT(128'hFF00FF00FF00FF00FF00FF00FF00FF00)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3840_3967_3_3
        (.A(address[6:0]),
         .D(writedata[3]),
@@ -19248,7 +19248,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "4" *) 
   (* ram_slice_end = "4" *) 
   RAM128X1D #(
-    .INIT(128'hFFFF0000FFFF0000FFFF0000FFFF0000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3840_3967_4_4
        (.A(address[6:0]),
         .D(writedata[4]),
@@ -19267,7 +19267,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "5" *) 
   (* ram_slice_end = "5" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFF00000000FFFFFFFF00000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3840_3967_5_5
        (.A(address[6:0]),
         .D(writedata[5]),
@@ -19286,7 +19286,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "6" *) 
   (* ram_slice_end = "6" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFF0000000000000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3840_3967_6_6
        (.A(address[6:0]),
         .D(writedata[6]),
@@ -19324,7 +19324,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "8" *) 
   (* ram_slice_end = "8" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3840_3967_8_8
        (.A(address[6:0]),
         .D(writedata[8]),
@@ -19343,7 +19343,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "9" *) 
   (* ram_slice_end = "9" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3840_3967_9_9
        (.A(address[6:0]),
         .D(writedata[9]),
@@ -19362,7 +19362,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "0" *) 
   (* ram_slice_end = "0" *) 
   RAM128X1D #(
-    .INIT(128'hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_384_511_0_0
        (.A(address[6:0]),
         .D(writedata[0]),
@@ -19581,7 +19581,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "1" *) 
   (* ram_slice_end = "1" *) 
   RAM128X1D #(
-    .INIT(128'hCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_384_511_1_1
        (.A(address[6:0]),
         .D(writedata[1]),
@@ -19790,7 +19790,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "2" *) 
   (* ram_slice_end = "2" *) 
   RAM128X1D #(
-    .INIT(128'hF0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_384_511_2_2
        (.A(address[6:0]),
         .D(writedata[2]),
@@ -19847,7 +19847,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "3" *) 
   (* ram_slice_end = "3" *) 
   RAM128X1D #(
-    .INIT(128'hFF00FF00FF00FF00FF00FF00FF00FF00)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_384_511_3_3
        (.A(address[6:0]),
         .D(writedata[3]),
@@ -19866,7 +19866,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "4" *) 
   (* ram_slice_end = "4" *) 
   RAM128X1D #(
-    .INIT(128'hFFFF0000FFFF0000FFFF0000FFFF0000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_384_511_4_4
        (.A(address[6:0]),
         .D(writedata[4]),
@@ -19885,7 +19885,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "5" *) 
   (* ram_slice_end = "5" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFF00000000FFFFFFFF00000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_384_511_5_5
        (.A(address[6:0]),
         .D(writedata[5]),
@@ -19904,7 +19904,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "6" *) 
   (* ram_slice_end = "6" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFF0000000000000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_384_511_6_6
        (.A(address[6:0]),
         .D(writedata[6]),
@@ -19923,7 +19923,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "7" *) 
   (* ram_slice_end = "7" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_384_511_7_7
        (.A(address[6:0]),
         .D(writedata[7]),
@@ -19942,7 +19942,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "8" *) 
   (* ram_slice_end = "8" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_384_511_8_8
        (.A(address[6:0]),
         .D(writedata[8]),
@@ -19980,7 +19980,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "0" *) 
   (* ram_slice_end = "0" *) 
   RAM128X1D #(
-    .INIT(128'hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3968_4095_0_0
        (.A(address[6:0]),
         .D(writedata[0]),
@@ -20009,7 +20009,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "10" *) 
   (* ram_slice_end = "10" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3968_4095_10_10
        (.A(address[6:0]),
         .D(writedata[10]),
@@ -20028,7 +20028,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "11" *) 
   (* ram_slice_end = "11" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3968_4095_11_11
        (.A(address[6:0]),
         .D(writedata[11]),
@@ -20199,7 +20199,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "1" *) 
   (* ram_slice_end = "1" *) 
   RAM128X1D #(
-    .INIT(128'hCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3968_4095_1_1
        (.A(address[6:0]),
         .D(writedata[1]),
@@ -20408,7 +20408,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "2" *) 
   (* ram_slice_end = "2" *) 
   RAM128X1D #(
-    .INIT(128'hF0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3968_4095_2_2
        (.A(address[6:0]),
         .D(writedata[2]),
@@ -20465,7 +20465,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "3" *) 
   (* ram_slice_end = "3" *) 
   RAM128X1D #(
-    .INIT(128'hFF00FF00FF00FF00FF00FF00FF00FF00)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3968_4095_3_3
        (.A(address[6:0]),
         .D(writedata[3]),
@@ -20484,7 +20484,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "4" *) 
   (* ram_slice_end = "4" *) 
   RAM128X1D #(
-    .INIT(128'hFFFF0000FFFF0000FFFF0000FFFF0000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3968_4095_4_4
        (.A(address[6:0]),
         .D(writedata[4]),
@@ -20503,7 +20503,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "5" *) 
   (* ram_slice_end = "5" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFF00000000FFFFFFFF00000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3968_4095_5_5
        (.A(address[6:0]),
         .D(writedata[5]),
@@ -20522,7 +20522,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "6" *) 
   (* ram_slice_end = "6" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFF0000000000000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3968_4095_6_6
        (.A(address[6:0]),
         .D(writedata[6]),
@@ -20541,7 +20541,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "7" *) 
   (* ram_slice_end = "7" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3968_4095_7_7
        (.A(address[6:0]),
         .D(writedata[7]),
@@ -20560,7 +20560,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "8" *) 
   (* ram_slice_end = "8" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3968_4095_8_8
        (.A(address[6:0]),
         .D(writedata[8]),
@@ -20579,7 +20579,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "9" *) 
   (* ram_slice_end = "9" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_3968_4095_9_9
        (.A(address[6:0]),
         .D(writedata[9]),
@@ -20598,7 +20598,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "0" *) 
   (* ram_slice_end = "0" *) 
   RAM128X1D #(
-    .INIT(128'hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_512_639_0_0
        (.A(address[6:0]),
         .D(writedata[0]),
@@ -20817,7 +20817,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "1" *) 
   (* ram_slice_end = "1" *) 
   RAM128X1D #(
-    .INIT(128'hCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_512_639_1_1
        (.A(address[6:0]),
         .D(writedata[1]),
@@ -21026,7 +21026,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "2" *) 
   (* ram_slice_end = "2" *) 
   RAM128X1D #(
-    .INIT(128'hF0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_512_639_2_2
        (.A(address[6:0]),
         .D(writedata[2]),
@@ -21083,7 +21083,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "3" *) 
   (* ram_slice_end = "3" *) 
   RAM128X1D #(
-    .INIT(128'hFF00FF00FF00FF00FF00FF00FF00FF00)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_512_639_3_3
        (.A(address[6:0]),
         .D(writedata[3]),
@@ -21102,7 +21102,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "4" *) 
   (* ram_slice_end = "4" *) 
   RAM128X1D #(
-    .INIT(128'hFFFF0000FFFF0000FFFF0000FFFF0000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_512_639_4_4
        (.A(address[6:0]),
         .D(writedata[4]),
@@ -21121,7 +21121,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "5" *) 
   (* ram_slice_end = "5" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFF00000000FFFFFFFF00000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_512_639_5_5
        (.A(address[6:0]),
         .D(writedata[5]),
@@ -21140,7 +21140,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "6" *) 
   (* ram_slice_end = "6" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFF0000000000000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_512_639_6_6
        (.A(address[6:0]),
         .D(writedata[6]),
@@ -21197,7 +21197,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "9" *) 
   (* ram_slice_end = "9" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_512_639_9_9
        (.A(address[6:0]),
         .D(writedata[9]),
@@ -21216,7 +21216,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "0" *) 
   (* ram_slice_end = "0" *) 
   RAM128X1D #(
-    .INIT(128'hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_640_767_0_0
        (.A(address[6:0]),
         .D(writedata[0]),
@@ -21435,7 +21435,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "1" *) 
   (* ram_slice_end = "1" *) 
   RAM128X1D #(
-    .INIT(128'hCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_640_767_1_1
        (.A(address[6:0]),
         .D(writedata[1]),
@@ -21644,7 +21644,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "2" *) 
   (* ram_slice_end = "2" *) 
   RAM128X1D #(
-    .INIT(128'hF0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_640_767_2_2
        (.A(address[6:0]),
         .D(writedata[2]),
@@ -21701,7 +21701,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "3" *) 
   (* ram_slice_end = "3" *) 
   RAM128X1D #(
-    .INIT(128'hFF00FF00FF00FF00FF00FF00FF00FF00)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_640_767_3_3
        (.A(address[6:0]),
         .D(writedata[3]),
@@ -21720,7 +21720,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "4" *) 
   (* ram_slice_end = "4" *) 
   RAM128X1D #(
-    .INIT(128'hFFFF0000FFFF0000FFFF0000FFFF0000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_640_767_4_4
        (.A(address[6:0]),
         .D(writedata[4]),
@@ -21739,7 +21739,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "5" *) 
   (* ram_slice_end = "5" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFF00000000FFFFFFFF00000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_640_767_5_5
        (.A(address[6:0]),
         .D(writedata[5]),
@@ -21758,7 +21758,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "6" *) 
   (* ram_slice_end = "6" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFF0000000000000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_640_767_6_6
        (.A(address[6:0]),
         .D(writedata[6]),
@@ -21777,7 +21777,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "7" *) 
   (* ram_slice_end = "7" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_640_767_7_7
        (.A(address[6:0]),
         .D(writedata[7]),
@@ -21815,7 +21815,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "9" *) 
   (* ram_slice_end = "9" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_640_767_9_9
        (.A(address[6:0]),
         .D(writedata[9]),
@@ -21834,7 +21834,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "0" *) 
   (* ram_slice_end = "0" *) 
   RAM128X1D #(
-    .INIT(128'hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_768_895_0_0
        (.A(address[6:0]),
         .D(writedata[0]),
@@ -22053,7 +22053,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "1" *) 
   (* ram_slice_end = "1" *) 
   RAM128X1D #(
-    .INIT(128'hCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_768_895_1_1
        (.A(address[6:0]),
         .D(writedata[1]),
@@ -22262,7 +22262,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "2" *) 
   (* ram_slice_end = "2" *) 
   RAM128X1D #(
-    .INIT(128'hF0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_768_895_2_2
        (.A(address[6:0]),
         .D(writedata[2]),
@@ -22319,7 +22319,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "3" *) 
   (* ram_slice_end = "3" *) 
   RAM128X1D #(
-    .INIT(128'hFF00FF00FF00FF00FF00FF00FF00FF00)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_768_895_3_3
        (.A(address[6:0]),
         .D(writedata[3]),
@@ -22338,7 +22338,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "4" *) 
   (* ram_slice_end = "4" *) 
   RAM128X1D #(
-    .INIT(128'hFFFF0000FFFF0000FFFF0000FFFF0000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_768_895_4_4
        (.A(address[6:0]),
         .D(writedata[4]),
@@ -22357,7 +22357,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "5" *) 
   (* ram_slice_end = "5" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFF00000000FFFFFFFF00000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_768_895_5_5
        (.A(address[6:0]),
         .D(writedata[5]),
@@ -22376,7 +22376,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "6" *) 
   (* ram_slice_end = "6" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFF0000000000000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_768_895_6_6
        (.A(address[6:0]),
         .D(writedata[6]),
@@ -22414,7 +22414,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "8" *) 
   (* ram_slice_end = "8" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_768_895_8_8
        (.A(address[6:0]),
         .D(writedata[8]),
@@ -22433,7 +22433,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "9" *) 
   (* ram_slice_end = "9" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_768_895_9_9
        (.A(address[6:0]),
         .D(writedata[9]),
@@ -22452,7 +22452,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "0" *) 
   (* ram_slice_end = "0" *) 
   RAM128X1D #(
-    .INIT(128'hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_896_1023_0_0
        (.A(address[6:0]),
         .D(writedata[0]),
@@ -22671,7 +22671,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "1" *) 
   (* ram_slice_end = "1" *) 
   RAM128X1D #(
-    .INIT(128'hCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_896_1023_1_1
        (.A(address[6:0]),
         .D(writedata[1]),
@@ -22880,7 +22880,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "2" *) 
   (* ram_slice_end = "2" *) 
   RAM128X1D #(
-    .INIT(128'hF0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_896_1023_2_2
        (.A(address[6:0]),
         .D(writedata[2]),
@@ -22937,7 +22937,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "3" *) 
   (* ram_slice_end = "3" *) 
   RAM128X1D #(
-    .INIT(128'hFF00FF00FF00FF00FF00FF00FF00FF00)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_896_1023_3_3
        (.A(address[6:0]),
         .D(writedata[3]),
@@ -22956,7 +22956,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "4" *) 
   (* ram_slice_end = "4" *) 
   RAM128X1D #(
-    .INIT(128'hFFFF0000FFFF0000FFFF0000FFFF0000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_896_1023_4_4
        (.A(address[6:0]),
         .D(writedata[4]),
@@ -22975,7 +22975,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "5" *) 
   (* ram_slice_end = "5" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFF00000000FFFFFFFF00000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_896_1023_5_5
        (.A(address[6:0]),
         .D(writedata[5]),
@@ -22994,7 +22994,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "6" *) 
   (* ram_slice_end = "6" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFF0000000000000000)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_896_1023_6_6
        (.A(address[6:0]),
         .D(writedata[6]),
@@ -23013,7 +23013,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "7" *) 
   (* ram_slice_end = "7" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_896_1023_7_7
        (.A(address[6:0]),
         .D(writedata[7]),
@@ -23032,7 +23032,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "8" *) 
   (* ram_slice_end = "8" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_896_1023_8_8
        (.A(address[6:0]),
         .D(writedata[8]),
@@ -23051,7 +23051,7 @@ module system_datamemIP_0_0_datamemIP
   (* ram_slice_begin = "9" *) 
   (* ram_slice_end = "9" *) 
   RAM128X1D #(
-    .INIT(128'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)) 
+    .INIT(128'h00000000000000000000000000000000)) 
     ram_mem_reg_896_1023_9_9
        (.A(address[6:0]),
         .D(writedata[9]),

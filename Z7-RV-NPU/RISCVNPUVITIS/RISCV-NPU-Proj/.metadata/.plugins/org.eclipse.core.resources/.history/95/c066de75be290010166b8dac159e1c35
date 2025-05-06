@@ -1,0 +1,591 @@
+//
+// File: ert_main.cpp
+//
+// Code generated with Waijung 2 ZYNQ7000 Target Blockset,
+// for Simulink model 'zynq_7000_tutorial_3'.
+//
+// Model version                  : 1.10
+// Simulink Coder version         : 9.7 (R2022a) 13-Nov-2021
+// C/C++ source code generated on : Tue Mar 25 11:08:54 2025
+//
+// Target selection: zynq7000.tlc
+// Embedded hardware selection: ARM Compatible->ARM Cortex
+// Code generation objectives: Unspecified
+// Validation result: Not run
+//
+#include <stdio.h>
+#include <string.h>
+#include "xuartps.h"
+#include "xscugic.h"
+#include "xil_exception.h"
+
+//* Model's header file *
+#include "zynq_7000_tutorial_3.h"
+#include "rtwtypes.h"
+
+
+/* Definitions for peripheral CONTROLSUBSYSTEMIP_0 */
+#define XPAR_CONTROLSUBSYSTEMIP_0_BASEADDR 0x83C00000
+#define XPAR_CONTROLSUBSYSTEMIP_0_HIGHADDR 0x83C0ffff
+
+/* Canonical definitions for peripheral CONTROLSUBSYSTEMIP_0 */
+#define XPAR_CONTROLSUBSYSTEMIP_0_BASEADDR 0x83C00000
+#define XPAR_CONTROLSUBSYSTEMIP_0_HIGHADDR 0x83C0ffff
+
+/* Definitions for peripheral DATAMEMIP_0 */
+#define XPAR_DATAMEMIP_0_BASEADDR 0x83c10000
+#define XPAR_DATAMEMIP_0_HIGHADDR 0x83c1ffff
+
+/* Canonical definitions for peripheral DATAMEMIP_0 */
+#define XPAR_DATAMEMIP_0_BASEADDR 0x83c10000
+#define XPAR_DATAMEMIP_0_HIGHADDR 0x83c1ffff
+
+/* Definitions for peripheral INSTRUCTIONMEMIP_0 */
+#define XPAR_INSTRUCTIONMEMIP_0_BASEADDR 0x83c20000
+#define XPAR_INSTRUCTIONMEMIP_0_HIGHADDR 0x83c2ffff
+
+/* Canonical definitions for peripheral INSTRUCTIONMEMIP_0 */
+#define XPAR_INSTRUCTIONMEMIP_0_BASEADDR 0x83c20000
+#define XPAR_INSTRUCTIONMEMIP_0_HIGHADDR 0x83c2ffff
+
+/* Definitions for peripheral REGISTERIP_0 */
+#define XPAR_REGISTERIP_0_BASEADDR 0x83c30000
+#define XPAR_REGISTERIP_0_HIGHADDR 0x83c3ffff
+
+/* Canonical definitions for peripheral REGISTERIP_0 */
+#define XPAR_REGISTERIP_0_BASEADDR 0x83c30000
+#define XPAR_REGISTERIP_0_HIGHADDR 0x83c3ffff
+
+
+
+//
+// ===============================================================
+//  Simulink simulation information
+// ===============================================================
+//  Simulink model name: zynq_7000_tutorial_3
+//  Note that:
+//  Waijung 2 ZYNQ7000 target forces "Higher priority value indicates
+//  higher task priority" under Simulink model configuration.
+//  This is opposite to the default Simulink configuration where
+//  lower priority value indicates higher priority.
+//  Base priority level for all synchronous (periodic) and asynchronous tasks: 0
+//  (This is set from Waijung 2 ZYNQ7000 target setup blockset under FreeRTOS tab -> Base task priority parameter.)
+//  Synchronous (periodic) task information:
+//  Number of synchronous periodic tasks: 1
+//  Highest priority level needed for periodic tasks: 0
+//  Highest priority level limit for the system: 8
+//  Task 0 (Function name: vTaskFunctionBaseRate), base rate: 0.2 seconds, priority: 0
+//  Default NULL definition: (nullptr)
+//
+// ===============================================================
+//  Waijung 2 Info
+// ===============================================================
+//  Waijung 2 version: 24.1a
+//  Waijung 2 target: ZYNQ7000
+//  Target OS: BareBoard
+//  Project path: C:\Workspace\Matlab
+//  Toolchain: XILINX
+// ===============================================================
+
+#define INSTRUCTION_SIZE 512
+
+// Global variables for UART handling
+static char UartRxBuffer[INSTRUCTION_SIZE * 8 + 3]; // S + payload + P + null terminator
+static int UartRxBytes = 0;
+static volatile int PayloadReceived = 0;
+
+// Function prototypes
+static void UartHandler(void *CallBackRef, u32 Event, unsigned int EventData);
+void rt_OneStep(void);
+
+void rt_OneStep(void)
+{
+  // Disable interrupts here
+  BareBoard_ClearSysTickInterruptStatus();
+  BareBoard_DisableSysTickInterrupt();
+
+  // Re-enable timer or interrupt here
+  BareBoard_EnableSysTickInterrupt();
+
+  // Step the model
+
+  // Enable nested interrupts
+  Xil_EnableNestedInterrupts();
+
+  // Xil_EnableNestedInterrupts switches processor mode to SYS and it is not known
+  //  whether stack in that mode is 8-byte aligned at the time of this interrupt.
+  //  However, this is a prerequisite for the ARM procedure call standard.
+  //  A non-8-byte-aligned stack will cause e.g. printf() to fail when printing doubles.
+  //
+  //  Ensure stack pointer is 8-byte aligned.
+
+  __asm__ __volatile__ ("tst sp, #0x7");// Is stack 8-byte aligned?
+  __asm__ __volatile__ ("streq sp, [sp, #-8]!");
+                                 // if so, store SP at SP-8 and write SP-8 to SP
+  __asm__ __volatile__ ("strne sp, [sp, #-4]!");
+                                // if not, store SP at SP-8 and write SP-8 to SP
+
+  // Step function
+  zynq_7000_tutorial_3_step();
+
+  // Get model outputs here
+
+  // Disable nested interrupts
+  __asm__ __volatile__ ("ldr sp, [sp]");
+                                    // pop SP value from before 8-byte alignment
+  Xil_DisableNestedInterrupts();
+}
+
+int_T main(void)
+{
+
+  // Variables for UART menu system
+  int INSTRUCTIONCODE[512];
+  char choice;
+  char buffer[INSTRUCTION_SIZE * 8 + 16]; // Extra space for protocol overhead
+  int running = 1;
+  int use_ai_camera = 0;
+  char c;
+  int idx;
+  char temp[9]; // 8 hex chars + null terminator
+  char* payload;
+  int i;
+  u32 ReceivedCount = 0;
+  u32 ExpectedCount;
+  u32 timeout_counter;
+  const u32 TIMEOUT_MAX = 1000000; // Timeout to prevent hanging
+  u8 crc = 0;
+  int retry_count = 0;
+  const int MAX_RETRIES = 3;
+
+  // Initialize arrays to store regIP and dataMemIP values
+  int regIPValues[32] = {0}; // Automatically clears old contents
+  int dataMemValues[4096] = {0}; // Automatically clears old contents
+
+
+
+  //base adress pointers
+  int* regIP = XPAR_REGISTERIP_0_BASEADDR;
+  int* dataMemIP = XPAR_DATAMEMIP_0_BASEADDR;
+  int* instructionMemIP = XPAR_INSTRUCTIONMEMIP_0_BASEADDR;
+  int* controlSubSystemIP = XPAR_CONTROLSUBSYSTEMIP_0_BASEADDR;
+
+  //initial control subsystem adresses
+     int* resetSignal = controlSubSystemIP;
+     int* holdSignal = controlSubSystemIP+1;
+     int* startSignal = controlSubSystemIP+2;
+
+
+  // Initialize temp string terminator
+  temp[8] = '\0';
+
+  // Print startup message
+  xil_printf("\r\n\r\nInitializing UART communication...\r\n");
+
+  // Make sure we're using UART1, not UART0
+  // Ensure UART is in normal mode and set receive timeout
+  XUartPs_WriteReg(XPAR_PS7_UART_1_BASEADDR, XUARTPS_MR_OFFSET,
+                  (XUartPs_ReadReg(XPAR_PS7_UART_1_BASEADDR, XUARTPS_MR_OFFSET) &
+                  ~XUARTPS_MR_CHMODE_MASK) | XUARTPS_MR_CHMODE_NORM);
+  XUartPs_WriteReg(XPAR_PS7_UART_1_BASEADDR, XUARTPS_RXTOUT_OFFSET, 8);
+
+  // Verify UART is correctly configured
+  if ((XUartPs_ReadReg(XPAR_PS7_UART_1_BASEADDR, XUARTPS_MR_OFFSET) &
+      XUARTPS_MR_CHMODE_MASK) != XUARTPS_MR_CHMODE_NORM) {
+      xil_printf("ERROR: Failed to set UART to normal mode\r\n");
+      return XST_FAILURE;
+  }
+
+  // Flush any existing data in the receive buffer with timeout
+  xil_printf("Flushing UART receive buffer...\r\n");
+  timeout_counter = 0;
+  while ((XUartPs_ReadReg(XPAR_PS7_UART_1_BASEADDR, XUARTPS_SR_OFFSET) &
+         XUARTPS_SR_RXEMPTY) == 0) {
+      XUartPs_ReadReg(XPAR_PS7_UART_1_BASEADDR, XUARTPS_FIFO_OFFSET);
+      timeout_counter++;
+      if (timeout_counter > 1000) { // Short timeout for flush
+          break;
+      }
+  }
+
+  xil_printf("UART initialization complete\r\n");
+
+  while(running) {
+    if (!use_ai_camera) {
+        xil_printf("\r\n\r\n\r\nPcam 5C MAIN OPTIONS\r\n");
+        xil_printf("1. Run RISCV instructions\r\n");
+        xil_printf("2. Use AI camera\r\n");
+        xil_printf("3. Exit program\r\n");
+        xil_printf("Enter your choice (1-3): ");
+
+        // Read a single character for menu selection with timeout
+        timeout_counter = 0;
+        choice = 0; // Initialize to invalid value
+
+        while (!XUartPs_IsReceiveData(XPAR_PS7_UART_1_BASEADDR)) {
+            timeout_counter++;
+            usleep(100); // Small delay to prevent tight loop
+            if (timeout_counter > TIMEOUT_MAX / 10) { // Shorter timeout for menu
+                xil_printf("\r\nTimeout waiting for input. Please try again.\r\n");
+                break;
+            }
+        }
+
+        if (XUartPs_IsReceiveData(XPAR_PS7_UART_1_BASEADDR)) {
+            choice = XUartPs_RecvByte(XPAR_PS7_UART_1_BASEADDR);
+            xil_printf("%c\r\n", choice);
+        }
+
+        switch(choice) {
+            case '1': {
+                xil_printf("\r\nPLEASE SEND payload (format: S<hex data>P)\r\n");
+                xil_printf("Waiting for start character 'S'...\r\n");
+
+                // Read the payload
+                memset(buffer, 0, sizeof(buffer));
+                idx = 0;
+                retry_count = 0;
+
+                // Calculate expected payload size (S + INSTRUCTION_SIZE*8 hex chars + P)
+                ExpectedCount = INSTRUCTION_SIZE * 8 + 2;
+
+                // Clear any UART errors before starting
+                u32 status_reg = XUartPs_ReadReg(XPAR_PS7_UART_1_BASEADDR, XUARTPS_SR_OFFSET);
+                if (status_reg & (XUARTPS_IXR_PARITY | XUARTPS_IXR_FRAMING | XUARTPS_IXR_OVER)) {
+                    // Clear error flags by reading the status register
+                    xil_printf("Detected UART error flags\r\n");
+                }
+
+payload_retry:
+                if (retry_count > 0) {
+                    xil_printf("\r\nRetrying payload reception (attempt %d of %d)...\r\n",
+                              retry_count, MAX_RETRIES);
+                }
+
+                // Wait for start character 'S' with timeout
+                timeout_counter = 0;
+                idx = 0;
+                while (1) {
+                    if (XUartPs_IsReceiveData(XPAR_PS7_UART_1_BASEADDR)) {
+                        c = XUartPs_RecvByte(XPAR_PS7_UART_1_BASEADDR);
+                        if (c == 'S') {
+                            buffer[idx++] = c;
+                            xil_printf("Start character received. Waiting for payload...\r\n");
+                            break;
+                        }
+                    }
+
+                    timeout_counter++;
+                    usleep(100); // Small delay to prevent tight loop
+                    if (timeout_counter > TIMEOUT_MAX) {
+                        if (retry_count < MAX_RETRIES) {
+                            retry_count++;
+                            xil_printf("\r\nTimeout waiting for start character. Retrying...\r\n");
+                            goto payload_retry;
+                        } else {
+                            xil_printf("\r\nMax retries exceeded. Aborting payload reception.\r\n");
+                            goto menu_restart;
+                        }
+                    }
+                }
+
+                // Read the rest of the payload with timeout
+                ReceivedCount = 1; // We already received 'S'
+                timeout_counter = 0;
+
+                xil_printf("Receiving payload data...\r\n");
+
+                while (ReceivedCount < ExpectedCount) {
+                    // Check for UART errors
+                    status_reg = XUartPs_ReadReg(XPAR_PS7_UART_1_BASEADDR, XUARTPS_SR_OFFSET);
+                    if (status_reg & (XUARTPS_IXR_PARITY | XUARTPS_IXR_FRAMING | XUARTPS_IXR_OVER)) {
+                        if (retry_count < MAX_RETRIES) {
+                            retry_count++;
+                            xil_printf("\r\nUART error detected. Retrying payload reception.\r\n");
+                            goto payload_retry;
+                        } else {
+                            xil_printf("\r\nMax retries exceeded. Aborting payload reception.\r\n");
+                            goto menu_restart;
+                        }
+                    }
+
+                    if (XUartPs_IsReceiveData(XPAR_PS7_UART_1_BASEADDR)) {
+                        c = XUartPs_RecvByte(XPAR_PS7_UART_1_BASEADDR);
+
+                        // Print progress indicator
+                        if (ReceivedCount % 100 == 0) {
+                            xil_printf(".");
+                        }
+
+                        buffer[idx++] = c;
+                        ReceivedCount++;
+                        timeout_counter = 0; // Reset timeout counter on successful read
+
+                        // Check for end character 'P'
+                        if (c == 'P' && ReceivedCount >= (INSTRUCTION_SIZE * 8 + 1)) {
+                            xil_printf("\r\nEnd character 'P' received. Processing payload...\r\n");
+                            break;
+                        }
+                    } else {
+                        timeout_counter++;
+                        usleep(100); // Small delay to prevent tight loop
+                        if (timeout_counter > TIMEOUT_MAX) {
+                            if (retry_count < MAX_RETRIES) {
+                                retry_count++;
+                                xil_printf("\r\nTimeout waiting for complete payload. Retrying...\r\n");
+                                goto payload_retry;
+                            } else {
+                                xil_printf("\r\nMax retries exceeded. Aborting payload reception.\r\n");
+                                goto menu_restart;
+                            }
+                        }
+                    }
+                }
+                buffer[idx] = '\0';
+
+                // Check if payload starts with 'S' and ends with 'P'
+                if (buffer[0] == 'S' && buffer[idx-1] == 'P') {
+                    // Parse the payload (INSTRUCTION_SIZE 32-bit values in hex)
+                    payload = buffer + 1; // Skip the 'S'
+
+                    // Null-terminate the payload by replacing 'P'
+                    payload[idx-2] = '\0';
+
+                    // Calculate simple checksum for validation
+                    crc = 0;
+                    for (i = 0; i < idx-2; i++) {
+                        crc ^= payload[i];
+                    }
+
+                    xil_printf("Parsing %d instructions...\r\n", INSTRUCTION_SIZE);
+
+                    for (i = 0; i < INSTRUCTION_SIZE; i++) {
+                        if ((i * 8) + 8 <= idx - 2) { // Make sure we don't read past the buffer
+                            strncpy(temp, payload + (i * 8), 8);
+                            temp[8] = '\0'; // Ensure null termination
+                            if (sscanf(temp, "%x", &INSTRUCTIONCODE[i]) != 1) {
+                                xil_printf("Error parsing instruction %d: '%s'\r\n", i+1, temp);
+                                INSTRUCTIONCODE[i] = 0;
+                            }
+                        } else {
+                            xil_printf("Warning: Instruction %d is incomplete\r\n", i+1);
+                            INSTRUCTIONCODE[i] = 0;
+                        }
+                    }
+
+                    // Print out the instruction buffer (just first 10 for brevity)
+                    xil_printf("\r\nInstruction Buffer Contents (ALL 512):\r\n");
+                    for (i = 0; i < 512 && i < INSTRUCTION_SIZE; i++) {
+                        xil_printf("%3d: 0x%08X\r\n", i+1, INSTRUCTIONCODE[i]);
+                    }
+                    xil_printf("... (total %d instructions)\r\n", INSTRUCTION_SIZE);
+                    xil_printf("Payload CRC: 0x%02X\r\n", crc);
+
+                    xil_printf("\r\nRunning the processor...\r\n");
+
+                    // Here you would add code to execute the RISCV instructions
+                    // using the INSTRUCTIONCODE array
+
+
+                       //inital control subsystem calls
+                       *holdSignal = 1;
+                       sleep(1);
+                       *resetSignal = 0;
+                       sleep(1);
+                       *resetSignal = 1;
+                       sleep(1);
+
+                       //at this point the processor is reset and holding
+                       //next we program manually
+
+                       //to hard code i went to https://www.textfixer.com/tools/remove-line-breaks.php to remove linebreaks from given hex file
+                       //then to https://www.dcode.fr/spaces-remover to replace whitespaces in input with ", 0x"
+                       //wrap with {}
+
+                       //hardcoded instuction array OLD ONE used in VITIS 2024.2 TB
+                     //  int instructionArray[512] = {0x00000000, 0xff010113, 0x00500793, 0x00f12623, 0x00a00793, 0x00f12423, 0x00c12703, 0x00812783, 0x00f707b3, 0x00f12223, 0x00412783, 0x00078513, 0x01010113, 0x00000067};
+
+                       //hardcoded expected outout array
+
+
+
+                       //next we load the instructions into the instruction memory
+                       for(int i = 0; i < 512; i++){
+                           if(INSTRUCTIONCODE[i] != NULL){
+                               instructionMemIP[i] = INSTRUCTIONCODE[i];
+                           }else{
+                               instructionMemIP[i] = 0x00000000;
+                           }
+
+                       }
+
+                       int memoryMiswriteFlag = 0;
+
+                       for (int i=0; i<512; i++) {
+                           int readVal = instructionMemIP[i];
+                           if(readVal != INSTRUCTIONCODE[i]){
+                               xil_printf("error in instructionMem[%d] = %d\n\r", i, readVal);
+                               memoryMiswriteFlag = 1;
+                           }
+                       }
+
+                       //if there were no errors in writting the instruciton memory prun the processor
+                       if(memoryMiswriteFlag == 0){
+                           //next we can stop holding the processor
+                           *holdSignal = 0;
+
+                           //and start the running
+                           *startSignal = 1;
+
+                           //wait for the processor to finish running
+                           sleep(5);
+
+                           //turning off start stops the processor
+                           *startSignal = 0;
+                           *holdSignal = 1;
+                           sleep(1);
+
+                       }
+
+
+                       xil_printf("\r\nProcessor Results:.\r\n");
+
+                       // Clear regIPValues array
+                          for (int i = 0; i < 32; i++) {
+                              regIPValues[i] = 0;
+                          }
+
+                          // Clear dataMemValues array
+                          for (int i = 0; i < 4096; i++) {
+                              dataMemValues[i] = 0;
+                          }
+
+
+                        // Then, we can read the data in the register file:
+                        for (int i = 0; i < 32; i++) {
+                            regIPValues[i] = regIP[i]; // Save the read value into the array
+                            xil_printf("r[%d] = %d\n\r", i, regIPValues[i]);
+                        }
+
+                        //due to the size of the following IP's we will just read a couple of the registers
+                        //instruction mem
+
+                        //datamem
+                        for (int i = 0; i < 4096; i++) {
+                            dataMemValues[i] = dataMemIP[i]; // Save the read value into the array
+                            xil_printf("\r\nData mem read....\r\n");
+
+                            xil_printf("dataMem[%d] = %d\n\r", i, dataMemValues[i]);
+                        }
+
+
+                    xil_printf("\r\nProcessor execution completed. Press Any Key To Continue....\r\n");
+                    getchar();
+
+                    // Send ACK to indicate successful processing
+                    XUartPs_SendByte(XPAR_PS7_UART_1_BASEADDR, 'A');
+                } else {
+                    xil_printf("\r\nInvalid payload format. Expected 'S[payload]P'\r\n");
+                    xil_printf("Received: %c...%c\r\n", buffer[0], buffer[idx-1]);
+
+                    // Send NACK to indicate failure
+                    XUartPs_SendByte(XPAR_PS7_UART_1_BASEADDR, 'N');
+                }
+                break;
+            }
+
+            case '2': {
+                use_ai_camera = 1;
+                xil_printf("\r\nStarting AI camera...\r\n");
+                break;
+            }
+
+            case '3': {
+                xil_printf("\r\nExiting program...\r\n");
+                running = 0;
+                break;
+            }
+
+            default: {
+                xil_printf("\r\nInvalid choice. Please try again.\r\n");
+                break;
+            }
+        }
+
+menu_restart:
+        // This label is used for error conditions to restart the menu
+        continue;
+    } else {
+        // AI camera mode - run the Simulink model
+        xil_printf("\r\nRunning AI camera mode (Simulink model)...\r\n");
+
+
+
+        // Setup SysTick Timer
+         // The base sample time -> 0.2 seconds
+         int Status = BareBoard_SetupSysTickTimer(1);
+         if (Status != XST_SUCCESS) {
+           xil_printf("Failed to setup 'BareBoard_SetupSysTickTimer()'\r\n");
+           return XST_FAILURE;
+         }
+
+         // Initialize model
+         zynq_7000_tutorial_3_initialize();
+         Status = BareBoard_SetupSysTickTimer(2);
+         if (Status != XST_SUCCESS) {
+           xil_printf("Failed to setup 'BareBoard_SetupSysTickTimer()'\r\n");
+           return XST_FAILURE;
+         }
+
+
+
+        // Run the Simulink model until error or user interrupts
+        while (rtmGetErrorStatus(zynq_7000_tutorial_3_M) == (nullptr)) {
+            // Perform other application tasks here
+
+            // Check for user input to exit camera mode
+            if (XUartPs_IsReceiveData(XPAR_PS7_UART_1_BASEADDR)) {
+                c = XUartPs_RecvByte(XPAR_PS7_UART_1_BASEADDR);
+                if (c == 'q' || c == 'Q') {
+                    xil_printf("\r\nUser requested to exit camera mode.\r\n");
+                    break;
+                }
+            }
+
+            // Small delay to prevent tight loop
+            usleep(10000);
+        }
+
+        // Check if we exited due to an error
+        if (rtmGetErrorStatus(zynq_7000_tutorial_3_M) != (nullptr)) {
+            xil_printf("\r\nError in Simulink model: %s\r\n", rtmGetErrorStatus(zynq_7000_tutorial_3_M));
+        }
+
+        // Reset camera mode flag to return to menu
+        use_ai_camera = 0;
+        xil_printf("\r\nExiting camera mode, returning to main menu...\r\n");
+
+    }
+    }
+    // Disable SysTick Timer
+    BareBoard_DisableSysTickTimer();
+    // Terminate model
+    zynq_7000_tutorial_3_terminate();
+    return XST_SUCCESS;
+    }
+    // Handler for UART interrupts
+    static void UartHandler(void *CallBackRef, u32 Event, unsigned int EventData)
+    {
+    // This is a placeholder for UART interrupt handling
+    // Not used in the current implementation but kept for future expansion
+    if (Event == XUARTPS_EVENT_RECV_DATA) {
+    // Data received
+    } else if (Event == XUARTPS_EVENT_SENT_DATA) {
+    // Data sent
+    } else if (Event == XUARTPS_EVENT_RECV_TOUT) {
+    // Receive timeout
+    } else if (Event == XUARTPS_EVENT_RECV_ERROR) {
+    // Receive error
+    }
+    }
+    // [EOF]
