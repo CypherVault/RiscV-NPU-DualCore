@@ -1,7 +1,7 @@
 //
 // File: ert_main.cpp
 //
-// Code generated with Waijung 2 ZYNQ7000 Target Blockset,
+// Code generated with  ZYNQ7000 Target Blockset,
 // for Simulink model 'zynq_7000_tutorial_3'.
 //
 // Model version                  : 1.10
@@ -64,12 +64,12 @@
 // ===============================================================
 //  Simulink model name: zynq_7000_tutorial_3
 //  Note that:
-//  Waijung 2 ZYNQ7000 target forces "Higher priority value indicates
+//   ZYNQ7000 target forces "Higher priority value indicates
 //  higher task priority" under Simulink model configuration.
 //  This is opposite to the default Simulink configuration where
 //  lower priority value indicates higher priority.
 //  Base priority level for all synchronous (periodic) and asynchronous tasks: 0
-//  (This is set from Waijung 2 ZYNQ7000 target setup blockset under FreeRTOS tab -> Base task priority parameter.)
+//  (This is set from  ZYNQ7000 target setup blockset under FreeRTOS tab -> Base task priority parameter.)
 //  Synchronous (periodic) task information:
 //  Number of synchronous periodic tasks: 1
 //  Highest priority level needed for periodic tasks: 0
@@ -78,10 +78,10 @@
 //  Default NULL definition: (nullptr)
 //
 // ===============================================================
-//  Waijung 2 Info
+//   Info
 // ===============================================================
-//  Waijung 2 version: 24.1a
-//  Waijung 2 target: ZYNQ7000
+//   version: 24.1a
+//   target: ZYNQ7000
 //  Target OS: BareBoard
 //  Project path: C:\Workspace\Matlab
 //  Toolchain: XILINX
