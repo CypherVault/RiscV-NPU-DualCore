@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date             : Mon May  5 21:46:42 2025
+| Date             : Tue May  6 21:34:04 2025
 | Host             : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
 | Command          : report_power -file system_wrapper_power_routed.rpt -pb system_wrapper_power_summary_routed.pb -rpx system_wrapper_power_routed.rpx
 | Design           : system_wrapper
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.931        |
+| Total On-Chip Power (W)  | 1.932        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.779        |
+| Dynamic (W)              | 1.780        |
 | Device Static (W)        | 0.152        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 62.7         |
@@ -52,9 +52,9 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.058 |       13 |       --- |             --- |
+| Clocks                   |     0.060 |       13 |       --- |             --- |
 | Slice Logic              |     0.012 |    37338 |       --- |             --- |
-|   LUT as Logic           |     0.009 |    11588 |     53200 |           21.78 |
+|   LUT as Logic           |     0.009 |    11582 |     53200 |           21.77 |
 |   CARRY4                 |    <0.001 |      352 |     13300 |            2.65 |
 |   Register               |    <0.001 |    12909 |    106400 |           12.13 |
 |   LUT as Distributed RAM |    <0.001 |     5182 |     17400 |           29.78 |
@@ -68,7 +68,7 @@ Table of Contents
 | I/O                      |     0.084 |       23 |       125 |           18.40 |
 | PS7                      |     1.412 |        1 |       --- |             --- |
 | Static Power             |     0.152 |          |           |                 |
-| Total                    |     1.930 |          |           |                 |
+| Total                    |     1.932 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -78,7 +78,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.117 |       0.100 |      0.017 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.118 |       0.101 |      0.017 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.145 |       0.129 |      0.016 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.011 |       0.010 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -164,19 +164,19 @@ Table of Contents
 +---------------------------+-----------+
 | Name                      | Power (W) |
 +---------------------------+-----------+
-| system_wrapper            |     1.778 |
+| system_wrapper            |     1.780 |
 |   cam_gpio_tri_iobuf_0    |     0.004 |
 |   cam_iic_scl_iobuf       |     0.004 |
 |   cam_iic_sda_iobuf       |     0.004 |
-|   system_i                |     1.765 |
+|   system_i                |     1.766 |
 |     AXI_BayerToRGB_1      |     0.003 |
 |       U0                  |     0.003 |
 |     AXI_GammaCorrection_0 |     0.003 |
 |       U0                  |     0.003 |
 |     MIPI_CSI_2_RX_0       |     0.008 |
 |       U0                  |     0.008 |
-|     MIPI_D_PHY_RX_0       |     0.053 |
-|       U0                  |     0.053 |
+|     MIPI_D_PHY_RX_0       |     0.054 |
+|       U0                  |     0.054 |
 |     RISCVCOREZYNQ_0       |     0.003 |
 |       U0                  |     0.003 |
 |     axi_mem_intercon_1    |     0.001 |

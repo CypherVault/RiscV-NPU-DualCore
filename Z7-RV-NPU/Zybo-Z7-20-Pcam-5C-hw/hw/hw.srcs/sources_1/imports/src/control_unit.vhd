@@ -359,7 +359,7 @@ end process;
 --	  
 	  
 	  -- Replace concurrent-style assignment with sequential if-else
-  if (instruction(6 downto 0) = "1101111" or instruction(6 downto 0) = "1100111") then
+  if (instruction(6 downto 0) = "1101111" or instruction(6 downto 0) = "1100111" or instruction(6 downto 0) = "1100011" ) then
     ALUOp <= var_ALUOp;
   elsif (ctrl_disable = '1') then
     ALUOp <= "00";
@@ -388,7 +388,7 @@ MemRead <= '0' when (ctrl_disable = '1') else int_MemRead;
 
 MemWrite <= '0' when (ctrl_disable = '1') else int_MemWrite;
 
-Branch <= int_Branch when (instruction(6 downto 0) = "1101111" or instruction(6 downto 0) = "1100111") else
+Branch <= int_Branch when (instruction(6 downto 0) = "1101111" or instruction(6 downto 0) = "1100111" or instruction(6 downto 0) = "1100011") else
           '0' when (ctrl_disable = '1') else int_Branch;
           
 ALUSrc <= int_ALUSrc when (instruction(6 downto 0) = "1101111" or instruction(6 downto 0) = "1100111") else

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon May  5 21:38:36 2025" VIVADOVERSION="2020.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue May  6 21:25:28 2025" VIVADOVERSION="2020.2">
 
   <SYSTEMINFO ARCH="zynq" BOARD="digilentinc.com:zybo-z7-20:part0:1.1" DEVICE="7z020" NAME="system" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -5613,15 +5613,15 @@
         </PORT>
         <PORT DIR="O" NAME="riscv_resetbar" SIGIS="undef" SIGNAME="controlsubsystemIP_0_riscv_resetbar">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="RISCVCOREZYNQ_0" PORT="resetbar"/>
             <CONNECTION INSTANCE="registerIP_0" PORT="resetbar"/>
+            <CONNECTION INSTANCE="RISCVCOREZYNQ_0" PORT="resetbar"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="riscv_hold" SIGIS="undef" SIGNAME="controlsubsystemIP_0_riscv_hold">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="RISCVCOREZYNQ_0" PORT="hold"/>
             <CONNECTION INSTANCE="registerIP_0" PORT="hold"/>
             <CONNECTION INSTANCE="datamemIP_0" PORT="hold"/>
+            <CONNECTION INSTANCE="RISCVCOREZYNQ_0" PORT="hold"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="riscv_start" SIGIS="undef" SIGNAME="controlsubsystemIP_0_riscv_start">
@@ -7648,10 +7648,10 @@
             <CONNECTION INSTANCE="instructionmemIP_0" PORT="s00_axi_aclk"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph_1" PORT="M02_ACLK"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph_1" PORT="M03_ACLK"/>
-            <CONNECTION INSTANCE="RISCVCOREZYNQ_0" PORT="clock"/>
             <CONNECTION INSTANCE="controlsubsystemIP_0" PORT="s05_axi_aclk"/>
             <CONNECTION INSTANCE="registerIP_0" PORT="s01_axi_aclk"/>
             <CONNECTION INSTANCE="datamemIP_0" PORT="s02_axi_aclk"/>
+            <CONNECTION INSTANCE="RISCVCOREZYNQ_0" PORT="clock"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="processing_system7_0_FCLK_RESET0_N">

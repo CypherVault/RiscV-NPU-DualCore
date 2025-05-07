@@ -20,6 +20,7 @@ entity datamemIP is
 
         -- RISC-V Memory Interface
         hold      : in std_logic;
+        resetbar      : in std_logic;
         address     : in std_logic_vector(31 downto 0);
         writedata   : in std_logic_vector(31 downto 0);
         memwrite    : in std_logic;
@@ -66,17 +67,25 @@ begin
         end if;
     end process;
 
+
+
     -- AXI Read Data Output
-    axi_read_data : process(s02_axi_aclk)
-    begin
-        if rising_edge(s02_axi_aclk) then
-            if axi_rvalid = '1' then
-                s02_axi_rdata <= ram_mem(to_integer(
-                    unsigned(axi_araddr(C_S02_AXI_ADDR_WIDTH-1 downto 2))
-                ));
-            end if;
+axi_read_data : process(s02_axi_aclk, resetbar)  -- Add reset to sensitivity list
+begin
+    if resetbar = '0' then  -- Assuming active-low reset
+        s02_axi_rdata <= (others => '0');  -- Reset output data
+        -- Reset all RAM memory locations to 0
+        for i in 0 to C_RAM_DEPTH-1 loop
+            ram_mem(i) <= (others => '0');
+        end loop;
+    elsif rising_edge(s02_axi_aclk) then
+        if axi_rvalid = '1' then
+            s02_axi_rdata <= ram_mem(to_integer(
+                unsigned(axi_araddr(C_S02_AXI_ADDR_WIDTH-1 downto 2))
+            ));
         end if;
-    end process;
+    end if;
+end process;
 
     -- RISC-V Memory Interface
     mem_interface : process(s02_axi_aclk)

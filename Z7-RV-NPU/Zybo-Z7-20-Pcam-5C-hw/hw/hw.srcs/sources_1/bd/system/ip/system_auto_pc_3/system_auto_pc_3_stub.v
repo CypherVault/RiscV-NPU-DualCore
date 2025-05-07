@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-// Date        : Mon May  5 21:40:07 2025
+// Date        : Mon May  5 21:40:06 2025
 // Host        : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               c:/Users/Chris/Desktop/RiscV-NPU-DualCore/Z7-RV-NPU/Zybo-Z7-20-Pcam-5C-hw/hw/hw.srcs/sources_1/bd/system/ip/system_auto_pc_3/system_auto_pc_3_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top system_auto_pc_3 -prefix
+//               system_auto_pc_3_ system_auto_pc_3_stub.v
 // Design      : system_auto_pc_3
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg400-1

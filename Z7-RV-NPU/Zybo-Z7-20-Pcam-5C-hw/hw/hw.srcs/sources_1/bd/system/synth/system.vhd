@@ -1,7 +1,7 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
---Date        : Mon May  5 21:38:02 2025
+--Date        : Tue May  6 21:25:21 2025
 --Host        : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
 --Command     : generate_target system.bd
 --Design      : system
@@ -4987,28 +4987,6 @@ architecture STRUCTURE of system is
     peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component system_rst_ps7_0_10M_0;
-  component system_RISCVCOREZYNQ_0_0 is
-  port (
-    start : in STD_LOGIC;
-    hold : in STD_LOGIC;
-    clock : in STD_LOGIC;
-    resetbar : in STD_LOGIC;
-    pc_out : out STD_LOGIC_VECTOR ( 15 downto 0 );
-    instruction_in : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    reg_write : out STD_LOGIC;
-    rs1_addr : out STD_LOGIC_VECTOR ( 4 downto 0 );
-    rs2_addr : out STD_LOGIC_VECTOR ( 4 downto 0 );
-    rd_addr : out STD_LOGIC_VECTOR ( 4 downto 0 );
-    write_data : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    reg1_data : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    reg2_data : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    mem_read : out STD_LOGIC;
-    mem_write : out STD_LOGIC;
-    mem_addr : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    mem_write_data : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    mem_read_data : in STD_LOGIC_VECTOR ( 31 downto 0 )
-  );
-  end component system_RISCVCOREZYNQ_0_0;
   component system_controlsubsystemIP_0_0 is
   port (
     s05_axi_aclk : in STD_LOGIC;
@@ -5091,6 +5069,28 @@ architecture STRUCTURE of system is
     readdata : out STD_LOGIC_VECTOR ( 31 downto 0 )
   );
   end component system_datamemIP_0_0;
+  component system_RISCVCOREZYNQ_0_0 is
+  port (
+    start : in STD_LOGIC;
+    hold : in STD_LOGIC;
+    clock : in STD_LOGIC;
+    resetbar : in STD_LOGIC;
+    pc_out : out STD_LOGIC_VECTOR ( 15 downto 0 );
+    instruction_in : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    reg_write : out STD_LOGIC;
+    rs1_addr : out STD_LOGIC_VECTOR ( 4 downto 0 );
+    rs2_addr : out STD_LOGIC_VECTOR ( 4 downto 0 );
+    rd_addr : out STD_LOGIC_VECTOR ( 4 downto 0 );
+    write_data : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    reg1_data : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    reg2_data : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    mem_read : out STD_LOGIC;
+    mem_write : out STD_LOGIC;
+    mem_addr : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    mem_write_data : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    mem_read_data : in STD_LOGIC_VECTOR ( 31 downto 0 )
+  );
+  end component system_RISCVCOREZYNQ_0_0;
   signal AXI_BayerToRGB_1_AXI_Stream_Master_TDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal AXI_BayerToRGB_1_AXI_Stream_Master_TLAST : STD_LOGIC;
   signal AXI_BayerToRGB_1_AXI_Stream_Master_TREADY : STD_LOGIC;

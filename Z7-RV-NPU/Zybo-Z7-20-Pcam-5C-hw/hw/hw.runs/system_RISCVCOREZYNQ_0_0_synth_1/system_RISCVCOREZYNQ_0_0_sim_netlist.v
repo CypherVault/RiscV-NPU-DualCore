@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-// Date        : Mon May  5 19:07:19 2025
+// Date        : Tue May  6 21:27:03 2025
 // Host        : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ system_RISCVCOREZYNQ_0_0_sim_netlist.v
@@ -2334,21 +2334,21 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_RISCVCOREZYNQ
   wire \rs2_reg_reg[4] ;
   wire start;
 
-  (* SOFT_HLUTNM = "soft_lutpair220" *) 
+  (* SOFT_HLUTNM = "soft_lutpair223" *) 
   LUT2 #(
     .INIT(4'h8)) 
     branch_prev_i_1
        (.I0(\CONTROLUNIT_INST/branch_taken ),
         .I1(resetbar),
         .O(branch_prev_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair221" *) 
+  (* SOFT_HLUTNM = "soft_lutpair224" *) 
   LUT2 #(
     .INIT(4'h8)) 
     early_prev_i_1
        (.I0(controlunit_earlybranch_to_pcmux),
         .I1(resetbar),
         .O(early_prev_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair220" *) 
+  (* SOFT_HLUTNM = "soft_lutpair223" *) 
   LUT5 #(
     .INIT(32'h22F20000)) 
     int_if_flush_i_1
@@ -2424,7 +2424,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_RISCVCOREZYNQ
         .\rs2_reg_reg[3] (\rs2_reg_reg[3] ),
         .\rs2_reg_reg[4] (\rs2_reg_reg[4] ),
         .start(start));
-  (* SOFT_HLUTNM = "soft_lutpair221" *) 
+  (* SOFT_HLUTNM = "soft_lutpair224" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \pc_reg[15]_i_2 
@@ -10701,10 +10701,11 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_idex
     int_MemtoReg__4,
     p_1_in,
     RegWrite_reg_reg_1,
+    \ALUOp_reg_reg[0]_0 ,
+    Branch1__3,
+    \ALUOp_reg_reg[1]_1 ,
     int_Branch__2,
     ALUSrc_reg_reg_0,
-    \ALUOp_reg_reg[1]_1 ,
-    \ALUOp_reg_reg[0]_0 ,
     current_branch_condition,
     pause_sig1__8,
     start,
@@ -10845,10 +10846,11 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_idex
   input int_MemtoReg__4;
   input p_1_in;
   input RegWrite_reg_reg_1;
+  input \ALUOp_reg_reg[0]_0 ;
+  input Branch1__3;
+  input \ALUOp_reg_reg[1]_1 ;
   input int_Branch__2;
   input ALUSrc_reg_reg_0;
-  input \ALUOp_reg_reg[1]_1 ;
-  input \ALUOp_reg_reg[0]_0 ;
   input current_branch_condition;
   input pause_sig1__8;
   input start;
@@ -10912,6 +10914,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_idex
   wire ALUSrc_reg_reg_0;
   wire [3:1]\ALU_INST/data3 ;
   wire [30:25]\ALU_INST/data8 ;
+  wire Branch1__3;
   wire Branch_reg_i_1_n_0;
   wire [0:0]CO;
   wire [16:0]D;
@@ -11179,7 +11182,6 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_idex
   wire [10:0]mul_result__3;
   wire p_1_in;
   wire pause_sig1__8;
-  wire \pc_reg[15]_i_10_n_0 ;
   wire \pc_reg[15]_i_3_0 ;
   wire \pc_reg[15]_i_3_1 ;
   wire \pc_reg[15]_i_3_2 ;
@@ -11190,6 +11192,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_idex
   wire \pc_reg[15]_i_6_n_0 ;
   wire \pc_reg[15]_i_7_n_0 ;
   wire \pc_reg[15]_i_8_n_0 ;
+  wire \pc_reg[15]_i_9_n_0 ;
   wire [15:0]\pcin_reg_reg[15]_0 ;
   wire [14:0]\pcin_reg_reg[15]_1 ;
   wire [0:0]\pcin_reg_reg[15]_2 ;
@@ -11283,22 +11286,22 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_idex
   wire [3:0]NLW_current_branch_condition_reg_i_27_O_UNCONNECTED;
 
   assign MemRead_reg_reg_2[0] = MemRead_reg_reg_0;
-  (* SOFT_HLUTNM = "soft_lutpair94" *) 
+  (* SOFT_HLUTNM = "soft_lutpair93" *) 
   LUT4 #(
     .INIT(16'h00C4)) 
     \ALUOp_reg[0]_i_1 
        (.I0(hazardunit_controldisable_to_controlunit),
         .I1(\ALUOp_reg_reg[0]_0 ),
-        .I2(p_1_in),
+        .I2(Branch1__3),
         .I3(MemRead_reg_reg_0),
         .O(\ALUOp_reg[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair94" *) 
+  (* SOFT_HLUTNM = "soft_lutpair93" *) 
   LUT4 #(
     .INIT(16'h00C4)) 
     \ALUOp_reg[1]_i_1 
        (.I0(hazardunit_controldisable_to_controlunit),
         .I1(\ALUOp_reg_reg[1]_1 ),
-        .I2(p_1_in),
+        .I2(Branch1__3),
         .I3(MemRead_reg_reg_0),
         .O(\ALUOp_reg[1]_i_1_n_0 ));
   FDCE \ALUOp_reg_reg[0] 
@@ -11313,7 +11316,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_idex
         .CLR(\rs2_reg_reg[0]_0 ),
         .D(\ALUOp_reg[1]_i_1_n_0 ),
         .Q(idex_aluop_to_alucontrol[1]));
-  (* SOFT_HLUTNM = "soft_lutpair93" *) 
+  (* SOFT_HLUTNM = "soft_lutpair95" *) 
   LUT4 #(
     .INIT(16'h00C4)) 
     ALUSrc_reg_i_1
@@ -11328,13 +11331,13 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_idex
         .CLR(\rs2_reg_reg[0]_0 ),
         .D(ALUSrc_reg_i_1_n_0),
         .Q(idex_alusrcb_to_alusrcmuxb));
-  (* SOFT_HLUTNM = "soft_lutpair93" *) 
+  (* SOFT_HLUTNM = "soft_lutpair94" *) 
   LUT4 #(
     .INIT(16'h00C4)) 
     Branch_reg_i_1
        (.I0(hazardunit_controldisable_to_controlunit),
         .I1(int_Branch__2),
-        .I2(p_1_in),
+        .I2(Branch1__3),
         .I3(MemRead_reg_reg_0),
         .O(Branch_reg_i_1_n_0));
   FDCE Branch_reg_reg
@@ -11343,14 +11346,14 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_idex
         .CLR(\rs2_reg_reg[0]_0 ),
         .D(Branch_reg_i_1_n_0),
         .Q(idex_branch_to_exmem));
-  (* SOFT_HLUTNM = "soft_lutpair95" *) 
+  (* SOFT_HLUTNM = "soft_lutpair96" *) 
   LUT2 #(
     .INIT(4'h2)) 
     MemRead_reg_i_1
        (.I0(idex_memread_to_exmem),
         .I1(current_branch_condition),
         .O(MemRead_reg_reg_1));
-  (* SOFT_HLUTNM = "soft_lutpair99" *) 
+  (* SOFT_HLUTNM = "soft_lutpair94" *) 
   LUT3 #(
     .INIT(8'h02)) 
     MemRead_reg_i_1__0
@@ -11393,7 +11396,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_idex
        (.I0(idex_memtoreg_to_exmem),
         .I1(current_branch_condition),
         .O(MemtoReg_reg_reg_0));
-  (* SOFT_HLUTNM = "soft_lutpair95" *) 
+  (* SOFT_HLUTNM = "soft_lutpair96" *) 
   LUT4 #(
     .INIT(16'hFFA8)) 
     MemtoReg_reg_i_2
@@ -11483,7 +11486,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_idex
         .I1(idex_instruction_to_alucontrol[12]),
         .I2(idex_instruction_to_alucontrol[14]),
         .O(\aluoperation_reg[1]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair98" *) 
+  (* SOFT_HLUTNM = "soft_lutpair99" *) 
   LUT4 #(
     .INIT(16'hFFFD)) 
     \aluoperation_reg[1]_i_3 
@@ -11688,7 +11691,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_idex
         .I4(idex_instruction_to_alucontrol[0]),
         .I5(idex_instruction_to_alucontrol[4]),
         .O(\aluoperation_reg[4]_i_6_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair98" *) 
+  (* SOFT_HLUTNM = "soft_lutpair99" *) 
   LUT2 #(
     .INIT(4'h1)) 
     \aluoperation_reg[4]_i_7 
@@ -11832,7 +11835,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_idex
         .I4(alusrcmuxB_rs2_to_alu[2]),
         .I5(\aluresult_reg[18]_i_9_0 ),
         .O(\aluresult_reg[19]_i_13_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair96" *) 
+  (* SOFT_HLUTNM = "soft_lutpair97" *) 
   LUT4 #(
     .INIT(16'hCDC8)) 
     \aluresult_reg[19]_i_18 
@@ -11909,7 +11912,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_idex
         .I4(alusrcmuxB_rs2_to_alu[2]),
         .I5(\aluresult_reg[19]_i_9_0 ),
         .O(\aluresult_reg[20]_i_13_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair96" *) 
+  (* SOFT_HLUTNM = "soft_lutpair97" *) 
   LUT4 #(
     .INIT(16'hCDC8)) 
     \aluresult_reg[20]_i_16 
@@ -11943,7 +11946,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_idex
         .I3(alusrcmuxB_rs2_to_alu[2]),
         .I4(\aluresult_reg[20]_i_9_0 ),
         .O(\aluresult_reg[21]_i_13_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair97" *) 
+  (* SOFT_HLUTNM = "soft_lutpair98" *) 
   LUT4 #(
     .INIT(16'hCDC8)) 
     \aluresult_reg[21]_i_16 
@@ -11994,7 +11997,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_idex
         .I3(alusrcmuxB_rs2_to_alu[2]),
         .I4(\aluresult_reg[22]_i_9 ),
         .O(\immediate_reg_reg[1]_2 ));
-  (* SOFT_HLUTNM = "soft_lutpair97" *) 
+  (* SOFT_HLUTNM = "soft_lutpair98" *) 
   LUT4 #(
     .INIT(16'hCDC8)) 
     \aluresult_reg[22]_i_16 
@@ -13642,16 +13645,6 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_idex
         .I4(start),
         .I5(hold),
         .O(E));
-  LUT6 #(
-    .INIT(64'h9009000000009009)) 
-    \pc_reg[15]_i_10 
-       (.I0(idex_rd_to_exmem[0]),
-        .I1(ifid_instruction_to_OUT[0]),
-        .I2(ifid_instruction_to_OUT[2]),
-        .I3(idex_rd_to_exmem[2]),
-        .I4(ifid_instruction_to_OUT[1]),
-        .I5(idex_rd_to_exmem[1]),
-        .O(\pc_reg[15]_i_10_n_0 ));
   LUT5 #(
     .INIT(32'h90000090)) 
     \pc_reg[15]_i_3 
@@ -13670,15 +13663,14 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_idex
         .I3(\instruction_reg_reg[31]_3 ),
         .I4(idex_rd_to_exmem[4]),
         .O(\HAZARD_UNIT_INST/pause_sig30_out ));
-  LUT6 #(
-    .INIT(64'h0057000000000000)) 
+  LUT5 #(
+    .INIT(32'h00570000)) 
     \pc_reg[15]_i_5 
        (.I0(idex_memread_to_exmem),
         .I1(\HAZARD_UNIT_INST/pause_sig3__8 ),
         .I2(\HAZARD_UNIT_INST/pause_sig30_out ),
         .I3(\pc_reg[15]_i_8_n_0 ),
-        .I4(pause_sig1__8),
-        .I5(p_1_in),
+        .I4(p_1_in),
         .O(MemRead_reg_reg_0));
   LUT6 #(
     .INIT(64'h9009000000009009)) 
@@ -13705,11 +13697,21 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_idex
     \pc_reg[15]_i_8 
        (.I0(idex_rd_to_exmem[4]),
         .I1(ifid_instruction_to_OUT[4]),
-        .I2(\pc_reg[15]_i_10_n_0 ),
+        .I2(\pc_reg[15]_i_9_n_0 ),
         .I3(ifid_instruction_to_OUT[3]),
         .I4(idex_rd_to_exmem[3]),
         .I5(\pc_reg[15]_i_5_0 ),
         .O(\pc_reg[15]_i_8_n_0 ));
+  LUT6 #(
+    .INIT(64'h9009000000009009)) 
+    \pc_reg[15]_i_9 
+       (.I0(idex_rd_to_exmem[0]),
+        .I1(ifid_instruction_to_OUT[0]),
+        .I2(ifid_instruction_to_OUT[2]),
+        .I3(idex_rd_to_exmem[2]),
+        .I4(ifid_instruction_to_OUT[1]),
+        .I5(idex_rd_to_exmem[1]),
+        .O(\pc_reg[15]_i_9_n_0 ));
   FDCE \pcin_reg_reg[10] 
        (.C(clock),
         .CE(1'b1),
@@ -14033,7 +14035,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_idex
        (.I0(reg1_data[30]),
         .I1(MemRead_reg_reg_0),
         .O(\readdata1_reg[30]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair99" *) 
+  (* SOFT_HLUTNM = "soft_lutpair95" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \readdata1_reg[31]_i_1 
@@ -14931,6 +14933,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
     \instruction_reg_reg[5]_0 ,
     \instruction_reg_reg[4]_0 ,
     \instruction_reg_reg[5]_1 ,
+    DI,
     D,
     \instruction_reg_reg[1]_0 ,
     \aluresult_reg_reg[30] ,
@@ -14946,15 +14949,14 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
     \aluresult_reg_reg[30]_3 ,
     \aluresult_reg_reg[30]_4 ,
     S,
+    Branch1__3,
+    p_1_in,
     \instruction_reg_reg[31]_0 ,
     \instruction_reg_reg[31]_1 ,
     immediategen_immediate_to_idex__0,
     \pcout_reg_reg[15]_0 ,
     pause_sig1__8,
-    p_1_in,
     \instruction_reg_reg[5]_2 ,
-    branch_taken,
-    int_Branch__2,
     int_MemtoReg__4,
     \aluresult_reg_reg[22]_1 ,
     \aluresult_reg_reg[22]_2 ,
@@ -14963,9 +14965,11 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
     \aluresult_reg_reg[6]_1 ,
     \aluresult_reg_reg[6]_2 ,
     int_regOrPC,
+    int_Branch__2,
+    branch_taken,
     \instruction_reg_reg[10]_0 ,
     \aluresult_reg_reg[6]_3 ,
-    DI,
+    \aluresult_reg_reg[6]_4 ,
     \aluresult_reg_reg[14]_3 ,
     \aluresult_reg_reg[14]_4 ,
     \aluresult_reg_reg[22]_3 ,
@@ -15053,6 +15057,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
   output \instruction_reg_reg[5]_0 ;
   output \instruction_reg_reg[4]_0 ;
   output \instruction_reg_reg[5]_1 ;
+  output [3:0]DI;
   output [3:0]D;
   output \instruction_reg_reg[1]_0 ;
   output [3:0]\aluresult_reg_reg[30] ;
@@ -15068,15 +15073,14 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
   output [3:0]\aluresult_reg_reg[30]_3 ;
   output [3:0]\aluresult_reg_reg[30]_4 ;
   output [3:0]S;
+  output Branch1__3;
+  output p_1_in;
   output [16:0]\instruction_reg_reg[31]_0 ;
   output [31:0]\instruction_reg_reg[31]_1 ;
-  output [14:0]immediategen_immediate_to_idex__0;
+  output [10:0]immediategen_immediate_to_idex__0;
   output [14:0]\pcout_reg_reg[15]_0 ;
   output pause_sig1__8;
-  output p_1_in;
   output \instruction_reg_reg[5]_2 ;
-  output branch_taken;
-  output int_Branch__2;
   output int_MemtoReg__4;
   output [3:0]\aluresult_reg_reg[22]_1 ;
   output [3:0]\aluresult_reg_reg[22]_2 ;
@@ -15085,9 +15089,11 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
   output [3:0]\aluresult_reg_reg[6]_1 ;
   output [3:0]\aluresult_reg_reg[6]_2 ;
   output int_regOrPC;
+  output int_Branch__2;
+  output branch_taken;
   output \instruction_reg_reg[10]_0 ;
   output [3:0]\aluresult_reg_reg[6]_3 ;
-  output [3:0]DI;
+  output [3:0]\aluresult_reg_reg[6]_4 ;
   output [3:0]\aluresult_reg_reg[14]_3 ;
   output [3:0]\aluresult_reg_reg[14]_4 ;
   output [3:0]\aluresult_reg_reg[22]_3 ;
@@ -15157,6 +15163,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
   input [0:0]\muxOut_reg[15]_i_4_1 ;
   input [14:0]\pcout_reg_reg[15]_1 ;
 
+  wire Branch1__3;
   wire [0:0]CO;
   wire \CONTROLUNIT_INST/data0 ;
   wire \CONTROLUNIT_INST/data1 ;
@@ -15167,8 +15174,8 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
   wire [3:0]D;
   wire [3:0]DI;
   wire MemWrite_reg_i_2_n_0;
-  wire MemtoReg_reg_i_5_n_0;
-  wire MemtoReg_reg_i_7_n_0;
+  wire MemtoReg_reg_i_6_n_0;
+  wire MemtoReg_reg_i_8_n_0;
   wire [3:0]O;
   wire [4:0]Q;
   wire [3:0]S;
@@ -15195,6 +15202,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
   wire [3:0]\aluresult_reg_reg[6]_1 ;
   wire [3:0]\aluresult_reg_reg[6]_2 ;
   wire [3:0]\aluresult_reg_reg[6]_3 ;
+  wire [3:0]\aluresult_reg_reg[6]_4 ;
   wire branch_taken;
   wire clock;
   wire hazardunit_controldisable_to_controlunit;
@@ -15254,13 +15262,12 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
   wire [31:0]ifid_instruction_to_OUT;
   wire [15:1]ifid_pcout_to_OUT;
   wire \immediate_reg[30]_i_2_n_0 ;
-  wire \immediate_reg[30]_i_3_n_0 ;
-  wire \immediate_reg[30]_i_4_n_0 ;
   wire \immediate_reg[31]_i_2_n_0 ;
   wire \immediate_reg[31]_i_3_n_0 ;
   wire \immediate_reg[31]_i_4_n_0 ;
+  wire \immediate_reg[31]_i_5_n_0 ;
   wire [15:15]immediategen_immediate_to_idex;
-  wire [14:0]immediategen_immediate_to_idex__0;
+  wire [10:0]immediategen_immediate_to_idex__0;
   wire instruction_reg0;
   wire \instruction_reg_reg[0]_0 ;
   wire \instruction_reg_reg[10]_0 ;
@@ -15340,7 +15347,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
   wire pcOut1_carry__1_i_9_n_0;
   wire pcOut1_carry__2_i_10_n_0;
   wire pcOut1_carry__2_i_11_n_0;
-  wire pcOut1_carry__2_i_8_n_0;
+  wire pcOut1_carry__2_i_12_n_0;
   wire pcOut1_carry__2_i_9_n_0;
   wire pcOut1_carry_i_10_n_0;
   wire pcOut1_carry_i_11_n_0;
@@ -15429,16 +15436,26 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
         .I5(\muxOut_reg[15]_i_6_n_0 ),
         .O(int_Branch__2));
   LUT6 #(
+    .INIT(64'hAAAAAAAAAAAAAAAB)) 
+    Branch_reg_i_3
+       (.I0(p_1_in),
+        .I1(\muxOut_reg[15]_i_6_n_0 ),
+        .I2(\immediate_reg[31]_i_4_n_0 ),
+        .I3(ifid_instruction_to_OUT[3]),
+        .I4(ifid_instruction_to_OUT[4]),
+        .I5(ifid_instruction_to_OUT[2]),
+        .O(Branch1__3));
+  LUT6 #(
     .INIT(64'h0000000000000004)) 
     MemWrite_reg_i_1
        (.I0(hazardunit_controldisable_to_controlunit),
         .I1(ifid_instruction_to_OUT[0]),
-        .I2(ifid_instruction_to_OUT[6]),
-        .I3(ifid_instruction_to_OUT[2]),
+        .I2(ifid_instruction_to_OUT[2]),
+        .I3(ifid_instruction_to_OUT[6]),
         .I4(MemWrite_reg_i_2_n_0),
         .I5(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[0]_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair175" *) 
+  (* SOFT_HLUTNM = "soft_lutpair189" *) 
   LUT4 #(
     .INIT(16'hEFFF)) 
     MemWrite_reg_i_2
@@ -15455,7 +15472,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
         .I2(ifid_instruction_to_OUT[0]),
         .I3(ifid_instruction_to_OUT[1]),
         .I4(ifid_instruction_to_OUT[2]),
-        .I5(MemtoReg_reg_i_5_n_0),
+        .I5(MemtoReg_reg_i_6_n_0),
         .O(int_MemtoReg__4));
   LUT6 #(
     .INIT(64'hFFFFFFFF00000008)) 
@@ -15467,30 +15484,40 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
         .I4(\muxOut_reg[15]_i_6_n_0 ),
         .I5(pause_sig3),
         .O(p_1_in));
-  (* SOFT_HLUTNM = "soft_lutpair175" *) 
+  LUT6 #(
+    .INIT(64'hFFFFFFFF00000001)) 
+    MemtoReg_reg_i_5
+       (.I0(\muxOut_reg[15]_i_6_n_0 ),
+        .I1(\immediate_reg[31]_i_4_n_0 ),
+        .I2(ifid_instruction_to_OUT[3]),
+        .I3(ifid_instruction_to_OUT[4]),
+        .I4(ifid_instruction_to_OUT[2]),
+        .I5(p_1_in),
+        .O(pause_sig1__8));
+  (* SOFT_HLUTNM = "soft_lutpair188" *) 
   LUT2 #(
     .INIT(4'h1)) 
-    MemtoReg_reg_i_5
+    MemtoReg_reg_i_6
        (.I0(ifid_instruction_to_OUT[4]),
         .I1(ifid_instruction_to_OUT[3]),
-        .O(MemtoReg_reg_i_5_n_0));
+        .O(MemtoReg_reg_i_6_n_0));
   LUT6 #(
     .INIT(64'h0000000000080000)) 
-    MemtoReg_reg_i_6
+    MemtoReg_reg_i_7
        (.I0(ifid_instruction_to_OUT[0]),
         .I1(ifid_instruction_to_OUT[5]),
         .I2(ifid_instruction_to_OUT[4]),
         .I3(ifid_instruction_to_OUT[3]),
         .I4(ifid_instruction_to_OUT[1]),
-        .I5(MemtoReg_reg_i_7_n_0),
+        .I5(MemtoReg_reg_i_8_n_0),
         .O(pause_sig3));
-  (* SOFT_HLUTNM = "soft_lutpair191" *) 
+  (* SOFT_HLUTNM = "soft_lutpair201" *) 
   LUT2 #(
     .INIT(4'h7)) 
-    MemtoReg_reg_i_7
+    MemtoReg_reg_i_8
        (.I0(ifid_instruction_to_OUT[6]),
         .I1(ifid_instruction_to_OUT[2]),
-        .O(MemtoReg_reg_i_7_n_0));
+        .O(MemtoReg_reg_i_8_n_0));
   LUT6 #(
     .INIT(64'h00000000404000AB)) 
     RegWrite_reg_i_2
@@ -16732,7 +16759,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
         .I1(\CONTROLUNIT_INST/rs1_final__63 [6]),
         .I2(\CONTROLUNIT_INST/rs1_final__63 [7]),
         .I3(\CONTROLUNIT_INST/rs2_final__63 [7]),
-        .O(DI[3]));
+        .O(\aluresult_reg_reg[6]_4 [3]));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     i__carry_i_20
@@ -16845,7 +16872,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
         .I1(\CONTROLUNIT_INST/rs1_final__63 [4]),
         .I2(\CONTROLUNIT_INST/rs1_final__63 [5]),
         .I3(\CONTROLUNIT_INST/rs2_final__63 [5]),
-        .O(DI[2]));
+        .O(\aluresult_reg_reg[6]_4 [2]));
   LUT6 #(
     .INIT(64'h9009000000009009)) 
     i__carry_i_30
@@ -16889,7 +16916,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
         .I1(\CONTROLUNIT_INST/rs1_final__63 [2]),
         .I2(\CONTROLUNIT_INST/rs1_final__63 [3]),
         .I3(\CONTROLUNIT_INST/rs2_final__63 [3]),
-        .O(DI[1]));
+        .O(\aluresult_reg_reg[6]_4 [1]));
   LUT4 #(
     .INIT(16'h2F02)) 
     i__carry_i_4__1
@@ -16913,7 +16940,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
         .I1(\CONTROLUNIT_INST/rs1_final__63 [0]),
         .I2(\CONTROLUNIT_INST/rs1_final__63 [1]),
         .I3(\CONTROLUNIT_INST/rs2_final__63 [1]),
-        .O(DI[0]));
+        .O(\aluresult_reg_reg[6]_4 [0]));
   LUT3 #(
     .INIT(8'h90)) 
     i__carry_i_5
@@ -17026,475 +17053,481 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
         .I4(i__carry_i_27_n_0),
         .I5(i__carry__2_i_1_0[7]),
         .O(i__carry_i_9__0_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair200" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \immediate_reg[0]_i_1 
-       (.I0(immediategen_immediate_to_idex__0[0]),
-        .I1(\instruction_reg_reg[31]_2 ),
-        .O(\instruction_reg_reg[31]_1 [0]));
   LUT6 #(
-    .INIT(64'h0000000004848484)) 
-    \immediate_reg[10]_i_1 
+    .INIT(64'h0000000004550400)) 
+    \immediate_reg[0]_i_1 
        (.I0(\immediate_reg[31]_i_2_n_0 ),
-        .I1(ifid_instruction_to_OUT[30]),
+        .I1(\instruction_reg_reg[11]_0 [0]),
+        .I2(\immediate_reg[30]_i_2_n_0 ),
+        .I3(\immediate_reg[31]_i_3_n_0 ),
+        .I4(\rs2_reg_reg[0]_0 ),
+        .I5(\instruction_reg_reg[31]_2 ),
+        .O(\instruction_reg_reg[31]_1 [0]));
+  (* SOFT_HLUTNM = "soft_lutpair182" *) 
+  LUT5 #(
+    .INIT(32'h00002A22)) 
+    \immediate_reg[10]_i_1 
+       (.I0(ifid_instruction_to_OUT[30]),
+        .I1(\immediate_reg[31]_i_2_n_0 ),
         .I2(\immediate_reg[31]_i_3_n_0 ),
         .I3(\immediate_reg[30]_i_2_n_0 ),
-        .I4(\immediate_reg[30]_i_4_n_0 ),
-        .I5(\instruction_reg_reg[31]_2 ),
+        .I4(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_1 [10]));
-  (* SOFT_HLUTNM = "soft_lutpair198" *) 
+  (* SOFT_HLUTNM = "soft_lutpair203" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \immediate_reg[11]_i_1 
-       (.I0(immediategen_immediate_to_idex__0[11]),
+       (.I0(immediategen_immediate_to_idex__0[7]),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_1 [11]));
-  (* SOFT_HLUTNM = "soft_lutpair197" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
+  (* SOFT_HLUTNM = "soft_lutpair181" *) 
+  LUT5 #(
+    .INIT(32'h00002E22)) 
     \immediate_reg[12]_i_1 
-       (.I0(immediategen_immediate_to_idex__0[12]),
-        .I1(\instruction_reg_reg[31]_2 ),
-        .O(\instruction_reg_reg[31]_1 [12]));
-  (* SOFT_HLUTNM = "soft_lutpair197" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \immediate_reg[13]_i_1 
-       (.I0(immediategen_immediate_to_idex__0[13]),
-        .I1(\instruction_reg_reg[31]_2 ),
-        .O(\instruction_reg_reg[31]_1 [13]));
-  (* SOFT_HLUTNM = "soft_lutpair196" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \immediate_reg[14]_i_1 
-       (.I0(immediategen_immediate_to_idex__0[14]),
-        .I1(\instruction_reg_reg[31]_2 ),
-        .O(\instruction_reg_reg[31]_1 [14]));
-  (* SOFT_HLUTNM = "soft_lutpair196" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \immediate_reg[15]_i_1 
-       (.I0(immediategen_immediate_to_idex),
-        .I1(\instruction_reg_reg[31]_2 ),
-        .O(\instruction_reg_reg[31]_1 [15]));
-  LUT6 #(
-    .INIT(64'hEA002A0000FF0000)) 
-    \immediate_reg[15]_i_2 
        (.I0(ifid_instruction_to_OUT[31]),
-        .I1(\immediate_reg[30]_i_4_n_0 ),
-        .I2(\immediate_reg[30]_i_2_n_0 ),
-        .I3(\immediate_reg[31]_i_3_n_0 ),
-        .I4(\rs1_reg_reg[0]_0 ),
-        .I5(\immediate_reg[31]_i_2_n_0 ),
-        .O(immediategen_immediate_to_idex));
-  LUT6 #(
-    .INIT(64'h000000000D4F0840)) 
+        .I1(\immediate_reg[31]_i_2_n_0 ),
+        .I2(\immediate_reg[31]_i_3_n_0 ),
+        .I3(ifid_instruction_to_OUT[12]),
+        .I4(\instruction_reg_reg[31]_2 ),
+        .O(\instruction_reg_reg[31]_1 [12]));
+  (* SOFT_HLUTNM = "soft_lutpair180" *) 
+  LUT5 #(
+    .INIT(32'h00002E22)) 
+    \immediate_reg[13]_i_1 
+       (.I0(ifid_instruction_to_OUT[31]),
+        .I1(\immediate_reg[31]_i_2_n_0 ),
+        .I2(\immediate_reg[31]_i_3_n_0 ),
+        .I3(ifid_instruction_to_OUT[13]),
+        .I4(\instruction_reg_reg[31]_2 ),
+        .O(\instruction_reg_reg[31]_1 [13]));
+  (* SOFT_HLUTNM = "soft_lutpair179" *) 
+  LUT5 #(
+    .INIT(32'h00002E22)) 
+    \immediate_reg[14]_i_1 
+       (.I0(ifid_instruction_to_OUT[31]),
+        .I1(\immediate_reg[31]_i_2_n_0 ),
+        .I2(\immediate_reg[31]_i_3_n_0 ),
+        .I3(ifid_instruction_to_OUT[14]),
+        .I4(\instruction_reg_reg[31]_2 ),
+        .O(\instruction_reg_reg[31]_1 [14]));
+  (* SOFT_HLUTNM = "soft_lutpair178" *) 
+  LUT5 #(
+    .INIT(32'h00002E22)) 
+    \immediate_reg[15]_i_1 
+       (.I0(ifid_instruction_to_OUT[31]),
+        .I1(\immediate_reg[31]_i_2_n_0 ),
+        .I2(\immediate_reg[31]_i_3_n_0 ),
+        .I3(\rs1_reg_reg[0]_0 ),
+        .I4(\instruction_reg_reg[31]_2 ),
+        .O(\instruction_reg_reg[31]_1 [15]));
+  (* SOFT_HLUTNM = "soft_lutpair177" *) 
+  LUT5 #(
+    .INIT(32'h00002E22)) 
     \immediate_reg[16]_i_1 
-       (.I0(\immediate_reg[30]_i_2_n_0 ),
-        .I1(\rs1_reg_reg[1]_0 ),
-        .I2(\immediate_reg[30]_i_3_n_0 ),
-        .I3(\immediate_reg[30]_i_4_n_0 ),
-        .I4(ifid_instruction_to_OUT[31]),
-        .I5(\instruction_reg_reg[31]_2 ),
+       (.I0(ifid_instruction_to_OUT[31]),
+        .I1(\immediate_reg[31]_i_2_n_0 ),
+        .I2(\immediate_reg[31]_i_3_n_0 ),
+        .I3(\rs1_reg_reg[1]_0 ),
+        .I4(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_1 [16]));
-  LUT6 #(
-    .INIT(64'h000000000D4F0840)) 
+  (* SOFT_HLUTNM = "soft_lutpair176" *) 
+  LUT5 #(
+    .INIT(32'h00002E22)) 
     \immediate_reg[17]_i_1 
-       (.I0(\immediate_reg[30]_i_2_n_0 ),
-        .I1(\rs1_reg_reg[2]_0 ),
-        .I2(\immediate_reg[30]_i_3_n_0 ),
-        .I3(\immediate_reg[30]_i_4_n_0 ),
-        .I4(ifid_instruction_to_OUT[31]),
-        .I5(\instruction_reg_reg[31]_2 ),
+       (.I0(ifid_instruction_to_OUT[31]),
+        .I1(\immediate_reg[31]_i_2_n_0 ),
+        .I2(\immediate_reg[31]_i_3_n_0 ),
+        .I3(\rs1_reg_reg[2]_0 ),
+        .I4(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_1 [17]));
-  LUT6 #(
-    .INIT(64'h000000000D4F0840)) 
+  (* SOFT_HLUTNM = "soft_lutpair175" *) 
+  LUT5 #(
+    .INIT(32'h00002E22)) 
     \immediate_reg[18]_i_1 
-       (.I0(\immediate_reg[30]_i_2_n_0 ),
-        .I1(\rs1_reg_reg[3]_0 ),
-        .I2(\immediate_reg[30]_i_3_n_0 ),
-        .I3(\immediate_reg[30]_i_4_n_0 ),
-        .I4(ifid_instruction_to_OUT[31]),
-        .I5(\instruction_reg_reg[31]_2 ),
+       (.I0(ifid_instruction_to_OUT[31]),
+        .I1(\immediate_reg[31]_i_2_n_0 ),
+        .I2(\immediate_reg[31]_i_3_n_0 ),
+        .I3(\rs1_reg_reg[3]_0 ),
+        .I4(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_1 [18]));
-  LUT6 #(
-    .INIT(64'h000000000D4F0840)) 
+  (* SOFT_HLUTNM = "soft_lutpair174" *) 
+  LUT5 #(
+    .INIT(32'h00002E22)) 
     \immediate_reg[19]_i_1 
-       (.I0(\immediate_reg[30]_i_2_n_0 ),
-        .I1(\rs1_reg_reg[4]_0 ),
-        .I2(\immediate_reg[30]_i_3_n_0 ),
-        .I3(\immediate_reg[30]_i_4_n_0 ),
-        .I4(ifid_instruction_to_OUT[31]),
-        .I5(\instruction_reg_reg[31]_2 ),
+       (.I0(ifid_instruction_to_OUT[31]),
+        .I1(\immediate_reg[31]_i_2_n_0 ),
+        .I2(\immediate_reg[31]_i_3_n_0 ),
+        .I3(\rs1_reg_reg[4]_0 ),
+        .I4(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_1 [19]));
-  (* SOFT_HLUTNM = "soft_lutpair200" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
+  LUT6 #(
+    .INIT(64'h0000000022E200E2)) 
     \immediate_reg[1]_i_1 
-       (.I0(immediategen_immediate_to_idex__0[1]),
-        .I1(\instruction_reg_reg[31]_2 ),
+       (.I0(\rs2_reg_reg[1]_0 ),
+        .I1(\immediate_reg[31]_i_3_n_0 ),
+        .I2(\instruction_reg_reg[11]_0 [1]),
+        .I3(\immediate_reg[31]_i_2_n_0 ),
+        .I4(\immediate_reg[30]_i_2_n_0 ),
+        .I5(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_1 [1]));
   LUT6 #(
-    .INIT(64'h000000000E4C044C)) 
+    .INIT(64'h000000002A2E2A22)) 
     \immediate_reg[20]_i_1 
-       (.I0(\immediate_reg[30]_i_2_n_0 ),
-        .I1(ifid_instruction_to_OUT[31]),
-        .I2(\immediate_reg[30]_i_3_n_0 ),
-        .I3(\immediate_reg[30]_i_4_n_0 ),
+       (.I0(ifid_instruction_to_OUT[31]),
+        .I1(\immediate_reg[31]_i_2_n_0 ),
+        .I2(\immediate_reg[31]_i_3_n_0 ),
+        .I3(\immediate_reg[30]_i_2_n_0 ),
         .I4(\rs2_reg_reg[0]_0 ),
         .I5(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_1 [20]));
   LUT6 #(
-    .INIT(64'h000000000E4C044C)) 
+    .INIT(64'h000000002A2E2A22)) 
     \immediate_reg[21]_i_1 
-       (.I0(\immediate_reg[30]_i_2_n_0 ),
-        .I1(ifid_instruction_to_OUT[31]),
-        .I2(\immediate_reg[30]_i_3_n_0 ),
-        .I3(\immediate_reg[30]_i_4_n_0 ),
+       (.I0(ifid_instruction_to_OUT[31]),
+        .I1(\immediate_reg[31]_i_2_n_0 ),
+        .I2(\immediate_reg[31]_i_3_n_0 ),
+        .I3(\immediate_reg[30]_i_2_n_0 ),
         .I4(\rs2_reg_reg[1]_0 ),
         .I5(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_1 [21]));
   LUT6 #(
-    .INIT(64'h000000000E4C044C)) 
+    .INIT(64'h000000002A2E2A22)) 
     \immediate_reg[22]_i_1 
-       (.I0(\immediate_reg[30]_i_2_n_0 ),
-        .I1(ifid_instruction_to_OUT[31]),
-        .I2(\immediate_reg[30]_i_3_n_0 ),
-        .I3(\immediate_reg[30]_i_4_n_0 ),
+       (.I0(ifid_instruction_to_OUT[31]),
+        .I1(\immediate_reg[31]_i_2_n_0 ),
+        .I2(\immediate_reg[31]_i_3_n_0 ),
+        .I3(\immediate_reg[30]_i_2_n_0 ),
         .I4(\rs2_reg_reg[2]_0 ),
         .I5(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_1 [22]));
   LUT6 #(
-    .INIT(64'h000000000E4C044C)) 
+    .INIT(64'h000000002A2E2A22)) 
     \immediate_reg[23]_i_1 
-       (.I0(\immediate_reg[30]_i_2_n_0 ),
-        .I1(ifid_instruction_to_OUT[31]),
-        .I2(\immediate_reg[30]_i_3_n_0 ),
-        .I3(\immediate_reg[30]_i_4_n_0 ),
+       (.I0(ifid_instruction_to_OUT[31]),
+        .I1(\immediate_reg[31]_i_2_n_0 ),
+        .I2(\immediate_reg[31]_i_3_n_0 ),
+        .I3(\immediate_reg[30]_i_2_n_0 ),
         .I4(\rs2_reg_reg[3]_0 ),
         .I5(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_1 [23]));
   LUT6 #(
-    .INIT(64'h000000000E4C044C)) 
+    .INIT(64'h000000002A2E2A22)) 
     \immediate_reg[24]_i_1 
-       (.I0(\immediate_reg[30]_i_2_n_0 ),
-        .I1(ifid_instruction_to_OUT[31]),
-        .I2(\immediate_reg[30]_i_3_n_0 ),
-        .I3(\immediate_reg[30]_i_4_n_0 ),
+       (.I0(ifid_instruction_to_OUT[31]),
+        .I1(\immediate_reg[31]_i_2_n_0 ),
+        .I2(\immediate_reg[31]_i_3_n_0 ),
+        .I3(\immediate_reg[30]_i_2_n_0 ),
         .I4(\rs2_reg_reg[4]_0 ),
         .I5(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_1 [24]));
   LUT6 #(
-    .INIT(64'h000000000E4C044C)) 
+    .INIT(64'h000000002A2E2A22)) 
     \immediate_reg[25]_i_1 
-       (.I0(\immediate_reg[30]_i_2_n_0 ),
-        .I1(ifid_instruction_to_OUT[31]),
-        .I2(\immediate_reg[30]_i_3_n_0 ),
-        .I3(\immediate_reg[30]_i_4_n_0 ),
+       (.I0(ifid_instruction_to_OUT[31]),
+        .I1(\immediate_reg[31]_i_2_n_0 ),
+        .I2(\immediate_reg[31]_i_3_n_0 ),
+        .I3(\immediate_reg[30]_i_2_n_0 ),
         .I4(ifid_instruction_to_OUT[25]),
         .I5(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_1 [25]));
   LUT6 #(
-    .INIT(64'h000000000E4C044C)) 
+    .INIT(64'h000000002A2E2A22)) 
     \immediate_reg[26]_i_1 
-       (.I0(\immediate_reg[30]_i_2_n_0 ),
-        .I1(ifid_instruction_to_OUT[31]),
-        .I2(\immediate_reg[30]_i_3_n_0 ),
-        .I3(\immediate_reg[30]_i_4_n_0 ),
+       (.I0(ifid_instruction_to_OUT[31]),
+        .I1(\immediate_reg[31]_i_2_n_0 ),
+        .I2(\immediate_reg[31]_i_3_n_0 ),
+        .I3(\immediate_reg[30]_i_2_n_0 ),
         .I4(ifid_instruction_to_OUT[26]),
         .I5(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_1 [26]));
   LUT6 #(
-    .INIT(64'h000000000E4C044C)) 
+    .INIT(64'h000000002A2E2A22)) 
     \immediate_reg[27]_i_1 
-       (.I0(\immediate_reg[30]_i_2_n_0 ),
-        .I1(ifid_instruction_to_OUT[31]),
-        .I2(\immediate_reg[30]_i_3_n_0 ),
-        .I3(\immediate_reg[30]_i_4_n_0 ),
+       (.I0(ifid_instruction_to_OUT[31]),
+        .I1(\immediate_reg[31]_i_2_n_0 ),
+        .I2(\immediate_reg[31]_i_3_n_0 ),
+        .I3(\immediate_reg[30]_i_2_n_0 ),
         .I4(ifid_instruction_to_OUT[27]),
         .I5(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_1 [27]));
   LUT6 #(
-    .INIT(64'h000000000E4C044C)) 
+    .INIT(64'h000000002A2E2A22)) 
     \immediate_reg[28]_i_1 
-       (.I0(\immediate_reg[30]_i_2_n_0 ),
-        .I1(ifid_instruction_to_OUT[31]),
-        .I2(\immediate_reg[30]_i_3_n_0 ),
-        .I3(\immediate_reg[30]_i_4_n_0 ),
+       (.I0(ifid_instruction_to_OUT[31]),
+        .I1(\immediate_reg[31]_i_2_n_0 ),
+        .I2(\immediate_reg[31]_i_3_n_0 ),
+        .I3(\immediate_reg[30]_i_2_n_0 ),
         .I4(ifid_instruction_to_OUT[28]),
         .I5(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_1 [28]));
   LUT6 #(
-    .INIT(64'h000000000E4C044C)) 
+    .INIT(64'h000000002A2E2A22)) 
     \immediate_reg[29]_i_1 
-       (.I0(\immediate_reg[30]_i_2_n_0 ),
-        .I1(ifid_instruction_to_OUT[31]),
-        .I2(\immediate_reg[30]_i_3_n_0 ),
-        .I3(\immediate_reg[30]_i_4_n_0 ),
+       (.I0(ifid_instruction_to_OUT[31]),
+        .I1(\immediate_reg[31]_i_2_n_0 ),
+        .I2(\immediate_reg[31]_i_3_n_0 ),
+        .I3(\immediate_reg[30]_i_2_n_0 ),
         .I4(ifid_instruction_to_OUT[29]),
         .I5(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_1 [29]));
-  (* SOFT_HLUTNM = "soft_lutpair199" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
+  LUT6 #(
+    .INIT(64'h0000000022E200E2)) 
     \immediate_reg[2]_i_1 
-       (.I0(immediategen_immediate_to_idex__0[2]),
-        .I1(\instruction_reg_reg[31]_2 ),
+       (.I0(\rs2_reg_reg[2]_0 ),
+        .I1(\immediate_reg[31]_i_3_n_0 ),
+        .I2(\instruction_reg_reg[11]_0 [2]),
+        .I3(\immediate_reg[31]_i_2_n_0 ),
+        .I4(\immediate_reg[30]_i_2_n_0 ),
+        .I5(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_1 [2]));
   LUT6 #(
-    .INIT(64'h000000000E4C044C)) 
+    .INIT(64'h000000002A2E2A22)) 
     \immediate_reg[30]_i_1 
-       (.I0(\immediate_reg[30]_i_2_n_0 ),
-        .I1(ifid_instruction_to_OUT[31]),
-        .I2(\immediate_reg[30]_i_3_n_0 ),
-        .I3(\immediate_reg[30]_i_4_n_0 ),
+       (.I0(ifid_instruction_to_OUT[31]),
+        .I1(\immediate_reg[31]_i_2_n_0 ),
+        .I2(\immediate_reg[31]_i_3_n_0 ),
+        .I3(\immediate_reg[30]_i_2_n_0 ),
         .I4(ifid_instruction_to_OUT[30]),
         .I5(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_1 [30]));
   LUT6 #(
-    .INIT(64'hFFFFFFFFFFFE2FFE)) 
+    .INIT(64'h0000000000018A01)) 
     \immediate_reg[30]_i_2 
-       (.I0(ifid_instruction_to_OUT[3]),
+       (.I0(ifid_instruction_to_OUT[6]),
         .I1(ifid_instruction_to_OUT[2]),
-        .I2(ifid_instruction_to_OUT[5]),
-        .I3(ifid_instruction_to_OUT[6]),
+        .I2(ifid_instruction_to_OUT[3]),
+        .I3(ifid_instruction_to_OUT[5]),
         .I4(ifid_instruction_to_OUT[4]),
         .I5(\immediate_reg[31]_i_4_n_0 ),
         .O(\immediate_reg[30]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFEFFFEFEEFFFEEE)) 
-    \immediate_reg[30]_i_3 
-       (.I0(ifid_instruction_to_OUT[3]),
-        .I1(\immediate_reg[31]_i_4_n_0 ),
-        .I2(ifid_instruction_to_OUT[5]),
-        .I3(ifid_instruction_to_OUT[4]),
-        .I4(ifid_instruction_to_OUT[2]),
-        .I5(ifid_instruction_to_OUT[6]),
-        .O(\immediate_reg[30]_i_3_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000000003000008)) 
-    \immediate_reg[30]_i_4 
-       (.I0(ifid_instruction_to_OUT[5]),
-        .I1(ifid_instruction_to_OUT[6]),
-        .I2(ifid_instruction_to_OUT[3]),
-        .I3(ifid_instruction_to_OUT[4]),
-        .I4(ifid_instruction_to_OUT[2]),
-        .I5(\immediate_reg[31]_i_4_n_0 ),
-        .O(\immediate_reg[30]_i_4_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair174" *) 
   LUT4 #(
-    .INIT(16'h0084)) 
+    .INIT(16'h002A)) 
     \immediate_reg[31]_i_1 
-       (.I0(\immediate_reg[31]_i_2_n_0 ),
-        .I1(ifid_instruction_to_OUT[31]),
+       (.I0(ifid_instruction_to_OUT[31]),
+        .I1(\immediate_reg[31]_i_2_n_0 ),
         .I2(\immediate_reg[31]_i_3_n_0 ),
         .I3(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_1 [31]));
   LUT6 #(
-    .INIT(64'hFFFFFFFFFFFF7FFF)) 
+    .INIT(64'hFFFFFFFFFFBAFEFE)) 
     \immediate_reg[31]_i_2 
-       (.I0(ifid_instruction_to_OUT[3]),
-        .I1(ifid_instruction_to_OUT[2]),
+       (.I0(\immediate_reg[31]_i_4_n_0 ),
+        .I1(ifid_instruction_to_OUT[6]),
+        .I2(ifid_instruction_to_OUT[2]),
+        .I3(ifid_instruction_to_OUT[4]),
+        .I4(ifid_instruction_to_OUT[5]),
+        .I5(ifid_instruction_to_OUT[3]),
+        .O(\immediate_reg[31]_i_2_n_0 ));
+  LUT5 #(
+    .INIT(32'hEFBBFFFA)) 
+    \immediate_reg[31]_i_3 
+       (.I0(\immediate_reg[31]_i_5_n_0 ),
+        .I1(ifid_instruction_to_OUT[4]),
         .I2(ifid_instruction_to_OUT[5]),
         .I3(ifid_instruction_to_OUT[6]),
-        .I4(ifid_instruction_to_OUT[4]),
-        .I5(\immediate_reg[31]_i_4_n_0 ),
-        .O(\immediate_reg[31]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000000000004B51)) 
-    \immediate_reg[31]_i_3 
-       (.I0(ifid_instruction_to_OUT[6]),
-        .I1(ifid_instruction_to_OUT[2]),
-        .I2(ifid_instruction_to_OUT[4]),
-        .I3(ifid_instruction_to_OUT[5]),
-        .I4(\immediate_reg[31]_i_4_n_0 ),
-        .I5(ifid_instruction_to_OUT[3]),
+        .I4(ifid_instruction_to_OUT[2]),
         .O(\immediate_reg[31]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair195" *) 
+  (* SOFT_HLUTNM = "soft_lutpair202" *) 
   LUT2 #(
     .INIT(4'h7)) 
     \immediate_reg[31]_i_4 
        (.I0(ifid_instruction_to_OUT[1]),
         .I1(ifid_instruction_to_OUT[0]),
         .O(\immediate_reg[31]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair199" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
+  (* SOFT_HLUTNM = "soft_lutpair188" *) 
+  LUT5 #(
+    .INIT(32'hB0FFFFFF)) 
+    \immediate_reg[31]_i_5 
+       (.I0(ifid_instruction_to_OUT[4]),
+        .I1(ifid_instruction_to_OUT[2]),
+        .I2(ifid_instruction_to_OUT[3]),
+        .I3(ifid_instruction_to_OUT[1]),
+        .I4(ifid_instruction_to_OUT[0]),
+        .O(\immediate_reg[31]_i_5_n_0 ));
+  LUT6 #(
+    .INIT(64'h0000000022E200E2)) 
     \immediate_reg[3]_i_1 
-       (.I0(immediategen_immediate_to_idex__0[3]),
-        .I1(\instruction_reg_reg[31]_2 ),
+       (.I0(\rs2_reg_reg[3]_0 ),
+        .I1(\immediate_reg[31]_i_3_n_0 ),
+        .I2(\instruction_reg_reg[11]_0 [3]),
+        .I3(\immediate_reg[31]_i_2_n_0 ),
+        .I4(\immediate_reg[30]_i_2_n_0 ),
+        .I5(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_1 [3]));
-  (* SOFT_HLUTNM = "soft_lutpair198" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
+  LUT6 #(
+    .INIT(64'h0000000022E200E2)) 
     \immediate_reg[4]_i_1 
-       (.I0(immediategen_immediate_to_idex__0[4]),
-        .I1(\instruction_reg_reg[31]_2 ),
+       (.I0(\rs2_reg_reg[4]_0 ),
+        .I1(\immediate_reg[31]_i_3_n_0 ),
+        .I2(\instruction_reg_reg[11]_0 [4]),
+        .I3(\immediate_reg[31]_i_2_n_0 ),
+        .I4(\immediate_reg[30]_i_2_n_0 ),
+        .I5(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_1 [4]));
-  LUT6 #(
-    .INIT(64'h0000000004848484)) 
+  (* SOFT_HLUTNM = "soft_lutpair187" *) 
+  LUT5 #(
+    .INIT(32'h00002A22)) 
     \immediate_reg[5]_i_1 
-       (.I0(\immediate_reg[31]_i_2_n_0 ),
-        .I1(ifid_instruction_to_OUT[25]),
+       (.I0(ifid_instruction_to_OUT[25]),
+        .I1(\immediate_reg[31]_i_2_n_0 ),
         .I2(\immediate_reg[31]_i_3_n_0 ),
         .I3(\immediate_reg[30]_i_2_n_0 ),
-        .I4(\immediate_reg[30]_i_4_n_0 ),
-        .I5(\instruction_reg_reg[31]_2 ),
+        .I4(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_1 [5]));
-  LUT6 #(
-    .INIT(64'h0000000004848484)) 
+  (* SOFT_HLUTNM = "soft_lutpair186" *) 
+  LUT5 #(
+    .INIT(32'h00002A22)) 
     \immediate_reg[6]_i_1 
-       (.I0(\immediate_reg[31]_i_2_n_0 ),
-        .I1(ifid_instruction_to_OUT[26]),
+       (.I0(ifid_instruction_to_OUT[26]),
+        .I1(\immediate_reg[31]_i_2_n_0 ),
         .I2(\immediate_reg[31]_i_3_n_0 ),
         .I3(\immediate_reg[30]_i_2_n_0 ),
-        .I4(\immediate_reg[30]_i_4_n_0 ),
-        .I5(\instruction_reg_reg[31]_2 ),
+        .I4(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_1 [6]));
-  LUT6 #(
-    .INIT(64'h0000000004848484)) 
+  (* SOFT_HLUTNM = "soft_lutpair185" *) 
+  LUT5 #(
+    .INIT(32'h00002A22)) 
     \immediate_reg[7]_i_1 
-       (.I0(\immediate_reg[31]_i_2_n_0 ),
-        .I1(ifid_instruction_to_OUT[27]),
+       (.I0(ifid_instruction_to_OUT[27]),
+        .I1(\immediate_reg[31]_i_2_n_0 ),
         .I2(\immediate_reg[31]_i_3_n_0 ),
         .I3(\immediate_reg[30]_i_2_n_0 ),
-        .I4(\immediate_reg[30]_i_4_n_0 ),
-        .I5(\instruction_reg_reg[31]_2 ),
+        .I4(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_1 [7]));
-  LUT6 #(
-    .INIT(64'h0000000004848484)) 
+  (* SOFT_HLUTNM = "soft_lutpair184" *) 
+  LUT5 #(
+    .INIT(32'h00002A22)) 
     \immediate_reg[8]_i_1 
-       (.I0(\immediate_reg[31]_i_2_n_0 ),
-        .I1(ifid_instruction_to_OUT[28]),
+       (.I0(ifid_instruction_to_OUT[28]),
+        .I1(\immediate_reg[31]_i_2_n_0 ),
         .I2(\immediate_reg[31]_i_3_n_0 ),
         .I3(\immediate_reg[30]_i_2_n_0 ),
-        .I4(\immediate_reg[30]_i_4_n_0 ),
-        .I5(\instruction_reg_reg[31]_2 ),
+        .I4(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_1 [8]));
-  LUT6 #(
-    .INIT(64'h0000000004848484)) 
+  (* SOFT_HLUTNM = "soft_lutpair183" *) 
+  LUT5 #(
+    .INIT(32'h00002A22)) 
     \immediate_reg[9]_i_1 
-       (.I0(\immediate_reg[31]_i_2_n_0 ),
-        .I1(ifid_instruction_to_OUT[29]),
+       (.I0(ifid_instruction_to_OUT[29]),
+        .I1(\immediate_reg[31]_i_2_n_0 ),
         .I2(\immediate_reg[31]_i_3_n_0 ),
         .I3(\immediate_reg[30]_i_2_n_0 ),
-        .I4(\immediate_reg[30]_i_4_n_0 ),
-        .I5(\instruction_reg_reg[31]_2 ),
+        .I4(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_1 [9]));
-  (* SOFT_HLUTNM = "soft_lutpair195" *) 
+  (* SOFT_HLUTNM = "soft_lutpair203" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \instruction_reg[0]_i_1 
        (.I0(ifid_instruction_to_OUT[0]),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_0 [0]));
-  (* SOFT_HLUTNM = "soft_lutpair190" *) 
+  (* SOFT_HLUTNM = "soft_lutpair181" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \instruction_reg[12]_i_1 
        (.I0(ifid_instruction_to_OUT[12]),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_0 [7]));
-  (* SOFT_HLUTNM = "soft_lutpair190" *) 
+  (* SOFT_HLUTNM = "soft_lutpair180" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \instruction_reg[13]_i_1 
        (.I0(ifid_instruction_to_OUT[13]),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_0 [8]));
-  (* SOFT_HLUTNM = "soft_lutpair189" *) 
+  (* SOFT_HLUTNM = "soft_lutpair200" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \instruction_reg[14]_i_1 
        (.I0(ifid_instruction_to_OUT[14]),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_0 [9]));
-  (* SOFT_HLUTNM = "soft_lutpair194" *) 
+  (* SOFT_HLUTNM = "soft_lutpair202" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \instruction_reg[1]_i_1 
        (.I0(ifid_instruction_to_OUT[1]),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_0 [1]));
-  (* SOFT_HLUTNM = "soft_lutpair189" *) 
+  (* SOFT_HLUTNM = "soft_lutpair187" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \instruction_reg[25]_i_1 
        (.I0(ifid_instruction_to_OUT[25]),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_0 [10]));
-  (* SOFT_HLUTNM = "soft_lutpair188" *) 
+  (* SOFT_HLUTNM = "soft_lutpair186" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \instruction_reg[26]_i_1 
        (.I0(ifid_instruction_to_OUT[26]),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_0 [11]));
-  (* SOFT_HLUTNM = "soft_lutpair188" *) 
+  (* SOFT_HLUTNM = "soft_lutpair185" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \instruction_reg[27]_i_1 
        (.I0(ifid_instruction_to_OUT[27]),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_0 [12]));
-  (* SOFT_HLUTNM = "soft_lutpair187" *) 
+  (* SOFT_HLUTNM = "soft_lutpair184" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \instruction_reg[28]_i_1 
        (.I0(ifid_instruction_to_OUT[28]),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_0 [13]));
-  (* SOFT_HLUTNM = "soft_lutpair187" *) 
+  (* SOFT_HLUTNM = "soft_lutpair183" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \instruction_reg[29]_i_1 
        (.I0(ifid_instruction_to_OUT[29]),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_0 [14]));
-  (* SOFT_HLUTNM = "soft_lutpair194" *) 
+  (* SOFT_HLUTNM = "soft_lutpair201" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \instruction_reg[2]_i_1 
        (.I0(ifid_instruction_to_OUT[2]),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_0 [2]));
-  (* SOFT_HLUTNM = "soft_lutpair185" *) 
+  (* SOFT_HLUTNM = "soft_lutpair182" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \instruction_reg[30]_i_1 
        (.I0(ifid_instruction_to_OUT[30]),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_0 [15]));
-  (* SOFT_HLUTNM = "soft_lutpair174" *) 
+  (* SOFT_HLUTNM = "soft_lutpair179" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \instruction_reg[31]_i_1 
        (.I0(ifid_instruction_to_OUT[31]),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_0 [16]));
-  (* SOFT_HLUTNM = "soft_lutpair193" *) 
+  (* SOFT_HLUTNM = "soft_lutpair189" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \instruction_reg[3]_i_1 
        (.I0(ifid_instruction_to_OUT[3]),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_0 [3]));
-  (* SOFT_HLUTNM = "soft_lutpair186" *) 
+  (* SOFT_HLUTNM = "soft_lutpair198" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \instruction_reg[4]_i_1 
        (.I0(ifid_instruction_to_OUT[4]),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_0 [4]));
-  (* SOFT_HLUTNM = "soft_lutpair192" *) 
+  (* SOFT_HLUTNM = "soft_lutpair199" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \instruction_reg[5]_i_1 
        (.I0(ifid_instruction_to_OUT[5]),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[31]_0 [5]));
-  (* SOFT_HLUTNM = "soft_lutpair191" *) 
+  (* SOFT_HLUTNM = "soft_lutpair200" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \instruction_reg[6]_i_1 
@@ -17677,7 +17710,6 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
         .CLR(\rs1_reg_reg[0]_1 ),
         .D(p_0_in[9]),
         .Q(\instruction_reg_reg[11]_0 [2]));
-  (* SOFT_HLUTNM = "soft_lutpair193" *) 
   LUT1 #(
     .INIT(2'h1)) 
     int_regOrPC_reg_i_1
@@ -17693,7 +17725,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
         .I4(ifid_instruction_to_OUT[6]),
         .I5(ifid_instruction_to_OUT[2]),
         .O(\instruction_reg_reg[5]_2 ));
-  (* SOFT_HLUTNM = "soft_lutpair176" *) 
+  (* SOFT_HLUTNM = "soft_lutpair190" *) 
   LUT3 #(
     .INIT(8'hAC)) 
     \muxOut_reg[12]_i_1 
@@ -17701,7 +17733,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
         .I1(plusOp[0]),
         .I2(\instruction_reg_reg[1]_0 ),
         .O(D[0]));
-  (* SOFT_HLUTNM = "soft_lutpair176" *) 
+  (* SOFT_HLUTNM = "soft_lutpair190" *) 
   LUT3 #(
     .INIT(8'hAC)) 
     \muxOut_reg[13]_i_1 
@@ -17709,7 +17741,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
         .I1(plusOp[1]),
         .I2(\instruction_reg_reg[1]_0 ),
         .O(D[1]));
-  (* SOFT_HLUTNM = "soft_lutpair177" *) 
+  (* SOFT_HLUTNM = "soft_lutpair191" *) 
   LUT3 #(
     .INIT(8'hAC)) 
     \muxOut_reg[14]_i_1 
@@ -17717,7 +17749,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
         .I1(plusOp[2]),
         .I2(\instruction_reg_reg[1]_0 ),
         .O(D[2]));
-  (* SOFT_HLUTNM = "soft_lutpair177" *) 
+  (* SOFT_HLUTNM = "soft_lutpair191" *) 
   LUT3 #(
     .INIT(8'hAC)) 
     \muxOut_reg[15]_i_1 
@@ -17967,14 +17999,14 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
         .I4(ifid_instruction_to_OUT[12]),
         .I5(\CONTROLUNIT_INST/data0 ),
         .O(\muxOut_reg[15]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair186" *) 
+  (* SOFT_HLUTNM = "soft_lutpair198" *) 
   LUT2 #(
     .INIT(4'hB)) 
     \muxOut_reg[15]_i_5 
        (.I0(ifid_instruction_to_OUT[4]),
         .I1(ifid_instruction_to_OUT[0]),
         .O(\muxOut_reg[15]_i_5_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair192" *) 
+  (* SOFT_HLUTNM = "soft_lutpair199" *) 
   LUT2 #(
     .INIT(4'h7)) 
     \muxOut_reg[15]_i_6 
@@ -18005,15 +18037,14 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O(\NLW_muxOut_reg[15]_i_9_O_UNCONNECTED [3:0]),
         .S({1'b0,\muxOut_reg[15]_i_15_n_0 ,\muxOut_reg[15]_i_16_n_0 ,\muxOut_reg[15]_i_17_n_0 }));
-  LUT5 #(
-    .INIT(32'h70000F00)) 
+  LUT4 #(
+    .INIT(16'h2F00)) 
     pcOut1_carry__0_i_1
-       (.I0(\immediate_reg[30]_i_4_n_0 ),
-        .I1(\immediate_reg[30]_i_2_n_0 ),
-        .I2(\immediate_reg[31]_i_3_n_0 ),
+       (.I0(\immediate_reg[30]_i_2_n_0 ),
+        .I1(\immediate_reg[31]_i_3_n_0 ),
+        .I2(\immediate_reg[31]_i_2_n_0 ),
         .I3(ifid_instruction_to_OUT[27]),
-        .I4(\immediate_reg[31]_i_2_n_0 ),
-        .O(immediategen_immediate_to_idex__0[7]));
+        .O(immediategen_immediate_to_idex__0[3]));
   LUT6 #(
     .INIT(64'h0407F4F7FFFFFFFF)) 
     pcOut1_carry__0_i_10
@@ -18044,38 +18075,35 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
         .I4(i__carry__2_i_1_0[4]),
         .I5(regOrPCCntrl),
         .O(pcOut1_carry__0_i_12_n_0));
-  LUT5 #(
-    .INIT(32'h70000F00)) 
+  LUT4 #(
+    .INIT(16'h2F00)) 
     pcOut1_carry__0_i_2
-       (.I0(\immediate_reg[30]_i_4_n_0 ),
-        .I1(\immediate_reg[30]_i_2_n_0 ),
-        .I2(\immediate_reg[31]_i_3_n_0 ),
+       (.I0(\immediate_reg[30]_i_2_n_0 ),
+        .I1(\immediate_reg[31]_i_3_n_0 ),
+        .I2(\immediate_reg[31]_i_2_n_0 ),
         .I3(ifid_instruction_to_OUT[26]),
-        .I4(\immediate_reg[31]_i_2_n_0 ),
-        .O(immediategen_immediate_to_idex__0[6]));
-  LUT5 #(
-    .INIT(32'h70000F00)) 
+        .O(immediategen_immediate_to_idex__0[2]));
+  LUT4 #(
+    .INIT(16'h2F00)) 
     pcOut1_carry__0_i_3
-       (.I0(\immediate_reg[30]_i_4_n_0 ),
-        .I1(\immediate_reg[30]_i_2_n_0 ),
-        .I2(\immediate_reg[31]_i_3_n_0 ),
+       (.I0(\immediate_reg[30]_i_2_n_0 ),
+        .I1(\immediate_reg[31]_i_3_n_0 ),
+        .I2(\immediate_reg[31]_i_2_n_0 ),
         .I3(ifid_instruction_to_OUT[25]),
-        .I4(\immediate_reg[31]_i_2_n_0 ),
-        .O(immediategen_immediate_to_idex__0[5]));
-  LUT6 #(
-    .INIT(64'h4D00480000FF0000)) 
+        .O(immediategen_immediate_to_idex__0[1]));
+  LUT5 #(
+    .INIT(32'h30BB3000)) 
     pcOut1_carry__0_i_4
        (.I0(\immediate_reg[30]_i_2_n_0 ),
-        .I1(\instruction_reg_reg[11]_0 [4]),
-        .I2(\immediate_reg[30]_i_4_n_0 ),
+        .I1(\immediate_reg[31]_i_2_n_0 ),
+        .I2(\instruction_reg_reg[11]_0 [4]),
         .I3(\immediate_reg[31]_i_3_n_0 ),
         .I4(\rs2_reg_reg[4]_0 ),
-        .I5(\immediate_reg[31]_i_2_n_0 ),
-        .O(immediategen_immediate_to_idex__0[4]));
+        .O(immediategen_immediate_to_idex__0[0]));
   LUT4 #(
     .INIT(16'h9A55)) 
     pcOut1_carry__0_i_5
-       (.I0(immediategen_immediate_to_idex__0[7]),
+       (.I0(immediategen_immediate_to_idex__0[3]),
         .I1(regOrPCCntrl),
         .I2(ifid_pcout_to_OUT[7]),
         .I3(pcOut1_carry__0_i_9_n_0),
@@ -18083,7 +18111,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
   LUT4 #(
     .INIT(16'h9A55)) 
     pcOut1_carry__0_i_6
-       (.I0(immediategen_immediate_to_idex__0[6]),
+       (.I0(immediategen_immediate_to_idex__0[2]),
         .I1(regOrPCCntrl),
         .I2(ifid_pcout_to_OUT[6]),
         .I3(pcOut1_carry__0_i_10_n_0),
@@ -18091,7 +18119,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
   LUT4 #(
     .INIT(16'h9A55)) 
     pcOut1_carry__0_i_7
-       (.I0(immediategen_immediate_to_idex__0[5]),
+       (.I0(immediategen_immediate_to_idex__0[1]),
         .I1(regOrPCCntrl),
         .I2(ifid_pcout_to_OUT[5]),
         .I3(pcOut1_carry__0_i_11_n_0),
@@ -18099,7 +18127,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
   LUT4 #(
     .INIT(16'h9A55)) 
     pcOut1_carry__0_i_8
-       (.I0(immediategen_immediate_to_idex__0[4]),
+       (.I0(immediategen_immediate_to_idex__0[0]),
         .I1(regOrPCCntrl),
         .I2(ifid_pcout_to_OUT[4]),
         .I3(pcOut1_carry__0_i_12_n_0),
@@ -18115,15 +18143,15 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
         .I5(regOrPCCntrl),
         .O(pcOut1_carry__0_i_9_n_0));
   LUT6 #(
-    .INIT(64'h000A000A0FCA00CA)) 
+    .INIT(64'h3033BB3330008800)) 
     pcOut1_carry__1_i_1
-       (.I0(ifid_instruction_to_OUT[31]),
-        .I1(\instruction_reg_reg[11]_0 [0]),
-        .I2(\immediate_reg[30]_i_4_n_0 ),
-        .I3(\immediate_reg[30]_i_3_n_0 ),
-        .I4(\rs2_reg_reg[0]_0 ),
-        .I5(\immediate_reg[30]_i_2_n_0 ),
-        .O(immediategen_immediate_to_idex__0[11]));
+       (.I0(\rs2_reg_reg[0]_0 ),
+        .I1(\immediate_reg[31]_i_2_n_0 ),
+        .I2(\instruction_reg_reg[11]_0 [0]),
+        .I3(\immediate_reg[30]_i_2_n_0 ),
+        .I4(\immediate_reg[31]_i_3_n_0 ),
+        .I5(ifid_instruction_to_OUT[31]),
+        .O(immediategen_immediate_to_idex__0[7]));
   LUT6 #(
     .INIT(64'h0407F4F7FFFFFFFF)) 
     pcOut1_carry__1_i_10
@@ -18154,37 +18182,34 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
         .I4(i__carry__2_i_1_0[8]),
         .I5(regOrPCCntrl),
         .O(pcOut1_carry__1_i_12_n_0));
-  LUT5 #(
-    .INIT(32'h70000F00)) 
+  LUT4 #(
+    .INIT(16'h2F00)) 
     pcOut1_carry__1_i_2
-       (.I0(\immediate_reg[30]_i_4_n_0 ),
-        .I1(\immediate_reg[30]_i_2_n_0 ),
-        .I2(\immediate_reg[31]_i_3_n_0 ),
+       (.I0(\immediate_reg[30]_i_2_n_0 ),
+        .I1(\immediate_reg[31]_i_3_n_0 ),
+        .I2(\immediate_reg[31]_i_2_n_0 ),
         .I3(ifid_instruction_to_OUT[30]),
-        .I4(\immediate_reg[31]_i_2_n_0 ),
-        .O(immediategen_immediate_to_idex__0[10]));
-  LUT5 #(
-    .INIT(32'h70000F00)) 
+        .O(immediategen_immediate_to_idex__0[6]));
+  LUT4 #(
+    .INIT(16'h2F00)) 
     pcOut1_carry__1_i_3
-       (.I0(\immediate_reg[30]_i_4_n_0 ),
-        .I1(\immediate_reg[30]_i_2_n_0 ),
-        .I2(\immediate_reg[31]_i_3_n_0 ),
+       (.I0(\immediate_reg[30]_i_2_n_0 ),
+        .I1(\immediate_reg[31]_i_3_n_0 ),
+        .I2(\immediate_reg[31]_i_2_n_0 ),
         .I3(ifid_instruction_to_OUT[29]),
-        .I4(\immediate_reg[31]_i_2_n_0 ),
-        .O(immediategen_immediate_to_idex__0[9]));
-  LUT5 #(
-    .INIT(32'h70000F00)) 
+        .O(immediategen_immediate_to_idex__0[5]));
+  LUT4 #(
+    .INIT(16'h2F00)) 
     pcOut1_carry__1_i_4
-       (.I0(\immediate_reg[30]_i_4_n_0 ),
-        .I1(\immediate_reg[30]_i_2_n_0 ),
-        .I2(\immediate_reg[31]_i_3_n_0 ),
+       (.I0(\immediate_reg[30]_i_2_n_0 ),
+        .I1(\immediate_reg[31]_i_3_n_0 ),
+        .I2(\immediate_reg[31]_i_2_n_0 ),
         .I3(ifid_instruction_to_OUT[28]),
-        .I4(\immediate_reg[31]_i_2_n_0 ),
-        .O(immediategen_immediate_to_idex__0[8]));
+        .O(immediategen_immediate_to_idex__0[4]));
   LUT4 #(
     .INIT(16'h9A55)) 
     pcOut1_carry__1_i_5
-       (.I0(immediategen_immediate_to_idex__0[11]),
+       (.I0(immediategen_immediate_to_idex__0[7]),
         .I1(regOrPCCntrl),
         .I2(ifid_pcout_to_OUT[11]),
         .I3(pcOut1_carry__1_i_9_n_0),
@@ -18192,7 +18217,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
   LUT4 #(
     .INIT(16'h9A55)) 
     pcOut1_carry__1_i_6
-       (.I0(immediategen_immediate_to_idex__0[10]),
+       (.I0(immediategen_immediate_to_idex__0[6]),
         .I1(regOrPCCntrl),
         .I2(ifid_pcout_to_OUT[10]),
         .I3(pcOut1_carry__1_i_10_n_0),
@@ -18200,7 +18225,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
   LUT4 #(
     .INIT(16'h9A55)) 
     pcOut1_carry__1_i_7
-       (.I0(immediategen_immediate_to_idex__0[9]),
+       (.I0(immediategen_immediate_to_idex__0[5]),
         .I1(regOrPCCntrl),
         .I2(ifid_pcout_to_OUT[9]),
         .I3(pcOut1_carry__1_i_11_n_0),
@@ -18208,7 +18233,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
   LUT4 #(
     .INIT(16'h9A55)) 
     pcOut1_carry__1_i_8
-       (.I0(immediategen_immediate_to_idex__0[8]),
+       (.I0(immediategen_immediate_to_idex__0[4]),
         .I1(regOrPCCntrl),
         .I2(ifid_pcout_to_OUT[8]),
         .I3(pcOut1_carry__1_i_12_n_0),
@@ -18223,118 +18248,120 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
         .I4(i__carry__2_i_1_0[11]),
         .I5(regOrPCCntrl),
         .O(pcOut1_carry__1_i_9_n_0));
-  LUT6 #(
-    .INIT(64'hEA002A0000FF0000)) 
+  LUT4 #(
+    .INIT(16'h2F20)) 
     pcOut1_carry__2_i_1
-       (.I0(ifid_instruction_to_OUT[31]),
-        .I1(\immediate_reg[30]_i_4_n_0 ),
-        .I2(\immediate_reg[30]_i_2_n_0 ),
-        .I3(\immediate_reg[31]_i_3_n_0 ),
-        .I4(ifid_instruction_to_OUT[14]),
-        .I5(\immediate_reg[31]_i_2_n_0 ),
-        .O(immediategen_immediate_to_idex__0[14]));
+       (.I0(ifid_instruction_to_OUT[14]),
+        .I1(\immediate_reg[31]_i_3_n_0 ),
+        .I2(\immediate_reg[31]_i_2_n_0 ),
+        .I3(ifid_instruction_to_OUT[31]),
+        .O(immediategen_immediate_to_idex__0[10]));
   LUT6 #(
     .INIT(64'h0407F4F7FFFFFFFF)) 
     pcOut1_carry__2_i_10
-       (.I0(i__carry__0_i_2__1_0),
-        .I1(\CONTROLUNIT_INST/rs1_final1__8 ),
-        .I2(\CONTROLUNIT_INST/rs1_final2__8 ),
-        .I3(reg1_data[13]),
-        .I4(i__carry__2_i_1_0[13]),
-        .I5(regOrPCCntrl),
-        .O(pcOut1_carry__2_i_10_n_0));
-  LUT6 #(
-    .INIT(64'h0407F4F7FFFFFFFF)) 
-    pcOut1_carry__2_i_11
-       (.I0(i__carry__0_i_2__1_1),
-        .I1(\CONTROLUNIT_INST/rs1_final1__8 ),
-        .I2(\CONTROLUNIT_INST/rs1_final2__8 ),
-        .I3(reg1_data[12]),
-        .I4(i__carry__2_i_1_0[12]),
-        .I5(regOrPCCntrl),
-        .O(pcOut1_carry__2_i_11_n_0));
-  LUT6 #(
-    .INIT(64'hEA002A0000FF0000)) 
-    pcOut1_carry__2_i_2
-       (.I0(ifid_instruction_to_OUT[31]),
-        .I1(\immediate_reg[30]_i_4_n_0 ),
-        .I2(\immediate_reg[30]_i_2_n_0 ),
-        .I3(\immediate_reg[31]_i_3_n_0 ),
-        .I4(ifid_instruction_to_OUT[13]),
-        .I5(\immediate_reg[31]_i_2_n_0 ),
-        .O(immediategen_immediate_to_idex__0[13]));
-  LUT6 #(
-    .INIT(64'hEA002A0000FF0000)) 
-    pcOut1_carry__2_i_3
-       (.I0(ifid_instruction_to_OUT[31]),
-        .I1(\immediate_reg[30]_i_4_n_0 ),
-        .I2(\immediate_reg[30]_i_2_n_0 ),
-        .I3(\immediate_reg[31]_i_3_n_0 ),
-        .I4(ifid_instruction_to_OUT[12]),
-        .I5(\immediate_reg[31]_i_2_n_0 ),
-        .O(immediategen_immediate_to_idex__0[12]));
-  LUT4 #(
-    .INIT(16'h9A55)) 
-    pcOut1_carry__2_i_4
-       (.I0(immediategen_immediate_to_idex),
-        .I1(regOrPCCntrl),
-        .I2(ifid_pcout_to_OUT[15]),
-        .I3(pcOut1_carry__2_i_8_n_0),
-        .O(S[3]));
-  LUT4 #(
-    .INIT(16'h9A55)) 
-    pcOut1_carry__2_i_5
-       (.I0(immediategen_immediate_to_idex__0[14]),
-        .I1(regOrPCCntrl),
-        .I2(ifid_pcout_to_OUT[14]),
-        .I3(pcOut1_carry__2_i_9_n_0),
-        .O(S[2]));
-  LUT4 #(
-    .INIT(16'h9A55)) 
-    pcOut1_carry__2_i_6
-       (.I0(immediategen_immediate_to_idex__0[13]),
-        .I1(regOrPCCntrl),
-        .I2(ifid_pcout_to_OUT[13]),
-        .I3(pcOut1_carry__2_i_10_n_0),
-        .O(S[1]));
-  LUT4 #(
-    .INIT(16'h9A55)) 
-    pcOut1_carry__2_i_7
-       (.I0(immediategen_immediate_to_idex__0[12]),
-        .I1(regOrPCCntrl),
-        .I2(ifid_pcout_to_OUT[12]),
-        .I3(pcOut1_carry__2_i_11_n_0),
-        .O(S[0]));
-  LUT6 #(
-    .INIT(64'h0407F4F7FFFFFFFF)) 
-    pcOut1_carry__2_i_8
-       (.I0(i__carry__0_i_1__1_0),
-        .I1(\CONTROLUNIT_INST/rs1_final1__8 ),
-        .I2(\CONTROLUNIT_INST/rs1_final2__8 ),
-        .I3(reg1_data[15]),
-        .I4(i__carry__2_i_1_0[15]),
-        .I5(regOrPCCntrl),
-        .O(pcOut1_carry__2_i_8_n_0));
-  LUT6 #(
-    .INIT(64'h0407F4F7FFFFFFFF)) 
-    pcOut1_carry__2_i_9
        (.I0(i__carry__0_i_1__1_1),
         .I1(\CONTROLUNIT_INST/rs1_final1__8 ),
         .I2(\CONTROLUNIT_INST/rs1_final2__8 ),
         .I3(reg1_data[14]),
         .I4(i__carry__2_i_1_0[14]),
         .I5(regOrPCCntrl),
-        .O(pcOut1_carry__2_i_9_n_0));
+        .O(pcOut1_carry__2_i_10_n_0));
   LUT6 #(
-    .INIT(64'h4D00480000FF0000)) 
+    .INIT(64'h0407F4F7FFFFFFFF)) 
+    pcOut1_carry__2_i_11
+       (.I0(i__carry__0_i_2__1_0),
+        .I1(\CONTROLUNIT_INST/rs1_final1__8 ),
+        .I2(\CONTROLUNIT_INST/rs1_final2__8 ),
+        .I3(reg1_data[13]),
+        .I4(i__carry__2_i_1_0[13]),
+        .I5(regOrPCCntrl),
+        .O(pcOut1_carry__2_i_11_n_0));
+  LUT6 #(
+    .INIT(64'h0407F4F7FFFFFFFF)) 
+    pcOut1_carry__2_i_12
+       (.I0(i__carry__0_i_2__1_1),
+        .I1(\CONTROLUNIT_INST/rs1_final1__8 ),
+        .I2(\CONTROLUNIT_INST/rs1_final2__8 ),
+        .I3(reg1_data[12]),
+        .I4(i__carry__2_i_1_0[12]),
+        .I5(regOrPCCntrl),
+        .O(pcOut1_carry__2_i_12_n_0));
+  LUT4 #(
+    .INIT(16'h2F20)) 
+    pcOut1_carry__2_i_2
+       (.I0(ifid_instruction_to_OUT[13]),
+        .I1(\immediate_reg[31]_i_3_n_0 ),
+        .I2(\immediate_reg[31]_i_2_n_0 ),
+        .I3(ifid_instruction_to_OUT[31]),
+        .O(immediategen_immediate_to_idex__0[9]));
+  LUT4 #(
+    .INIT(16'h2F20)) 
+    pcOut1_carry__2_i_3
+       (.I0(ifid_instruction_to_OUT[12]),
+        .I1(\immediate_reg[31]_i_3_n_0 ),
+        .I2(\immediate_reg[31]_i_2_n_0 ),
+        .I3(ifid_instruction_to_OUT[31]),
+        .O(immediategen_immediate_to_idex__0[8]));
+  LUT4 #(
+    .INIT(16'h9A55)) 
+    pcOut1_carry__2_i_4
+       (.I0(immediategen_immediate_to_idex),
+        .I1(regOrPCCntrl),
+        .I2(ifid_pcout_to_OUT[15]),
+        .I3(pcOut1_carry__2_i_9_n_0),
+        .O(S[3]));
+  LUT4 #(
+    .INIT(16'h9A55)) 
+    pcOut1_carry__2_i_5
+       (.I0(immediategen_immediate_to_idex__0[10]),
+        .I1(regOrPCCntrl),
+        .I2(ifid_pcout_to_OUT[14]),
+        .I3(pcOut1_carry__2_i_10_n_0),
+        .O(S[2]));
+  LUT4 #(
+    .INIT(16'h9A55)) 
+    pcOut1_carry__2_i_6
+       (.I0(immediategen_immediate_to_idex__0[9]),
+        .I1(regOrPCCntrl),
+        .I2(ifid_pcout_to_OUT[13]),
+        .I3(pcOut1_carry__2_i_11_n_0),
+        .O(S[1]));
+  LUT4 #(
+    .INIT(16'h9A55)) 
+    pcOut1_carry__2_i_7
+       (.I0(immediategen_immediate_to_idex__0[8]),
+        .I1(regOrPCCntrl),
+        .I2(ifid_pcout_to_OUT[12]),
+        .I3(pcOut1_carry__2_i_12_n_0),
+        .O(S[0]));
+  (* SOFT_HLUTNM = "soft_lutpair178" *) 
+  LUT4 #(
+    .INIT(16'h2F20)) 
+    pcOut1_carry__2_i_8
+       (.I0(\rs1_reg_reg[0]_0 ),
+        .I1(\immediate_reg[31]_i_3_n_0 ),
+        .I2(\immediate_reg[31]_i_2_n_0 ),
+        .I3(ifid_instruction_to_OUT[31]),
+        .O(immediategen_immediate_to_idex));
+  LUT6 #(
+    .INIT(64'h0407F4F7FFFFFFFF)) 
+    pcOut1_carry__2_i_9
+       (.I0(i__carry__0_i_1__1_0),
+        .I1(\CONTROLUNIT_INST/rs1_final1__8 ),
+        .I2(\CONTROLUNIT_INST/rs1_final2__8 ),
+        .I3(reg1_data[15]),
+        .I4(i__carry__2_i_1_0[15]),
+        .I5(regOrPCCntrl),
+        .O(pcOut1_carry__2_i_9_n_0));
+  LUT5 #(
+    .INIT(32'h30BB3000)) 
     pcOut1_carry_i_1
        (.I0(\immediate_reg[30]_i_2_n_0 ),
-        .I1(\instruction_reg_reg[11]_0 [3]),
-        .I2(\immediate_reg[30]_i_4_n_0 ),
+        .I1(\immediate_reg[31]_i_2_n_0 ),
+        .I2(\instruction_reg_reg[11]_0 [3]),
         .I3(\immediate_reg[31]_i_3_n_0 ),
         .I4(\rs2_reg_reg[3]_0 ),
-        .I5(\immediate_reg[31]_i_2_n_0 ),
-        .O(immediategen_immediate_to_idex__0[3]));
+        .O(DI[3]));
   LUT6 #(
     .INIT(64'h0407F4F7FFFFFFFF)) 
     pcOut1_carry_i_10
@@ -18384,40 +18411,37 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
         .I4(i__carry__2_i_11_1[1]),
         .I5(\rs1_reg_reg[1]_0 ),
         .O(pcOut1_carry_i_14_n_0));
-  LUT6 #(
-    .INIT(64'h4D00480000FF0000)) 
+  LUT5 #(
+    .INIT(32'h30BB3000)) 
     pcOut1_carry_i_2
        (.I0(\immediate_reg[30]_i_2_n_0 ),
-        .I1(\instruction_reg_reg[11]_0 [2]),
-        .I2(\immediate_reg[30]_i_4_n_0 ),
+        .I1(\immediate_reg[31]_i_2_n_0 ),
+        .I2(\instruction_reg_reg[11]_0 [2]),
         .I3(\immediate_reg[31]_i_3_n_0 ),
         .I4(\rs2_reg_reg[2]_0 ),
-        .I5(\immediate_reg[31]_i_2_n_0 ),
-        .O(immediategen_immediate_to_idex__0[2]));
-  LUT6 #(
-    .INIT(64'h4D00480000FF0000)) 
+        .O(DI[2]));
+  LUT5 #(
+    .INIT(32'h30BB3000)) 
     pcOut1_carry_i_3
        (.I0(\immediate_reg[30]_i_2_n_0 ),
-        .I1(\instruction_reg_reg[11]_0 [1]),
-        .I2(\immediate_reg[30]_i_4_n_0 ),
+        .I1(\immediate_reg[31]_i_2_n_0 ),
+        .I2(\instruction_reg_reg[11]_0 [1]),
         .I3(\immediate_reg[31]_i_3_n_0 ),
         .I4(\rs2_reg_reg[1]_0 ),
-        .I5(\immediate_reg[31]_i_2_n_0 ),
-        .O(immediategen_immediate_to_idex__0[1]));
-  LUT6 #(
-    .INIT(64'h0000A80800000000)) 
+        .O(DI[1]));
+  LUT5 #(
+    .INIT(32'h00002E22)) 
     pcOut1_carry_i_4
-       (.I0(\immediate_reg[31]_i_3_n_0 ),
-        .I1(\rs2_reg_reg[0]_0 ),
+       (.I0(\rs2_reg_reg[0]_0 ),
+        .I1(\immediate_reg[31]_i_3_n_0 ),
         .I2(\immediate_reg[30]_i_2_n_0 ),
         .I3(\instruction_reg_reg[11]_0 [0]),
-        .I4(\immediate_reg[30]_i_4_n_0 ),
-        .I5(\immediate_reg[31]_i_2_n_0 ),
-        .O(immediategen_immediate_to_idex__0[0]));
+        .I4(\immediate_reg[31]_i_2_n_0 ),
+        .O(DI[0]));
   LUT4 #(
     .INIT(16'h9A55)) 
     pcOut1_carry_i_5
-       (.I0(immediategen_immediate_to_idex__0[3]),
+       (.I0(DI[3]),
         .I1(regOrPCCntrl),
         .I2(ifid_pcout_to_OUT[3]),
         .I3(pcOut1_carry_i_9_n_0),
@@ -18425,7 +18449,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
   LUT4 #(
     .INIT(16'h9A55)) 
     pcOut1_carry_i_6
-       (.I0(immediategen_immediate_to_idex__0[2]),
+       (.I0(DI[2]),
         .I1(regOrPCCntrl),
         .I2(ifid_pcout_to_OUT[2]),
         .I3(pcOut1_carry_i_10_n_0),
@@ -18433,16 +18457,20 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
   LUT4 #(
     .INIT(16'h9A55)) 
     pcOut1_carry_i_7
-       (.I0(immediategen_immediate_to_idex__0[1]),
+       (.I0(DI[1]),
         .I1(regOrPCCntrl),
         .I2(ifid_pcout_to_OUT[1]),
         .I3(pcOut1_carry_i_11_n_0),
         .O(\pcout_reg_reg[3]_0 [1]));
-  LUT2 #(
-    .INIT(4'h9)) 
+  LUT6 #(
+    .INIT(64'h04550400FBAAFBFF)) 
     pcOut1_carry_i_8
-       (.I0(immediategen_immediate_to_idex__0[0]),
-        .I1(pcOut1_carry_i_12_n_0),
+       (.I0(\immediate_reg[31]_i_2_n_0 ),
+        .I1(\instruction_reg_reg[11]_0 [0]),
+        .I2(\immediate_reg[30]_i_2_n_0 ),
+        .I3(\immediate_reg[31]_i_3_n_0 ),
+        .I4(\rs2_reg_reg[0]_0 ),
+        .I5(pcOut1_carry_i_12_n_0),
         .O(\pcout_reg_reg[3]_0 [0]));
   LUT6 #(
     .INIT(64'h0407F4F7FFFFFFFF)) 
@@ -18456,59 +18484,49 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
         .O(pcOut1_carry_i_9_n_0));
   LUT5 #(
     .INIT(32'hFFFFFFFE)) 
-    \pc_reg[15]_i_11 
+    \pc_reg[15]_i_10 
        (.I0(\instruction_reg_reg[11]_0 [3]),
         .I1(\instruction_reg_reg[11]_0 [1]),
         .I2(\instruction_reg_reg[11]_0 [0]),
         .I3(\instruction_reg_reg[11]_0 [4]),
         .I4(\instruction_reg_reg[11]_0 [2]),
         .O(\instruction_reg_reg[10]_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFF00000001)) 
-    \pc_reg[15]_i_9 
-       (.I0(\muxOut_reg[15]_i_6_n_0 ),
-        .I1(\immediate_reg[31]_i_4_n_0 ),
-        .I2(ifid_instruction_to_OUT[3]),
-        .I3(ifid_instruction_to_OUT[4]),
-        .I4(ifid_instruction_to_OUT[2]),
-        .I5(p_1_in),
-        .O(pause_sig1__8));
-  (* SOFT_HLUTNM = "soft_lutpair203" *) 
+  (* SOFT_HLUTNM = "soft_lutpair206" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \pcin_reg[10]_i_1 
        (.I0(ifid_pcout_to_OUT[10]),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\pcout_reg_reg[15]_0 [9]));
-  (* SOFT_HLUTNM = "soft_lutpair203" *) 
+  (* SOFT_HLUTNM = "soft_lutpair206" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \pcin_reg[11]_i_1 
        (.I0(ifid_pcout_to_OUT[11]),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\pcout_reg_reg[15]_0 [10]));
-  (* SOFT_HLUTNM = "soft_lutpair202" *) 
+  (* SOFT_HLUTNM = "soft_lutpair205" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \pcin_reg[12]_i_1 
        (.I0(ifid_pcout_to_OUT[12]),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\pcout_reg_reg[15]_0 [11]));
-  (* SOFT_HLUTNM = "soft_lutpair202" *) 
+  (* SOFT_HLUTNM = "soft_lutpair205" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \pcin_reg[13]_i_1 
        (.I0(ifid_pcout_to_OUT[13]),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\pcout_reg_reg[15]_0 [12]));
-  (* SOFT_HLUTNM = "soft_lutpair201" *) 
+  (* SOFT_HLUTNM = "soft_lutpair204" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \pcin_reg[14]_i_1 
        (.I0(ifid_pcout_to_OUT[14]),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\pcout_reg_reg[15]_0 [13]));
-  (* SOFT_HLUTNM = "soft_lutpair201" *) 
+  (* SOFT_HLUTNM = "soft_lutpair204" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \pcin_reg[15]_i_1 
@@ -18521,56 +18539,56 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
        (.I0(ifid_pcout_to_OUT[1]),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\pcout_reg_reg[15]_0 [0]));
-  (* SOFT_HLUTNM = "soft_lutpair207" *) 
+  (* SOFT_HLUTNM = "soft_lutpair210" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \pcin_reg[2]_i_1 
        (.I0(ifid_pcout_to_OUT[2]),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\pcout_reg_reg[15]_0 [1]));
-  (* SOFT_HLUTNM = "soft_lutpair207" *) 
+  (* SOFT_HLUTNM = "soft_lutpair210" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \pcin_reg[3]_i_1 
        (.I0(ifid_pcout_to_OUT[3]),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\pcout_reg_reg[15]_0 [2]));
-  (* SOFT_HLUTNM = "soft_lutpair206" *) 
+  (* SOFT_HLUTNM = "soft_lutpair209" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \pcin_reg[4]_i_1 
        (.I0(ifid_pcout_to_OUT[4]),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\pcout_reg_reg[15]_0 [3]));
-  (* SOFT_HLUTNM = "soft_lutpair206" *) 
+  (* SOFT_HLUTNM = "soft_lutpair209" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \pcin_reg[5]_i_1 
        (.I0(ifid_pcout_to_OUT[5]),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\pcout_reg_reg[15]_0 [4]));
-  (* SOFT_HLUTNM = "soft_lutpair205" *) 
+  (* SOFT_HLUTNM = "soft_lutpair208" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \pcin_reg[6]_i_1 
        (.I0(ifid_pcout_to_OUT[6]),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\pcout_reg_reg[15]_0 [5]));
-  (* SOFT_HLUTNM = "soft_lutpair205" *) 
+  (* SOFT_HLUTNM = "soft_lutpair208" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \pcin_reg[7]_i_1 
        (.I0(ifid_pcout_to_OUT[7]),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\pcout_reg_reg[15]_0 [6]));
-  (* SOFT_HLUTNM = "soft_lutpair204" *) 
+  (* SOFT_HLUTNM = "soft_lutpair207" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \pcin_reg[8]_i_1 
        (.I0(ifid_pcout_to_OUT[8]),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\pcout_reg_reg[15]_0 [7]));
-  (* SOFT_HLUTNM = "soft_lutpair204" *) 
+  (* SOFT_HLUTNM = "soft_lutpair207" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \pcin_reg[9]_i_1 
@@ -18697,70 +18715,70 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
         .CLR(\rs1_reg_reg[0]_1 ),
         .D(\pcout_reg_reg[15]_1 [8]),
         .Q(ifid_pcout_to_OUT[9]));
-  (* SOFT_HLUTNM = "soft_lutpair178" *) 
+  (* SOFT_HLUTNM = "soft_lutpair192" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \rd_reg[0]_i_1 
        (.I0(\instruction_reg_reg[11]_0 [0]),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[11]_1 [0]));
-  (* SOFT_HLUTNM = "soft_lutpair178" *) 
+  (* SOFT_HLUTNM = "soft_lutpair192" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \rd_reg[1]_i_1 
        (.I0(\instruction_reg_reg[11]_0 [1]),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[11]_1 [1]));
-  (* SOFT_HLUTNM = "soft_lutpair179" *) 
+  (* SOFT_HLUTNM = "soft_lutpair193" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \rd_reg[2]_i_1 
        (.I0(\instruction_reg_reg[11]_0 [2]),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[11]_1 [2]));
-  (* SOFT_HLUTNM = "soft_lutpair179" *) 
+  (* SOFT_HLUTNM = "soft_lutpair193" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \rd_reg[3]_i_1 
        (.I0(\instruction_reg_reg[11]_0 [3]),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[11]_1 [3]));
-  (* SOFT_HLUTNM = "soft_lutpair180" *) 
+  (* SOFT_HLUTNM = "soft_lutpair194" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \rd_reg[4]_i_1 
        (.I0(\instruction_reg_reg[11]_0 [4]),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\instruction_reg_reg[11]_1 [4]));
-  (* SOFT_HLUTNM = "soft_lutpair185" *) 
+  (* SOFT_HLUTNM = "soft_lutpair197" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \rs1_reg[0]_i_1 
        (.I0(\rs1_reg_reg[0]_0 ),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\rs1_reg_reg[4]_1 [0]));
-  (* SOFT_HLUTNM = "soft_lutpair184" *) 
+  (* SOFT_HLUTNM = "soft_lutpair177" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \rs1_reg[1]_i_1 
        (.I0(\rs1_reg_reg[1]_0 ),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\rs1_reg_reg[4]_1 [1]));
-  (* SOFT_HLUTNM = "soft_lutpair184" *) 
+  (* SOFT_HLUTNM = "soft_lutpair176" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \rs1_reg[2]_i_1 
        (.I0(\rs1_reg_reg[2]_0 ),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\rs1_reg_reg[4]_1 [2]));
-  (* SOFT_HLUTNM = "soft_lutpair183" *) 
+  (* SOFT_HLUTNM = "soft_lutpair175" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \rs1_reg[3]_i_1 
        (.I0(\rs1_reg_reg[3]_0 ),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\rs1_reg_reg[4]_1 [3]));
-  (* SOFT_HLUTNM = "soft_lutpair183" *) 
+  (* SOFT_HLUTNM = "soft_lutpair197" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \rs1_reg[4]_i_1 
@@ -18807,35 +18825,35 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid
         .CLR(\rs1_reg_reg[0]_1 ),
         .D(\rs1_reg_reg[4]_2 ),
         .Q(\rs1_reg_reg[4]_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair182" *) 
+  (* SOFT_HLUTNM = "soft_lutpair196" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \rs2_reg[0]_i_1 
        (.I0(\rs2_reg_reg[0]_0 ),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\rs2_reg_reg[4]_1 [0]));
-  (* SOFT_HLUTNM = "soft_lutpair182" *) 
+  (* SOFT_HLUTNM = "soft_lutpair196" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \rs2_reg[1]_i_1 
        (.I0(\rs2_reg_reg[1]_0 ),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\rs2_reg_reg[4]_1 [1]));
-  (* SOFT_HLUTNM = "soft_lutpair181" *) 
+  (* SOFT_HLUTNM = "soft_lutpair195" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \rs2_reg[2]_i_1 
        (.I0(\rs2_reg_reg[2]_0 ),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\rs2_reg_reg[4]_1 [2]));
-  (* SOFT_HLUTNM = "soft_lutpair181" *) 
+  (* SOFT_HLUTNM = "soft_lutpair195" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \rs2_reg[3]_i_1 
        (.I0(\rs2_reg_reg[3]_0 ),
         .I1(\instruction_reg_reg[31]_2 ),
         .O(\rs2_reg_reg[4]_1 [3]));
-  (* SOFT_HLUTNM = "soft_lutpair180" *) 
+  (* SOFT_HLUTNM = "soft_lutpair194" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \rs2_reg[4]_i_1 
@@ -18917,7 +18935,6 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_internal_connections
     mem_addr,
     pc_out,
     Q,
-    branch_taken,
     \readdata2_reg_reg[14] ,
     \readdata2_reg_reg[12] ,
     \readdata2_reg_reg[11] ,
@@ -18938,6 +18955,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_internal_connections
     \readdata2_reg_reg[28] ,
     \readdata2_reg_reg[29] ,
     \readdata2_reg_reg[30] ,
+    branch_taken,
     clock,
     \pc_reg_reg[15] ,
     early_prev_reg,
@@ -18982,7 +19000,6 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_internal_connections
   output [31:0]mem_addr;
   output [14:0]pc_out;
   output [4:0]Q;
-  output branch_taken;
   output \readdata2_reg_reg[14] ;
   output \readdata2_reg_reg[12] ;
   output \readdata2_reg_reg[11] ;
@@ -19003,6 +19020,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_internal_connections
   output \readdata2_reg_reg[28] ;
   output \readdata2_reg_reg[29] ;
   output \readdata2_reg_reg[30] ;
+  output branch_taken;
   input clock;
   input \pc_reg_reg[15] ;
   input early_prev_reg;
@@ -19110,6 +19128,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_internal_connections
   wire ALU_INST_n_97;
   wire ALU_INST_n_98;
   wire ALU_INST_n_99;
+  wire Branch1__3;
   wire CONTROLUNIT_INST_n_10;
   wire CONTROLUNIT_INST_n_11;
   wire CONTROLUNIT_INST_n_12;
@@ -19511,9 +19530,13 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_internal_connections
   wire ifid_instance_n_138;
   wire ifid_instance_n_139;
   wire ifid_instance_n_140;
+  wire ifid_instance_n_141;
+  wire ifid_instance_n_142;
+  wire ifid_instance_n_143;
+  wire ifid_instance_n_144;
+  wire ifid_instance_n_145;
+  wire ifid_instance_n_146;
   wire ifid_instance_n_15;
-  wire ifid_instance_n_156;
-  wire ifid_instance_n_157;
   wire ifid_instance_n_158;
   wire ifid_instance_n_159;
   wire ifid_instance_n_16;
@@ -19529,7 +19552,10 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_internal_connections
   wire ifid_instance_n_169;
   wire ifid_instance_n_17;
   wire ifid_instance_n_170;
-  wire ifid_instance_n_173;
+  wire ifid_instance_n_171;
+  wire ifid_instance_n_172;
+  wire ifid_instance_n_174;
+  wire ifid_instance_n_176;
   wire ifid_instance_n_177;
   wire ifid_instance_n_178;
   wire ifid_instance_n_179;
@@ -19556,8 +19582,6 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_internal_connections
   wire ifid_instance_n_198;
   wire ifid_instance_n_199;
   wire ifid_instance_n_20;
-  wire ifid_instance_n_200;
-  wire ifid_instance_n_202;
   wire ifid_instance_n_203;
   wire ifid_instance_n_204;
   wire ifid_instance_n_205;
@@ -19597,6 +19621,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_internal_connections
   wire ifid_instance_n_236;
   wire ifid_instance_n_237;
   wire ifid_instance_n_238;
+  wire ifid_instance_n_239;
   wire ifid_instance_n_24;
   wire ifid_instance_n_25;
   wire ifid_instance_n_26;
@@ -19608,14 +19633,11 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_internal_connections
   wire ifid_instance_n_32;
   wire ifid_instance_n_33;
   wire ifid_instance_n_34;
-  wire ifid_instance_n_35;
-  wire ifid_instance_n_36;
-  wire ifid_instance_n_37;
   wire ifid_instance_n_38;
+  wire ifid_instance_n_39;
   wire ifid_instance_n_40;
   wire ifid_instance_n_41;
   wire ifid_instance_n_42;
-  wire ifid_instance_n_43;
   wire ifid_instance_n_44;
   wire ifid_instance_n_45;
   wire ifid_instance_n_46;
@@ -19668,12 +19690,10 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_internal_connections
   wire ifid_instance_n_93;
   wire ifid_instance_n_94;
   wire ifid_instance_n_95;
-  wire ifid_instance_n_96;
-  wire ifid_instance_n_97;
   wire ifid_instance_n_98;
   wire ifid_instance_n_99;
   wire [11:7]ifid_instruction_to_OUT;
-  wire [14:0]immediategen_immediate_to_idex__0;
+  wire [14:1]immediategen_immediate_to_idex__0;
   wire [31:0]instruction_in;
   wire instruction_reg0;
   wire int_Branch__2;
@@ -20028,26 +20048,26 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_internal_connections
         .\result_temp6_inferred__0/i__carry__2_1 ({EXMEM_INST_n_198,EXMEM_INST_n_199,EXMEM_INST_n_200,EXMEM_INST_n_201}));
   decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ControlUnit CONTROLUNIT_INST
        (.CO(data2_1),
-        .DI({ifid_instance_n_207,ifid_instance_n_208,ifid_instance_n_209,ifid_instance_n_210}),
-        .S({ifid_instance_n_203,ifid_instance_n_204,ifid_instance_n_205,ifid_instance_n_206}),
+        .DI({ifid_instance_n_208,ifid_instance_n_209,ifid_instance_n_210,ifid_instance_n_211}),
+        .S({ifid_instance_n_204,ifid_instance_n_205,ifid_instance_n_206,ifid_instance_n_207}),
         .branch_prev(branch_prev),
         .branch_prev_reg_0(branch_prev_reg),
-        .\branch_taken0_inferred__1/i__carry__1_0 ({ifid_instance_n_215,ifid_instance_n_216,ifid_instance_n_217,ifid_instance_n_218}),
-        .\branch_taken0_inferred__1/i__carry__1_1 ({ifid_instance_n_211,ifid_instance_n_212,ifid_instance_n_213,ifid_instance_n_214}),
-        .\branch_taken0_inferred__1/i__carry__2_0 ({ifid_instance_n_223,ifid_instance_n_224,ifid_instance_n_225,ifid_instance_n_226}),
-        .\branch_taken0_inferred__1/i__carry__2_1 ({ifid_instance_n_219,ifid_instance_n_220,ifid_instance_n_221,ifid_instance_n_222}),
-        .\branch_taken0_inferred__2/i__carry__0_0 ({ifid_instance_n_48,ifid_instance_n_49,ifid_instance_n_50,ifid_instance_n_51}),
-        .\branch_taken0_inferred__2/i__carry__0_1 ({ifid_instance_n_52,ifid_instance_n_53,ifid_instance_n_54,ifid_instance_n_55}),
-        .\branch_taken0_inferred__2/i__carry__1_0 ({ifid_instance_n_56,ifid_instance_n_57,ifid_instance_n_58,ifid_instance_n_59}),
-        .\branch_taken0_inferred__2/i__carry__1_1 ({ifid_instance_n_60,ifid_instance_n_61,ifid_instance_n_62,ifid_instance_n_63}),
-        .\branch_taken0_inferred__2/i__carry__2_0 ({ifid_instance_n_64,ifid_instance_n_65,ifid_instance_n_66,ifid_instance_n_67}),
-        .\branch_taken0_inferred__2/i__carry__2_1 ({ifid_instance_n_68,ifid_instance_n_69,ifid_instance_n_70,ifid_instance_n_71}),
-        .\branch_taken0_inferred__3/i__carry__0_0 ({ifid_instance_n_193,ifid_instance_n_194,ifid_instance_n_195,ifid_instance_n_196}),
-        .\branch_taken0_inferred__3/i__carry__0_1 ({ifid_instance_n_197,ifid_instance_n_198,ifid_instance_n_199,ifid_instance_n_200}),
-        .\branch_taken0_inferred__3/i__carry__1_0 ({ifid_instance_n_185,ifid_instance_n_186,ifid_instance_n_187,ifid_instance_n_188}),
-        .\branch_taken0_inferred__3/i__carry__1_1 ({ifid_instance_n_189,ifid_instance_n_190,ifid_instance_n_191,ifid_instance_n_192}),
-        .\branch_taken0_inferred__3/i__carry__2_0 ({ifid_instance_n_177,ifid_instance_n_178,ifid_instance_n_179,ifid_instance_n_180}),
-        .\branch_taken0_inferred__3/i__carry__2_1 ({ifid_instance_n_181,ifid_instance_n_182,ifid_instance_n_183,ifid_instance_n_184}),
+        .\branch_taken0_inferred__1/i__carry__1_0 ({ifid_instance_n_216,ifid_instance_n_217,ifid_instance_n_218,ifid_instance_n_219}),
+        .\branch_taken0_inferred__1/i__carry__1_1 ({ifid_instance_n_212,ifid_instance_n_213,ifid_instance_n_214,ifid_instance_n_215}),
+        .\branch_taken0_inferred__1/i__carry__2_0 ({ifid_instance_n_224,ifid_instance_n_225,ifid_instance_n_226,ifid_instance_n_227}),
+        .\branch_taken0_inferred__1/i__carry__2_1 ({ifid_instance_n_220,ifid_instance_n_221,ifid_instance_n_222,ifid_instance_n_223}),
+        .\branch_taken0_inferred__2/i__carry__0_0 ({ifid_instance_n_52,ifid_instance_n_53,ifid_instance_n_54,ifid_instance_n_55}),
+        .\branch_taken0_inferred__2/i__carry__0_1 ({ifid_instance_n_56,ifid_instance_n_57,ifid_instance_n_58,ifid_instance_n_59}),
+        .\branch_taken0_inferred__2/i__carry__1_0 ({ifid_instance_n_60,ifid_instance_n_61,ifid_instance_n_62,ifid_instance_n_63}),
+        .\branch_taken0_inferred__2/i__carry__1_1 ({ifid_instance_n_64,ifid_instance_n_65,ifid_instance_n_66,ifid_instance_n_67}),
+        .\branch_taken0_inferred__2/i__carry__2_0 ({ifid_instance_n_68,ifid_instance_n_69,ifid_instance_n_70,ifid_instance_n_71}),
+        .\branch_taken0_inferred__2/i__carry__2_1 ({ifid_instance_n_72,ifid_instance_n_73,ifid_instance_n_74,ifid_instance_n_75}),
+        .\branch_taken0_inferred__3/i__carry__0_0 ({ifid_instance_n_192,ifid_instance_n_193,ifid_instance_n_194,ifid_instance_n_195}),
+        .\branch_taken0_inferred__3/i__carry__0_1 ({ifid_instance_n_196,ifid_instance_n_197,ifid_instance_n_198,ifid_instance_n_199}),
+        .\branch_taken0_inferred__3/i__carry__1_0 ({ifid_instance_n_184,ifid_instance_n_185,ifid_instance_n_186,ifid_instance_n_187}),
+        .\branch_taken0_inferred__3/i__carry__1_1 ({ifid_instance_n_188,ifid_instance_n_189,ifid_instance_n_190,ifid_instance_n_191}),
+        .\branch_taken0_inferred__3/i__carry__2_0 ({ifid_instance_n_176,ifid_instance_n_177,ifid_instance_n_178,ifid_instance_n_179}),
+        .\branch_taken0_inferred__3/i__carry__2_1 ({ifid_instance_n_180,ifid_instance_n_181,ifid_instance_n_182,ifid_instance_n_183}),
         .clock(clock),
         .controlunit_ifidflush_to_ifid(controlunit_ifidflush_to_ifid),
         .early_prev(early_prev),
@@ -20067,14 +20087,14 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_internal_connections
         .instruction_in_24_sp_1(CONTROLUNIT_INST_n_11),
         .int_if_flush_reg_0(int_if_flush_reg),
         .int_regOrPC(int_regOrPC),
-        .\muxOut_reg[15]_i_7 ({ifid_instance_n_40,ifid_instance_n_41,ifid_instance_n_42,ifid_instance_n_43}),
-        .\muxOut_reg[15]_i_7_0 ({ifid_instance_n_44,ifid_instance_n_45,ifid_instance_n_46,ifid_instance_n_47}),
-        .\muxOut_reg[15]_i_7_1 ({ifid_instance_n_72,ifid_instance_n_73,ifid_instance_n_74,ifid_instance_n_75}),
-        .\muxOut_reg[15]_i_7_2 ({ifid_instance_n_76,ifid_instance_n_77,ifid_instance_n_78,ifid_instance_n_79}),
-        .\muxOut_reg[15]_i_7_3 ({ifid_instance_n_80,ifid_instance_n_81,ifid_instance_n_82,ifid_instance_n_83}),
-        .\muxOut_reg[15]_i_7_4 ({ifid_instance_n_84,ifid_instance_n_85,ifid_instance_n_86,ifid_instance_n_87}),
+        .\muxOut_reg[15]_i_7 ({ifid_instance_n_44,ifid_instance_n_45,ifid_instance_n_46,ifid_instance_n_47}),
+        .\muxOut_reg[15]_i_7_0 ({ifid_instance_n_48,ifid_instance_n_49,ifid_instance_n_50,ifid_instance_n_51}),
+        .\muxOut_reg[15]_i_7_1 ({ifid_instance_n_76,ifid_instance_n_77,ifid_instance_n_78,ifid_instance_n_79}),
+        .\muxOut_reg[15]_i_7_2 ({ifid_instance_n_80,ifid_instance_n_81,ifid_instance_n_82,ifid_instance_n_83}),
+        .\muxOut_reg[15]_i_7_3 ({ifid_instance_n_84,ifid_instance_n_85,ifid_instance_n_86,ifid_instance_n_87}),
+        .\muxOut_reg[15]_i_7_4 ({ifid_instance_n_88,ifid_instance_n_89,ifid_instance_n_90,ifid_instance_n_91}),
         .p_0_in({p_0_in_0[31:25],p_0_in_0[14:0]}),
-        .pcOut1_carry_i_12(ifid_instance_n_173),
+        .pcOut1_carry_i_12(ifid_instance_n_174),
         .regOrPCCntrl(regOrPCCntrl));
   decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_exmem EXMEM_INST
        (.CO(IDEX_INST_n_171),
@@ -20319,8 +20339,9 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_internal_connections
         .\ALUOp_reg_reg[1]_0 ({IDEX_INST_n_237,IDEX_INST_n_238,IDEX_INST_n_239,IDEX_INST_n_240,IDEX_INST_n_241}),
         .\ALUOp_reg_reg[1]_1 (ifid_instance_n_31),
         .ALUSrc_reg_reg_0(ifid_instance_n_32),
+        .Branch1__3(Branch1__3),
         .CO(result_temp6),
-        .D({ifid_instance_n_92,ifid_instance_n_93,ifid_instance_n_94,ifid_instance_n_95,ifid_instance_n_96,ifid_instance_n_97,ifid_instance_n_98,ifid_instance_n_99,ifid_instance_n_100,ifid_instance_n_101,ifid_instance_n_102,ifid_instance_n_103,ifid_instance_n_104,ifid_instance_n_105,ifid_instance_n_106,ifid_instance_n_107,ifid_instance_n_108}),
+        .D({ifid_instance_n_98,ifid_instance_n_99,ifid_instance_n_100,ifid_instance_n_101,ifid_instance_n_102,ifid_instance_n_103,ifid_instance_n_104,ifid_instance_n_105,ifid_instance_n_106,ifid_instance_n_107,ifid_instance_n_108,ifid_instance_n_109,ifid_instance_n_110,ifid_instance_n_111,ifid_instance_n_112,ifid_instance_n_113,ifid_instance_n_114}),
         .DI({IDEX_INST_n_126,IDEX_INST_n_127,IDEX_INST_n_128,IDEX_INST_n_129}),
         .E(pc_reg0),
         .MemRead_reg_reg_0(IDEX_INST_n_36),
@@ -20420,7 +20441,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_internal_connections
         .\immediate_reg_reg[30]_5 (IDEX_INST_n_79),
         .\immediate_reg_reg[30]_6 (IDEX_INST_n_108),
         .\immediate_reg_reg[31]_0 (IDEX_INST_n_80),
-        .\immediate_reg_reg[31]_1 ({ifid_instance_n_109,ifid_instance_n_110,ifid_instance_n_111,ifid_instance_n_112,ifid_instance_n_113,ifid_instance_n_114,ifid_instance_n_115,ifid_instance_n_116,ifid_instance_n_117,ifid_instance_n_118,ifid_instance_n_119,ifid_instance_n_120,ifid_instance_n_121,ifid_instance_n_122,ifid_instance_n_123,ifid_instance_n_124,ifid_instance_n_125,ifid_instance_n_126,ifid_instance_n_127,ifid_instance_n_128,ifid_instance_n_129,ifid_instance_n_130,ifid_instance_n_131,ifid_instance_n_132,ifid_instance_n_133,ifid_instance_n_134,ifid_instance_n_135,ifid_instance_n_136,ifid_instance_n_137,ifid_instance_n_138,ifid_instance_n_139,ifid_instance_n_140}),
+        .\immediate_reg_reg[31]_1 ({ifid_instance_n_115,ifid_instance_n_116,ifid_instance_n_117,ifid_instance_n_118,ifid_instance_n_119,ifid_instance_n_120,ifid_instance_n_121,ifid_instance_n_122,ifid_instance_n_123,ifid_instance_n_124,ifid_instance_n_125,ifid_instance_n_126,ifid_instance_n_127,ifid_instance_n_128,ifid_instance_n_129,ifid_instance_n_130,ifid_instance_n_131,ifid_instance_n_132,ifid_instance_n_133,ifid_instance_n_134,ifid_instance_n_135,ifid_instance_n_136,ifid_instance_n_137,ifid_instance_n_138,ifid_instance_n_139,ifid_instance_n_140,ifid_instance_n_141,ifid_instance_n_142,ifid_instance_n_143,ifid_instance_n_144,ifid_instance_n_145,ifid_instance_n_146}),
         .\immediate_reg_reg[6]_0 ({IDEX_INST_n_50,IDEX_INST_n_51,IDEX_INST_n_52,IDEX_INST_n_53}),
         .instruction_reg0(instruction_reg0),
         .\instruction_reg_reg[12]_0 (IDEX_INST_n_236),
@@ -20439,11 +20460,11 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_internal_connections
         .\pc_reg[15]_i_4_0 (\rs1_reg_reg[0] ),
         .\pc_reg[15]_i_4_1 (\rs1_reg_reg[2] ),
         .\pc_reg[15]_i_4_2 (\rs1_reg_reg[1] ),
-        .\pc_reg[15]_i_5_0 (ifid_instance_n_202),
+        .\pc_reg[15]_i_5_0 (ifid_instance_n_203),
         .\pcin_reg_reg[15]_0 (data10[15:0]),
         .\pcin_reg_reg[15]_1 (idex_pcout_to_alu),
         .\pcin_reg_reg[15]_2 (IDEX_INST_n_171),
-        .\pcin_reg_reg[15]_3 ({ifid_instance_n_156,ifid_instance_n_157,ifid_instance_n_158,ifid_instance_n_159,ifid_instance_n_160,ifid_instance_n_161,ifid_instance_n_162,ifid_instance_n_163,ifid_instance_n_164,ifid_instance_n_165,ifid_instance_n_166,ifid_instance_n_167,ifid_instance_n_168,ifid_instance_n_169,ifid_instance_n_170}),
+        .\pcin_reg_reg[15]_3 ({ifid_instance_n_158,ifid_instance_n_159,ifid_instance_n_160,ifid_instance_n_161,ifid_instance_n_162,ifid_instance_n_163,ifid_instance_n_164,ifid_instance_n_165,ifid_instance_n_166,ifid_instance_n_167,ifid_instance_n_168,ifid_instance_n_169,ifid_instance_n_170,ifid_instance_n_171,ifid_instance_n_172}),
         .\rd_reg_reg[4]_0 ({IDEX_INST_n_37,IDEX_INST_n_38,IDEX_INST_n_39,IDEX_INST_n_40,IDEX_INST_n_41}),
         .\rd_reg_reg[4]_1 ({ifid_instance_n_15,ifid_instance_n_16,ifid_instance_n_17,ifid_instance_n_18,ifid_instance_n_19}),
         .\readdata1_reg_reg[31]_0 (idex_rs1_to_forwardingmuxa),
@@ -20539,35 +20560,37 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_internal_connections
         .\readdata2_reg_reg[9]_1 (\readdata2_reg_reg[9] ),
         .reg_write(reg_write));
   decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ifid ifid_instance
-       (.CO(data2_1),
-        .D({ifid_instance_n_35,ifid_instance_n_36,ifid_instance_n_37,ifid_instance_n_38}),
-        .DI({ifid_instance_n_207,ifid_instance_n_208,ifid_instance_n_209,ifid_instance_n_210}),
+       (.Branch1__3(Branch1__3),
+        .CO(data2_1),
+        .D({ifid_instance_n_39,ifid_instance_n_40,ifid_instance_n_41,ifid_instance_n_42}),
+        .DI({immediategen_immediate_to_idex__0[3:1],ifid_instance_n_38}),
         .O(pcplusimmadder_pcplusimm_to_pc_mux),
         .Q(Q),
-        .S({ifid_instance_n_88,ifid_instance_n_89,ifid_instance_n_90,ifid_instance_n_91}),
-        .\aluresult_reg_reg[14] ({ifid_instance_n_56,ifid_instance_n_57,ifid_instance_n_58,ifid_instance_n_59}),
-        .\aluresult_reg_reg[14]_0 ({ifid_instance_n_60,ifid_instance_n_61,ifid_instance_n_62,ifid_instance_n_63}),
-        .\aluresult_reg_reg[14]_1 ({ifid_instance_n_185,ifid_instance_n_186,ifid_instance_n_187,ifid_instance_n_188}),
-        .\aluresult_reg_reg[14]_2 ({ifid_instance_n_189,ifid_instance_n_190,ifid_instance_n_191,ifid_instance_n_192}),
-        .\aluresult_reg_reg[14]_3 ({ifid_instance_n_211,ifid_instance_n_212,ifid_instance_n_213,ifid_instance_n_214}),
-        .\aluresult_reg_reg[14]_4 ({ifid_instance_n_215,ifid_instance_n_216,ifid_instance_n_217,ifid_instance_n_218}),
-        .\aluresult_reg_reg[22] ({ifid_instance_n_64,ifid_instance_n_65,ifid_instance_n_66,ifid_instance_n_67}),
-        .\aluresult_reg_reg[22]_0 ({ifid_instance_n_68,ifid_instance_n_69,ifid_instance_n_70,ifid_instance_n_71}),
-        .\aluresult_reg_reg[22]_1 ({ifid_instance_n_177,ifid_instance_n_178,ifid_instance_n_179,ifid_instance_n_180}),
-        .\aluresult_reg_reg[22]_2 ({ifid_instance_n_181,ifid_instance_n_182,ifid_instance_n_183,ifid_instance_n_184}),
-        .\aluresult_reg_reg[22]_3 ({ifid_instance_n_219,ifid_instance_n_220,ifid_instance_n_221,ifid_instance_n_222}),
-        .\aluresult_reg_reg[22]_4 ({ifid_instance_n_223,ifid_instance_n_224,ifid_instance_n_225,ifid_instance_n_226}),
-        .\aluresult_reg_reg[30] ({ifid_instance_n_40,ifid_instance_n_41,ifid_instance_n_42,ifid_instance_n_43}),
-        .\aluresult_reg_reg[30]_0 ({ifid_instance_n_44,ifid_instance_n_45,ifid_instance_n_46,ifid_instance_n_47}),
-        .\aluresult_reg_reg[30]_1 ({ifid_instance_n_72,ifid_instance_n_73,ifid_instance_n_74,ifid_instance_n_75}),
-        .\aluresult_reg_reg[30]_2 ({ifid_instance_n_76,ifid_instance_n_77,ifid_instance_n_78,ifid_instance_n_79}),
-        .\aluresult_reg_reg[30]_3 ({ifid_instance_n_80,ifid_instance_n_81,ifid_instance_n_82,ifid_instance_n_83}),
-        .\aluresult_reg_reg[30]_4 ({ifid_instance_n_84,ifid_instance_n_85,ifid_instance_n_86,ifid_instance_n_87}),
-        .\aluresult_reg_reg[6] ({ifid_instance_n_48,ifid_instance_n_49,ifid_instance_n_50,ifid_instance_n_51}),
-        .\aluresult_reg_reg[6]_0 ({ifid_instance_n_52,ifid_instance_n_53,ifid_instance_n_54,ifid_instance_n_55}),
-        .\aluresult_reg_reg[6]_1 ({ifid_instance_n_193,ifid_instance_n_194,ifid_instance_n_195,ifid_instance_n_196}),
-        .\aluresult_reg_reg[6]_2 ({ifid_instance_n_197,ifid_instance_n_198,ifid_instance_n_199,ifid_instance_n_200}),
-        .\aluresult_reg_reg[6]_3 ({ifid_instance_n_203,ifid_instance_n_204,ifid_instance_n_205,ifid_instance_n_206}),
+        .S({ifid_instance_n_92,ifid_instance_n_93,ifid_instance_n_94,ifid_instance_n_95}),
+        .\aluresult_reg_reg[14] ({ifid_instance_n_60,ifid_instance_n_61,ifid_instance_n_62,ifid_instance_n_63}),
+        .\aluresult_reg_reg[14]_0 ({ifid_instance_n_64,ifid_instance_n_65,ifid_instance_n_66,ifid_instance_n_67}),
+        .\aluresult_reg_reg[14]_1 ({ifid_instance_n_184,ifid_instance_n_185,ifid_instance_n_186,ifid_instance_n_187}),
+        .\aluresult_reg_reg[14]_2 ({ifid_instance_n_188,ifid_instance_n_189,ifid_instance_n_190,ifid_instance_n_191}),
+        .\aluresult_reg_reg[14]_3 ({ifid_instance_n_212,ifid_instance_n_213,ifid_instance_n_214,ifid_instance_n_215}),
+        .\aluresult_reg_reg[14]_4 ({ifid_instance_n_216,ifid_instance_n_217,ifid_instance_n_218,ifid_instance_n_219}),
+        .\aluresult_reg_reg[22] ({ifid_instance_n_68,ifid_instance_n_69,ifid_instance_n_70,ifid_instance_n_71}),
+        .\aluresult_reg_reg[22]_0 ({ifid_instance_n_72,ifid_instance_n_73,ifid_instance_n_74,ifid_instance_n_75}),
+        .\aluresult_reg_reg[22]_1 ({ifid_instance_n_176,ifid_instance_n_177,ifid_instance_n_178,ifid_instance_n_179}),
+        .\aluresult_reg_reg[22]_2 ({ifid_instance_n_180,ifid_instance_n_181,ifid_instance_n_182,ifid_instance_n_183}),
+        .\aluresult_reg_reg[22]_3 ({ifid_instance_n_220,ifid_instance_n_221,ifid_instance_n_222,ifid_instance_n_223}),
+        .\aluresult_reg_reg[22]_4 ({ifid_instance_n_224,ifid_instance_n_225,ifid_instance_n_226,ifid_instance_n_227}),
+        .\aluresult_reg_reg[30] ({ifid_instance_n_44,ifid_instance_n_45,ifid_instance_n_46,ifid_instance_n_47}),
+        .\aluresult_reg_reg[30]_0 ({ifid_instance_n_48,ifid_instance_n_49,ifid_instance_n_50,ifid_instance_n_51}),
+        .\aluresult_reg_reg[30]_1 ({ifid_instance_n_76,ifid_instance_n_77,ifid_instance_n_78,ifid_instance_n_79}),
+        .\aluresult_reg_reg[30]_2 ({ifid_instance_n_80,ifid_instance_n_81,ifid_instance_n_82,ifid_instance_n_83}),
+        .\aluresult_reg_reg[30]_3 ({ifid_instance_n_84,ifid_instance_n_85,ifid_instance_n_86,ifid_instance_n_87}),
+        .\aluresult_reg_reg[30]_4 ({ifid_instance_n_88,ifid_instance_n_89,ifid_instance_n_90,ifid_instance_n_91}),
+        .\aluresult_reg_reg[6] ({ifid_instance_n_52,ifid_instance_n_53,ifid_instance_n_54,ifid_instance_n_55}),
+        .\aluresult_reg_reg[6]_0 ({ifid_instance_n_56,ifid_instance_n_57,ifid_instance_n_58,ifid_instance_n_59}),
+        .\aluresult_reg_reg[6]_1 ({ifid_instance_n_192,ifid_instance_n_193,ifid_instance_n_194,ifid_instance_n_195}),
+        .\aluresult_reg_reg[6]_2 ({ifid_instance_n_196,ifid_instance_n_197,ifid_instance_n_198,ifid_instance_n_199}),
+        .\aluresult_reg_reg[6]_3 ({ifid_instance_n_204,ifid_instance_n_205,ifid_instance_n_206,ifid_instance_n_207}),
+        .\aluresult_reg_reg[6]_4 ({ifid_instance_n_208,ifid_instance_n_209,ifid_instance_n_210,ifid_instance_n_211}),
         .branch_taken(branch_taken),
         .clock(clock),
         .hazardunit_controldisable_to_controlunit(hazardunit_controldisable_to_controlunit),
@@ -20606,20 +20629,20 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_internal_connections
         .i__carry_i_3__1_1(\readdata2_reg_reg[2] ),
         .i__carry_i_4__1_0(\readdata2_reg_reg[1] ),
         .i__carry_i_4__1_1(\readdata2_reg_reg[0] ),
-        .immediategen_immediate_to_idex__0(immediategen_immediate_to_idex__0),
+        .immediategen_immediate_to_idex__0(immediategen_immediate_to_idex__0[14:4]),
         .instruction_reg0(instruction_reg0),
         .\instruction_reg_reg[0]_0 (ifid_instance_n_20),
-        .\instruction_reg_reg[10]_0 (ifid_instance_n_202),
+        .\instruction_reg_reg[10]_0 (ifid_instance_n_203),
         .\instruction_reg_reg[11]_0 (ifid_instruction_to_OUT),
         .\instruction_reg_reg[11]_1 ({ifid_instance_n_15,ifid_instance_n_16,ifid_instance_n_17,ifid_instance_n_18,ifid_instance_n_19}),
         .\instruction_reg_reg[1]_0 (controlunit_earlybranch_to_pcmux),
-        .\instruction_reg_reg[31]_0 ({ifid_instance_n_92,ifid_instance_n_93,ifid_instance_n_94,ifid_instance_n_95,ifid_instance_n_96,ifid_instance_n_97,ifid_instance_n_98,ifid_instance_n_99,ifid_instance_n_100,ifid_instance_n_101,ifid_instance_n_102,ifid_instance_n_103,ifid_instance_n_104,ifid_instance_n_105,ifid_instance_n_106,ifid_instance_n_107,ifid_instance_n_108}),
-        .\instruction_reg_reg[31]_1 ({ifid_instance_n_109,ifid_instance_n_110,ifid_instance_n_111,ifid_instance_n_112,ifid_instance_n_113,ifid_instance_n_114,ifid_instance_n_115,ifid_instance_n_116,ifid_instance_n_117,ifid_instance_n_118,ifid_instance_n_119,ifid_instance_n_120,ifid_instance_n_121,ifid_instance_n_122,ifid_instance_n_123,ifid_instance_n_124,ifid_instance_n_125,ifid_instance_n_126,ifid_instance_n_127,ifid_instance_n_128,ifid_instance_n_129,ifid_instance_n_130,ifid_instance_n_131,ifid_instance_n_132,ifid_instance_n_133,ifid_instance_n_134,ifid_instance_n_135,ifid_instance_n_136,ifid_instance_n_137,ifid_instance_n_138,ifid_instance_n_139,ifid_instance_n_140}),
+        .\instruction_reg_reg[31]_0 ({ifid_instance_n_98,ifid_instance_n_99,ifid_instance_n_100,ifid_instance_n_101,ifid_instance_n_102,ifid_instance_n_103,ifid_instance_n_104,ifid_instance_n_105,ifid_instance_n_106,ifid_instance_n_107,ifid_instance_n_108,ifid_instance_n_109,ifid_instance_n_110,ifid_instance_n_111,ifid_instance_n_112,ifid_instance_n_113,ifid_instance_n_114}),
+        .\instruction_reg_reg[31]_1 ({ifid_instance_n_115,ifid_instance_n_116,ifid_instance_n_117,ifid_instance_n_118,ifid_instance_n_119,ifid_instance_n_120,ifid_instance_n_121,ifid_instance_n_122,ifid_instance_n_123,ifid_instance_n_124,ifid_instance_n_125,ifid_instance_n_126,ifid_instance_n_127,ifid_instance_n_128,ifid_instance_n_129,ifid_instance_n_130,ifid_instance_n_131,ifid_instance_n_132,ifid_instance_n_133,ifid_instance_n_134,ifid_instance_n_135,ifid_instance_n_136,ifid_instance_n_137,ifid_instance_n_138,ifid_instance_n_139,ifid_instance_n_140,ifid_instance_n_141,ifid_instance_n_142,ifid_instance_n_143,ifid_instance_n_144,ifid_instance_n_145,ifid_instance_n_146}),
         .\instruction_reg_reg[31]_2 (IDEX_INST_n_36),
         .\instruction_reg_reg[4]_0 (ifid_instance_n_33),
         .\instruction_reg_reg[5]_0 (ifid_instance_n_32),
         .\instruction_reg_reg[5]_1 (ifid_instance_n_34),
-        .\instruction_reg_reg[5]_2 (ifid_instance_n_173),
+        .\instruction_reg_reg[5]_2 (ifid_instance_n_174),
         .\instruction_reg_reg[6]_0 (ifid_instance_n_31),
         .int_Branch__2(int_Branch__2),
         .int_MemtoReg__4(int_MemtoReg__4),
@@ -20629,11 +20652,11 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_internal_connections
         .p_0_in({p_0_in_0[31:25],p_0_in_0[14:0]}),
         .p_1_in(\HAZARD_UNIT_INST/p_1_in ),
         .pause_sig1__8(\HAZARD_UNIT_INST/pause_sig1__8 ),
-        .\pcout_reg_reg[11]_0 ({ifid_instance_n_235,ifid_instance_n_236,ifid_instance_n_237,ifid_instance_n_238}),
-        .\pcout_reg_reg[15]_0 ({ifid_instance_n_156,ifid_instance_n_157,ifid_instance_n_158,ifid_instance_n_159,ifid_instance_n_160,ifid_instance_n_161,ifid_instance_n_162,ifid_instance_n_163,ifid_instance_n_164,ifid_instance_n_165,ifid_instance_n_166,ifid_instance_n_167,ifid_instance_n_168,ifid_instance_n_169,ifid_instance_n_170}),
+        .\pcout_reg_reg[11]_0 ({ifid_instance_n_236,ifid_instance_n_237,ifid_instance_n_238,ifid_instance_n_239}),
+        .\pcout_reg_reg[15]_0 ({ifid_instance_n_158,ifid_instance_n_159,ifid_instance_n_160,ifid_instance_n_161,ifid_instance_n_162,ifid_instance_n_163,ifid_instance_n_164,ifid_instance_n_165,ifid_instance_n_166,ifid_instance_n_167,ifid_instance_n_168,ifid_instance_n_169,ifid_instance_n_170,ifid_instance_n_171,ifid_instance_n_172}),
         .\pcout_reg_reg[15]_1 ({pc_instance_n_16,pc_instance_n_17,pc_instance_n_18,pc_instance_n_19,pc_instance_n_20,pc_instance_n_21,pc_instance_n_22,pc_instance_n_23,pc_instance_n_24,pc_instance_n_25,pc_instance_n_26,pc_instance_n_27,pc_instance_n_28,pc_instance_n_29,pc_instance_n_30}),
-        .\pcout_reg_reg[3]_0 ({ifid_instance_n_227,ifid_instance_n_228,ifid_instance_n_229,ifid_instance_n_230}),
-        .\pcout_reg_reg[7]_0 ({ifid_instance_n_231,ifid_instance_n_232,ifid_instance_n_233,ifid_instance_n_234}),
+        .\pcout_reg_reg[3]_0 ({ifid_instance_n_228,ifid_instance_n_229,ifid_instance_n_230,ifid_instance_n_231}),
+        .\pcout_reg_reg[7]_0 ({ifid_instance_n_232,ifid_instance_n_233,ifid_instance_n_234,ifid_instance_n_235}),
         .plusOp(plusOp[15:12]),
         .reg1_data(reg1_data),
         .reg2_data(reg2_data),
@@ -20677,17 +20700,18 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_internal_connections
         .\pc_reg_reg[15]_1 (pc_mux_pcsource_to_pc),
         .\pc_reg_reg[15]_2 (\pc_reg_reg[15] ));
   decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pc_mux pc_mux_inst
-       (.D({ifid_instance_n_35,ifid_instance_n_36,ifid_instance_n_37,ifid_instance_n_38,pcimmadder_inst_n_4,pcimmadder_inst_n_5,pcimmadder_inst_n_6,pcimmadder_inst_n_7,pcimmadder_inst_n_8,pcimmadder_inst_n_9,pcimmadder_inst_n_10,pcimmadder_inst_n_11,pcimmadder_inst_n_12,pcimmadder_inst_n_13,pc_4_adder_instance_n_14}),
+       (.D({ifid_instance_n_39,ifid_instance_n_40,ifid_instance_n_41,ifid_instance_n_42,pcimmadder_inst_n_4,pcimmadder_inst_n_5,pcimmadder_inst_n_6,pcimmadder_inst_n_7,pcimmadder_inst_n_8,pcimmadder_inst_n_9,pcimmadder_inst_n_10,pcimmadder_inst_n_11,pcimmadder_inst_n_12,pcimmadder_inst_n_13,pc_4_adder_instance_n_14}),
         .E(p_0_in_2),
         .Q(pc_mux_pcsource_to_pc));
   decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pcimmadder pcimmadder_inst
        (.D({pcimmadder_inst_n_4,pcimmadder_inst_n_5,pcimmadder_inst_n_6,pcimmadder_inst_n_7,pcimmadder_inst_n_8,pcimmadder_inst_n_9,pcimmadder_inst_n_10,pcimmadder_inst_n_11,pcimmadder_inst_n_12,pcimmadder_inst_n_13}),
+        .DI(ifid_instance_n_38),
         .O(pcplusimmadder_pcplusimm_to_pc_mux),
-        .S({ifid_instance_n_88,ifid_instance_n_89,ifid_instance_n_90,ifid_instance_n_91}),
+        .S({ifid_instance_n_92,ifid_instance_n_93,ifid_instance_n_94,ifid_instance_n_95}),
         .immediategen_immediate_to_idex__0(immediategen_immediate_to_idex__0),
-        .\muxOut_reg[2]_i_1_0 ({ifid_instance_n_227,ifid_instance_n_228,ifid_instance_n_229,ifid_instance_n_230}),
-        .\muxOut_reg[4]_i_1_0 ({ifid_instance_n_231,ifid_instance_n_232,ifid_instance_n_233,ifid_instance_n_234}),
-        .\muxOut_reg[8]_i_1_0 ({ifid_instance_n_235,ifid_instance_n_236,ifid_instance_n_237,ifid_instance_n_238}),
+        .\muxOut_reg[2]_i_1_0 ({ifid_instance_n_228,ifid_instance_n_229,ifid_instance_n_230,ifid_instance_n_231}),
+        .\muxOut_reg[4]_i_1_0 ({ifid_instance_n_232,ifid_instance_n_233,ifid_instance_n_234,ifid_instance_n_235}),
+        .\muxOut_reg[8]_i_1_0 ({ifid_instance_n_236,ifid_instance_n_237,ifid_instance_n_238,ifid_instance_n_239}),
         .\pc_reg_reg[11] (plusOp[11:2]),
         .\pc_reg_reg[11]_0 (controlunit_earlybranch_to_pcmux));
 endmodule
@@ -22211,6 +22235,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pcimmadder
    (O,
     D,
     immediategen_immediate_to_idex__0,
+    DI,
     \muxOut_reg[2]_i_1_0 ,
     \muxOut_reg[4]_i_1_0 ,
     \muxOut_reg[8]_i_1_0 ,
@@ -22219,7 +22244,8 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pcimmadder
     \pc_reg_reg[11]_0 );
   output [3:0]O;
   output [9:0]D;
-  input [14:0]immediategen_immediate_to_idex__0;
+  input [13:0]immediategen_immediate_to_idex__0;
+  input [0:0]DI;
   input [3:0]\muxOut_reg[2]_i_1_0 ;
   input [3:0]\muxOut_reg[4]_i_1_0 ;
   input [3:0]\muxOut_reg[8]_i_1_0 ;
@@ -22228,9 +22254,10 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pcimmadder
   input \pc_reg_reg[11]_0 ;
 
   wire [9:0]D;
+  wire [0:0]DI;
   wire [3:0]O;
   wire [3:0]S;
-  wire [14:0]immediategen_immediate_to_idex__0;
+  wire [13:0]immediategen_immediate_to_idex__0;
   wire [3:0]\muxOut_reg[2]_i_1_0 ;
   wire [3:0]\muxOut_reg[4]_i_1_0 ;
   wire [3:0]\muxOut_reg[8]_i_1_0 ;
@@ -22255,7 +22282,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pcimmadder
   wire [1:0]NLW_pcOut1_carry_O_UNCONNECTED;
   wire [3:3]NLW_pcOut1_carry__2_CO_UNCONNECTED;
 
-  (* SOFT_HLUTNM = "soft_lutpair219" *) 
+  (* SOFT_HLUTNM = "soft_lutpair222" *) 
   LUT3 #(
     .INIT(8'hAC)) 
     \muxOut_reg[10]_i_1 
@@ -22263,7 +22290,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pcimmadder
         .I1(\pc_reg_reg[11] [8]),
         .I2(\pc_reg_reg[11]_0 ),
         .O(D[8]));
-  (* SOFT_HLUTNM = "soft_lutpair219" *) 
+  (* SOFT_HLUTNM = "soft_lutpair222" *) 
   LUT3 #(
     .INIT(8'hAC)) 
     \muxOut_reg[11]_i_1 
@@ -22271,7 +22298,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pcimmadder
         .I1(\pc_reg_reg[11] [9]),
         .I2(\pc_reg_reg[11]_0 ),
         .O(D[9]));
-  (* SOFT_HLUTNM = "soft_lutpair215" *) 
+  (* SOFT_HLUTNM = "soft_lutpair218" *) 
   LUT3 #(
     .INIT(8'hAC)) 
     \muxOut_reg[2]_i_1 
@@ -22279,7 +22306,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pcimmadder
         .I1(\pc_reg_reg[11] [0]),
         .I2(\pc_reg_reg[11]_0 ),
         .O(D[0]));
-  (* SOFT_HLUTNM = "soft_lutpair215" *) 
+  (* SOFT_HLUTNM = "soft_lutpair218" *) 
   LUT3 #(
     .INIT(8'hAC)) 
     \muxOut_reg[3]_i_1 
@@ -22287,7 +22314,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pcimmadder
         .I1(\pc_reg_reg[11] [1]),
         .I2(\pc_reg_reg[11]_0 ),
         .O(D[1]));
-  (* SOFT_HLUTNM = "soft_lutpair216" *) 
+  (* SOFT_HLUTNM = "soft_lutpair219" *) 
   LUT3 #(
     .INIT(8'hAC)) 
     \muxOut_reg[4]_i_1 
@@ -22295,7 +22322,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pcimmadder
         .I1(\pc_reg_reg[11] [2]),
         .I2(\pc_reg_reg[11]_0 ),
         .O(D[2]));
-  (* SOFT_HLUTNM = "soft_lutpair216" *) 
+  (* SOFT_HLUTNM = "soft_lutpair219" *) 
   LUT3 #(
     .INIT(8'hAC)) 
     \muxOut_reg[5]_i_1 
@@ -22303,7 +22330,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pcimmadder
         .I1(\pc_reg_reg[11] [3]),
         .I2(\pc_reg_reg[11]_0 ),
         .O(D[3]));
-  (* SOFT_HLUTNM = "soft_lutpair217" *) 
+  (* SOFT_HLUTNM = "soft_lutpair220" *) 
   LUT3 #(
     .INIT(8'hAC)) 
     \muxOut_reg[6]_i_1 
@@ -22311,7 +22338,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pcimmadder
         .I1(\pc_reg_reg[11] [4]),
         .I2(\pc_reg_reg[11]_0 ),
         .O(D[4]));
-  (* SOFT_HLUTNM = "soft_lutpair217" *) 
+  (* SOFT_HLUTNM = "soft_lutpair220" *) 
   LUT3 #(
     .INIT(8'hAC)) 
     \muxOut_reg[7]_i_1 
@@ -22319,7 +22346,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pcimmadder
         .I1(\pc_reg_reg[11] [5]),
         .I2(\pc_reg_reg[11]_0 ),
         .O(D[5]));
-  (* SOFT_HLUTNM = "soft_lutpair218" *) 
+  (* SOFT_HLUTNM = "soft_lutpair221" *) 
   LUT3 #(
     .INIT(8'hAC)) 
     \muxOut_reg[8]_i_1 
@@ -22327,7 +22354,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pcimmadder
         .I1(\pc_reg_reg[11] [6]),
         .I2(\pc_reg_reg[11]_0 ),
         .O(D[6]));
-  (* SOFT_HLUTNM = "soft_lutpair218" *) 
+  (* SOFT_HLUTNM = "soft_lutpair221" *) 
   LUT3 #(
     .INIT(8'hAC)) 
     \muxOut_reg[9]_i_1 
@@ -22341,7 +22368,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pcimmadder
        (.CI(1'b0),
         .CO({pcOut1_carry_n_0,pcOut1_carry_n_1,pcOut1_carry_n_2,pcOut1_carry_n_3}),
         .CYINIT(1'b0),
-        .DI(immediategen_immediate_to_idex__0[3:0]),
+        .DI({immediategen_immediate_to_idex__0[2:0],DI}),
         .O({pcplusimmadder_pcplusimm_to_pc_mux[3:2],NLW_pcOut1_carry_O_UNCONNECTED[1:0]}),
         .S(\muxOut_reg[2]_i_1_0 ));
   (* ADDER_THRESHOLD = "35" *) 
@@ -22350,7 +22377,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pcimmadder
        (.CI(pcOut1_carry_n_0),
         .CO({pcOut1_carry__0_n_0,pcOut1_carry__0_n_1,pcOut1_carry__0_n_2,pcOut1_carry__0_n_3}),
         .CYINIT(1'b0),
-        .DI(immediategen_immediate_to_idex__0[7:4]),
+        .DI(immediategen_immediate_to_idex__0[6:3]),
         .O(pcplusimmadder_pcplusimm_to_pc_mux[7:4]),
         .S(\muxOut_reg[4]_i_1_0 ));
   (* ADDER_THRESHOLD = "35" *) 
@@ -22359,7 +22386,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pcimmadder
        (.CI(pcOut1_carry__0_n_0),
         .CO({pcOut1_carry__1_n_0,pcOut1_carry__1_n_1,pcOut1_carry__1_n_2,pcOut1_carry__1_n_3}),
         .CYINIT(1'b0),
-        .DI(immediategen_immediate_to_idex__0[11:8]),
+        .DI(immediategen_immediate_to_idex__0[10:7]),
         .O(pcplusimmadder_pcplusimm_to_pc_mux[11:8]),
         .S(\muxOut_reg[8]_i_1_0 ));
   (* ADDER_THRESHOLD = "35" *) 
@@ -22368,7 +22395,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_pcimmadder
        (.CI(pcOut1_carry__1_n_0),
         .CO({NLW_pcOut1_carry__2_CO_UNCONNECTED[3],pcOut1_carry__2_n_1,pcOut1_carry__2_n_2,pcOut1_carry__2_n_3}),
         .CYINIT(1'b0),
-        .DI({1'b0,immediategen_immediate_to_idex__0[14:12]}),
+        .DI({1'b0,immediategen_immediate_to_idex__0[13:11]}),
         .O(O),
         .S(S));
 endmodule
@@ -22490,35 +22517,35 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_program_counter
         .D(\pc_reg_reg[15]_1 [8]),
         .PRE(\pc_reg_reg[15]_2 ),
         .Q(Q[8]));
-  (* SOFT_HLUTNM = "soft_lutpair212" *) 
+  (* SOFT_HLUTNM = "soft_lutpair215" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \pcout_reg[10]_i_1 
        (.I0(Q[9]),
         .I1(controlunit_ifidflush_to_ifid),
         .O(\pc_reg_reg[15]_0 [9]));
-  (* SOFT_HLUTNM = "soft_lutpair213" *) 
+  (* SOFT_HLUTNM = "soft_lutpair216" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \pcout_reg[11]_i_1 
        (.I0(Q[10]),
         .I1(controlunit_ifidflush_to_ifid),
         .O(\pc_reg_reg[15]_0 [10]));
-  (* SOFT_HLUTNM = "soft_lutpair213" *) 
+  (* SOFT_HLUTNM = "soft_lutpair216" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \pcout_reg[12]_i_1 
        (.I0(Q[11]),
         .I1(controlunit_ifidflush_to_ifid),
         .O(\pc_reg_reg[15]_0 [11]));
-  (* SOFT_HLUTNM = "soft_lutpair214" *) 
+  (* SOFT_HLUTNM = "soft_lutpair217" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \pcout_reg[13]_i_1 
        (.I0(Q[12]),
         .I1(controlunit_ifidflush_to_ifid),
         .O(\pc_reg_reg[15]_0 [12]));
-  (* SOFT_HLUTNM = "soft_lutpair214" *) 
+  (* SOFT_HLUTNM = "soft_lutpair217" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \pcout_reg[14]_i_1 
@@ -22531,63 +22558,63 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_program_counter
        (.I0(Q[14]),
         .I1(controlunit_ifidflush_to_ifid),
         .O(\pc_reg_reg[15]_0 [14]));
-  (* SOFT_HLUTNM = "soft_lutpair208" *) 
+  (* SOFT_HLUTNM = "soft_lutpair211" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \pcout_reg[1]_i_1 
        (.I0(Q[0]),
         .I1(controlunit_ifidflush_to_ifid),
         .O(\pc_reg_reg[15]_0 [0]));
-  (* SOFT_HLUTNM = "soft_lutpair208" *) 
+  (* SOFT_HLUTNM = "soft_lutpair211" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \pcout_reg[2]_i_1 
        (.I0(Q[1]),
         .I1(controlunit_ifidflush_to_ifid),
         .O(\pc_reg_reg[15]_0 [1]));
-  (* SOFT_HLUTNM = "soft_lutpair209" *) 
+  (* SOFT_HLUTNM = "soft_lutpair212" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \pcout_reg[3]_i_1 
        (.I0(Q[2]),
         .I1(controlunit_ifidflush_to_ifid),
         .O(\pc_reg_reg[15]_0 [2]));
-  (* SOFT_HLUTNM = "soft_lutpair209" *) 
+  (* SOFT_HLUTNM = "soft_lutpair212" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \pcout_reg[4]_i_1 
        (.I0(Q[3]),
         .I1(controlunit_ifidflush_to_ifid),
         .O(\pc_reg_reg[15]_0 [3]));
-  (* SOFT_HLUTNM = "soft_lutpair210" *) 
+  (* SOFT_HLUTNM = "soft_lutpair213" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \pcout_reg[5]_i_1 
        (.I0(Q[4]),
         .I1(controlunit_ifidflush_to_ifid),
         .O(\pc_reg_reg[15]_0 [4]));
-  (* SOFT_HLUTNM = "soft_lutpair210" *) 
+  (* SOFT_HLUTNM = "soft_lutpair213" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \pcout_reg[6]_i_1 
        (.I0(Q[5]),
         .I1(controlunit_ifidflush_to_ifid),
         .O(\pc_reg_reg[15]_0 [5]));
-  (* SOFT_HLUTNM = "soft_lutpair211" *) 
+  (* SOFT_HLUTNM = "soft_lutpair214" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \pcout_reg[7]_i_1 
        (.I0(Q[6]),
         .I1(controlunit_ifidflush_to_ifid),
         .O(\pc_reg_reg[15]_0 [6]));
-  (* SOFT_HLUTNM = "soft_lutpair211" *) 
+  (* SOFT_HLUTNM = "soft_lutpair214" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \pcout_reg[8]_i_1 
        (.I0(Q[7]),
         .I1(controlunit_ifidflush_to_ifid),
         .O(\pc_reg_reg[15]_0 [7]));
-  (* SOFT_HLUTNM = "soft_lutpair212" *) 
+  (* SOFT_HLUTNM = "soft_lutpair215" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \pcout_reg[9]_i_1 
@@ -22625,7 +22652,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
     mem_read_data);
   input start;
   input hold;
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 clock CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME clock, FREQ_HZ 10000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN system_processing_system7_0_0_FCLK_CLK1, INSERT_VIP 0" *) input clock;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 clock CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME clock, FREQ_HZ 1e+07, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN system_processing_system7_0_0_FCLK_CLK1, INSERT_VIP 0" *) input clock;
   input resetbar;
   output [15:0]pc_out;
   input [31:0]instruction_in;
