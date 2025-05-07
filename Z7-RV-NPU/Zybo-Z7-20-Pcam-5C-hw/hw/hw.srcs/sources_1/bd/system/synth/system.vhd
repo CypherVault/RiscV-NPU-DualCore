@@ -1,7 +1,7 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
---Date        : Tue May  6 21:25:21 2025
+--Date        : Tue May  6 23:24:28 2025
 --Host        : DESKTOP-J1G93P6 running 64-bit major release  (build 9200)
 --Command     : generate_target system.bd
 --Design      : system
@@ -5051,24 +5051,6 @@ architecture STRUCTURE of system is
     PROGRAM_FINISH : out STD_LOGIC
   );
   end component system_registerIP_0_0;
-  component system_datamemIP_0_0 is
-  port (
-    s02_axi_aclk : in STD_LOGIC;
-    s02_axi_aresetn : in STD_LOGIC;
-    s02_axi_araddr : in STD_LOGIC_VECTOR ( 13 downto 0 );
-    s02_axi_arvalid : in STD_LOGIC;
-    s02_axi_arready : out STD_LOGIC;
-    s02_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    s02_axi_rvalid : out STD_LOGIC;
-    s02_axi_rready : in STD_LOGIC;
-    hold : in STD_LOGIC;
-    address : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    writedata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    memwrite : in STD_LOGIC;
-    memread : in STD_LOGIC;
-    readdata : out STD_LOGIC_VECTOR ( 31 downto 0 )
-  );
-  end component system_datamemIP_0_0;
   component system_RISCVCOREZYNQ_0_0 is
   port (
     start : in STD_LOGIC;
@@ -5091,6 +5073,24 @@ architecture STRUCTURE of system is
     mem_read_data : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
   end component system_RISCVCOREZYNQ_0_0;
+  component system_datamemIP_0_0 is
+  port (
+    s02_axi_aclk : in STD_LOGIC;
+    s02_axi_aresetn : in STD_LOGIC;
+    s02_axi_araddr : in STD_LOGIC_VECTOR ( 13 downto 0 );
+    s02_axi_arvalid : in STD_LOGIC;
+    s02_axi_arready : out STD_LOGIC;
+    s02_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    s02_axi_rvalid : out STD_LOGIC;
+    s02_axi_rready : in STD_LOGIC;
+    hold : in STD_LOGIC;
+    address : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    writedata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    memwrite : in STD_LOGIC;
+    memread : in STD_LOGIC;
+    readdata : out STD_LOGIC_VECTOR ( 31 downto 0 )
+  );
+  end component system_datamemIP_0_0;
   signal AXI_BayerToRGB_1_AXI_Stream_Master_TDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal AXI_BayerToRGB_1_AXI_Stream_Master_TLAST : STD_LOGIC;
   signal AXI_BayerToRGB_1_AXI_Stream_Master_TREADY : STD_LOGIC;

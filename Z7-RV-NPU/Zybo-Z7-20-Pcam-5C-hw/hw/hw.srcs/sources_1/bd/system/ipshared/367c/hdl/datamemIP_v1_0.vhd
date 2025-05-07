@@ -66,7 +66,8 @@ begin
         end if;
     end process;
 
-    -- AXI Read Data Output
+
+ -- AXI Read Data Output
     axi_read_data : process(s02_axi_aclk)
     begin
         if rising_edge(s02_axi_aclk) then
