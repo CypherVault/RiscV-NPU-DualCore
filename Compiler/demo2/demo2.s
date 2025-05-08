@@ -23,7 +23,7 @@ _start:
 	.type	main, @function
 main:
 	addi	sp,sp,-16
-	li	a5,5
+	li	a5,9
 	sw	a5,12(sp)
 	li	a5,3
 	sw	a5,8(sp)

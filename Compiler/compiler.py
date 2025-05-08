@@ -61,6 +61,7 @@ def compile_to_riscv(c_file, output_dir):
         messagebox.showerror("Error", f"Compilation failed: {e}")
 
 
+
 def reorder_hex_file(disasm_file, output_file):
     hex_instructions = []
 

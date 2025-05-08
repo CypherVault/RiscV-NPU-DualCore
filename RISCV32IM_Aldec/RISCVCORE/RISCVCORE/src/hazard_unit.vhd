@@ -77,7 +77,7 @@ begin
             if is_jal_jalr = '1' then
 				
 				if idex_rd = jalrReg and not(jalrReg = "00000") then
-					pause_sig <= '1'; --during jalr check does not set pause propperly
+					pause_sig <= '1';
 					--ctrl_disable <= '0';
 				else
 					pause_sig <= '0';

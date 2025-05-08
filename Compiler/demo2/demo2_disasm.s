@@ -18,7 +18,7 @@ Disassembly of section .text:
 
 0001007c <main>:
    1007c:	ff010113          	addi	sp,sp,-16
-   10080:	00500793          	addi	a5,zero,5
+   10080:	00900793          	addi	a5,zero,9
    10084:	00f12623          	sw	a5,12(sp)
    10088:	00300793          	addi	a5,zero,3
    1008c:	00f12423          	sw	a5,8(sp)

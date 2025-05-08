@@ -6,7 +6,7 @@ void _start() {
 }
 
 int main() {
-    int a = 5;
+    int a = 9;
     int b = 3;
     int result = 0;
 
